@@ -22,6 +22,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {},
+    "jsx": "react-jsx",
   },
   "exclude": ["node_modules"]
 }
