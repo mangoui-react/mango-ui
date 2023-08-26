@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
-const TestLint = () => {
+const TestLint: React.FC = () => {
   const abc = 1;
 
   const [value, setValue] = useState('');

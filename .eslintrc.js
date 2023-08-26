@@ -6,6 +6,8 @@ module.exports = {
   extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:prettier/recommended'],
   overrides: [],
   parserOptions: {
+    project: './tsconfig.json',
+    // tsconfigRootDir: __dirname,
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
