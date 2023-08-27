@@ -3,7 +3,7 @@
 import React, { useContext } from 'react';
 
 import { ComponentBaseProps } from '../types/common';
-import ChevronDownIcon from '../icons/ChevronDownIcon';
+import ChevronDownIcon from '../internal/icons/ChevronDownIcon';
 import { AccordionPanelContext } from './AccordionPanel';
 
 export interface AccordionArrowIconProps
