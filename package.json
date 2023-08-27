@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "dev:docs":"nx dev docs",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "lint": "eslint packages --ext .ts,.tsx"
   },
