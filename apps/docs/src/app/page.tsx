@@ -1,5 +1,9 @@
 import Image from 'next/image';
 
+// import { InferGetStaticPropsType } from 'next';
+// page 컴포넌트 타입 지정시 props 타입으로 InferGetStaticPropsType 대해서 알아보자
+// function PostPage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {}
+
 export default function Home(): JSX.Element {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
