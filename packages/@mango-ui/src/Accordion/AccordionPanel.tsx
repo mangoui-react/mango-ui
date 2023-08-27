@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useCallback, useContext, useMemo, useRef } from 'react';
+import React, { useContext, useMemo } from 'react';
 
-import { ComponentBaseProps } from '@/headlessui/types/common';
+import { ComponentBaseProps } from '../types/common';
 
 import { AccordionContext, AccordionProps } from './Accordion';
 import useAccordion from './hooks/useAccordion';
@@ -84,5 +84,7 @@ const AccordionPanel = React.forwardRef<HTMLDivElement, AccordionPanelProps>((pr
     </AccordionPanelContext.Provider>
   );
 });
+
+AccordionPanel.displayName = 'Accordion.Panel';
 
 export default AccordionPanel;

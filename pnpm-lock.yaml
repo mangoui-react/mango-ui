@@ -55,6 +55,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      tslib:
+        specifier: ^2.6.2
+        version: 2.6.2
       typescript:
         specifier: ^5.1.3
         version: 5.1.3
@@ -100,9 +103,18 @@ importers:
 
   packages/@mango-ui:
     dependencies:
+      '@types/react':
+        specifier: ^17.0.0 || ^18.0.0
+        version: 18.2.21
       client-only:
         specifier: ^0.0.1
         version: 0.0.1
+      react:
+        specifier: ^17.0.0 || ^18.0.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^17.0.0 || ^18.0.0
+        version: 18.2.0(react@18.2.0)
 
 packages:
 

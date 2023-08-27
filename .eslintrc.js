@@ -13,6 +13,9 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks'],
   rules: {
+    '@typescript-eslint/consistent-type-imports': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+
     // react-hooks
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',

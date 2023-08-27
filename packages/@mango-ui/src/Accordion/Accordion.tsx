@@ -141,4 +141,6 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
   },
 );
 
+Accordion.displayName = 'Accordion';
+
 export default Accordion;

@@ -46,4 +46,6 @@ const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>(
   },
 );
 
+AccordionHeader.displayName = 'Accordion.Header';
+
 export default AccordionHeader;

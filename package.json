@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev:docs":"nx dev docs",
+    "dev:docs": "nx dev docs",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "lint": "eslint packages --ext .ts,.tsx"
   },
@@ -26,6 +26,7 @@
     "prettier": "^3.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "tslib": "^2.6.2",
     "typescript": "^5.1.3"
   }
 }

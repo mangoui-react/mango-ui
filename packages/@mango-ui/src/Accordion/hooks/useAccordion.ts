@@ -48,7 +48,7 @@ const useAccordion = ({
         setExpanded(event, newIndexs, newIds);
       } else {
         const newIndexs = [..._expandedIndex, index];
-        let newIds = _expandedId !== undefined ? _expandedId : undefined;
+        let newIds = _expandedId ?? undefined;
         if (id !== undefined) {
           if (newIds !== undefined) {
             newIds.push(id);

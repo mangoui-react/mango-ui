@@ -1,4 +1,4 @@
-import { useControlled } from '@/headlessui/utils';
+import useControlled from '../../internal/useControlled';
 
 const useExpandControlled = <T>(
   valueProp: T,
