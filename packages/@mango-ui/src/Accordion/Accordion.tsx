@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import React, { useCallback, useMemo } from 'react';
 
@@ -7,6 +7,11 @@ import { ComponentBaseProps } from '../types/common';
 import useDefaultExpanded from './hooks/useDefaultExpanded';
 import useExpandControlled from './hooks/useExpandControlled';
 import { ExpandedIdType, ExpandedIndexType } from './types';
+
+// import Panel from './AccordionPanel';
+// import Header from './AccordionHeader';
+// import Content from './AccordionContent';
+// import ArrowIcon from './AccordionArrowIcon';
 
 export interface AccordionProps
   extends ComponentBaseProps,
@@ -142,5 +147,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
 );
 
 Accordion.displayName = 'Accordion';
+
+// const Accordion = Object.assign(AccordionRoot, { Panel, Header, Content, ArrowIcon });
 
 export default Accordion;
