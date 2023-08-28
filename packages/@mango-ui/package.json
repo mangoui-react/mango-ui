@@ -4,7 +4,11 @@
   "private": false,
   "author": "ellae",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
+  "exports": {
+    ".": "./src"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
