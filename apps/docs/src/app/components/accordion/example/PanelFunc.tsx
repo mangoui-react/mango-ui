@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Accordion } from '@mango/ui';
+import { Accordion } from 'mango-headlessui';
 import ChevronDownIcon from '@/icons/ChevronDownIcon';
 
 const PanelFunc = (): JSX.Element => {
