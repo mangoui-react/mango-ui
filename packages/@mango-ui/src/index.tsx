@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 // import 'client-only';
 
 // export * from './styles';
@@ -18,8 +18,8 @@ export * from './Accordion';
 // export { default as Breadcrumb } from './Breadcrumb';
 // export * from './Breadcrumb';
 
-// export { default as Button } from './Button';
-// export * from './Button';
+export { default as Button } from './Button';
+export * from './Button';
 
 // export { default as Calendar } from './Calendar';
 // export * from './Calendar';
