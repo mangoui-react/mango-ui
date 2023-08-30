@@ -1,4 +1,4 @@
-'use client';
+'use client'; // TODO: 이거 없애고 @mango/ui 에서 해결하는 방법으로 수정해야 함
 
 import React from 'react';
 
