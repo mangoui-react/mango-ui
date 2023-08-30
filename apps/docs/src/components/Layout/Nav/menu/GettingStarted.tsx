@@ -15,7 +15,7 @@ export default function GettingStarted(): JSX.Element {
         Getting Started
       </li>
       {collapse && (
-        <div>
+        <div className="ml-5">
           <ul>
             <li>
               <Link href="/getting-started/installation">Installation</Link>

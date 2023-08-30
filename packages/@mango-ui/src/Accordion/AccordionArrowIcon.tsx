@@ -10,6 +10,7 @@ export interface AccordionArrowIconProps
   extends ComponentBaseProps,
     React.SVGProps<SVGSVGElement> {}
 
+// TODO: children 은 제공하지 않고 디폴트 아이콘만 제공하는 방식으로 할까?
 const AccordionArrowIcon = React.forwardRef<SVGSVGElement, AccordionArrowIconProps>(
   ({ style, children, ...rest }, ref) => {
     const { expanded } = useContext(AccordionPanelContext);

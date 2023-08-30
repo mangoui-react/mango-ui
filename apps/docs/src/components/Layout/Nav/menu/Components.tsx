@@ -15,7 +15,7 @@ export default function Components(): JSX.Element {
         Components
       </li>
       {collapse && (
-        <div>
+        <div className="ml-5">
           <ul>
             <li>
               <Link href="/components/avatar">Avatar</Link>
