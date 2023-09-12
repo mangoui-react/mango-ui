@@ -48,8 +48,11 @@ export * from './Button';
 // export { default as FileUpload } from './FileUpload';
 // export * from './FileUpload';
 
-// export { default as Input } from './Input';
-// export * from './Input';
+export { default as Input } from './Input';
+export * from './Input';
+
+export { default as Textarea } from './Textarea';
+export * from './Textarea';
 
 // export { default as List } from './List';
 // export * from './List';
