@@ -37,6 +37,18 @@ const config: Config = {
         background: {
           DEFAULT: 'var(--background-end)',
         },
+        info: {
+          DEFAULT: 'var(--info)',
+        },
+        success: {
+          DEFAULT: 'var(--success)',
+        },
+        warning: {
+          DEFAULT: 'var(--warning)',
+        },
+        error: {
+          DEFAULT: 'var(--error)',
+        },
       },
     },
   },

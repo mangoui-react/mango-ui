@@ -26,6 +26,12 @@ export default function Components(): JSX.Element {
             <li>
               <Link href="/components/accordion">Accordion</Link>
             </li>
+            <li>
+              <Link href="/components/input">Input</Link>
+            </li>
+            <li>
+              <Link href="/components/textarea">Textarea</Link>
+            </li>
           </ul>
         </div>
       )}

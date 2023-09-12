@@ -24,6 +24,11 @@
 
   --avatar-bg: #D9D9D9;
   --avatar-text: #FFFFFF;
+
+  --info: #208AFF;
+  --success: #32C768;
+  --warning: #F59E0B;
+  --error: #E23731;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,6 +54,11 @@
 
     --avatar-bg: #333333;
     --avatar-text: #FFFFFF;
+
+    --info: #208AFF;
+    --success: #32C768;
+    --warning: #F59E0B;
+    --error: #E23731;
   }
 }
 

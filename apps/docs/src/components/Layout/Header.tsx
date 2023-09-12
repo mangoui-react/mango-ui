@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const Header = (): JSX.Element => {
   return (
-    <header className="flex flex-col bg-inherit shadow-none box-border shrink-0 fixed top-0 right-0 left-auto text-inherit z-[1201] w-[calc(100%_-_260px)] border-b">
+    <header className="flex flex-col bg-background shadow-none box-border shrink-0 fixed top-0 right-0 left-auto text-inherit z-[1201] w-[calc(100%_-_260px)] border-b border-b-slate-600">
       <div className="relative flex items-center px-4 py-2 min-h-[60px]">
         <div className="w-full">
           <input />
