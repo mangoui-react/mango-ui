@@ -1,4 +1,4 @@
-import useControlled from '../../internal/useControlled';
+import { useControlled } from '../../hooks';
 
 const useExpandControlled = <T>(
   valueProp: T,

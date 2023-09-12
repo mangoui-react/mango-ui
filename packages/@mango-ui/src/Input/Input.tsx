@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-import useControlled from '../hooks/useControlled';
+import { useControlled } from '../hooks';
 import { ComponentBaseProps } from '../types/common';
 
 export interface InputProps
@@ -38,5 +38,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     );
   },
 );
+
+Input.displayName = 'Input';
 
 export default Input;

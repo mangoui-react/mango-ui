@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-import useControlled from '../hooks/useControlled';
+import { useControlled } from '../hooks';
 import { ComponentBaseProps } from '../types/common';
 
 export interface TextareaProps
@@ -42,5 +42,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     );
   },
 );
+
+Textarea.displayName = 'Textarea';
 
 export default Textarea;
