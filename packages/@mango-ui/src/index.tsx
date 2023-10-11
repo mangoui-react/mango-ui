@@ -51,6 +51,9 @@ export * from './Button';
 export { default as Input } from './Input';
 export * from './Input';
 
+export { default as NumberInput } from './NumberInput';
+export * from './NumberInput';
+
 export { default as Textarea } from './Textarea';
 export * from './Textarea';
 
