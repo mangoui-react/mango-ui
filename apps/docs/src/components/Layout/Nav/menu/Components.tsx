@@ -32,6 +32,9 @@ export default function Components(): JSX.Element {
             <li>
               <Link href="/components/textarea">Textarea</Link>
             </li>
+            <li>
+              <Link href="/components/number-input">NumberInput</Link>
+            </li>
           </ul>
         </div>
       )}
