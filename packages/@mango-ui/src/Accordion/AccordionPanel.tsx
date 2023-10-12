@@ -6,6 +6,7 @@ import { ComponentBaseProps } from '../types/common';
 
 import { AccordionContext, AccordionProps } from './Accordion';
 import useAccordion from './hooks/useAccordion';
+import getState from './helpers/getState';
 
 export interface AccordionPanelProps
   extends Omit<ComponentBaseProps, 'children'>,
@@ -73,7 +74,7 @@ const AccordionPanel = React.forwardRef<HTMLDivElement, AccordionPanelProps>((pr
 
   return (
     <AccordionPanelContext.Provider value={contextValue}>
-      <div ref={ref} {...rest}>
+      <div ref={ref} data-state={getState(expanded)} {...rest}>
         {React.Children.map(children, (child) => {
           if (React.isValidElement(child)) {
             return React.cloneElement(child as React.ReactElement);

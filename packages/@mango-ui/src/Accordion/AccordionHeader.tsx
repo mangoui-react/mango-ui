@@ -4,9 +4,10 @@ import React, { useCallback, useContext } from 'react';
 
 import { ComponentBaseProps } from '../types/common';
 
-import useAccordion from './hooks/useAccordion';
 import { AccordionContext } from './Accordion';
 import { AccordionPanelContext } from './AccordionPanel';
+import useAccordion from './hooks/useAccordion';
+import getState from './helpers/getState';
 
 export interface AccordionHeaderProps
   extends ComponentBaseProps,
@@ -17,7 +18,7 @@ const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>(
     const { expandedIndex, expandedId, setExpanded, toggle, multiple } =
       useContext(AccordionContext);
 
-    const { index, id, disabled } = useContext(AccordionPanelContext);
+    const { index, id, expanded, disabled } = useContext(AccordionPanelContext);
 
     const { onHeaderClick } = useAccordion({
       index,
@@ -39,7 +40,7 @@ const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>(
     );
 
     return (
-      <div ref={ref} onClick={handleClick} {...rest}>
+      <div ref={ref} data-state={getState(expanded)} onClick={handleClick} {...rest}>
         {children}
       </div>
     );
