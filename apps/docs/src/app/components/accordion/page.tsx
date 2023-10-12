@@ -42,6 +42,41 @@ export default function AccordionPage(): JSX.Element {
       <div>
         <PanelFunc />
       </div>
+
+      <div>
+        <div>custom animation</div>
+        <Accordion className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
+          <Accordion.Panel className="border-b border-b-border">
+            <Accordion.Header className="flex py-3 px-4 cursor-pointer">
+              <span className="flex-1 text-left">Panel Header1</span>
+              <Accordion.ArrowIcon />
+            </Accordion.Header>
+            <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
+              Content1
+            </Accordion.Content>
+          </Accordion.Panel>
+
+          <Accordion.Panel className="border-b border-b-border">
+            <Accordion.Header className="flex py-3 px-4 cursor-pointer">
+              <span className="flex-1 text-left">Panel Header2</span>
+              <Accordion.ArrowIcon />
+            </Accordion.Header>
+            <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
+              Content2
+            </Accordion.Content>
+          </Accordion.Panel>
+
+          <Accordion.Panel className="border-b border-b-border">
+            <Accordion.Header className="flex py-3 px-4 cursor-pointer">
+              <span className="flex-1 text-left">Panel Header3</span>
+              <Accordion.ArrowIcon />
+            </Accordion.Header>
+            <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
+              Content3
+            </Accordion.Content>
+          </Accordion.Panel>
+        </Accordion>
+      </div>
     </div>
   );
 }

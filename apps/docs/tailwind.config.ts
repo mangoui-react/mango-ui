@@ -50,6 +50,33 @@ const config: Config = {
           DEFAULT: 'var(--error)',
         },
       },
+      keyframes: {
+        // wiggle: {
+        //   '0%, 100%': { transform: 'rotate(-3deg)' },
+        //   '50%': { transform: 'rotate(3deg)' },
+        // },
+        'collapse-open': {
+          '0%': {
+            height: '0px',
+          },
+          '100%': {
+            height: 'auto',
+          },
+        },
+        'collapse-closed': {
+          '0%': {
+            height: 'auto',
+          },
+          '100%': {
+            height: '0px',
+          },
+        },
+      },
+      animation: {
+        // wiggle: 'wiggle 1s ease-in-out infinite',
+        'collapse-open': 'collapse-open 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        'collapse-closed': 'collapse-closed 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+      },
     },
   },
   plugins: [],
