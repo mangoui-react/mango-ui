@@ -6,6 +6,8 @@ import React from 'react';
 // tsconfig 파일은 각각의 프로젝트별로 독립적으로 관리되어야 한다.
 import { Accordion } from 'mango-headlessui';
 
+import ChevronDownIcon from '@/icons/ChevronDownIcon';
+
 import PanelFunc from './example/PanelFunc';
 
 export default function AccordionPage(): JSX.Element {
@@ -49,7 +51,8 @@ export default function AccordionPage(): JSX.Element {
           <Accordion.Panel className="border-b border-b-border">
             <Accordion.Header className="flex py-3 px-4 cursor-pointer">
               <span className="flex-1 text-left">Panel Header1</span>
-              <Accordion.ArrowIcon />
+              {/* <Accordion.ArrowIcon /> */}
+              <ChevronDownIcon className="h-5 w-5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </Accordion.Header>
             <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
               Content1
