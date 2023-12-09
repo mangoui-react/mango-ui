@@ -14,5 +14,10 @@
         "accessToken": "MzFmZjcwZGEtYjAyZi00NTdjLWE0MDAtYmJiNmZhOTRhMzJifHJlYWQtd3JpdGU="
       }
     }
-  }
+  },
+  "targetDefaults": {},
+  "affected": {
+    "defaultBase": "main"
+  },
+  "nxCloudAccessToken": "YTk5MTdiODMtZGJmNi00MzcyLWFhMWYtN2U0MjBhMjZiNmM4fHJlYWQtd3JpdGU="
 }
