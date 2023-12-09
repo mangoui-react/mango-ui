@@ -40,3 +40,6 @@ Thumbs.db
 
 # publish
 build
+
+
+.nx/cache
