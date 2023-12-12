@@ -18,39 +18,39 @@ export interface AccordionHeaderProps
  *
  * @author 안형노 <elle0510@gmail.com>
  */
-const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>(
-  ({ children, onClick, ...rest }, ref) => {
-    const { expandedIndex, expandedValue, setExpanded, toggle, multiple } =
-      useContext(AccordionContext);
+const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>((props, ref) => {
+  const { children, onClick, ...rest } = props;
 
-    const { index, value, expanded, disabled } = useContext(AccordionItemContext);
+  const { expandedIndex, expandedValue, setExpanded, toggle, multiple } =
+    useContext(AccordionContext);
 
-    const { onHeaderClick } = useAccordion({
-      index,
-      value,
-      expandedIndex,
-      expandedValue,
-      setExpanded,
-      toggle,
-      multiple,
-      disabled,
-    });
+  const { index, value, expanded, disabled } = useContext(AccordionItemContext);
 
-    const handleClick = useCallback(
-      (event: React.MouseEvent<HTMLDivElement>) => {
-        onHeaderClick(event);
-        onClick?.(event);
-      },
-      [onClick, onHeaderClick],
-    );
+  const { onHeaderClick } = useAccordion({
+    index,
+    value,
+    expandedIndex,
+    expandedValue,
+    setExpanded,
+    toggle,
+    multiple,
+    disabled,
+  });
 
-    return (
-      <div ref={ref} data-state={getState(expanded)} onClick={handleClick} {...rest}>
-        {children}
-      </div>
-    );
-  },
-);
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLDivElement>) => {
+      onHeaderClick(event);
+      onClick?.(event);
+    },
+    [onClick, onHeaderClick],
+  );
+
+  return (
+    <div ref={ref} data-state={getState(expanded)} onClick={handleClick} {...rest}>
+      {children}
+    </div>
+  );
+});
 
 AccordionHeader.displayName = 'Accordion.Header';
 

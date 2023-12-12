@@ -17,7 +17,9 @@ export interface AccordionArrowIconProps
  */
 // TODO: children 은 제공하지 않고 디폴트 아이콘만 제공하는 방식으로 할까? or asChild 같은 속성을 이용할까?
 const AccordionArrowIcon = React.forwardRef<SVGSVGElement, AccordionArrowIconProps>(
-  ({ style, children, ...rest }, ref) => {
+  (props, ref) => {
+    const { style, children, ...rest } = props;
+
     const { expanded } = useContext(AccordionItemContext);
 
     return React.cloneElement<AccordionArrowIconProps>(
