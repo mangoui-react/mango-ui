@@ -7,19 +7,21 @@
 // export { default as AccordionArrowIcon } from './AccordionArrowIcon';
 
 import AccordionRoot from './Accordion';
-import Panel from './AccordionPanel';
+import Item from './AccordionItem';
 import Header from './AccordionHeader';
+import Title from './AccordionTitle';
 import Content from './AccordionContent';
 import ArrowIcon from './AccordionArrowIcon';
 
 export * from './Accordion';
-export * from './AccordionPanel';
+export * from './AccordionItem';
 export * from './AccordionHeader';
+export * from './AccordionTitle';
 export * from './AccordionContent';
 export * from './AccordionArrowIcon';
-export type { ExpandedIndexType, ExpandedIdType } from './types';
+export type { ExpandedIndexType, ExpandedValueType } from './types';
 
 // TODO: Accordion.Panel 방식 더 찾아보자
-const Accordion = Object.assign(AccordionRoot, { Panel, Header, Content, ArrowIcon });
+const Accordion = Object.assign(AccordionRoot, { Item, Header, Title, Content, ArrowIcon });
 
 export default Accordion;

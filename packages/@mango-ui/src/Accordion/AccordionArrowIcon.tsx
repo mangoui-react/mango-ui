@@ -4,16 +4,21 @@ import React, { useContext } from 'react';
 
 import { ComponentBaseProps } from '../types/common';
 import ChevronDownIcon from '../internal/icons/ChevronDownIcon';
-import { AccordionPanelContext } from './AccordionPanel';
+import { AccordionItemContext } from './AccordionItem';
 
 export interface AccordionArrowIconProps
   extends ComponentBaseProps,
     React.SVGProps<SVGSVGElement> {}
 
-// TODO: children 은 제공하지 않고 디폴트 아이콘만 제공하는 방식으로 할까?
+/**
+ * 아코디언 화살 아이콘 컴포넌트
+ *
+ * @author 안형노 <elle0510@gmail.com>
+ */
+// TODO: children 은 제공하지 않고 디폴트 아이콘만 제공하는 방식으로 할까? or asChild 같은 속성을 이용할까?
 const AccordionArrowIcon = React.forwardRef<SVGSVGElement, AccordionArrowIconProps>(
   ({ style, children, ...rest }, ref) => {
-    const { expanded } = useContext(AccordionPanelContext);
+    const { expanded } = useContext(AccordionItemContext);
 
     return React.cloneElement<AccordionArrowIconProps>(
       (children ?? <ChevronDownIcon />) as React.ReactElement<AccordionArrowIconProps>,

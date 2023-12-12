@@ -1,14 +1,18 @@
 import React, { useCallback } from 'react';
 
-import { ExpandedIdType, ExpandedIndexType } from '../types';
+import { ExpandedIndexType, ExpandedValueType } from '../types';
 import useExpanded from './useExpanded';
 
 interface UseAccordionType {
   index: number;
-  id?: string;
+  value?: string;
   expandedIndex?: ExpandedIndexType;
-  expandedId?: ExpandedIdType;
-  setExpanded: (event: React.MouseEvent, index?: ExpandedIndexType, id?: ExpandedIdType) => void;
+  expandedValue?: ExpandedValueType;
+  setExpanded: (
+    event: React.MouseEvent,
+    index: ExpandedIndexType,
+    value?: ExpandedValueType,
+  ) => void;
   toggle?: boolean;
   multiple?: boolean;
   disabled?: boolean;
@@ -16,51 +20,47 @@ interface UseAccordionType {
 
 const useAccordion = ({
   index,
-  id,
+  value,
   expandedIndex,
-  expandedId,
+  expandedValue,
   setExpanded,
   toggle,
   multiple,
   disabled,
 }: UseAccordionType): { expanded: boolean; onHeaderClick: (event: React.MouseEvent) => void } => {
-  const expanded: boolean = useExpanded({ index, id, expandedIndex, expandedId });
+  const expanded: boolean = useExpanded({ index, value, expandedIndex, expandedValue });
 
   const toggleExpand = useCallback(
     (event: React.MouseEvent) => {
       if (expanded) {
-        setExpanded(event, undefined, undefined);
+        setExpanded(event, null, null);
       } else {
-        setExpanded(event, index, id);
+        setExpanded(event, index, value);
       }
     },
-    [expanded, id, index, setExpanded],
+    [expanded, value, index, setExpanded],
   );
 
   const multipleExpand = useCallback(
     (event: React.MouseEvent) => {
       const _expandedIndex = Array.isArray(expandedIndex) ? expandedIndex : [];
-      const _expandedId = Array.isArray(expandedId) ? expandedId : undefined;
+      const _expandedValue = Array.isArray(expandedValue) ? expandedValue : [];
 
       if (expanded) {
         const newIndexs = _expandedIndex.filter((_index) => _index !== index);
-        const newIds = _expandedId?.filter((_id) => _id !== id);
-        setExpanded(event, newIndexs, newIds);
+        const newValues = _expandedValue.filter((_value) => _value !== value);
+        setExpanded(event, newIndexs, newValues);
       } else {
         const newIndexs = [..._expandedIndex, index];
-        let newIds = _expandedId ?? undefined;
-        if (id !== undefined) {
-          if (newIds !== undefined) {
-            newIds.push(id);
-          } else {
-            newIds = [id];
-          }
+        const newValues = [..._expandedValue];
+        if (value !== undefined) {
+          newValues.push(value);
         }
 
-        setExpanded(event, newIndexs, newIds);
+        setExpanded(event, newIndexs, newValues);
       }
     },
-    [expanded, expandedId, expandedIndex, id, index, setExpanded],
+    [expandedIndex, expandedValue, expanded, setExpanded, index, value],
   );
 
   const onHeaderClick = useCallback(
@@ -72,10 +72,10 @@ const useAccordion = ({
       } else if (toggle) {
         toggleExpand(event);
       } else {
-        setExpanded(event, index, id);
+        setExpanded(event, index, value);
       }
     },
-    [disabled, id, index, multiple, multipleExpand, setExpanded, toggle, toggleExpand],
+    [disabled, value, index, multiple, multipleExpand, setExpanded, toggle, toggleExpand],
   );
 
   return { expanded, onHeaderClick };

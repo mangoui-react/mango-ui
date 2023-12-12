@@ -5,26 +5,31 @@ import React, { useCallback, useContext } from 'react';
 import { ComponentBaseProps } from '../types/common';
 
 import { AccordionContext } from './Accordion';
-import { AccordionPanelContext } from './AccordionPanel';
-import useAccordion from './hooks/useAccordion';
+import { AccordionItemContext } from './AccordionItem';
 import getState from './helpers/getState';
+import useAccordion from './hooks/useAccordion';
 
 export interface AccordionHeaderProps
   extends ComponentBaseProps,
     React.HTMLAttributes<HTMLDivElement> {}
 
+/**
+ * 아코디언 헤더 컴포넌트
+ *
+ * @author 안형노 <elle0510@gmail.com>
+ */
 const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>(
   ({ children, onClick, ...rest }, ref) => {
-    const { expandedIndex, expandedId, setExpanded, toggle, multiple } =
+    const { expandedIndex, expandedValue, setExpanded, toggle, multiple } =
       useContext(AccordionContext);
 
-    const { index, id, expanded, disabled } = useContext(AccordionPanelContext);
+    const { index, value, expanded, disabled } = useContext(AccordionItemContext);
 
     const { onHeaderClick } = useAccordion({
       index,
-      id,
+      value,
       expandedIndex,
-      expandedId,
+      expandedValue,
       setExpanded,
       toggle,
       multiple,

@@ -6,24 +6,15 @@ import { ComponentBaseProps } from '../types/common';
 
 import useDefaultExpanded from './hooks/useDefaultExpanded';
 import useExpandControlled from './hooks/useExpandControlled';
-import { ExpandedIdType, ExpandedIndexType } from './types';
-
-// import Panel from './AccordionPanel';
-// import Header from './AccordionHeader';
-// import Content from './AccordionContent';
-// import ArrowIcon from './AccordionArrowIcon';
+import { ExpandedIndexType, ExpandedValueType } from './types';
 
 export interface AccordionProps
   extends ComponentBaseProps,
-    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'onSelect'> {
-  /** 선택된 accordion index */
-  expandedIndex?: ExpandedIndexType;
-  /** 초기선택 accordion index */
-  defaultExpandedIndex?: ExpandedIndexType;
-  /** 선택된 accordion id */
-  defaultExpandedId?: ExpandedIdType;
-  /** 초기선택 accordion id */
-  expandedId?: ExpandedIdType;
+    Omit<React.HTMLAttributes<HTMLDivElement>, 'defaultValue'> {
+  /** 초기선택 accordion value */
+  defaultValue?: ExpandedValueType;
+  /** 선택된 accordion value */
+  value?: ExpandedValueType;
   /** panel open/close toggle */
   toggle?: boolean;
   /** panel open multiple */
@@ -31,111 +22,114 @@ export interface AccordionProps
   /** accordion disabled */
   disabled?: boolean;
   /**
-   * AccordionPanel rendering 방법
-   * selecting: 현재 선택된 AccordionPanel 만 Rendering
-   * selected: 선택된 적이 있는 AccordionPanel Rendering
-   * force: 모든 AccordionPanel Rendering
-   * @default 'selected'
+   * AccordionItem rendering 방법
+   * selecting: 현재 선택된 AccordionItem 만 Rendering
+   * selected: 선택된 적이 있는 AccordionItem Rendering
+   * force: 모든 AccordionItem Rendering
+   * @default 'force'
    */
   renderMode?: 'selecting' | 'selected' | 'force';
-  /** accordion 선택 change 시 발생 */
-  onChange?: (event: React.MouseEvent, index?: ExpandedIndexType, id?: ExpandedIdType) => void;
-  /** accordion 선택시 발생 */
-  onSelect?: (event: React.MouseEvent, index?: ExpandedIndexType, id?: ExpandedIdType) => void;
+  /** accordion 선택 value change 시 발생 */
+  onValueChange?: (value: ExpandedValueType) => void;
 }
 
-export interface AccordionContextType
-  extends Pick<
-    AccordionProps,
-    'expandedIndex' | 'expandedId' | 'toggle' | 'multiple' | 'disabled' | 'renderMode'
-  > {
-  setExpanded: (event: React.MouseEvent, index?: ExpandedIndexType, id?: ExpandedIdType) => void;
+export interface AccordionContextValue
+  extends Pick<AccordionProps, 'toggle' | 'multiple' | 'disabled' | 'renderMode'> {
+  expandedIndex?: ExpandedIndexType;
+  expandedValue?: ExpandedValueType;
+  setExpanded: (
+    event: React.MouseEvent,
+    index: ExpandedIndexType,
+    value?: ExpandedValueType,
+  ) => void;
 }
-export const AccordionContext = React.createContext<AccordionContextType>({
+export const AccordionContext = React.createContext<AccordionContextValue>({
   expandedIndex: 0,
   setExpanded: () => {},
 });
 
+/**
+ * 아코디언 컴포넌트
+ *
+ * @author 안형노 <elle0510@gmail.com>
+ */
 const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
   (
     {
-      defaultExpandedIndex: defaultExpandedIndexProp,
-      expandedIndex: expandedIndexProp,
-      defaultExpandedId: defaultExpandedIdProp,
-      expandedId: expandedIdProp,
+      defaultValue: defaultValueProp,
+      value: valueProp,
       children,
       toggle,
       multiple,
       disabled,
-      renderMode = 'selected',
-      onChange,
-      onSelect,
+      renderMode = 'force',
+      onValueChange,
       ...rest
     },
     ref,
   ) => {
+    /**
+     * expandedIndex 와 AccordionItem 의 index 는 내부적으로 expand 동작을 위해 사용
+     * value 가 prop 으로 설정 되었다면 value 가 expand 동작을 위해 사용됨
+     */
     // multiple 일 경우 defaultExpandedIndex 값이 없으면 빈 배열 설정, 배열이 아닌 값이면 예외 발생
     // const defaultExpandedIndex =
     //   multiple && !defaultExpandedIndexProp ? [] : defaultExpandedIndexProp;
     const defaultExpandedIndex = useDefaultExpanded<ExpandedIndexType | undefined>(
-      defaultExpandedIndexProp,
+      undefined, // defaultExpandedIndexProp,
       multiple,
     );
 
     // expandedIndex 가 prop으로 넘어오면 expandedIndex 로 설정
     // expandedIndex 가 prop으로 넘어오지 않는다면 내부 useState 로 설정
     const [expandedIndex, setExpandedIndex] = useExpandControlled<ExpandedIndexType | undefined>(
-      expandedIndexProp,
+      undefined, // expandedIndexProp,
       defaultExpandedIndex,
       multiple,
     );
 
-    // multiple 일 경우 defaultExpandedId 값이 없으면 빈 배열 설정, 배열이 아닌 값이면 예외 발생
-    const defaultExpandedId = useDefaultExpanded<ExpandedIdType | undefined>(
-      defaultExpandedIdProp,
+    // multiple 일 경우 defaultValue 값이 없으면 빈 배열 설정, 배열이 아닌 값이면 예외 발생
+    const defaultValue = useDefaultExpanded<ExpandedValueType | undefined>(
+      defaultValueProp,
       multiple,
     );
 
-    // expandedId 값이 있을 경우 expandedIndex 가 아닌 expandedId 로 선택된 panel을 판단한다.
-    // AccordionPanel 에 id 설정 - 내부 useState 로 expandedId 설정
-    // AccordionPanel 에 id 설정 and prop으로 expandedId 넘어오면 prop expandedId 로 설정
-    const [expandedId, setExpandedId] = useExpandControlled<ExpandedIdType | undefined>(
-      expandedIdProp,
-      defaultExpandedId,
+    // value 값이 있을 경우 expandedIndex 가 아닌 value 로 선택된 panel을 판단한다.
+    // AccordionItem 에 value 설정 - 내부 useState 로 value 설정
+    // AccordionItem 에 value 설정 and prop으로 value 넘어오면 prop value 로 설정
+    const [expandedValue, setExpandedValue] = useExpandControlled<ExpandedValueType | undefined>(
+      valueProp,
+      defaultValue,
       multiple,
     );
 
     const setExpanded = useCallback(
-      (event: React.MouseEvent, index?: ExpandedIndexType, id?: ExpandedIdType) => {
+      (event: React.MouseEvent, index: ExpandedIndexType, value?: ExpandedValueType) => {
         setExpandedIndex(index);
-        setExpandedId(id);
+        setExpandedValue(value);
 
-        onSelect?.(event, index, id);
-        if (id && id !== expandedId) {
-          onChange?.(event, index, id);
-        } else if (index !== expandedIndex) {
-          onChange?.(event, index, id);
+        if (value !== undefined && value !== expandedValue) {
+          onValueChange?.(value);
         }
       },
-      [expandedId, expandedIndex, onChange, onSelect, setExpandedId, setExpandedIndex],
+      [expandedValue, onValueChange, setExpandedIndex, setExpandedValue],
     );
 
     const contextValue = useMemo(
-      () => ({ expandedIndex, expandedId, setExpanded, toggle, multiple, disabled, renderMode }),
-      [disabled, expandedId, expandedIndex, multiple, renderMode, setExpanded, toggle],
+      () => ({ expandedIndex, expandedValue, setExpanded, toggle, multiple, disabled, renderMode }),
+      [expandedIndex, expandedValue, setExpanded, toggle, multiple, disabled, renderMode],
     );
 
-    let panelIndex = -1;
+    let itemIndex = -1;
 
     return (
       <AccordionContext.Provider value={contextValue}>
         <div ref={ref} {...rest}>
           {React.Children.map(children, (child) => {
             if (React.isValidElement(child)) {
-              panelIndex++;
+              itemIndex++;
               return React.cloneElement(child as React.ReactElement, {
-                index: child.props.index ?? panelIndex,
-                // disabled: child.props.disabled ?? disabled,
+                index: itemIndex,
               });
             }
             return child;

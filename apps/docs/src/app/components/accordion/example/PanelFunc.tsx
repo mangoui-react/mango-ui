@@ -10,7 +10,7 @@ const PanelFunc = (): JSX.Element => {
     <>
       <div>children 이 함수</div>
       <Accordion className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
-        <Accordion.Panel className="border-b border-b-border">
+        <Accordion.Item className="border-b border-b-border">
           {(expanded: boolean) => (
             <>
               <Accordion.Header className="flex py-3 px-4 cursor-pointer">
@@ -22,9 +22,9 @@ const PanelFunc = (): JSX.Element => {
               </Accordion.Content>
             </>
           )}
-        </Accordion.Panel>
+        </Accordion.Item>
 
-        <Accordion.Panel className="border-b border-b-border">
+        <Accordion.Item className="border-b border-b-border">
           {(expanded: boolean) => (
             <>
               <Accordion.Header className="flex py-3 px-4 cursor-pointer">
@@ -36,9 +36,9 @@ const PanelFunc = (): JSX.Element => {
               </Accordion.Content>
             </>
           )}
-        </Accordion.Panel>
+        </Accordion.Item>
 
-        <Accordion.Panel className="border-b border-b-border">
+        <Accordion.Item className="border-b border-b-border">
           {(expanded: boolean) => (
             <>
               <Accordion.Header className="flex py-3 px-4 cursor-pointer">
@@ -50,7 +50,7 @@ const PanelFunc = (): JSX.Element => {
               </Accordion.Content>
             </>
           )}
-        </Accordion.Panel>
+        </Accordion.Item>
       </Accordion>
     </>
   );

@@ -15,29 +15,30 @@ export default function AccordionPage(): JSX.Element {
     <div className="flex flex-col gap-2">
       <div>
         <Accordion className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
-          <Accordion.Panel className="border-b border-b-border">
+          <Accordion.Item className="border-b border-b-border">
             <Accordion.Header className="flex py-3 px-4 cursor-pointer">
               <span className="flex-1 text-left">Panel Header1</span>
+              {/* <AccordionTitle className="flex-1 text-left">Panel Header1</AccordionTitle> */}
               <Accordion.ArrowIcon />
             </Accordion.Header>
             <Accordion.Content className="border-t border-t-border p-4">Content1</Accordion.Content>
-          </Accordion.Panel>
+          </Accordion.Item>
 
-          <Accordion.Panel className="border-b border-b-border">
+          <Accordion.Item className="border-b border-b-border">
             <Accordion.Header className="flex py-3 px-4 cursor-pointer">
               <span className="flex-1 text-left">Panel Header2</span>
               <Accordion.ArrowIcon />
             </Accordion.Header>
             <Accordion.Content className="border-t border-t-border p-4">Content2</Accordion.Content>
-          </Accordion.Panel>
+          </Accordion.Item>
 
-          <Accordion.Panel className="border-b border-b-border">
+          <Accordion.Item className="border-b border-b-border">
             <Accordion.Header className="flex py-3 px-4 cursor-pointer">
               <span className="flex-1 text-left">Panel Header3</span>
               <Accordion.ArrowIcon />
             </Accordion.Header>
             <Accordion.Content className="border-t border-t-border p-4">Content3</Accordion.Content>
-          </Accordion.Panel>
+          </Accordion.Item>
         </Accordion>
       </div>
 
@@ -48,7 +49,7 @@ export default function AccordionPage(): JSX.Element {
       <div>
         <div>custom animation</div>
         <Accordion className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
-          <Accordion.Panel className="border-b border-b-border">
+          <Accordion.Item className="border-b border-b-border">
             <Accordion.Header className="flex py-3 px-4 cursor-pointer">
               <span className="flex-1 text-left">Panel Header1</span>
               {/* <Accordion.ArrowIcon /> */}
@@ -57,9 +58,9 @@ export default function AccordionPage(): JSX.Element {
             <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
               Content1
             </Accordion.Content>
-          </Accordion.Panel>
+          </Accordion.Item>
 
-          <Accordion.Panel className="border-b border-b-border">
+          <Accordion.Item className="border-b border-b-border">
             <Accordion.Header className="flex py-3 px-4 cursor-pointer">
               <span className="flex-1 text-left">Panel Header2</span>
               <Accordion.ArrowIcon />
@@ -67,9 +68,9 @@ export default function AccordionPage(): JSX.Element {
             <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
               Content2
             </Accordion.Content>
-          </Accordion.Panel>
+          </Accordion.Item>
 
-          <Accordion.Panel className="border-b border-b-border">
+          <Accordion.Item className="border-b border-b-border">
             <Accordion.Header className="flex py-3 px-4 cursor-pointer">
               <span className="flex-1 text-left">Panel Header3</span>
               <Accordion.ArrowIcon />
@@ -77,7 +78,7 @@ export default function AccordionPage(): JSX.Element {
             <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
               Content3
             </Accordion.Content>
-          </Accordion.Panel>
+          </Accordion.Item>
         </Accordion>
       </div>
     </div>

@@ -5,87 +5,88 @@ import React, { useContext, useMemo } from 'react';
 import { ComponentBaseProps } from '../types/common';
 
 import { AccordionContext, AccordionProps } from './Accordion';
-import useAccordion from './hooks/useAccordion';
 import getState from './helpers/getState';
+import useAccordion from './hooks/useAccordion';
 
-export interface AccordionPanelProps
+export interface AccordionItemProps
   extends Omit<ComponentBaseProps, 'children'>,
     Pick<AccordionProps, 'renderMode'>,
     Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {
   index?: number;
-  id?: string;
+  value?: string;
   /** accordion disabled */
   disabled?: boolean;
   children: ComponentBaseProps['children'] | ((expanded: boolean) => React.ReactNode);
 }
 
-export interface AccordionPanelContextType extends Pick<AccordionProps, 'disabled' | 'renderMode'> {
+export interface AccordionItemContextValue extends Pick<AccordionProps, 'disabled' | 'renderMode'> {
   index: number;
-  id?: string;
+  value?: string;
   expanded: boolean;
 }
-export const AccordionPanelContext = React.createContext<AccordionPanelContextType>({
+export const AccordionItemContext = React.createContext<AccordionItemContextValue>({
   index: 0,
   expanded: false,
   renderMode: 'selected',
 });
 
-const AccordionPanel = React.forwardRef<HTMLDivElement, AccordionPanelProps>((props, ref) => {
+/**
+ * 아코디언 아이템 컴포넌트
+ *
+ * @author 안형노 <elle0510@gmail.com>
+ */
+const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>((props, ref) => {
   const {
     expandedIndex,
-    expandedId,
+    expandedValue,
     setExpanded,
     toggle,
     multiple,
-    disabled: disabledContext,
-    renderMode: renderModeContext,
+    disabled: disabledCtx,
+    renderMode: renderModeCtx,
   } = useContext(AccordionContext);
 
   const {
+    className,
     index = 0,
-    id,
-    title,
-    disabled = disabledContext,
-    renderMode = renderModeContext,
+    value,
+    disabled = disabledCtx,
+    renderMode = renderModeCtx,
     children: childrenProp,
     ...rest
   } = props;
 
+  // console.log('AccordionItem expandedIndex', expandedIndex);
   const { expanded } = useAccordion({
     index,
-    id,
+    value,
     expandedIndex,
-    expandedId,
+    expandedValue,
     setExpanded,
     toggle,
     multiple,
     disabled,
   });
 
-  const contextValue = useMemo(
-    () => ({ index, id, expanded, disabled, renderMode }),
-    [disabled, expanded, id, index, renderMode],
-  );
-
   const children = useMemo(
     () => (typeof childrenProp === 'function' ? childrenProp(expanded) : childrenProp),
     [childrenProp, expanded],
   );
 
+  const contextValue = useMemo(
+    () => ({ index, value, expanded, disabled, renderMode }),
+    [disabled, expanded, value, index, renderMode],
+  );
+
   return (
-    <AccordionPanelContext.Provider value={contextValue}>
+    <AccordionItemContext.Provider value={contextValue}>
       <div ref={ref} data-state={getState(expanded)} {...rest}>
-        {React.Children.map(children, (child) => {
-          if (React.isValidElement(child)) {
-            return React.cloneElement(child as React.ReactElement);
-          }
-          return child;
-        })}
+        {children}
       </div>
-    </AccordionPanelContext.Provider>
+    </AccordionItemContext.Provider>
   );
 });
 
-AccordionPanel.displayName = 'Accordion.Panel';
+AccordionItem.displayName = 'Accordion.Item';
 
-export default AccordionPanel;
+export default AccordionItem;

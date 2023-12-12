@@ -1,18 +1,18 @@
-import { ExpandedIdType, ExpandedIndexType } from '../types';
+import { ExpandedIndexType, ExpandedValueType } from '../types';
 
 interface UseExpandedType {
   index: ExpandedIndexType;
-  id?: ExpandedIdType;
+  value?: ExpandedValueType;
   expandedIndex?: ExpandedIndexType;
-  expandedId?: ExpandedIdType;
+  expandedValue?: ExpandedValueType;
 }
 
-const useExpanded = ({ index, id, expandedIndex, expandedId }: UseExpandedType): boolean => {
-  if (id !== undefined) {
-    if (Array.isArray(expandedId)) {
-      return expandedId.some((_id) => id === _id);
+const useExpanded = ({ index, value, expandedIndex, expandedValue }: UseExpandedType): boolean => {
+  if (value !== undefined) {
+    if (Array.isArray(expandedValue)) {
+      return expandedValue.some((_value) => value === _value);
     }
-    return id === expandedId;
+    return value === expandedValue;
   }
 
   if (Array.isArray(expandedIndex)) {
