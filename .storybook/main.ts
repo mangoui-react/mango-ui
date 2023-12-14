@@ -1,4 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import { mergeConfig } from 'vite';
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 const config: StorybookConfig = {
   stories: [
@@ -12,6 +14,14 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
   ],
+  // core: {
+  //   builder: {
+  //     name: '@storybook/builder-vite',
+  //     options: {
+  //       viteConfigPath: './vite.config.ts',
+  //     },
+  //   },
+  // },
   framework: {
     name: '@storybook/react-vite',
     options: {},
@@ -19,5 +29,11 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  viteFinal: async (config) => {
+    return mergeConfig(config, {
+      plugins: [vanillaExtractPlugin()],
+    });
+  },
 };
+
 export default config;
