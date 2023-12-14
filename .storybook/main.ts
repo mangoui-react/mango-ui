@@ -14,14 +14,6 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
   ],
-  // core: {
-  //   builder: {
-  //     name: '@storybook/builder-vite',
-  //     options: {
-  //       viteConfigPath: './vite.config.ts',
-  //     },
-  //   },
-  // },
   framework: {
     name: '@storybook/react-vite',
     options: {},
