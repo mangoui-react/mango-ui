@@ -1,6 +1,6 @@
 // 'use client';
 
-import React, { useCallback, useMemo } from 'react';
+import React from 'react';
 
 import { ComponentBaseProps } from '../types/common';
 
@@ -101,7 +101,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>((props, ref) 
     multiple,
   );
 
-  const setExpanded = useCallback(
+  const setExpanded = React.useCallback(
     (event: React.MouseEvent, index: ExpandedIndexType, value?: ExpandedValueType) => {
       setExpandedIndex(index);
       setExpandedValue(value);
@@ -113,7 +113,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>((props, ref) 
     [expandedValue, onValueChange, setExpandedIndex, setExpandedValue],
   );
 
-  const contextValue = useMemo(
+  const contextValue = React.useMemo(
     () => ({ expandedIndex, expandedValue, setExpanded, toggle, multiple, disabled, renderMode }),
     [expandedIndex, expandedValue, setExpanded, toggle, multiple, disabled, renderMode],
   );

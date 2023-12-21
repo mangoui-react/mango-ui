@@ -1,6 +1,6 @@
 // 'use client';
 
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { ComponentBaseProps } from '../types/common';
 
@@ -22,9 +22,9 @@ const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>((
   const { children, onClick, ...rest } = props;
 
   const { expandedIndex, expandedValue, setExpanded, toggle, multiple } =
-    useContext(AccordionContext);
+    React.useContext(AccordionContext);
 
-  const { index, value, expanded, disabled } = useContext(AccordionItemContext);
+  const { index, value, expanded, disabled } = React.useContext(AccordionItemContext);
 
   const { onHeaderClick } = useAccordion({
     index,

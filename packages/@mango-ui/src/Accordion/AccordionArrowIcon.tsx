@@ -1,6 +1,6 @@
 // 'use client';
 
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { ComponentBaseProps } from '../types/common';
 import ChevronDownIcon from '../internal/icons/ChevronDownIcon';
@@ -20,7 +20,7 @@ const AccordionArrowIcon = React.forwardRef<SVGSVGElement, AccordionArrowIconPro
   (props, ref) => {
     const { style, children, ...rest } = props;
 
-    const { expanded } = useContext(AccordionItemContext);
+    const { expanded } = React.useContext(AccordionItemContext);
 
     return React.cloneElement<AccordionArrowIconProps>(
       (children ?? <ChevronDownIcon />) as React.ReactElement<AccordionArrowIconProps>,
