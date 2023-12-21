@@ -1,6 +1,6 @@
 // 'use client';
 
-import React, { useCallback, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import { ComponentBaseProps } from '../types/common';
 
@@ -37,13 +37,10 @@ const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>((
     disabled,
   });
 
-  const handleClick = useCallback(
-    (event: React.MouseEvent<HTMLDivElement>) => {
-      onHeaderClick(event);
-      onClick?.(event);
-    },
-    [onClick, onHeaderClick],
-  );
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>): void => {
+    onHeaderClick(event);
+    onClick?.(event);
+  };
 
   return (
     <div ref={ref} data-state={getState(expanded)} onClick={handleClick} {...rest}>

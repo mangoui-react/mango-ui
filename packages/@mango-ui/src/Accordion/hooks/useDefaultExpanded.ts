@@ -1,7 +1,10 @@
-import { useMemo } from 'react';
+import React from 'react';
 
-const useDefaultExpanded = <T>(defaultExpandedProp: T, multiple?: boolean): T | never[] => {
-  return useMemo(() => {
+export default function useDefaultExpanded<T>(
+  defaultExpandedProp: T,
+  multiple?: boolean,
+): T | never[] {
+  return React.useMemo(() => {
     if (multiple) {
       if (
         typeof defaultExpandedProp === 'undefined' ||
@@ -14,6 +17,4 @@ const useDefaultExpanded = <T>(defaultExpandedProp: T, multiple?: boolean): T | 
     }
     return defaultExpandedProp;
   }, [defaultExpandedProp, multiple]);
-};
-
-export default useDefaultExpanded;
+}

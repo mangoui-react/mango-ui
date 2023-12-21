@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
 import { ExpandedIndexType, ExpandedValueType } from '../types';
 import useExpanded from './useExpanded';
 
-interface UseAccordionType {
+interface UseAccordionParams {
   index: number;
   value?: string;
   expandedIndex?: ExpandedIndexType;
@@ -18,7 +18,7 @@ interface UseAccordionType {
   disabled?: boolean;
 }
 
-const useAccordion = ({
+export default function useAccordion({
   index,
   value,
   expandedIndex,
@@ -27,10 +27,10 @@ const useAccordion = ({
   toggle,
   multiple,
   disabled,
-}: UseAccordionType): { expanded: boolean; onHeaderClick: (event: React.MouseEvent) => void } => {
+}: UseAccordionParams): { expanded: boolean; onHeaderClick: (event: React.MouseEvent) => void } {
   const expanded: boolean = useExpanded({ index, value, expandedIndex, expandedValue });
 
-  const toggleExpand = useCallback(
+  const toggleExpand = React.useCallback(
     (event: React.MouseEvent) => {
       if (expanded) {
         setExpanded(event, null, null);
@@ -41,7 +41,7 @@ const useAccordion = ({
     [expanded, value, index, setExpanded],
   );
 
-  const multipleExpand = useCallback(
+  const multipleExpand = React.useCallback(
     (event: React.MouseEvent) => {
       const _expandedIndex = Array.isArray(expandedIndex) ? expandedIndex : [];
       const _expandedValue = Array.isArray(expandedValue) ? expandedValue : [];
@@ -63,7 +63,7 @@ const useAccordion = ({
     [expandedIndex, expandedValue, expanded, setExpanded, index, value],
   );
 
-  const onHeaderClick = useCallback(
+  const onHeaderClick = React.useCallback(
     (event: React.MouseEvent) => {
       if (disabled) return;
 
@@ -79,6 +79,4 @@ const useAccordion = ({
   );
 
   return { expanded, onHeaderClick };
-};
-
-export default useAccordion;
+}

@@ -1,6 +1,6 @@
 // 'use client';
 
-import React, { useContext, useMemo } from 'react';
+import React from 'react';
 
 import { ComponentBaseProps } from '../types/common';
 
@@ -44,7 +44,7 @@ const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>((prop
     multiple,
     disabled: disabledCtx,
     renderMode: renderModeCtx,
-  } = useContext(AccordionContext);
+  } = React.useContext(AccordionContext);
 
   const {
     className,
@@ -68,12 +68,9 @@ const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>((prop
     disabled,
   });
 
-  const children = useMemo(
-    () => (typeof childrenProp === 'function' ? childrenProp(expanded) : childrenProp),
-    [childrenProp, expanded],
-  );
+  const children = typeof childrenProp === 'function' ? childrenProp(expanded) : childrenProp;
 
-  const contextValue = useMemo(
+  const contextValue = React.useMemo(
     () => ({ index, value, expanded, disabled, renderMode }),
     [disabled, expanded, value, index, renderMode],
   );

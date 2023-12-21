@@ -1,6 +1,6 @@
 // 'use client';
 
-import React, { useCallback, useContext, useMemo, useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 
 import { ComponentBaseProps } from '../types/common';
 import { AccordionItemContext } from './AccordionItem';
@@ -20,18 +20,21 @@ const AccordionContent = React.forwardRef<HTMLDivElement, AccordionContentProps>
   // 1. data-state 속성 추가 필요(done)
   // 2. --mango-accordion-content-height 변수를 인라인 스타일로 지정하고 이 변수를 app에서 사용하여 스타일을 줌
   // 3. apps 에서 open/close 시 content 애니메이션 작업(done), arrow 아이콘 애니메이션 작업 해보자
-  const expandStyle = useMemo(() => {
+  const expandStyle = (): {
+    display: 'block' | 'none';
+    height: 'auto' | 0;
+  } => {
     return expanded ? { display: 'block', height: 'auto' } : { display: 'none', height: 0 };
-  }, [expanded]);
+  };
 
   const isSelected = useRef<boolean>(false);
-  const renderChildren = useCallback(() => {
+  const renderChildren = (): React.ReactNode => {
     if (renderMode === 'selected' && expanded) {
       isSelected.current = true;
     }
 
     return renderMode === 'force' || isSelected.current || expanded ? children : null;
-  }, [children, expanded, renderMode]);
+  };
 
   return (
     <div ref={ref} data-state={getState(expanded)} style={{ ...expandStyle, ...style }} {...rest}>

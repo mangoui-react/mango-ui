@@ -1,13 +1,18 @@
 import { ExpandedIndexType, ExpandedValueType } from '../types';
 
-interface UseExpandedType {
+interface UseExpandedParams {
   index: ExpandedIndexType;
   value?: ExpandedValueType;
   expandedIndex?: ExpandedIndexType;
   expandedValue?: ExpandedValueType;
 }
 
-const useExpanded = ({ index, value, expandedIndex, expandedValue }: UseExpandedType): boolean => {
+export default function useExpanded({
+  index,
+  value,
+  expandedIndex,
+  expandedValue,
+}: UseExpandedParams): boolean {
   if (value !== undefined) {
     if (Array.isArray(expandedValue)) {
       return expandedValue.some((_value) => value === _value);
@@ -19,6 +24,4 @@ const useExpanded = ({ index, value, expandedIndex, expandedValue }: UseExpanded
     return expandedIndex.some((_index) => index === _index);
   }
   return index === expandedIndex;
-};
-
-export default useExpanded;
+}
