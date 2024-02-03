@@ -8,6 +8,17 @@
   "trailingComma": "all",
   "bracketSpacing": true,
   "bracketSameLine": false,
-  "parser": "typescript",
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "importOrder": [
+    "^react$|^react-dom",
+    "<THIRD_PARTY_MODULES>",
+    "^mango-headlessui/(.*)$",
+    "^@/(.*)$",
+    "^../(types|utils|hooks|internal)/(.*)$|^../(utils|hooks|ConfigProvider)",
+    "^../../(types|utils|hooks|internal)/(.*)$|^../../(utils|hooks|ConfigProvider)",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }
