@@ -18,6 +18,8 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks'],
   rules: {
+    // 'no-unused-vars': 'off',
+    // '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
 

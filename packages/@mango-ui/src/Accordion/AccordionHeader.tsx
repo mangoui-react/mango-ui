@@ -1,17 +1,12 @@
 // 'use client';
-
 import React from 'react';
-
-import { ComponentBaseProps } from '../types/common';
 
 import { AccordionContext } from './Accordion';
 import { AccordionItemContext } from './AccordionItem';
 import getState from './helpers/getState';
 import useAccordion from './hooks/useAccordion';
 
-export interface AccordionHeaderProps
-  extends ComponentBaseProps,
-    React.HTMLAttributes<HTMLDivElement> {}
+export interface AccordionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 /**
  * 아코디언 헤더 컴포넌트
@@ -20,7 +15,6 @@ export interface AccordionHeaderProps
  */
 const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>((props, ref) => {
   const { children, onClick, ...rest } = props;
-
   const { expandedIndex, expandedValue, setExpanded, toggle, multiple } =
     React.useContext(AccordionContext);
 
@@ -43,7 +37,13 @@ const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>((
   };
 
   return (
-    <div ref={ref} data-state={getState(expanded)} onClick={handleClick} {...rest}>
+    <div
+      ref={ref}
+      data-state={getState(expanded)}
+      data-disabled={disabled ? '' : undefined}
+      onClick={handleClick}
+      {...rest}
+    >
       {children}
     </div>
   );

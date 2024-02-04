@@ -1,5 +1,6 @@
-'use client'; // TODO: 이거 없애고 @mango/ui 에서 해결하는 방법으로 수정해야 함
+'use client';
 
+// TODO: 맨 위('use client';) 없애고 @mango/ui 에서 해결하는 방법으로 수정해야 함
 import React from 'react';
 
 // TODO: 원인은 tsconfig.json 설정을 때문이다. - turborepo 가 그래서 tsconfig 를 라이브러리 형태로 제공한 것이구나!!!

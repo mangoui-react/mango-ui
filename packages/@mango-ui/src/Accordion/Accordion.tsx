@@ -1,16 +1,13 @@
 // 'use client';
-
 import React from 'react';
 
-import { ComponentBaseProps } from '../types/common';
+import { ComponentPropsWithoutRef } from '../types/common';
 
 import useDefaultExpanded from './hooks/useDefaultExpanded';
 import useExpandControlled from './hooks/useExpandControlled';
 import { ExpandedIndexType, ExpandedValueType } from './types';
 
-export interface AccordionProps
-  extends ComponentBaseProps,
-    Omit<React.HTMLAttributes<HTMLDivElement>, 'defaultValue'> {
+export interface AccordionProps extends Omit<ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
   /** 초기선택 accordion value */
   defaultValue?: ExpandedValueType;
   /** 선택된 accordion value */
@@ -26,7 +23,7 @@ export interface AccordionProps
    * selecting: 현재 선택된 AccordionItem 만 Rendering
    * selected: 선택된 적이 있는 AccordionItem Rendering
    * force: 모든 AccordionItem Rendering
-   * @default 'force'
+   * @default 'selecting'
    */
   renderMode?: 'selecting' | 'selected' | 'force';
   /** accordion 선택 value change 시 발생 */
@@ -61,7 +58,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>((props, ref) 
     toggle,
     multiple,
     disabled,
-    renderMode = 'force',
+    renderMode = 'selecting',
     onValueChange,
     ...rest
   } = props;
