@@ -15,7 +15,7 @@ export default function AccordionPage(): JSX.Element {
   return (
     <div className="flex flex-col gap-2">
       <div>
-        <Accordion className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
+        <Accordion.Root className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
           <Accordion.Item className="border-b border-b-border">
             <Accordion.Header className="flex py-3 px-4 cursor-pointer">
               <span className="flex-1 text-left">Panel Header1</span>
@@ -40,7 +40,7 @@ export default function AccordionPage(): JSX.Element {
             </Accordion.Header>
             <Accordion.Content className="border-t border-t-border p-4">Content3</Accordion.Content>
           </Accordion.Item>
-        </Accordion>
+        </Accordion.Root>
       </div>
 
       <div>
@@ -49,7 +49,7 @@ export default function AccordionPage(): JSX.Element {
 
       <div>
         <div>custom animation</div>
-        <Accordion className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
+        <Accordion.Root className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
           <Accordion.Item className="border-b border-b-border">
             <Accordion.Header className="flex py-3 px-4 cursor-pointer">
               <span className="flex-1 text-left">Panel Header1</span>
@@ -80,7 +80,7 @@ export default function AccordionPage(): JSX.Element {
               Content3
             </Accordion.Content>
           </Accordion.Item>
-        </Accordion>
+        </Accordion.Root>
       </div>
     </div>
   );
