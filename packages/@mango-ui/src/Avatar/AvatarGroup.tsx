@@ -1,50 +1,49 @@
 // 'use client';
-
 import React from 'react';
 
-import { ComponentBaseProps } from '../types/common';
+import { ComponentPropsWithoutRef } from '../types/common';
 
 // import Avatar from './Avatar';
 
-export interface AvatarGroupProps extends ComponentBaseProps, React.HTMLAttributes<HTMLDivElement> {
+export interface AvatarGroupContextValue {
+  computedMax: number;
+  extraAvatarCount: React.MutableRefObject<number>;
+}
+export const AvatarGroupContext = React.createContext<AvatarGroupContextValue>({
+  computedMax: 5,
+  extraAvatarCount: { current: 0 },
+});
+
+export interface AvatarGroupProps extends ComponentPropsWithoutRef<'div'> {
   /**
    * 보여지는 avatar 최대 개수
    * @default 5
    */
   max?: number;
-  /**
-   * max 추가시 개수 표시
-   */
-  extraAvatar?: React.ReactNode;
 }
 
-const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
-  ({ max = 5, extraAvatar = <div />, children, ...rest }, ref) => {
-    const computedMax = max < 1 ? 1 : max;
+/**
+ * 아바타 그룹 컴포넌트
+ *
+ * @author 안형노 <elle0510@gmail.com>
+ */
+const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>((props, ref) => {
+  const { max = 5, children, ...rest } = props;
 
-    const length = React.Children.count(children);
-    const extraAvatars = length > computedMax ? length - computedMax : 0;
+  const extraAvatarCount = React.useRef<number>(0);
 
-    return (
+  const computedMax = max < 1 ? 1 : max;
+
+  const contextValue = React.useMemo(() => ({ computedMax, extraAvatarCount }), [computedMax]);
+
+  return (
+    <AvatarGroupContext.Provider value={contextValue}>
       <div ref={ref} {...rest}>
-        {React.Children.toArray(children)
-          .slice(0, length - extraAvatars)
-          // .reverse()
-          .map((child, index) => {
-            if (!React.isValidElement(child)) {
-              return null;
-            }
-            return React.cloneElement(child as React.ReactElement);
-          })}
-        {extraAvatars
-          ? React.cloneElement(extraAvatar as React.ReactElement, {
-              children: (extraAvatar as React.ReactElement).props.children ?? `+${extraAvatars}`,
-            })
-          : null}
+        {children}
       </div>
-    );
-  },
-);
+    </AvatarGroupContext.Provider>
+  );
+});
 
 AvatarGroup.displayName = 'Avatar.Group';
 
