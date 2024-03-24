@@ -57,4 +57,6 @@ const Slot = React.forwardRef<HTMLElement, SlotProps>((props, ref) => {
   return <>{children}</>;
 });
 
+Slot.displayName = 'Slot';
+
 export default Slot;
