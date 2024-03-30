@@ -1,0 +1,65 @@
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  /* 추가한 css variables */
+  --background-end: #ffffff; /* rgb 값을 var 로 사용하니 적용이 안되서 만들었음. */
+
+  --primary-color: #208aff;
+  --primary-text-color: #fff;
+
+  --component-bg: #ffffff;
+
+  --disabled-bg: #f7f7f7;
+  --disabled-border: #e2e2e2;
+  --disabled-text: #d9d9d9;
+
+  --border: #d9d9d9;
+  --border-inner: #cccccc;
+
+  --avatar-bg: #d9d9d9;
+  --avatar-text: #ffffff;
+
+  --info: #208aff;
+  --success: #32c768;
+  --warning: #f59e0b;
+  --error: #e23731;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+
+    /* 추가한 css variables */
+    --background-end: #000000;
+
+    --primary-color: #208aff;
+    --primary-text-color: #fff;
+
+    --component-bg: rgb(45, 55, 72);
+
+    --disabled-bg: rgba(255, 255, 255, 0.08);
+    --disabled-border: rgba(255, 255, 255, 0.2);
+    --disabled-text: rgba(255, 255, 255, 0.2);
+
+    --border: rgba(255, 255, 255, 0.35);
+    --border-inner: rgba(255, 255, 255, 0.1);
+
+    --avatar-bg: #333333;
+    --avatar-text: #ffffff;
+
+    --info: #208aff;
+    --success: #32c768;
+    --warning: #f59e0b;
+    --error: #e23731;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
+    rgb(var(--background-start-rgb));
+}

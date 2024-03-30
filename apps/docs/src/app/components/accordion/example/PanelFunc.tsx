@@ -3,13 +3,14 @@
 import React from 'react';
 
 import { Accordion } from 'mango-headlessui';
+
 import ChevronDownIcon from '@/icons/ChevronDownIcon';
 
 const PanelFunc = (): JSX.Element => {
   return (
     <>
       <div>children 이 함수</div>
-      <Accordion className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
+      <Accordion.Root className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
         <Accordion.Item className="border-b border-b-border">
           {(expanded: boolean) => (
             <>
@@ -51,7 +52,7 @@ const PanelFunc = (): JSX.Element => {
             </>
           )}
         </Accordion.Item>
-      </Accordion>
+      </Accordion.Root>
     </>
   );
 };

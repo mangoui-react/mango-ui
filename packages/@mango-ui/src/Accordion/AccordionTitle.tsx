@@ -1,12 +1,9 @@
 // 'use client';
-
 import React from 'react';
 
-import { ComponentBaseProps } from '../types/common';
+import { ComponentPropsWithoutRef } from '../types/common';
 
-export interface AccordionTitleProps
-  extends ComponentBaseProps,
-    React.HTMLAttributes<HTMLDivElement> {}
+export interface AccordionTitleProps extends ComponentPropsWithoutRef<'div'> {}
 
 /**
  * 아코디언 헤더 타이틀 컴포넌트

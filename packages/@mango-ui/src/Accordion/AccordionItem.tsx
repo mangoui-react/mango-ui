@@ -1,22 +1,23 @@
 // 'use client';
-
 import React from 'react';
 
-import { ComponentBaseProps } from '../types/common';
+import { ComponentPropsWithoutRef } from '../types/common';
 
 import { AccordionContext, AccordionProps } from './Accordion';
 import getState from './helpers/getState';
 import useAccordion from './hooks/useAccordion';
 
 export interface AccordionItemProps
-  extends Omit<ComponentBaseProps, 'children'>,
-    Pick<AccordionProps, 'renderMode'>,
-    Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {
+  extends Pick<AccordionProps, 'renderMode'>,
+    Omit<ComponentPropsWithoutRef<'div'>, 'children'> {
   index?: number;
   value?: string;
   /** accordion disabled */
   disabled?: boolean;
-  children: ComponentBaseProps['children'] | ((expanded: boolean) => React.ReactNode);
+  children:
+    | ComponentPropsWithoutRef<'div'>['children']
+    // | React.HTMLAttributes<HTMLDivElement>['children']
+    | ((expanded: boolean) => React.ReactNode);
 }
 
 export interface AccordionItemContextValue extends Pick<AccordionProps, 'disabled' | 'renderMode'> {
@@ -77,7 +78,12 @@ const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>((prop
 
   return (
     <AccordionItemContext.Provider value={contextValue}>
-      <div ref={ref} data-state={getState(expanded)} {...rest}>
+      <div
+        ref={ref}
+        data-state={getState(expanded)}
+        data-disabled={disabled ? '' : undefined}
+        {...rest}
+      >
         {children}
       </div>
     </AccordionItemContext.Provider>

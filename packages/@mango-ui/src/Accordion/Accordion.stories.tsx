@@ -11,7 +11,7 @@ export function Basic(): JSX.Element {
   return (
     <>
       <h1>기본</h1>
-      <Accordion className={styles.root}>
+      <Accordion.Root className={styles.root}>
         <Accordion.Item className={styles.item}>
           <Accordion.Header className={styles.header}>
             <span className={styles.title}>Panel Header1</span>
@@ -36,7 +36,7 @@ export function Basic(): JSX.Element {
           </Accordion.Header>
           <Accordion.Content className={styles.content}>Content3</Accordion.Content>
         </Accordion.Item>
-      </Accordion>
+      </Accordion.Root>
     </>
   );
 }
@@ -45,7 +45,7 @@ export function ItemByFunc(): JSX.Element {
   return (
     <>
       <h1>children 이 함수</h1>
-      <Accordion className={styles.root}>
+      <Accordion.Root className={styles.root}>
         <Accordion.Item className={styles.item}>
           {(expanded: boolean) => (
             <>
@@ -81,7 +81,7 @@ export function ItemByFunc(): JSX.Element {
             </>
           )}
         </Accordion.Item>
-      </Accordion>
+      </Accordion.Root>
     </>
   );
 }

@@ -1,12 +1,18 @@
 // 'use client';
-
 import React from 'react';
 
-import { ComponentBaseProps } from '../types/common';
+import { ComponentPropsWithoutRef } from '../types/common';
 
-export interface AvatarProps extends ComponentBaseProps, React.HTMLAttributes<HTMLDivElement> {}
+export interface AvatarProps extends ComponentPropsWithoutRef<'div'> {}
 
-const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(({ children, ...rest }, ref) => {
+/**
+ * 아바타 컴포넌트
+ *
+ * @author 안형노 <elle0510@gmail.com>
+ */
+const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
+  const { children, ...rest } = props;
+
   return (
     <div ref={ref} {...rest}>
       {children}

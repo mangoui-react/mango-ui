@@ -1,9 +1,8 @@
 // 'use client';
-
 import React, { useCallback, useContext, useEffect } from 'react';
 
 import { pattern } from '../internal/regexp';
-import { useControlled } from '../hooks';
+import useControlled from '../internal/useControlled';
 
 import { NumberInputContext } from './NumberInputGroup';
 

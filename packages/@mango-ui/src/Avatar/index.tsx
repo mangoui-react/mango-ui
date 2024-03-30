@@ -2,17 +2,26 @@
 // export { default as AvatarGroup } from './AvatarGroup';
 // export { default as AvatarIcon } from './AvatarIcon';
 // export { default as AvatarImg } from './AvatarImg';
-
-import AvatarRoot from './Avatar';
+import Root from './Avatar';
+import Extra from './AvatarExtra';
 import Group from './AvatarGroup';
-import Icon from './AvatarIcon';
+import GroupContent from './AvatarGroupContent';
 import Img from './AvatarImg';
 
 export * from './Avatar';
+export * from './AvatarExtra';
 export * from './AvatarGroup';
-export * from './AvatarIcon';
+export * from './AvatarGroupContent';
 export * from './AvatarImg';
 
-const Avatar = Object.assign(AvatarRoot, { Group, Icon, Img });
+// const Avatar = Object.assign(AvatarRoot, { Extra, Group, GroupContent, Img });
+
+const Avatar = {
+  Root,
+  Extra,
+  Group,
+  GroupContent,
+  Img,
+};
 
 export default Avatar;

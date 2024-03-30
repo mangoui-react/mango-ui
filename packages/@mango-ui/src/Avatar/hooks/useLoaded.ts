@@ -1,14 +1,19 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
 
 import { AvatarImgProps } from '../AvatarImg';
 
-type UseLoadedType = Pick<AvatarImgProps, 'src' | 'srcSet' | 'crossOrigin' | 'referrerPolicy'>;
-type LoadStatusType = 'pending' | 'loading' | 'loaded' | 'error';
+type UseLoadedParams = Pick<AvatarImgProps, 'src' | 'srcSet' | 'crossOrigin' | 'referrerPolicy'>;
+type LoadStatusValue = 'pending' | 'loading' | 'loaded' | 'error';
 
-const useLoaded = ({ src, srcSet, crossOrigin, referrerPolicy }: UseLoadedType): LoadStatusType => {
-  const [loaded, setLoaded] = useState<LoadStatusType>('pending');
+export default function useLoaded({
+  src,
+  srcSet,
+  crossOrigin,
+  referrerPolicy,
+}: UseLoadedParams): LoadStatusValue {
+  const [loaded, setLoaded] = React.useState<LoadStatusValue>('pending');
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!src) return undefined;
 
     setLoaded('loading');
@@ -52,6 +57,4 @@ const useLoaded = ({ src, srcSet, crossOrigin, referrerPolicy }: UseLoadedType):
   }, [crossOrigin, referrerPolicy, src, srcSet]);
 
   return loaded;
-};
-
-export default useLoaded;
+}

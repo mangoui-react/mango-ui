@@ -1,16 +1,18 @@
 import React from 'react';
 
-export default function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+export default function ArrowOutlineDownIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
       height="1em"
+      focusable="false"
       viewBox="0 0 24 24"
       fill="currentColor"
+      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
     </svg>
   );
 }

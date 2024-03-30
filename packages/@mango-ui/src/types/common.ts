@@ -1,5 +1,14 @@
 import React from 'react';
 
+type PropsWithoutRef<P> = P extends any
+  ? 'ref' extends keyof P
+    ? Pick<P, Exclude<keyof P, 'ref'>>
+    : P
+  : P;
+export type ComponentPropsWithoutRef<T extends React.ElementType> = PropsWithoutRef<
+  React.ComponentProps<T>
+>;
+
 export interface ComponentBaseProps {
   /** css class 이름 */
   className?: string;

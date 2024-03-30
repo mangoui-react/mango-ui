@@ -1,4 +1,4 @@
-import { useControlled } from '../../hooks';
+import useControlled from '../../internal/useControlled';
 
 export default function useExpandControlled<T>(
   valueProp: T,

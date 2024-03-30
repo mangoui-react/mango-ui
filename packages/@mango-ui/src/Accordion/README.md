@@ -1,7 +1,7 @@
 ## Accordion
 
 ```javascript
-<Accordion>
+<Accordion.Root>
   <Accordion.Item>
     <Accordion.Header>
       <AccordionTitle>Panel Title1</AccordionTitle>
@@ -25,6 +25,5 @@
     </Accordion.Header>
     <Accordion.Content>Content3</Accordion.Content>
   </Accordion.Item>
-</Accordion>
-
+</Accordion.Root>
 ```

@@ -1,11 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const useControlled = <T>(controlledValue: T, defaultValue: T): [T, (value: T) => void] => {
+export default function useControlled<T>(
+  controlledValue: T,
+  defaultValue: T,
+): [T, (value: T) => void] {
   const { current: isControlled } = useRef(controlledValue !== undefined);
 
   const [uncontrolledValue, setUncontrolledValue] = useState<T>(defaultValue);
 
-  const value = isControlled ? controlledValue : uncontrolledValue;
+  // const value = isControlled ? controlledValue : uncontrolledValue;
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+  const value = controlledValue !== undefined ? controlledValue : uncontrolledValue;
 
   const setValue = useCallback(
     (newValue: T) => {
@@ -26,6 +31,4 @@ const useControlled = <T>(controlledValue: T, defaultValue: T): [T, (value: T) =
   }, [controlledValue, isControlled]);
 
   return [value, setValue];
-};
-
-export default useControlled;
+}

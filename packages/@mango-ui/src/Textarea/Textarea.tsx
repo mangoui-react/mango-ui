@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-import { useControlled } from '../hooks';
+import useControlled from '../internal/useControlled';
 import { ComponentBaseProps } from '../types/common';
 
 export interface TextareaProps
