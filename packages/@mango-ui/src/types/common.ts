@@ -21,9 +21,9 @@ export interface ComponentBaseProps {
 // TODO: 아래 rule은 좀 더 알아보고 rule 대로 하자
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export declare namespace TypeAttributes {
-  type Size = 'sm' | 'md' | 'lg';
-  type Orientation = 'horizontal' | 'vertical';
-  type Variant = 'default' | 'primary' | 'link' | 'ghost' | 'dashed';
+  // type Size = 'sm' | 'md' | 'lg';
+  // type Orientation = 'horizontal' | 'vertical';
+  // type Variant = 'default' | 'primary' | 'link' | 'ghost' | 'dashed';
   type Status = 'info' | 'success' | 'warning' | 'error';
   type OverlayTrigger = 'hover' | 'click';
   // type Placement = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
