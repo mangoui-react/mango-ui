@@ -24,7 +24,7 @@ export declare namespace TypeAttributes {
   type Size = 'sm' | 'md' | 'lg';
   type Orientation = 'horizontal' | 'vertical';
   type Variant = 'default' | 'primary' | 'link' | 'ghost' | 'dashed';
-  // type Status = 'info' | 'success' | 'warning' | 'error';
+  type Status = 'info' | 'success' | 'warning' | 'error';
   type OverlayTrigger = 'hover' | 'click';
   // type Placement = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
   type OverlayPlacement =

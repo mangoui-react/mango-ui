@@ -1,0 +1,50 @@
+@import '../../styles/common';
+@import './mixin';
+
+$alert-cls: #{$prefix-cls}-alert;
+
+.#{$alert-cls} {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  padding: 6px 16px;
+
+  @include alert-statue(var(--es-info), white);
+
+  // statue
+  &[data-status='success'] {
+    @include alert-statue(var(--es-success), white);
+  }
+
+  &[data-status='warning'] {
+    @include alert-statue(var(--es-warning), white);
+  }
+
+  &[data-status='error'] {
+    @include alert-statue(var(--es-error), white);
+  }
+
+  &-status-icon {
+    padding: 7px 0;
+    margin-right: 12px;
+  }
+
+  &-content {
+    padding: 8px 0;
+  }
+
+  &-title {
+    margin-top: -2px;
+    font-weight: bold;
+    margin-bottom: 0.35em;
+  }
+
+  &-description {
+  }
+
+  &-action {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+}
