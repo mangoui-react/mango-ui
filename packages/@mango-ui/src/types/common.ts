@@ -9,6 +9,7 @@ export type ComponentPropsWithoutRef<T extends React.ElementType> = PropsWithout
   React.ComponentProps<T>
 >;
 
+// TODO: ComponentBaseProps 는 제거해야 함
 export interface ComponentBaseProps {
   /** css class 이름 */
   className?: string;
