@@ -1,8 +1,7 @@
 // 'use client';
-
 import React, { useCallback } from 'react';
-// import { UrlObject } from 'url'; // TODO: dependency 안하는 방법으로 찾아보자 @types/node 설치해야 함
 
+// import { UrlObject } from 'url'; // TODO: dependency 안하는 방법으로 찾아보자 @types/node 설치해야 함
 import { ComponentBaseProps } from '../types/common';
 
 // import Tooltip from '../Tooltip';

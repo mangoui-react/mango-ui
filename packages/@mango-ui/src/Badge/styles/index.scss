@@ -1,0 +1,78 @@
+@import '../../styles/common';
+@import './mixin';
+
+$badge-cls: #{$prefix-cls}-badge;
+
+.#{$badge-cls} {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+
+  &-content {
+    text-align: center;
+    z-index: 1;
+    box-sizing: border-box;
+    white-space: nowrap;
+    position: absolute;
+    transform-origin: 100% 0;
+
+    background-color: #E23731;
+    color: #ffffff;
+    padding: 0 6px;
+
+    // size
+    @include badge-size(15px);
+  }
+
+  // placement
+  &[data-placement="top-right"] {
+    .#{$badge-cls}-content {
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+  }
+
+  &[data-placement="top"] {
+    .#{$badge-cls}-content {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &[data-placement="top-left"] {
+    .#{$badge-cls}-content {
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &[data-placement="bottom"] {
+    .#{$badge-cls}-content {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &[data-placement="bottom-right"] {
+    .#{$badge-cls}-content {
+      bottom: 0;
+      right: 0;
+      transform: translate(50%, 0);
+    }
+  }
+
+  &[data-placement="bottom-left"] {
+    .#{$badge-cls}-content {
+      bottom: 0;
+      left: 0;
+      transform: translate(-50%, 0);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import '../../styles/common';
+
+$breadcrumb-cls: #{$prefix-cls}-breadcrumb;
+
+.#{$breadcrumb-cls} {
+
+  // &__list {
+  //   display: flex;
+  //   list-style: none;
+  //   margin: 0;
+  //   padding: 0;
+  //   align-items: center;
+  // }
+
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+
+  &-item {
+    display: flex;
+    color: var(--es-primary);
+  }
+
+  &-separator {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  &-collapse {
+    cursor: pointer;
+    color: var(--es-text);
+  }
+  
+  &-link {
+    display: flex;
+    color: var(--es-text);
+    cursor: pointer;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
