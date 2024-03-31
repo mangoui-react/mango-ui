@@ -1,0 +1,83 @@
+@mixin modal-backdrop() {
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1200;
+  animation: fadein 0.3s;
+}
+
+@keyframes fadein {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@mixin modal() {
+  // position: fixed;
+  // inset: 0;
+
+  &-content {
+    position: fixed;
+    top: 30px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 520px;
+    min-width: 200px;
+    min-height: 42px;
+    background-color: var(--es-component-bg);
+    z-index: 1200;
+
+    background-color: var(--es-component-bg);
+    border-radius: 6px;
+    animation: fadein 0.3s;
+  }
+
+  &-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 14px;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+    box-sizing: border-box;
+    color: inherit;
+    background: transparent;
+    font-size: 0.875rem;
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--es-inner-border);
+  }
+
+  &-body {
+    padding: 24px;
+    max-height: 741px;
+    overflow: auto;
+  }
+
+  &-footer {
+    padding: 10px 16px;
+    text-align: right;
+    border-top: 1px solid var(--es-inner-border);
+
+    // &--confirm {
+    //   border-top: none;
+    // }
+  }
+}

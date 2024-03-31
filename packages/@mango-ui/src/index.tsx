@@ -6,17 +6,17 @@
 export { default as Accordion } from './Accordion';
 export * from './Accordion';
 
-// export { default as Alert } from './Alert';
-// export * from './Alert';
+export { default as Alert } from './Alert';
+export * from './Alert';
 
 export { default as Avatar } from './Avatar';
 export * from './Avatar';
 
-// export { default as Badge } from './Badge';
-// export * from './Badge';
+export { default as Badge } from './Badge';
+export * from './Badge';
 
-// export { default as Breadcrumb } from './Breadcrumb';
-// export * from './Breadcrumb';
+export { default as Breadcrumb } from './Breadcrumb';
+export * from './Breadcrumb';
 
 export { default as Button } from './Button';
 export * from './Button';
@@ -30,11 +30,14 @@ export * from './Button';
 // export { default as Carousel } from './Carousel';
 // export * from './Carousel';
 
-// export { default as Checkbox } from './Checkbox';
-// export * from './Checkbox';
+export { default as Checkbox } from './Checkbox';
+export * from './Checkbox';
 
-// export { default as ConfigProvider } from './ConfigProvider';
-// export * from './ConfigProvider';
+export { default as CircularProgress } from './CircularProgress';
+export * from './CircularProgress';
+
+export { default as ConfigProvider } from './ConfigProvider';
+export * from './ConfigProvider';
 
 // export { default as DatePicker } from './DatePicker';
 // export * from './DatePicker';
@@ -69,8 +72,8 @@ export * from './Textarea';
 // export { default as Popover } from './Popover';
 // export * from './Popover';
 
-// export { default as Progress } from './Progress';
-// export * from './Progress';
+export { default as Progress } from './Progress';
+export * from './Progress';
 
 // export { default as Radio } from './Radio';
 // export * from './Radio';

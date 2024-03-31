@@ -1,0 +1,12 @@
+@import '../../styles/common';
+@import './modal';
+
+$modal-cls: #{$prefix-cls}-modal;
+
+.#{$modal-cls}-backdrop {
+  @include modal-backdrop();
+}
+
+.#{$modal-cls} {
+  @include modal();
+}
