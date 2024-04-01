@@ -1,0 +1,17 @@
+@import '../../styles/common';
+// @import './mixin';
+
+$popover-cls: #{$prefix-cls}-popover;
+$card-cls: #{$prefix-cls}-card;
+
+.#{$popover-cls}-content {
+  // position: absolute;
+  background-color: var(--es-component-bg);
+  border: 1px solid var(--es-border);
+  border-radius: 4px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+
+  &:focus {
+    outline: 0;
+  }
+}

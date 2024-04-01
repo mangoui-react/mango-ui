@@ -42,8 +42,8 @@ export * from './ConfigProvider';
 // export { default as DatePicker } from './DatePicker';
 // export * from './DatePicker';
 
-// export { default as Drawer } from './Drawer';
-// export * from './Drawer';
+export { default as Drawer } from './Drawer';
+export * from './Drawer';
 
 // export { default as Dropdown } from './Dropdown';
 // export * from './Dropdown';
@@ -66,8 +66,8 @@ export * from './Textarea';
 // export { default as Menu } from './Menu';
 // export * from './Menu';
 
-// export { default as Modal } from './Modal';
-// export * from './Modal';
+export { default as Modal } from './Modal';
+export * from './Modal';
 
 // export { default as Popover } from './Popover';
 // export * from './Popover';
