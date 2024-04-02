@@ -1,12 +1,13 @@
-'use client'; // TODO: NumberInput.Group 이런 방식이 서버사이드에서는 에러나는거 같음, 방법 찾아야 함.
+'use client';
 
+// TODO: NumberInput.Group 이런 방식이 서버사이드에서는 에러나는거 같음, 방법 찾아야 함.
 import React from 'react';
 
 import { NumberInput } from 'mango-headlessui';
 
-import cn from '@/utils/cn';
 import ArrowDownIcon from '@/icons/ArrowDownIcon';
 import ArrowUpIcon from '@/icons/ArrowUpIcon';
+import cn from '@/utils/cn';
 
 import ChangeNumberInput from './examples/ChangeNumberInput';
 
@@ -31,104 +32,104 @@ export default function NumberInputPage(): JSX.Element {
   return (
     <div className="flex flex-col gap-2">
       <div>
-        <NumberInput.Group className="flex items-center">
-          <NumberInput className={cn(inputStyle)} />
+        <NumberInput.Root className="flex items-center">
+          <NumberInput.Field className={cn(inputStyle)} />
           <NumberInput.ButtonGroup className="flex flex-col w-5">
-            <NumberInput.PlusButton className={buttonStyle}>
+            <NumberInput.Plus className={buttonStyle}>
               <ArrowUpIcon />
-            </NumberInput.PlusButton>
-            <NumberInput.MinusButton className={buttonStyle}>
+            </NumberInput.Plus>
+            <NumberInput.Minus className={buttonStyle}>
               <ArrowDownIcon />
-            </NumberInput.MinusButton>
+            </NumberInput.Minus>
           </NumberInput.ButtonGroup>
-        </NumberInput.Group>
+        </NumberInput.Root>
       </div>
 
       <ChangeNumberInput />
 
       <div>Disabled</div>
       <div className="flex flex-col gap-2">
-        <NumberInput.Group className="flex items-center">
-          <NumberInput className={cn(inputStyle)} disabled />
+        <NumberInput.Root className="flex items-center">
+          <NumberInput.Field className={cn(inputStyle)} disabled />
           <NumberInput.ButtonGroup className="flex flex-col w-5">
-            <NumberInput.PlusButton className={buttonStyle} disabled>
+            <NumberInput.Plus className={buttonStyle} disabled>
               <ArrowUpIcon />
-            </NumberInput.PlusButton>
-            <NumberInput.MinusButton className={buttonStyle} disabled>
+            </NumberInput.Plus>
+            <NumberInput.Minus className={buttonStyle} disabled>
               <ArrowDownIcon />
-            </NumberInput.MinusButton>
+            </NumberInput.Minus>
           </NumberInput.ButtonGroup>
-        </NumberInput.Group>
+        </NumberInput.Root>
 
-        <NumberInput.Group className="flex items-center">
-          <NumberInput className={cn(inputStyle)} defaultValue={2} disabled />
+        <NumberInput.Root className="flex items-center">
+          <NumberInput.Field className={cn(inputStyle)} defaultValue={2} disabled />
           <NumberInput.ButtonGroup className="flex flex-col w-5">
-            <NumberInput.PlusButton className={buttonStyle} disabled>
+            <NumberInput.Plus className={buttonStyle} disabled>
               <ArrowUpIcon />
-            </NumberInput.PlusButton>
-            <NumberInput.MinusButton className={buttonStyle} disabled>
+            </NumberInput.Plus>
+            <NumberInput.Minus className={buttonStyle} disabled>
               <ArrowDownIcon />
-            </NumberInput.MinusButton>
+            </NumberInput.Minus>
           </NumberInput.ButtonGroup>
-        </NumberInput.Group>
+        </NumberInput.Root>
 
-        <NumberInput.Group className="flex items-center">
-          <NumberInput className={cn(inputStyle)} placeholder="placeholder" disabled />
+        <NumberInput.Root className="flex items-center">
+          <NumberInput.Field className={cn(inputStyle)} placeholder="placeholder" disabled />
           <NumberInput.ButtonGroup className="flex flex-col w-5">
-            <NumberInput.PlusButton className={buttonStyle} disabled>
+            <NumberInput.Plus className={buttonStyle} disabled>
               <ArrowUpIcon />
-            </NumberInput.PlusButton>
-            <NumberInput.MinusButton className={buttonStyle} disabled>
+            </NumberInput.Plus>
+            <NumberInput.Minus className={buttonStyle} disabled>
               <ArrowDownIcon />
-            </NumberInput.MinusButton>
+            </NumberInput.Minus>
           </NumberInput.ButtonGroup>
-        </NumberInput.Group>
+        </NumberInput.Root>
       </div>
 
       <div>ReadOnly</div>
       <div className="flex flex-col gap-2">
-        <NumberInput.Group className="flex items-center">
-          <NumberInput className={cn(inputStyle)} readOnly />
+        <NumberInput.Root className="flex items-center">
+          <NumberInput.Field className={cn(inputStyle)} readOnly />
           <NumberInput.ButtonGroup className="flex flex-col w-5">
-            <NumberInput.PlusButton className={cn(buttonStyle, 'cursor-default')}>
+            <NumberInput.Plus className={cn(buttonStyle, 'cursor-default')}>
               <ArrowUpIcon />
-            </NumberInput.PlusButton>
-            <NumberInput.MinusButton className={cn(buttonStyle, 'cursor-default')}>
+            </NumberInput.Plus>
+            <NumberInput.Minus className={cn(buttonStyle, 'cursor-default')}>
               <ArrowDownIcon />
-            </NumberInput.MinusButton>
+            </NumberInput.Minus>
           </NumberInput.ButtonGroup>
-        </NumberInput.Group>
+        </NumberInput.Root>
 
-        <NumberInput.Group className="flex items-center">
-          <NumberInput className={cn(inputStyle)} defaultValue={10} readOnly />
+        <NumberInput.Root className="flex items-center">
+          <NumberInput.Field className={cn(inputStyle)} defaultValue={10} readOnly />
           <NumberInput.ButtonGroup className="flex flex-col w-5">
-            <NumberInput.PlusButton className={cn(buttonStyle, 'cursor-default')}>
+            <NumberInput.Plus className={cn(buttonStyle, 'cursor-default')}>
               <ArrowUpIcon />
-            </NumberInput.PlusButton>
-            <NumberInput.MinusButton className={cn(buttonStyle, 'cursor-default')}>
+            </NumberInput.Plus>
+            <NumberInput.Minus className={cn(buttonStyle, 'cursor-default')}>
               <ArrowDownIcon />
-            </NumberInput.MinusButton>
+            </NumberInput.Minus>
           </NumberInput.ButtonGroup>
-        </NumberInput.Group>
+        </NumberInput.Root>
 
-        <NumberInput.Group className="flex items-center">
-          <NumberInput className={cn(inputStyle)} placeholder="placeholder." readOnly />
+        <NumberInput.Root className="flex items-center">
+          <NumberInput.Field className={cn(inputStyle)} placeholder="placeholder." readOnly />
           <NumberInput.ButtonGroup className="flex flex-col w-5">
-            <NumberInput.PlusButton className={cn(buttonStyle, 'cursor-default')}>
+            <NumberInput.Plus className={cn(buttonStyle, 'cursor-default')}>
               <ArrowUpIcon />
-            </NumberInput.PlusButton>
-            <NumberInput.MinusButton className={cn(buttonStyle, 'cursor-default')}>
+            </NumberInput.Plus>
+            <NumberInput.Minus className={cn(buttonStyle, 'cursor-default')}>
               <ArrowDownIcon />
-            </NumberInput.MinusButton>
+            </NumberInput.Minus>
           </NumberInput.ButtonGroup>
-        </NumberInput.Group>
+        </NumberInput.Root>
       </div>
 
       <div>Invalid</div>
       <div className="flex flex-col gap-2">
         {/* <NumberInput invalid /> */}
-        <NumberInput.Group className="flex items-center">
-          <NumberInput
+        <NumberInput.Root className="flex items-center">
+          <NumberInput.Field
             className={cn(
               'inline-block w-full min-w-0 relative border border-solid border-border box-border bg-component-bg text-inherit py-1 px-3 leading-none',
               'border-error',
@@ -136,29 +137,35 @@ export default function NumberInputPage(): JSX.Element {
             )}
           />
           <NumberInput.ButtonGroup className="flex flex-col w-5">
-            <NumberInput.PlusButton className={buttonStyle}>
+            <NumberInput.Plus className={buttonStyle}>
               <ArrowUpIcon />
-            </NumberInput.PlusButton>
-            <NumberInput.MinusButton className={buttonStyle}>
+            </NumberInput.Plus>
+            <NumberInput.Minus className={buttonStyle}>
               <ArrowDownIcon />
-            </NumberInput.MinusButton>
+            </NumberInput.Minus>
           </NumberInput.ButtonGroup>
-        </NumberInput.Group>
+        </NumberInput.Root>
       </div>
 
       <div>Min/Max</div>
       <div className="flex flex-col gap-2">
-        <NumberInput.Group className="flex items-center">
-          <NumberInput className={cn(inputStyle)} min={0} max={100} step={5} defaultValue={50} />
+        <NumberInput.Root className="flex items-center">
+          <NumberInput.Field
+            className={cn(inputStyle)}
+            min={0}
+            max={100}
+            step={5}
+            defaultValue={50}
+          />
           <NumberInput.ButtonGroup className="flex flex-col w-5">
-            <NumberInput.PlusButton className={buttonStyle}>
+            <NumberInput.Plus className={buttonStyle}>
               <ArrowUpIcon />
-            </NumberInput.PlusButton>
-            <NumberInput.MinusButton className={buttonStyle}>
+            </NumberInput.Plus>
+            <NumberInput.Minus className={buttonStyle}>
               <ArrowDownIcon />
-            </NumberInput.MinusButton>
+            </NumberInput.Minus>
           </NumberInput.ButtonGroup>
-        </NumberInput.Group>
+        </NumberInput.Root>
       </div>
     </div>
   );

@@ -2,11 +2,11 @@
 
 import React, { useCallback, useState } from 'react';
 
-import { NumberInput, NumberInputValueType } from 'mango-headlessui';
+import { NumberInput, NumberInputValue } from 'mango-headlessui';
 
-import cn from '@/utils/cn';
 import ArrowDownIcon from '@/icons/ArrowDownIcon';
 import ArrowUpIcon from '@/icons/ArrowUpIcon';
+import cn from '@/utils/cn';
 
 const inputStyle = cn(
   'inline-block w-full min-w-0 relative border border-solid border-border box-border bg-component-bg text-inherit py-1 px-3 leading-none',
@@ -25,13 +25,13 @@ const buttonStyle = cn(
 );
 
 export default function ChangeNumberInput(): JSX.Element {
-  const [value, setValue] = useState<NumberInputValueType>(null);
+  const [value, setValue] = useState<NumberInputValue>(null);
   // const onChange = useCallback((event: React.ChangeEvent<any>, newValue: string) => {
   //   // setValue(event.target.value as string);
   //   setValue(newValue);
   // }, []);
 
-  const onChange = useCallback((event: React.SyntheticEvent, val: NumberInputValueType) => {
+  const onChange = useCallback((val: NumberInputValue) => {
     setValue(val);
 
     if (typeof val === 'string') {
@@ -44,17 +44,17 @@ export default function ChangeNumberInput(): JSX.Element {
   return (
     <div>
       <div>Change Event</div>
-      <NumberInput.Group className="flex items-center">
-        <NumberInput className={cn(inputStyle)} value={value} onChange={onChange} />
+      <NumberInput.Root className="flex items-center" value={value} onValueChange={onChange}>
+        <NumberInput.Field className={cn(inputStyle)} />
         <NumberInput.ButtonGroup className="flex flex-col w-5">
-          <NumberInput.PlusButton className={buttonStyle}>
+          <NumberInput.Plus className={buttonStyle}>
             <ArrowUpIcon />
-          </NumberInput.PlusButton>
-          <NumberInput.MinusButton className={buttonStyle}>
+          </NumberInput.Plus>
+          <NumberInput.Minus className={buttonStyle}>
             <ArrowDownIcon />
-          </NumberInput.MinusButton>
+          </NumberInput.Minus>
         </NumberInput.ButtonGroup>
-      </NumberInput.Group>
+      </NumberInput.Root>
     </div>
   );
 }

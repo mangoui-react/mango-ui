@@ -1,0 +1,45 @@
+@mixin input-focus($border-color) {
+  outline: none;
+  border-color: $border-color;
+  border-width: 1px;
+  box-shadow: 0 0 2px $border-color;
+}
+
+@mixin input() {
+  display: inline-block;
+  width: 100%;
+  min-width: 0;
+  position: relative;
+  border: 1px solid var(--es-border);
+  box-sizing: border-box;
+  background-color: var(--es-component-bg);
+  color: var(--es-text);
+  padding: 5px 11px;
+  line-height: 1;
+  font-size: 1rem;
+
+  &:focus {
+    @include input-focus(var(--es-primary));
+  }
+
+  // readOnly
+  &:readonly {
+  }
+
+  // disabled
+  &:disabled {
+    background-color: var(--es-disabled-bg);
+    color: var(--es-disabled-text);
+    border-color: var(--es-disabled-border);
+    cursor: not-allowed;
+  }
+
+  // // invalid
+  // &--invalid {
+  //   border-color: var(--es-error);
+
+  //   &:focus {
+  //     @include input-focus(var(--es-error));
+  //   }
+  // }
+}

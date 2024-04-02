@@ -1,17 +1,14 @@
-// 'use client';
-import React, { useCallback, useContext, useEffect } from 'react';
+import React from 'react';
 
 import { pattern } from '../internal/regexp';
 import useControlled from '../internal/useControlled';
+import { ComponentPropsWithoutRef, FormElementBaseProps } from '../types/common';
 
-import { NumberInputContext } from './NumberInputGroup';
-
-export type NumberInputValueType = number | null;
+export type NumberInputValue = number | null;
 
 export interface NumberInputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'defaultValue' | 'onChange'> {
-  value?: NumberInputValueType;
-  defaultValue?: NumberInputValueType;
+  extends FormElementBaseProps<NumberInputValue>,
+    Omit<ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
   /** 최소값 */
   min?: number;
   /** 최대값 */
@@ -19,187 +16,221 @@ export interface NumberInputProps
   /** 증가/감소 간격 */
   step?: number;
   /** 값 변경시 호출 */
-  onChange?: (
-    event: React.SyntheticEvent<HTMLInputElement> | React.MouseEvent<HTMLButtonElement>,
-    value: NumberInputValueType,
-  ) => void;
+  onValueChange?: (value: NumberInputValue) => void;
 }
 
-const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
-  (
-    {
-      defaultValue,
-      value: valueProp,
+export interface NumberInputContextValue {
+  name?: string; // NumberInputProps['name'];
+  value?: NumberInputValue; // NumberInputProps['value'];
+  disabled?: boolean; // NumberInputProps['disabled'];
+  readOnly?: boolean; // NumberInputProps['readOnly'];
+  //
+  disabledPlusButton: boolean;
+  disabledMinusButton: boolean;
+  setDisabledPlusButton: React.Dispatch<React.SetStateAction<boolean>>;
+  setdisabledMinusButton: React.Dispatch<React.SetStateAction<boolean>>;
+  //
+  onPlus: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onMinus: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onNumberInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onNumberInputBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onNumberInputKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+}
+
+export const NumberInputContext = React.createContext<NumberInputContextValue>({
+  disabledPlusButton: false,
+  disabledMinusButton: false,
+  setDisabledPlusButton: () => {},
+  setdisabledMinusButton: () => {},
+  //
+  onPlus: () => {},
+  onMinus: () => {},
+  onNumberInputChange: () => {},
+  onNumberInputBlur: () => {},
+  onNumberInputKeyDown: () => {},
+});
+
+/**
+ * 숫자 입력 컴포넌트
+ *
+ * @author 안형노 <elle0510@gmail.com>
+ */
+const NumberInput = React.forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
+  const {
+    name,
+    defaultValue,
+    value: valueProp,
+    disabled,
+    readOnly,
+    min = -Infinity,
+    max = Infinity,
+    step = 1,
+    children,
+    onValueChange,
+    onBlur,
+    onKeyDown,
+    ...rest
+  } = props;
+
+  const [value, setValue] = useControlled<NumberInputValue | undefined>(valueProp, defaultValue);
+
+  const [disabledPlusButton, setDisabledPlusButton] = React.useState<boolean>(false);
+  const [disabledMinusButton, setdisabledMinusButton] = React.useState<boolean>(false);
+
+  const isMaxValue = React.useCallback(
+    (val?: NumberInputValue): boolean => {
+      if (val === undefined || val === null) return false;
+      return val >= max;
+    },
+    [max],
+  );
+
+  const isMinValue = React.useCallback(
+    (val?: NumberInputValue): boolean => {
+      if (val === undefined || val === null) return false;
+      return val <= min;
+    },
+    [min],
+  );
+
+  const isNumber = React.useCallback((val: string): boolean => {
+    if (!pattern.number.test(val)) {
+      // setValue(undefined);
+      return false;
+    }
+    return true;
+  }, []);
+
+  const changeValue = React.useCallback(
+    (val: NumberInputValue) => {
+      setDisabledPlusButton(isMaxValue(val));
+      setdisabledMinusButton(isMinValue(val));
+      setValue(val);
+      onValueChange?.(val);
+    },
+    [isMaxValue, isMinValue, onValueChange, setValue],
+  );
+
+  // max 보다 크면 max 리턴, min 보다 작으면 min 리턴, 그렇지 않으면 값 그대로 리턴
+  const checkMinMax = React.useCallback(
+    (val: number): number => {
+      let _val = val;
+      if (val > max) {
+        _val = max;
+      } else if (val < min) {
+        _val = min;
+      }
+      return _val;
+    },
+    [max, min],
+  );
+
+  const handleChange = React.useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const val = event.target.value;
+      if (val !== '' && !isNumber(val)) {
+        setValue(val as never);
+        onValueChange?.(val as never);
+        return;
+      }
+      const newVal = val === '' ? null : +val;
+      changeValue(newVal);
+    },
+    [changeValue, isNumber, onValueChange, setValue],
+  );
+
+  const handlePlus = React.useCallback(() => {
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+    if (disabled || readOnly) return;
+
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+    const val = typeof value === 'string' ? 0 : (value || 0) + step;
+    const result = checkMinMax(val);
+    changeValue(result);
+  }, [changeValue, checkMinMax, disabled, readOnly, step, value]);
+
+  const handleMinus = React.useCallback(() => {
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+    if (disabled || readOnly) return;
+
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+    const val = typeof value === 'string' ? 0 : (value || 0) - step;
+    const result = checkMinMax(val);
+    changeValue(result);
+  }, [changeValue, checkMinMax, disabled, readOnly, step, value]);
+
+  const changeInputValue = React.useCallback(() => {
+    const result = typeof value === 'number' ? checkMinMax(value) : null;
+
+    changeValue(result);
+  }, [changeValue, checkMinMax, value]);
+
+  const handleBlur = React.useCallback(
+    (event: React.FocusEvent<HTMLInputElement>) => {
+      changeInputValue();
+      onBlur?.(event);
+    },
+    [changeInputValue, onBlur],
+  );
+
+  const handleKeyDown = React.useCallback(
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      // event.stopPropagation();
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        changeInputValue();
+      }
+      onKeyDown?.(event);
+    },
+    [changeInputValue, onKeyDown],
+  );
+
+  const contextValue = React.useMemo(
+    () => ({
+      name,
+      value,
       disabled,
       readOnly,
-      // invalid,
-      min = -Infinity,
-      max = Infinity,
-      step = 1,
-      onChange,
-      onBlur,
-      onKeyDown,
-      ...rest
-    },
-    ref,
-  ) => {
-    const {
+      //
+      disabledPlusButton,
+      disabledMinusButton,
       setDisabledPlusButton,
       setdisabledMinusButton,
       //
-      setOnPlus,
-      setOnMinus,
-    } = useContext(NumberInputContext);
+      onPlus: handlePlus,
+      onMinus: handleMinus,
+      onNumberInputChange: handleChange,
+      onNumberInputBlur: handleBlur,
+      onNumberInputKeyDown: handleKeyDown,
+    }),
+    [
+      disabled,
+      disabledMinusButton,
+      disabledPlusButton,
+      handleBlur,
+      handleChange,
+      handleKeyDown,
+      handleMinus,
+      handlePlus,
+      name,
+      readOnly,
+      value,
+    ],
+  );
 
-    const [value, setValue] = useControlled<NumberInputValueType | undefined>(
-      valueProp,
-      defaultValue,
-    );
-
-    const isMaxValue = useCallback(
-      (val?: NumberInputValueType): boolean => {
-        if (val === undefined || val === null) return false;
-        return val >= max;
-      },
-      [max],
-    );
-
-    const isMinValue = useCallback(
-      (val?: NumberInputValueType): boolean => {
-        if (val === undefined || val === null) return false;
-        return val <= min;
-      },
-      [min],
-    );
-
-    const isNumber = useCallback((val: string): boolean => {
-      if (!pattern.number.test(val)) {
-        // setValue(undefined);
-        return false;
-      }
-      return true;
-    }, []);
-
-    const changeValue = useCallback(
-      (
-        e: React.SyntheticEvent<HTMLInputElement> | React.MouseEvent<HTMLButtonElement>,
-        val: NumberInputValueType,
-      ) => {
-        setDisabledPlusButton(isMaxValue(val));
-        setdisabledMinusButton(isMinValue(val));
-        setValue(val);
-        onChange?.(e, val);
-      },
-      [isMaxValue, isMinValue, onChange, setDisabledPlusButton, setValue, setdisabledMinusButton],
-    );
-
-    // max 보다 크면 max 리턴, min 보다 작으면 min 리턴, 그렇지 않으면 값 그대로 리턴
-    const checkMinMax = useCallback(
-      (val: number): number => {
-        let _val = val;
-        if (val > max) {
-          _val = max;
-        } else if (val < min) {
-          _val = min;
-        }
-        return _val;
-      },
-      [max, min],
-    );
-
-    const handleChange = useCallback(
-      (event: React.ChangeEvent<HTMLInputElement>) => {
-        const val = event.target.value;
-        if (val !== '' && !isNumber(val)) {
-          setValue(val as never);
-          onChange?.(event, val as never);
-          return;
-        }
-        const newVal = val === '' ? null : +val;
-        changeValue(event, newVal);
-      },
-      [changeValue, isNumber, onChange, setValue],
-    );
-
-    const handlePlus = useCallback(
-      (event: React.MouseEvent<HTMLButtonElement>) => {
-        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-        if (disabled || readOnly) return;
-
-        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-        const val = typeof value === 'string' ? 0 : (value || 0) + step;
-        const result = checkMinMax(val);
-        changeValue(event, result);
-      },
-      [changeValue, checkMinMax, disabled, readOnly, step, value],
-    );
-
-    const handleMinus = useCallback(
-      (event: React.MouseEvent<HTMLButtonElement>) => {
-        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-        if (disabled || readOnly) return;
-
-        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-        const val = typeof value === 'string' ? 0 : (value || 0) - step;
-        const result = checkMinMax(val);
-        changeValue(event, result);
-      },
-      [changeValue, checkMinMax, disabled, readOnly, step, value],
-    );
-
-    const changeInputValue = useCallback(
-      (e: React.SyntheticEvent<HTMLInputElement>) => {
-        const result = typeof value === 'number' ? checkMinMax(value) : null;
-
-        changeValue(e, result);
-      },
-      [changeValue, checkMinMax, value],
-    );
-
-    const handleBlur = useCallback(
-      (e: React.FocusEvent<HTMLInputElement>) => {
-        changeInputValue(e);
-        onBlur?.(e);
-      },
-      [changeInputValue, onBlur],
-    );
-
-    const handleKeyDown = useCallback(
-      (e: React.KeyboardEvent<HTMLInputElement>) => {
-        // event.stopPropagation();
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          changeInputValue(e);
-        }
-        onKeyDown?.(e);
-      },
-      [changeInputValue, onKeyDown],
-    );
-
-    // NumberInputContext plus/minus 함수 셋팅
-    useEffect(() => {
-      setOnPlus(() => handlePlus);
-    }, [handlePlus, setOnPlus]);
-
-    useEffect(() => {
-      setOnMinus(() => handleMinus);
-    }, [handleMinus, setOnMinus]);
-
-    return (
-      <input
+  return (
+    <NumberInputContext.Provider value={contextValue}>
+      <div
         ref={ref}
-        value={Number.isNaN(value) ? '' : value?.toString() ?? ''}
-        disabled={disabled}
-        readOnly={readOnly}
-        // invalid={invalid}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        onKeyDown={handleKeyDown}
+        data-disabled={disabled ? '' : undefined}
+        data-readonly={readOnly ? '' : undefined}
         {...rest}
-      />
-    );
-  },
-);
+      >
+        {children}
+      </div>
+    </NumberInputContext.Provider>
+  );
+});
 
 NumberInput.displayName = 'NumberInput';
 

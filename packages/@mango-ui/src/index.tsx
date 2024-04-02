@@ -45,8 +45,8 @@ export * from './ConfigProvider';
 export { default as Drawer } from './Drawer';
 export * from './Drawer';
 
-// export { default as Dropdown } from './Dropdown';
-// export * from './Dropdown';
+export { default as Dropdown } from './Dropdown';
+export * from './Dropdown';
 
 // export { default as FileUpload } from './FileUpload';
 // export * from './FileUpload';
@@ -69,8 +69,8 @@ export * from './Textarea';
 export { default as Modal } from './Modal';
 export * from './Modal';
 
-// export { default as Popover } from './Popover';
-// export * from './Popover';
+export { default as Popover } from './Popover';
+export * from './Popover';
 
 export { default as Progress } from './Progress';
 export * from './Progress';

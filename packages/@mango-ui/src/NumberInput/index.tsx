@@ -1,23 +1,26 @@
-// // 'use client';
-
 // export { default } from './NumberInput';
-// export { default as NumberInputGroup } from './NumberInputGroup';
+// export { default as NumberInputField } from './NumberInputField';
 // export { default as NumberInputButtonGroup } from './NumberInputButtonGroup';
-// export { default as NumberInputPlusButton } from './NumberInputPlusButton';
-// export { default as NumberInputMinusButton } from './NumberInputMinusButton';
-
-import NumberInputRoot from './NumberInput';
-import Group from './NumberInputGroup';
+// export { default as NumberInputPlus } from './NumberInputPlus';
+// export { default as NumberInputMinus } from './NumberInputMinus';
+import Root from './NumberInput';
 import ButtonGroup from './NumberInputButtonGroup';
-import PlusButton from './NumberInputPlusButton';
-import MinusButton from './NumberInputMinusButton';
+import Field from './NumberInputField';
+import Minus from './NumberInputMinus';
+import Plus from './NumberInputPlus';
 
 export * from './NumberInput';
-export * from './NumberInputGroup';
+export * from './NumberInputField';
 export * from './NumberInputButtonGroup';
-export * from './NumberInputPlusButton';
-export * from './NumberInputMinusButton';
+export * from './NumberInputPlus';
+export * from './NumberInputMinus';
 
-const NumberInput = Object.assign(NumberInputRoot, { Group, ButtonGroup, PlusButton, MinusButton });
+const NumberInput = {
+  Root,
+  Field,
+  ButtonGroup,
+  Plus,
+  Minus,
+};
 
 export default NumberInput;

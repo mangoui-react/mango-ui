@@ -1,13 +1,19 @@
 import React from 'react';
-import { ComponentBaseProps } from '../types/common';
 
-export interface NumberInputButtonGroupProps
-  extends ComponentBaseProps,
-    React.HTMLAttributes<HTMLDivElement> {}
+import { ComponentPropsWithoutRef } from '../types/common';
 
-const NumberInputButtonGroup = React.forwardRef<HTMLDivElement, NumberInputButtonGroupProps>(
+export interface NumberInputButtonGroupProps extends ComponentPropsWithoutRef<'span'> {}
+
+// TODO: 필요한지 확인필요
+const NumberInputButtonGroup = React.forwardRef<HTMLSpanElement, NumberInputButtonGroupProps>(
   (props, ref) => {
-    return <div ref={ref} {...props} />;
+    const { children, ...rest } = props;
+
+    return (
+      <span ref={ref} {...rest}>
+        {children}
+      </span>
+    );
   },
 );
 
