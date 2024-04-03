@@ -1,0 +1,80 @@
+@import '../../styles/common';
+
+$radio-cls: #{$prefix-cls}-radio;
+
+.#{$radio-cls} {
+  display: inline-flex;
+  // cursor: pointer;
+  align-items: center;
+
+  // readOnly
+  &[data-readonly] {
+    cursor: default;
+    pointer-events: none;
+
+    .#{$radio-cls}-indicator {
+      cursor: default;
+    }
+  }
+
+  // disabled
+  &[data-disabled] {
+    cursor: not-allowed;
+
+    .#{$radio-cls}-indicator {
+      color: var(--es-disabled-text);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .#{$radio-cls}-label {
+      color: var(--es-disabled-text);
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  // control
+  &-indicator {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--es-primary);
+    cursor: pointer;
+
+    & > svg {
+      font-size: 1.5rem;
+    }
+  }
+
+  // control 하위 input
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    cursor: inherit;
+    opacity: 0;
+
+    // & + svg {
+    //   font-size: 1.5rem;
+    // }
+  }
+
+  // label
+  &-label {
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+  }
+}
+
+.#{$radio-cls}-group {
+  display: flex;
+  flex-direction: row;
+  // gap: 10px;
+
+  &[data-orientation='vertical'] {
+    flex-direction: column;
+  }
+}
