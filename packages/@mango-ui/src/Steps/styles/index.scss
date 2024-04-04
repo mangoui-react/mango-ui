@@ -1,0 +1,151 @@
+@import '../../styles/common';
+// @import './mixin';
+
+$steps-cls: #{$prefix-cls}-steps;
+$step-cls: #{$prefix-cls}-step;
+
+.#{$steps-cls} {
+  display: flex;
+
+  &[data-orientation="vertical"] {
+    flex-direction: column;
+
+    .#{$step-cls} {
+      &:not(:first-of-type) {
+        margin-top: 10px;
+        padding-left: 0;
+      }
+
+      padding-bottom: 20px;
+      align-items: flex-start;
+    }
+  }
+}
+
+.#{$step-cls} {
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  // display: inline-block;
+  display: flex;
+  overflow: hidden;
+
+  // :first-child 는 server-side rendering 할 때 unsafe 경고 메시지 출력
+  &:not(:first-of-type) {
+    padding-left: 12px;
+  }
+
+  // last step
+  &:last-child {
+    flex: none;
+  }
+
+  // status
+  &[data-status="wait"] {
+    .#{$step-cls}-content {
+      color: var(--es-soft-text);
+    }
+
+    .#{$step-cls}-indicator {
+      background: inherit;
+      border-color: var(--es-soft-text);
+      color: var(--es-soft-text);
+    }
+  }
+
+  &[data-status="process"] {
+    .#{$step-cls}-content {
+      color: inherit;
+    }
+
+    .#{$step-cls}-indicator {
+      background: var(--es-primary);
+      border-color: var(--es-primary);
+      color: #fff;
+    }
+  }
+
+  &[data-status="finish"] {
+    .#{$step-cls}-content {
+      color: inherit;
+    }
+
+    .#{$step-cls}-indicator {
+      background: inherit;
+      border-color: var(--es-primary);
+      color: var(--es-primary);
+    }
+  }
+
+  &[data-status="error"] {
+    .#{$step-cls}-content {
+      color: var(--es-error);
+    }
+
+    .#{$step-cls}-indicator {
+      background: inherit;
+      border-color: var(--es-error);
+      color: var(--es-error);
+    }
+  }
+
+  // step 하위 icon
+  &-indicator {
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid;
+    border-radius: 50%;
+    line-height: 30px;
+
+    & > svg {
+      display: inline-block;
+      vertical-align: inherit;
+    }
+  }
+
+  // step 하위 content
+  &-content {
+    // display: inline-block;
+    // vertical-align: top;
+    flex-shrink: 0;
+
+    .#{$step-cls}-title {
+      position: relative;
+      display: inline-block;
+      // padding-right: 12px;
+      line-height: 30px;
+    }
+
+    // &-description {
+
+    // }
+  }
+
+  &-separator {
+    width: 100%;
+    height: 2px;
+    background-color: var(--es-border);
+
+    &[data-orientation="horizontal"] {
+      margin-inline-start: 0.5rem;
+    }
+
+    &[data-orientation="vertical"] {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      // max-height: calc(100% - var(--stepper-indicator-size) - 8px);
+      top: 34px;
+      left: 14px;
+      margin-block-start: 0.5rem;
+    }
+  }
+}
