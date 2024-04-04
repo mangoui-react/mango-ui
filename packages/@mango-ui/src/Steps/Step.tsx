@@ -16,11 +16,6 @@ export type StepContextValue = Pick<StepProps, 'status' | 'index'>;
 
 export const StepContext = React.createContext<StepContextValue>({});
 
-/**
- * 스텝 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => {
   const { status: statusProp, index = 0, children, ...rest } = props;
 

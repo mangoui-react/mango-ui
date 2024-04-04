@@ -12,6 +12,11 @@ export interface StepsProps extends ComponentPropsWithoutRef<'div'> {
 export type StepsContextValue = Pick<StepsProps, 'currentStep' | 'orientation'>;
 export const StepsContext = React.createContext<StepsContextValue>({});
 
+/**
+ * 스텝 컴포넌트
+ *
+ * @author 안형노 <elle0510@gmail.com>
+ */
 const Steps = React.forwardRef<HTMLDivElement, StepsProps>((props, ref) => {
   const { currentStep, orientation = 'horizontal', children, ...rest } = props;
 
