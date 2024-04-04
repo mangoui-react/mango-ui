@@ -48,6 +48,6 @@ const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => {
   );
 });
 
-Step.displayName = 'Step';
+Step.displayName = 'Steps.Step';
 
 export default Step;

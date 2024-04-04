@@ -15,6 +15,6 @@ const StepTitle = React.forwardRef<HTMLDivElement, StepTitleProps>((props, ref) 
   );
 });
 
-StepTitle.displayName = 'Step.Title';
+StepTitle.displayName = 'Steps.Title';
 
 export default StepTitle;

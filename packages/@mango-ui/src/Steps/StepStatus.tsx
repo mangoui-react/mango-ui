@@ -45,6 +45,6 @@ const StepStatus = React.forwardRef<HTMLDivElement, StepStatusProps>((props, ref
   );
 });
 
-StepStatus.displayName = 'Step.Status';
+StepStatus.displayName = 'Steps.Status';
 
 export default StepStatus;

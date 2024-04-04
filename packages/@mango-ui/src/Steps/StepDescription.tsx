@@ -15,6 +15,6 @@ const StepDescription = React.forwardRef<HTMLDivElement, StepDescriptionProps>((
   );
 });
 
-StepDescription.displayName = 'Step.Description';
+StepDescription.displayName = 'Steps.Description';
 
 export default StepDescription;

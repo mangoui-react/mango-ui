@@ -23,6 +23,6 @@ const StepIndicator = React.forwardRef<HTMLDivElement, StepIndicatorProps>((prop
   );
 });
 
-StepIndicator.displayName = 'Step.Indicator';
+StepIndicator.displayName = 'Steps.Indicator';
 
 export default StepIndicator;

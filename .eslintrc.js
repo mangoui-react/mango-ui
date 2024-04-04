@@ -22,6 +22,7 @@ module.exports = {
     // '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off', // || 를 ?? 로 바꾸라고 해서 일단 off 설정함. 좀 더 세세한 설정 알아보자
 
     // react-hooks
     'react-hooks/rules-of-hooks': 'error',

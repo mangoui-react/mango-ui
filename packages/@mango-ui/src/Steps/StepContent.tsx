@@ -23,6 +23,6 @@ const StepContent = React.forwardRef<HTMLDivElement, StepContentProps>((props, r
   );
 });
 
-StepContent.displayName = 'Step.Content';
+StepContent.displayName = 'Steps.Content';
 
 export default StepContent;

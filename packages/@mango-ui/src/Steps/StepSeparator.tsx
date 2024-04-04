@@ -12,6 +12,6 @@ const StepSeparator = React.forwardRef<HTMLDivElement, StepSeparatorProps>((prop
   return <div ref={ref} data-orientation={orientation} {...props} />;
 });
 
-StepSeparator.displayName = 'Step.Separator';
+StepSeparator.displayName = 'Steps.Separator';
 
 export default StepSeparator;

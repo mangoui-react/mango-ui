@@ -1,0 +1,85 @@
+@import '../../styles/common';
+
+$switch-cls: #{$prefix-cls}-switch;
+
+.#{$switch-cls} {
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+
+  // input
+  &__input {
+    cursor: inherit;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    // top: 0;
+    // left: -100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+
+  // label
+  &-label {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  &-track {
+    display: inline-flex;
+    position: relative;
+    box-sizing: content-box;
+    height: 26px;
+    border-radius: 15px;
+    background-color: var(--es-component-down-bg);
+    padding: 2px;
+    min-width: 48px;
+    align-items: center;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  // track 하위
+  &-thumb {
+    background-color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 100px;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+      0 1px 3px 0 rgb(0 0 0 / 12%);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  // checked track
+  &[data-state='checked'] {
+    .#{$switch-cls}-track {
+      background-color: var(--es-primary);
+
+      .#{$switch-cls}-thumb {
+        left: calc(100% - 26px);
+      }
+    }
+  }
+
+  // disabled
+  &[data-disabled] {
+    opacity: 0.5;
+    cursor: default;
+    .#{$switch-cls}-track {
+      cursor: not-allowed;
+    }
+  }
+
+  // readonly
+  &[data-readonly] {
+    cursor: default;
+    pointer-events: none;
+  }
+}
