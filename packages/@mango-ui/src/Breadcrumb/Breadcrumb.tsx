@@ -52,7 +52,7 @@ const Breadcrumb = React.forwardRef<HTMLOListElement, BreadcrumbProps>((props, r
           onClick: (event: React.MouseEvent) => {
             setExpanded(true);
             if (React.isValidElement(collapse)) {
-              collapse.props.onClick(event);
+              collapse.props.onClick?.(event);
             }
           },
         }),

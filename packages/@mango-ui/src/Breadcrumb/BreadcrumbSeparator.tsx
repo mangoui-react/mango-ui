@@ -4,6 +4,7 @@ import { ComponentPropsWithoutRef } from '../types/common';
 
 export interface BreadcrumbSeparatorProps extends ComponentPropsWithoutRef<'li'> {}
 
+// TODO: Slot 으로 해보자(CustomSeparator 스토리북도 수정)
 const BreadcrumbSeparator = React.forwardRef<HTMLLIElement, BreadcrumbSeparatorProps>(
   (props, ref) => {
     const { children, ...rest } = props;
