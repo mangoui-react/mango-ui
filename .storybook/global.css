@@ -10,6 +10,7 @@
   --primary-text-color: #fff;
 
   --component-bg: #ffffff;
+  --component-down-bg: #8f9eb0;
 
   --disabled-bg: #f7f7f7;
   --disabled-border: #e2e2e2;
@@ -40,6 +41,7 @@
     --primary-text-color: #fff;
 
     --component-bg: rgb(45, 55, 72);
+    --component-down-bg: rgba(255, 255, 255, 0.24);
 
     --disabled-bg: rgba(255, 255, 255, 0.08);
     --disabled-border: rgba(255, 255, 255, 0.2);
