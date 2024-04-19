@@ -16,6 +16,10 @@
   --disabled-border: #e2e2e2;
   --disabled-text: #d9d9d9;
 
+  --selected-bg: #f2f2f2;
+  --selected-hover: #f7f7f7;
+  --selected-text: #222222;
+
   --border: #d9d9d9;
   --border-inner: #cccccc;
 
@@ -46,6 +50,10 @@
     --disabled-bg: rgba(255, 255, 255, 0.08);
     --disabled-border: rgba(255, 255, 255, 0.2);
     --disabled-text: rgba(255, 255, 255, 0.2);
+
+    --selected-bg: rgba(255, 255, 255, 0.25);
+    --selected-hover: rgba(255, 255, 255, 0.2);
+    --selected-text: #ffffff;
 
     --border: rgba(255, 255, 255, 0.35);
     --border-inner: rgba(255, 255, 255, 0.1);
