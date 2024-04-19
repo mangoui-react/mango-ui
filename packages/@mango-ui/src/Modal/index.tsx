@@ -10,12 +10,9 @@
 // export { default as ModalBackdrop } from './ModalBackdrop';
 import Root from './Modal';
 import Backdrop from './ModalBackdrop';
-import Body from './ModalBody';
 import Close from './ModalClose';
 import CloseButton from './ModalCloseButton';
 import Content from './ModalContent';
-import Footer from './ModalFooter';
-import Header from './ModalHeader';
 import Portal from './ModalPortal';
 import Trigger from './ModalTrigger';
 
@@ -23,9 +20,6 @@ export * from './Modal';
 export * from './ModalTrigger';
 export * from './ModalPortal';
 export * from './ModalContent';
-export * from './ModalHeader';
-export * from './ModalBody';
-export * from './ModalFooter';
 export * from './ModalClose';
 export * from './ModalCloseButton';
 export * from './ModalBackdrop';
@@ -35,9 +29,6 @@ const Modal = {
   Trigger,
   Portal,
   Content,
-  Header,
-  Body,
-  Footer,
   Close,
   CloseButton,
   Backdrop,
