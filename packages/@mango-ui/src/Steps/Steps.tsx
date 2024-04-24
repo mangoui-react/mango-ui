@@ -3,6 +3,7 @@ import React from 'react';
 import { ComponentPropsWithoutRef, TypeAttributes } from '../types/common';
 
 export interface StepsProps extends ComponentPropsWithoutRef<'div'> {
+  // TODO: stepIndex 로 수정 생각해 보자
   /** 현재 Step */
   currentStep?: number;
   /** step 방향 */

@@ -20,6 +20,8 @@
   --selected-hover: #f7f7f7;
   --selected-text: #222222;
 
+  --soft-text: #777777;
+
   --border: #d9d9d9;
   --border-inner: #cccccc;
 
@@ -54,6 +56,8 @@
     --selected-bg: rgba(255, 255, 255, 0.25);
     --selected-hover: rgba(255, 255, 255, 0.2);
     --selected-text: #ffffff;
+
+    --soft-text: rgba(224, 216, 216, 0.54);
 
     --border: rgba(255, 255, 255, 0.35);
     --border-inner: rgba(255, 255, 255, 0.1);
