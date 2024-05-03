@@ -2,12 +2,14 @@
 
 import React from 'react';
 
-import { Button, ButtonProps } from 'mango-headlessui';
 import cn from '@/utils/cn';
 
-function CustomButton({ className, children, ...rest }: ButtonProps): JSX.Element {
+function CustomButton({
+  children,
+  ...rest
+}: React.ComponentPropsWithoutRef<'button'>): JSX.Element {
   return (
-    <Button
+    <button
       className={cn(
         'cursor-pointer text-inherit box-border',
         'border border-solid border-border',
@@ -23,7 +25,7 @@ function CustomButton({ className, children, ...rest }: ButtonProps): JSX.Elemen
       {...rest}
     >
       {children}
-    </Button>
+    </button>
   );
 }
 
@@ -31,29 +33,29 @@ export default function ButtonGroupExam(): JSX.Element {
   return (
     <div className="flex flex-col gap-2">
       <div>Button Group</div>
-      <Button.Group>
+      <div>
         <CustomButton>버튼1</CustomButton>
         <CustomButton>버튼2</CustomButton>
         <CustomButton>버튼3</CustomButton>
-      </Button.Group>
+      </div>
 
-      <Button.Group disabled>
-        <CustomButton>버튼1</CustomButton>
-        <CustomButton>버튼2</CustomButton>
-        <CustomButton>버튼3</CustomButton>
-      </Button.Group>
+      <div>
+        <CustomButton disabled>버튼1</CustomButton>
+        <CustomButton disabled>버튼2</CustomButton>
+        <CustomButton disabled>버튼3</CustomButton>
+      </div>
 
-      <Button.Group className="flex gap-1">
+      <div className="flex gap-1">
         <CustomButton>버튼1</CustomButton>
         <CustomButton>버튼2</CustomButton>
         <CustomButton>버튼3</CustomButton>
-      </Button.Group>
+      </div>
 
-      <Button.Group className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1">
         <CustomButton>버튼1</CustomButton>
         <CustomButton>버튼2</CustomButton>
         <CustomButton>버튼3</CustomButton>
-      </Button.Group>
+      </div>
     </div>
   );
 }

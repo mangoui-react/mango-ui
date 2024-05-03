@@ -2,8 +2,6 @@
 
 import React from 'react';
 
-import { Button } from 'mango-headlessui';
-
 import SearchIcon from '@/icons/SearchIcon';
 
 import AddonInput from '../components/AddonInput';
@@ -24,7 +22,7 @@ export default function AddonInputExam(): JSX.Element {
         <div className="flex flex-col gap-2 w-full">
           <AddonInput
             leftAddon={
-              <Button style={{ border: 0, height: 25 }}>
+              <button style={{ border: 0, height: 25 }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -36,10 +34,10 @@ export default function AddonInputExam(): JSX.Element {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
-              </Button>
+              </button>
             }
             rightAddon={
-              <Button>
+              <button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -61,7 +59,7 @@ export default function AddonInputExam(): JSX.Element {
                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-              </Button>
+              </button>
             }
           />
           <div>
@@ -69,9 +67,9 @@ export default function AddonInputExam(): JSX.Element {
             <AddonInput
               leftAddon={<div>Search</div>}
               rightAddon={
-                <Button style={{ border: 0, height: 25 }}>
+                <button style={{ border: 0, height: 25 }}>
                   <SearchIcon />
-                </Button>
+                </button>
               }
             />
           </div>

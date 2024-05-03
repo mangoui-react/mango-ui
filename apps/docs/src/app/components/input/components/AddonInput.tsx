@@ -2,9 +2,7 @@
 
 import React, { useCallback, useState } from 'react';
 
-import { Input } from 'mango-headlessui';
 import CloseSolidIcon from '@/icons/CloseSolidIcon';
-
 import cn from '@/utils/cn';
 
 export interface AddonInputProps {
@@ -36,7 +34,7 @@ export default function AddonInput({ leftAddon, rightAddon }: AddonInputProps): 
           'w-full',
         )}
       >
-        <Input
+        <input
           className={cn(
             'inline-block w-full min-w-0 relative border-0 border-solid border-border box-border bg-component-bg text-inherit py-1 px-3',
             'focus:outline-0',

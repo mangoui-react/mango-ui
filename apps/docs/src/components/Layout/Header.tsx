@@ -26,12 +26,12 @@ const Header = (): JSX.Element => {
 
         <div className="shrink-0 ml-1">
           <Link href="https://github.com/elle510/mango-admin" target="_blank">
-            {/* <Button className="border-0 px-1 text-[1.25rem]" icon={<GitHubIcon />} /> */}
+            {/* <button className="border-0 px-1 text-[1.25rem]" icon={<GitHubIcon />} /> */}
             <button>GitHub</button>
           </Link>
         </div>
         <div className="shrink-0 ml-1">
-          {/* <Button className="border-0 px-1 text-[1.25rem]" icon={<BellIcon />} /> */}
+          {/* <button className="border-0 px-1 text-[1.25rem]" icon={<BellIcon />} /> */}
           <button>Bell</button>
         </div>
       </div>

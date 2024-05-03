@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from './Button';
 import './header.css';
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type User = {
   name: string;
 };
@@ -14,7 +15,7 @@ interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
+export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps): JSX.Element => (
   <header>
     <div className="storybook-header">
       <div>

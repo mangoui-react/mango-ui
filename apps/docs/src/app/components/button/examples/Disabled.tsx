@@ -2,12 +2,11 @@
 
 import React from 'react';
 
-import { Button } from 'mango-headlessui';
 import cn from '@/utils/cn';
 
 export default function Disabled(): JSX.Element {
   return (
-    <Button
+    <button
       className={cn(
         'cursor-pointer text-inherit box-border',
         'border border-solid border-border',
@@ -23,6 +22,6 @@ export default function Disabled(): JSX.Element {
       }}
     >
       버튼
-    </Button>
+    </button>
   );
 }

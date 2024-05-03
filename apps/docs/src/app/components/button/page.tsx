@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { Button } from 'mango-headlessui';
-import cn from '@/utils/cn';
 import BellIcon from '@/icons/BellIcon';
-import Disabled from './examples/Disabled';
+import cn from '@/utils/cn';
+
 import ButtonGroupExam from './examples/ButtonGroupExam';
+import Disabled from './examples/Disabled';
 
 export default function ButtonPage(): JSX.Element {
   return (
     <div className="flex flex-col gap-2">
       <div>
-        <Button
+        <button
           className={cn(
             'cursor-pointer text-inherit box-border',
             'border border-solid border-border',
@@ -21,11 +21,11 @@ export default function ButtonPage(): JSX.Element {
           )}
         >
           버튼
-        </Button>
+        </button>
       </div>
 
       <div className="flex items-center justify-start gap-1">
-        <Button
+        <button
           className={cn(
             'cursor-pointer text-inherit box-border',
             'border border-solid border-border',
@@ -36,8 +36,8 @@ export default function ButtonPage(): JSX.Element {
           )}
         >
           <BellIcon />
-        </Button>
-        <Button
+        </button>
+        <button
           className={cn(
             'cursor-pointer text-inherit box-border',
             'border border-solid border-border',
@@ -49,7 +49,7 @@ export default function ButtonPage(): JSX.Element {
         >
           <BellIcon className="mr-2" />
           아이콘
-        </Button>
+        </button>
       </div>
 
       <div>

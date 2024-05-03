@@ -2,10 +2,8 @@
 
 import React, { useCallback, useState } from 'react';
 
-import { Input } from 'mango-headlessui';
 import CloseSolidIcon from '@/icons/CloseSolidIcon';
 import SearchIcon from '@/icons/SearchIcon';
-
 import cn from '@/utils/cn';
 
 export default function RightInsideIconInput(): JSX.Element {
@@ -26,7 +24,7 @@ export default function RightInsideIconInput(): JSX.Element {
         'focus-within:outline-0 focus-within:border-primary focus-within:border focus-within:shadow-[0_0_2px_border-primary]',
       )}
     >
-      <Input
+      <input
         className={cn(
           'inline-block w-full min-w-0 relative border-0 border-solid border-border box-border bg-component-bg text-inherit py-1 px-3 leading-none',
           'focus:outline-0',
