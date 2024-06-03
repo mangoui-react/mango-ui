@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
-const fse = require('fs-extra');
-const glob = require('fast-glob');
-const childProcess = require('child_process');
-const { promisify } = require('util');
-// const yargs = require('yargs');
+import childProcess from 'child_process';
+import glob from 'fast-glob';
+import fse from 'fs-extra';
+import path from 'path';
+import { promisify } from 'util';
+
+// import yargs from 'yargs';
 
 const exec = promisify(childProcess.exec);
 
