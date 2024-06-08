@@ -33,7 +33,7 @@ async function copyFileInBuild(file) {
 
 async function createRootPackageFile() {
   const packageData = await fse.readFile(path.resolve(packagePath, './package.json'), 'utf8');
-  const { scripts, devDependencies, ...packageDataOthers } = JSON.parse(packageData);
+  const { exports, scripts, devDependencies, ...packageDataOthers } = JSON.parse(packageData);
 
   const newPackageData = {
     ...packageDataOthers,

@@ -1,6 +1,6 @@
 {
   "name": "mango-headlessui",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "private": false,
   "author": "ellae",
   "description": "",
@@ -13,6 +13,7 @@
     "// build": "tsc -p ./tsconfig.build.json",
     "build": "node ../../scripts/build.mjs",
     "prebuild": "rimraf build",
+    "release": "pnpm build && pnpm publish --no-git-checks",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,7 +25,8 @@
   "license": "ISC",
   "sideEffects": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "build"
   },
   "engines": {
     "node": ">=16.0.0"
