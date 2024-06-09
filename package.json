@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev:docs": "nx dev docs",
+    "apps:nextjs": "nx dev nextjs",
+    "docs": "nx dev docs",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "lint": "eslint packages --ext .ts,.tsx",
     "storybook": "storybook dev -p 6006",
