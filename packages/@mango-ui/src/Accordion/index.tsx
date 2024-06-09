@@ -1,4 +1,5 @@
-// 'use client';
+'use client';
+
 // export { default } from './Accordion';
 // export { default as AccordionPanel } from './AccordionPanel';
 // export { default as AccordionHeader } from './AccordionHeader';
