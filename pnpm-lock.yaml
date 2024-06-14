@@ -173,6 +173,9 @@ importers:
 
   docs:
     dependencies:
+      clsx:
+        specifier: ^2.0.0
+        version: 2.0.0
       contentlayer:
         specifier: ^0.3.4
         version: 0.3.4(esbuild@0.19.9)
@@ -194,6 +197,9 @@ importers:
       react-live:
         specifier: ^4.1.6
         version: 4.1.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      tailwind-merge:
+        specifier: ^1.14.0
+        version: 1.14.0
     devDependencies:
       '@types/node':
         specifier: ^20

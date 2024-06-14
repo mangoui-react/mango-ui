@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "next": "14.2.3",
     "next-contentlayer": "^0.3.4",
     "prism-react-renderer": "^2.3.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-live": "^4.1.6"
+    "react-live": "^4.1.6",
+    "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
     "@types/node": "^20",
