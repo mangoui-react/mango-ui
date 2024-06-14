@@ -1,5 +1,6 @@
 import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files';
 
+// contentlayer 예제
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: `**/*.md`,
@@ -20,9 +21,9 @@ const computedFields: ComputedFields = {
   },
 };
 
-const Doc = defineDocumentType(() => ({
-  name: 'Doc',
-  filePathPattern: 'sample/**/*.mdx',
+const Overview = defineDocumentType(() => ({
+  name: 'Overview',
+  filePathPattern: 'overview/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string' },
@@ -57,4 +58,41 @@ const Doc = defineDocumentType(() => ({
   },
 }));
 
-export default makeSource({ contentDirPath: 'posts', documentTypes: [Post, Doc] });
+const Doc = defineDocumentType(() => ({
+  name: 'Doc',
+  filePathPattern: 'components/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string' },
+    package: { type: 'string' },
+    description: { type: 'string' },
+    id: { type: 'string' },
+    scope: {
+      type: 'enum',
+      options: ['usage', 'theming', 'props'],
+      default: 'usage',
+    },
+    version: { type: 'string' },
+    author: { type: 'string' },
+    video: { type: 'string' },
+    category: { type: 'string' },
+    aria: { type: 'string' },
+  },
+  computedFields: {
+    ...computedFields,
+    frontMatter: {
+      type: 'json',
+      resolve: (doc) => ({
+        title: doc.title,
+        package: doc.package,
+        description: doc.description,
+        version: doc.version,
+        slug: `/${doc._raw.flattenedPath}`,
+        // editUrl: `${siteConfig.repo.editUrl}/${doc._id}`,
+        // headings: getTableOfContents(doc.body.raw),
+      }),
+    },
+  },
+}));
+
+export default makeSource({ contentDirPath: 'contents', documentTypes: [Post, Overview, Doc] });

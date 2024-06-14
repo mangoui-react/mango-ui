@@ -43,6 +43,17 @@ export default function Nav() {
               <div className="px-1">Overview</div>
               <ul className="px-4">
                 <Intro />
+                <li>
+                  <Link href="/overview/getting-started">Getting started</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div className="px-1">Components</div>
+              <ul className="px-4">
+                <li>
+                  <Link href="/components/button">Button</Link>
+                </li>
               </ul>
             </div>
             <div>

@@ -32,7 +32,7 @@ const mdxComponents = {
 export default function DocPage({ params }: { params: { slug: string } }) {
   const doc = allDocs.find((doc) => {
     // console.log('=========== doc._raw', doc._raw);
-    return doc._raw.flattenedPath === `sample/${params.slug}/usage`;
+    return doc._raw.flattenedPath === `components/${params.slug}`;
   });
   if (!doc) throw new Error(`Post not found for slug: ${params.slug}`);
 

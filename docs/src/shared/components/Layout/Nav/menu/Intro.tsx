@@ -6,7 +6,7 @@ export default function Intro() {
   return (
     <>
       <li className="cursor-pointer hover:text-primary">
-        <Link href="/introduction">Introduction</Link>
+        <Link href="/overview/introduction">Introduction</Link>
       </li>
     </>
   );
