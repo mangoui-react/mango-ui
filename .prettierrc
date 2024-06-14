@@ -12,7 +12,7 @@
   "importOrder": [
     "^react$|^react-dom",
     "<THIRD_PARTY_MODULES>",
-    "^mango-headlessui/(.*)$",
+    "^@melio-ui/(.*)$",
     "^@/(.*)$",
     "^../(types|utils|hooks|internal)/(.*)$|^../(utils|hooks|ConfigProvider)",
     "^../../(types|utils|hooks|internal)/(.*)$|^../../(utils|hooks|ConfigProvider)",

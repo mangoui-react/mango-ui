@@ -5,7 +5,8 @@
 import React from 'react';
 
 import clsx from 'clsx';
-import { Avatar } from 'mango-headlessui';
+
+import { Avatar } from '@melio-ui/react';
 
 import BellIcon from '@/icons/BellIcon';
 import UserIcon from '@/icons/UserIcon';

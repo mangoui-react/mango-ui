@@ -1,6 +1,6 @@
 {
-  "name": "mango-headlessui",
-  "version": "0.0.8",
+  "name": "@melio-ui/react",
+  "version": "0.0.2",
   "private": false,
   "author": "ellae",
   "description": "",
@@ -13,14 +13,14 @@
     "// build": "tsc -p ./tsconfig.build.json",
     "build": "node ../../scripts/build.mjs",
     "prebuild": "rimraf build",
-    "release": "pnpm build && pnpm publish --no-git-checks",
+    "release": "pnpm build && pnpm publish --access=public --no-git-checks",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/elle510/mango-ui.git",
-    "directory": "packages/@mango-ui"
+    "url": "https://github.com/elle510/melio-ui.git",
+    "directory": "packages/react"
   },
   "license": "ISC",
   "sideEffects": false,

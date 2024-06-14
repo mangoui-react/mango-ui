@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Accordion } from 'mango-headlessui';
+import { Accordion } from '@melio-ui/react';
 
 import ChevronDownIcon from '@/icons/ChevronDownIcon';
 
