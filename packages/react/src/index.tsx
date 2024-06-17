@@ -6,62 +6,62 @@
 export { default as Accordion } from './accordion';
 export * from './accordion';
 
-export { default as Alert } from './Alert';
-export * from './Alert';
+export { default as Alert } from './alert';
+export * from './alert';
 
-export { default as Avatar } from './Avatar';
-export * from './Avatar';
+export { default as Avatar } from './avatar';
+export * from './avatar';
 
-export { default as Badge } from './Badge';
-export * from './Badge';
+export { default as Badge } from './badge';
+export * from './badge';
 
-export { default as Breadcrumb } from './Breadcrumb';
-export * from './Breadcrumb';
+export { default as Breadcrumb } from './breadcrumb';
+export * from './breadcrumb';
 
-export { default as Checkbox } from './Checkbox';
-export * from './Checkbox';
+export { default as Checkbox } from './checkbox';
+export * from './checkbox';
 
-export { default as CircularProgress } from './CircularProgress';
-export * from './CircularProgress';
+export { default as CircularProgress } from './circularProgress';
+export * from './circularProgress';
 
-export { default as ConfigProvider } from './ConfigProvider';
-export * from './ConfigProvider';
+export { default as ConfigProvider } from './configProvider';
+export * from './configProvider';
 
-export { default as Drawer } from './Drawer';
-export * from './Drawer';
+export { default as Drawer } from './drawer';
+export * from './drawer';
 
-export { default as Dropdown } from './Dropdown';
-export * from './Dropdown';
+export { default as Dropdown } from './dropdown';
+export * from './dropdown';
 
-export { default as Modal } from './Modal';
-export * from './Modal';
+export { default as Modal } from './modal';
+export * from './modal';
 
-export { default as NumberInput } from './NumberInput';
-export * from './NumberInput';
+export { default as NumberInput } from './numberInput';
+export * from './numberInput';
 
-export { default as Popover } from './Popover';
-export * from './Popover';
+export { default as Popover } from './popover';
+export * from './popover';
 
-export { default as Progress } from './Progress';
-export * from './Progress';
+export { default as Progress } from './progress';
+export * from './progress';
 
-export { default as Radio } from './Radio';
-export * from './Radio';
+export { default as Radio } from './radio';
+export * from './radio';
 
-export { default as Slider } from './Slider';
-export * from './Slider';
+export { default as Slider } from './slider';
+export * from './slider';
 
-export { default as Steps } from './Steps';
-export * from './Steps';
+export { default as Steps } from './steps';
+export * from './steps';
 
-export { default as Switch } from './Switch';
-export * from './Switch';
+export { default as Switch } from './switch';
+export * from './switch';
 
-export { default as Tabs } from './Tabs';
-export * from './Tabs';
+export { default as Tabs } from './tabs';
+export * from './tabs';
 
-export { default as Toast } from './Toast';
-export * from './Toast';
+export { default as Toast } from './toast';
+export * from './toast';
 
-export { default as Tooltip } from './Tooltip';
-export * from './Tooltip';
+export { default as Tooltip } from './tooltip';
+export * from './tooltip';
