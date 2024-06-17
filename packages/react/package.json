@@ -1,6 +1,6 @@
 {
   "name": "@melio-ui/react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "author": "ellae",
   "description": "",
@@ -10,8 +10,9 @@
     ".": "./src"
   },
   "scripts": {
+    "dist": "node ../../scripts/build.mjs",
     "// build": "tsc -p ./tsconfig.build.json",
-    "build": "node ../../scripts/build.mjs",
+    "build": "node ../../scripts/build-old.mjs",
     "prebuild": "rimraf build",
     "release": "pnpm build && pnpm publish --access=public --no-git-checks",
     "test": "echo \"Error: no test specified\" && exit 1"
