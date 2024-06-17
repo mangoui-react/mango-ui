@@ -3,8 +3,8 @@
 
 // export * from './styles';
 
-export { default as Accordion } from './Accordion';
-export * from './Accordion';
+export { default as Accordion } from './accordion';
+export * from './accordion';
 
 export { default as Alert } from './Alert';
 export * from './Alert';
