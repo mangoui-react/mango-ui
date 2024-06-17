@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentPropsWithoutRef } from '../types/common';
 
-import getProgressState from '../Progress/helpers/getProgressState';
+import getProgressState from '../progress/helpers/getProgressState';
 
 export interface CircularProgressProps extends ComponentPropsWithoutRef<'div'> {
   /** bar value (진행 표시) */

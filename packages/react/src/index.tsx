@@ -21,11 +21,11 @@ export * from './breadcrumb';
 export { default as Checkbox } from './checkbox';
 export * from './checkbox';
 
-export { default as CircularProgress } from './circularProgress';
-export * from './circularProgress';
+export { default as CircularProgress } from './circular-progress';
+export * from './circular-progress';
 
-export { default as ConfigProvider } from './configProvider';
-export * from './configProvider';
+export { default as ConfigProvider } from './config-provider';
+export * from './config-provider';
 
 export { default as Drawer } from './drawer';
 export * from './drawer';
@@ -36,8 +36,8 @@ export * from './dropdown';
 export { default as Modal } from './modal';
 export * from './modal';
 
-export { default as NumberInput } from './numberInput';
-export * from './numberInput';
+export { default as NumberInput } from './number-input';
+export * from './number-input';
 
 export { default as Popover } from './popover';
 export * from './popover';

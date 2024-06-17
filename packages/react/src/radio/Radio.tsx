@@ -3,7 +3,7 @@ import React from 'react';
 // import uuidv4 from '../internal/uuidv4';
 import { ComponentPropsWithoutRef, FormElementBaseProps } from '../types/common';
 
-import useChecked from '../Checkbox/hooks/useChecked';
+import useChecked from '../checkbox/hooks/useChecked';
 import { RadioGroupContext } from './RadioGroup';
 import getState from './helpers/getState';
 
