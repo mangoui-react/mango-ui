@@ -2,14 +2,16 @@ import { allOverviews } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import CodeBlock from '@/shared/components/CodeBlock';
+import { PackageManagers } from '@/shared/components/PackageManagers';
 
 // import Button from '@/ui/Button';
 
-// TODO: 어떤 용도인지 모하는 놈인지 알아보자
+// TODO: 어떤 용도인지 모하는 놈인지 알아보자. mdx 문서에서의 Button 인듯
 const Button = (props: React.ComponentPropsWithoutRef<'button'>) => <button {...props} />;
 
 const mdxComponents = {
   Button,
+  PackageManagers,
   h1: (props: any) => (
     <h1 style={{ marginTop: '2rem', marginBottom: '0.25rem', fontSize: '1.875rem' }} {...props} />
   ),
@@ -31,7 +33,7 @@ const mdxComponents = {
 
 export default function DocPage({ params }: { params: { slug: string } }) {
   const doc = allOverviews.find((doc) => {
-    console.log('=========== overview doc._raw', doc._raw);
+    // console.log('=========== overview doc._raw', doc._raw);
     return doc._raw.flattenedPath === `overview/${params.slug}`;
   });
   if (!doc) throw new Error(`Post not found for slug: ${params.slug}`);
