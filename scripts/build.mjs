@@ -8,7 +8,7 @@ import * as tsup from 'tsup';
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 async function build(packagePath) {
   console.log('======== packagePath', packagePath);
-  const indexFile = `${packagePath}/index.tsx`;
+  const indexFile = `${packagePath}/index.ts`;
   const buildPath = `${packagePath}/build`;
   const distPath = `${buildPath}/dist`;
 
