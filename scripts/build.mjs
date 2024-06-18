@@ -1,179 +1,118 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-import childProcess from 'child_process';
-import glob from 'fast-glob';
-import fse from 'fs-extra';
+// import * as esbuild from 'esbuild';
+// import fse from 'fs-extra';
+import { globSync } from 'glob';
+import { copyFileSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'path';
-import { promisify } from 'util';
+import * as tsup from 'tsup';
 
-// import yargs from 'yargs';
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+async function build(packagePath) {
+  console.log('======== packagePath', packagePath);
+  const indexFile = `${packagePath}/index.tsx`;
+  const buildPath = `${packagePath}/build`;
+  const distPath = `${buildPath}/dist`;
 
-const exec = promisify(childProcess.exec);
+  rmSync(buildPath, { recursive: true, force: true });
 
-const packagePath = process.cwd();
-const buildPath = path.join(packagePath, './build');
-const srcPath = path.join(packagePath, './src');
+  // const esbuildConfig = {
+  //   entryPoints: [indexFile],
+  //   external: ['@melio-ui/*'],
+  //   packages: 'external',
+  //   bundle: true,
+  //   sourcemap: true,
+  //   format: 'cjs',
+  //   target: 'es2022',
+  //   outdir: distPath,
+  // };
 
-async function dTsCopy({ from, to }) {
-  if (!(await fse.pathExists(to))) {
-    console.warn(`path ${to} does not exists`);
-    return [];
-  }
+  // await esbuild.build(esbuildConfig);
+  // console.log(`Built ${distPath}/index.js`);
 
-  const files = await glob('**/*.d.ts', { cwd: from });
-  const cmds = files.map((file) => fse.copy(path.resolve(from, file), path.resolve(to, file)));
-  return await Promise.all(cmds);
-}
+  // await esbuild.build({
+  //   ...esbuildConfig,
+  //   format: 'esm',
+  //   outExtension: { '.js': '.mjs' },
+  // });
+  // console.log(`Built ${distPath}/index.mjs`);
 
-async function copyFileInBuild(file) {
-  const sourcePath = path.resolve(packagePath, file);
-  const targetPath = path.resolve(buildPath, path.basename(file));
-  await fse.copy(sourcePath, targetPath);
-  console.log(`Copied ${sourcePath} to ${targetPath}`);
-}
+  // tsup is used to emit d.ts files only (esbuild can't do that).
+  //
+  // Notes:
+  // 1. Emitting d.ts files is super slow for whatever reason.
+  // 2. It could have fully replaced esbuild (as it uses that internally),
+  //    but at the moment its esbuild version is somewhat outdated.
+  //    It’s also harder to configure and esbuild docs are more thorough.
+  await tsup.build({
+    entry: [indexFile],
+    format: ['cjs', 'esm'],
+    // dts: { only: true },
+    dts: true,
+    sourcemap: true,
+    outDir: distPath,
+    clean: true,
+    silent: true,
+    external: [/@melio-ui\/.+/],
+  });
+  // console.log(`Built ${distPath}/index.d.ts`);
+  console.log(`Built ${distPath}`);
 
-async function createRootPackageFile() {
-  const packageData = await fse.readFile(path.resolve(packagePath, './package.json'), 'utf8');
-  const { exports, scripts, devDependencies, ...packageDataOthers } = JSON.parse(packageData);
+  // package.json 파일 생성
+  await createPackageFile(packagePath);
 
-  const newPackageData = {
-    ...packageDataOthers,
-    private: false,
-    main: './index.js',
-    module: './esm/index.js',
-    types: './index.d.ts',
-  };
-
-  const targetPath = path.resolve(buildPath, './package.json');
-
-  await fse.writeFile(targetPath, JSON.stringify(newPackageData, null, 2), 'utf8');
-  console.log(`Created package.json in ${targetPath}`);
-
-  return newPackageData;
-}
-
-async function createPackageJson({ from, to }) {
-  const directoryPackages = glob.sync('*/index.{ts,tsx}', { cwd: from }).map(path.dirname);
-
+  // README.md 파일 copy
   await Promise.all(
-    directoryPackages.map(async (directoryPackage) => {
-      const packageJsonPath = path.join(to, directoryPackage, 'package.json');
-
-      const packageJson = {
-        sideEffects: false,
-        module: path.posix.join('../esm', directoryPackage, 'index.js'),
-        main: './index.js',
-        types: './index.d.ts',
-      };
-
-      const [typingsEntryExist, moduleEntryExists, mainEntryExists] = await Promise.all([
-        fse.pathExists(path.resolve(path.dirname(packageJsonPath), packageJson.types)),
-        fse.pathExists(path.resolve(path.dirname(packageJsonPath), packageJson.module)),
-        fse.pathExists(path.resolve(path.dirname(packageJsonPath), packageJson.main)),
-        fse.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2)),
-      ]);
-
-      const manifestErrorMessages = [];
-      if (!typingsEntryExist) {
-        manifestErrorMessages.push(`'types' entry '${packageJson.types}' does not exist`);
-      }
-      if (!moduleEntryExists) {
-        manifestErrorMessages.push(`'module' entry '${packageJson.module}' does not exist`);
-      }
-      if (!mainEntryExists) {
-        manifestErrorMessages.push(`'main' entry '${packageJson.main}' does not exist`);
-      }
-      if (manifestErrorMessages.length > 0) {
-        throw new Error(`${packageJsonPath}:\n${manifestErrorMessages.join('\n')}`);
-      }
-
-      return packageJsonPath;
+    [`${packagePath}/README.md`].map(async (file) => {
+      // await fse.copy(file, `${buildPath}/${path.basename(file)}`);
+      copyFileSync(file, `${buildPath}/${path.basename(file)}`);
     }),
   );
 }
 
-async function run(/* argv */) {
-  // const { packageName } = argv;
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+async function createPackageFile(packagePath) {
+  const buildPath = `${packagePath}/build`;
 
-  try {
-    const tsconfigPath = path.join(packagePath, 'tsconfig.build.json');
-    if (!fse.existsSync(tsconfigPath)) {
-      throw new Error(
-        `${packagePath} package root 에 'tsconfig.build.json' 파일이 존재해야 합니다.`,
-      );
-    }
+  const packageData = readFileSync(path.resolve(packagePath, './package.json'), 'utf8');
+  const { scripts, devDependencies, ...packageDataOthers } = JSON.parse(packageData);
 
-    // commonjs
-    const tsconfigCjsOption = [
-      '--target',
-      'es5',
-      '--module',
-      'commonjs',
-      '--lib',
-      'es5,es2015,es2016,es2017,dom',
-    ];
-    await exec(['pnpm', 'tsc', '--project', tsconfigPath, ...tsconfigCjsOption].join(' '));
+  const newPackageData = {
+    ...packageDataOthers,
+    private: false,
+    exports: {
+      '.': {
+        import: {
+          types: './dist/index.d.mts',
+          default: './dist/index.mjs',
+        },
+        require: {
+          types: './dist/index.d.ts',
+          default: './dist/index.js',
+        },
+      },
+    },
+    main: './dist/index.js',
+    module: './dist/index.mjs',
+    types: './dist/index.d.ts',
+  };
 
-    // esm
-    const tsconfigEsmOption = ['--outDir', 'build/esm', '--declaration', 'true'];
-    await exec(['pnpm', 'tsc', '--project', tsconfigPath, ...tsconfigEsmOption].join(' '));
+  const targetPath = path.resolve(buildPath, './package.json');
 
-    // await exec(['pnpm', 'tsc', '-b', tsconfigPath].join(' '));
+  writeFileSync(targetPath, JSON.stringify(newPackageData, null, 2), 'utf8');
+  console.log(`Created package.json in ${targetPath}`);
 
-    // d.ts copy
-    await dTsCopy({ from: srcPath, to: buildPath });
-
-    // create root package.json
-    await createRootPackageFile();
-
-    // 배포시 필요한 파일 copy
-    await Promise.all(
-      ['./README.md', '../../LICENSE'].map(async (file) => {
-        await copyFileInBuild(file);
-      }),
-    );
-
-    // 각 컴포넌트마다 package.json 생성
-    await createPackageJson({ from: srcPath, to: buildPath });
-
-    // // ui 패키지인 경우
-    // if (packageName === 'ui') {
-    //   // compile scss
-    //   // "build:scss": "sass ./src:./build",
-    //   await exec(`pnpm sass ${srcPath}:${buildPath}`);
-    //   // scss 파일 copy
-    //   await scssCopy({ from: srcPath, to: buildPath });
-    // }
-    // // Icons 패키지인 경우
-    // else if (packageName === 'icons') {
-    //   // 배포시 필요한 파일 copy
-    //   fse.copy(
-    //     path.resolve(path.join(srcPath, './icons'), 'icons.json'),
-    //     path.resolve(path.join(buildPath, './icons'), 'icons.json'),
-    //   );
-
-    //   // TODO: 소스관리와 배포시 사용자 import 편의성 모두 충족시키는 방법 좀더 고민
-    //   // await buildIconCopy();
-    // }
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
+  // return newPackageData;
 }
 
-void run();
-// yargs
-//   .command({
-//     command: '$0 [packageName]',
-//     builder: (command) => {
-//       return command.positional('packageName', {
-//         description: 'build package',
-//         type: 'string',
-//         default: 'ui',
-//       });
-//     },
-//     handler: run,
-//   })
-//   .help()
-//   .strict(true)
-//   .version(false)
-//   .parse();
+const packagePath = process.cwd();
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
+// globSync(`${packagePath}/src/*`).forEach(build);
+
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
+globSync(`${packagePath}/src/accordion`).forEach(build);
+// globSync(`${packagePath}/src/accordion`).forEach((path) => {
+//   console.log('=====test path', path);
+// });
+
+// const packages = glob.sync('*/index.{ts,tsx}', { cwd: `${packagePath}/src` });
+// const packages = glob.sync(packagePath);
+// console.log('====== packages: ', packages);

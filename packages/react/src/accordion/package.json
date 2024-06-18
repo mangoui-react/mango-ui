@@ -1,0 +1,53 @@
+{
+  "name": "@melio-ui/accordion",
+  "version": "0.0.0",
+  "license": "MIT",
+  "exports": {
+    ".": "./"
+  },
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "version": "yarn version"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "directory": "build"
+  },
+  "dependencies": {
+    "@radix-ui/primitive": "workspace:*",
+    "@radix-ui/react-collapsible": "workspace:*",
+    "@radix-ui/react-collection": "workspace:*",
+    "@radix-ui/react-compose-refs": "workspace:*",
+    "@radix-ui/react-context": "workspace:*",
+    "@radix-ui/react-direction": "workspace:*",
+    "@radix-ui/react-id": "workspace:*",
+    "@radix-ui/react-primitive": "workspace:*",
+    "@radix-ui/react-use-controllable-state": "workspace:*"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  },
+  "homepage": "https://github.com/elle510/melio-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elle510/melio-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elle510/melio-ui/issues"
+  },
+  "stableVersion": "0.0.0"
+}
