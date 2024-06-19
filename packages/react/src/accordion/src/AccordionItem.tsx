@@ -1,7 +1,7 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
+import { ComponentPropsWithoutRef } from '../../types/common';
 
 import { AccordionContext, AccordionProps } from './Accordion';
 import getState from './helpers/getState';

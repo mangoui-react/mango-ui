@@ -1,8 +1,8 @@
 // 'use client';
 import React from 'react';
 
-import ArrowOutlineDownIcon from '../internal/icons/ArrowOutlineDownIcon';
-import { ComponentPropsWithoutRef } from '../types/common';
+import ArrowOutlineDownIcon from '../../internal/icons/ArrowOutlineDownIcon';
+import { ComponentPropsWithoutRef } from '../../types/common';
 
 import { AccordionItemContext } from './AccordionItem';
 

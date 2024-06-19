@@ -1,7 +1,7 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
+import { ComponentPropsWithoutRef } from '../../types/common';
 
 export interface AccordionTitleProps extends ComponentPropsWithoutRef<'div'> {}
 
