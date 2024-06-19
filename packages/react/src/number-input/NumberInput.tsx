@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useControlled } from '@melio-ui/use-controlled';
 
-import { pattern } from '../internal/regexp';
 import { FormElementBaseProps } from '../types/common';
 
 export type NumberInputValue = number | null;
@@ -51,11 +50,8 @@ export const NumberInputContext = React.createContext<NumberInputContextValue>({
   onNumberInputKeyDown: () => {},
 });
 
-/**
- * 숫자 입력 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
+const numberRegex = /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/;
+
 const NumberInput = React.forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
   const {
     name,
@@ -95,7 +91,7 @@ const NumberInput = React.forwardRef<HTMLDivElement, NumberInputProps>((props, r
   );
 
   const isNumber = React.useCallback((val: string): boolean => {
-    if (!pattern.number.test(val)) {
+    if (!numberRegex.test(val)) {
       // setValue(undefined);
       return false;
     }
