@@ -1,10 +1,10 @@
 import React from 'react';
 
+import { useChecked } from '../../internal/useChecked';
 import { FormElementBaseProps } from '../../types/common';
 
 import { CheckboxGroupContext } from './CheckboxGroup';
 import { getState } from './helpers/getState';
-import { useChecked } from './hooks/useChecked';
 
 export type CheckboxValue = string | number | undefined; // unknown;
 export interface CheckboxProps

@@ -2,6 +2,7 @@ import React from 'react';
 
 type SetStateFn<T> = (prev?: T) => T;
 
+// Checkbox, Radio 에서 사용
 export function useChecked<T extends boolean>(
   checkedProp: T | undefined,
   defaultChecked: T,

@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { useChecked } from '../internal/useChecked';
 import { FormElementBaseProps } from '../types/common';
 
-import { useChecked } from '../checkbox/src/hooks/useChecked';
 import { RadioGroupContext } from './RadioGroup';
 import getState from './helpers/getState';
 
