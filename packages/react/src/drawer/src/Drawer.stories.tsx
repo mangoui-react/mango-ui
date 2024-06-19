@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Drawer from '.';
+import { Drawer } from '.';
 import * as styles from './Drawer.stories.css';
 
 export default { title: 'Components/Drawer' };

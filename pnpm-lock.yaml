@@ -399,6 +399,69 @@ importers:
         version: 18.2.0(react@18.2.0)
     publishDirectory: build
 
+  packages/react/src/config-provider:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+    publishDirectory: build
+
+  packages/react/src/drawer:
+    dependencies:
+      '@melio-ui/modal':
+        specifier: workspace:*
+        version: link:../modal/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/modal:
+    dependencies:
+      '@melio-ui/slot':
+        specifier: workspace:*
+        version: link:../slot/build
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@melio-ui/use-effect-once':
+        specifier: workspace:*
+        version: link:../use-effect-once/build
+      '@melio-ui/use-merged-ref':
+        specifier: workspace:*
+        version: link:../use-merged-ref/build
+      '@melio-ui/use-portal':
+        specifier: workspace:*
+        version: link:../use-portal/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+      react-transition-group:
+        specifier: ^4.4.5
+        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    publishDirectory: build
+
   packages/react/src/slot:
     dependencies:
       '@melio-ui/use-merged-ref':

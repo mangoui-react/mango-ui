@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Modal, { ModalProps } from '../modal';
+import { Modal, ModalProps } from '@melio-ui/modal';
 
 export interface DrawerProps extends ModalProps {
   /** drawer 열리는 위치

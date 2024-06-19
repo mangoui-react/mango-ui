@@ -9,8 +9,6 @@ export * from './breadcrumb';
 export * from './checkbox';
 export * from './circular-progress';
 export * from './config-provider/src';
-
-export { default as Drawer } from './drawer';
 export * from './drawer';
 
 export { default as Dropdown } from './dropdown';
