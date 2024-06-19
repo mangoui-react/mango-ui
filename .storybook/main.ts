@@ -31,28 +31,8 @@ const config: StorybookConfig = {
       resolve: {
         alias: [
           {
-            find: '@melio-ui/use-controlled',
-            replacement: path.resolve(__dirname, '../packages/react/src/use-controlled'),
-          },
-          {
-            find: '@melio-ui/use-merged-ref',
-            replacement: path.resolve(__dirname, '../packages/react/src/use-merged-ref'),
-          },
-          {
-            find: '@melio-ui/use-portal',
-            replacement: path.resolve(__dirname, '../packages/react/src/use-portal'),
-          },
-          {
-            find: '@melio-ui/use-effect-once',
-            replacement: path.resolve(__dirname, '../packages/react/src/use-effect-once'),
-          },
-          {
-            find: '@melio-ui/slot',
-            replacement: path.resolve(__dirname, '../packages/react/src/slot'),
-          },
-          {
-            find: '@melio-ui/modal',
-            replacement: path.resolve(__dirname, '../packages/react/src/modal'),
+            find: '@melio-ui',
+            replacement: path.resolve(__dirname, '../packages/react/src'),
           },
         ],
       },
