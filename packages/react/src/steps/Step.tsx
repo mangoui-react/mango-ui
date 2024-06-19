@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { StepsContext } from './Steps';
 
 export type StepStatusValue = 'finish' | 'wait' | 'process' | 'error';
-export interface StepProps extends ComponentPropsWithoutRef<'div'> {
+export interface StepProps extends React.ComponentPropsWithoutRef<'div'> {
   /** step 의 상태 */
   status?: StepStatusValue;
   /** Steps 내부에서 사용하는 prop */

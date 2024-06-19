@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
-export type TabListProps = ComponentPropsWithoutRef<'ul'>;
+export type TabListProps = React.ComponentPropsWithoutRef<'ul'>;
 
 const TabList = React.forwardRef<HTMLUListElement, TabListProps>((props, ref) => {
   const { children, ...rest } = props;

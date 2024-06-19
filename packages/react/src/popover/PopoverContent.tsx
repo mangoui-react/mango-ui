@@ -4,7 +4,6 @@ import debounce from 'lodash/debounce';
 import { Transition, TransitionStatus } from 'react-transition-group';
 
 import { useEffectOnce, useMergedRef } from '../hooks';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { PopoverContext } from './Popover';
 import { PopoverPortalContext } from './PopoverPortal';
@@ -21,7 +20,7 @@ export interface TriggerPositionValue {
   horizontal: 'left' | 'center' | 'right';
 }
 
-export interface PopoverContentProps extends ComponentPropsWithoutRef<'div'> {
+export interface PopoverContentProps extends React.ComponentPropsWithoutRef<'div'> {
   /** target position */
   triggerPosition?: TriggerPositionValue;
   /** popover self position */

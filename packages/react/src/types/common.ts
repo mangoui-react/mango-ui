@@ -1,13 +1,13 @@
 import React from 'react';
 
-type PropsWithoutRef<P> = P extends any
-  ? 'ref' extends keyof P
-    ? Pick<P, Exclude<keyof P, 'ref'>>
-    : P
-  : P;
-export type ComponentPropsWithoutRef<T extends React.ElementType> = PropsWithoutRef<
-  React.ComponentProps<T>
->;
+// type PropsWithoutRef<P> = P extends any
+//   ? 'ref' extends keyof P
+//     ? Pick<P, Exclude<keyof P, 'ref'>>
+//     : P
+//   : P;
+// export type ComponentPropsWithoutRef<T extends React.ElementType> = PropsWithoutRef<
+//   React.ComponentProps<T>
+// >;
 
 // TODO: ComponentBaseProps 는 제거해야 함
 export interface ComponentBaseProps {

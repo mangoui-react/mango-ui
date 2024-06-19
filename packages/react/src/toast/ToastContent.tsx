@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 
 import { Transition, TransitionStatus } from 'react-transition-group';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { ToastContext } from './Toast';
 
-export interface ToastContentProps extends ComponentPropsWithoutRef<'div'> {}
+export interface ToastContentProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 const ToastContent = React.forwardRef<HTMLDivElement, ToastContentProps>((props, ref) => {
   const { children, ...rest } = props;

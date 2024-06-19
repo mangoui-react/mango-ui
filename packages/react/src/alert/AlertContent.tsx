@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { AlertContext } from './Alert';
 
-export interface AlertContentProps extends ComponentPropsWithoutRef<'div'> {}
+export interface AlertContentProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 const AlertContent = React.forwardRef<HTMLDivElement, AlertContentProps>((props, ref) => {
   const { status = 'info' } = React.useContext(AlertContext);

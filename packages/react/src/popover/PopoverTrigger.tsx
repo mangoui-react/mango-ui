@@ -2,11 +2,10 @@ import React from 'react';
 
 import { useMergedRef } from '../hooks';
 import Slot from '../internal/components/Slot';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { PopoverContext } from './Popover';
 
-export interface PopoverTriggerProps extends ComponentPropsWithoutRef<'button'> {
+export interface PopoverTriggerProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;
 }
 

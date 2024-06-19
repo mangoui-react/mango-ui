@@ -3,13 +3,13 @@ import React from 'react';
 import { useControlled } from '@melio-ui/use-controlled';
 
 import { pattern } from '../internal/regexp';
-import { ComponentPropsWithoutRef, FormElementBaseProps } from '../types/common';
+import { FormElementBaseProps } from '../types/common';
 
 export type NumberInputValue = number | null;
 
 export interface NumberInputProps
   extends FormElementBaseProps<NumberInputValue>,
-    Omit<ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
   /** 최소값 */
   min?: number;
   /** 최대값 */

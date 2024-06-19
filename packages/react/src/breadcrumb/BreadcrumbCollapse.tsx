@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
-export interface BreadcrumbCollapseProps extends ComponentPropsWithoutRef<'li'> {}
+export interface BreadcrumbCollapseProps extends React.ComponentPropsWithoutRef<'li'> {}
 
 const BreadcrumbCollapse = React.forwardRef<HTMLLIElement, BreadcrumbCollapseProps>(
   (props, ref) => {

@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { TabsContext, TabsProps } from './Tabs';
 import useSelected from './hooks/useSelected';
 
 export interface TabPanelProps
   extends Pick<TabsProps, 'renderMode'>,
-    ComponentPropsWithoutRef<'div'> {
+    React.ComponentPropsWithoutRef<'div'> {
   index?: number;
   value?: string;
 }

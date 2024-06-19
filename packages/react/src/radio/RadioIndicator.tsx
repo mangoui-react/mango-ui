@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { RadioContext } from './Radio';
 import getState from './helpers/getState';
 
-export interface RadioIndicatorProps extends Omit<ComponentPropsWithoutRef<'span'>, 'children'> {
-  children: ComponentPropsWithoutRef<'span'>['children'] | ((checked: boolean) => React.ReactNode);
+export interface RadioIndicatorProps
+  extends Omit<React.ComponentPropsWithoutRef<'span'>, 'children'> {
+  children:
+    | React.ComponentPropsWithoutRef<'span'>['children']
+    | ((checked: boolean) => React.ReactNode);
 }
 
 const RadioIndicator = React.forwardRef<HTMLSpanElement, RadioIndicatorProps>((props, ref) => {

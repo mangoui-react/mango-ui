@@ -1,11 +1,10 @@
 import React from 'react';
 
 import Slot from '../internal/components/Slot';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { ToastContext } from './Toast';
 
-export interface ToastCloseProps extends ComponentPropsWithoutRef<'button'> {
+export interface ToastCloseProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;
 }
 

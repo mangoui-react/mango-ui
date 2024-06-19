@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { CircularProgressContext } from './CircularProgress';
 
-export interface CircularProgressLabelProps extends ComponentPropsWithoutRef<'div'> {}
+export interface CircularProgressLabelProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 // TODO: ${value}% 는 제거하는게 좋을 듯... 생각해 보자
 const CircularProgressLabel = React.forwardRef<HTMLDivElement, CircularProgressLabelProps>(

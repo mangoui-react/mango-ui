@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { StepsContext } from './Steps';
 
-export interface StepSeparatorProps extends ComponentPropsWithoutRef<'div'> {}
+export interface StepSeparatorProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 const StepSeparator = React.forwardRef<HTMLDivElement, StepSeparatorProps>((props, ref) => {
   const { orientation } = React.useContext(StepsContext);

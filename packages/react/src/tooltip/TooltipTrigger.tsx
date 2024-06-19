@@ -3,13 +3,12 @@ import React from 'react';
 import { useMergedRef } from '../hooks';
 // import { useMergedRef } from '../hooks';
 import Slot from '../internal/components/Slot';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { TooltipContext } from './Tooltip';
 
 // import { PopoverContext } from './Popover';
 
-export interface TooltipTriggerProps extends ComponentPropsWithoutRef<'button'> {
+export interface TooltipTriggerProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;
 }
 

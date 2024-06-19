@@ -1,9 +1,7 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../../types/common';
-
-export interface AccordionTitleProps extends ComponentPropsWithoutRef<'div'> {}
+export interface AccordionTitleProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 /**
  * 아코디언 헤더 타이틀 컴포넌트

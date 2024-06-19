@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { SliderContext } from './Slider';
 
-export interface SliderRangeProps extends ComponentPropsWithoutRef<'div'> {}
+export interface SliderRangeProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 const SliderRange = React.forwardRef<HTMLDivElement, SliderRangeProps>((props, ref) => {
   const { style, ...rest } = props;

@@ -1,13 +1,12 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../../types/common';
-
 import useDefaultExpanded from './hooks/useDefaultExpanded';
 import useExpandControlled from './hooks/useExpandControlled';
 import { ExpandedIndexType, ExpandedValueType } from './types';
 
-export interface AccordionProps extends Omit<ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
+export interface AccordionProps
+  extends Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
   /** 초기선택 accordion value */
   defaultValue?: ExpandedValueType;
   /** 선택된 accordion value */

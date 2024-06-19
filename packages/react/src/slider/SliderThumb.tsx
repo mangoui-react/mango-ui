@@ -1,12 +1,11 @@
 import React from 'react';
 
 import { useMergedRef } from '../hooks';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { SliderContext } from './Slider';
 import useThumb from './hooks/useThumb';
 
-export interface SliderThumbProps extends ComponentPropsWithoutRef<'div'> {}
+export interface SliderThumbProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 export interface SliderThumbContextValue {
   thumbValue: number;

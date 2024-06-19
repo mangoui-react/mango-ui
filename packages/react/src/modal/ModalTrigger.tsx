@@ -1,11 +1,10 @@
 import React from 'react';
 
 import Slot from '../internal/components/Slot';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { ModalContext } from './Modal';
 
-export interface ModalTriggerProps extends ComponentPropsWithoutRef<'button'> {
+export interface ModalTriggerProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;
 }
 

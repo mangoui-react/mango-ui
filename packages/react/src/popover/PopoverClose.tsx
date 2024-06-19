@@ -1,11 +1,10 @@
 import React from 'react';
 
 import Slot from '../internal/components/Slot';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { PopoverContext } from './Popover';
 
-export interface PopoverCloseProps extends ComponentPropsWithoutRef<'button'> {
+export interface PopoverCloseProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;
 }
 

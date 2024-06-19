@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { SwitchContext } from './Switch';
 import getState from './helpers/getState';
 
-export interface SwitchTrackProps extends ComponentPropsWithoutRef<'span'> {}
+export interface SwitchTrackProps extends React.ComponentPropsWithoutRef<'span'> {}
 
 const SwitchTrack = React.forwardRef<HTMLSpanElement, SwitchTrackProps>((props, ref) => {
   const { children, onClick, ...rest } = props;

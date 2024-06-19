@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef, TypeAttributes } from '../types/common';
+import { TypeAttributes } from '../types/common';
 
-export interface BadgeProps extends ComponentPropsWithoutRef<'div'> {
+export interface BadgeProps extends React.ComponentPropsWithoutRef<'div'> {
   max?: number;
   placement?: TypeAttributes.Placement;
 }

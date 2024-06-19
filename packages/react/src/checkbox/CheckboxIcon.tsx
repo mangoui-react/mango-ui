@@ -3,11 +3,10 @@ import React from 'react';
 import CheckedCheckboxIcon from '../internal/icons/CheckedCheckboxIcon';
 import IndeterminateCheckboxIcon from '../internal/icons/IndeterminateCheckboxIcon';
 import UncheckedCheckboxIcon from '../internal/icons/UncheckedCheckboxIcon';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { CheckboxContext } from './Checkbox';
 
-export interface CheckboxIconProps extends ComponentPropsWithoutRef<'svg'> {
+export interface CheckboxIconProps extends React.ComponentPropsWithoutRef<'svg'> {
   /** checked 아이콘 */
   checkedIcon?: React.ReactNode;
   /** unchecked 아이콘 */

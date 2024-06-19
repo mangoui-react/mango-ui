@@ -5,13 +5,13 @@ import remove from 'lodash/fp/remove';
 
 import { useControlled } from '@melio-ui/use-controlled';
 
-import { ComponentPropsWithoutRef, FormElementBaseProps, TypeAttributes } from '../types/common';
+import { FormElementBaseProps, TypeAttributes } from '../types/common';
 
 import { CheckboxValue } from './Checkbox';
 
 export interface CheckboxGroupProps
   extends FormElementBaseProps<CheckboxValue[]>,
-    Omit<ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
   /**
    * Checkbox 컴포넌트 방향
    * @default 'horizontal'

@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { ModalContext } from './Modal';
 
-export interface ModalBackdropProps extends ComponentPropsWithoutRef<'div'> {
+export interface ModalBackdropProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
    * Modal 의 background. true 일 때 Click 시 close
    * false 일 때 background 없음. Click 시 close 안 됨

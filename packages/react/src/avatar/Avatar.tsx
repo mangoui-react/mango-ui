@@ -1,9 +1,7 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
-export interface AvatarProps extends ComponentPropsWithoutRef<'div'> {}
+export interface AvatarProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 /**
  * 아바타 컴포넌트

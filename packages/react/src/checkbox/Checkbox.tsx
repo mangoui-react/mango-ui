@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import uuidv4 from '../internal/uuidv4';
-import { ComponentPropsWithoutRef, FormElementBaseProps } from '../types/common';
+import { FormElementBaseProps } from '../types/common';
 
 import { CheckboxGroupContext } from './CheckboxGroup';
 import getState from './helpers/getState';
@@ -10,7 +10,7 @@ import useChecked from './hooks/useChecked';
 export type CheckboxValue = string | number | undefined; // unknown;
 export interface CheckboxProps
   extends FormElementBaseProps<CheckboxValue>,
-    Omit<ComponentPropsWithoutRef<'div'>, 'defaultChecked' | 'defaultValue'> {
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultChecked' | 'defaultValue'> {
   /** 초기 check 유무 */
   defaultChecked?: boolean;
   /** check 유무 */

@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { RadioContext } from './Radio';
 import getState from './helpers/getState';
 
-export interface RadioLabelProps extends ComponentPropsWithoutRef<'label'> {}
+export interface RadioLabelProps extends React.ComponentPropsWithoutRef<'label'> {}
 
 const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>((props, ref) => {
   const { children, ...rest } = props;

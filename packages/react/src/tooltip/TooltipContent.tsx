@@ -5,11 +5,11 @@ import { Transition, TransitionStatus } from 'react-transition-group';
 
 import { useMergedRef } from '../hooks';
 import setRef from '../internal/setRef';
-import { ComponentPropsWithoutRef, TypeAttributes } from '../types/common';
+import { TypeAttributes } from '../types/common';
 
 import { TooltipContext } from './Tooltip';
 
-export interface TooltipContentProps extends ComponentPropsWithoutRef<'div'> {
+export interface TooltipContentProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
    * Tootip 이 display되는 위치
    * @default 'top'

@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { CheckboxContext } from './Checkbox';
 import getState from './helpers/getState';
 
-export interface CheckboxIndicatorProps extends Omit<ComponentPropsWithoutRef<'span'>, 'children'> {
+export interface CheckboxIndicatorProps
+  extends Omit<React.ComponentPropsWithoutRef<'span'>, 'children'> {
   children:
-    | ComponentPropsWithoutRef<'span'>['children']
+    | React.ComponentPropsWithoutRef<'span'>['children']
     | ((checked: boolean, indeterminate?: boolean) => React.ReactNode);
 }
 

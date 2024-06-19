@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { useMergedRef } from '../hooks';
-import { ComponentPropsWithoutRef, TypeAttributes } from '../types/common';
+import { TypeAttributes } from '../types/common';
 
 import { ToastContext } from './Toast';
 
-export interface ToastViewportProps extends ComponentPropsWithoutRef<'div'> {
+export interface ToastViewportProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
    * Tootip 이 display되는 위치
    * @default 'top'

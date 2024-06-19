@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { SwitchContext } from './Switch';
 // import { CheckboxContext } from './Checkbox';
 import getState from './helpers/getState';
 
-export interface SwitchLabelProps extends ComponentPropsWithoutRef<'label'> {}
+export interface SwitchLabelProps extends React.ComponentPropsWithoutRef<'label'> {}
 
 const SwitchLabel = React.forwardRef<HTMLLabelElement, SwitchLabelProps>((props, ref) => {
   const { children, ...rest } = props;

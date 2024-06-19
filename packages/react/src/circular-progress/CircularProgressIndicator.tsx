@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import getProgressState from '../progress/helpers/getProgressState';
 import { CircularProgressContext } from './CircularProgress';
 
-export interface CircularProgressIndicatorProps extends ComponentPropsWithoutRef<'svg'> {
+export interface CircularProgressIndicatorProps extends React.ComponentPropsWithoutRef<'svg'> {
   strokeWidth?: number;
   bgClassName?: string;
   barClassName?: string;

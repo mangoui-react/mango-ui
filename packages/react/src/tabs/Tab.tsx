@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { TabsContext } from './Tabs';
 import useSelected from './hooks/useSelected';
 
-export interface TabProps extends ComponentPropsWithoutRef<'li'> {
+export interface TabProps extends React.ComponentPropsWithoutRef<'li'> {
   index?: number;
   value?: string;
   /** tab disabled */

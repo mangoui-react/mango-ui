@@ -4,7 +4,6 @@ import React from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
 
 import { useEffectOnce, useMergedRef } from '../hooks';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { ModalContext } from './Modal';
 
@@ -13,7 +12,7 @@ interface AnimaitonType {
   options: number | KeyframeAnimationOptions;
 }
 
-export interface ModalContentProps extends ComponentPropsWithoutRef<'div'> {
+export interface ModalContentProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
    * Close 될 때 Modal 컴포넌트 DOM 제거
    * forceMount=true 시 unabled 됨

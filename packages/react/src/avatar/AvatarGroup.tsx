@@ -1,8 +1,6 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 // import Avatar from './Avatar';
 
 export interface AvatarGroupContextValue {
@@ -14,7 +12,7 @@ export const AvatarGroupContext = React.createContext<AvatarGroupContextValue>({
   extraAvatarCount: { current: 0 },
 });
 
-export interface AvatarGroupProps extends ComponentPropsWithoutRef<'div'> {
+export interface AvatarGroupProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
    * 보여지는 avatar 최대 개수
    * @default 5

@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { useMergedRef } from '../hooks';
-import { ComponentPropsWithoutRef, FormElementBaseProps, TypeAttributes } from '../types/common';
+import { FormElementBaseProps, TypeAttributes } from '../types/common';
 
 // import Thumb from './components/Thumb';
 import useSlider from './hooks/useSlider';
 
 export interface SliderProps
   extends FormElementBaseProps<number | number[]>,
-    Omit<ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
   // value?: number | number[];
   // defaultValue?: number | number[];
   /** 최소값 */

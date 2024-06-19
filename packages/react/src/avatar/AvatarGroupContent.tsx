@@ -1,11 +1,9 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { AvatarGroupContext } from './AvatarGroup';
 
-export interface AvatarGroupContentProps extends ComponentPropsWithoutRef<'div'> {}
+export interface AvatarGroupContentProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 /**
  * 아바타 그룹 컨텐츠 컴포넌트

@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { SwitchContext } from './Switch';
 import getState from './helpers/getState';
 
-export interface SwitchThumbProps extends ComponentPropsWithoutRef<'span'> {}
+export interface SwitchThumbProps extends React.ComponentPropsWithoutRef<'span'> {}
 
 const SwitchThumb = React.forwardRef<HTMLSpanElement, SwitchThumbProps>((props, ref) => {
   const { children, ...rest } = props;

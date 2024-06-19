@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
-export interface NumberInputButtonGroupProps extends ComponentPropsWithoutRef<'span'> {}
+export interface NumberInputButtonGroupProps extends React.ComponentPropsWithoutRef<'span'> {}
 
 // TODO: 필요한지 확인필요
 const NumberInputButtonGroup = React.forwardRef<HTMLSpanElement, NumberInputButtonGroupProps>(

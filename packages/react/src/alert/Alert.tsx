@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef, TypeAttributes } from '../types/common';
+import { TypeAttributes } from '../types/common';
 
-export interface AlertProps extends ComponentPropsWithoutRef<'div'> {
+export interface AlertProps extends React.ComponentPropsWithoutRef<'div'> {
   /** Alert 메시지 상태 */
   status?: TypeAttributes.Status;
 }

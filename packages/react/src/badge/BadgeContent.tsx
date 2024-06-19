@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { BadgeContext } from './Badge';
 
-export interface BadgeContentProps extends ComponentPropsWithoutRef<'div'> {
+export interface BadgeContentProps extends React.ComponentPropsWithoutRef<'div'> {
   children?: string | number;
 }
 

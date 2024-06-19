@@ -2,11 +2,10 @@ import React from 'react';
 
 import CheckedRadioIcon from '../internal/icons/CheckedRadioIcon';
 import UncheckedRadioIcon from '../internal/icons/UncheckedRadioIcon';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { RadioContext } from './Radio';
 
-export interface RadioIconIconProps extends ComponentPropsWithoutRef<'svg'> {
+export interface RadioIconIconProps extends React.ComponentPropsWithoutRef<'svg'> {
   /** checked 아이콘 */
   checkedIcon?: React.ReactNode;
   /** unchecked 아이콘 */

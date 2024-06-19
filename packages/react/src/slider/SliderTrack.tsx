@@ -1,11 +1,10 @@
 import React from 'react';
 
 import { useMergedRef } from '../hooks';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { SliderContext } from './Slider';
 
-export interface SliderTrackProps extends ComponentPropsWithoutRef<'div'> {}
+export interface SliderTrackProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 const SliderTrack = React.forwardRef<HTMLDivElement, SliderTrackProps>((props, ref) => {
   const { children, ...rest } = props;

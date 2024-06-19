@@ -2,11 +2,10 @@ import React from 'react';
 
 import CheckIcon from '../internal/icons/CheckIcon';
 import CloseIcon from '../internal/icons/CloseIcon';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { StepContext, StepStatusValue } from './Step';
 
-export interface StepStatusProps extends ComponentPropsWithoutRef<'div'> {
+export interface StepStatusProps extends React.ComponentPropsWithoutRef<'div'> {
   finish?: React.ReactNode;
   wait?: React.ReactNode;
   process?: React.ReactNode;

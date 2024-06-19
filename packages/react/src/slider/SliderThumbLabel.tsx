@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { SliderThumbContext } from './SliderThumb';
 
-export interface SliderThumbLabelProps extends ComponentPropsWithoutRef<'span'> {
+export interface SliderThumbLabelProps extends React.ComponentPropsWithoutRef<'span'> {
   auto?: boolean;
 }
 

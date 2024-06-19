@@ -2,13 +2,13 @@ import React from 'react';
 
 import { useControlled } from '@melio-ui/use-controlled';
 
-import { ComponentPropsWithoutRef, FormElementBaseProps, TypeAttributes } from '../types/common';
+import { FormElementBaseProps, TypeAttributes } from '../types/common';
 
 import { RadioValue } from './Radio';
 
 export interface RadioGroupProps
   extends FormElementBaseProps<RadioValue>,
-    Omit<ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultValue'> {
   /**
    * Checkbox 컴포넌트 방향
    * @default 'horizontal'

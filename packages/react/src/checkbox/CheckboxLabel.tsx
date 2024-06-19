@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { CheckboxContext } from './Checkbox';
 import getState from './helpers/getState';
 
-export interface CheckboxLabelProps extends ComponentPropsWithoutRef<'label'> {}
+export interface CheckboxLabelProps extends React.ComponentPropsWithoutRef<'label'> {}
 
 const CheckboxLabel = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>((props, ref) => {
   const { children, ...rest } = props;

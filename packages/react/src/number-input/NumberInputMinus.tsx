@@ -2,11 +2,10 @@ import React from 'react';
 
 import Slot from '../internal/components/Slot';
 import ArrowDownIcon from '../internal/icons/ArrowDownIcon';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import { NumberInputContext } from './NumberInput';
 
-export interface NumberInputMinusProps extends ComponentPropsWithoutRef<'button'> {
+export interface NumberInputMinusProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;
 }
 

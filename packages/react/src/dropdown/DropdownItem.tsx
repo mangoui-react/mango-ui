@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { DropdownContext } from './Dropdown';
 import { DropdownContentContext } from './DropdownContent';
 
-export interface DropdownItemProps extends ComponentPropsWithoutRef<'div'> {
+export interface DropdownItemProps extends React.ComponentPropsWithoutRef<'div'> {
   disabled?: boolean;
 }
 

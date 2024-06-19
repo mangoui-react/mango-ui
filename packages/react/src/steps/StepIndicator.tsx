@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { StepContext, StepStatusValue } from './Step';
 
-export interface StepIndicatorProps extends Omit<ComponentPropsWithoutRef<'div'>, 'children'> {
+export interface StepIndicatorProps
+  extends Omit<React.ComponentPropsWithoutRef<'div'>, 'children'> {
   children:
-    | ComponentPropsWithoutRef<'div'>['children']
+    | React.ComponentPropsWithoutRef<'div'>['children']
     | ((status: StepStatusValue) => React.ReactNode);
 }
 

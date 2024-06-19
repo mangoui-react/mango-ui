@@ -1,21 +1,19 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../../types/common';
-
 import { AccordionContext, AccordionProps } from './Accordion';
 import getState from './helpers/getState';
 import useAccordion from './hooks/useAccordion';
 
 export interface AccordionItemProps
   extends Pick<AccordionProps, 'renderMode'>,
-    Omit<ComponentPropsWithoutRef<'div'>, 'children'> {
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'children'> {
   index?: number;
   value?: string;
   /** accordion disabled */
   disabled?: boolean;
   children:
-    | ComponentPropsWithoutRef<'div'>['children']
+    | React.ComponentPropsWithoutRef<'div'>['children']
     // | React.HTMLAttributes<HTMLDivElement>['children']
     | ((expanded: boolean) => React.ReactNode);
 }

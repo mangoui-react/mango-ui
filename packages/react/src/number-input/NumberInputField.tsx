@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { NumberInputContext } from './NumberInput';
 
-export interface NumberInputFieldProps extends ComponentPropsWithoutRef<'input'> {}
+export interface NumberInputFieldProps extends React.ComponentPropsWithoutRef<'input'> {}
 
 const NumberInputField = React.forwardRef<HTMLInputElement, NumberInputFieldProps>((props, ref) => {
   const {

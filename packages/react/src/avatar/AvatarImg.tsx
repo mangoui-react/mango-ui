@@ -1,11 +1,9 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import useLoaded from './hooks/useLoaded';
 
-export interface AvatarImgProps extends ComponentPropsWithoutRef<'img'> {
+export interface AvatarImgProps extends React.ComponentPropsWithoutRef<'img'> {
   /** 이미지 src */
   src?: string;
   /** 이미지 srcset */

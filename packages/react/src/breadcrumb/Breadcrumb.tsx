@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
-export interface BreadcrumbProps extends ComponentPropsWithoutRef<'ol'> {
+export interface BreadcrumbProps extends React.ComponentPropsWithoutRef<'ol'> {
   /**
    * collapse node
    * @default '...'

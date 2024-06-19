@@ -3,13 +3,13 @@ import React from 'react';
 import { useControlled } from '@melio-ui/use-controlled';
 
 // import uuidv4 from '../internal/uuidv4';
-import { ComponentPropsWithoutRef, FormElementBaseProps } from '../types/common';
+import { FormElementBaseProps } from '../types/common';
 
 import getState from './helpers/getState';
 
 export interface SwitchProps
   extends FormElementBaseProps<string>,
-    Omit<ComponentPropsWithoutRef<'div'>, 'defaultChecked' | 'defaultValue'> {
+    Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultChecked' | 'defaultValue'> {
   /** 초기 check 유무 */
   defaultChecked?: boolean;
   /** check 유무 */
@@ -18,7 +18,7 @@ export interface SwitchProps
    * input element 에 적용되는 attributes
    * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes)
    */
-  inputProps?: ComponentPropsWithoutRef<'input'>;
+  inputProps?: React.ComponentPropsWithoutRef<'input'>;
   /** checked change 시 호출 */
   onCheckedChange?: (checked: boolean) => void;
 }

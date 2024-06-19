@@ -1,12 +1,10 @@
 // 'use client';
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../../types/common';
-
 import { AccordionItemContext } from './AccordionItem';
 import getState from './helpers/getState';
 
-export interface AccordionContentProps extends ComponentPropsWithoutRef<'div'> {}
+export interface AccordionContentProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 /**
  * 아코디언 컨텐츠 컴포넌트

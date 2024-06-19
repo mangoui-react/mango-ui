@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { ComponentPropsWithoutRef } from '../types/common';
-
 import { ProgressContext } from './Progress';
 import getProgressState from './helpers/getProgressState';
 
-export interface ProgressIndicatorProps extends ComponentPropsWithoutRef<'div'> {}
+export interface ProgressIndicatorProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 const ProgressIndicator = React.forwardRef<HTMLDivElement, ProgressIndicatorProps>((props, ref) => {
   const { style, ...rest } = props;

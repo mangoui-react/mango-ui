@@ -2,12 +2,11 @@
 import React from 'react';
 
 import ArrowOutlineDownIcon from '../../internal/icons/ArrowOutlineDownIcon';
-import { ComponentPropsWithoutRef } from '../../types/common';
 
 import { AccordionItemContext } from './AccordionItem';
 
 // export interface AccordionArrowIconProps extends React.SVGProps<SVGSVGElement> {}
-export interface AccordionArrowIconProps extends ComponentPropsWithoutRef<'svg'> {}
+export interface AccordionArrowIconProps extends React.ComponentPropsWithoutRef<'svg'> {}
 
 /**
  * 아코디언 헤더 Arrow 아이콘 컴포넌트

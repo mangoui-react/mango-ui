@@ -2,12 +2,11 @@
 import React from 'react';
 
 import Slot from '../internal/components/Slot';
-import { ComponentPropsWithoutRef } from '../types/common';
 
 import Avatar from './Avatar';
 import { AvatarGroupContext } from './AvatarGroup';
 
-export interface AvatarExtraProps extends ComponentPropsWithoutRef<'div'> {
+export interface AvatarExtraProps extends React.ComponentPropsWithoutRef<'div'> {
   asChild?: boolean;
 }
 
