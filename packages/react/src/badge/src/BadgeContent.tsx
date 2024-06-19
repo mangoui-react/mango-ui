@@ -6,11 +6,6 @@ export interface BadgeContentProps extends React.ComponentPropsWithoutRef<'div'>
   children?: string | number;
 }
 
-/**
- * 배지 내용 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const BadgeContent = React.forwardRef<HTMLDivElement, BadgeContentProps>((props, ref) => {
   const { children, ...rest } = props;
 

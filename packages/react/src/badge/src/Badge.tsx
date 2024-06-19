@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TypeAttributes } from '../types/common';
+import { TypeAttributes } from '../../types/common';
 
 export interface BadgeProps extends React.ComponentPropsWithoutRef<'div'> {
   max?: number;
@@ -10,11 +10,6 @@ export interface BadgeProps extends React.ComponentPropsWithoutRef<'div'> {
 export interface BadgeContextValue extends Pick<BadgeProps, 'max'> {}
 export const BadgeContext = React.createContext<BadgeContextValue>({});
 
-/**
- * 배지 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const Badge = React.forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
   const { placement = 'top-right', max, children, ...rest } = props;
 

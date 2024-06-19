@@ -9,4 +9,4 @@ const Badge = {
   Content,
 };
 
-export default Badge;
+export { Badge };
