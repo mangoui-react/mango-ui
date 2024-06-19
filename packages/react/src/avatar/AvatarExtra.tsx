@@ -1,7 +1,7 @@
 // 'use client';
 import React from 'react';
 
-import Slot from '../internal/components/Slot';
+import { Slot } from '@melio-ui/slot';
 
 import Avatar from './Avatar';
 import { AvatarGroupContext } from './AvatarGroup';

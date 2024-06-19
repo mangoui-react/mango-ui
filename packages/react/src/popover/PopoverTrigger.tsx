@@ -1,8 +1,7 @@
 import React from 'react';
 
+import { Slot } from '@melio-ui/slot';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
-
-import Slot from '../internal/components/Slot';
 
 import { PopoverContext } from './Popover';
 

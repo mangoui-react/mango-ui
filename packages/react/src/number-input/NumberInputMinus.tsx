@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Slot from '../internal/components/Slot';
+import { Slot } from '@melio-ui/slot';
+
 import ArrowDownIcon from '../internal/icons/ArrowDownIcon';
 
 import { NumberInputContext } from './NumberInput';

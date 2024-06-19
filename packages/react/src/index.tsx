@@ -51,6 +51,8 @@ export * from './radio';
 export { default as Slider } from './slider';
 export * from './slider';
 
+export * from './slot';
+
 export { default as Steps } from './steps';
 export * from './steps';
 
