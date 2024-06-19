@@ -36,7 +36,7 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
-      "@melio-ui/use-controlled": ["./src/use-controlled"]
+      "@melio-ui/*": ["./src/*"]
     },
     // "types": ["node", "jest", "@testing-library/jest-dom", "react"],
     "declaration": true,

@@ -3,7 +3,8 @@ import React from 'react';
 import { createPopper } from '@popperjs/core';
 import { Transition, TransitionStatus } from 'react-transition-group';
 
-import { useMergedRef } from '../hooks';
+import { useMergedRef } from '@melio-ui/use-merged-ref';
+
 import setRef from '../internal/setRef';
 
 import { TooltipContext } from './Tooltip';

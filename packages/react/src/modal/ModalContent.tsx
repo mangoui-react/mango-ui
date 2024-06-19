@@ -3,7 +3,9 @@ import React from 'react';
 // TODO: react-transition-group 없애는 방식으로 하자(packages 에서도 제거해야 함)
 import { Transition, TransitionStatus } from 'react-transition-group';
 
-import { useEffectOnce, useMergedRef } from '../hooks';
+import { useMergedRef } from '@melio-ui/use-merged-ref';
+
+import { useEffectOnce } from '../hooks';
 
 import { ModalContext } from './Modal';
 

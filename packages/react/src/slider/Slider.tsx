@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { useMergedRef } from '../hooks';
+import { useMergedRef } from '@melio-ui/use-merged-ref';
+
 import { FormElementBaseProps, TypeAttributes } from '../types/common';
 
 // import Thumb from './components/Thumb';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useMergedRef } from '../hooks';
+import { useMergedRef } from '@melio-ui/use-merged-ref';
 
 import { SliderContext } from './Slider';
 import useThumb from './hooks/useThumb';

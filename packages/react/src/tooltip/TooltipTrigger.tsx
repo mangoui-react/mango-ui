@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useMergedRef } from '../hooks';
-// import { useMergedRef } from '../hooks';
+import { useMergedRef } from '@melio-ui/use-merged-ref';
+
 import Slot from '../internal/components/Slot';
 
 import { TooltipContext } from './Tooltip';
