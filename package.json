@@ -5,6 +5,7 @@
   "scripts": {
     "apps:nextjs": "nx dev nextjs",
     "docs": "nx dev docs",
+    "build": "pnpm --filter=./packages/* build",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "lint": "eslint packages --ext .ts,.tsx",
     "storybook": "storybook dev -p 6006",

@@ -7,7 +7,6 @@ import * as tsup from 'tsup';
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 async function build(packagePath) {
-  console.log('======== packagePath', packagePath);
   const indexFile = `${packagePath}/src/index.ts`;
   const buildPath = `${packagePath}/build`;
   const distPath = `${buildPath}/dist`;
@@ -52,11 +51,10 @@ async function build(packagePath) {
     silent: true,
     external: [/@melio-ui\/.+/],
   });
-  // console.log(`Built ${distPath}/index.d.ts`);
-  console.log(`Built ${distPath}`);
+  // console.log(`Built ${distPath}`);
 
   // package.json 파일 생성
-  await createPackageFile(packagePath);
+  const packageName = await createPackageFile(packagePath);
 
   // README.md 파일 copy
   await Promise.all(
@@ -65,6 +63,8 @@ async function build(packagePath) {
       copyFileSync(file, `${buildPath}/${path.basename(file)}`);
     }),
   );
+
+  console.log('Built', packageName);
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -97,19 +97,20 @@ async function createPackageFile(packagePath) {
   const targetPath = path.resolve(buildPath, './package.json');
 
   writeFileSync(targetPath, JSON.stringify(newPackageData, null, 2), 'utf8');
-  console.log(`Created package.json in ${targetPath}`);
+  // console.log(`Created package.json in ${targetPath}`);
 
-  // return newPackageData;
+  return newPackageData.name;
 }
 
 const packagePath = process.cwd();
+
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 // globSync(`${packagePath}/src/*`).forEach(build);
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 globSync(`${packagePath}/src/accordion`).forEach(build);
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-globSync(`${packagePath}/src/use-merged-ref`).forEach(build);
+globSync(`${packagePath}/src/use-portal`).forEach(build);
 
 // globSync(`${packagePath}/src/accordion`).forEach((path) => {
 //   console.log('=====test path', path);

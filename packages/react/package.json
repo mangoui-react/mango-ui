@@ -10,10 +10,10 @@
     ".": "./src"
   },
   "scripts": {
-    "dist": "node ../../scripts/build.mjs",
+    "build:old": "node ../../scripts/build-old.mjs",
     "// build": "tsc -p ./tsconfig.build.json",
-    "build": "node ../../scripts/build-old.mjs",
-    "prebuild": "rimraf build",
+    "build": "node ../../scripts/build.mjs",
+    "prebuild": "rimraf build && pnpm --filter=./src/* clean",
     "release": "pnpm build && pnpm publish --access=public --no-git-checks",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
