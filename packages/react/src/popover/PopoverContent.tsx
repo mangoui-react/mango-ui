@@ -3,9 +3,8 @@ import React from 'react';
 import debounce from 'lodash/debounce';
 import { Transition, TransitionStatus } from 'react-transition-group';
 
+import { useEffectOnce } from '@melio-ui/use-effect-once';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
-
-import { useEffectOnce } from '../hooks';
 
 import { PopoverContext } from './Popover';
 import { PopoverPortalContext } from './PopoverPortal';

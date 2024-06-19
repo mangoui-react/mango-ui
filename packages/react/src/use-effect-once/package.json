@@ -1,5 +1,5 @@
 {
-  "name": "@melio-ui/use-controlled",
+  "name": "@melio-ui/use-effect-once",
   "version": "0.0.0",
   "license": "MIT",
   "exports": {
