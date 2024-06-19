@@ -1,8 +1,8 @@
 import React from 'react';
 
-import CheckedCheckboxIcon from '../internal/icons/CheckedCheckboxIcon';
-import IndeterminateCheckboxIcon from '../internal/icons/IndeterminateCheckboxIcon';
-import UncheckedCheckboxIcon from '../internal/icons/UncheckedCheckboxIcon';
+import CheckedCheckboxIcon from '../../internal/icons/CheckedCheckboxIcon';
+import IndeterminateCheckboxIcon from '../../internal/icons/IndeterminateCheckboxIcon';
+import UncheckedCheckboxIcon from '../../internal/icons/UncheckedCheckboxIcon';
 
 import { CheckboxContext } from './Checkbox';
 

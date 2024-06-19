@@ -108,7 +108,7 @@ const packagePath = process.cwd();
 // globSync(`${packagePath}/src/*`).forEach(build);
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-globSync(`${packagePath}/src/breadcrumb`).forEach(build);
+globSync(`${packagePath}/src/checkbox`).forEach(build);
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 // globSync(`${packagePath}/src/use-portal`).forEach(build);
 

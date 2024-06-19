@@ -23,4 +23,4 @@ const Checkbox = {
   Label,
 };
 
-export default Checkbox;
+export { Checkbox };

@@ -6,8 +6,6 @@ export * from './alert';
 export * from './avatar';
 export * from './badge';
 export * from './breadcrumb';
-
-export { default as Checkbox } from './checkbox';
 export * from './checkbox';
 
 export { default as CircularProgress } from './circular-progress';

@@ -2,7 +2,7 @@ import React from 'react';
 
 type SetStateFn<T> = (prev?: T) => T;
 
-export default function useChecked<T extends boolean>(
+export function useChecked<T extends boolean>(
   checkedProp: T | undefined,
   defaultChecked: T,
 ): [T, (value: T) => void] {

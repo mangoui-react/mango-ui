@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { CheckboxContext } from './Checkbox';
-import getState from './helpers/getState';
+import { getState } from './helpers/getState';
 
 export interface CheckboxLabelProps extends React.ComponentPropsWithoutRef<'label'> {}
 

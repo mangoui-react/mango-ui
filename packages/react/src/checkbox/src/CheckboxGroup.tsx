@@ -5,7 +5,7 @@ import remove from 'lodash/fp/remove';
 
 import { useControlled } from '@melio-ui/use-controlled';
 
-import { FormElementBaseProps, TypeAttributes } from '../types/common';
+import { FormElementBaseProps, TypeAttributes } from '../../types/common';
 
 import { CheckboxValue } from './Checkbox';
 

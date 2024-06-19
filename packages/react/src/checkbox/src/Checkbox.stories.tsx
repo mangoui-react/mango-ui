@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Checkbox, { CheckboxValue } from '.';
+import { Checkbox, CheckboxValue } from '.';
 import * as styles from './Checkbox.stories.css';
 
 export default { title: 'Components/Checkbox' };
