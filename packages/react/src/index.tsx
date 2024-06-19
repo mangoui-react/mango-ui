@@ -16,7 +16,6 @@ export * from './drawer';
 export { default as Dropdown } from './dropdown';
 export * from './dropdown';
 
-export { default as Modal } from './modal';
 export * from './modal';
 
 export { default as NumberInput } from './number-input';
