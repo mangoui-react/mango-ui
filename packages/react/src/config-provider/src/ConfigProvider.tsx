@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo } from 'react';
 
-import { Locale, koKR } from '../locale';
+import { Locale, koKR } from '../../locale';
 
 export interface ConfigValue {
   theme?: 'light' | 'dark' | 'system';

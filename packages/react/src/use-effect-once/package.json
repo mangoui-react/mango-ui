@@ -23,9 +23,6 @@
   "peerDependenciesMeta": {
     "@types/react": {
       "optional": true
-    },
-    "@types/react-dom": {
-      "optional": true
     }
   },
   "homepage": "https://github.com/elle510/melio-ui",

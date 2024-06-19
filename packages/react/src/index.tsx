@@ -8,9 +8,7 @@ export * from './badge';
 export * from './breadcrumb';
 export * from './checkbox';
 export * from './circular-progress';
-
-export { default as ConfigProvider } from './config-provider';
-export * from './config-provider';
+export * from './config-provider/src';
 
 export { default as Drawer } from './drawer';
 export * from './drawer';

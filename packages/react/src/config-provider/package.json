@@ -1,5 +1,5 @@
 {
-  "name": "@melio-ui/use-merged-ref",
+  "name": "@melio-ui/config-provider",
   "version": "0.0.0",
   "license": "MIT",
   "exports": {
@@ -9,7 +9,7 @@
   "types": "./src/index.ts",
   "scripts": {
     "clean": "rm -rf build",
-    "version": "yarn version"
+    "version": "pnpm version"
   },
   "sideEffects": false,
   "publishConfig": {
