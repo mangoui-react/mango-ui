@@ -291,7 +291,164 @@ importers:
         version: 18.2.0(react@18.2.0)
     publishDirectory: build
 
+  packages/react/src/alert:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/avatar:
+    dependencies:
+      '@melio-ui/slot':
+        specifier: workspace:*
+        version: link:../slot/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/badge:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/breadcrumb:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/checkbox:
+    dependencies:
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@types/lodash':
+        specifier: ^4.17.0
+        version: 4.17.0
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/circular-progress:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/slot:
+    dependencies:
+      '@melio-ui/use-merged-ref':
+        specifier: workspace:*
+        version: link:../use-merged-ref/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
   packages/react/src/use-controlled:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+    publishDirectory: build
+
+  packages/react/src/use-effect-once:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+    publishDirectory: build
+
+  packages/react/src/use-merged-ref:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+    publishDirectory: build
+
+  packages/react/src/use-portal:
     dependencies:
       '@types/react':
         specifier: '*'
