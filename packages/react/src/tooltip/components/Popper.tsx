@@ -4,7 +4,8 @@ import { createPopper } from '@popperjs/core';
 
 import { ContainerType, usePortal } from '../../hooks';
 import setRef from '../../internal/setRef';
-import { TypeAttributes } from '../../types/common';
+
+import { Placement } from '../types';
 
 interface PopperProps {
   /** Tooltip show/hide */
@@ -13,7 +14,7 @@ interface PopperProps {
    * Tootip 이 display되는 위치
    * @default 'top'
    */
-  placement?: TypeAttributes.OverlayPlacement;
+  placement?: Placement;
   /**
    * Tooltip 이 mount 되는 node
    * @default document.body

@@ -5,16 +5,16 @@ import { Transition, TransitionStatus } from 'react-transition-group';
 
 import { useMergedRef } from '../hooks';
 import setRef from '../internal/setRef';
-import { TypeAttributes } from '../types/common';
 
 import { TooltipContext } from './Tooltip';
+import { Placement } from './types';
 
 export interface TooltipContentProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
    * Tootip 이 display되는 위치
    * @default 'top'
    */
-  placement?: TypeAttributes.OverlayPlacement;
+  placement?: Placement;
 }
 
 // export interface TooltipContentContextValue extends Pick<TooltipContentProps, 'placement'> {}

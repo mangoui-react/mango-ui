@@ -39,11 +39,6 @@ export const CheckboxContext = React.createContext<CheckboxContextValue>({
   onIndicatorClick: () => {},
 });
 
-/**
- * 체크박스 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>((props, ref) => {
   const {
     name: nameCtx,

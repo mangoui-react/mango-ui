@@ -108,6 +108,9 @@ const packagePath = process.cwd();
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 globSync(`${packagePath}/src/accordion`).forEach(build);
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
+globSync(`${packagePath}/src/use-controlled`).forEach(build);
+
 // globSync(`${packagePath}/src/accordion`).forEach((path) => {
 //   console.log('=====test path', path);
 // });

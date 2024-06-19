@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 // type PropsWithoutRef<P> = P extends any
 //   ? 'ref' extends keyof P
@@ -9,15 +9,14 @@ import React from 'react';
 //   React.ComponentProps<T>
 // >;
 
-// TODO: ComponentBaseProps 는 제거해야 함
-export interface ComponentBaseProps {
-  /** css class 이름 */
-  className?: string;
-  /** 버튼 컴포넌트의 컨텐츠 */
-  children?: React.ReactNode;
-  /** style */
-  style?: React.CSSProperties;
-}
+// export interface ComponentBaseProps {
+//   /** css class 이름 */
+//   className?: string;
+//   /** 버튼 컴포넌트의 컨텐츠 */
+//   children?: React.ReactNode;
+//   /** style */
+//   style?: React.CSSProperties;
+// }
 
 // TODO: 이름변경 고민해 보자
 export interface FormElementBaseProps<ValueType> {
@@ -45,24 +44,8 @@ export declare namespace TypeAttributes {
   type Orientation = 'horizontal' | 'vertical';
   // type Variant = 'default' | 'primary' | 'link' | 'ghost' | 'dashed';
   type Status = 'info' | 'success' | 'warning' | 'error';
-  type OverlayTrigger = 'hover' | 'click';
+  // type OverlayTrigger = 'hover' | 'click';
   type Placement = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
-  type OverlayPlacement =
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end'
-    | 'auto'
-    | 'auto-start'
-    | 'auto-end';
 }
 
 // export type As = React.ElementType | string = React.ElementType;
