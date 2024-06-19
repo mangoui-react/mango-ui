@@ -32,12 +32,4 @@ const Accordion = {
   ArrowIcon,
 };
 
-export default Accordion;
-// export default {
-//   Root,
-//   Item,
-//   Header,
-//   Title,
-//   Content,
-//   ArrowIcon,
-// };
+export { Accordion };

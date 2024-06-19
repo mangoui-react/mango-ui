@@ -5,11 +5,6 @@ import { AvatarGroupContext } from './AvatarGroup';
 
 export interface AvatarGroupContentProps extends React.ComponentPropsWithoutRef<'div'> {}
 
-/**
- * 아바타 그룹 컨텐츠 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const AvatarGroupContent = React.forwardRef<HTMLDivElement, AvatarGroupContentProps>(
   (props, ref) => {
     const { children, ...rest } = props;

@@ -24,4 +24,4 @@ const Avatar = {
   Img,
 };
 
-export default Avatar;
+export { Avatar };

@@ -10,11 +10,6 @@ export interface AvatarExtraProps extends React.ComponentPropsWithoutRef<'div'> 
   asChild?: boolean;
 }
 
-/**
- * 아바타 그룹 추가 표시 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const AvatarExtra = React.forwardRef<HTMLDivElement, AvatarExtraProps>((props, ref) => {
   const { children, asChild, ...rest } = props;
   const { extraAvatarCount } = React.useContext(AvatarGroupContext);

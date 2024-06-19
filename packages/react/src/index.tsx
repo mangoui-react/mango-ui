@@ -1,15 +1,8 @@
 'use client';
 // import 'client-only';
 
-// export * from './styles';
-
-export { default as Accordion } from './accordion';
 export * from './accordion';
-
-export { default as Alert } from './alert';
 export * from './alert';
-
-export { default as Avatar } from './avatar';
 export * from './avatar';
 
 export { default as Badge } from './badge';

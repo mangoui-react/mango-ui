@@ -13,4 +13,4 @@ const Alert = {
   Content,
 };
 
-export default Alert;
+export { Alert };

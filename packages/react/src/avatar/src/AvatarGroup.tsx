@@ -1,8 +1,6 @@
 // 'use client';
 import React from 'react';
 
-// import Avatar from './Avatar';
-
 export interface AvatarGroupContextValue {
   computedMax: number;
   extraAvatarCount: React.MutableRefObject<number>;
@@ -20,11 +18,6 @@ export interface AvatarGroupProps extends React.ComponentPropsWithoutRef<'div'> 
   max?: number;
 }
 
-/**
- * 아바타 그룹 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>((props, ref) => {
   const { max = 5, children, ...rest } = props;
 
