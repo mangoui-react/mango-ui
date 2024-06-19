@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 export type ContainerType = HTMLElement | (() => HTMLElement | null) | null;
 
-export default function usePortal(container?: ContainerType): {
+export function usePortal(container?: ContainerType): {
   Portal: React.FC<{ children: React.ReactNode }>;
   target: Element | HTMLElement | undefined;
 } {

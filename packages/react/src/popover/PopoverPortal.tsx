@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContainerType, usePortal } from '../hooks';
+import { ContainerType, usePortal } from '@melio-ui/use-portal';
 
 export interface PopoverPortalProps {
   children?: React.ReactNode;

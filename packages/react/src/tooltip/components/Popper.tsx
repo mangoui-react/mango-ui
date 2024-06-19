@@ -2,7 +2,8 @@ import React from 'react';
 
 import { createPopper } from '@popperjs/core';
 
-import { ContainerType, usePortal } from '../../hooks';
+import { ContainerType, usePortal } from '@melio-ui/use-portal';
+
 import setRef from '../../internal/setRef';
 
 import { Placement } from '../types';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { usePortal } from '../hooks';
+import { usePortal } from '@melio-ui/use-portal';
 
 export interface ModalPortalProps {
   children?: React.ReactNode;
