@@ -25,4 +25,4 @@ const Breadcrumb = {
 
 // const Breadcrumb = Object.assign(Root, { Item, Link, Collapse, Separator });
 
-export default Breadcrumb;
+export { Breadcrumb };

@@ -4,11 +4,7 @@
 export * from './accordion';
 export * from './alert';
 export * from './avatar';
-
-export { default as Badge } from './badge';
 export * from './badge';
-
-export { default as Breadcrumb } from './breadcrumb';
 export * from './breadcrumb';
 
 export { default as Checkbox } from './checkbox';

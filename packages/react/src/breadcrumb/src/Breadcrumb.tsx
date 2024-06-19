@@ -14,11 +14,6 @@ export interface BreadcrumbProps extends React.ComponentPropsWithoutRef<'ol'> {
   maxItems?: number;
 }
 
-/**
- * Breadcrumb 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 // TODO: 현 Breadcrumb 는 BreadcrumbList 로 nav를 Breadcrumb 로 하자.
 const Breadcrumb = React.forwardRef<HTMLOListElement, BreadcrumbProps>((props, ref) => {
   const { maxItems = 5, collapse, children, ...rest } = props;
