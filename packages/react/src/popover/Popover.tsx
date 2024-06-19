@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useControlled from '../internal/useControlled';
+import { useControlled } from '@melio-ui/use-controlled';
 
 // 지금은 필요없음 - 나중에 필요하다면 부활시키자
 // export type CloseReasonType = 'blurTrigger' | 'escapeKeyDown' | 'closeClick';

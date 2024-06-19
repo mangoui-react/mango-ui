@@ -135,7 +135,7 @@ importers:
   apps/nextjs:
     dependencies:
       '@melio-ui/react':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/react/build
       '@types/node':
         specifier: 20.5.6
@@ -270,6 +270,41 @@ importers:
       react-transition-group:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/accordion:
+    dependencies:
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/use-controlled:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
     publishDirectory: build
 
 packages:

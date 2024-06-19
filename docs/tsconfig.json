@@ -1,4 +1,5 @@
 {
+  "extends": "../tsconfig",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -20,7 +21,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "contentlayer/generated": ["./.contentlayer/generated"],
+      //
+      "@melio-ui/react": ["../packages/react"]
     }
   },
   "include": [

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import useControlled from '../internal/useControlled';
+import { useControlled } from '@melio-ui/use-controlled';
+
 import { ComponentPropsWithoutRef, FormElementBaseProps, TypeAttributes } from '../types/common';
 
 import { RadioValue } from './Radio';

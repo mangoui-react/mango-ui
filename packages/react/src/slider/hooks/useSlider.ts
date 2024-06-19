@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useControlled from '../../internal/useControlled';
+import { useControlled } from '@melio-ui/use-controlled';
 
 import { SliderProps } from '../Slider';
 import { getNewValue, valueToPercent } from '../helpers/getNewValue';

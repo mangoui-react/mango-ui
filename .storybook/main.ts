@@ -1,5 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
+import path from 'path';
 import { mergeConfig } from 'vite';
 
 const config: StorybookConfig = {
@@ -14,7 +15,7 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
     '@storybook/addon-mdx-gfm',
-    '@chromatic-com/storybook'
+    '@chromatic-com/storybook',
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -27,6 +28,14 @@ const config: StorybookConfig = {
   viteFinal: async (config) => {
     return mergeConfig(config, {
       plugins: [vanillaExtractPlugin()],
+      resolve: {
+        alias: [
+          {
+            find: '@melio-ui/use-controlled',
+            replacement: path.resolve(__dirname, '../packages/react/src/use-controlled'),
+          },
+        ],
+      },
     });
   },
 };

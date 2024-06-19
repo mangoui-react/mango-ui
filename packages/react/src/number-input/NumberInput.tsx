@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { useControlled } from '@melio-ui/use-controlled';
+
 import { pattern } from '../internal/regexp';
-import useControlled from '../internal/useControlled';
 import { ComponentPropsWithoutRef, FormElementBaseProps } from '../types/common';
 
 export type NumberInputValue = number | null;

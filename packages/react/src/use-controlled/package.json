@@ -1,12 +1,12 @@
 {
-  "name": "@melio-ui/accordion",
+  "name": "@melio-ui/use-controlled",
   "version": "0.0.0",
   "license": "MIT",
   "exports": {
-    ".": "./"
+    ".": "./src"
   },
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
     "clean": "rm -rf dist",
     "version": "yarn version"
@@ -15,9 +15,6 @@
   "publishConfig": {
     "access": "public",
     "directory": "build"
-  },
-  "dependencies": {
-    "@melio-ui/use-controlled": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "*",

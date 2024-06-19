@@ -27,7 +27,7 @@
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "paths": {},
-    "jsx": "react-jsx",
+    "jsx": "react-jsx"
   },
   "exclude": ["node_modules"]
 }

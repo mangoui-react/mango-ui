@@ -1,6 +1,7 @@
 import React from 'react';
 
-import useControlled from '../internal/useControlled';
+import { useControlled } from '@melio-ui/use-controlled';
+
 // import uuidv4 from '../internal/uuidv4';
 import { ComponentPropsWithoutRef, FormElementBaseProps } from '../types/common';
 

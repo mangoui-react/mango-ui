@@ -3,7 +3,8 @@ import React from 'react';
 // TODO: lodash 제거 하고 remove 직접 구현하자(packages 에서 lodash, @types/lodash 제거해야 함)
 import remove from 'lodash/fp/remove';
 
-import useControlled from '../internal/useControlled';
+import { useControlled } from '@melio-ui/use-controlled';
+
 import { ComponentPropsWithoutRef, FormElementBaseProps, TypeAttributes } from '../types/common';
 
 import { CheckboxValue } from './Checkbox';

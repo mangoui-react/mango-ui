@@ -1,9 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-export default function useControlled<T>(
-  controlledValue: T,
-  defaultValue: T,
-): [T, (value: T) => void] {
+export function useControlled<T>(controlledValue: T, defaultValue: T): [T, (value: T) => void] {
   const { current: isControlled } = useRef(controlledValue !== undefined);
 
   const [uncontrolledValue, setUncontrolledValue] = useState<T>(defaultValue);

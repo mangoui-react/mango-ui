@@ -1,4 +1,4 @@
-import useControlled from '../../internal/useControlled';
+import { useControlled } from '@melio-ui/use-controlled';
 
 export default function useExpandControlled<T>(
   valueProp: T,
