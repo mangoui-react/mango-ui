@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useControlled } from '@melio-ui/use-controlled';
 
-// import uuidv4 from '../internal/uuidv4';
 import { FormElementBaseProps } from '../types/common';
 
 import getState from './helpers/getState';
@@ -73,7 +72,7 @@ const Switch = React.forwardRef<HTMLDivElement, SwitchProps>((props, ref) => {
   }, [changeChecked, checked]);
 
   // input, label id 설정
-  const uuid = React.useId(); // React.useMemo(() => uuidv4(), []);
+  const uuid = React.useId();
 
   const contextValue = React.useMemo(
     () => ({

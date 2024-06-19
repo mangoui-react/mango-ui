@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import uuidv4 from '../internal/uuidv4';
 import { FormElementBaseProps } from '../types/common';
 
 import useChecked from '../checkbox/hooks/useChecked';
@@ -88,7 +87,7 @@ const Radio = React.forwardRef<HTMLDivElement, RadioProps>((props, ref) => {
   );
 
   // input, label id 설정
-  const uuid = React.useId(); // React.useMemo(() => uuidv4(), []);
+  const uuid = React.useId();
 
   const contextValue = React.useMemo(
     () => ({

@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import uuidv4 from '../internal/uuidv4';
 import { FormElementBaseProps } from '../types/common';
 
 import { CheckboxGroupContext } from './CheckboxGroup';
@@ -98,7 +97,7 @@ const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>((props, ref) =>
   );
 
   // input, label id 설정
-  const uuid = React.useId(); // React.useMemo(() => uuidv4(), []);
+  const uuid = React.useId();
 
   const contextValue = React.useMemo(
     () => ({
