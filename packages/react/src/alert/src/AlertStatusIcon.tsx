@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ErrorIcon from '../internal/icons/ErrorIcon';
-import InfoIcon from '../internal/icons/InfoIcon';
-import SuccessIcon from '../internal/icons/SuccessIcon';
-import WarningIcon from '../internal/icons/WarningIcon';
+import ErrorIcon from '../../internal/icons/ErrorIcon';
+import InfoIcon from '../../internal/icons/InfoIcon';
+import SuccessIcon from '../../internal/icons/SuccessIcon';
+import WarningIcon from '../../internal/icons/WarningIcon';
 
 import { AlertContext } from './Alert';
 
@@ -21,11 +21,6 @@ const statusIconMapping = {
   error: <ErrorIcon />,
 };
 
-/**
- * Alert 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const AlertStatusIcon = React.forwardRef<SVGSVGElement, AlertStatusIconProps>(
   ({ info, success, warning, error, ...rest }, ref) => {
     // const {  info, success, warning, error, ...rest } = props; // TODO: type 에러 확인필요

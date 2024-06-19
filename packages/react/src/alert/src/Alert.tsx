@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TypeAttributes } from '../types/common';
+import { TypeAttributes } from '../../types/common';
 
 export interface AlertProps extends React.ComponentPropsWithoutRef<'div'> {
   /** Alert 메시지 상태 */
@@ -13,11 +13,6 @@ export const AlertContext = React.createContext<AlertContextValue>({
   status: 'info',
 });
 
-/**
- * Alert 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const { status = 'info', children, ...rest } = props;
 

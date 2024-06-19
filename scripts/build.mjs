@@ -108,9 +108,9 @@ const packagePath = process.cwd();
 // globSync(`${packagePath}/src/*`).forEach(build);
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-globSync(`${packagePath}/src/accordion`).forEach(build);
+globSync(`${packagePath}/src/alert`).forEach(build);
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-globSync(`${packagePath}/src/use-portal`).forEach(build);
+// globSync(`${packagePath}/src/use-portal`).forEach(build);
 
 // globSync(`${packagePath}/src/accordion`).forEach((path) => {
 //   console.log('=====test path', path);

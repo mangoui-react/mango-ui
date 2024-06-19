@@ -1,5 +1,5 @@
 {
-  "name": "@melio-ui/accordion",
+  "name": "@melio-ui/alert",
   "version": "0.0.0",
   "license": "MIT",
   "exports": {
@@ -15,9 +15,6 @@
   "publishConfig": {
     "access": "public",
     "directory": "build"
-  },
-  "dependencies": {
-    "@melio-ui/use-controlled": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "*",
