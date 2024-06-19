@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Alert, { AlertProps } from '.';
+import { Alert, AlertProps } from '.';
 import * as styles from './Alert.stories.css';
 
 export default { title: 'Components/Alert' };

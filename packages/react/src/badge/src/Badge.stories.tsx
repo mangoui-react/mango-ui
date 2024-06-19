@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Badge from '.';
+import { Badge } from '.';
 import * as styles from './Badge.stories.css';
 
 export default { title: 'Components/Badge' };

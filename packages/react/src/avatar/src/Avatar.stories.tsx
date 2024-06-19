@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Avatar from '.';
+import { Avatar } from '.';
 import * as styles from './Avatar.stories.css';
 
 export default { title: 'Components/Avatar' };

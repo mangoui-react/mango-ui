@@ -7,8 +7,6 @@ export * from './avatar';
 export * from './badge';
 export * from './breadcrumb';
 export * from './checkbox';
-
-export { default as CircularProgress } from './circular-progress';
 export * from './circular-progress';
 
 export { default as ConfigProvider } from './config-provider';

@@ -1,7 +1,11 @@
 // import * as esbuild from 'esbuild';
-// import fse from 'fs-extra';
 import { globSync } from 'glob';
-import { copyFileSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import {
+  copyFileSync,
+  readFileSync,
+  /* rmSync, */
+  writeFileSync,
+} from 'node:fs';
 import path from 'path';
 import * as tsup from 'tsup';
 
@@ -11,7 +15,7 @@ async function build(packagePath) {
   const buildPath = `${packagePath}/build`;
   const distPath = `${buildPath}/dist`;
 
-  rmSync(buildPath, { recursive: true, force: true });
+  // rmSync(buildPath, { recursive: true, force: true });
 
   // const esbuildConfig = {
   //   entryPoints: [indexFile],
@@ -108,7 +112,7 @@ const packagePath = process.cwd();
 // globSync(`${packagePath}/src/*`).forEach(build);
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-globSync(`${packagePath}/src/checkbox`).forEach(build);
+globSync(`${packagePath}/src/circular-progress`).forEach(build);
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 // globSync(`${packagePath}/src/use-portal`).forEach(build);
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Breadcrumb from '.';
+import { Breadcrumb } from '.';
 import * as styles from './Breadcrumb.stories.css';
 
 export default { title: 'Components/Breadcrumb' };

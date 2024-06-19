@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Accordion from '.';
+import { Accordion } from '.';
 import * as styles from './Accordion.stories.css';
 
 export default { title: 'Components/Accordion' };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CircularProgress from '.';
+import { CircularProgress } from '.';
 import * as styles from './CircularProgress.stories.css';
 
 export default { title: 'Components/CircularProgress' };

@@ -15,4 +15,4 @@ const CircularProgress = {
   Label,
 };
 
-export default CircularProgress;
+export { CircularProgress };
