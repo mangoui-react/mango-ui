@@ -1,6 +1,6 @@
 type ProgressState = 'indeterminate' | 'complete' | 'loading';
 
-export default function getProgressState(
+export function getProgressState(
   value?: number,
   maxValue?: number,
   indeterminate?: boolean,

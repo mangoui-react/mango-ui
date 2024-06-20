@@ -6,9 +6,7 @@ import Indicator from './ProgressIndicator';
 export * from './Progress';
 export * from './ProgressIndicator';
 
-const Progress = {
+export const Progress = {
   Root,
   Indicator,
 };
-
-export default Progress;

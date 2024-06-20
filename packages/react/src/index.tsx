@@ -14,8 +14,6 @@ export * from './dropdown';
 export * from './modal';
 export * from './number-input';
 export * from './popover';
-
-export { default as Progress } from './progress';
 export * from './progress';
 
 export { default as Radio } from './radio';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import getProgressState from './helpers/getProgressState';
+import { getProgressState } from './helpers/getProgressState';
 
 export interface ProgressProps extends React.ComponentPropsWithoutRef<'div'> {
   /** bar value (진행 표시) */

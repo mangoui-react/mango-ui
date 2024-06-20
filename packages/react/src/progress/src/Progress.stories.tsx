@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Progress from '.';
+import { Progress } from '.';
 import * as styles from './Progress.stories.css';
 
 export default { title: 'Components/Progress' };

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ProgressContext } from './Progress';
-import getProgressState from './helpers/getProgressState';
+import { getProgressState } from './helpers/getProgressState';
 
 export interface ProgressIndicatorProps extends React.ComponentPropsWithoutRef<'div'> {}
 
