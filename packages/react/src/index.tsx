@@ -20,8 +20,6 @@ export * from './slider';
 export * from './slot';
 export * from './steps';
 export * from './switch';
-
-export { default as Tabs } from './tabs';
 export * from './tabs';
 
 export { default as Toast } from './toast';

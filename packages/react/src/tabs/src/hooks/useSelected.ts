@@ -5,7 +5,7 @@ interface UseSelectedParams {
   selectedValue?: string;
 }
 
-export default function useSelected({
+export function useSelected({
   index,
   value,
   selectedIndex,

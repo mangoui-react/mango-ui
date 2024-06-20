@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useControlled } from '@melio-ui/use-controlled';
 
-import { TypeAttributes } from '../types/common';
+import { TypeAttributes } from '../../types/common';
 
 export interface TabsProps extends React.ComponentPropsWithoutRef<'div'> {
   /** 선택된 tab value */

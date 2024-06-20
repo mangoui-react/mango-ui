@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Tabs from '.';
+import { Tabs } from '.';
 import * as styles from './Tabs.stories.css';
 
 export default { title: 'Components/Tabs' };
