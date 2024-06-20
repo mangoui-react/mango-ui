@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Popover from '.';
+import { Popover } from '.';
 import * as styles from './Popover.stories.css';
 
 export default { title: 'Components/Popover' };

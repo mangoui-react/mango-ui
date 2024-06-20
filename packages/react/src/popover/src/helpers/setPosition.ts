@@ -52,7 +52,7 @@ interface UsePositionParams
   popoverContentEl: HTMLDivElement | null;
   containerEl: HTMLElement | Element | undefined;
 }
-export default function setPosition({
+export function setPosition({
   triggerEl,
   popoverContentEl,
   triggerPosition,

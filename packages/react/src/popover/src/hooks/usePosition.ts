@@ -28,7 +28,7 @@ interface UsePositionParams
   targetEl: HTMLButtonElement | null;
   popoverEl: HTMLDivElement | null;
 }
-export default function usePosition({
+export function usePosition({
   targetEl,
   popoverEl,
   triggerPosition,

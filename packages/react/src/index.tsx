@@ -19,7 +19,6 @@ export * from './modal';
 export { default as NumberInput } from './number-input';
 export * from './number-input';
 
-export { default as Popover } from './popover';
 export * from './popover';
 
 export { default as Progress } from './progress';

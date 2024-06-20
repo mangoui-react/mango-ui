@@ -8,8 +8,8 @@ import { useMergedRef } from '@melio-ui/use-merged-ref';
 
 import { PopoverContext } from './Popover';
 import { PopoverPortalContext } from './PopoverPortal';
-import getTargetEl from './helpers/getTargetEl';
-import setPosition from './helpers/setPosition';
+import { getTargetEl } from './helpers/getTargetEl';
+import { setPosition } from './helpers/setPosition';
 
 export interface PositionValue {
   left: number;

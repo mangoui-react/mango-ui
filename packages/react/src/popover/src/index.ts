@@ -15,12 +15,10 @@ export * from './PopoverPortal';
 export * from './PopoverContent';
 export * from './PopoverClose';
 
-const Popover = {
+export const Popover = {
   Root,
   Trigger,
   Portal,
   Content,
   Close,
 };
-
-export default Popover;
