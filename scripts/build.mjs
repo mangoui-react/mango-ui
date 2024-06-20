@@ -1,6 +1,7 @@
 import { globSync } from 'glob';
 import {
   copyFileSync,
+  existsSync,
   readFileSync,
   /* rmSync, */
   writeFileSync,
@@ -11,6 +12,8 @@ import * as tsup from 'tsup';
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 async function build(packagePath) {
   const indexFile = `${packagePath}/src/index.ts`;
+  if (!existsSync(indexFile)) return;
+
   const buildPath = `${packagePath}/build`;
   const distPath = `${buildPath}/dist`;
 
@@ -80,10 +83,10 @@ async function createPackageFile(packagePath) {
 const packagePath = process.cwd();
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-// globSync(`${packagePath}/src/*`).forEach(build);
+globSync(`${packagePath}/src/*`).forEach(build);
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-globSync(`${packagePath}/src/tooltip`).forEach(build);
+// globSync(`${packagePath}/src/tooltip`).forEach(build);
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 // globSync(`${packagePath}/src/use-portal`).forEach(build);
 

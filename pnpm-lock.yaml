@@ -422,6 +422,25 @@ importers:
         version: 18.2.0(react@18.2.0)
     publishDirectory: build
 
+  packages/react/src/dropdown:
+    dependencies:
+      '@melio-ui/popover':
+        specifier: workspace:*
+        version: link:../popover/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
   packages/react/src/modal:
     dependencies:
       '@melio-ui/slot':
@@ -445,6 +464,9 @@ importers:
       '@types/react-dom':
         specifier: '*'
         version: 18.2.7
+      '@types/react-transition-group':
+        specifier: ^4.4.10
+        version: 4.4.10
       react:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0
@@ -454,6 +476,128 @@ importers:
       react-transition-group:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/number-input:
+    dependencies:
+      '@melio-ui/slot':
+        specifier: workspace:*
+        version: link:../slot/build
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/popover:
+    dependencies:
+      '@melio-ui/slot':
+        specifier: workspace:*
+        version: link:../slot/build
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@melio-ui/use-effect-once':
+        specifier: workspace:*
+        version: link:../use-effect-once/build
+      '@melio-ui/use-merged-ref':
+        specifier: workspace:*
+        version: link:../use-merged-ref/build
+      '@melio-ui/use-portal':
+        specifier: workspace:*
+        version: link:../use-portal/build
+      '@types/lodash':
+        specifier: ^4.17.0
+        version: 4.17.0
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      '@types/react-transition-group':
+        specifier: ^4.4.10
+        version: 4.4.10
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+      react-transition-group:
+        specifier: ^4.4.5
+        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/progress:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/radio:
+    dependencies:
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/slider:
+    dependencies:
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@melio-ui/use-merged-ref':
+        specifier: workspace:*
+        version: link:../use-merged-ref/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
     publishDirectory: build
 
   packages/react/src/slot:
@@ -473,6 +617,128 @@ importers:
       react-dom:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/steps:
+    dependencies:
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/switch:
+    dependencies:
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/tabs:
+    dependencies:
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/toast:
+    dependencies:
+      '@melio-ui/slot':
+        specifier: workspace:*
+        version: link:../slot/build
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@melio-ui/use-merged-ref':
+        specifier: workspace:*
+        version: link:../use-merged-ref/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      '@types/react-transition-group':
+        specifier: ^4.4.10
+        version: 4.4.10
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+      react-transition-group:
+        specifier: ^4.4.5
+        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    publishDirectory: build
+
+  packages/react/src/tooltip:
+    dependencies:
+      '@melio-ui/slot':
+        specifier: workspace:*
+        version: link:../slot/build
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@melio-ui/use-merged-ref':
+        specifier: workspace:*
+        version: link:../use-merged-ref/build
+      '@melio-ui/use-portal':
+        specifier: workspace:*
+        version: link:../use-portal/build
+      '@popperjs/core':
+        specifier: ^2.11.8
+        version: 2.11.8
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      '@types/react-transition-group':
+        specifier: ^4.4.10
+        version: 4.4.10
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.2.0(react@18.2.0)
+      react-transition-group:
+        specifier: ^4.4.5
+        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     publishDirectory: build
 
   packages/react/src/use-controlled:

@@ -22,3 +22,7 @@ export * from './switch';
 export * from './tabs';
 export * from './toast';
 export * from './tooltip';
+export * from './use-controlled';
+export * from './use-effect-once';
+export * from './use-merged-ref';
+export * from './use-portal';
