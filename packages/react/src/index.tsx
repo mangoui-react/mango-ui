@@ -15,13 +15,8 @@ export * from './modal';
 export * from './number-input';
 export * from './popover';
 export * from './progress';
-
-export { default as Radio } from './radio';
 export * from './radio';
-
-export { default as Slider } from './slider';
 export * from './slider';
-
 export * from './slot';
 
 export { default as Steps } from './steps';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Slider from '.';
+import { Slider } from '.';
 import * as styles from './Slider.stories.css';
 
 export default { title: 'Components/Slider' };

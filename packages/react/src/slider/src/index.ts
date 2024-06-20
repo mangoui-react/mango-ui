@@ -10,12 +10,10 @@ export * from './SliderRange';
 export * from './SliderThumb';
 export * from './SliderThumbLabel';
 
-const Slider = {
+export const Slider = {
   Root,
   Range,
   Thumb,
   ThumbLabel,
   Track,
 };
-
-export default Slider;
