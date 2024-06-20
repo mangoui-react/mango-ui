@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Switch from '.';
+import { Switch } from '.';
 import * as styles from './Switch.stories.css';
 
 export default { title: 'Components/Switch' };

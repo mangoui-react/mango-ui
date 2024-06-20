@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { SwitchContext } from './Switch';
-import getState from './helpers/getState';
+import { getState } from './helpers/getState';
 
 export interface SwitchThumbProps extends React.ComponentPropsWithoutRef<'span'> {}
 

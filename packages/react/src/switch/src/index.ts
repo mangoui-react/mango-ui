@@ -8,11 +8,9 @@ export * from './SwitchTrack';
 export * from './SwitchThumb';
 export * from './SwitchLabel';
 
-const Switch = {
+export const Switch = {
   Root,
   Track,
   Thumb,
   Label,
 };
-
-export default Switch;

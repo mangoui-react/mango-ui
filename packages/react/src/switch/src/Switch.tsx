@@ -2,9 +2,9 @@ import React from 'react';
 
 import { useControlled } from '@melio-ui/use-controlled';
 
-import { FormElementBaseProps } from '../types/common';
+import { FormElementBaseProps } from '../../types/common';
 
-import getState from './helpers/getState';
+import { getState } from './helpers/getState';
 
 export interface SwitchProps
   extends FormElementBaseProps<string>,

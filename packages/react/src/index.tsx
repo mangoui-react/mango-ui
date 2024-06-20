@@ -19,8 +19,6 @@ export * from './radio';
 export * from './slider';
 export * from './slot';
 export * from './steps';
-
-export { default as Switch } from './switch';
 export * from './switch';
 
 export { default as Tabs } from './tabs';
