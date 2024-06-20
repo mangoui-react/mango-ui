@@ -5,8 +5,6 @@ import { useMergedRef } from '@melio-ui/use-merged-ref';
 
 import { TooltipContext } from './Tooltip';
 
-// import { PopoverContext } from './Popover';
-
 export interface TooltipTriggerProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;
 }

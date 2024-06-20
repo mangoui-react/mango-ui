@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Tooltip from '.';
+import { Tooltip } from '.';
 import * as styles from './Tooltip.stories.css';
 
 export default { title: 'Components/Tooltip' };

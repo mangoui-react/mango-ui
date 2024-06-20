@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import { TooltipContentContext } from './TooltipContent';
-
 export interface TooltipArrowProps extends React.ComponentPropsWithoutRef<'div'> {}
 
 // TODO: 확인후 필요 없으면 제거

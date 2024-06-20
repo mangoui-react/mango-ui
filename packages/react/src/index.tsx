@@ -22,6 +22,4 @@ export * from './steps';
 export * from './switch';
 export * from './tabs';
 export * from './toast';
-
-export { default as Tooltip } from './tooltip';
 export * from './tooltip';

@@ -4,8 +4,7 @@ import { createPopper } from '@popperjs/core';
 
 import { ContainerType, usePortal } from '@melio-ui/use-portal';
 
-import setRef from '../../internal/setRef';
-
+import setRef from '../../../internal/setRef';
 import { Placement } from '../types';
 
 interface PopperProps {
@@ -29,7 +28,7 @@ interface PopperProps {
  * @popperjs/core 래핑 컴포넌트
  * 실제 사용하지 않음
  */
-export default function Popper(props: PopperProps): JSX.Element | null {
+export function Popper(props: PopperProps): JSX.Element | null {
   const { open, placement = 'top', container, childNodeRef, children } = props;
   const { Portal } = usePortal(container);
   const tooltipRef = React.useRef<HTMLDivElement>();

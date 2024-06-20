@@ -26,11 +26,6 @@ export const TooltipContext = React.createContext<TooltipContextValue>({
   handleClose: () => {},
 });
 
-/**
- * 툴팁 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 export default function Tooltip(props: TooltipProps): JSX.Element {
   const { open: openProp, defaultOpen, children, onOpenChange } = props;
 
