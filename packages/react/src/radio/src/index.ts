@@ -10,12 +10,10 @@ export * from './RadioIndicator';
 export * from './RadioIcon';
 export * from './RadioLabel';
 
-const Radio = {
+export const Radio = {
   Root,
   Group,
   Indicator,
   Icon,
   Label,
 };
-
-export default Radio;

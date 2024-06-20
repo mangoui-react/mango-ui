@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Radio, { RadioValue } from '.';
+import { Radio, RadioValue } from '.';
 import * as styles from './Radio.stories.css';
 
 export default { title: 'Components/Radio' };

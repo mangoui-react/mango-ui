@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { RadioContext } from './Radio';
-import getState from './helpers/getState';
+import { getState } from './helpers/getState';
 
 export interface RadioIndicatorProps
   extends Omit<React.ComponentPropsWithoutRef<'span'>, 'children'> {
