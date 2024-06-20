@@ -22,6 +22,7 @@
     "@melio-ui/use-merged-ref": "workspace:*",
     "@melio-ui/use-portal": "workspace:*",
     "@popperjs/core": "^2.11.8",
+    "@types/react-transition-group": "^4.4.10",
     "react-transition-group": "^4.4.5"
   },
   "peerDependencies": {

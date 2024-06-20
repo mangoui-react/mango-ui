@@ -1,5 +1,4 @@
 'use client';
-// import 'client-only';
 
 export * from './accordion';
 export * from './alert';

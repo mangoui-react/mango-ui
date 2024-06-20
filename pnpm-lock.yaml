@@ -56,9 +56,6 @@ importers:
       '@vanilla-extract/vite-plugin':
         specifier: ^3.9.3
         version: 3.9.3(@types/node@20.5.6)(vite@5.0.8(@types/node@20.5.6))
-      esbuild:
-        specifier: ^0.21.5
-        version: 0.21.5
       eslint:
         specifier: ^8.47.0
         version: 8.47.0
@@ -255,9 +252,6 @@ importers:
       '@types/react-transition-group':
         specifier: ^4.4.10
         version: 4.4.10
-      client-only:
-        specifier: ^0.0.1
-        version: 0.0.1
       lodash:
         specifier: ^4.17.21
         version: 4.17.21

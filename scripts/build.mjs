@@ -1,4 +1,3 @@
-// import * as esbuild from 'esbuild';
 import { globSync } from 'glob';
 import {
   copyFileSync,
@@ -17,34 +16,6 @@ async function build(packagePath) {
 
   // rmSync(buildPath, { recursive: true, force: true });
 
-  // const esbuildConfig = {
-  //   entryPoints: [indexFile],
-  //   external: ['@melio-ui/*'],
-  //   packages: 'external',
-  //   bundle: true,
-  //   sourcemap: true,
-  //   format: 'cjs',
-  //   target: 'es2022',
-  //   outdir: distPath,
-  // };
-
-  // await esbuild.build(esbuildConfig);
-  // console.log(`Built ${distPath}/index.js`);
-
-  // await esbuild.build({
-  //   ...esbuildConfig,
-  //   format: 'esm',
-  //   outExtension: { '.js': '.mjs' },
-  // });
-  // console.log(`Built ${distPath}/index.mjs`);
-
-  // tsup is used to emit d.ts files only (esbuild can't do that).
-  //
-  // Notes:
-  // 1. Emitting d.ts files is super slow for whatever reason.
-  // 2. It could have fully replaced esbuild (as it uses that internally),
-  //    but at the moment its esbuild version is somewhat outdated.
-  //    It’s also harder to configure and esbuild docs are more thorough.
   await tsup.build({
     entry: [indexFile],
     format: ['cjs', 'esm'],
