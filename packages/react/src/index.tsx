@@ -21,8 +21,6 @@ export * from './slot';
 export * from './steps';
 export * from './switch';
 export * from './tabs';
-
-export { default as Toast } from './toast';
 export * from './toast';
 
 export { default as Tooltip } from './tooltip';

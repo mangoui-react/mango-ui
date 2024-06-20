@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Toast from '.';
+import { Toast } from '.';
 import * as styles from './Toast.stories.css';
 
 export default { title: 'Components/Toast' };
