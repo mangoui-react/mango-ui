@@ -12,10 +12,7 @@ export * from './config-provider';
 export * from './drawer';
 export * from './dropdown';
 export * from './modal';
-
-export { default as NumberInput } from './number-input';
 export * from './number-input';
-
 export * from './popover';
 
 export { default as Progress } from './progress';

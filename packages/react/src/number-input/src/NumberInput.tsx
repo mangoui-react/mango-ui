@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useControlled } from '@melio-ui/use-controlled';
 
-import { FormElementBaseProps } from '../types/common';
+import { FormElementBaseProps } from '../../types/common';
 
 export type NumberInputValue = number | null;
 

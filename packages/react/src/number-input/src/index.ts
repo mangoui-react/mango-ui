@@ -15,12 +15,10 @@ export * from './NumberInputButtonGroup';
 export * from './NumberInputPlus';
 export * from './NumberInputMinus';
 
-const NumberInput = {
+export const NumberInput = {
   Root,
   Field,
   ButtonGroup,
   Plus,
   Minus,
 };
-
-export default NumberInput;

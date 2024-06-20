@@ -112,7 +112,7 @@ const packagePath = process.cwd();
 // globSync(`${packagePath}/src/*`).forEach(build);
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-globSync(`${packagePath}/src/dropdown`).forEach(build);
+globSync(`${packagePath}/src/number-input`).forEach(build);
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 // globSync(`${packagePath}/src/use-portal`).forEach(build);
 

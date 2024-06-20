@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NumberInput, { NumberInputValue } from '.';
+import { NumberInput, NumberInputValue } from '.';
 import * as styles from './NumberInput.stories.css';
 
 export default { title: 'Components/NumberInput' };
