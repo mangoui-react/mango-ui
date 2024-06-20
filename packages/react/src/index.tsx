@@ -8,12 +8,9 @@ export * from './badge';
 export * from './breadcrumb';
 export * from './checkbox';
 export * from './circular-progress';
-export * from './config-provider/src';
+export * from './config-provider';
 export * from './drawer';
-
-export { default as Dropdown } from './dropdown';
 export * from './dropdown';
-
 export * from './modal';
 
 export { default as NumberInput } from './number-input';

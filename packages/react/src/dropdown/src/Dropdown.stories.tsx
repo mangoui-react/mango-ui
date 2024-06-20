@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Dropdown from '.';
+import { Dropdown } from '.';
 import * as styles from './Dropdown.stories.css';
 
 export default { title: 'Components/Dropdown' };

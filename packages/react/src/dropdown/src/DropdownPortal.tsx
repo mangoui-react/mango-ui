@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Popover, { PopoverPortalProps } from '../popover';
+import { Popover, PopoverPortalProps } from '@melio-ui/popover';
 
 export interface DropdownPortalProps extends PopoverPortalProps {}
 

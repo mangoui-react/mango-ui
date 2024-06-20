@@ -1,9 +1,3 @@
-// export { default } from './Dropdown';
-// export { default as DropdownTrigger } from './DropdownTrigger';
-// export { default as DropdownPortal } from './DropdownPortal';
-// export { default as DropdownContent } from './DropdownContent';
-// export { default as DropdownItem } from './DropdownItem';
-// export { default as DropdownClose } from './DropdownClose';
 import Root from './Dropdown';
 import Close from './DropdownClose';
 import Content from './DropdownContent';
@@ -18,7 +12,7 @@ export * from './DropdownContent';
 export * from './DropdownItem';
 export * from './DropdownClose';
 
-const Dropdown = {
+export const Dropdown = {
   Root,
   Trigger,
   Portal,
@@ -26,5 +20,3 @@ const Dropdown = {
   Item,
   Close,
 };
-
-export default Dropdown;
