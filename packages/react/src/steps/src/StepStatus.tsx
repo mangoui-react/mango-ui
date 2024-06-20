@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CheckIcon from '../../internal/icons/CheckIcon';
-import CloseIcon from '../../internal/icons/CloseIcon';
+import { CheckIcon } from '../../internal/icons/CheckIcon';
+import { CloseIcon } from '../../internal/icons/CloseIcon';
 
 import { StepContext, StepStatusValue } from './Step';
 

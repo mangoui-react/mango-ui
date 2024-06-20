@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ArrowOutlineDownIcon(props: React.SVGProps<SVGSVGElement>) {
+export function ArrowOutlineDownIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       width="1em"

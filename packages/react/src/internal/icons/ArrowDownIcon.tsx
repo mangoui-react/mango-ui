@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ArrowDownIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+export function ArrowDownIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       width="1em"
@@ -13,6 +13,4 @@ const ArrowDownIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
       <path d="M8 11L3.5 6L12.5 6L8 11Z" fill="currentColor" />
     </svg>
   );
-};
-
-export default ArrowDownIcon;
+}

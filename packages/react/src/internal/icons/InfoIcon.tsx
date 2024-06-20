@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function InfoIcon(props: React.SVGProps<SVGSVGElement>) {
+export function InfoIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       width="1.5em"

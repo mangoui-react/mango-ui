@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CheckedCheckboxIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+export function CheckedCheckboxIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       width="1em"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ErrorIcon(props: React.SVGProps<SVGSVGElement>) {
+export function ErrorIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       width="1.5em"

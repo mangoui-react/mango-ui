@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ChevronDownIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+// TODO: 사용하지 않는 아이콘임
+export function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,6 +16,4 @@ const ChevronDownIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>
   );
-};
-
-export default ChevronDownIcon;
+}

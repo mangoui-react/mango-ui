@@ -180,7 +180,7 @@ importers:
   docs:
     dependencies:
       '@melio-ui/react':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../packages/react/build
       clsx:
         specifier: ^2.0.0

@@ -1,7 +1,7 @@
 // 'use client';
 import React from 'react';
 
-import ArrowOutlineDownIcon from '../../internal/icons/ArrowOutlineDownIcon';
+import { ArrowOutlineDownIcon } from '../../internal/icons/ArrowOutlineDownIcon';
 
 import { AccordionItemContext } from './AccordionItem';
 

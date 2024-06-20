@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+// TODO: 사용하지 않는 아이콘임
+export function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       width="1em"
