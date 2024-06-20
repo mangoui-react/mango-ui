@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TypeAttributes } from '../types/common';
+import { TypeAttributes } from '../../types/common';
 
 export interface StepsProps extends React.ComponentPropsWithoutRef<'div'> {
   // TODO: stepIndex 로 수정 생각해 보자
@@ -13,11 +13,6 @@ export interface StepsProps extends React.ComponentPropsWithoutRef<'div'> {
 export type StepsContextValue = Pick<StepsProps, 'currentStep' | 'orientation'>;
 export const StepsContext = React.createContext<StepsContextValue>({});
 
-/**
- * 스텝 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const Steps = React.forwardRef<HTMLDivElement, StepsProps>((props, ref) => {
   const { currentStep, orientation = 'horizontal', children, ...rest } = props;
 

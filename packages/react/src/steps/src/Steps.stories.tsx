@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Steps, { StepStatusValue } from '.';
+import { StepStatusValue, Steps } from '.';
 import * as styles from './Steps.stories.css';
 
 export default { title: 'Components/Steps' };

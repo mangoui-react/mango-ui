@@ -18,8 +18,6 @@ export * from './progress';
 export * from './radio';
 export * from './slider';
 export * from './slot';
-
-export { default as Steps } from './steps';
 export * from './steps';
 
 export { default as Switch } from './switch';
