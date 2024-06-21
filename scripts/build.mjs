@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { globSync } from 'glob';
 import {
   copyFileSync,
@@ -9,7 +12,6 @@ import {
 import path from 'path';
 import * as tsup from 'tsup';
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 async function build(packagePath) {
   const indexFile = `${packagePath}/src/index.ts`;
   if (!existsSync(indexFile)) return;
@@ -37,7 +39,6 @@ async function build(packagePath) {
   // README.md 파일 copy
   await Promise.all(
     [`${packagePath}/README.md`].map(async (file) => {
-      // await fse.copy(file, `${buildPath}/${path.basename(file)}`);
       copyFileSync(file, `${buildPath}/${path.basename(file)}`);
     }),
   );
@@ -45,7 +46,6 @@ async function build(packagePath) {
   console.log('Built', packageName);
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 async function createPackageFile(packagePath) {
   const buildPath = `${packagePath}/build`;
 
@@ -80,9 +80,52 @@ async function createPackageFile(packagePath) {
   return newPackageData.name;
 }
 
+async function buildReact(packagePath) {
+  const buildPath = `${packagePath}/build`;
+  const distPath = `${buildPath}/dist`;
+
+  const indexContents = readFileSync(path.resolve(`${packagePath}/src`, './index.ts'), 'utf8');
+  const newIndexContents = indexContents.replace(/.\//gi, '@melio-ui/');
+
+  const indexFile = path.resolve(`${packagePath}/src`, './index.ts');
+
+  // index 파일 쓰기
+  writeFileSync(indexFile, newIndexContents, 'utf8');
+
+  await tsup.build({
+    entry: [indexFile],
+    format: ['cjs', 'esm'],
+    // dts: { only: true },
+    dts: true,
+    sourcemap: true,
+    outDir: distPath,
+    silent: true,
+    external: [/@melio-ui\/.+/],
+  });
+  // console.log(`Built ${distPath}`);
+
+  // package.json 파일 생성
+  const packageName = await createPackageFile(packagePath);
+
+  // README.md 파일 copy
+  await Promise.all(
+    [`${packagePath}/README.md`].map(async (file) => {
+      copyFileSync(file, `${buildPath}/${path.basename(file)}`);
+    }),
+  );
+
+  // index 파일 쓰기
+  writeFileSync(indexFile, indexContents, 'utf8');
+
+  console.log('Built', packageName);
+}
+
 const packagePath = process.cwd();
 
-// eslint-disable-next-line @typescript-eslint/no-misused-promises
+// @melio-ui/react build
+void buildReact(packagePath);
+
+// @melio-ui/* build
 globSync(`${packagePath}/src/*`).forEach(build);
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
