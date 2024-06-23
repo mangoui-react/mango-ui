@@ -1,16 +1,11 @@
 // 'use client';
 import React from 'react';
 
-import { AccordionItemContext } from './AccordionItem';
-import getState from './helpers/getState';
+import { AccordionItemContext } from './accordion-item';
+import getState from './helpers/get-state';
 
 export interface AccordionContentProps extends React.ComponentPropsWithoutRef<'div'> {}
 
-/**
- * 아코디언 컨텐츠 컴포넌트
- *
- * @author 안형노 <hrahn@estsecurity.com>
- */
 const AccordionContent = React.forwardRef<HTMLDivElement, AccordionContentProps>((props, ref) => {
   const { style, children, ...rest } = props;
 

@@ -146,7 +146,7 @@ void buildReact(packagePath);
 // @melio-ui/* build
 globSync(`${packagePath}/src/*`).forEach(build);
 
-// globSync(`${packagePath}/src/tooltip`).forEach(build);
+// globSync(`${packagePath}/src/accordion`).forEach(build);
 
 // globSync(`${packagePath}/src/accordion`).forEach((path) => {
 //   console.log('=====test path', path);

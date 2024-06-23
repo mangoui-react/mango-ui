@@ -1,9 +1,9 @@
 // 'use client';
 import React from 'react';
 
-import { AccordionContext, AccordionProps } from './Accordion';
-import getState from './helpers/getState';
-import useAccordion from './hooks/useAccordion';
+import { AccordionContext, AccordionProps } from './accordion';
+import getState from './helpers/get-state';
+import useAccordion from './hooks/use-accordion';
 
 export interface AccordionItemProps
   extends Pick<AccordionProps, 'renderMode'>,
@@ -29,11 +29,6 @@ export const AccordionItemContext = React.createContext<AccordionItemContextValu
   renderMode: 'selected',
 });
 
-/**
- * 아코디언 아이템 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>((props, ref) => {
   const {
     expandedIndex,

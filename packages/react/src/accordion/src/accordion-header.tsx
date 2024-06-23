@@ -1,18 +1,13 @@
 // 'use client';
 import React from 'react';
 
-import { AccordionContext } from './Accordion';
-import { AccordionItemContext } from './AccordionItem';
-import getState from './helpers/getState';
-import useAccordion from './hooks/useAccordion';
+import { AccordionContext } from './accordion';
+import { AccordionItemContext } from './accordion-item';
+import getState from './helpers/get-state';
+import useAccordion from './hooks/use-accordion';
 
 export interface AccordionHeaderProps extends React.ComponentPropsWithoutRef<'div'> {}
 
-/**
- * 아코디언 헤더 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>((props, ref) => {
   const { children, onClick, ...rest } = props;
   const { expandedIndex, expandedValue, setExpanded, toggle, multiple } =

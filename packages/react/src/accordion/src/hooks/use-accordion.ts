@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ExpandedIndexType, ExpandedValueType } from '../types';
-import useExpanded from './useExpanded';
+import useExpanded from './use-expanded';
 
 interface UseAccordionParams {
   index: number;

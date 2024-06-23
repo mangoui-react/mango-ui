@@ -1,35 +1,25 @@
 'use client';
 
-// export { default } from './Accordion';
-// export { default as AccordionPanel } from './AccordionPanel';
-// export { default as AccordionHeader } from './AccordionHeader';
-// export { default as AccordionContent } from './AccordionContent';
-// export { default as AccordionArrowIcon } from './AccordionArrowIcon';
-import Root from './Accordion';
-import ArrowIcon from './AccordionArrowIcon';
-import Content from './AccordionContent';
-import Header from './AccordionHeader';
-import Item from './AccordionItem';
-import Title from './AccordionTitle';
+import Root from './accordion';
+import ArrowIcon from './accordion-arrow-icon';
+import Content from './accordion-content';
+import Header from './accordion-header';
+import Item from './accordion-item';
 
-export * from './Accordion';
-export * from './AccordionItem';
-export * from './AccordionHeader';
-export * from './AccordionTitle';
-export * from './AccordionContent';
-export * from './AccordionArrowIcon';
+export * from './accordion';
+export * from './accordion-item';
+export * from './accordion-header';
+export * from './accordion-content';
+export * from './accordion-arrow-icon';
 
 export type { ExpandedIndexType, ExpandedValueType } from './types';
 
 // const Accordion = Object.assign(Root, { Item, Header, Title, Content, ArrowIcon });
 
-const Accordion = {
+export const Accordion = {
   Root,
   Item,
   Header,
-  Title,
   Content,
   ArrowIcon,
 };
-
-export { Accordion };
