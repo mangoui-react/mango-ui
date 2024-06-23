@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["nextjs", "docs", "@melio-ui/react"]
+  "ignore": ["nextjs", "docs"]
 }

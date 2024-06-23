@@ -136,7 +136,7 @@ importers:
     dependencies:
       '@melio-ui/react':
         specifier: workspace:*
-        version: link:../../packages/react/build
+        version: link:../../packages/core/build
       '@types/node':
         specifier: 20.5.6
         version: 20.5.6
@@ -184,7 +184,7 @@ importers:
     dependencies:
       '@melio-ui/react':
         specifier: workspace:*
-        version: link:../packages/react/build
+        version: link:../packages/core/build
       clsx:
         specifier: ^2.0.0
         version: 2.0.0
@@ -237,6 +237,115 @@ importers:
       typescript:
         specifier: ^5
         version: 5.2.2
+
+  packages/core:
+    dependencies:
+      '@melio-ui/accordion':
+        specifier: workspace:*
+        version: link:../react/src/accordion/build
+      '@melio-ui/alert':
+        specifier: workspace:*
+        version: link:../react/src/alert/build
+      '@melio-ui/avatar':
+        specifier: workspace:*
+        version: link:../react/src/avatar/build
+      '@melio-ui/badge':
+        specifier: workspace:*
+        version: link:../react/src/badge/build
+      '@melio-ui/breadcrumb':
+        specifier: workspace:*
+        version: link:../react/src/breadcrumb/build
+      '@melio-ui/checkbox':
+        specifier: workspace:*
+        version: link:../react/src/checkbox/build
+      '@melio-ui/circular-progress':
+        specifier: workspace:*
+        version: link:../react/src/circular-progress/build
+      '@melio-ui/config-provider':
+        specifier: workspace:*
+        version: link:../react/src/config-provider/build
+      '@melio-ui/drawer':
+        specifier: workspace:*
+        version: link:../react/src/drawer/build
+      '@melio-ui/dropdown':
+        specifier: workspace:*
+        version: link:../react/src/dropdown/build
+      '@melio-ui/modal':
+        specifier: workspace:*
+        version: link:../react/src/modal/build
+      '@melio-ui/number-input':
+        specifier: workspace:*
+        version: link:../react/src/number-input/build
+      '@melio-ui/popover':
+        specifier: workspace:*
+        version: link:../react/src/popover/build
+      '@melio-ui/progress':
+        specifier: workspace:*
+        version: link:../react/src/progress/build
+      '@melio-ui/radio':
+        specifier: workspace:*
+        version: link:../react/src/radio/build
+      '@melio-ui/slider':
+        specifier: workspace:*
+        version: link:../react/src/slider/build
+      '@melio-ui/slot':
+        specifier: workspace:*
+        version: link:../react/src/slot/build
+      '@melio-ui/steps':
+        specifier: workspace:*
+        version: link:../react/src/steps/build
+      '@melio-ui/switch':
+        specifier: workspace:*
+        version: link:../react/src/switch/build
+      '@melio-ui/tabs':
+        specifier: workspace:*
+        version: link:../react/src/tabs/build
+      '@melio-ui/toast':
+        specifier: workspace:*
+        version: link:../react/src/toast/build
+      '@melio-ui/tooltip':
+        specifier: workspace:*
+        version: link:../react/src/tooltip/build
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../react/src/use-controlled/build
+      '@melio-ui/use-effect-once':
+        specifier: workspace:*
+        version: link:../react/src/use-effect-once/build
+      '@melio-ui/use-merged-ref':
+        specifier: workspace:*
+        version: link:../react/src/use-merged-ref/build
+      '@melio-ui/use-portal':
+        specifier: workspace:*
+        version: link:../react/src/use-portal/build
+      '@popperjs/core':
+        specifier: ^2.11.8
+        version: 2.11.8
+      '@types/lodash':
+        specifier: ^4.17.0
+        version: 4.17.0
+      '@types/react':
+        specifier: ^17.0.0 || ^18.0.0
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: ^17.0.0 || ^18.0.0
+        version: 18.2.7
+      '@types/react-transition-group':
+        specifier: ^4.4.10
+        version: 4.4.10
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      react:
+        specifier: ^17.0.0 || ^18.0.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^17.0.0 || ^18.0.0
+        version: 18.2.0(react@18.2.0)
+      react-transition-group:
+        specifier: ^4.4.5
+        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    publishDirectory: build
 
   packages/react:
     dependencies:
