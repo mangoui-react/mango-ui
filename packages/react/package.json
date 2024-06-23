@@ -2,7 +2,7 @@
   "name": "@melio-ui/react",
   "version": "0.0.6",
   "private": false,
-  "author": "ellae",
+  "author": "AHN HYUNGRO <elle0510@gmail.com>",
   "description": "",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -23,7 +23,7 @@
     "url": "https://github.com/elle510/melio-ui.git",
     "directory": "packages/react"
   },
-  "license": "ISC",
+  "license": "MIT",
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
