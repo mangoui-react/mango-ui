@@ -4,7 +4,7 @@ import { createPopper } from '@popperjs/core';
 
 import { ContainerType, usePortal } from '@melio-ui/use-portal';
 
-import setRef from '../../../internal/setRef';
+import setRef from '../../../internal/set-ref';
 import { Placement } from '../types';
 
 interface PopperProps {

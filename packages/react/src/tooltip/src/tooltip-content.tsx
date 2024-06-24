@@ -5,7 +5,7 @@ import { Transition, TransitionStatus } from 'react-transition-group';
 
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
-import setRef from '../../internal/setRef';
+import setRef from '../../internal/set-ref';
 
 import { TooltipContext } from './tooltip';
 import { Placement } from './types';
