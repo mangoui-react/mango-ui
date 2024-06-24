@@ -1,7 +1,6 @@
-// 'use client';
 import React from 'react';
 
-import { AvatarGroupContext } from './AvatarGroup';
+import { AvatarGroupContext } from './avatar-group';
 
 export interface AvatarGroupContentProps extends React.ComponentPropsWithoutRef<'div'> {}
 

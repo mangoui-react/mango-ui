@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AvatarImgProps } from '../AvatarImg';
+import { AvatarImgProps } from '../avatar-img';
 
 type UseLoadedParams = Pick<AvatarImgProps, 'src' | 'srcSet' | 'crossOrigin' | 'referrerPolicy'>;
 type LoadStatusValue = 'pending' | 'loading' | 'loaded' | 'error';

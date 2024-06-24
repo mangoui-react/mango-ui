@@ -1,10 +1,9 @@
-// 'use client';
 import React from 'react';
 
 import { Slot } from '@melio-ui/slot';
 
-import Avatar from './Avatar';
-import { AvatarGroupContext } from './AvatarGroup';
+import Avatar from './avatar';
+import { AvatarGroupContext } from './avatar-group';
 
 export interface AvatarExtraProps extends React.ComponentPropsWithoutRef<'div'> {
   asChild?: boolean;
