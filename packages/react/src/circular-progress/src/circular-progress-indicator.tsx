@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getProgressState } from '../../internal/getProgressState';
+import { getProgressState } from '../../internal/get-progress-state';
 
 import { CircularProgressContext } from './circular-progress';
 
