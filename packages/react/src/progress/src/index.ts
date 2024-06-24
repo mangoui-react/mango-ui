@@ -1,10 +1,10 @@
-// export { default } from './Progress';
-// export { default as ProgressIndicator } from './ProgressIndicator';
-import Root from './Progress';
-import Indicator from './ProgressIndicator';
+'use client';
 
-export * from './Progress';
-export * from './ProgressIndicator';
+import Root from './progress';
+import Indicator from './progress-indicator';
+
+export * from './progress';
+export * from './progress-indicator';
 
 export const Progress = {
   Root,
