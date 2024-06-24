@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AlertContext } from './Alert';
+import { AlertContext } from './alert';
 
 export interface AlertContentProps extends React.ComponentPropsWithoutRef<'div'> {}
 

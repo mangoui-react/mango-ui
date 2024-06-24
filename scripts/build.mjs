@@ -140,13 +140,13 @@ async function buildReact(packagePath) {
 
 const packagePath = process.cwd();
 
-// @melio-ui/react build
-void buildReact(packagePath);
+// // @melio-ui/react build
+// void buildReact(packagePath);
 
-// @melio-ui/* build
-globSync(`${packagePath}/src/*`).forEach(build);
+// // @melio-ui/* build
+// globSync(`${packagePath}/src/*`).forEach(build);
 
-// globSync(`${packagePath}/src/accordion`).forEach(build);
+globSync(`${packagePath}/src/alert`).forEach(build);
 
 // globSync(`${packagePath}/src/accordion`).forEach((path) => {
 //   console.log('=====test path', path);

@@ -5,7 +5,7 @@ import { InfoIcon } from '../../internal/icons/InfoIcon';
 import { SuccessIcon } from '../../internal/icons/SuccessIcon';
 import { WarningIcon } from '../../internal/icons/WarningIcon';
 
-import { AlertContext } from './Alert';
+import { AlertContext } from './alert';
 
 export interface AlertStatusIconProps extends React.SVGProps<SVGSVGElement> {
   info?: React.ReactNode;

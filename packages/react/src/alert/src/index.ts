@@ -1,16 +1,15 @@
-// 'use client';
-import Root from './Alert';
-import Content from './AlertContent';
-import StatusIcon from './AlertStatusIcon';
+'use client';
 
-export * from './Alert';
-export * from './AlertContent';
-export * from './AlertStatusIcon';
+import Root from './alert';
+import Content from './alert-content';
+import StatusIcon from './alert-status-icon';
 
-const Alert = {
+export * from './alert';
+export * from './alert-content';
+export * from './alert-status-icon';
+
+export const Alert = {
   Root,
   StatusIcon,
   Content,
 };
-
-export { Alert };
