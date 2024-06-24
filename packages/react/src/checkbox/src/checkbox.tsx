@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useChecked } from '../../internal/useChecked';
+import { useChecked } from '../../internal/use-checked';
 import { FormElementBaseProps } from '../../types/common';
 
 import { CheckboxGroupContext } from './checkbox-group';
