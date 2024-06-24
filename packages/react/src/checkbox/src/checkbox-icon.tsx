@@ -4,7 +4,7 @@ import { CheckedCheckboxIcon } from '../../internal/icons/CheckedCheckboxIcon';
 import { IndeterminateCheckboxIcon } from '../../internal/icons/IndeterminateCheckboxIcon';
 import { UncheckedCheckboxIcon } from '../../internal/icons/UncheckedCheckboxIcon';
 
-import { CheckboxContext } from './Checkbox';
+import { CheckboxContext } from './checkbox';
 
 export interface CheckboxIconProps extends React.ComponentPropsWithoutRef<'svg'> {
   /** checked 아이콘 */

@@ -7,7 +7,7 @@ import { useControlled } from '@melio-ui/use-controlled';
 
 import { FormElementBaseProps, TypeAttributes } from '../../types/common';
 
-import { CheckboxValue } from './Checkbox';
+import { CheckboxValue } from './checkbox';
 
 export interface CheckboxGroupProps
   extends FormElementBaseProps<CheckboxValue[]>,

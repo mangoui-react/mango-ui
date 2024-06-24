@@ -1,26 +1,21 @@
-// export { default } from './Checkbox';
-// export { default as CheckboxGroup } from './CheckboxGroup';
-// export { default as CheckboxIndicator } from './CheckboxIndicator';
-// export { default as CheckboxIcon } from './CheckboxIcon';
-// export { default as CheckboxLabel } from './CheckboxLabel';
-import Root from './Checkbox';
-import Group from './CheckboxGroup';
-import Icon from './CheckboxIcon';
-import Indicator from './CheckboxIndicator';
-import Label from './CheckboxLabel';
+'use client';
 
-export * from './Checkbox';
-export * from './CheckboxGroup';
-export * from './CheckboxIndicator';
-export * from './CheckboxIcon';
-export * from './CheckboxLabel';
+import Root from './checkbox';
+import Group from './checkbox-group';
+import Icon from './checkbox-icon';
+import Indicator from './checkbox-indicator';
+import Label from './checkbox-label';
 
-const Checkbox = {
+export * from './checkbox';
+export * from './checkbox-group';
+export * from './checkbox-indicator';
+export * from './checkbox-icon';
+export * from './checkbox-label';
+
+export const Checkbox = {
   Root,
   Icon,
   Group,
   Indicator,
   Label,
 };
-
-export { Checkbox };
