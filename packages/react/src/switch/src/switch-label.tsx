@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { SwitchContext } from './Switch';
-import { getState } from './helpers/getState';
+import { getState } from './helpers/get-state';
+import { SwitchContext } from './switch';
 
 export interface SwitchLabelProps extends React.ComponentPropsWithoutRef<'label'> {}
 

@@ -1,12 +1,14 @@
-import Root from './Switch';
-import Label from './SwitchLabel';
-import Thumb from './SwitchThumb';
-import Track from './SwitchTrack';
+'use client';
 
-export * from './Switch';
-export * from './SwitchTrack';
-export * from './SwitchThumb';
-export * from './SwitchLabel';
+import Root from './switch';
+import Label from './switch-label';
+import Thumb from './switch-thumb';
+import Track from './switch-track';
+
+export * from './switch';
+export * from './switch-track';
+export * from './switch-thumb';
+export * from './switch-label';
 
 export const Switch = {
   Root,
