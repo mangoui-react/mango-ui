@@ -1,7 +1,7 @@
 /** @deprecated */
 import { useCallback } from 'react';
 
-import { PopoverContentProps } from '../PopoverContent';
+import { PopoverContentProps } from '../popover-content';
 
 function getOffsetTop(rect: DOMRect, vertical?: 'top' | 'center' | 'bottom'): number {
   let offset = 0;

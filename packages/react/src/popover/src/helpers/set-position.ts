@@ -1,4 +1,4 @@
-import { PopoverContentProps, TriggerPositionValue } from '../PopoverContent';
+import { PopoverContentProps, TriggerPositionValue } from '../popover-content';
 
 interface RectType {
   width: number;

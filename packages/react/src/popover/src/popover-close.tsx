@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Slot } from '@melio-ui/slot';
 
-import { PopoverContext } from './Popover';
+import { PopoverContext } from './popover';
 
 export interface PopoverCloseProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;

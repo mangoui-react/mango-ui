@@ -3,7 +3,7 @@ import React from 'react';
 import { Slot } from '@melio-ui/slot';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
-import { PopoverContext } from './Popover';
+import { PopoverContext } from './popover';
 
 export interface PopoverTriggerProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;

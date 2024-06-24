@@ -1,19 +1,16 @@
-// export { default } from './Popover';
-// export { default as PopoverTrigger } from './PopoverTrigger';
-// export { default as PopoverPortal } from './PopoverPortal';
-// export { default as PopoverContent } from './PopoverContent';
-// export { default as PopoverClose } from './PopoverClose';
-import Root from './Popover';
-import Close from './PopoverClose';
-import Content from './PopoverContent';
-import Portal from './PopoverPortal';
-import Trigger from './PopoverTrigger';
+'use client';
 
-export * from './Popover';
-export * from './PopoverTrigger';
-export * from './PopoverPortal';
-export * from './PopoverContent';
-export * from './PopoverClose';
+import Root from './popover';
+import Close from './popover-close';
+import Content from './popover-content';
+import Portal from './popover-portal';
+import Trigger from './popover-trigger';
+
+export * from './popover';
+export * from './popover-trigger';
+export * from './popover-portal';
+export * from './popover-content';
+export * from './popover-close';
 
 export const Popover = {
   Root,

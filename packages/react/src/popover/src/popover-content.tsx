@@ -6,10 +6,10 @@ import { Transition, TransitionStatus } from 'react-transition-group';
 import { useEffectOnce } from '@melio-ui/use-effect-once';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
-import { PopoverContext } from './Popover';
-import { PopoverPortalContext } from './PopoverPortal';
-import { getTargetEl } from './helpers/getTargetEl';
-import { setPosition } from './helpers/setPosition';
+import { getTargetEl } from './helpers/get-target-el';
+import { setPosition } from './helpers/set-position';
+import { PopoverContext } from './popover';
+import { PopoverPortalContext } from './popover-portal';
 
 export interface PositionValue {
   left: number;
