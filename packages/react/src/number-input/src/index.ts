@@ -1,19 +1,16 @@
-// export { default } from './NumberInput';
-// export { default as NumberInputField } from './NumberInputField';
-// export { default as NumberInputButtonGroup } from './NumberInputButtonGroup';
-// export { default as NumberInputPlus } from './NumberInputPlus';
-// export { default as NumberInputMinus } from './NumberInputMinus';
-import Root from './NumberInput';
-import ButtonGroup from './NumberInputButtonGroup';
-import Field from './NumberInputField';
-import Minus from './NumberInputMinus';
-import Plus from './NumberInputPlus';
+'use client';
 
-export * from './NumberInput';
-export * from './NumberInputField';
-export * from './NumberInputButtonGroup';
-export * from './NumberInputPlus';
-export * from './NumberInputMinus';
+import Root from './number-input';
+import ButtonGroup from './number-input-button-group';
+import Field from './number-input-field';
+import Minus from './number-input-minus';
+import Plus from './number-input-plus';
+
+export * from './number-input';
+export * from './number-input-field';
+export * from './number-input-button-group';
+export * from './number-input-plus';
+export * from './number-input-minus';
 
 export const NumberInput = {
   Root,

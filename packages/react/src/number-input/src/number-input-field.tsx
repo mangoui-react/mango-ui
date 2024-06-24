@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NumberInputContext } from './NumberInput';
+import { NumberInputContext } from './number-input';
 
 export interface NumberInputFieldProps extends React.ComponentPropsWithoutRef<'input'> {}
 

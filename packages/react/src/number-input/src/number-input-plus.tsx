@@ -4,7 +4,7 @@ import { Slot } from '@melio-ui/slot';
 
 import { ArrowUpIcon } from '../../internal/icons/ArrowUpIcon';
 
-import { NumberInputContext } from './NumberInput';
+import { NumberInputContext } from './number-input';
 
 export interface NumberInputPlusProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;

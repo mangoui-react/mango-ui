@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Modal } from '.';
-import * as styles from './Modal.stories.css';
+import * as styles from './modal.stories.css';
 
 export default { title: 'Components/Modal' };
 
