@@ -1,1 +1,3 @@
-export { useControlled } from './useControlled';
+'use client';
+
+export { useControlled } from './use-controlled';

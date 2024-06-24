@@ -1,1 +1,3 @@
-export * from './usePortal';
+'use client';
+
+export * from './use-portal';
