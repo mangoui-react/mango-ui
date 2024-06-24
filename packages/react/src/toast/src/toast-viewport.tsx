@@ -4,7 +4,7 @@ import { useMergedRef } from '@melio-ui/use-merged-ref';
 
 import { TypeAttributes } from '../../types/common';
 
-import { ToastContext } from './Toast';
+import { ToastContext } from './toast';
 
 export interface ToastViewportProps extends React.ComponentPropsWithoutRef<'div'> {
   /**

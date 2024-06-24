@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { Transition, TransitionStatus } from 'react-transition-group';
 
-import { ToastContext } from './Toast';
+import { ToastContext } from './toast';
 
 export interface ToastContentProps extends React.ComponentPropsWithoutRef<'div'> {}
 

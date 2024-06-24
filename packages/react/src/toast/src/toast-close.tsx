@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Slot } from '@melio-ui/slot';
 
-import { ToastContext } from './Toast';
+import { ToastContext } from './toast';
 
 export interface ToastCloseProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;

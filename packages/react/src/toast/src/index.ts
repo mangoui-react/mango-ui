@@ -1,12 +1,14 @@
-import Root from './Toast';
-import Close from './ToastClose';
-import Content from './ToastContent';
-import Viewport from './ToastViewport';
+'use client';
 
-export * from './Toast';
-export * from './ToastContent';
-export * from './ToastViewport';
-export * from './ToastClose';
+import Root from './toast';
+import Close from './toast-close';
+import Content from './toast-content';
+import Viewport from './toast-viewport';
+
+export * from './toast';
+export * from './toast-content';
+export * from './toast-viewport';
+export * from './toast-close';
 
 export const Toast = {
   Root,
