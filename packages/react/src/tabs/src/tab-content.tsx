@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { TabsContext, TabsProps } from './Tabs';
-import { useSelected } from './hooks/useSelected';
+import { useSelected } from './hooks/use-selected';
+import { TabsContext, TabsProps } from './tabs';
 
 export interface TabPanelProps
   extends Pick<TabsProps, 'renderMode'>,

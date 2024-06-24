@@ -1,12 +1,14 @@
-import Tab from './Tab';
-import Content from './TabContent';
-import List from './TabList';
-import Root from './Tabs';
+'use client';
 
-export * from './Tabs';
-export * from './TabList';
-export * from './Tab';
-export * from './TabContent';
+import Tab from './tab';
+import Content from './tab-content';
+import List from './tab-list';
+import Root from './tabs';
+
+export * from './tabs';
+export * from './tab-list';
+export * from './tab';
+export * from './tab-content';
 
 export const Tabs = {
   Root,

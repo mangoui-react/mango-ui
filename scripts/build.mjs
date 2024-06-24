@@ -146,7 +146,7 @@ const packagePath = process.cwd();
 // // @melio-ui/* build
 // globSync(`${packagePath}/src/*`).forEach(build);
 
-globSync(`${packagePath}/src/switch`).forEach(build);
+globSync(`${packagePath}/src/tabs`).forEach(build);
 
 // globSync(`${packagePath}/src/accordion`).forEach((path) => {
 //   console.log('=====test path', path);
