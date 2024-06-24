@@ -1,20 +1,22 @@
-import Root from './Modal';
-import Backdrop from './ModalBackdrop';
-import Close from './ModalClose';
-import CloseButton from './ModalCloseButton';
-import Content from './ModalContent';
-import Portal from './ModalPortal';
-import Trigger from './ModalTrigger';
+'use client';
 
-export * from './Modal';
-export * from './ModalTrigger';
-export * from './ModalPortal';
-export * from './ModalContent';
-export * from './ModalClose';
-export * from './ModalCloseButton';
-export * from './ModalBackdrop';
+import Root from './modal';
+import Backdrop from './modal-backdrop';
+import Close from './modal-close';
+import CloseButton from './modal-close-button';
+import Content from './modal-content';
+import Portal from './modal-portal';
+import Trigger from './modal-trigger';
 
-const Modal = {
+export * from './modal';
+export * from './modal-trigger';
+export * from './modal-portal';
+export * from './modal-content';
+export * from './modal-close';
+export * from './modal-close-button';
+export * from './modal-backdrop';
+
+export const Modal = {
   Root,
   Trigger,
   Portal,
@@ -23,5 +25,3 @@ const Modal = {
   CloseButton,
   Backdrop,
 };
-
-export { Modal };

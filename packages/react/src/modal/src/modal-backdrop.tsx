@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ModalContext } from './Modal';
+import { ModalContext } from './modal';
 
 export interface ModalBackdropProps extends React.ComponentPropsWithoutRef<'div'> {
   /**

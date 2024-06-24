@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Slot } from '@melio-ui/slot';
 
-import { ModalContext } from './Modal';
+import { ModalContext } from './modal';
 
 export interface ModalCloseProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;

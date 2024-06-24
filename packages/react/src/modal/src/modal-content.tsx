@@ -6,7 +6,7 @@ import { Transition, TransitionStatus } from 'react-transition-group';
 import { useEffectOnce } from '@melio-ui/use-effect-once';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
-import { ModalContext } from './Modal';
+import { ModalContext } from './modal';
 
 interface AnimaitonType {
   keyframes: Keyframe[] | PropertyIndexedKeyframes | null;
