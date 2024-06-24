@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SliderContext } from '../Slider';
+import { SliderContext } from '../slider';
 
 interface UseThumbParams {
   thumbRef: React.RefObject<HTMLDivElement>;

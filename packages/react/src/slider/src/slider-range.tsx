@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SliderContext } from './Slider';
+import { SliderContext } from './slider';
 
 export interface SliderRangeProps extends React.ComponentPropsWithoutRef<'div'> {}
 

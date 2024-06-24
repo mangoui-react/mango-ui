@@ -2,8 +2,8 @@ import React from 'react';
 
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
-import { SliderContext } from './Slider';
-import useThumb from './hooks/useThumb';
+import useThumb from './hooks/use-thumb';
+import { SliderContext } from './slider';
 
 export interface SliderThumbProps extends React.ComponentPropsWithoutRef<'div'> {}
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SliderThumbContext } from './SliderThumb';
+import { SliderThumbContext } from './slider-thumb';
 
 export interface SliderThumbLabelProps extends React.ComponentPropsWithoutRef<'span'> {
   auto?: boolean;

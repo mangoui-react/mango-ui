@@ -1,4 +1,4 @@
-import { SliderProps } from '../Slider';
+import { SliderProps } from '../slider';
 
 // 아래 함수들은 값과 위치에 대한 계산으로 내부적으로만 사용
 function percentToValue(percent: number, min: number, max: number): number {

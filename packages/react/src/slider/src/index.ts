@@ -1,14 +1,16 @@
-import Root from './Slider';
-import Range from './SliderRange';
-import Thumb from './SliderThumb';
-import ThumbLabel from './SliderThumbLabel';
-import Track from './SliderTrack';
+'use client';
 
-export * from './Slider';
-export * from './SliderTrack';
-export * from './SliderRange';
-export * from './SliderThumb';
-export * from './SliderThumbLabel';
+import Root from './slider';
+import Range from './slider-range';
+import Thumb from './slider-thumb';
+import ThumbLabel from './slider-thumb-label';
+import Track from './slider-track';
+
+export * from './slider';
+export * from './slider-track';
+export * from './slider-range';
+export * from './slider-thumb';
+export * from './slider-thumb-label';
 
 export const Slider = {
   Root,
