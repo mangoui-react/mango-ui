@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { CheckedRadioIcon } from '../../internal/icons/CheckedRadioIcon';
-import { UncheckedRadioIcon } from '../../internal/icons/UncheckedRadioIcon';
+import { CheckedRadioIcon } from '../../internal/icons/checked-radio-icon';
+import { UncheckedRadioIcon } from '../../internal/icons/unchecked-radio-icon';
 
 import { RadioContext } from './radio';
 

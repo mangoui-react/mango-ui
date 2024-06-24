@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CloseIcon } from '../../internal/icons/CloseIcon';
+import { CloseIcon } from '../../internal/icons/close-icon';
 
 export interface ModalCloseButtonProps extends React.ComponentPropsWithoutRef<'button'> {}
 

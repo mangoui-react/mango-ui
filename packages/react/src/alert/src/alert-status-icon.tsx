@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { ErrorIcon } from '../../internal/icons/ErrorIcon';
-import { InfoIcon } from '../../internal/icons/InfoIcon';
-import { SuccessIcon } from '../../internal/icons/SuccessIcon';
-import { WarningIcon } from '../../internal/icons/WarningIcon';
+import { ErrorIcon } from '../../internal/icons/error-icon';
+import { InfoIcon } from '../../internal/icons/info-icon';
+import { SuccessIcon } from '../../internal/icons/success-icon';
+import { WarningIcon } from '../../internal/icons/warning-icon';
 
 import { AlertContext } from './alert';
 

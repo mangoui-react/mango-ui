@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Slot } from '@melio-ui/slot';
 
-import { ArrowUpIcon } from '../../internal/icons/ArrowUpIcon';
+import { ArrowUpIcon } from '../../internal/icons/arrow-up-icon';
 
 import { NumberInputContext } from './number-input';
 
