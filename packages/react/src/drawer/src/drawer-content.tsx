@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Modal, ModalContentProps } from '@melio-ui/modal';
 
-import { DrawerContext } from './Drawer';
+import { DrawerContext } from './drawer';
 
 export interface DrawerContentProps extends ModalContentProps {}
 

@@ -1,10 +1,12 @@
+'use client';
+
 import { Modal } from '@melio-ui/modal';
 
-import Root from './Drawer';
-import Content from './DrawerContent';
+import Root from './drawer';
+import Content from './drawer-content';
 
-export * from './Drawer';
-export * from './DrawerContent';
+export * from './drawer';
+export * from './drawer-content';
 
 export type {
   ModalTriggerProps as DrawerTriggerProps,
@@ -14,7 +16,7 @@ export type {
   ModalBackdropProps as DrawerBackdropProps,
 } from '@melio-ui/modal';
 
-const Drawer = {
+export const Drawer = {
   Root,
   Trigger: Modal.Trigger,
   Portal: Modal.Portal,
@@ -23,5 +25,3 @@ const Drawer = {
   CloseButton: Modal.CloseButton,
   Backdrop: Modal.Backdrop,
 };
-
-export { Drawer };
