@@ -1,18 +1,15 @@
-// export { default } from './CircularProgress';
-// export { default as CircularProgressIndicator } from './CircularProgressIndicator';
-// export { default as CircularProgressLabel } from './CircularProgressLabel';
-import Root from './CircularProgress';
-import Indicator from './CircularProgressIndicator';
-import Label from './CircularProgressLabel';
+'use client';
 
-export * from './CircularProgress';
-export * from './CircularProgressIndicator';
-export * from './CircularProgressLabel';
+import Root from './circular-progress';
+import Indicator from './circular-progress-indicator';
+import Label from './circular-progress-label';
 
-const CircularProgress = {
+export * from './circular-progress';
+export * from './circular-progress-indicator';
+export * from './circular-progress-label';
+
+export const CircularProgress = {
   Root,
   Indicator,
   Label,
 };
-
-export { CircularProgress };

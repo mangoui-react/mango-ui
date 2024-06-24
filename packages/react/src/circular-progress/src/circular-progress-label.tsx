@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CircularProgressContext } from './CircularProgress';
+import { CircularProgressContext } from './circular-progress';
 
 export interface CircularProgressLabelProps extends React.ComponentPropsWithoutRef<'div'> {}
 

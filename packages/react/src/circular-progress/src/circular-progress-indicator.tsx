@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getProgressState } from '../../internal/getProgressState';
 
-import { CircularProgressContext } from './CircularProgress';
+import { CircularProgressContext } from './circular-progress';
 
 export interface CircularProgressIndicatorProps extends React.ComponentPropsWithoutRef<'svg'> {
   strokeWidth?: number;
