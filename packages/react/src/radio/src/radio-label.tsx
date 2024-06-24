@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { RadioContext } from './Radio';
-import { getState } from './helpers/getState';
+import { getState } from './helpers/get-state';
+import { RadioContext } from './radio';
 
 export interface RadioLabelProps extends React.ComponentPropsWithoutRef<'label'> {}
 

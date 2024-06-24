@@ -4,7 +4,7 @@ import { useControlled } from '@melio-ui/use-controlled';
 
 import { FormElementBaseProps, TypeAttributes } from '../../types/common';
 
-import { RadioValue } from './Radio';
+import { RadioValue } from './radio';
 
 export interface RadioGroupProps
   extends FormElementBaseProps<RadioValue>,

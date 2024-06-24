@@ -3,7 +3,7 @@ import React from 'react';
 import { CheckedRadioIcon } from '../../internal/icons/CheckedRadioIcon';
 import { UncheckedRadioIcon } from '../../internal/icons/UncheckedRadioIcon';
 
-import { RadioContext } from './Radio';
+import { RadioContext } from './radio';
 
 export interface RadioIconIconProps extends React.ComponentPropsWithoutRef<'svg'> {
   /** checked 아이콘 */
