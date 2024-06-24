@@ -1,6 +1,6 @@
 {
   "name": "@melio-ui/config-provider",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "exports": {
     ".": "./src"

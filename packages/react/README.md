@@ -7,6 +7,6 @@ $ pnpm build
 $ pnpm changeset
 // 배포할 패키지 선택하고 버전 선택
 
-$ pnpm version
+$ pnpm run version
 $ pnpm release
 ```
