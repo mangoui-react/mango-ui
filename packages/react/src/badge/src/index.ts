@@ -1,12 +1,12 @@
-import Root from './Badge';
-import Content from './BadgeContent';
+'use client';
 
-export * from './Badge';
-export * from './BadgeContent';
+import Root from './badge';
+import Content from './badge-content';
 
-const Badge = {
+export * from './badge';
+export * from './badge-content';
+
+export const Badge = {
   Root,
   Content,
 };
-
-export { Badge };

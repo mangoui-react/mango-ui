@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BadgeContext } from './Badge';
+import { BadgeContext } from './badge';
 
 export interface BadgeContentProps extends React.ComponentPropsWithoutRef<'div'> {
   children?: string | number;
