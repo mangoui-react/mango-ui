@@ -7,7 +7,7 @@ import { useMergedRef } from '@melio-ui/use-merged-ref';
 
 import setRef from '../../internal/setRef';
 
-import { TooltipContext } from './Tooltip';
+import { TooltipContext } from './tooltip';
 import { Placement } from './types';
 
 export interface TooltipContentProps extends React.ComponentPropsWithoutRef<'div'> {

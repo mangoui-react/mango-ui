@@ -3,7 +3,7 @@ import React from 'react';
 import { Slot } from '@melio-ui/slot';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
-import { TooltipContext } from './Tooltip';
+import { TooltipContext } from './tooltip';
 
 export interface TooltipTriggerProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;

@@ -1,14 +1,16 @@
-import Root from './Tooltip';
-import Arrow from './TooltipArrow';
-import Content from './TooltipContent';
-import Portal from './TooltipPortal';
-import Trigger from './TooltipTrigger';
+'use client';
 
-export * from './Tooltip';
-export * from './TooltipTrigger';
-export * from './TooltipPortal';
-export * from './TooltipContent';
-export * from './TooltipArrow';
+import Root from './tooltip';
+import Arrow from './tooltip-arrow';
+import Content from './tooltip-content';
+import Portal from './tooltip-portal';
+import Trigger from './tooltip-trigger';
+
+export * from './tooltip';
+export * from './tooltip-trigger';
+export * from './tooltip-portal';
+export * from './tooltip-content';
+export * from './tooltip-arrow';
 
 export const Tooltip = {
   Root,
