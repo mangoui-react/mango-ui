@@ -1,21 +1,18 @@
-// export { default } from './Breadcrumb';
-// export { default as BreadcrumbItem } from './BreadcrumbItem';
-// export { default as BreadcrumbLink } from './BreadcrumbLink';
-// export { default as BreadcrumbSeparator } from './BreadcrumbSeparator';
-// export { default as BreadcrumbCollapse } from './BreadcrumbCollapse';
-import Root from './Breadcrumb';
-import Collapse from './BreadcrumbCollapse';
-import Item from './BreadcrumbItem';
-import Link from './BreadcrumbLink';
-import Separator from './BreadcrumbSeparator';
+'use client';
 
-export * from './Breadcrumb';
-export * from './BreadcrumbItem';
-export * from './BreadcrumbLink';
-export * from './BreadcrumbSeparator';
-export * from './BreadcrumbCollapse';
+import Root from './breadcrumb';
+import Collapse from './breadcrumb-collapse';
+import Item from './breadcrumb-item';
+import Link from './breadcrumb-link';
+import Separator from './breadcrumb-separator';
 
-const Breadcrumb = {
+export * from './breadcrumb';
+export * from './breadcrumb-item';
+export * from './breadcrumb-link';
+export * from './breadcrumb-separator';
+export * from './breadcrumb-collapse';
+
+export const Breadcrumb = {
   Root,
   Item,
   Collapse,
@@ -24,5 +21,3 @@ const Breadcrumb = {
 };
 
 // const Breadcrumb = Object.assign(Root, { Item, Link, Collapse, Separator });
-
-export { Breadcrumb };
