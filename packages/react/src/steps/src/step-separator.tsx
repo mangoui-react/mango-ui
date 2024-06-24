@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StepsContext } from './Steps';
+import { StepsContext } from './steps';
 
 export interface StepSeparatorProps extends React.ComponentPropsWithoutRef<'div'> {}
 

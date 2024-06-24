@@ -3,7 +3,7 @@ import React from 'react';
 import { CheckIcon } from '../../internal/icons/CheckIcon';
 import { CloseIcon } from '../../internal/icons/CloseIcon';
 
-import { StepContext, StepStatusValue } from './Step';
+import { StepContext, StepStatusValue } from './step';
 
 export interface StepStatusProps extends React.ComponentPropsWithoutRef<'div'> {
   finish?: React.ReactNode;

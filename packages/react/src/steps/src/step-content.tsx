@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StepContext, StepStatusValue } from './Step';
+import { StepContext, StepStatusValue } from './step';
 
 export interface StepContentProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'children'> {
   children:
