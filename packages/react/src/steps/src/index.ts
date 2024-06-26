@@ -7,6 +7,13 @@ import Separator from './step-separator';
 import Status from './step-status';
 import Root from './steps';
 
+export { default as StepsStep } from './step';
+export { default as StepsContent } from './step-content';
+export { default as StepsIndicator } from './step-indicator';
+export { default as StepsSeparator } from './step-separator';
+export { default as StepsStatus } from './step-status';
+export { default as StepsRoot } from './steps';
+
 export * from './steps';
 export * from './step';
 export * from './step-indicator';

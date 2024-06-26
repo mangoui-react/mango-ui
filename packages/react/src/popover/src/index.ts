@@ -6,6 +6,12 @@ import Content from './popover-content';
 import Portal from './popover-portal';
 import Trigger from './popover-trigger';
 
+export { default as PopoverRoot } from './popover';
+export { default as PopoverClose } from './popover-close';
+export { default as PopoverContent } from './popover-content';
+export { default as PopoverPortal } from './popover-portal';
+export { default as PopoverTrigger } from './popover-trigger';
+
 export * from './popover';
 export * from './popover-trigger';
 export * from './popover-portal';

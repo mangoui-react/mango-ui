@@ -7,6 +7,13 @@ import Item from './dropdown-item';
 import Portal from './dropdown-portal';
 import Trigger from './dropdown-trigger';
 
+export { default as DropdownRoot } from './dropdown';
+export { default as DropdownClose } from './dropdown-close';
+export { default as DropdownContent } from './dropdown-content';
+export { default as DropdownItem } from './dropdown-item';
+export { default as DropdownPortal } from './dropdown-portal';
+export { default as DropdownTrigger } from './dropdown-trigger';
+
 export * from './dropdown';
 export * from './dropdown-trigger';
 export * from './dropdown-portal';

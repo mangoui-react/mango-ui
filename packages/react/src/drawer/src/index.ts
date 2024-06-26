@@ -5,6 +5,17 @@ import { Modal } from '@melio-ui/modal';
 import Root from './drawer';
 import Content from './drawer-content';
 
+export {
+  ModalTrigger as DrawerTrigger,
+  ModalPortal as DrawerPortal,
+  ModalClose as DrawerClose,
+  ModalCloseButton as DrawerCloseButton,
+  ModalBackdrop as DrawerBackdrop,
+} from '@melio-ui/modal';
+
+export { default as DrawerRoot } from './drawer';
+export { default as DrawerContent } from './drawer-content';
+
 export * from './drawer';
 export * from './drawer-content';
 

@@ -6,6 +6,12 @@ import Item from './breadcrumb-item';
 import Link from './breadcrumb-link';
 import Separator from './breadcrumb-separator';
 
+export { default as BreadcrumbRoot } from './breadcrumb';
+export { default as BreadcrumbCollapse } from './breadcrumb-collapse';
+export { default as BreadcrumbItem } from './breadcrumb-item';
+export { default as BreadcrumbLink } from './breadcrumb-link';
+export { default as BreadcrumbSeparator } from './breadcrumb-separator';
+
 export * from './breadcrumb';
 export * from './breadcrumb-item';
 export * from './breadcrumb-link';
