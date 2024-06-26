@@ -4,10 +4,7 @@ import React, { useCallback, useState } from 'react';
 
 import Link from 'next/link';
 
-import CodeDocs from './menu/CodeDocs';
-import HeadlessUI from './menu/HeadlessUI';
 import Intro from './menu/Intro';
-import SassUI from './menu/SassUI';
 
 export default function Nav() {
   const [collapseHeadlessui, setCollapseHeadlessui] = useState(false);
@@ -54,26 +51,6 @@ export default function Nav() {
                 <li>
                   <Link href="/components/button">Button</Link>
                 </li>
-              </ul>
-            </div>
-            <div>
-              <div className="px-1">테스트</div>
-              <ul className="px-4">
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-                <CodeDocs />
-                <li>
-                  <Link href="/signin">SignIn</Link>
-                </li>
-                <li>
-                  <Link href="/signup">SignUp</Link>
-                </li>
-                <li>
-                  <Link href="/dashboard">Dashboard</Link>
-                </li>
-                <HeadlessUI />
-                <SassUI />
               </ul>
             </div>
           </div>
