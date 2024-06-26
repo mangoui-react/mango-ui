@@ -1,10 +1,11 @@
 import React from 'react';
 
-import debounce from 'lodash/debounce';
 import { Transition, TransitionStatus } from 'react-transition-group';
 
 import { useEffectOnce } from '@melio-ui/use-effect-once';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
+
+import { debounce } from '../../internal/debounce';
 
 import { getTargetEl } from './helpers/get-target-el';
 import { setPosition } from './helpers/set-position';

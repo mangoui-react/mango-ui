@@ -110,6 +110,10 @@ export function Position(): JSX.Element {
   return (
     <>
       <h1>Position</h1>
+      <h3>
+        triggerPosition: bottom, right <br />
+        contentPosition: top, left
+      </h3>
       <Popover.Root>
         <Popover.Trigger asChild>
           <button type="button">Open Popover</button>
@@ -124,6 +128,24 @@ export function Position(): JSX.Element {
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
+
+      <div style={{ width: '100%', height: 30 }} />
+      <h3>맨 우측 위치시</h3>
+      <div style={{ display: 'flex', gap: 5 }}>
+        <div style={{ width: '100%' }} />
+        <Popover.Root>
+          <Popover.Trigger asChild>
+            <button type="button" style={{ whiteSpace: 'nowrap' }}>
+              Open Popover
+            </button>
+          </Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content className={styles.content}>
+              <div style={{ padding: 10, whiteSpace: 'nowrap' }}>This is a Popover Content</div>
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </div>
     </>
   );
 }

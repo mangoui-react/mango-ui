@@ -22,9 +22,7 @@
     "@melio-ui/use-effect-once": "workspace:*",
     "@melio-ui/use-merged-ref": "workspace:*",
     "@melio-ui/use-portal": "workspace:*",
-    "@types/lodash": "^4.17.0",
     "@types/react-transition-group": "^4.4.10",
-    "lodash": "^4.17.21",
     "react-transition-group": "^4.4.5"
   },
   "peerDependencies": {
