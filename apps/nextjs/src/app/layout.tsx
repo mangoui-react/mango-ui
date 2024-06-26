@@ -39,22 +39,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
                     </li>
 
                     <li>
-                      <Link href="/components/avatar">Avatar</Link>
+                      <Link href="/accordion">Accordion</Link>
                     </li>
                     <li>
-                      <Link href="/components/button">Button</Link>
+                      <Link href="/avatar">Avatar</Link>
                     </li>
                     <li>
-                      <Link href="/components/accordion">Accordion</Link>
+                      <Link href="/number-input">NumberInput</Link>
                     </li>
                     <li>
-                      <Link href="/components/input">Input</Link>
+                      <Link href="/button">Button</Link>
                     </li>
                     <li>
-                      <Link href="/components/textarea">Textarea</Link>
+                      <Link href="/input">Input</Link>
                     </li>
                     <li>
-                      <Link href="/components/number-input">NumberInput</Link>
+                      <Link href="/textarea">Textarea</Link>
                     </li>
                   </ul>
                 </div>
