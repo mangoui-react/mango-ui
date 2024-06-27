@@ -49,6 +49,9 @@ export default function Nav() {
               <div className="px-1">Components</div>
               <ul className="px-4">
                 <li>
+                  <Link href="/components/accordion">Accordion</Link>
+                </li>
+                <li>
                   <Link href="/components/button">Button</Link>
                 </li>
               </ul>

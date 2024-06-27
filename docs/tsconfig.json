@@ -23,7 +23,8 @@
       "@/*": ["./src/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
       //
-      "@melio-ui/react": ["../packages/react"]
+      "@melio-ui/react": ["../packages/react"],
+      "@melio-ui/*": ["../packages/react/src/*"]
     }
   },
   "include": [

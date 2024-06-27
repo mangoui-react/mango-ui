@@ -4,6 +4,8 @@ import React from 'react';
 
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 
+import * as Melio from '@melio-ui/react';
+
 export interface ReactLiveBlockProps {
   code?: string;
   disabled?: boolean;
@@ -22,6 +24,7 @@ const ReactLiveScope = {
   React,
   ...React,
   Button,
+  ...Melio,
 };
 
 export default function ReactLiveBlock({
@@ -43,12 +46,12 @@ export default function ReactLiveBlock({
     <LiveProvider code={code} scope={scope} {...rest}>
       <LivePreview className="border border-slate-600 rounded-xl p-6" />
       <div className="relative">
-        <div className="flex items-center justify-end gap-1">
+        {/* <div className="flex items-center justify-end gap-1">
           <button>expand</button>
           <button onClick={() => handleCopyClipBoard(code)}>
             <DocsCopyIcon />
           </button>
-        </div>
+        </div> */}
         <button className="absolute top-10 right-2" onClick={() => handleCopyClipBoard(code)}>
           <DocsCopyIcon />
         </button>
