@@ -41,7 +41,6 @@ const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>((prop
   } = React.useContext(AccordionContext);
 
   const {
-    className,
     index = 0,
     value,
     disabled = disabledCtx,
