@@ -1,5 +1,7 @@
 import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files';
 
+import { rehypeDemoCodeBlock } from './src/shared/utils/rehype-demo-code-block';
+
 // contentlayer 예제
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -95,4 +97,11 @@ const Doc = defineDocumentType(() => ({
   },
 }));
 
-export default makeSource({ contentDirPath: 'contents', documentTypes: [Post, Overview, Doc] });
+export default makeSource({
+  contentDirPath: 'contents',
+  documentTypes: [Post, Overview, Doc],
+  mdx: {
+    rehypePlugins: [rehypeDemoCodeBlock],
+    // remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],
+  },
+});

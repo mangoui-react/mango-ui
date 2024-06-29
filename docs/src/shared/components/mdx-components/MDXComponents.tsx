@@ -1,4 +1,8 @@
+import * as Demos from '@/shared/components/demos';
+
 import CodeBlock from './CodeBlock';
+import DemoCodeBlock from './DemoCodeBlock';
+import DemoContainer from './DemoContainer';
 import { PackageManagers } from './PackageManagers';
 
 // TODO: 어떤 용도인지 모하는 놈인지 알아보자. mdx 문서에서의 Button 인듯
@@ -24,4 +28,7 @@ export const MDXComponents = {
   },
   Button,
   PackageManagers,
+  DemoContainer,
+  DemoCodeBlock,
+  ...Demos,
 };

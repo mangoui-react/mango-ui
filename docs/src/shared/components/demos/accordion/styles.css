@@ -1,0 +1,54 @@
+.root {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  border-width: 0.0625rem;
+  border-style: solid;
+  border-color: #d9d9d9;
+  border-radius: 0.125rem;
+  border-bottom-width: 0;
+  color: inherit;
+  width: 300px;
+}
+
+.item {
+  border-bottom-width: 0.0625rem;
+  border-bottom-color: #d9d9d9;
+}
+
+.header {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  cursor: pointer;
+}
+
+.title {
+  flex: 1 1 0%;
+  text-align: left;
+}
+
+.content {
+  border-top-width: 0.0625rem;
+  border-top-color: #d9d9d9;
+  padding: 1rem;
+}
+
+.arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.openArrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  transform: rotate(180deg);
+}
+
+.closeArrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.2s;
+}
