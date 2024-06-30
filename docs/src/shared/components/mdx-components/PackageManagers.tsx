@@ -3,44 +3,45 @@
 // import { Box, Icon, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
 import { Tabs } from '@melio-ui/react';
 
+import { BunIcon } from '@/shared/icons/bun-icon';
+import { NpmIcon } from '@/shared/icons/npm-icon';
+import { PnpmIcon } from '@/shared/icons/pnpm-icon';
+import { YarnIcon } from '@/shared/icons/yarn-icon';
+
 // import CodeBlock from './mdx-components/codeblock/codeblock';
 // import CodeBlock from './CodeBlock';
 
-// import { FaYarn } from 'react-icons/fa';
-// import { ImNpm } from 'react-icons/im';
-// import { SiPnpm } from 'react-icons/si';
 // import { BunIcon } from './icons/bun';
 
-// type PackageManagerName = 'npm' | 'yarn' | 'pnpm' | 'bun';
-type PackageManagerName = 'npm' | 'yarn' | 'pnpm';
+type PackageManagerName = 'npm' | 'yarn' | 'pnpm' | 'bun';
 
 type PackageManager = {
-  // icon: JSX.Element;
-  // color: string;
+  icon: JSX.Element;
+  color: string;
   name: PackageManagerName;
 };
 
 const packageManagers: PackageManager[] = [
   {
     name: 'npm',
-    // icon: <Icon as={ImNpm} color="red.500" />,
-    // color: 'red.500',
+    icon: <NpmIcon />,
+    color: '#e53e3e',
   },
   {
     name: 'yarn',
-    // icon: <Icon as={FaYarn} fontSize="lg" color="blue.500" />,
-    // color: 'blue.500',
+    icon: <YarnIcon />,
+    color: '#3182ce',
   },
   {
     name: 'pnpm',
-    // icon: <Icon as={SiPnpm} color="orange.500" />,
-    // color: 'orange.500',
+    icon: <PnpmIcon />,
+    color: '#dd6b20',
   },
-  // {
-  //   name: 'bun',
-  //   // icon: <Icon as={BunIcon} />,
-  //   // color: '#cdbfa7',
-  // },
+  {
+    name: 'bun',
+    icon: <BunIcon />,
+    color: '#cdbfa7',
+  },
 ];
 
 export function PackageManagers(props: { command: Partial<Record<PackageManagerName, string>> }) {
@@ -48,14 +49,15 @@ export function PackageManagers(props: { command: Partial<Record<PackageManagerN
   return (
     <Tabs.Root>
       <Tabs.List className="flex">
-        {packageManagers.map(({ name /* , icon, color */ }) => {
+        {packageManagers.map(({ name, icon, color }) => {
           if (!command[name]) return null;
           return (
             <Tabs.Tab
               key={name}
-              className="inline-block border border-solid border-b-0 px-3 py-1 cursor-pointer"
+              className="flex items-center justify-center gap-1 border border-solid border-b-0 px-3 py-1 cursor-pointer"
+              style={{ color }}
             >
-              {/* {icon} */}
+              {icon}
               {name}
             </Tabs.Tab>
           );
