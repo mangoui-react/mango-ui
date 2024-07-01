@@ -33,6 +33,8 @@ export default function CodeBlock({
     // mountStylesheet = false,
   } = props.children.props;
 
+  const _live = live === 'true' || live === true;
+
   const language = className?.replace(/language-/, '') ?? 'jsx';
   const rawCode = children.trim();
 
@@ -44,7 +46,7 @@ export default function CodeBlock({
     // mountStylesheet,
   };
 
-  if (isMounted && language === 'jsx' && live === true) {
+  if (isMounted && language === 'jsx' && _live === true) {
     return <ReactLiveBlock {...reactLiveBlockProps} />;
   }
 

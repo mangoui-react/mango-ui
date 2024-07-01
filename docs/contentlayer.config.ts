@@ -1,5 +1,6 @@
 import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files';
 
+import { rehypeMdxCodeMeta } from './src/shared/utils/rehype-code-meta';
 import { rehypeDemoCodeBlock } from './src/shared/utils/rehype-demo-code-block';
 
 // contentlayer 예제
@@ -101,7 +102,7 @@ export default makeSource({
   contentDirPath: 'contents',
   documentTypes: [Post, Overview, Doc],
   mdx: {
-    rehypePlugins: [rehypeDemoCodeBlock],
+    rehypePlugins: [rehypeDemoCodeBlock, rehypeMdxCodeMeta],
     // remarkPlugins: [remarkSlug, remarkGfm, remarkEmoji],
   },
 });
