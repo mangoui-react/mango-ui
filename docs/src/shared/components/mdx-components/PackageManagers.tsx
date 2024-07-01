@@ -64,7 +64,7 @@ export function PackageManagers(props: { command: Partial<Record<PackageManagerN
         if (!command[name]) return null;
         return (
           <Tabs.Content key={name} className="p-0 hidden data-[state=active]:block">
-            <CodeBlock className="pl-3" showLines>
+            <CodeBlock className="pl-3">
               <div>{command[name]}</div>
             </CodeBlock>
           </Tabs.Content>
