@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import Layout from '@/shared/components/Layout';
+import Layout from '@/shared/ui/Layout';
 
 import './globals.css';
 

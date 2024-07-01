@@ -1,7 +1,7 @@
 import { allDocs } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
-import { MDXComponents } from '@/shared/components/mdx-components/mdx-components';
+import { MDXComponents } from '@/shared/ui/mdx-components/mdx-components';
 
 export default function DocPage({ params }: { params: { slug: string } }) {
   const doc = allDocs.find((doc) => {

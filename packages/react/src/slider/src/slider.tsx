@@ -4,7 +4,6 @@ import { useMergedRef } from '@melio-ui/use-merged-ref';
 
 import { FormElementBaseProps, TypeAttributes } from '../../types/common';
 
-// import Thumb from './components/Thumb';
 import useSlider from './hooks/use-slider';
 
 export interface SliderProps

@@ -4,10 +4,10 @@ import React, { useCallback } from 'react';
 
 import Link from 'next/link';
 
-import Button from '@/shared/components/Button';
-import Input from '@/shared/components/Input';
 import BellIcon from '@/shared/icons/bell-icon';
 import GitHubIcon from '@/shared/icons/git-hub-icon';
+import Button from '@/shared/ui/Button';
+import Input from '@/shared/ui/Input';
 
 const Header = () => {
   return (

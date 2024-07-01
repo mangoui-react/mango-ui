@@ -1,4 +1,4 @@
-import * as Demos from '@/shared/components/demos';
+import * as Demos from '@/shared/ui/demos';
 
 import CodeBlock from './code-block';
 import DemoCodeBlock from './demo-code-block';
