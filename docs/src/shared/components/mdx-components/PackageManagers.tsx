@@ -8,10 +8,7 @@ import { NpmIcon } from '@/shared/icons/npm-icon';
 import { PnpmIcon } from '@/shared/icons/pnpm-icon';
 import { YarnIcon } from '@/shared/icons/yarn-icon';
 
-// import CodeBlock from './mdx-components/codeblock/codeblock';
-// import CodeBlock from './CodeBlock';
-
-// import { BunIcon } from './icons/bun';
+import CodeBlock from './CodeBlock';
 
 type PackageManagerName = 'npm' | 'yarn' | 'pnpm' | 'bun';
 
@@ -66,13 +63,10 @@ export function PackageManagers(props: { command: Partial<Record<PackageManagerN
       {packageManagers.map(({ name }) => {
         if (!command[name]) return null;
         return (
-          <Tabs.Content key={name} className="p-3 hidden data-[state=active]:block">
-            {/* <CodeBlock>
+          <Tabs.Content key={name} className="p-0 hidden data-[state=active]:block">
+            <CodeBlock className="pl-3" showLines>
               <div>{command[name]}</div>
-            </CodeBlock> */}
-            <pre>
-              <div>{command[name]}</div>
-            </pre>
+            </CodeBlock>
           </Tabs.Content>
         );
       })}

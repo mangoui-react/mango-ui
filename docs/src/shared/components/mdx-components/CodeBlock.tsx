@@ -2,15 +2,22 @@
 
 import React, { useEffect, useState } from 'react';
 
-// import SyntaxHighlighter from 'react-syntax-highlighter';
-// import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 // react-live 내에서 prism-react-renderer 사용함
 import { Highlight, themes } from 'prism-react-renderer';
 
+import { cn } from '@/shared/utils/cn';
+
 import ReactLiveBlock from './ReactLiveBlock';
 
-export default function CodeBlock(props: any): JSX.Element {
-  // console.log('CodeBlock props', props);
+export default function CodeBlock({
+  className: classNameProp,
+  showLines = false,
+  ...props
+}: {
+  className?: string;
+  children: React.ReactElement;
+  showLines?: boolean;
+}): JSX.Element {
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
@@ -18,51 +25,46 @@ export default function CodeBlock(props: any): JSX.Element {
 
   const {
     className,
-    // live = true,
+    live = false,
     // manual,
     // render,
     children,
-    // viewlines,
     // ln,
     // mountStylesheet = false,
   } = props.children.props;
 
-  // const _live = live === 'true' || live === true
-
-  const language = className?.replace(/language-/, '');
+  const language = className?.replace(/language-/, '') ?? 'jsx';
   const rawCode = children.trim();
 
   const reactLiveBlockProps = {
     code: rawCode,
     language,
-    // theme,
+    theme: themes.shadesOfPurple,
     // noInline: manual,
     // mountStylesheet,
   };
 
-  if (isMounted && language === 'jsx' /* && _live === true */) {
+  if (isMounted && language === 'jsx' && live === true) {
     return <ReactLiveBlock {...reactLiveBlockProps} />;
   }
-
-  // return (
-  //   <SyntaxHighlighter language={language} style={dark}>
-  //     {rawCode}
-  //   </SyntaxHighlighter>
-  // );
 
   return (
     <Highlight theme={themes.shadesOfPurple} code={rawCode} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className="p-5" style={style}>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line })}>
-              {/* <span>{i + 1}</span> */}
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token })} />
-              ))}
-            </div>
-          ))}
-        </pre>
+        <div className={cn(className, classNameProp)} style={style} data-language={language}>
+          <pre className={cn('py-5', className)} style={style}>
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line })} className="flex items-center">
+                {showLines && (
+                  <span style={{ opacity: 0.3, marginRight: 20, fontSize: 12 }}>{i + 1}</span>
+                )}
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        </div>
       )}
     </Highlight>
   );
