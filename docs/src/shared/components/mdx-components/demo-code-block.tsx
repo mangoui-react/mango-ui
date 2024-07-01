@@ -6,7 +6,7 @@ import { Tabs } from '@melio-ui/tabs';
 
 import { cn } from '@/shared/utils/cn';
 
-import CodeBlock from './CodeBlock';
+import CodeBlock from './code-block';
 
 export interface DemoCodeBlockProps extends React.ComponentPropsWithoutRef<'div'> {}
 

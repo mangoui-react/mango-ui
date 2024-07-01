@@ -6,8 +6,8 @@ import Link from 'next/link';
 
 import Button from '@/shared/components/Button';
 import Input from '@/shared/components/Input';
-import BellIcon from '@/shared/icons/BellIcon';
-import GitHubIcon from '@/shared/icons/GitHubIcon';
+import BellIcon from '@/shared/icons/bell-icon';
+import GitHubIcon from '@/shared/icons/git-hub-icon';
 
 const Header = () => {
   return (

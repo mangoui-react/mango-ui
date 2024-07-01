@@ -8,7 +8,7 @@ import { NpmIcon } from '@/shared/icons/npm-icon';
 import { PnpmIcon } from '@/shared/icons/pnpm-icon';
 import { YarnIcon } from '@/shared/icons/yarn-icon';
 
-import CodeBlock from './CodeBlock';
+import CodeBlock from './code-block';
 
 type PackageManagerName = 'npm' | 'yarn' | 'pnpm' | 'bun';
 

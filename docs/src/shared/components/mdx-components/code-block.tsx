@@ -7,7 +7,7 @@ import { Highlight, themes } from 'prism-react-renderer';
 
 import { cn } from '@/shared/utils/cn';
 
-import ReactLiveBlock from './ReactLiveBlock';
+import ReactLiveBlock from './react-live-block';
 
 export default function CodeBlock({
   className: classNameProp,

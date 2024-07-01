@@ -1,10 +1,10 @@
 import * as Demos from '@/shared/components/demos';
 
-import CodeBlock from './CodeBlock';
-import DemoCodeBlock from './DemoCodeBlock';
-import DemoContainer from './DemoContainer';
-import { PackageManagers } from './PackageManagers';
+import CodeBlock from './code-block';
+import DemoCodeBlock from './demo-code-block';
+import DemoContainer from './demo-container';
 import { ImportSyntax } from './import-syntax';
+import { PackageManagers } from './package-managers';
 
 // TODO: 어떤 용도인지 모하는 놈인지 알아보자. mdx 문서에서의 Button 인듯
 const Button = (props: React.ComponentPropsWithoutRef<'button'>) => <button {...props} />;
