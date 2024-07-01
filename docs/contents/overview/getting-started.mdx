@@ -26,24 +26,29 @@ title: Getting started
   }}
 />
 
-```js
-npm install @melio-ui/react
-
-or
-
-yarn add @melio-ui/react
-
-or
-
-pnpm add @melio-ui/react
-```
-
 ## Import
 
-```js
-import { Button } from '@melio-ui/react';
+<ImportSyntax
+  command={{
+    individual: `import { Accordion } from '@melio-ui/accordion';
 
 export default function App() {
-  return <Button>Button</Button>;
+  return (
+    <Accordion.Root>
+    ...
+    </Accordion.Root>
+  );
 }
-```
+`,
+    global: `import { Accordion } from '@melio-ui/react';
+
+export default function App() {
+  return (
+    <Accordion.Root>
+    ...
+    </Accordion.Root>
+  );
+}
+`,
+}}
+/>
