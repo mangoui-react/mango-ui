@@ -2,7 +2,18 @@
 title: Accordion
 ---
 
-Accordions display a list of high-level options that can expand/collapse to reveal more information.
+# Accordion
+
+<Description>
+  Accordions display a list of high-level options that can expand/collapse to reveal more
+  information.
+</Description>
+
+<DemoContainer>
+  <AccordionDemo />
+</DemoContainer>
+
+<DemoCodeBlock component="accordion" />
 
 ## Installation
 
@@ -21,26 +32,133 @@ Accordions display a list of high-level options that can expand/collapse to reve
 
 <ImportSyntax
   command={{
-    individual: `import { Accordion } from '@melio-ui/accordion';`,
-    global: `import { Accordion } from '@melio-ui/react';`,
+    individual: `import { 
+  AccordionRoot, 
+  AccordionItem, 
+  AccordionHeader, 
+  AccordionArrow, 
+  AccordionContent,
+} from '@melio-ui/accordion';`,
+    global: `import { 
+  AccordionRoot, 
+  AccordionItem, 
+  AccordionHeader, 
+  AccordionArrow, 
+  AccordionContent, 
+} from '@melio-ui/react';`,
   }}
 />
 
+- AccordionRoot: Contains all the parts of an accordion.
+- AccordionItem: abc.
+- AccordionHeader: header.
+- AccordionArrow: arrow.
+- AccordionContent: content.
+
+### import Accordion
+
 ```js
+'use client';
+
 import { Accordion } from '@melio-ui/accordion';
+
+<Accordion.Root>
+  <Accordion.Item>
+    <Accordion.Header>
+      <div>Panel Title1</div>
+      <Accordion.ArrowIcon />
+    </Accordion.Header>
+    <Accordion.Content>Content1</Accordion.Content>
+  </Accordion.Item>
+</Accordion.Root>;
 ```
 
-- **Button:** The button component with support for custom icons, spinners, etc.
-- **ButtonGroup:** Used to group buttons whose actions are related, with an
-  option to flush them together.
+## API Reference
 
-<DemoContainer>
-  <AccordionDemo />
-</DemoContainer>
+### AccordionRoot (Root)
 
-<DemoCodeBlock component="accordion" />
+props 과 Data attribute 정리
 
-## Usage
+<PropsTable
+  data={[
+    {
+      name: 'value',
+      required: false,
+      type: 'ExpandedValueType',
+      description: 'The value of the expanded accordion item.',
+    },
+    {
+      name: 'defaultValue',
+      required: false,
+      type: 'ExpandedValueType',
+      description: 'The initial value of the expanded accordion item.',
+    },
+    {
+      name: 'toggle',
+      required: false,
+      default: 'false',
+      type: 'boolean',
+      description: 'accordion item can be collapsed again it or not.',
+    },
+    {
+      name: 'multiple',
+      required: false,
+      default: 'false',
+      type: 'boolean',
+      description: 'multiple accordion item can be expanded at once or not.',
+    },
+    {
+      name: 'disabled',
+      required: false,
+      type: 'boolean',
+      default: 'false',
+      description: 'all the accordion item will be disabled or not.',
+    },
+    {
+      name: 'renderMode',
+      required: false,
+      type: '"selecting" | "selected" | "force"',
+      default: '"selecting"',
+      description: (
+        <>
+          How to render accordion item.
+          <br />
+          <br />
+          selecting: Rendering only the currently expanded accordion item.
+          <br />
+          selected: Rendering accordion items that have been expanded.
+          <br />
+          force: Rendering all accordion items.
+        </>
+      ),
+    },
+    {
+      name: 'onValueChange',
+      required: false,
+      type: '(value: ExpandedValueType) => void',
+      description: 'The callback invoked when expanded or collapsed an accordion item.',
+    },
+  ]}
+/>
+
+### AccordionItem (Item)
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+## Examples
+
+여러 예제를 작성하자.
 
 ```jsx
 <Accordion.Root>

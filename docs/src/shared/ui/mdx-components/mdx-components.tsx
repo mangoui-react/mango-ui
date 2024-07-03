@@ -1,21 +1,43 @@
 import * as Demos from '@/shared/ui/demos';
 
 import CodeBlock from './code-block';
+import { DataAttributesTable } from './data-attributes-table';
 import DemoCodeBlock from './demo-code-block';
 import DemoContainer from './demo-container';
 import { ImportSyntax } from './import-syntax';
 import { PackageManagers } from './package-managers';
+import { PropsTable } from './props-table';
 
 // TODO: 어떤 용도인지 모하는 놈인지 알아보자. mdx 문서에서의 Button 인듯
 const Button = (props: React.ComponentPropsWithoutRef<'button'>) => <button {...props} />;
 
 export const MDXComponents = {
   h1: (props: any) => (
-    <h1 style={{ marginTop: '2rem', marginBottom: '0.25rem', fontSize: '1.875rem' }} {...props} />
+    <h1
+      style={{ marginTop: '2rem', marginBottom: '0.25rem', fontSize: '1.875rem', fontWeight: 700 }}
+      {...props}
+    />
   ),
   h2: (props: any) => (
-    <h2 style={{ marginTop: '4rem', marginBottom: '0.5rem', fontSize: '1.5rem' }} {...props} />
+    <h2
+      style={{ marginTop: '3rem', marginBottom: '0.75rem', fontSize: '1.5rem', fontWeight: 700 }}
+      {...props}
+    />
   ),
+  h3: (props: any) => (
+    <h3
+      style={{ marginTop: '2.5rem', marginBottom: '0.5rem', fontSize: '1.125rem', fontWeight: 700 }}
+      {...props}
+    />
+  ),
+  Description: ({ children, ...props }: any) => {
+    const childText = typeof children === 'string' ? children : children.props.children;
+    return (
+      <p {...props} className="mt-2 mb-10">
+        {childText}
+      </p>
+    );
+  },
   strong: (props: any) => <strong {...props} />,
   p: (props: any) => <p {...props} />,
   ul: (props: any) => (
@@ -32,5 +54,7 @@ export const MDXComponents = {
   ImportSyntax,
   DemoContainer,
   DemoCodeBlock,
+  PropsTable,
+  DataAttributesTable,
   ...Demos,
 };

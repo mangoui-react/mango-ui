@@ -19,9 +19,10 @@ export default function DocPage({ params }: { params: { slug: string } }) {
   // layouts/component.tsx 참고
   return (
     <div>
-      <h1 style={{ marginTop: '2rem', marginBottom: '0.25rem', fontSize: '1.875rem' }}>
+      {/* mdx 에서의 메타정보를 어떻게 이용할지는 좀 더 고민해 보자 */}
+      {/* <h1 style={{ marginTop: '2rem', marginBottom: '0.25rem', fontSize: '1.875rem' }}>
         {doc.title}
-      </h1>
+      </h1> */}
       <MDXContent components={MDXComponents} />
     </div>
   );
