@@ -27,9 +27,8 @@ export default function CodeBlock({
     className,
     live = false,
     // manual,
-    // render,
+    render,
     children,
-    // ln,
     // mountStylesheet = false,
   } = props.children.props;
 
@@ -42,7 +41,7 @@ export default function CodeBlock({
     code: rawCode,
     language,
     theme: themes.shadesOfPurple,
-    // noInline: manual,
+    noInline: render,
     // mountStylesheet,
   };
 

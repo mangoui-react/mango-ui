@@ -189,30 +189,39 @@ props 과 Data attribute 정리
 
 여러 예제를 작성하자.
 
-```jsx live=true
-<Accordion.Root>
-  <Accordion.Item>
-    <Accordion.Header>
-      <div>Panel Title1</div>
-      <Accordion.ArrowIcon />
-    </Accordion.Header>
-    <Accordion.Content>Content1</Accordion.Content>
-  </Accordion.Item>
+```jsx live=true render=true
+type Props = {
+  label: string;
+}
 
-  <Accordion.Item>
-    <Accordion.Header>
-      <div>Panel Title2</div>
-      <Accordion.ArrowIcon />
-    </Accordion.Header>
-    <Accordion.Content>Content2</Accordion.Content>
-  </Accordion.Item>
+const Counter = (props: Props) => {
+  return (
+    <Accordion.Root>
+      <Accordion.Item>
+        <Accordion.Header>
+          <div>Panel Title1</div>
+          <Accordion.ArrowIcon />
+        </Accordion.Header>
+        <Accordion.Content>Content1</Accordion.Content>
+      </Accordion.Item>
 
-  <Accordion.Item>
-    <Accordion.Header>
-      <div>Panel Title3</div>
-      <Accordion.ArrowIcon />
-    </Accordion.Header>
-    <Accordion.Content>Content3</Accordion.Content>
-  </Accordion.Item>
-</Accordion.Root>
+      <Accordion.Item>
+        <Accordion.Header>
+          <div>Panel Title2</div>
+          <Accordion.ArrowIcon />
+        </Accordion.Header>
+        <Accordion.Content>Content2</Accordion.Content>
+      </Accordion.Item>
+
+      <Accordion.Item>
+        <Accordion.Header>
+          <div>Panel Title3</div>
+          <Accordion.ArrowIcon />
+        </Accordion.Header>
+        <Accordion.Content>Content3</Accordion.Content>
+      </Accordion.Item>
+    </Accordion.Root>
+  )
+}
+render(<Counter label="Counter" />)
 ```
