@@ -15,7 +15,6 @@ export function Basic(): JSX.Element {
         <Accordion.Item className={styles.item}>
           <Accordion.Header className={styles.header}>
             <span className={styles.title}>Panel Header1</span>
-            {/* <AccordionTitle className={styles.title}>Panel Header1</AccordionTitle> */}
             <Accordion.ArrowIcon />
           </Accordion.Header>
           <Accordion.Content className={styles.content}>Content1</Accordion.Content>

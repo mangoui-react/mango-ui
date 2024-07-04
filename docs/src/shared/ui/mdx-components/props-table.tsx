@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { cn } from '@/shared/utils/cn';
-
 import { Table } from './table';
 
 export type PropDef = {
@@ -18,13 +16,13 @@ export interface PropsTableProps {
 
 export function PropsTable({ data }: PropsTableProps) {
   return (
-    <Table.Root>
+    <Table.Root className="my-6">
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Prop</Table.HeaderCell>
           <Table.HeaderCell>Type</Table.HeaderCell>
           <Table.HeaderCell>Default</Table.HeaderCell>
-          <Table.HeaderCell>Description</Table.HeaderCell>
+          <Table.HeaderCell className="w-1/2">Description</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 

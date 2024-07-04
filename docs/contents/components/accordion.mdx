@@ -143,6 +143,29 @@ props 과 Data attribute 정리
 
 ### AccordionItem (Item)
 
+<PropsTable
+  data={[
+    {
+      name: 'value',
+      required: false,
+      type: 'string',
+      description: 'The value of the accordion item.',
+    },
+    {
+      name: 'disabled',
+      required: false,
+      type: 'boolean',
+      description: 'the accordion item will be disabled or not.',
+    },
+    {
+      name: 'children',
+      required: false,
+      type: 'React.ReactNode | ((expanded: boolean) => React.ReactNode)',
+      description: 'children of accordion item',
+    },
+  ]}
+/>
+
 <DataAttributesTable
   data={[
     {
@@ -156,11 +179,17 @@ props 과 Data attribute 정리
   ]}
 />
 
+### AccordionHeader (Header)
+
+### AccordionContent (Content)
+
+### AccordionArrowIcon (ArrowIcon)
+
 ## Examples
 
 여러 예제를 작성하자.
 
-```jsx
+```jsx live=true
 <Accordion.Root>
   <Accordion.Item>
     <Accordion.Header>

@@ -13,7 +13,7 @@ export interface DataAttributesTableProps {
 
 export function DataAttributesTable({ data }: DataAttributesTableProps) {
   return (
-    <Table.Root>
+    <Table.Root className="my-6">
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Data attribute</Table.HeaderCell>
