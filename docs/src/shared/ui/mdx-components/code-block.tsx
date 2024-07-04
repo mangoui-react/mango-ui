@@ -12,10 +12,12 @@ import ReactLiveBlock from './react-live-block';
 export default function CodeBlock({
   className: classNameProp,
   showLines = false,
+  live: liveProp,
   ...props
 }: {
   className?: string;
   children: React.ReactElement;
+  live?: boolean;
   showLines?: boolean;
 }): JSX.Element {
   const [isMounted, setIsMounted] = useState(false);
@@ -25,7 +27,7 @@ export default function CodeBlock({
 
   const {
     className,
-    live = false,
+    live = liveProp ?? true,
     // manual,
     render,
     children,

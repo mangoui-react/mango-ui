@@ -52,7 +52,7 @@ export function ImportSyntax(props: { command: Partial<Record<ImportSyntaxKey, s
         if (!command[key]) return null;
         return (
           <Tabs.Content key={key} className="p-0 hidden data-[state=active]:block">
-            <CodeBlock className="pl-3">
+            <CodeBlock className="pl-3" live={false}>
               <div>{command[key]}</div>
             </CodeBlock>
           </Tabs.Content>

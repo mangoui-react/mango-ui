@@ -45,7 +45,7 @@ export default function DemoCodeBlock(props: DemoCodeBlockProps) {
           key={tab?.id}
           className={cn('p-0 hidden', 'data-[state=active]:block data-[state=active]:bg-slate-900')}
         >
-          <CodeBlock className="pl-3">
+          <CodeBlock className="pl-3" live={false}>
             <div>{tab?.source}</div>
           </CodeBlock>
           {/* <pre>{tab?.source}</pre> */}
