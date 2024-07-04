@@ -3,10 +3,7 @@
 // import { Box, Icon, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
 import { Tabs } from '@melio-ui/react';
 
-import { BunIcon } from '@/shared/icons/bun-icon';
-import { NpmIcon } from '@/shared/icons/npm-icon';
-import { PnpmIcon } from '@/shared/icons/pnpm-icon';
-import { YarnIcon } from '@/shared/icons/yarn-icon';
+import { cn } from '@/shared/utils/cn';
 
 import CodeBlock from './code-block';
 
@@ -38,7 +35,13 @@ export function ImportSyntax(props: { command: Partial<Record<ImportSyntaxKey, s
           return (
             <Tabs.Tab
               key={key}
-              className="flex items-center justify-center gap-1 border border-solid border-b-0 px-3 py-1 cursor-pointer"
+              className={cn(
+                'flex items-center justify-center gap-1',
+                'text-gray-400',
+                'px-3 py-1 cursor-pointer',
+                'border border-solid border-b-0 border-slate-700',
+                'data-[state=active]:border-b-slate-200 data-[state=active]:border-b-2 data-[state=active]:text-slate-200',
+              )}
             >
               {name}
             </Tabs.Tab>

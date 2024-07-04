@@ -7,6 +7,7 @@ import { BunIcon } from '@/shared/icons/bun-icon';
 import { NpmIcon } from '@/shared/icons/npm-icon';
 import { PnpmIcon } from '@/shared/icons/pnpm-icon';
 import { YarnIcon } from '@/shared/icons/yarn-icon';
+import { cn } from '@/shared/utils/cn';
 
 import CodeBlock from './code-block';
 
@@ -43,6 +44,13 @@ const packageManagers: PackageManager[] = [
 
 export function PackageManagers(props: { command: Partial<Record<PackageManagerName, string>> }) {
   const { command } = props;
+  const colorVariants = {
+    npm: 'data-[state=active]:text-[#e53e3e] data-[state=active]:border-b-[#e53e3e]',
+    yarn: 'data-[state=active]:text-[#3182ce] data-[state=active]:border-b-[#3182ce]',
+    pnpm: 'data-[state=active]:text-[#dd6b20] data-[state=active]:border-b-[#dd6b20]',
+    bun: 'data-[state=active]:text-[#cdbfa7] data-[state=active]:border-b-[#cdbfa7]',
+  };
+
   return (
     <Tabs.Root>
       <Tabs.List className="flex">
@@ -51,8 +59,15 @@ export function PackageManagers(props: { command: Partial<Record<PackageManagerN
           return (
             <Tabs.Tab
               key={name}
-              className="flex items-center justify-center gap-1 border border-solid border-b-0 px-3 py-1 cursor-pointer"
-              style={{ color }}
+              className={cn(
+                'flex items-center justify-center gap-1',
+                'text-gray-400',
+                'px-3 py-1 cursor-pointer',
+                'border border-solid border-b-0 border-slate-700',
+                'data-[state=active]:border-b-2',
+                `${colorVariants[name]}`,
+              )}
+              // style={{ color }}
             >
               {icon}
               {name}
