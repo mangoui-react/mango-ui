@@ -6,6 +6,8 @@ import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 
 import * as Melio from '@melio-ui/react';
 
+import * as Mango from '@/shared/mango-react';
+
 export interface ReactLiveBlockProps {
   code?: string;
   disabled?: boolean;
@@ -25,6 +27,7 @@ const ReactLiveScope = {
   ...React,
   Button,
   ...Melio,
+  ...Mango,
 };
 
 export default function ReactLiveBlock({
