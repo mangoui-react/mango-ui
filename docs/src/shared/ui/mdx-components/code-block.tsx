@@ -7,6 +7,7 @@ import { Highlight, themes } from 'prism-react-renderer';
 
 import { cn } from '@/shared/utils/cn';
 
+import { CopyButton } from './copy-button';
 import ReactLiveBlock from './react-live-block';
 
 export default function CodeBlock({
@@ -52,23 +53,26 @@ export default function CodeBlock({
   }
 
   return (
-    <Highlight theme={themes.shadesOfPurple} code={rawCode} language={language}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div className={cn(className, classNameProp)} style={style} data-language={language}>
-          <pre className={cn('py-5', className)} style={style}>
-            {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line })} className="flex items-center">
-                {showLines && (
-                  <span style={{ opacity: 0.3, marginRight: 20, fontSize: 12 }}>{i + 1}</span>
-                )}
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token })} />
-                ))}
-              </div>
-            ))}
-          </pre>
-        </div>
-      )}
-    </Highlight>
+    <div className="relative">
+      <Highlight theme={themes.shadesOfPurple} code={rawCode} language={language}>
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <div className={cn(className, classNameProp)} style={style} data-language={language}>
+            <pre className={cn('py-5', className)} style={style}>
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line })} className="flex items-center">
+                  {showLines && (
+                    <span style={{ opacity: 0.3, marginRight: 20, fontSize: 12 }}>{i + 1}</span>
+                  )}
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token })} />
+                  ))}
+                </div>
+              ))}
+            </pre>
+          </div>
+        )}
+      </Highlight>
+      <CopyButton code={rawCode} />
+    </div>
   );
 }
