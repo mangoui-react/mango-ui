@@ -7,6 +7,7 @@ title: Getting started
 ### Global Installation
 
 <PackageManagers
+  showGlobalInstallWarning={false}
   command={{
     npm: 'npm i @melio-ui/react',
     yarn: 'yarn add @melio-ui/react',
@@ -18,6 +19,7 @@ title: Getting started
 ### Individual Installation
 
 <PackageManagers
+  showGlobalInstallWarning={false}
   command={{
     npm: 'npm i @melio-ui/accordion',
     yarn: 'yarn add @melio-ui/accordion',
@@ -30,25 +32,57 @@ title: Getting started
 
 <ImportSyntax
   command={{
-    individual: `import { Accordion } from '@melio-ui/accordion';
-
-export default function App() {
-  return (
-    <Accordion.Root>
-    ...
-    </Accordion.Root>
-  );
-}
+    individual: `import { 
+  AccordionRoot,
+  AccordionArrowIcon,
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem,
+} from '@melio-ui/accordion';
 `,
-    global: `import { Accordion } from '@melio-ui/react';
-
-export default function App() {
-  return (
-    <Accordion.Root>
-    ...
-    </Accordion.Root>
-  );
-}
+    global: `import { 
+  AccordionRoot,
+  AccordionArrowIcon,
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem,
+} from '@melio-ui/react';
 `,
-}}
+  }}
 />
+
+## Usage
+
+```js
+import React from 'react;
+
+import {
+  AccordionArrowIcon,
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem,
+  AccordionRoot,
+} from '@melio-ui/accordion';
+
+export default function App() {
+  return (
+    <AccordionRoot>
+      <AccordionItem>
+        <AccordionHeader>
+          <span>Header1</span>
+          <AccordionArrowIcon />
+        </AccordionHeader>
+        <AccordionContent>Content1</AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem>
+        <AccordionHeader>
+          <span>Header2</span>
+          <AccordionArrowIcon />
+        </AccordionHeader>
+        <AccordionContent>Content2</AccordionContent>
+      </AccordionItem>
+    </AccordionRoot>
+  );
+}
+```

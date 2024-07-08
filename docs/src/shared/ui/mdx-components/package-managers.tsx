@@ -42,8 +42,11 @@ const packageManagers: PackageManager[] = [
   },
 ];
 
-export function PackageManagers(props: { command: Partial<Record<PackageManagerName, string>> }) {
-  const { command } = props;
+export function PackageManagers(props: {
+  command: Partial<Record<PackageManagerName, string>>;
+  showGlobalInstallWarning?: boolean;
+}) {
+  const { command, showGlobalInstallWarning = true } = props;
   const colorVariants = {
     npm: 'data-[state=active]:text-[#e53e3e] data-[state=active]:border-b-[#e53e3e]',
     yarn: 'data-[state=active]:text-[#3182ce] data-[state=active]:border-b-[#3182ce]',
@@ -87,9 +90,11 @@ export function PackageManagers(props: { command: Partial<Record<PackageManagerN
           );
         })}
       </Tabs.Root>
-      <blockquote className="py-0 px-4 border-l-4 border-slate-700 my-4">
-        If @melio-ui/react is already installed globally, you can skip this step.
-      </blockquote>
+      {showGlobalInstallWarning && (
+        <blockquote className="py-0 px-4 border-l-4 border-slate-700 my-4">
+          If @melio-ui/react is already installed globally, you can skip this step.
+        </blockquote>
+      )}
     </>
   );
 }
