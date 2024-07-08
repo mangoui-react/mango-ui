@@ -41,15 +41,9 @@ export default function ReactLiveBlock({
   return (
     <LiveProvider code={code} scope={scope} {...rest}>
       <LivePreview className="border border-slate-600 rounded-xl p-6" />
-      <div className="relative">
-        {/* <div className="flex items-center justify-end gap-1">
-          <button>expand</button>
-          <button onClick={() => handleCopyClipBoard(code)}>
-            <DocsCopyIcon />
-          </button>
-        </div> */}
+      <div className="relative text-sm my-3 border border-slate-600 rounded">
+        <LiveEditor className="[&>*]:!py-3 [&>*]:!px-4" />
         <CopyButton code={code ?? ''} />
-        <LiveEditor />
       </div>
       <LiveError />
     </LiveProvider>

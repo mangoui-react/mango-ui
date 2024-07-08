@@ -11,12 +11,10 @@ import { CopyButton } from './copy-button';
 import ReactLiveBlock from './react-live-block';
 
 export default function CodeBlock({
-  className: classNameProp,
   showLines = false,
   live: liveProp,
   ...props
 }: {
-  className?: string;
   children: React.ReactElement;
   live?: boolean;
   showLines?: boolean;
@@ -53,11 +51,11 @@ export default function CodeBlock({
   }
 
   return (
-    <div className="relative">
+    <div className="relative text-sm">
       <Highlight theme={themes.shadesOfPurple} code={rawCode} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <div className={cn(className, classNameProp)} style={style} data-language={language}>
-            <pre className={cn('py-5', className)} style={style}>
+          <div data-language={language}>
+            <pre className={cn('py-3 px-4', className)} style={style}>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })} className="flex items-center">
                   {showLines && (
