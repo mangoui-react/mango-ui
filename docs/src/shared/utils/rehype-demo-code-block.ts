@@ -15,6 +15,7 @@ export function rehypeDemoCodeBlock() {
 
             if (!existsSync(filePath)) return;
             const source = readFileSync(filePath, 'utf8');
+            // console.log('source ================= ', source);
             // console.log('node ================= ', node);
             // node.children.push({ source });
             node.children.push({

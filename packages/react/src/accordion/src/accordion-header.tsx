@@ -33,11 +33,11 @@ const AccordionHeader = React.forwardRef<HTMLDivElement, AccordionHeaderProps>((
 
   return (
     <div
-      ref={ref}
+      {...rest}
       data-state={getState(expanded)}
       data-disabled={disabled ? '' : undefined}
+      ref={ref}
       onClick={handleClick}
-      {...rest}
     >
       {children}
     </div>

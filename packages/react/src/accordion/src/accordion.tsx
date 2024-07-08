@@ -113,7 +113,7 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>((props, ref) 
 
   return (
     <AccordionContext.Provider value={contextValue}>
-      <div ref={ref} {...rest}>
+      <div {...rest} ref={ref}>
         {React.Children.map(children, (child) => {
           if (React.isValidElement(child)) {
             itemIndex++;

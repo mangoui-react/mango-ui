@@ -9,7 +9,7 @@ export interface AccordionContentProps extends React.ComponentPropsWithoutRef<'d
 const AccordionContent = React.forwardRef<HTMLDivElement, AccordionContentProps>((props, ref) => {
   const { style, children, ...rest } = props;
 
-  const { expanded, renderMode } = React.useContext(AccordionItemContext);
+  const { expanded, disabled, renderMode } = React.useContext(AccordionItemContext);
 
   // TODO: headless 에 위배됨. 동작에 필요한 스타일에 한해서 내장으로 하는 것에 대해서 고민해보자.
   // null 로 show/hide 처리시 컴포넌트 라이프사이클을 제어 할 수 없음. 무조건 create 되는 방식
@@ -30,7 +30,13 @@ const AccordionContent = React.forwardRef<HTMLDivElement, AccordionContentProps>
   };
 
   return (
-    <div ref={ref} data-state={getState(expanded)} style={{ ...expandStyle, ...style }} {...rest}>
+    <div
+      {...rest}
+      data-state={getState(expanded)}
+      data-disabled={disabled ? '' : undefined}
+      ref={ref}
+      style={{ ...expandStyle, ...style }}
+    >
       {renderChildren()}
     </div>
   );

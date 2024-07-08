@@ -71,10 +71,10 @@ const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>((prop
   return (
     <AccordionItemContext.Provider value={contextValue}>
       <div
-        ref={ref}
+        {...rest}
         data-state={getState(expanded)}
         data-disabled={disabled ? '' : undefined}
-        {...rest}
+        ref={ref}
       >
         {children}
       </div>

@@ -15,13 +15,13 @@ const AccordionArrowIcon = React.forwardRef<SVGSVGElement, AccordionArrowIconPro
 
     return (
       <ArrowOutlineDownIcon
+        {...rest}
         ref={ref}
         style={
           expanded
             ? { transform: 'rotate(180deg)', ...style }
             : { transition: 'transform 0.2s', ...style }
         }
-        {...rest}
       />
     );
   },

@@ -39,7 +39,7 @@ export const MDXComponents = {
     );
   },
   strong: (props: any) => <strong {...props} />,
-  p: (props: any) => <p {...props} />,
+  p: (props: any) => <p {...props} style={{ marginBottom: '1rem' }} />,
   ul: (props: any) => (
     <ul style={{ listStyle: 'disc', marginTop: '0.5rem', marginLeft: '1.25rem' }} {...props} />
   ),

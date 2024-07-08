@@ -46,13 +46,15 @@ title: Accordion
   }}
 />
 
-- AccordionRoot: Contains all the parts of an accordion.
-- AccordionItem: abc.
-- AccordionHeader: header.
-- AccordionArrow: arrow.
-- AccordionContent: content.
+- **AccordionRoot**: All parts of the accordion are included.
+- **AccordionItem**: Includes all parts of the collapsible section.
+- **AccordionHeader**: This item switches the expand/collapse state of the accordion item. This item has a titled element.
+- **AccordionArrow**: Down arrow icon rotating based on expand/collapse state.
+- **AccordionContent**: Contains the collapsible content for an item.
 
-### import Accordion
+### Another way to import
+
+'use client' must be used when rendering on the server side.
 
 ```js
 'use client';
@@ -72,9 +74,9 @@ import { Accordion } from '@melio-ui/accordion';
 
 ## API Reference
 
-### AccordionRoot (Root)
+### AccordionRoot
 
-props 과 Data attribute 정리
+All parts of the accordion are included.
 
 <PropsTable
   data={[
@@ -138,7 +140,9 @@ props 과 Data attribute 정리
   ]}
 />
 
-### AccordionItem (Item)
+### AccordionItem
+
+Includes all parts of the collapsible section.
 
 <PropsTable
   data={[
@@ -176,11 +180,43 @@ props 과 Data attribute 정리
   ]}
 />
 
-### AccordionHeader (Header)
+### AccordionHeader
 
-### AccordionContent (Content)
+This item switches the expand/collapse state of the accordion item. This item has a titled element.
 
-### AccordionArrowIcon (ArrowIcon)
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+### AccordionContent
+
+Contains the collapsible content for an item.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+### AccordionArrowIcon
+
+Down arrow icon rotating based on expand/collapse state.
 
 ## Examples
 
