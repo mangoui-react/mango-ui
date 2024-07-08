@@ -21,6 +21,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
       //
       "@melio-ui/react": ["../packages/react"],
