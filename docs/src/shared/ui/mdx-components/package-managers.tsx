@@ -64,7 +64,7 @@ export function PackageManagers(props: { command: Partial<Record<PackageManagerN
                   'flex items-center justify-center gap-1',
                   'text-gray-400',
                   'px-3 py-1 cursor-pointer',
-                  'border border-solid border-b-0 border-slate-700',
+                  // 'border border-solid border-b-0 border-slate-700',
                   'data-[state=active]:border-b-2',
                   `${colorVariants[name]}`,
                 )}

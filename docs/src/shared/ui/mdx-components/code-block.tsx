@@ -41,7 +41,7 @@ export default function CodeBlock({
   const reactLiveBlockProps = {
     code: rawCode,
     language,
-    theme: themes.shadesOfPurple,
+    theme: themes.vsDark,
     noInline: render,
     // mountStylesheet,
   };
@@ -52,7 +52,7 @@ export default function CodeBlock({
 
   return (
     <div className="relative text-sm">
-      <Highlight theme={themes.shadesOfPurple} code={rawCode} language={language}>
+      <Highlight theme={themes.vsDark} code={rawCode} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <div data-language={language}>
             <pre className={cn('py-3 px-4', 'max-h-96 overflow-y-auto', className)} style={style}>
