@@ -52,39 +52,44 @@ export function PackageManagers(props: { command: Partial<Record<PackageManagerN
   };
 
   return (
-    <Tabs.Root>
-      <Tabs.List className="flex">
-        {packageManagers.map(({ name, icon, color }) => {
+    <>
+      <Tabs.Root>
+        <Tabs.List className="flex">
+          {packageManagers.map(({ name, icon, color }) => {
+            if (!command[name]) return null;
+            return (
+              <Tabs.Tab
+                key={name}
+                className={cn(
+                  'flex items-center justify-center gap-1',
+                  'text-gray-400',
+                  'px-3 py-1 cursor-pointer',
+                  'border border-solid border-b-0 border-slate-700',
+                  'data-[state=active]:border-b-2',
+                  `${colorVariants[name]}`,
+                )}
+                // style={{ color }}
+              >
+                {icon}
+                {name}
+              </Tabs.Tab>
+            );
+          })}
+        </Tabs.List>
+        {packageManagers.map(({ name }) => {
           if (!command[name]) return null;
           return (
-            <Tabs.Tab
-              key={name}
-              className={cn(
-                'flex items-center justify-center gap-1',
-                'text-gray-400',
-                'px-3 py-1 cursor-pointer',
-                'border border-solid border-b-0 border-slate-700',
-                'data-[state=active]:border-b-2',
-                `${colorVariants[name]}`,
-              )}
-              // style={{ color }}
-            >
-              {icon}
-              {name}
-            </Tabs.Tab>
+            <Tabs.Content key={name} className="p-0 hidden data-[state=active]:block">
+              <CodeBlock live={false}>
+                <div>{command[name]}</div>
+              </CodeBlock>
+            </Tabs.Content>
           );
         })}
-      </Tabs.List>
-      {packageManagers.map(({ name }) => {
-        if (!command[name]) return null;
-        return (
-          <Tabs.Content key={name} className="p-0 hidden data-[state=active]:block">
-            <CodeBlock live={false}>
-              <div>{command[name]}</div>
-            </CodeBlock>
-          </Tabs.Content>
-        );
-      })}
-    </Tabs.Root>
+      </Tabs.Root>
+      <blockquote className="py-0 px-4 border-l-4 border-slate-700 my-4">
+        If @melio-ui/react is already installed globally, you can skip this step.
+      </blockquote>
+    </>
   );
 }

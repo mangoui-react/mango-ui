@@ -55,7 +55,7 @@ export default function CodeBlock({
       <Highlight theme={themes.shadesOfPurple} code={rawCode} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <div data-language={language}>
-            <pre className={cn('py-3 px-4', className)} style={style}>
+            <pre className={cn('py-3 px-4', 'max-h-96 overflow-y-auto', className)} style={style}>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })} className="flex items-center">
                   {showLines && (

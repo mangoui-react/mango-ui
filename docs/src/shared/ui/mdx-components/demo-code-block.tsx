@@ -26,14 +26,21 @@ export default function DemoCodeBlock(props: DemoCodeBlockProps) {
 
   return (
     <Tabs.Root>
-      <Tabs.List className="p-0 m-0 border-b-[0.0625rem] border-b-slate-500">
+      <Tabs.List className="flex ml-2">
         {codeTabs.map((tab) => (
           <Tabs.Tab
             key={tab?.id}
+            // className={cn(
+            //   'inline-block bottom-[-0.0625rem] relative list-none py-1 px-3 cursor-pointer',
+            //   'border-[0.0625rem] border-transparent border-b-0',
+            //   'data-[state=active]:bg-slate-900 data-[state=active]:border-gray-400',
+            // )}
             className={cn(
-              'inline-block bottom-[-0.0625rem] relative list-none py-1 px-3 cursor-pointer',
-              'border-[0.0625rem] border-transparent border-b-0',
-              'data-[state=active]:bg-slate-900 data-[state=active]:border-gray-400',
+              'flex items-center justify-center gap-1',
+              'text-gray-400',
+              'px-3 py-1 cursor-pointer',
+              // 'border border-solid border-b-0 border-slate-700',
+              'data-[state=active]:border-b-slate-200 data-[state=active]:border-b-2 data-[state=active]:text-slate-200',
             )}
           >
             {tab?.title}
@@ -43,12 +50,15 @@ export default function DemoCodeBlock(props: DemoCodeBlockProps) {
       {codeTabs.map((tab) => (
         <Tabs.Content
           key={tab?.id}
-          className={cn('p-0 hidden', 'data-[state=active]:block data-[state=active]:bg-slate-900')}
+          className={cn(
+            'p-0 hidden',
+            'data-[state=active]:block data-[state=active]:bg-slate-900',
+            // 'max-h-96 overflow-y-auto',
+          )}
         >
           <CodeBlock live={false}>
             <div>{tab?.source}</div>
           </CodeBlock>
-          {/* <pre>{tab?.source}</pre> */}
         </Tabs.Content>
       ))}
     </Tabs.Root>

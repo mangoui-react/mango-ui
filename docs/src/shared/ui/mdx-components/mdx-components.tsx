@@ -49,6 +49,17 @@ export const MDXComponents = {
     // if (typeof props.children === 'string') return <Pre {...props} />
     return <CodeBlock {...props} />;
   },
+  blockquote: (props: any) => (
+    <blockquote
+      style={{
+        padding: '0 1em',
+        marginBottom: '1rem',
+        marginTop: '1rem',
+        borderLeft: '.25em solid #30363d',
+      }}
+      {...props}
+    />
+  ),
   Button,
   PackageManagers,
   ImportSyntax,
