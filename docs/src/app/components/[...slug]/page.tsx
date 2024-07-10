@@ -2,8 +2,8 @@ import { allDocs } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { MDXComponents } from '@/shared/mdx/mdx-components';
-import PageNavigation from '@/shared/ui/page-navigation';
-import SecondaryNav from '@/shared/ui/secondary-nav';
+import PageNavigation from '@/widgets/page-navigation';
+import SecondaryNav from '@/widgets/secondary-nav';
 
 export default function DocPage({ params }: { params: { slug: string } }) {
   const doc = allDocs.find((doc) => {

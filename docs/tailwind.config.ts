@@ -4,8 +4,9 @@ const config: Config = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/shared/ui/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/shared/**/*.{js,ts,jsx,tsx,mdx}',
     './src/shared/mango-react/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/widgets/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
   theme: {

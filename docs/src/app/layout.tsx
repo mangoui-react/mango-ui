@@ -4,8 +4,8 @@ import localFont from 'next/font/local';
 import Image from 'next/image';
 
 import Illustration from '@/public/images/hero-illustration.svg';
-import Header from '@/shared/ui/header';
-import Sidebar from '@/shared/ui/sidebar';
+import Header from '@/widgets/header';
+import Sidebar from '@/widgets/sidebar';
 
 import AppProvider from './app-provider';
 import './styles/globals.css';
