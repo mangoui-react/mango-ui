@@ -1,7 +1,7 @@
 import { allDocs } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
-import { MDXComponents } from '@/shared/ui/mdx-components/mdx-components';
+import { MDXComponents } from '@/shared/mdx/mdx-components';
 import PageNavigation from '@/shared/ui/page-navigation';
 import SecondaryNav from '@/shared/ui/secondary-nav';
 

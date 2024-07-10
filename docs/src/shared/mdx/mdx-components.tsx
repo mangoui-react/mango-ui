@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as Demos from '@/shared/ui/demos';
+import * as Demos from '@/shared/mdx/demos';
 
 import CodeBlock from './code-block';
 import { DataAttributesTable } from './data-attributes-table';

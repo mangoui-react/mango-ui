@@ -11,7 +11,7 @@ export function rehypeDemoCodeBlock() {
           node.children = [];
 
           ['index.tsx', 'styles.css'].forEach((file) => {
-            const filePath = `${process.cwd()}/src/shared/ui/demos/${component}/${file}`;
+            const filePath = `${process.cwd()}/src/shared/mdx/demos/${component}/${file}`;
 
             if (!existsSync(filePath)) return;
             const source = readFileSync(filePath, 'utf8');
