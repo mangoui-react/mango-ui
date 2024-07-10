@@ -2,6 +2,7 @@ import { allDocs } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { MDXComponents } from '@/shared/mdx/mdx-components';
+import Footer from '@/widgets/footer';
 import PageNavigation from '@/widgets/page-navigation';
 import SecondaryNav from '@/widgets/secondary-nav';
 
@@ -31,6 +32,7 @@ export default function DocPage({ params }: { params: { slug: string } }) {
           prevArticle={[doc.prevTitle, doc.prevSlug]}
           nextArticle={[doc.nextTitle, doc.nextSlug]}
         />
+        <Footer />
       </div>
       <SecondaryNav />
     </div>
