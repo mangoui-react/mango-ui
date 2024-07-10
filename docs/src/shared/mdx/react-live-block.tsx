@@ -4,9 +4,8 @@ import React from 'react';
 
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 
-import * as Melio from '@melio-ui/react';
-
-import * as Mango from '@/shared/mango-react';
+// import * as Melio from '@melio-ui/react';
+import * as SharedUi from '@/shared/ui';
 
 import { CopyButton } from './copy-button';
 
@@ -22,14 +21,11 @@ export interface ReactLiveBlockProps {
   transformCode?(code: string): void;
 }
 
-const Button = (props: React.ComponentPropsWithoutRef<'button'>) => <button {...props} />;
-
 const ReactLiveScope = {
   React,
   ...React,
-  Button,
-  ...Melio,
-  ...Mango,
+  // ...Melio,
+  ...SharedUi,
 };
 
 export default function ReactLiveBlock({
@@ -40,9 +36,9 @@ export default function ReactLiveBlock({
 }: ReactLiveBlockProps): JSX.Element {
   return (
     <LiveProvider code={code} scope={scope} {...rest}>
-      <LivePreview className="border border-slate-600 rounded-xl p-6" />
-      <div className="relative text-sm my-3 border border-slate-600 rounded">
-        <LiveEditor className="[&>*]:!py-3 [&>*]:!px-4" />
+      <LivePreview className="rounded-xl border border-slate-600 p-6" />
+      <div className="relative my-3 rounded border border-slate-600 text-sm">
+        <LiveEditor className="[&>*]:!px-4 [&>*]:!py-3" />
         <CopyButton code={code ?? ''} />
       </div>
       <LiveError />

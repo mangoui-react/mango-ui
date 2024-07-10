@@ -11,7 +11,7 @@ import { PackageManagers } from './package-managers';
 import { PropsTable } from './props-table';
 
 // TODO: 어떤 용도인지 모하는 놈인지 알아보자. mdx 문서에서의 Button 인듯
-const Button = (props: React.ComponentPropsWithoutRef<'button'>) => <button {...props} />;
+// const Button = (props: React.ComponentPropsWithoutRef<'button'>) => <button {...props} />;
 
 export const MDXComponents = {
   h1: (props: any) => (
@@ -88,7 +88,7 @@ export const MDXComponents = {
       {...props}
     />
   ),
-  Button,
+  // Button,
   PackageManagers,
   ImportSyntax,
   DemoContainer,
