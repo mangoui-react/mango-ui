@@ -42,7 +42,7 @@ export default function SupportSidebar() {
   return (
     <>
       {/* Backdrop */}
-      <div
+      {/* <div
         // as="div"
         className="md:hidden fixed inset-0 z-10 bg-slate-900 bg-opacity-20 transition-opacity"
         // show={sidebarOpen}
@@ -53,7 +53,7 @@ export default function SupportSidebar() {
         // leaveFrom="opacity-100"
         // leaveTo="opacity-0"
         aria-hidden="true"
-      />
+      /> */}
 
       {/* Sidebar */}
       <div>
@@ -62,7 +62,7 @@ export default function SupportSidebar() {
           // unmount={false}
           // as="aside"
           id="sidebar"
-          className="fixed left-0 top-0 bottom-0 w-64 h-screen border-r border-slate-200 md:left-auto md:shrink-0 z-10 md:!opacity-100 md:!block dark:border-slate-800 dark:bg-slate-900"
+          className="fixed bottom-0 left-0 top-0 z-10 h-screen w-64 border-r border-slate-200 md:left-auto md:!block md:shrink-0 md:!opacity-100 dark:border-slate-800 dark:bg-slate-900"
           // enter="transition ease-out duration-200 transform"
           // enterFrom="opacity-0 -translate-x-full"
           // enterTo="opacity-100 translate-x-0"
@@ -72,19 +72,19 @@ export default function SupportSidebar() {
         >
           {/* Gradient bg displaying on light layout only */}
           <div
-            className="absolute inset-0 -left-[9999px] bg-gradient-to-b from-slate-50 to-white pointer-events-none -z-10 dark:hidden"
+            className="pointer-events-none absolute inset-0 -left-[9999px] -z-10 bg-gradient-to-b from-slate-50 to-white dark:hidden"
             aria-hidden="true"
           ></div>
 
-          <div className="fixed top-0 bottom-0 w-64 px-4 sm:px-6 md:pl-0 md:pr-8 overflow-y-auto no-scrollbar">
-            <div className="pt-24 md:pt-28 pb-8">
+          <div className="no-scrollbar fixed bottom-0 top-0 w-64 overflow-y-auto px-4 sm:px-6 md:pl-0 md:pr-8">
+            <div className="pb-8 pt-24 md:pt-28">
               {/* Docs nav */}
               <nav className="md:block">
                 <ul className="text-sm">
                   <div
                     className={cn(
-                      'relative flex items-center font-[650] text-slate-800 p-1',
-                      'before:absolute before:inset-0 before:rounded before:bg-gradient-to-tr before:from-blue-400 before:to-purple-500 before:opacity-20 before:-z-10 before:pointer-events-none',
+                      'relative flex items-center p-1 font-[650] text-slate-800',
+                      'before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded before:bg-gradient-to-tr before:from-blue-400 before:to-purple-500 before:opacity-20',
                       'dark:text-slate-200',
                     )}
                   >
@@ -110,7 +110,7 @@ export default function SupportSidebar() {
                     </svg>
                     <span>Overview</span>
                   </div>
-                  <ul className="mb-3 ml-4 pl-6 border-l border-slate-200 dark:border-slate-800">
+                  <ul className="mb-3 ml-4 border-l border-slate-200 pl-6 dark:border-slate-800">
                     <li className="mt-3">
                       <SidebarLink href="/overview/introduction">Introduction</SidebarLink>
                     </li>
@@ -121,8 +121,8 @@ export default function SupportSidebar() {
 
                   <div
                     className={cn(
-                      'relative flex items-center font-[650] text-slate-800 p-1',
-                      'before:absolute before:inset-0 before:rounded before:bg-gradient-to-tr before:from-blue-400 before:to-purple-500 before:opacity-20 before:-z-10 before:pointer-events-none',
+                      'relative flex items-center p-1 font-[650] text-slate-800',
+                      'before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded before:bg-gradient-to-tr before:from-blue-400 before:to-purple-500 before:opacity-20',
                       'dark:text-slate-200',
                     )}
                   >
@@ -148,7 +148,7 @@ export default function SupportSidebar() {
                     </svg>
                     <span>Components</span>
                   </div>
-                  <ul className="mb-3 ml-4 pl-6 border-l border-slate-200 dark:border-slate-800">
+                  <ul className="mb-3 ml-4 border-l border-slate-200 pl-6 dark:border-slate-800">
                     <li className="mt-3">
                       <SidebarLink href="/components/accordion">Accordion</SidebarLink>
                     </li>

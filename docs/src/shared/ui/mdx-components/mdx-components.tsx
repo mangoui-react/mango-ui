@@ -1,3 +1,5 @@
+import React from 'react';
+
 import * as Demos from '@/shared/ui/demos';
 
 import CodeBlock from './code-block';
@@ -18,22 +20,48 @@ export const MDXComponents = {
       {...props}
     />
   ),
-  h2: (props: any) => (
-    <h2
-      style={{ marginTop: '3rem', marginBottom: '0.75rem', fontSize: '1.5rem', fontWeight: 700 }}
-      {...props}
-    />
-  ),
-  h3: (props: any) => (
-    <h3
-      style={{ marginTop: '2.5rem', marginBottom: '0.5rem', fontSize: '1.125rem', fontWeight: 700 }}
-      {...props}
-    />
-  ),
+  h2: ({ children, ...props }: any) => {
+    const textContent = React.Children.toArray(children).join('');
+    const id = transformToSlug(textContent);
+    return (
+      <h2
+        style={{
+          marginTop: '3rem',
+          marginBottom: '0.75rem',
+          fontSize: '1.5rem',
+          fontWeight: 700,
+          scrollMarginTop: '6rem',
+        }}
+        id={id}
+        {...props}
+      >
+        {children}
+      </h2>
+    );
+  },
+  h3: ({ children, ...props }: any) => {
+    const textContent = React.Children.toArray(children).join('');
+    const id = transformToSlug(textContent);
+    return (
+      <h3
+        style={{
+          marginTop: '2.5rem',
+          marginBottom: '0.5rem',
+          fontSize: '1.125rem',
+          fontWeight: 700,
+          scrollMarginTop: '6rem',
+        }}
+        id={id}
+        {...props}
+      >
+        {children}
+      </h3>
+    );
+  },
   Description: ({ children, ...props }: any) => {
     const childText = typeof children === 'string' ? children : children.props.children;
     return (
-      <p {...props} className="mt-2 mb-10">
+      <p {...props} className="mb-10 mt-2">
         {childText}
       </p>
     );
@@ -68,4 +96,16 @@ export const MDXComponents = {
   PropsTable,
   DataAttributesTable,
   ...Demos,
+};
+
+const transformToSlug = (input: string) => {
+  return input
+    .toLowerCase()
+    .trim()
+    .split(' ')
+    .join('-')
+    .split('&')
+    .join('-and-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-');
 };

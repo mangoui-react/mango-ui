@@ -43,6 +43,10 @@ const Overview = defineDocumentType(() => ({
     video: { type: 'string' },
     category: { type: 'string' },
     aria: { type: 'string' },
+    prevTitle: { type: 'string' },
+    prevSlug: { type: 'string' },
+    nextTitle: { type: 'string' },
+    nextSlug: { type: 'string' },
   },
   computedFields: {
     ...computedFields,
@@ -80,6 +84,10 @@ const Doc = defineDocumentType(() => ({
     video: { type: 'string' },
     category: { type: 'string' },
     aria: { type: 'string' },
+    prevTitle: { type: 'string' },
+    prevSlug: { type: 'string' },
+    nextTitle: { type: 'string' },
+    nextSlug: { type: 'string' },
   },
   computedFields: {
     ...computedFields,

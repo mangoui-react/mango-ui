@@ -14,7 +14,7 @@ export default function DemoContainer({ className, children, ...props }: DemoCon
   const contents = React.Children.toArray(children);
 
   return (
-    <div {...props} className={cn('flex flex-col my-4 relative', className)}>
+    <div {...props} className={cn('relative my-4 flex flex-col', className)}>
       <Tabs.Root className={cn('relative w-full')}>
         <Tabs.List className="flex">
           {titles.map((title, index) => {
@@ -24,9 +24,9 @@ export default function DemoContainer({ className, children, ...props }: DemoCon
                 className={cn(
                   'flex items-center justify-center gap-1',
                   'text-gray-400',
-                  'px-3 py-1 cursor-pointer',
+                  'cursor-pointer px-3 py-1',
                   // 'border border-solid border-b-0 border-slate-700',
-                  'data-[state=active]:border-b-slate-200 data-[state=active]:border-b-2 data-[state=active]:text-slate-200',
+                  'data-[state=active]:border-b-2 data-[state=active]:border-b-slate-200 data-[state=active]:text-slate-200',
                 )}
               >
                 {title}
@@ -35,7 +35,7 @@ export default function DemoContainer({ className, children, ...props }: DemoCon
           })}
         </Tabs.List>
         <Tabs.Content>
-          <div className="bg-[#203b85] relative flex items-start justify-center py-24">
+          <div className="relative flex items-start justify-center bg-[#203b85] py-24">
             {contents[0]}
           </div>
         </Tabs.Content>
