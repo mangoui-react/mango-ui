@@ -7,7 +7,6 @@ import Illustration from '@/public/images/hero-illustration.svg';
 import Header from '@/shared/ui/header';
 import Sidebar from '@/shared/ui/sidebar';
 
-// import Layout from '@/shared/ui/Layout';
 import AppProvider from './app-provider';
 import './styles/globals.css';
 import Theme from './theme-provider';
@@ -56,17 +55,17 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       {/* suppressHydrationWarning: https://github.com/vercel/next.js/issues/44343 */}
       <body
-        className={`${nycd.variable} ${aspekta.variable} font-aspekta antialiased text-slate-800 font-[350] bg-white dark:bg-slate-900 dark:text-slate-200`}
+        className={`${nycd.variable} ${aspekta.variable} font-aspekta bg-white font-[350] text-slate-800 antialiased dark:bg-slate-900 dark:text-slate-200`}
       >
         <Theme>
           <AppProvider>
-            <div className="flex flex-col min-h-screen overflow-hidden">
+            <div className="flex min-h-screen flex-col overflow-hidden">
               <Header />
 
               {/*  Page content */}
               <main className="grow">
                 <section className="relative">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none -z-10">
+                  <div className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2">
                     <Image
                       className="max-w-none"
                       src={Illustration}
@@ -76,7 +75,7 @@ export default function RootLayout({
                     />
                   </div>
 
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                  <div className="mx-auto max-w-7xl px-4 sm:px-6">
                     {/* Main content */}
                     <div>
                       {/* Sidebar */}
@@ -84,7 +83,7 @@ export default function RootLayout({
 
                       {/* Page container */}
                       <div className="md:grow md:pl-64 lg:pr-6 xl:pr-0">
-                        <div className="pt-24 md:pt-28 pb-8 md:pl-6 lg:pl-12">{children}</div>
+                        <div className="pb-8 pt-24 md:pl-6 md:pt-28 lg:pl-12">{children}</div>
                       </div>
                     </div>
                   </div>
