@@ -140,30 +140,11 @@ The content of the alert to be announced by screen readers.
 
 ## Examples
 
-### Expanded by defaultValue
+### Set the status value
 
-```jsx render=true
-const DefaultValue = () => {
-  return (
-    <Accordion.Root defaultValue="item2">
-      <Accordion.Item value="item1">
-        <Accordion.Header>
-          <div style={{ flex: '1 1 0%' }}>Panel Title1</div>
-          <Accordion.ArrowIcon />
-        </Accordion.Header>
-        <Accordion.Content>Content1</Accordion.Content>
-      </Accordion.Item>
-
-      <Accordion.Item value="item2">
-        <Accordion.Header>
-          <div style={{ flex: '1 1 0%' }}>Panel Title2</div>
-          <Accordion.ArrowIcon />
-        </Accordion.Header>
-        <Accordion.Content>Content2</Accordion.Content>
-      </Accordion.Item>
-    </Accordion.Root>
-  );
-};
-
-render(<DefaultValue />);
+```jsx
+<Alert.Root status="success">
+  <Alert.StatusIcon />
+  <Alert.Content>This is an success alert</Alert.Content>
+</Alert.Root>
 ```
