@@ -153,6 +153,9 @@ export default function SupportSidebar() {
                       <SidebarLink href="/components/accordion">Accordion</SidebarLink>
                     </li>
                     <li className="mt-3">
+                      <SidebarLink href="/components/alert">Alert</SidebarLink>
+                    </li>
+                    <li className="mt-3">
                       <SidebarLink href="/components/button">Button</SidebarLink>
                     </li>
                   </ul>

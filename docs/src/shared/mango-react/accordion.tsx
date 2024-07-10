@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { Accordion as MangoAccordion } from '@melio-ui/accordion';
+import { Accordion as MelioAccordion } from '@melio-ui/accordion';
 
 import { cn } from '@/shared/utils/cn';
 
-interface RootProps extends React.ComponentPropsWithoutRef<typeof MangoAccordion.Root> {}
+interface RootProps extends React.ComponentPropsWithoutRef<typeof MelioAccordion.Root> {}
 function Root({ className, ...props }: RootProps) {
   return (
-    <MangoAccordion.Root
+    <MelioAccordion.Root
       {...props}
       className={cn(
-        'p-0 m-0 bg-slate-800',
-        'border border-solid border-slate-500 rounded-sm border-b-0',
+        'm-0 bg-slate-800 p-0',
+        'rounded-sm border border-b-0 border-solid border-slate-500',
         'w-72 text-inherit',
         className,
       )}
@@ -19,33 +19,33 @@ function Root({ className, ...props }: RootProps) {
   );
 }
 
-interface ItemProps extends React.ComponentPropsWithoutRef<typeof MangoAccordion.Item> {}
+interface ItemProps extends React.ComponentPropsWithoutRef<typeof MelioAccordion.Item> {}
 function Item({ className, ...props }: ItemProps) {
   return (
-    <MangoAccordion.Item {...props} className={cn('border-b border-b-slate-500', className)} />
+    <MelioAccordion.Item {...props} className={cn('border-b border-b-slate-500', className)} />
   );
 }
 
-interface HeaderProps extends React.ComponentPropsWithoutRef<typeof MangoAccordion.Header> {}
+interface HeaderProps extends React.ComponentPropsWithoutRef<typeof MelioAccordion.Header> {}
 function Header({ className, ...props }: HeaderProps) {
   return (
-    <MangoAccordion.Header {...props} className={cn('flex px-4 py-3 cursor-pointer', className)} />
+    <MelioAccordion.Header {...props} className={cn('flex cursor-pointer px-4 py-3', className)} />
   );
 }
 
-interface ContentProps extends React.ComponentPropsWithoutRef<typeof MangoAccordion.Content> {}
+interface ContentProps extends React.ComponentPropsWithoutRef<typeof MelioAccordion.Content> {}
 function Content({ className, ...props }: ContentProps) {
   return (
-    <MangoAccordion.Content
+    <MelioAccordion.Content
       {...props}
       className={cn('border-t border-t-slate-500 p-4', className)}
     />
   );
 }
 
-interface ArrowIconProps extends React.ComponentPropsWithoutRef<typeof MangoAccordion.ArrowIcon> {}
+interface ArrowIconProps extends React.ComponentPropsWithoutRef<typeof MelioAccordion.ArrowIcon> {}
 function ArrowIcon({ className, ...props }: ArrowIconProps) {
-  return <MangoAccordion.ArrowIcon {...props} className={cn('w-5 h-5', className)} />;
+  return <MelioAccordion.ArrowIcon {...props} className={cn('h-5 w-5', className)} />;
 }
 
 export const Accordion = {

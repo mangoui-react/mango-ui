@@ -20,7 +20,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
 
   return (
     <AlertContext.Provider value={contextValue}>
-      <div ref={ref} data-status={status} {...rest}>
+      <div {...rest} data-status={status} ref={ref}>
         {children}
       </div>
     </AlertContext.Provider>

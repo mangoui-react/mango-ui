@@ -1,0 +1,169 @@
+---
+title: Alert
+prevTitle: 'Accordion'
+prevSlug: '/components/accordion'
+nextTitle: 'Button'
+nextSlug: '/components/button'
+---
+
+# Alert
+
+<Description>Displays a description for the user's attention.</Description>
+
+<DemoContainer>
+  <AlertDemo />
+  <DemoCodeBlock component="alert" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/alert',
+    yarn: 'yarn add @melio-ui/alert',
+    pnpm: 'pnpm add @melio-ui/alert',
+    bun: 'bun add @melio-ui/alert',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { AlertContent, AlertRoot, AlertStatusIcon } from '@melio-ui/alert';`,
+    global: `import { AlertContent, AlertRoot, AlertStatusIcon } from '@melio-ui/react';`,
+  }}
+/>
+
+- **AlertRoot**: All parts of the alert are included.
+- **AlertStatusIcon**: Alert icon changes depending on status.
+- **AlertContent**: The content of the alert to be announced by screen readers.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Alert } from '@melio-ui/alert';
+
+<Alert.Root>
+  <Alert.StatusIcon />
+  <Alert.Content>Content1</Alert.Content>
+</Alert.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### AlertRoot
+
+All parts of the alert are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'status',
+      required: false,
+      default: '"info"',
+      type: (
+        <>
+          TypeAttributes.Status
+          <br />
+          <br />
+          TypeAttributes.Status: "info" | "success" | "warning" | "error"
+        </>
+      ),
+      description: 'The status of the alert.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-status]',
+      values: '"info" | "success" | "warning" | "error"',
+    },
+  ]}
+/>
+
+### AlertStatusIcon
+
+Alert icon changes depending on status.
+
+<PropsTable
+  data={[
+    {
+      name: 'info',
+      required: false,
+      default: '<InfoIcon />',
+      type: 'React.ReactNode',
+      description: 'displaying an icon for info status.',
+    },
+    {
+      name: 'success',
+      required: false,
+      default: '<SuccessIcon />',
+      type: 'React.ReactNode',
+      description: 'displaying an icon for success status.',
+    },
+    {
+      name: 'warning',
+      required: false,
+      default: '<WarningIcon />',
+      type: 'React.ReactNode',
+      description: 'displaying an icon for warning status.',
+    },
+    {
+      name: 'error',
+      required: false,
+      default: '<ErrorIcon />',
+      type: 'React.ReactNode',
+      description: 'displaying an icon for error status.',
+    },
+  ]}
+/>
+
+### AlertContent
+
+The content of the alert to be announced by screen readers.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-status]',
+      values: '"info" | "success" | "warning" | "error"',
+    },
+  ]}
+/>
+
+## Examples
+
+### Expanded by defaultValue
+
+```jsx render=true
+const DefaultValue = () => {
+  return (
+    <Accordion.Root defaultValue="item2">
+      <Accordion.Item value="item1">
+        <Accordion.Header>
+          <div style={{ flex: '1 1 0%' }}>Panel Title1</div>
+          <Accordion.ArrowIcon />
+        </Accordion.Header>
+        <Accordion.Content>Content1</Accordion.Content>
+      </Accordion.Item>
+
+      <Accordion.Item value="item2">
+        <Accordion.Header>
+          <div style={{ flex: '1 1 0%' }}>Panel Title2</div>
+          <Accordion.ArrowIcon />
+        </Accordion.Header>
+        <Accordion.Content>Content2</Accordion.Content>
+      </Accordion.Item>
+    </Accordion.Root>
+  );
+};
+
+render(<DefaultValue />);
+```

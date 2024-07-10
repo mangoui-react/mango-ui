@@ -1,0 +1,35 @@
+.alert-root {
+  display: flex;
+  align-items: center;
+  border-radius: 0.375rem;
+  padding: 0.375rem 1rem;
+
+  background-color: #68a7eb;
+  color: #fff;
+}
+
+.alert-root[data-status='success'] {
+  background-color: #32c768;
+  color: #fff;
+}
+
+.alert-root[data-status='warning'] {
+  background-color: #f59e0b;
+  color: #fff;
+}
+
+.alert-root[data-status='error'] {
+  background-color: #e23731;
+  color: #fff;
+}
+
+.alert-icon {
+  padding: 0.4375rem 0;
+  margin-right: 0.75rem;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.alert-content {
+  padding: 0.5rem 0;
+}
