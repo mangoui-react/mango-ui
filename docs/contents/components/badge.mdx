@@ -103,47 +103,28 @@ Elements that display a small numeric value or status description.
 
 ## Examples
 
-### Loading the image.
-
-```jsx
-<AvatarRoot>
-  <AvatarImg src="http://bit.ly/3XZx3ZU" />
-</AvatarRoot>
-```
-
-### Grouping
-
-```jsx
-<AvatarGroup>
-  <AvatarGroupContent>
-    <AvatarRoot>
-      <UserIcon />
-    </AvatarRoot>
-    <AvatarRoot>
-      <UserIcon />
-    </AvatarRoot>
-    <AvatarRoot>
-      <UserIcon />
-    </AvatarRoot>
-  </AvatarGroupContent>
-</AvatarGroup>
-```
-
 ### Setting the maximum value
 
 ```jsx
-<AvatarGroup max={2}>
-  <AvatarGroupContent>
-    <AvatarRoot>
-      <UserIcon />
-    </AvatarRoot>
-    <AvatarRoot>
-      <UserIcon />
-    </AvatarRoot>
-    <AvatarRoot>
-      <UserIcon />
-    </AvatarRoot>
-  </AvatarGroupContent>
-  <AvatarExtra />
-</AvatarGroup>
+<BadgeRoot max={99}>
+  <BadgeContent>{1000}</BadgeContent>
+  <UserIcon width="2em" height="2em" />
+</BadgeRoot>
+```
+
+### Placement
+
+```jsx
+<BadgeRoot placement="bottom-right">
+  <BadgeContent>{10}</BadgeContent>
+  <UserIcon width="2em" height="2em" />
+</BadgeRoot>
+```
+
+### Only value
+
+```jsx
+<BadgeRoot>
+  <BadgeContent>{10}</BadgeContent>
+</BadgeRoot>
 ```
