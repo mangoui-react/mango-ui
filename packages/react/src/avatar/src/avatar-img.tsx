@@ -3,17 +3,17 @@ import React from 'react';
 import useLoaded from './hooks/use-loaded';
 
 export interface AvatarImgProps extends React.ComponentPropsWithoutRef<'img'> {
-  /** 이미지 src */
+  /** The src attribute of the img element. */
   src?: string;
-  /** 이미지 srcset */
+  /** The srcset attribute of the img element. */
   srcSet?: string;
-  /** 이미지 sizes */
+  /** The sizes attribute of the img element. */
   sizes?: string;
-  /** 이미지 alt */
+  /** The alt attribute of the img element. */
   alt?: string;
-  /** 이미지 crossOrigin */
+  /** The crossorigin attribute of the img element. */
   crossOrigin?: React.ImgHTMLAttributes<HTMLImageElement>['crossOrigin'];
-  /** 이미지 referrerPolicy */
+  /** The referrerpolicy attribute of the img element. */
   referrerPolicy?: React.ImgHTMLAttributes<HTMLImageElement>['referrerPolicy'];
 }
 
@@ -25,7 +25,7 @@ const AvatarImg = React.forwardRef<HTMLImageElement, AvatarImgProps>((props, ref
 
   if (!hasImg) return null;
 
-  return <img ref={ref} alt={alt} src={src} srcSet={srcSet} sizes={sizes} {...rest} />;
+  return <img {...rest} ref={ref} alt={alt} src={src} srcSet={srcSet} sizes={sizes} />;
 });
 
 AvatarImg.displayName = 'Avatar.Img';

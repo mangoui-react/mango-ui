@@ -6,6 +6,7 @@ import Avatar from './avatar';
 import { AvatarGroupContext } from './avatar-group';
 
 export interface AvatarExtraProps extends React.ComponentPropsWithoutRef<'div'> {
+  /** Changes the default rendering element passed as a child, merging its props and behavior. */
   asChild?: boolean;
 }
 
@@ -17,7 +18,7 @@ const AvatarExtra = React.forwardRef<HTMLDivElement, AvatarExtraProps>((props, r
   const displayExtraCount = extraAvatarCount.current;
 
   return displayExtraCount > 0 ? (
-    <Component ref={ref} {...rest}>
+    <Component {...rest} ref={ref}>
       {children ?? `+${displayExtraCount}`}
     </Component>
   ) : null;

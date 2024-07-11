@@ -11,7 +11,7 @@ export const AvatarGroupContext = React.createContext<AvatarGroupContextValue>({
 
 export interface AvatarGroupProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
-   * 보여지는 avatar 최대 개수
+   * The maximum number of avatars that can be displayed.
    * @default 5
    */
   max?: number;
@@ -28,7 +28,7 @@ const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>((props, r
 
   return (
     <AvatarGroupContext.Provider value={contextValue}>
-      <div ref={ref} {...rest}>
+      <div {...rest} ref={ref}>
         {children}
       </div>
     </AvatarGroupContext.Provider>

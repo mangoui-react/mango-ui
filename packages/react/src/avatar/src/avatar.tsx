@@ -6,7 +6,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   const { children, ...rest } = props;
 
   return (
-    <div ref={ref} {...rest}>
+    <div {...rest} ref={ref}>
       {children}
     </div>
   );

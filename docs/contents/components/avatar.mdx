@@ -1,0 +1,166 @@
+---
+title: Avatar
+prevTitle: 'Alert'
+prevSlug: '/components/alert'
+nextTitle: 'Button'
+nextSlug: '/components/button'
+---
+
+# Avatar
+
+<Description>An alternative image element for user representation.</Description>
+
+<DemoContainer>
+  <AvatarDemo />
+  <DemoCodeBlock component="avatar" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/avatar',
+    yarn: 'yarn add @melio-ui/avatar',
+    pnpm: 'pnpm add @melio-ui/avatar',
+    bun: 'bun add @melio-ui/avatar',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { AvatarRoot, AvatarImg, AvatarGroup, AvatarGroupContent, AvatarExtra } from '@melio-ui/alert';`,
+    global: `import { AvatarRoot, AvatarImg, AvatarGroup, AvatarGroupContent, AvatarExtra } from '@melio-ui/react';`,
+  }}
+/>
+
+- **AvatarRoot**: All parts of the avatar are included.
+- **AvatarImg**: The image to render. By default, it will only be rendered when loaded.
+- **AvatarGroup**: It is a wrapper that stacks multiple avatars together.
+- **AvatarGroupContent**: When using AvatarGroup, an avatar component is included.
+- **AvatarExtra**: When using AvatarGroup, extra space above the maximum number of avatars is displayed.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Avatar } from '@melio-ui/avatar';
+
+<Avatar.Root>
+  <Avatar.Img />
+</Avatar.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### AvatarRoot
+
+All parts of the avatar are included.
+
+### AvatarImg
+
+The image to render. By default, it will only be rendered when loaded.
+
+<PropsTable
+  data={[
+    {
+      name: 'src',
+      required: false,
+      type: 'string',
+      description: 'The src attribute of the img element.',
+    },
+    {
+      name: 'srcSet',
+      required: false,
+      type: 'string',
+      description: 'The srcset attribute of the img element.',
+    },
+    {
+      name: 'sizes',
+      required: false,
+      type: 'string',
+      description: 'The sizes attribute of the img element.',
+    },
+    {
+      name: 'alt',
+      required: false,
+      type: 'string',
+      description: 'The alt attribute of the img element.',
+    },
+    {
+      name: 'crossOrigin',
+      required: false,
+      type: '"anonymous" | "use-credentials" | ""',
+      description: 'The crossorigin attribute of the img element.',
+    },
+    {
+      name: 'referrerPolicy',
+      required: false,
+      type: 'React.HTMLAttributeReferrerPolicy',
+      description: 'The referrerpolicy attribute of the img element.',
+    },
+  ]}
+/>
+
+### AvatarGroup
+
+It is a wrapper that stacks multiple avatars together.
+
+<PropsTable
+  data={[
+    {
+      name: 'max',
+      required: false,
+      default: '5',
+      type: 'number',
+      description: 'The maximum number of avatars that can be displayed.',
+    },
+  ]}
+/>
+
+### AvatarGroupContent
+
+When using AvatarGroup, an avatar component is included.
+
+### AvatarExtra
+
+When using AvatarGroup, extra space above the maximum number of avatars is displayed.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+## Examples
+
+### Set the status value
+
+```jsx
+<Alert.Root status="success">
+  <Alert.StatusIcon />
+  <Alert.Content>This is an success alert</Alert.Content>
+</Alert.Root>
+```
+
+### Custom
+
+```jsx
+<Alert.Root>
+  <Alert.StatusIcon />
+  <Alert.Content>
+    <div style={{ marginTop: -2, fontWeight: 'bold', marginBottom: '0.35em' }}>information</div>
+    <div>This is an info alert</div>
+  </Alert.Content>
+</Alert.Root>
+```

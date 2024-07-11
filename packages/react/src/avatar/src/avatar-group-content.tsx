@@ -13,7 +13,7 @@ const AvatarGroupContent = React.forwardRef<HTMLDivElement, AvatarGroupContentPr
     extraAvatarCount.current = length > computedMax ? length - computedMax : 0;
 
     return (
-      <div ref={ref} {...rest}>
+      <div {...rest} ref={ref}>
         {React.Children.toArray(children)
           .slice(0, length - extraAvatarCount.current)
           .map((child) => {
