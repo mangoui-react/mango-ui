@@ -4,6 +4,7 @@ import React from 'react';
 
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 
+import { UserIcon } from '@/shared/icons/user-icon';
 // import * as Melio from '@melio-ui/react';
 import * as SharedUi from '@/shared/ui';
 
@@ -25,6 +26,7 @@ const ReactLiveScope = {
   React,
   ...React,
   // ...Melio,
+  UserIcon,
   ...SharedUi,
 };
 

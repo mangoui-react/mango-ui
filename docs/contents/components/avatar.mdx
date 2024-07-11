@@ -30,8 +30,20 @@ nextSlug: '/components/button'
 
 <ImportSyntax
   command={{
-    individual: `import { AvatarRoot, AvatarImg, AvatarGroup, AvatarGroupContent, AvatarExtra } from '@melio-ui/alert';`,
-    global: `import { AvatarRoot, AvatarImg, AvatarGroup, AvatarGroupContent, AvatarExtra } from '@melio-ui/react';`,
+    individual: `import { 
+  AvatarRoot,
+  AvatarImg,
+  AvatarGroup,
+  AvatarGroupContent,
+  AvatarExtra,
+} from '@melio-ui/avatar';`,
+    global: `import { 
+  AvatarRoot,
+  AvatarImg,
+  AvatarGroup,
+  AvatarGroupContent,
+  AvatarExtra,
+} from '@melio-ui/react';`,
   }}
 />
 
@@ -144,23 +156,47 @@ When using AvatarGroup, extra space above the maximum number of avatars is displ
 
 ## Examples
 
-### Set the status value
+### Loading the image.
 
 ```jsx
-<Alert.Root status="success">
-  <Alert.StatusIcon />
-  <Alert.Content>This is an success alert</Alert.Content>
-</Alert.Root>
+<AvatarRoot>
+  <AvatarImg src="http://bit.ly/3XZx3ZU" />
+</AvatarRoot>
 ```
 
-### Custom
+### Grouping
 
 ```jsx
-<Alert.Root>
-  <Alert.StatusIcon />
-  <Alert.Content>
-    <div style={{ marginTop: -2, fontWeight: 'bold', marginBottom: '0.35em' }}>information</div>
-    <div>This is an info alert</div>
-  </Alert.Content>
-</Alert.Root>
+<AvatarGroup>
+  <AvatarGroupContent>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+  </AvatarGroupContent>
+</AvatarGroup>
+```
+
+### Setting the maximum value
+
+```jsx
+<AvatarGroup max={2}>
+  <AvatarGroupContent>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+  </AvatarGroupContent>
+  <AvatarExtra />
+</AvatarGroup>
 ```
