@@ -159,6 +159,9 @@ export default function SupportSidebar() {
                       <SidebarLink href="/components/avatar">Avatar</SidebarLink>
                     </li>
                     <li className="mt-3">
+                      <SidebarLink href="/components/badge">Badge</SidebarLink>
+                    </li>
+                    <li className="mt-3">
                       <SidebarLink href="/components/button">Button</SidebarLink>
                     </li>
                   </ul>

@@ -17,7 +17,7 @@ const BadgeContent = React.forwardRef<HTMLDivElement, BadgeContentProps>((props,
   );
 
   return (
-    <div ref={ref} {...rest}>
+    <div {...rest} ref={ref}>
       {displayChildren}
     </div>
   );

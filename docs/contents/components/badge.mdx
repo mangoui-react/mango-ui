@@ -1,0 +1,149 @@
+---
+title: Badge
+prevTitle: 'Avatar'
+prevSlug: '/components/avatar'
+nextTitle: 'Button'
+nextSlug: '/components/button'
+---
+
+# Badge
+
+<Description>
+  Badges are used to display small numeric values or status descriptors for UI elements.
+</Description>
+
+<DemoContainer>
+  <BadgeDemo />
+  <DemoCodeBlock component="badge" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/badge',
+    yarn: 'yarn add @melio-ui/badge',
+    pnpm: 'pnpm add @melio-ui/badge',
+    bun: 'bun add @melio-ui/badge',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { BadgeRoot, BadgeContent } from '@melio-ui/badge';`,
+    global: `import { BadgeRoot, BadgeContent } from '@melio-ui/react';`,
+  }}
+/>
+
+- **BadgeRoot**: All parts of the badge are included.
+- **BadgeContent**: Elements that display a small numeric value or status description.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Badge } from '@melio-ui/badge';
+
+<Badge.Root>
+  <Badge.Content />
+</Badge.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### BadgeRoot
+
+All parts of the badge are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'max',
+      required: false,
+      type: 'number',
+      description:
+        'Up to the set maximum value is displayed, and values beyond that are shown with a +.',
+    },
+    {
+      name: 'placement',
+      required: false,
+      default: '"top-right"',
+      type: (
+        <>
+          TypeAttributes.Placement
+          <br />
+          <br />
+          "top" | "top-left" | "top-right" | "bottom" | "bottom-left" | "bottom-right"
+        </>
+      ),
+      description: 'Specifies the location of the value.',
+    },
+  ]}
+/>
+
+### BadgeContent
+
+Elements that display a small numeric value or status description.
+
+<PropsTable
+  data={[
+    {
+      name: 'children',
+      required: false,
+      type: 'string | number',
+      description: 'The value of the badge.',
+    },
+  ]}
+/>
+
+## Examples
+
+### Loading the image.
+
+```jsx
+<AvatarRoot>
+  <AvatarImg src="http://bit.ly/3XZx3ZU" />
+</AvatarRoot>
+```
+
+### Grouping
+
+```jsx
+<AvatarGroup>
+  <AvatarGroupContent>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+  </AvatarGroupContent>
+</AvatarGroup>
+```
+
+### Setting the maximum value
+
+```jsx
+<AvatarGroup max={2}>
+  <AvatarGroupContent>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+    <AvatarRoot>
+      <UserIcon />
+    </AvatarRoot>
+  </AvatarGroupContent>
+  <AvatarExtra />
+</AvatarGroup>
+```

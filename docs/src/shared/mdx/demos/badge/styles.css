@@ -1,0 +1,33 @@
+.badge-root {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+.badge-content {
+  text-align: center;
+  z-index: 1;
+  box-sizing: border-box;
+  white-space: nowrap;
+  position: absolute;
+  transform-origin: 100% 0;
+
+  background-color: #e23731;
+  color: #ffffff;
+  padding: 0 0.375rem;
+
+  min-width: 0.9375rem;
+  height: 0.9375rem;
+  font-size: calc(0.9375rem - 0.1875rem);
+  border-radius: calc(0.9375rem / 2);
+  line-height: 0.9375rem;
+}
+
+.badge-root[data-placement='top-right'] .badge-content {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}

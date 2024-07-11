@@ -17,7 +17,7 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
 
   return (
     <BadgeContext.Provider value={contextValue}>
-      <div ref={ref} data-placement={placement} {...rest}>
+      <div {...rest} data-placement={placement} ref={ref}>
         {children}
       </div>
     </BadgeContext.Provider>
