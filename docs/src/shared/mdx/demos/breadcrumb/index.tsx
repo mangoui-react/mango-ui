@@ -13,22 +13,22 @@ import './styles.css';
 export default function BreadcrumbDemo() {
   return (
     <BreadcrumbRoot>
-      <BreadcrumbList className="list">
-        <BreadcrumbItem className="item">
-          <BreadcrumbLink className="link" href="/">
+      <BreadcrumbList className="breadcrumb-list">
+        <BreadcrumbItem className="breadcrumb-item">
+          <BreadcrumbLink className="breadcrumb-link" href="/">
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator className="separator" />
+        <BreadcrumbSeparator className="breadcrumb-separator" />
 
-        <BreadcrumbItem className="item">
-          <BreadcrumbLink className="link" href="/page">
+        <BreadcrumbItem className="breadcrumb-item">
+          <BreadcrumbLink className="breadcrumb-link" href="/page">
             Page
           </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator className="separator" />
+        <BreadcrumbSeparator className="breadcrumb-separator" />
 
-        <BreadcrumbItem className="item">Current</BreadcrumbItem>
+        <BreadcrumbItem className="breadcrumb-item">Current</BreadcrumbItem>
       </BreadcrumbList>
     </BreadcrumbRoot>
   );

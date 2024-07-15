@@ -1,18 +1,18 @@
-.root {
+.checkbox-root {
   display: inline-flex;
   align-items: center;
 }
 
-.root[data-readonly] {
+.checkbox-root[data-readonly] {
   cursor: default;
   pointer-events: none;
 }
 
-.root[data-disabled] {
+.checkbox-root[data-disabled] {
   cursor: not-allowed;
 }
 
-.root > input[type='checkbox'] {
+.checkbox-root > input[type='checkbox'] {
   position: absolute;
   width: 0.0625rem;
   height: 0.0625rem;
@@ -21,42 +21,42 @@
   opacity: 0;
 }
 
-.indicator {
+.checkbox-indicator {
   position: relative;
   display: flex;
   align-items: center;
   color: #208aff;
   cursor: pointer;
 }
-.root[data-readonly] .indicator {
+.checkbox-root[data-readonly] .indicator {
   cursor: default;
 }
-.root[data-disabled] .indicator {
+.checkbox-root[data-disabled] .indicator {
   color: #d9d9d9;
   cursor: default;
   pointer-events: none;
 }
 
-.icon {
+.checkbox-icon {
   font-size: 1.5rem;
 }
 
-.label {
+.checkbox-label {
   padding-left: 0.3125rem;
   padding-right: 0.3125rem;
   cursor: pointer;
 }
-.root[data-disabled] .label {
+.checkbox-root[data-disabled] .label {
   color: #d9d9d9;
   cursor: default;
   pointer-events: none;
 }
 
-.group {
+.checkbox-group {
   display: flex;
   flex-direction: row;
   gap: 0.625rem;
 }
-.group[data-orientation='vertical'] {
+.checkbox-group[data-orientation='vertical'] {
   flex-direction: column;
 }

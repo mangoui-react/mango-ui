@@ -5,3 +5,4 @@ export { default as BadgeDemo } from './badge';
 export { default as BreadcrumbDemo } from './breadcrumb';
 export { default as CheckboxDemo } from './checkbox';
 export { default as CircularProgressDemo } from './circular-progress';
+export { default as ModalDemo } from './modal';

@@ -10,9 +10,9 @@ import './styles.css';
 
 export default function CircularProgressDemo() {
   return (
-    <CircularProgressRoot className="root" value={30}>
-      <CircularProgressIndicator className="indicator" />
-      <CircularProgressLabel className="label">30%</CircularProgressLabel>
+    <CircularProgressRoot className="circular-progress-root" value={30}>
+      <CircularProgressIndicator className="circular-progress-indicator" />
+      <CircularProgressLabel className="circular-progress-label">30%</CircularProgressLabel>
     </CircularProgressRoot>
   );
 }

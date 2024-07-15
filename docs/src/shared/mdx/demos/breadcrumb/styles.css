@@ -1,4 +1,4 @@
-.list {
+.breadcrumb-list {
   display: flex;
   list-style: none;
   margin: 0;
@@ -6,29 +6,29 @@
   align-items: center;
 }
 
-.item {
+.breadcrumb-item {
   display: flex;
   align-items: center;
   color: #208aff;
 }
 
-.link {
+.breadcrumb-link {
   display: flex;
   align-items: center;
   color: #fff;
   cursor: pointer;
   text-decoration: none;
 }
-.link:hover {
+.breadcrumb-link:hover {
   text-decoration: underline;
 }
 
-.separator {
+.breadcrumb-separator {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
-.collapse {
+.breadcrumb-collapse {
   cursor: pointer;
   color: #fff;
 }

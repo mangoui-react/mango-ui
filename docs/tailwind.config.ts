@@ -49,6 +49,10 @@ const config: Config = {
           '50%': { strokeDasharray: '400, 400', strokeDashoffset: '-100' },
           '100%': { strokeDasharray: '400, 400', strokeDashoffset: '-260' },
         },
+        fadein: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
       },
     },
   },

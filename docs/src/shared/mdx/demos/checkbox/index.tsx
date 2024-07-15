@@ -6,11 +6,11 @@ import './styles.css';
 
 export default function CheckboxDemo() {
   return (
-    <CheckboxRoot className="root">
-      <CheckboxIndicator className="indicator">
-        <CheckboxIcon className="icon" />
+    <CheckboxRoot className="checkbox-root">
+      <CheckboxIndicator className="checkbox-indicator">
+        <CheckboxIcon className="checkbox-icon" />
       </CheckboxIndicator>
-      <CheckboxLabel className="label">체크박스</CheckboxLabel>
+      <CheckboxLabel className="checkbox-label">체크박스</CheckboxLabel>
     </CheckboxRoot>
   );
 }
