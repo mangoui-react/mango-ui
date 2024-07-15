@@ -20,9 +20,9 @@ const ModalTrigger = React.forwardRef<HTMLButtonElement, ModalTriggerProps>((pro
 
   return (
     <Component
+      {...rest}
       type="button"
       data-state={open ? 'open' : 'closed'}
-      {...rest}
       ref={ref}
       onClick={handleClick}
     >

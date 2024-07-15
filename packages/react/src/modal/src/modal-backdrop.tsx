@@ -29,7 +29,7 @@ const ModalBackdrop = React.forwardRef<HTMLDivElement, ModalBackdropProps>((prop
 
   if (!open || !backdrop) return null;
 
-  return <div ref={ref} onClick={handleClick} {...rest} />;
+  return <div {...rest} ref={ref} onClick={handleClick} />;
 });
 
 ModalBackdrop.displayName = 'Modal.Backdrop';

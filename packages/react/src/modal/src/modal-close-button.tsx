@@ -10,7 +10,7 @@ const ModalCloseButton = React.forwardRef<HTMLButtonElement, ModalCloseButtonPro
     const { children, ...rest } = props;
 
     return (
-      <button ref={ref} type="button" {...rest}>
+      <button {...rest} ref={ref} type="button">
         {children ?? <CloseIcon />}
       </button>
     );
