@@ -114,11 +114,11 @@ const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>((props, ref) =>
   return (
     <CheckboxContext.Provider value={contextValue}>
       <div
-        ref={ref}
+        {...rest}
         data-state={getState(checked, indeterminate)}
         data-disabled={disabled ? '' : undefined}
         data-readonly={readOnly ? '' : undefined}
-        {...rest}
+        ref={ref}
       >
         <input
           type="checkbox"
