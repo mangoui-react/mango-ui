@@ -16,6 +16,9 @@
     "access": "public",
     "directory": "build"
   },
+  "dependencies": {
+    "@melio-ui/slot": "workspace:*"
+  },
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-dom": "*",

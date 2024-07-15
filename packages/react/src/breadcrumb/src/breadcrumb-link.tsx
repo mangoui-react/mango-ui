@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Slot } from '@melio-ui/slot';
+
 // TODO: dependency 안하는 방법으로 찾아보자. @types/node 설치해야 함
 // import { UrlObject } from 'url';
 
@@ -17,19 +19,31 @@ export interface BreadcrumbLinkProps extends React.Attributes {
   href?: string;
   /** React/Reach Router Link to */
   to?: string;
+  asChild?: boolean;
   /** click 시 발생 */
   onClick?: (event: React.MouseEvent) => void;
 }
 
-const BreadcrumbLink = (props: BreadcrumbLinkProps): JSX.Element => {
-  const { href, to, as: Component = href !== undefined ? 'a' : 'span', children, ...rest } = props;
+const BreadcrumbLink = React.forwardRef<HTMLElement, BreadcrumbLinkProps>(
+  (props, ref): JSX.Element => {
+    const {
+      href,
+      to,
+      as: ComponentProp = href !== undefined ? 'a' : 'span',
+      children,
+      asChild,
+      ...rest
+    } = props;
 
-  return (
-    <Component href={href} to={to} {...rest}>
-      {children}
-    </Component>
-  );
-};
+    const Component = asChild ? Slot : ComponentProp;
+
+    return (
+      <Component {...rest} ref={ref} href={href} to={to}>
+        {children}
+      </Component>
+    );
+  },
+);
 
 BreadcrumbLink.displayName = 'Breadcrumb.Link';
 

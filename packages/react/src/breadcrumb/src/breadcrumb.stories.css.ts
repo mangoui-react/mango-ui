@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-export const root = style({
+export const list = style({
   display: 'flex',
   listStyle: 'none',
   margin: 0,

@@ -9,8 +9,9 @@ export function Basic(): JSX.Element {
   return (
     <>
       <h1>기본</h1>
-      <nav>
-        <Breadcrumb.Root className={styles.root}>
+
+      <Breadcrumb.Root>
+        <Breadcrumb.List className={styles.list}>
           <Breadcrumb.Item className={styles.item}>
             <Breadcrumb.Link className={styles.link} href="/">
               Home
@@ -26,8 +27,8 @@ export function Basic(): JSX.Element {
           <Breadcrumb.Separator className={styles.separator} />
 
           <Breadcrumb.Item className={styles.item}>Current</Breadcrumb.Item>
-        </Breadcrumb.Root>
-      </nav>
+        </Breadcrumb.List>
+      </Breadcrumb.Root>
     </>
   );
 }
@@ -36,8 +37,9 @@ export function CustomSeparator(): JSX.Element {
   return (
     <>
       <h1>CustomSeparator</h1>
-      <nav>
-        <Breadcrumb.Root className={styles.root}>
+
+      <Breadcrumb.Root>
+        <Breadcrumb.List className={styles.list}>
           <Breadcrumb.Item className={styles.item}>
             <Breadcrumb.Link className={styles.link} href="/">
               Home
@@ -53,11 +55,11 @@ export function CustomSeparator(): JSX.Element {
           <Breadcrumb.Separator className={styles.separator}>{'>'}</Breadcrumb.Separator>
 
           <Breadcrumb.Item className={styles.item}>Current</Breadcrumb.Item>
-        </Breadcrumb.Root>
-      </nav>
+        </Breadcrumb.List>
+      </Breadcrumb.Root>
 
-      <nav>
-        <Breadcrumb.Root className={styles.root}>
+      <Breadcrumb.Root>
+        <Breadcrumb.List className={styles.list}>
           <Breadcrumb.Item className={styles.item}>
             <Breadcrumb.Link className={styles.link} href="/">
               Home
@@ -73,8 +75,8 @@ export function CustomSeparator(): JSX.Element {
           <Breadcrumb.Separator className={styles.separator}>-</Breadcrumb.Separator>
 
           <Breadcrumb.Item className={styles.item}>Current</Breadcrumb.Item>
-        </Breadcrumb.Root>
-      </nav>
+        </Breadcrumb.List>
+      </Breadcrumb.Root>
     </>
   );
 }
@@ -83,8 +85,9 @@ export function Icon(): JSX.Element {
   return (
     <>
       <h1>Icon</h1>
-      <nav>
-        <Breadcrumb.Root className={styles.root}>
+
+      <Breadcrumb.Root>
+        <Breadcrumb.List className={styles.list}>
           <Breadcrumb.Item className={styles.item}>
             <Breadcrumb.Link className={styles.link} href="/">
               <span style={{ display: 'flex', marginRight: 4 }}>
@@ -111,8 +114,8 @@ export function Icon(): JSX.Element {
             </span>
             Current
           </Breadcrumb.Item>
-        </Breadcrumb.Root>
-      </nav>
+        </Breadcrumb.List>
+      </Breadcrumb.Root>
     </>
   );
 }
@@ -121,9 +124,10 @@ export function Collapsed(): JSX.Element {
   return (
     <>
       <h1>Collapsed</h1>
-      <nav>
-        <Breadcrumb.Root
-          className={styles.root}
+
+      <Breadcrumb.Root>
+        <Breadcrumb.List
+          className={styles.list}
           maxItems={5}
           collapse={<Breadcrumb.Collapse className={styles.collapse} />}
         >
@@ -163,8 +167,8 @@ export function Collapsed(): JSX.Element {
           <Breadcrumb.Separator className={styles.separator} />
 
           <Breadcrumb.Item className={styles.item}>Current</Breadcrumb.Item>
-        </Breadcrumb.Root>
-      </nav>
+        </Breadcrumb.List>
+      </Breadcrumb.Root>
     </>
   );
 }

@@ -6,7 +6,7 @@ const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>((pro
   const { children, ...rest } = props;
 
   return (
-    <li ref={ref} {...rest}>
+    <li {...rest} ref={ref}>
       {children}
     </li>
   );
