@@ -12,7 +12,7 @@ const CircularProgressLabel = React.forwardRef<HTMLDivElement, CircularProgressL
     const { value, max } = React.useContext(CircularProgressContext);
 
     return (
-      <div ref={ref} data-value={value} data-max={max} {...rest}>
+      <div {...rest} data-value={value} data-max={max} ref={ref}>
         {children ?? `${value}%`}
       </div>
     );

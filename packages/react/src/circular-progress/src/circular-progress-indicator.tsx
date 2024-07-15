@@ -6,15 +6,13 @@ import { CircularProgressContext } from './circular-progress';
 
 export interface CircularProgressIndicatorProps extends React.ComponentPropsWithoutRef<'svg'> {
   strokeWidth?: number;
-  bgClassName?: string;
-  barClassName?: string;
   bgStyle?: React.CSSProperties;
   barStyle?: React.CSSProperties;
 }
 
 const CircularProgressIndicator = React.forwardRef<SVGSVGElement, CircularProgressIndicatorProps>(
   (props, ref) => {
-    const { strokeWidth = 10, bgClassName, barClassName, bgStyle, barStyle, ...rest } = props;
+    const { strokeWidth = 10, bgStyle, barStyle, ...rest } = props;
 
     const { value, max, computedValue, indeterminate } = React.useContext(CircularProgressContext);
 
@@ -22,15 +20,14 @@ const CircularProgressIndicator = React.forwardRef<SVGSVGElement, CircularProgre
 
     return (
       <svg
-        ref={ref}
+        {...rest}
         data-state={getProgressState(value, max, indeterminate)}
         data-value={value}
         data-max={max}
         viewBox="0 0 100 100"
-        {...rest}
+        ref={ref}
       >
         <circle
-          // className={bgClassName)
           data-component="bg"
           cx={50}
           cy={50}
@@ -40,7 +37,6 @@ const CircularProgressIndicator = React.forwardRef<SVGSVGElement, CircularProgre
           style={bgStyle}
         />
         <circle
-          // className={classNames(`${componentCls}__bar`, barClassName)}
           data-component="bar"
           cx={50}
           cy={50}
@@ -48,7 +44,6 @@ const CircularProgressIndicator = React.forwardRef<SVGSVGElement, CircularProgre
           fill="transparent"
           strokeWidth={strokeWidth}
           strokeDasharray={`${circleComputedValue} ${264 - circleComputedValue}`}
-          // style={{ stroke: color }}
           style={barStyle}
         />
       </svg>
