@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { createPopper } from '@popperjs/core';
-import { Transition, TransitionStatus } from 'react-transition-group';
 
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
@@ -17,9 +16,6 @@ export interface TooltipContentProps extends React.ComponentPropsWithoutRef<'div
    */
   placement?: Placement;
 }
-
-// export interface TooltipContentContextValue extends Pick<TooltipContentProps, 'placement'> {}
-// export const TooltipContentContext = React.createContext<TooltipContentContextValue>({});
 
 const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>((props, ref) => {
   const { placement = 'top', children, ...rest } = props;
@@ -41,36 +37,24 @@ const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>((pr
 
   const handleRef = React.useCallback(
     (node: any) => {
-      // setRef(tooltipRef, node);
       setRef(tooltipMergedRef, node);
       handleOpen();
     },
     [handleOpen, tooltipMergedRef],
   );
 
-  // const contextValue = React.useMemo(
-  //   () => ({
-  //     placement,
-  //   }),
-  //   [placement],
-  // );
-
   if (!open) {
     return null;
   }
 
   return (
-    <Transition in={open} timeout={300}>
-      {(state: TransitionStatus) => (
-        <div
-          ref={handleRef}
-          // data-placement={placement} // @popperjs/core 에서 data-popper-placement 로 정의함
-          {...rest}
-        >
-          {children}
-        </div>
-      )}
-    </Transition>
+    <div
+      // data-placement={placement} // @popperjs/core 에서 data-popper-placement 로 정의함
+      {...rest}
+      ref={handleRef}
+    >
+      {children}
+    </div>
   );
 });
 

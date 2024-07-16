@@ -8,9 +8,9 @@ const TooltipArrow = React.forwardRef<HTMLDivElement, TooltipArrowProps>((props,
 
   return (
     <div
+      {...props}
       ref={ref}
       // data-placement={placement}
-      {...props}
     />
   );
 });
