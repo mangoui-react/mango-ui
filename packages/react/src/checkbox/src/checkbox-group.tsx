@@ -1,8 +1,5 @@
 import React from 'react';
 
-// TODO: lodash 제거 하고 remove 직접 구현하자(packages 에서 lodash, @types/lodash 제거해야 함)
-import remove from 'lodash/fp/remove';
-
 import { useControlled } from '@melio-ui/use-controlled';
 
 import { FormElementBaseProps, TypeAttributes } from '../../types/common';
@@ -57,7 +54,7 @@ const CheckboxGroup = React.forwardRef<HTMLDivElement, CheckboxGroupProps>((prop
       if (childChecked) {
         newValue.push(childValue);
       } else {
-        newValue = remove((_value) => _value === childValue, newValue);
+        newValue = newValue.filter((_value) => _value !== childValue);
       }
 
       onValueChange?.(newValue);

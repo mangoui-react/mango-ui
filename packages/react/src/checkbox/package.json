@@ -17,9 +17,7 @@
     "directory": "build"
   },
   "dependencies": {
-    "@melio-ui/use-controlled": "workspace:*",
-    "@types/lodash": "^4.17.0",
-    "lodash": "^4.17.21"
+    "@melio-ui/use-controlled": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "*",
