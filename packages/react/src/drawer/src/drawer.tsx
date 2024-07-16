@@ -15,29 +15,6 @@ export const DrawerContext = React.createContext<DrawerContextValue>({});
 export default function Drawer(props: DrawerProps): JSX.Element {
   const { open, placement = 'right', children, ...rest } = props;
 
-  // 애니메이션은 app 에서 처리 - eds 는 animation prop 만 제공
-  // const defaultAnimation = React.useMemo(() => {
-  //   let from = { transform: 'translateX(100%)' };
-  //   let to = { transform: 'translateX(0%)' };
-
-  //   if (placement === 'left') {
-  //     from = { transform: 'translateX(-100%)' };
-  //     to = { transform: 'translateX(0%)' };
-  //   } else if (placement === 'top') {
-  //     from = { transform: 'translateY(-100%)' };
-  //     to = { transform: 'translateY(0%)' };
-  //   } else if (placement === 'bottom') {
-  //     from = { transform: 'translateY(100%)' };
-  //     to = { transform: 'translateY(0%)' };
-  //   }
-
-  //   return {
-  //     // keyframes: [{ [placement]: `calc(-1 * ${_size})` }, { [placement]: '0px' }],
-  //     keyframes: [from, to],
-  //     options: 200,
-  //   };
-  // }, [placement]);
-
   const contextValue = React.useMemo(
     () => ({
       placement,
@@ -47,12 +24,7 @@ export default function Drawer(props: DrawerProps): JSX.Element {
 
   return (
     <DrawerContext.Provider value={contextValue}>
-      <Modal.Root
-        role="presentation"
-        open={open}
-        // animation={defaultAnimation}
-        {...rest}
-      >
+      <Modal.Root {...rest} role="presentation" open={open}>
         {children}
       </Modal.Root>
     </DrawerContext.Provider>

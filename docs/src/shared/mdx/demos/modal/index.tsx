@@ -35,7 +35,7 @@ export default function ModalDemo() {
                   marginRight: 3,
                 }}
               >
-                닫기
+                Close
               </button>
             </ModalClose>
           </div>

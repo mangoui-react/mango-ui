@@ -9,7 +9,7 @@ export interface DrawerContentProps extends ModalContentProps {}
 const DrawerContent = React.forwardRef<HTMLDivElement, DrawerContentProps>((props, ref) => {
   const { placement } = React.useContext(DrawerContext);
 
-  return <Modal.Content ref={ref} data-placement={placement} {...props} />;
+  return <Modal.Content {...props} data-placement={placement} ref={ref} />;
 });
 
 DrawerContent.displayName = 'Drawer.Content';

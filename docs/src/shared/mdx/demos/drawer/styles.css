@@ -1,0 +1,111 @@
+.drawer-backdrop {
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1200;
+  animation: fadein 0.3s;
+}
+
+.drawer-content {
+  position: fixed;
+  margin: 0 auto;
+  width: 32.5rem;
+  min-width: 12.5rem;
+  min-height: 2.625rem;
+  z-index: 1200;
+  border-radius: 0.375rem;
+  animation: fadein 0.3s;
+
+  background-color: #ffffff;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  box-shadow:
+    rgba(0, 0, 0, 0.2) 0px 8px 10px -5px,
+    rgba(0, 0, 0, 0.14) 0px 16px 24px 2px,
+    rgba(0, 0, 0, 0.12) 0px 6px 30px 5px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.drawer-content[data-placement='top'] {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+}
+.drawer-content[data-placement='bottom'] {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+}
+.drawer-content[data-placement='right'] {
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+}
+.drawer-content[data-placement='left'] {
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+}
+
+.drawer-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.875rem;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+  box-sizing: border-box;
+  color: inherit;
+  background: transparent;
+  font-size: 0.875rem;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drawer-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 0.0625rem solid #cccccc;
+
+  flex: 0 1 auto;
+}
+
+.drawer-body {
+  padding: 1.5rem;
+  overflow: auto;
+
+  flex: 1 1 auto;
+  max-height: 100%;
+}
+
+.drawer-footer {
+  padding: 0.625rem 1rem;
+  text-align: right;
+  border-top: 0.0625rem solid #cccccc;
+
+  flex: 0 1 auto;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
