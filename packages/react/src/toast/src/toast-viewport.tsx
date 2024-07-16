@@ -20,7 +20,7 @@ const ToastViewport = React.forwardRef<HTMLDivElement, ToastViewportProps>((prop
   const handleViewportRef = useMergedRef(ref, onViewportChange);
 
   return (
-    <div ref={handleViewportRef} data-placement={placement} tabIndex={-1} {...rest}>
+    <div data-placement={placement} tabIndex={-1} {...rest} ref={handleViewportRef}>
       {children}
     </div>
   );

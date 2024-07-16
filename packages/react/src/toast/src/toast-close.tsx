@@ -19,7 +19,7 @@ const ToastClose = React.forwardRef<HTMLButtonElement, ToastCloseProps>((props, 
   };
 
   return (
-    <Component ref={ref} type="button" onClick={handleClick} {...rest}>
+    <Component type="button" {...rest} ref={ref} onClick={handleClick}>
       {children ?? 'Close'}
     </Component>
   );
