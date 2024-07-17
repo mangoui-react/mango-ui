@@ -4,7 +4,7 @@ import { useControlled } from '@melio-ui/use-controlled';
 
 import { FormElementBaseProps, TypeAttributes } from '../../types/common';
 
-import { RadioValue } from './radio';
+import { RadioValue } from './radio-group-item';
 
 export interface RadioGroupProps
   extends FormElementBaseProps<RadioValue>,
@@ -68,6 +68,6 @@ const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>((props, ref
   );
 });
 
-RadioGroup.displayName = 'Radio.Group';
+RadioGroup.displayName = 'RadioGroup.Root';
 
 export default RadioGroup;

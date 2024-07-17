@@ -3,9 +3,9 @@ import React from 'react';
 import { CheckedRadioIcon } from '../../internal/icons/checked-radio-icon';
 import { UncheckedRadioIcon } from '../../internal/icons/unchecked-radio-icon';
 
-import { RadioContext } from './radio';
+import { RadioContext } from './radio-group-item';
 
-export interface RadioIconIconProps extends React.ComponentPropsWithoutRef<'svg'> {
+export interface RadioGroupIconIconProps extends React.ComponentPropsWithoutRef<'svg'> {
   /** checked 아이콘 */
   checkedIcon?: React.ReactNode;
   /** unchecked 아이콘 */
@@ -15,7 +15,7 @@ export interface RadioIconIconProps extends React.ComponentPropsWithoutRef<'svg'
 const defaultCheckedIcon = <CheckedRadioIcon />;
 const defaultUncheckedIcon = <UncheckedRadioIcon />;
 
-const RadioIcon = React.forwardRef<SVGSVGElement, RadioIconIconProps>(
+const RadioGroupIcon = React.forwardRef<SVGSVGElement, RadioGroupIconIconProps>(
   ({ checkedIcon = defaultCheckedIcon, uncheckedIcon = defaultUncheckedIcon, ...rest }, ref) => {
     const { checked } = React.useContext(RadioContext);
 
@@ -27,6 +27,6 @@ const RadioIcon = React.forwardRef<SVGSVGElement, RadioIconIconProps>(
   },
 );
 
-RadioIcon.displayName = 'Radio.Icon';
+RadioGroupIcon.displayName = 'RadioGroup.Icon';
 
-export default RadioIcon;
+export default RadioGroupIcon;

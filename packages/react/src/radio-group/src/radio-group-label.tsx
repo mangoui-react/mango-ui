@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { getState } from './helpers/get-state';
-import { RadioContext } from './radio';
+import { RadioContext } from './radio-group-item';
 
-export interface RadioLabelProps extends React.ComponentPropsWithoutRef<'label'> {}
+export interface RadioGroupLabelProps extends React.ComponentPropsWithoutRef<'label'> {}
 
-const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>((props, ref) => {
+const RadioGroupLabel = React.forwardRef<HTMLLabelElement, RadioGroupLabelProps>((props, ref) => {
   const { children, ...rest } = props;
 
   const { uuid: uuidCtx, checked, disabled, readOnly } = React.useContext(RadioContext);
@@ -24,6 +24,6 @@ const RadioLabel = React.forwardRef<HTMLLabelElement, RadioLabelProps>((props, r
   );
 });
 
-RadioLabel.displayName = 'Radio.Label';
+RadioGroupLabel.displayName = 'RadioGroup.Label';
 
-export default RadioLabel;
+export default RadioGroupLabel;

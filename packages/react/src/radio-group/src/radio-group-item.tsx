@@ -7,7 +7,7 @@ import { getState } from './helpers/get-state';
 import { RadioGroupContext } from './radio-group';
 
 export type RadioValue = string | number;
-export interface RadioProps
+export interface RadioGroupItemProps
   extends FormElementBaseProps<RadioValue>,
     Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultChecked' | 'defaultValue'> {
   /** 초기 check 유무 */
@@ -21,7 +21,7 @@ export interface RadioProps
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
-export interface RadioContextValue extends Pick<RadioProps, 'disabled' | 'readOnly'> {
+export interface RadioContextValue extends Pick<RadioGroupItemProps, 'disabled' | 'readOnly'> {
   checked: boolean;
   uuid: string;
   onIndicatorClick: (event: React.MouseEvent<HTMLSpanElement>) => void;
@@ -33,7 +33,7 @@ export const RadioContext = React.createContext<RadioContextValue>({
   onIndicatorClick: () => {},
 });
 
-const Radio = React.forwardRef<HTMLDivElement, RadioProps>((props, ref) => {
+const RadioGroupItem = React.forwardRef<HTMLDivElement, RadioGroupItemProps>((props, ref) => {
   const {
     name: nameCtx,
     value: valueCtx,
@@ -121,6 +121,6 @@ const Radio = React.forwardRef<HTMLDivElement, RadioProps>((props, ref) => {
   );
 });
 
-Radio.displayName = 'Radio';
+RadioGroupItem.displayName = 'RadioGroup.Item';
 
-export default Radio;
+export default RadioGroupItem;
