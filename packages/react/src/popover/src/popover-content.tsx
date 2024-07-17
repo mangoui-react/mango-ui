@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { Transition, TransitionStatus } from 'react-transition-group';
-
-import { useEffectOnce } from '@melio-ui/use-effect-once';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
 import { debounce } from '../../internal/debounce';
+import setRef from '../../internal/set-ref';
 
 import { getTargetEl } from './helpers/get-target-el';
 import { setPosition } from './helpers/set-position';
@@ -67,15 +65,10 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>((pr
   const { open, triggerRef, handleClose } = React.useContext(PopoverContext);
   const { containerEl } = React.useContext(PopoverPortalContext);
 
-  const nodeRef = React.useRef(null); // StrictMode 사용시 콘솔에러 메시지 방지를 위해
-
   const popoverContentRef = React.useRef<HTMLDivElement>(null);
-  const handleRef = useMergedRef(popoverContentRef, ref);
+  const popoverContentMergedRef = useMergedRef(popoverContentRef, ref);
 
-  const [exited, setExited] = React.useState<boolean>(!open);
   const initialize = React.useRef<boolean>(true);
-
-  const mountPopover = open && !exited;
 
   // onBlur 시 close
   const handleBlur = (event: React.FocusEvent<HTMLDivElement>): void => {
@@ -112,18 +105,20 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>((pr
     onKeyDown?.(event);
   };
 
-  // onEntered 시 focus
-  const handleEntered = React.useCallback(() => {
-    setPosition({
-      triggerEl: triggerRef.current,
-      popoverContentEl: popoverContentRef.current,
-      triggerPosition,
-      contentPosition,
-      position,
-      containerEl,
-    });
-    onEntered?.();
-  }, [containerEl, contentPosition, onEntered, position, triggerPosition, triggerRef]);
+  const handleRef = React.useCallback(
+    (node: any) => {
+      setRef(popoverContentMergedRef, node);
+      setPosition({
+        triggerEl: triggerRef.current,
+        popoverContentEl: popoverContentRef.current,
+        triggerPosition,
+        contentPosition,
+        position,
+        containerEl,
+      });
+    },
+    [containerEl, contentPosition, popoverContentMergedRef, position, triggerPosition, triggerRef],
+  );
 
   // 화면 Resizing 시 position 처리
   React.useEffect(() => {
@@ -159,70 +154,39 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>((pr
     };
   }, [containerEl, contentPosition, open, position, triggerPosition, triggerRef]);
 
-  const handleOpened = (): void => {
-    if (exited) {
-      setExited(false);
-    }
-    initialize.current = false;
-  };
-
-  const handleExited = (): void => {
-    setExited(true);
-  };
-
-  useEffectOnce(() => {
-    return () => {
-      handleExited();
-    };
-  }); // will unmount
-
   React.useEffect(() => {
     if (open) {
-      handleOpened();
+      initialize.current = false;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open]); // exited 에 의해 handleOpened 함수가 새로 정의 되어 2번씩 호출되는 것을 방지하기 위해 open 만 으로 판단
+  }, [open]);
 
-  if (initialize.current && !mountPopover && !forceMount) {
+  if (initialize.current && !open && !forceMount) {
     return null;
   }
 
-  if (!mountPopover && !forceMount && destroyOnClose) {
+  if (!open && !forceMount && destroyOnClose) {
     return null;
   }
 
   return (
-    <Transition
-      nodeRef={nodeRef}
-      appear
-      in={open}
-      timeout={10}
-      onEntered={handleEntered}
-      onExited={handleExited}
+    <div
+      role={role}
+      data-state={open ? 'open' : 'closed'}
+      {...rest}
+      ref={handleRef}
+      tabIndex={-1}
+      style={{
+        position: 'absolute',
+        display: open ? undefined : 'none',
+        opacity: open ? 1 : 0,
+        zIndex,
+        ...style,
+      }}
+      onBlur={handleBlur}
+      onKeyDown={handleKeyDown}
     >
-      {(state: TransitionStatus) => (
-        <div
-          ref={handleRef}
-          role={role}
-          // data-state={state === 'entered' ? 'open' : 'closed'}
-          data-state={open ? 'open' : 'closed'}
-          tabIndex={-1}
-          style={{
-            position: 'absolute',
-            // display: !open && !destroyOnClose && state === 'exited' ? 'none' : undefined,
-            display: open && state === 'entered' ? undefined : 'none',
-            opacity: state === 'entered' ? 1 : 0,
-            zIndex,
-            ...style,
-          }}
-          onBlur={handleBlur}
-          onKeyDown={handleKeyDown}
-          {...rest}
-        >
-          {children}
-        </div>
-      )}
-    </Transition>
+      {children}
+    </div>
   );
 });
 

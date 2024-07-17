@@ -258,30 +258,18 @@ importers:
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
-      '@types/lodash':
-        specifier: ^4.17.0
-        version: 4.17.0
       '@types/react':
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.21
       '@types/react-dom':
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.7
-      '@types/react-transition-group':
-        specifier: ^4.4.10
-        version: 4.4.10
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
       react:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0
       react-dom:
         specifier: ^17.0.0 || ^18.0.0
         version: 18.2.0(react@18.2.0)
-      react-transition-group:
-        specifier: ^4.4.5
-        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     publishDirectory: build
 
   packages/react/src/accordion:
@@ -378,18 +366,12 @@ importers:
       '@melio-ui/use-controlled':
         specifier: workspace:*
         version: link:../use-controlled/build
-      '@types/lodash':
-        specifier: ^4.17.0
-        version: 4.17.0
       '@types/react':
         specifier: '*'
         version: 18.2.21
       '@types/react-dom':
         specifier: '*'
         version: 18.2.7
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
       react:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0
@@ -470,12 +452,6 @@ importers:
       '@melio-ui/use-controlled':
         specifier: workspace:*
         version: link:../use-controlled/build
-      '@melio-ui/use-effect-once':
-        specifier: workspace:*
-        version: link:../use-effect-once/build
-      '@melio-ui/use-merged-ref':
-        specifier: workspace:*
-        version: link:../use-merged-ref/build
       '@melio-ui/use-portal':
         specifier: workspace:*
         version: link:../use-portal/build
@@ -485,18 +461,12 @@ importers:
       '@types/react-dom':
         specifier: '*'
         version: 18.2.7
-      '@types/react-transition-group':
-        specifier: ^4.4.10
-        version: 4.4.10
       react:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0
       react-dom:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0(react@18.2.0)
-      react-transition-group:
-        specifier: ^4.4.5
-        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     publishDirectory: build
 
   packages/react/src/number-input:
@@ -529,9 +499,6 @@ importers:
       '@melio-ui/use-controlled':
         specifier: workspace:*
         version: link:../use-controlled/build
-      '@melio-ui/use-effect-once':
-        specifier: workspace:*
-        version: link:../use-effect-once/build
       '@melio-ui/use-merged-ref':
         specifier: workspace:*
         version: link:../use-merged-ref/build
@@ -544,18 +511,12 @@ importers:
       '@types/react-dom':
         specifier: '*'
         version: 18.2.7
-      '@types/react-transition-group':
-        specifier: ^4.4.10
-        version: 4.4.10
       react:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0
       react-dom:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0(react@18.2.0)
-      react-transition-group:
-        specifier: ^4.4.5
-        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     publishDirectory: build
 
   packages/react/src/progress:
@@ -705,18 +666,12 @@ importers:
       '@types/react-dom':
         specifier: '*'
         version: 18.2.7
-      '@types/react-transition-group':
-        specifier: ^4.4.10
-        version: 4.4.10
       react:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0
       react-dom:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0(react@18.2.0)
-      react-transition-group:
-        specifier: ^4.4.5
-        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     publishDirectory: build
 
   packages/react/src/tooltip:
@@ -742,18 +697,12 @@ importers:
       '@types/react-dom':
         specifier: '*'
         version: 18.2.7
-      '@types/react-transition-group':
-        specifier: ^4.4.10
-        version: 4.4.10
       react:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0
       react-dom:
         specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
         version: 18.2.0(react@18.2.0)
-      react-transition-group:
-        specifier: ^4.4.5
-        version: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     publishDirectory: build
 
   packages/react/src/use-controlled:
@@ -3144,9 +3093,6 @@ packages:
   '@types/react-dom@18.2.7':
     resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
 
-  '@types/react-transition-group@4.4.10':
-    resolution: {integrity: sha512-hT/+s0VQs2ojCX823m60m5f0sL5idt9SO6Tj6Dg+rdphGPIeJbJ6CxvBYkgkGKrYeDjvIpKTR38UzmtHJOGW3Q==}
-
   '@types/react@18.2.21':
     resolution: {integrity: sha512-neFKG/sBAwGxHgXiIxnbm3/AAVQ/cMRS93hvBpg8xYRbeQSPVABp9U2bRnPf0iI4+Ucdv3plSxKK+3CW2ENJxA==}
 
@@ -4028,9 +3974,6 @@ packages:
 
   dom-accessibility-api@0.6.3:
     resolution: {integrity: sha512-7ZgogeTnjuHbo+ct10G9Ffp0mif17idi0IyWNVA/wcwcm7NPOD/WEHVP3n7n3MhXqxoIYm8d6MuZohYWIZ4T3w==}
-
-  dom-helpers@5.2.1:
-    resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
 
   dotenv-expand@10.0.0:
     resolution: {integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==}
@@ -6401,12 +6344,6 @@ packages:
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
-
-  react-transition-group@4.4.5:
-    resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
-    peerDependencies:
-      react: '>=16.6.0'
-      react-dom: '>=16.6.0'
 
   react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
@@ -10440,10 +10377,6 @@ snapshots:
     dependencies:
       '@types/react': 18.2.21
 
-  '@types/react-transition-group@4.4.10':
-    dependencies:
-      '@types/react': 18.2.21
-
   '@types/react@18.2.21':
     dependencies:
       '@types/prop-types': 15.7.5
@@ -11500,11 +11433,6 @@ snapshots:
   dom-accessibility-api@0.5.16: {}
 
   dom-accessibility-api@0.6.3: {}
-
-  dom-helpers@5.2.1:
-    dependencies:
-      '@babel/runtime': 7.22.11
-      csstype: 3.1.2
 
   dotenv-expand@10.0.0: {}
 
@@ -14746,15 +14674,6 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       sucrase: 3.34.0
       use-editable: 2.3.3(react@18.2.0)
-
-  react-transition-group@4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
-    dependencies:
-      '@babel/runtime': 7.22.11
-      dom-helpers: 5.2.1
-      loose-envify: 1.4.0
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
 
   react@18.2.0:
     dependencies:
