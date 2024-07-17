@@ -14,7 +14,7 @@ export * from './modal';
 export * from './number-input';
 export * from './popover';
 export * from './progress';
-export * from './radio';
+export * from './radio-group';
 export * from './slider';
 export * from './slot';
 export * from './steps';

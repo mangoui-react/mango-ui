@@ -3,7 +3,7 @@ import React from 'react';
 import { Radio, RadioValue } from '.';
 import * as styles from './radio.stories.css';
 
-export default { title: 'Components/Radio' };
+export default { title: 'Components/RadioGroup' };
 
 export function Basic(): JSX.Element {
   return (
