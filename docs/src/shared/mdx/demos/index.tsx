@@ -6,4 +6,8 @@ export { default as BreadcrumbDemo } from './breadcrumb';
 export { default as CheckboxDemo } from './checkbox';
 export { default as CircularProgressDemo } from './circular-progress';
 export { default as DrawerDemo } from './drawer';
+export { default as DropdownDemo } from './dropdown';
 export { default as ModalDemo } from './modal';
+export { default as NumberInputDemo } from './number-input';
+export { default as PopoverDemo } from './popover';
+export { default as ProgressDemo } from './progress';
