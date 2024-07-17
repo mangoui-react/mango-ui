@@ -15,8 +15,8 @@ export const PopoverPortal = MPopoverPortal;
 export const PopoverTrigger = MPopoverTrigger;
 export const PopoverClose = MPopoverClose;
 
-interface MPopoverContentProps extends React.ComponentPropsWithoutRef<typeof MPopoverContent> {}
-export function PopoverContent({ className, ...props }: MPopoverContentProps) {
+interface PopoverContentProps extends React.ComponentPropsWithoutRef<typeof MPopoverContent> {}
+export function PopoverContent({ className, ...props }: PopoverContentProps) {
   return (
     <MPopoverContent
       {...props}
