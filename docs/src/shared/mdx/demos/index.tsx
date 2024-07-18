@@ -11,3 +11,6 @@ export { default as ModalDemo } from './modal';
 export { default as NumberInputDemo } from './number-input';
 export { default as PopoverDemo } from './popover';
 export { default as ProgressDemo } from './progress';
+export { default as RadioGroupDemo } from './radio-group';
+export { default as SliderDemo } from './slider';
+export { default as StepsDemo } from './steps';

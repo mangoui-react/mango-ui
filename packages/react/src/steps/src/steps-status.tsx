@@ -38,7 +38,7 @@ const StepsStatus = React.forwardRef<HTMLDivElement, StepsStatusProps>((props, r
   return statusSvgEl ? (
     React.cloneElement(statusSvgEl as React.ReactElement<React.SVGProps<SVGSVGElement>>, {})
   ) : (
-    <div ref={ref} data-status={status} {...rest}>
+    <div data-status={status} {...rest} ref={ref}>
       {index + 1}
     </div>
   );
