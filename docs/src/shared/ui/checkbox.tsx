@@ -19,7 +19,8 @@ export function CheckboxRoot({ className, ...props }: CheckboxRootProps) {
         'group',
         'inline-flex items-center',
         'data-[disabled]:cursor-not-allowed data-[readonly]:cursor-default',
-        '[&>input]:absolute [&>input]:m-0 [&>input]:h-px [&>input]:w-px [&>input]:cursor-[inherit] [&>input]:opacity-0',
+        '[&>input[type=checkbox]]:absolute [&>input[type=checkbox]]:m-0 [&>input[type=checkbox]]:h-px [&>input[type=checkbox]]:w-px',
+        '[&>input[type=checkbox]]:cursor-[inherit] [&>input[type=checkbox]]:opacity-0',
         className,
       )}
     />
