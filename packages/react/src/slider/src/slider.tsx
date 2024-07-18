@@ -60,6 +60,7 @@ const Slider = React.forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
     orientation = 'horizontal',
     children,
     onValueChange,
+    onMouseDown: onMouseDownProp,
     ...rest
   } = props;
 
@@ -81,6 +82,11 @@ const Slider = React.forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
     onValueChange,
   });
 
+  const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>): void => {
+    onMouseDown(event);
+    onMouseDownProp?.(event);
+  };
+
   const contextValue = React.useMemo(
     () => ({
       railRef,
@@ -97,11 +103,11 @@ const Slider = React.forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
   return (
     <SliderContext.Provider value={contextValue}>
       <div
-        ref={handleRef}
         data-disabled={disabled ? '' : undefined}
         data-orientation={orientation}
         {...rest}
-        onMouseDown={onMouseDown}
+        ref={handleRef}
+        onMouseDown={handleMouseDown}
       >
         {children}
         <input type="hidden" name={name} value={value?.toString()} />

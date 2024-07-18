@@ -19,7 +19,7 @@ const SliderRange = React.forwardRef<HTMLDivElement, SliderRangeProps>((props, r
       : { width: `${percentValue}%` };
   }, [orientation, percentValue]);
 
-  return <div ref={ref} style={{ ...trackWidthStyle, ...style }} {...rest} />;
+  return <div {...rest} ref={ref} style={{ ...trackWidthStyle, ...style }} />;
 });
 
 SliderRange.displayName = 'Slider.Range';

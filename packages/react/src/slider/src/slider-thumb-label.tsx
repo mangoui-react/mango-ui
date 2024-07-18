@@ -15,7 +15,7 @@ const SliderThumbLabel = React.forwardRef<HTMLSpanElement, SliderThumbLabelProps
   }
 
   return (
-    <span ref={ref} {...rest}>
+    <span {...rest} ref={ref}>
       {children ?? thumbValue}
     </span>
   );

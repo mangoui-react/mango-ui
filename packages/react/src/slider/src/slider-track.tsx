@@ -13,7 +13,7 @@ const SliderTrack = React.forwardRef<HTMLDivElement, SliderTrackProps>((props, r
   const handleRef = useMergedRef(ref, railRef);
 
   return (
-    <div ref={handleRef} {...rest}>
+    <div {...rest} ref={handleRef}>
       {children}
     </div>
   );

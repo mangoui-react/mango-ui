@@ -61,11 +61,11 @@ const SliderThumb = React.forwardRef<HTMLDivElement, SliderThumbProps>((props, r
   return (
     <SliderThumbContext.Provider value={contextValue}>
       <div
+        {...rest}
         ref={handleRef}
         style={{ ...positionStyle, ...style }}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
-        {...rest}
       >
         {children}
       </div>
