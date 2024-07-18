@@ -3,9 +3,9 @@ import React from 'react';
 import { CheckIcon } from '../../internal/icons/check-icon';
 import { CloseIcon } from '../../internal/icons/close-icon';
 
-import { StepContext, StepStatusValue } from './step';
+import { StepContext, StepStatusValue } from './steps-step';
 
-export interface StepStatusProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface StepsStatusProps extends React.ComponentPropsWithoutRef<'div'> {
   finish?: React.ReactNode;
   wait?: React.ReactNode;
   process?: React.ReactNode;
@@ -21,7 +21,7 @@ const STEP_STATUS_ICON: StatusValueObject = {
   error: <CloseIcon />,
 };
 
-const StepStatus = React.forwardRef<HTMLDivElement, StepStatusProps>((props, ref) => {
+const StepsStatus = React.forwardRef<HTMLDivElement, StepsStatusProps>((props, ref) => {
   const { index = 0, status = 'wait' } = React.useContext(StepContext);
   const { finish, wait, process, error, ...rest } = props;
 
@@ -44,6 +44,6 @@ const StepStatus = React.forwardRef<HTMLDivElement, StepStatusProps>((props, ref
   );
 });
 
-StepStatus.displayName = 'Steps.Status';
+StepsStatus.displayName = 'Steps.Status';
 
-export default StepStatus;
+export default StepsStatus;

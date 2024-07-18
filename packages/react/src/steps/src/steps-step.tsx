@@ -3,18 +3,18 @@ import React from 'react';
 import { StepsContext } from './steps';
 
 export type StepStatusValue = 'finish' | 'wait' | 'process' | 'error';
-export interface StepProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface StepsStepProps extends React.ComponentPropsWithoutRef<'div'> {
   /** step 의 상태 */
   status?: StepStatusValue;
   /** Steps 내부에서 사용하는 prop */
   index?: number;
 }
 
-export type StepContextValue = Pick<StepProps, 'status' | 'index'>;
+export type StepContextValue = Pick<StepsStepProps, 'status' | 'index'>;
 
 export const StepContext = React.createContext<StepContextValue>({});
 
-const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => {
+const StepsStep = React.forwardRef<HTMLDivElement, StepsStepProps>((props, ref) => {
   const { status: statusProp, index = 0, children, ...rest } = props;
 
   const { currentStep = 0, orientation } = React.useContext(StepsContext);
@@ -41,6 +41,6 @@ const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => {
   );
 });
 
-Step.displayName = 'Steps.Step';
+StepsStep.displayName = 'Steps.Step';
 
-export default Step;
+export default StepsStep;

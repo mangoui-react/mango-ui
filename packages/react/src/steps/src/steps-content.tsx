@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { StepContext, StepStatusValue } from './step';
+import { StepContext, StepStatusValue } from './steps-step';
 
-export interface StepIndicatorProps
-  extends Omit<React.ComponentPropsWithoutRef<'div'>, 'children'> {
+export interface StepsContentProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'children'> {
   children:
     | React.ComponentPropsWithoutRef<'div'>['children']
     | ((status: StepStatusValue) => React.ReactNode);
 }
 
-const StepIndicator = React.forwardRef<HTMLDivElement, StepIndicatorProps>((props, ref) => {
+const StepsContent = React.forwardRef<HTMLDivElement, StepsContentProps>((props, ref) => {
   const { children: childrenProp, ...rest } = props;
   const { status = 'wait' } = React.useContext(StepContext);
 
@@ -22,6 +21,6 @@ const StepIndicator = React.forwardRef<HTMLDivElement, StepIndicatorProps>((prop
   );
 });
 
-StepIndicator.displayName = 'Steps.Indicator';
+StepsContent.displayName = 'Steps.Content';
 
-export default StepIndicator;
+export default StepsContent;
