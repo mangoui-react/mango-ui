@@ -10,7 +10,7 @@ import {
 
 import './styles.css';
 
-export default function ProgressDemo() {
+export default function RadioGroupDemo() {
   return (
     <RadioGroupRoot className="radio-group-root">
       <RadioGroupItem className="radio-group-item" value="1">
