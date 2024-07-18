@@ -18,7 +18,7 @@ const RadioGroupLabel = React.forwardRef<HTMLLabelElement, RadioGroupLabelProps>
   const uuid = disabled || readOnly ? undefined : uuidCtx;
 
   return (
-    <label ref={ref} htmlFor={uuid} data-state={getState(checked)} onClick={handleClick} {...rest}>
+    <label htmlFor={uuid} data-state={getState(checked)} {...rest} ref={ref} onClick={handleClick}>
       {children}
     </label>
   );

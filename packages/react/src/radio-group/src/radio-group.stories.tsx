@@ -9,36 +9,36 @@ export function Basic(): JSX.Element {
   return (
     <>
       <h1>기본</h1>
-      <RadioGroup.Root className={styles.group}>
-        <RadioGroup.Item className={styles.root} value="1">
+      <RadioGroup.Root className={styles.root}>
+        <RadioGroup.Item className={styles.item} value="1">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2">
+        <RadioGroup.Item className={styles.item} value="2">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오2</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="3">
+        <RadioGroup.Item className={styles.item} value="3">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오3</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="4">
+        <RadioGroup.Item className={styles.item} value="4">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오4</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="5">
+        <RadioGroup.Item className={styles.item} value="5">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
@@ -47,36 +47,36 @@ export function Basic(): JSX.Element {
       </RadioGroup.Root>
 
       <h1>defaultChecked</h1>
-      <RadioGroup.Root className={styles.group}>
-        <RadioGroup.Item className={styles.root} value="1">
+      <RadioGroup.Root className={styles.root}>
+        <RadioGroup.Item className={styles.item} value="1">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2" defaultChecked>
+        <RadioGroup.Item className={styles.item} value="2" defaultChecked>
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오2</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="3">
+        <RadioGroup.Item className={styles.item} value="3">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오3</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="4">
+        <RadioGroup.Item className={styles.item} value="4">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오4</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="5">
+        <RadioGroup.Item className={styles.item} value="5">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
@@ -85,22 +85,22 @@ export function Basic(): JSX.Element {
       </RadioGroup.Root>
 
       <h1>disabled</h1>
-      <RadioGroup.Root className={styles.group} disabled>
-        <RadioGroup.Item className={styles.root} value="1">
+      <RadioGroup.Root className={styles.root} disabled>
+        <RadioGroup.Item className={styles.item} value="1">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2">
+        <RadioGroup.Item className={styles.item} value="2">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오2</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="3">
+        <RadioGroup.Item className={styles.item} value="3">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
@@ -109,22 +109,22 @@ export function Basic(): JSX.Element {
       </RadioGroup.Root>
 
       <h1>readOnly</h1>
-      <RadioGroup.Root className={styles.group} readOnly>
-        <RadioGroup.Item className={styles.root} value="1" checked>
+      <RadioGroup.Root className={styles.root} readOnly>
+        <RadioGroup.Item className={styles.item} value="1" checked>
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2">
+        <RadioGroup.Item className={styles.item} value="2">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오2</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="3">
+        <RadioGroup.Item className={styles.item} value="3">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
@@ -144,22 +144,22 @@ export function OnValueChange(): JSX.Element {
   return (
     <>
       <h1>onValueChange</h1>
-      <RadioGroup.Root className={styles.group} value={value} onValueChange={handleChange}>
-        <RadioGroup.Item className={styles.root} value="1">
+      <RadioGroup.Root className={styles.root} value={value} onValueChange={handleChange}>
+        <RadioGroup.Item className={styles.item} value="1">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2">
+        <RadioGroup.Item className={styles.item} value="2">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오2</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="3">
+        <RadioGroup.Item className={styles.item} value="3">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
@@ -174,22 +174,22 @@ export function Custom(): JSX.Element {
   return (
     <>
       <h1>Custom Size</h1>
-      <RadioGroup.Root className={styles.group}>
-        <RadioGroup.Item className={styles.root} value="1" style={{ fontSize: '0.875rem' }}>
+      <RadioGroup.Root className={styles.root}>
+        <RadioGroup.Item className={styles.item} value="1" style={{ fontSize: '0.875rem' }}>
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} style={{ fontSize: '1.25rem' }} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2" style={{ fontSize: '0.875rem' }}>
+        <RadioGroup.Item className={styles.item} value="2" style={{ fontSize: '0.875rem' }}>
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} style={{ fontSize: '1.25rem' }} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오2</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="3" style={{ fontSize: '0.875rem' }}>
+        <RadioGroup.Item className={styles.item} value="3" style={{ fontSize: '0.875rem' }}>
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} style={{ fontSize: '1.25rem' }} />
           </RadioGroup.Indicator>
@@ -198,22 +198,22 @@ export function Custom(): JSX.Element {
       </RadioGroup.Root>
       <br />
 
-      <RadioGroup.Root className={styles.group}>
-        <RadioGroup.Item className={styles.root} value="1" style={{ fontSize: '1.125rem' }}>
+      <RadioGroup.Root className={styles.root}>
+        <RadioGroup.Item className={styles.item} value="1" style={{ fontSize: '1.125rem' }}>
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} style={{ fontSize: '1.75rem' }} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2" style={{ fontSize: '1.125rem' }}>
+        <RadioGroup.Item className={styles.item} value="2" style={{ fontSize: '1.125rem' }}>
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} style={{ fontSize: '1.75rem' }} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오2</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="3" style={{ fontSize: '1.125rem' }}>
+        <RadioGroup.Item className={styles.item} value="3" style={{ fontSize: '1.125rem' }}>
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} style={{ fontSize: '1.75rem' }} />
           </RadioGroup.Indicator>
@@ -222,22 +222,22 @@ export function Custom(): JSX.Element {
       </RadioGroup.Root>
 
       <h1>Custom Color</h1>
-      <RadioGroup.Root className={styles.group}>
-        <RadioGroup.Item className={styles.root} value="1">
+      <RadioGroup.Root className={styles.root}>
+        <RadioGroup.Item className={styles.item} value="1">
           <RadioGroup.Indicator className={styles.indicator} style={{ color: '#9812f1' }}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>#9812f1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2">
+        <RadioGroup.Item className={styles.item} value="2">
           <RadioGroup.Indicator className={styles.indicator} style={{ color: '#1446eb' }}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>#1446eb</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="3">
+        <RadioGroup.Item className={styles.item} value="3">
           <RadioGroup.Indicator className={styles.indicator} style={{ color: '#f11a0b' }}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
@@ -246,8 +246,8 @@ export function Custom(): JSX.Element {
       </RadioGroup.Root>
 
       <h1>Custom Checked</h1>
-      <RadioGroup.Root className={styles.group}>
-        <RadioGroup.Item className={styles.root} value="1">
+      <RadioGroup.Root className={styles.root}>
+        <RadioGroup.Item className={styles.item} value="1">
           <RadioGroup.Indicator className={styles.indicator}>
             {(checked: boolean) => {
               if (checked) return <CheckedUserIcon />;
@@ -257,7 +257,7 @@ export function Custom(): JSX.Element {
           <RadioGroup.Label className={styles.label}>함수로 아이콘 설정1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2">
+        <RadioGroup.Item className={styles.item} value="2">
           <RadioGroup.Indicator className={styles.indicator}>
             {(checked: boolean) => {
               if (checked) return <CheckedUserIcon />;
@@ -269,8 +269,8 @@ export function Custom(): JSX.Element {
       </RadioGroup.Root>
       <br />
 
-      <RadioGroup.Root className={styles.group}>
-        <RadioGroup.Item className={styles.root} value="1">
+      <RadioGroup.Root className={styles.root}>
+        <RadioGroup.Item className={styles.item} value="1">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon
               checkedIcon={<CheckedUserIcon />}
@@ -280,7 +280,7 @@ export function Custom(): JSX.Element {
           <RadioGroup.Label className={styles.label}>prop 으로 아이콘 설정1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2">
+        <RadioGroup.Item className={styles.item} value="2">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon
               checkedIcon={<CheckedUserIcon />}
@@ -298,22 +298,22 @@ export function Orientation(): JSX.Element {
   return (
     <>
       <h1>orientation</h1>
-      <RadioGroup.Root className={styles.group} orientation="vertical">
-        <RadioGroup.Item className={styles.root} value="1">
+      <RadioGroup.Root className={styles.root} orientation="vertical">
+        <RadioGroup.Item className={styles.item} value="1">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오1</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="2">
+        <RadioGroup.Item className={styles.item} value="2">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>
           <RadioGroup.Label className={styles.label}>라디오2</RadioGroup.Label>
         </RadioGroup.Item>
 
-        <RadioGroup.Item className={styles.root} value="3">
+        <RadioGroup.Item className={styles.item} value="3">
           <RadioGroup.Indicator className={styles.indicator}>
             <RadioGroup.Icon className={styles.icon} />
           </RadioGroup.Indicator>

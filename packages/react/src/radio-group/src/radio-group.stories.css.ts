@@ -1,6 +1,19 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
 export const root = style({
+  display: 'flex',
+  flexDirection: 'row',
+  // gap: '0.625rem',
+
+  selectors: {
+    '&[data-orientation="vertical"]': {
+      flexDirection: 'column',
+      gap: '0.625rem',
+    },
+  },
+});
+
+export const item = style({
   display: 'inline-flex',
   alignItems: 'center',
 
@@ -23,7 +36,7 @@ export const root = style({
   },
 });
 
-globalStyle(`${root} > input[type="radio"]`, {
+globalStyle(`${item} > input[type="radio"]`, {
   position: 'absolute',
   width: '1px',
   height: '1px',
@@ -40,10 +53,10 @@ export const indicator = style({
   cursor: 'pointer',
 
   selectors: {
-    [`${root}[data-readonly] &`]: {
+    [`${item}[data-readonly] &`]: {
       cursor: 'default',
     },
-    [`${root}[data-disabled] &`]: {
+    [`${item}[data-disabled] &`]: {
       color: 'var(--disabled-text)',
       cursor: 'default',
       pointerEvents: 'none',
@@ -66,23 +79,10 @@ export const label = style({
   cursor: 'pointer',
 
   selectors: {
-    [`${root}[data-disabled] &`]: {
+    [`${item}[data-disabled] &`]: {
       color: 'var(--disabled-text)',
       cursor: 'default',
       pointerEvents: 'none',
-    },
-  },
-});
-
-export const group = style({
-  display: 'flex',
-  flexDirection: 'row',
-  // gap: '0.625rem',
-
-  selectors: {
-    '&[data-orientation="vertical"]': {
-      flexDirection: 'column',
-      gap: '0.625rem',
     },
   },
 });

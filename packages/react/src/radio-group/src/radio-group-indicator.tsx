@@ -26,7 +26,7 @@ const RadioGroupIndicator = React.forwardRef<HTMLSpanElement, RadioGroupIndicato
     const children = typeof childrenProp === 'function' ? childrenProp(checked) : childrenProp;
 
     return (
-      <span ref={ref} data-state={getState(checked)} onClick={handleClick} {...rest}>
+      <span data-state={getState(checked)} {...rest} ref={ref} onClick={handleClick}>
         {children}
       </span>
     );

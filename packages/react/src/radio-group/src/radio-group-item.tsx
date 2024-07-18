@@ -98,11 +98,11 @@ const RadioGroupItem = React.forwardRef<HTMLDivElement, RadioGroupItemProps>((pr
   return (
     <RadioContext.Provider value={contextValue}>
       <div
-        ref={ref}
         data-state={getState(checked)}
         data-disabled={disabled ? '' : undefined}
         data-readonly={readOnly ? '' : undefined}
         {...rest}
+        ref={ref}
       >
         <input
           type="radio"

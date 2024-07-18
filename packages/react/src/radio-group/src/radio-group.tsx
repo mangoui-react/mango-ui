@@ -61,7 +61,7 @@ const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>((props, ref
 
   return (
     <RadioGroupContext.Provider value={contextValue}>
-      <div ref={ref} data-orientation={orientation} {...rest}>
+      <div data-orientation={orientation} {...rest} ref={ref}>
         {children}
       </div>
     </RadioGroupContext.Provider>
