@@ -3,14 +3,14 @@ import React from 'react';
 import { useSelected } from './hooks/use-selected';
 import { TabsContext, TabsProps } from './tabs';
 
-export interface TabPanelProps
+export interface TabsContentProps
   extends Pick<TabsProps, 'renderMode'>,
     React.ComponentPropsWithoutRef<'div'> {
   index?: number;
   value?: string;
 }
 
-const TabContent = React.forwardRef<HTMLDivElement, TabPanelProps>((props, ref) => {
+const TabsContent = React.forwardRef<HTMLDivElement, TabsContentProps>((props, ref) => {
   const { selectedIndex, selectedValue, renderMode: renderModeCtx } = React.useContext(TabsContext);
 
   const { index = 0, value, renderMode = renderModeCtx, children, ...rest } = props;
@@ -34,6 +34,6 @@ const TabContent = React.forwardRef<HTMLDivElement, TabPanelProps>((props, ref) 
   );
 });
 
-TabContent.displayName = 'Tabs.Content';
+TabsContent.displayName = 'Tabs.Content';
 
-export default TabContent;
+export default TabsContent;

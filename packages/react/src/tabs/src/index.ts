@@ -1,19 +1,19 @@
 'use client';
 
-import Tab from './tab';
-import Content from './tab-content';
-import List from './tab-list';
 import Root from './tabs';
+import Content from './tabs-content';
+import List from './tabs-list';
+import Tab from './tabs-tab';
 
-export { default as TabsTab } from './tab';
-export { default as TabsContent } from './tab-content';
-export { default as TabsList } from './tab-list';
+export { default as TabsTab } from './tabs-tab';
+export { default as TabsContent } from './tabs-content';
+export { default as TabsList } from './tabs-list';
 export { default as TabsRoot } from './tabs';
 
 export * from './tabs';
-export * from './tab-list';
-export * from './tab';
-export * from './tab-content';
+export * from './tabs-list';
+export * from './tabs-tab';
+export * from './tabs-content';
 
 export const Tabs = {
   Root,

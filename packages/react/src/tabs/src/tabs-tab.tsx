@@ -3,14 +3,14 @@ import React from 'react';
 import { useSelected } from './hooks/use-selected';
 import { TabsContext } from './tabs';
 
-export interface TabProps extends React.ComponentPropsWithoutRef<'li'> {
+export interface TabsTabProps extends React.ComponentPropsWithoutRef<'li'> {
   index?: number;
   value?: string;
   /** tab disabled */
   disabled?: boolean;
 }
 
-const Tab = React.forwardRef<HTMLLIElement, TabProps>((props, ref) => {
+const TabsTab = React.forwardRef<HTMLLIElement, TabsTabProps>((props, ref) => {
   const { index = 0, value, disabled, children, onClick, ...rest } = props;
 
   const { selectedIndex, selectedValue, setSelected /* , orientation */ } =
@@ -38,6 +38,6 @@ const Tab = React.forwardRef<HTMLLIElement, TabProps>((props, ref) => {
   );
 });
 
-Tab.displayName = 'Tabs.Tab';
+TabsTab.displayName = 'Tabs.Tab';
 
-export default Tab;
+export default TabsTab;
