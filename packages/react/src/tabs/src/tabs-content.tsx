@@ -27,7 +27,7 @@ const TabsContent = React.forwardRef<HTMLDivElement, TabsContentProps>((props, r
   };
 
   return (
-    <div ref={ref} role="tabpanel" data-state={isSelected ? 'active' : 'inactive'} {...rest}>
+    <div data-state={isSelected ? 'active' : 'inactive'} role="tabpanel" {...rest} ref={ref}>
       {/* {isSelected ? children : null} */}
       {renderChildren()}
     </div>

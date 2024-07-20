@@ -78,7 +78,7 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
 
   return (
     <TabsContext.Provider value={contextValue}>
-      <div ref={ref} data-orientation={orientation} {...rest}>
+      <div data-orientation={orientation} {...rest} ref={ref}>
         {React.Children.map(children, (child, tabPanelIndex) => {
           if (React.isValidElement(child)) {
             return React.cloneElement(child as React.ReactElement, {

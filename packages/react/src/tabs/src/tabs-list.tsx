@@ -6,7 +6,7 @@ const TabsList = React.forwardRef<HTMLUListElement, TabsListProps>((props, ref) 
   const { children, ...rest } = props;
 
   return (
-    <ul ref={ref} role="tablist" {...rest}>
+    <ul role="tablist" {...rest} ref={ref}>
       {React.Children.map(children, (child, index) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child as React.ReactElement, {

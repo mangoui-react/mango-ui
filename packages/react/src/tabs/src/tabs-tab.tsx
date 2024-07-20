@@ -26,11 +26,11 @@ const TabsTab = React.forwardRef<HTMLLIElement, TabsTabProps>((props, ref) => {
 
   return (
     <li
-      ref={ref}
-      role="tab"
       data-state={isSelected ? 'active' : 'inactive'}
       data-disabled={disabled ? '' : undefined}
+      role="tab"
       {...rest}
+      ref={ref}
       onClick={handleClick}
     >
       {children}
