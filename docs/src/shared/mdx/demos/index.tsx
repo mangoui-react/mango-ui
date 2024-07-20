@@ -14,3 +14,5 @@ export { default as ProgressDemo } from './progress';
 export { default as RadioGroupDemo } from './radio-group';
 export { default as SliderDemo } from './slider';
 export { default as StepsDemo } from './steps';
+export { default as SwitchDemo } from './switch';
+export { default as TabsDemo } from './tabs';

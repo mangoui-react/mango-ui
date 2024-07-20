@@ -4,7 +4,7 @@ import { SwitchLabel, SwitchRoot, SwitchThumb, SwitchTrack } from '@melio-ui/swi
 
 import './styles.css';
 
-export default function CheckboxDemo() {
+export default function SwitchDemo() {
   return (
     <SwitchRoot className="switch-root">
       <SwitchTrack className="switch-track">
