@@ -83,11 +83,11 @@ const Switch = React.forwardRef<HTMLDivElement, SwitchProps>((props, ref) => {
   return (
     <SwitchContext.Provider value={contextValue}>
       <div
-        ref={ref}
         data-state={getState(checked)}
         data-disabled={disabled ? '' : undefined}
         data-readonly={readOnly ? '' : undefined}
         {...rest}
+        ref={ref}
       >
         <input
           type="checkbox"
