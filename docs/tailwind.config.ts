@@ -57,6 +57,14 @@ const config: Config = {
           from: { opacity: '0' },
           to: { opacity: '1' },
         },
+        slideIn: {
+          from: { transform: 'translateX(calc(100% + 25px))' },
+          to: { transform: 'translateX(0)' },
+        },
+        hide: {
+          from: { opacity: '1' },
+          to: { opacity: '0' },
+        },
       },
     },
   },
