@@ -17,3 +17,4 @@ export { default as StepsDemo } from './steps';
 export { default as SwitchDemo } from './switch';
 export { default as TabsDemo } from './tabs';
 export { default as ToastDemo } from './toast';
+export { default as TooltipDemo } from './tooltip';
