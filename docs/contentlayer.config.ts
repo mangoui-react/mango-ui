@@ -107,7 +107,7 @@ const Doc = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: 'contents',
+  contentDirPath: 'content',
   documentTypes: [Post, Overview, Doc],
   mdx: {
     rehypePlugins: [rehypeDemoCodeBlock, rehypeMdxCodeMeta],
