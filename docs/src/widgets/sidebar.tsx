@@ -165,6 +165,9 @@ export default function SupportSidebar() {
                       <SidebarLink href="/components/breadcrumb">Breadcrumb</SidebarLink>
                     </li>
                     <li className="mt-3">
+                      <SidebarLink href="/components/checkbox">Checkbox</SidebarLink>
+                    </li>
+                    <li className="mt-3">
                       <SidebarLink href="/components/button">Button</SidebarLink>
                     </li>
                   </ul>

@@ -76,7 +76,7 @@ const CheckboxGroup = React.forwardRef<HTMLDivElement, CheckboxGroupProps>((prop
 
   return (
     <CheckboxGroupContext.Provider value={contextValue}>
-      <div {...rest} data-orientation={orientation} ref={ref}>
+      <div data-orientation={orientation} {...rest} ref={ref}>
         {children}
       </div>
     </CheckboxGroupContext.Provider>

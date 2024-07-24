@@ -10,11 +10,11 @@ export type CheckboxValue = string | number | undefined; // unknown;
 export interface CheckboxProps
   extends FormElementBaseProps<CheckboxValue>,
     Omit<React.ComponentPropsWithoutRef<'div'>, 'defaultChecked' | 'defaultValue'> {
-  /** 초기 check 유무 */
+  /** The checked state of the checkbox when it is first rendered. Use this when there is no need to control the checked state. */
   defaultChecked?: boolean;
   /** check 유무 */
   checked?: boolean;
-  /** indeterminate */
+  /** This refers to a state indicating partial selection, meaning that some, but not all, of the related checkboxes are selected. */
   indeterminate?: boolean;
   /**
    * input element 에 적용되는 attributes
@@ -114,10 +114,10 @@ const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>((props, ref) =>
   return (
     <CheckboxContext.Provider value={contextValue}>
       <div
-        {...rest}
         data-state={getState(checked, indeterminate)}
         data-disabled={disabled ? '' : undefined}
         data-readonly={readOnly ? '' : undefined}
+        {...rest}
         ref={ref}
       >
         <input

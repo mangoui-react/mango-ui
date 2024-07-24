@@ -10,7 +10,7 @@ export default function CheckboxDemo() {
       <CheckboxIndicator className="checkbox-indicator">
         <CheckboxIcon className="checkbox-icon" />
       </CheckboxIndicator>
-      <CheckboxLabel className="checkbox-label">체크박스</CheckboxLabel>
+      <CheckboxLabel className="checkbox-label">Label</CheckboxLabel>
     </CheckboxRoot>
   );
 }

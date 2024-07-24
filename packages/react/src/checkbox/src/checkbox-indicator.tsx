@@ -37,7 +37,7 @@ const CheckboxIndicator = React.forwardRef<HTMLSpanElement, CheckboxIndicatorPro
       typeof childrenProp === 'function' ? childrenProp(checked, indeterminate) : childrenProp;
 
     return (
-      <span {...rest} data-state={getState(checked, indeterminate)} ref={ref} onClick={handleClick}>
+      <span data-state={getState(checked, indeterminate)} {...rest} ref={ref} onClick={handleClick}>
         {children}
       </span>
     );

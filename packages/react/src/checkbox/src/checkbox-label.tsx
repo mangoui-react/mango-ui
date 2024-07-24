@@ -25,8 +25,8 @@ const CheckboxLabel = React.forwardRef<HTMLLabelElement, CheckboxLabelProps>((pr
 
   return (
     <label
-      {...rest}
       data-state={getState(checked, indeterminate)}
+      {...rest}
       ref={ref}
       htmlFor={uuid}
       onClick={handleClick}
