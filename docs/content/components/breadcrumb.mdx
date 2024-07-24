@@ -1,0 +1,234 @@
+---
+title: Breadcrumb
+prevTitle: 'Badge'
+prevSlug: '/components/badge'
+nextTitle: 'Button'
+nextSlug: '/components/button'
+---
+
+# Breadcrumb
+
+<Description>Displays the path to the current resource as a link hierarchy.</Description>
+
+<DemoContainer>
+  <BreadcrumbDemo />
+  <DemoCodeBlock component="breadcrumb" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/breadcrumb',
+    yarn: 'yarn add @melio-ui/breadcrumb',
+    pnpm: 'pnpm add @melio-ui/breadcrumb',
+    bun: 'bun add @melio-ui/breadcrumb',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbRoot,
+  BreadcrumbSeparator,
+  BreadcrumbCollapse,
+} from '@melio-ui/breadcrumb';`,
+    global: `import { 
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbRoot,
+  BreadcrumbSeparator,
+  BreadcrumbCollapse,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **BreadcrumbRoot**: All parts of the breadcrumb are included.
+- **BreadcrumbList**: A container for breadcrumb items.
+- **BreadcrumbItem**: An individual breadcrumb element containing a link and a divider.
+- **BreadcrumbLink**: The breadcrumb link.
+- **BreadcrumbSeparator**: The visual separator between each breadcrumb element.
+- **BreadcrumbCollapse**: Display collapsed breadcrumbs.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Breadcrumb } from '@melio-ui/breadcrumb';
+
+<Breadcrumb.Root>
+  <Breadcrumb.List>
+    <Breadcrumb.Item />
+  </Breadcrumb.List>
+</Breadcrumb.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### BreadcrumbRoot
+
+All parts of the breadcrumb are included.
+
+### BreadcrumbList
+
+A container for breadcrumb items.
+
+<PropsTable
+  data={[
+    {
+      name: 'maxItems',
+      required: false,
+      default: '5',
+      type: 'number',
+      description: (
+        <>
+          The maximum number of breadcrumb items that can be displayed.
+          <br />
+          <br />
+          When setting maxItems, collapse must also be set.
+        </>
+      ),
+    },
+    {
+      name: 'collapse',
+      required: false,
+      default: '...',
+      type: 'React.ReactNode',
+      description: 'collapse node.',
+    },
+  ]}
+/>
+
+### BreadcrumbItem
+
+An individual breadcrumb element containing a link and a divider.
+
+### BreadcrumbLink
+
+The breadcrumb link.
+
+<PropsTable
+  data={[
+    {
+      name: 'href',
+      required: false,
+      type: 'string',
+      description: 'Specify the href URL for the link.',
+    },
+    {
+      name: 'as',
+      required: false,
+      type: 'React.ElementType',
+      description:
+        'A property that allows you to dynamically determine the type of element to render.',
+    },
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+### BreadcrumbSeparator
+
+The visual separator between each breadcrumb element.
+
+### BreadcrumbCollapse
+
+Display collapsed breadcrumbs.
+
+## Examples
+
+### Custom separator
+
+```jsx
+<BreadcrumbRoot>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator>{'>'}</BreadcrumbSeparator>
+
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/page">Page</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator>{'>'}</BreadcrumbSeparator>
+
+    <BreadcrumbItem>Current</BreadcrumbItem>
+  </BreadcrumbList>
+</BreadcrumbRoot>
+```
+
+### Max
+
+When setting maxItems, collapse must also be set.
+
+```jsx
+<BreadcrumbRoot>
+  <BreadcrumbList maxItems={3} collapse={<BreadcrumbCollapse />}>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/page1">Page1</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/page2">Page2</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/page3">Page3</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+
+    <BreadcrumbItem>Current</BreadcrumbItem>
+  </BreadcrumbList>
+</BreadcrumbRoot>
+```
+
+### Custom Collapsed
+
+```jsx
+<BreadcrumbRoot>
+  <BreadcrumbList maxItems={3} collapse={<div>~~~</div>}>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/page1">Page1</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/page2">Page2</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/page3">Page3</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+
+    <BreadcrumbItem>Current</BreadcrumbItem>
+  </BreadcrumbList>
+</BreadcrumbRoot>
+```

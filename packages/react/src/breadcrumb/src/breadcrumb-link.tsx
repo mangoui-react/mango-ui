@@ -28,7 +28,7 @@ const BreadcrumbLink = React.forwardRef<HTMLElement, BreadcrumbLinkProps>(
   (props, ref): JSX.Element => {
     const {
       href,
-      to,
+      // to,
       as: ComponentProp = href !== undefined ? 'a' : 'span',
       children,
       asChild,
@@ -38,7 +38,7 @@ const BreadcrumbLink = React.forwardRef<HTMLElement, BreadcrumbLinkProps>(
     const Component = asChild ? Slot : ComponentProp;
 
     return (
-      <Component {...rest} ref={ref} href={href} to={to}>
+      <Component {...rest} ref={ref} href={href}>
         {children}
       </Component>
     );
