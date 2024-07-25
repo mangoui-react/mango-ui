@@ -15,7 +15,16 @@ export default function DrawerDemo() {
   return (
     <DrawerRoot>
       <DrawerTrigger asChild>
-        <button type="button">Open Drawer</button>
+        <button
+          type="button"
+          style={{
+            border: '1px solid #fff',
+            padding: 5,
+            borderRadius: 5,
+          }}
+        >
+          Open Drawer
+        </button>
       </DrawerTrigger>
       <DrawerPortal>
         <DrawerBackdrop className="drawer-backdrop" />
@@ -32,9 +41,9 @@ export default function DrawerDemo() {
               <button
                 type="button"
                 style={{
-                  color: '#208aff',
                   backgroundColor: 'transparent',
                   marginRight: 3,
+                  padding: 5,
                 }}
               >
                 Cancel
@@ -44,8 +53,9 @@ export default function DrawerDemo() {
               type="button"
               style={{
                 color: '#fff',
-                borderColor: '#208aff',
-                background: '#208aff',
+                backgroundColor: '#208aff',
+                padding: 5,
+                borderRadius: 5,
               }}
             >
               Confirm
