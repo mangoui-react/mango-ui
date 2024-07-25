@@ -18,7 +18,9 @@ export function Basic(): JSX.Element {
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
             <div className={styles.body}>Drawer Content</div>
             <div className={styles.footer}>
@@ -65,7 +67,9 @@ export function Placement(): JSX.Element {
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
           </Drawer.Content>
         </Drawer.Portal>
@@ -80,7 +84,9 @@ export function Placement(): JSX.Element {
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
           </Drawer.Content>
         </Drawer.Portal>
@@ -95,7 +101,9 @@ export function Placement(): JSX.Element {
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
           </Drawer.Content>
         </Drawer.Portal>
@@ -110,7 +118,9 @@ export function Placement(): JSX.Element {
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
           </Drawer.Content>
         </Drawer.Portal>
@@ -132,7 +142,9 @@ export function Size(): JSX.Element {
           <Drawer.Content className={styles.content} style={{ width: '60%' }}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
           </Drawer.Content>
         </Drawer.Portal>
@@ -147,7 +159,9 @@ export function Size(): JSX.Element {
           <Drawer.Content className={styles.content} style={{ width: '20%' }}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
           </Drawer.Content>
         </Drawer.Portal>
@@ -162,7 +176,9 @@ export function Size(): JSX.Element {
           <Drawer.Content className={styles.content} style={{ width: 200 }}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
           </Drawer.Content>
         </Drawer.Portal>
@@ -191,7 +207,9 @@ export function OpenChildDrawer(): JSX.Element {
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
             <div className={styles.body}>
               <div className="title">Parent Drawer</div>
@@ -240,7 +258,9 @@ export function destroyOnClose(): JSX.Element {
           <Drawer.Content className={styles.content} destroyOnClose={false}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
-              <Drawer.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Drawer.Close>
             <div className={styles.body}>Drawer Content</div>
             <div className={styles.footer}>
@@ -274,17 +294,20 @@ export function destroyOnClose(): JSX.Element {
   );
 }
 
-// function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
-//   return (
-//     <svg
-//       width="2em"
-//       height="2em"
-//       viewBox="0 0 24 24"
-//       fill="currentColor"
-//       xmlns="http://www.w3.org/2000/svg"
-//       {...props}
-//     >
-//       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-//     </svg>
-//   );
-// }
+function CloseIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}

@@ -17,7 +17,9 @@ export function Basic(): JSX.Element {
           <Modal.Backdrop className={styles.backdrop} />
           <Modal.Content className={styles.content}>
             <Modal.Close asChild>
-              <Modal.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Modal.Close>
             <div className={styles.body}>Modal Content</div>
             <div className={styles.footer}>
@@ -59,7 +61,9 @@ export function OnOpenChange(): JSX.Element {
           <Modal.Backdrop className={styles.backdrop} />
           <Modal.Content className={styles.content}>
             <Modal.Close asChild>
-              <Modal.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Modal.Close>
             <div className={styles.body}>Modal Content</div>
             <div className={styles.footer}>
@@ -128,7 +132,9 @@ export function Width(): JSX.Element {
             style={{ ...(isFull ? { width: '100%' } : { width }) }}
           >
             <Modal.Close asChild>
-              <Modal.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Modal.Close>
             <div className={styles.body}>Modal Content</div>
             <div className={styles.footer}>
@@ -189,7 +195,9 @@ export function TopPosition(): JSX.Element {
           <Modal.Backdrop className={styles.backdrop} />
           <Modal.Content className={styles.content} style={{ top }}>
             <Modal.Close asChild>
-              <Modal.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Modal.Close>
             <div className={styles.body}>Modal Content</div>
             <div className={styles.footer}>
@@ -225,7 +233,9 @@ export function Backdrop(): JSX.Element {
           <Modal.Backdrop className={styles.backdrop} preventCloseOnClick />
           <Modal.Content className={styles.content}>
             <Modal.Close asChild>
-              <Modal.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Modal.Close>
             <div className={styles.body}>Modal Content</div>
             <div className={styles.footer}>
@@ -261,7 +271,9 @@ export function DestroyOnClose(): JSX.Element {
           <Modal.Backdrop className={styles.backdrop} />
           <Modal.Content className={styles.content} destroyOnClose={false}>
             <Modal.Close asChild>
-              <Modal.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Modal.Close>
             <div className={styles.body}>Modal Content</div>
             <div className={styles.footer}>
@@ -297,7 +309,9 @@ export function ForceMount(): JSX.Element {
           <Modal.Backdrop className={styles.backdrop} />
           <Modal.Content className={styles.content} forceMount>
             <Modal.Close asChild>
-              <Modal.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Modal.Close>
             <div className={styles.body}>Modal Content</div>
             <div className={styles.footer}>
@@ -340,7 +354,9 @@ export function Container(): JSX.Element {
           <Modal.Backdrop className={styles.backdrop} />
           <Modal.Content className={styles.content}>
             <Modal.Close asChild>
-              <Modal.CloseButton className={styles.closeButton} />
+              <button type="button" className={styles.closeButton}>
+                <CloseIcon />
+              </button>
             </Modal.Close>
             <div className={styles.body}>Modal Content</div>
             <div className={styles.footer}>
@@ -361,5 +377,23 @@ export function Container(): JSX.Element {
         </Modal.Portal>
       </Modal.Root>
     </>
+  );
+}
+
+function CloseIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        fill="currentColor"
+      />
+    </svg>
   );
 }
