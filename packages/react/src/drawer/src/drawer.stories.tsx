@@ -14,7 +14,7 @@ export function Basic(): JSX.Element {
           <button type="button">Open Drawer</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
@@ -61,7 +61,7 @@ export function Placement(): JSX.Element {
           <button type="button">Left</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
@@ -76,7 +76,7 @@ export function Placement(): JSX.Element {
           <button type="button">Top</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
@@ -91,7 +91,7 @@ export function Placement(): JSX.Element {
           <button type="button">Right</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
@@ -106,7 +106,7 @@ export function Placement(): JSX.Element {
           <button type="button">Bottom</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
@@ -128,7 +128,7 @@ export function Size(): JSX.Element {
           <button type="button">60%</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content} style={{ width: '60%' }}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
@@ -143,7 +143,7 @@ export function Size(): JSX.Element {
           <button type="button">20%</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content} style={{ width: '20%' }}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
@@ -158,7 +158,7 @@ export function Size(): JSX.Element {
           <button type="button">200px</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content} style={{ width: 200 }}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
@@ -187,7 +187,7 @@ export function OpenChildDrawer(): JSX.Element {
           <button type="button">Open Drawer</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>
@@ -212,7 +212,7 @@ export function OpenChildDrawer(): JSX.Element {
               }}
             >
               <Drawer.Portal>
-                <Drawer.Backdrop className={styles.backdrop} backdrop />
+                <Drawer.Backdrop className={styles.backdrop} />
                 <Drawer.Content className={styles.content} style={{ width: '20%' }}>
                   <div className={styles.body}>
                     <div className="title">Child Drawer</div>
@@ -236,7 +236,7 @@ export function destroyOnClose(): JSX.Element {
           <button type="button">Open Drawer - destroyOnClose</button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Backdrop className={styles.backdrop} backdrop />
+          <Drawer.Backdrop className={styles.backdrop} />
           <Drawer.Content className={styles.content} destroyOnClose={false}>
             <div className={styles.header}>Title</div>
             <Drawer.Close asChild>

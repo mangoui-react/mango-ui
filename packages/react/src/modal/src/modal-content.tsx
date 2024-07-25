@@ -56,8 +56,8 @@ const ModalContent = React.forwardRef<HTMLDivElement, ModalContentProps>((props,
 
   return (
     <div
-      {...rest}
       data-state={open ? 'open' : 'closed'}
+      {...rest}
       ref={ref}
       role={role}
       style={{

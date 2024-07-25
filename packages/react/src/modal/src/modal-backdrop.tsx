@@ -4,15 +4,15 @@ import { ModalContext } from './modal';
 
 export interface ModalBackdropProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
-   * Modal 의 background. true 일 때 Click 시 close
-   * false 일 때 background 없음. Click 시 close 안 됨
-   * 'static' 이면 background 있고 Click 시 close 안 됨
+   * Modal 의 background.
+   * default는 Click 시 close
+   * true 이면 Click 시 close 안 됨
    */
-  backdrop?: boolean | 'static';
+  preventCloseOnClick?: boolean;
 }
 
 const ModalBackdrop = React.forwardRef<HTMLDivElement, ModalBackdropProps>((props, ref) => {
-  const { backdrop = 'static', onClick, ...rest } = props;
+  const { preventCloseOnClick, onClick, ...rest } = props;
   const { open, handleClose } = React.useContext(ModalContext);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>): void => {
@@ -20,14 +20,14 @@ const ModalBackdrop = React.forwardRef<HTMLDivElement, ModalBackdropProps>((prop
       return;
     }
 
-    if (backdrop === true) {
+    if (!preventCloseOnClick) {
       handleClose();
     }
 
     onClick?.(event);
   };
 
-  if (!open || !backdrop) return null;
+  if (!open) return null;
 
   return <div {...rest} ref={ref} onClick={handleClick} />;
 });

@@ -216,13 +216,13 @@ export function TopPosition(): JSX.Element {
 export function Backdrop(): JSX.Element {
   return (
     <>
-      <h1>backdrop</h1>
+      <h1>preventCloseOnClick</h1>
       <Modal.Root>
         <Modal.Trigger asChild>
           <button type="button">Open Modal</button>
         </Modal.Trigger>
         <Modal.Portal>
-          <Modal.Backdrop className={styles.backdrop} backdrop />
+          <Modal.Backdrop className={styles.backdrop} preventCloseOnClick />
           <Modal.Content className={styles.content}>
             <Modal.Close asChild>
               <Modal.CloseButton className={styles.closeButton} />
