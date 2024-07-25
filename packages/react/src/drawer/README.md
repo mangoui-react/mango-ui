@@ -8,11 +8,11 @@
     <button type="button">Open</button>
   </Drawer.Trigger>
   <Drawer.Portal>
-    <Drawer.Backdrop backdrop />
+    <Drawer.Backdrop />
     <Drawer.Content>
       <Drawer.Header>Title</Drawer.Header>
       <Drawer.Close asChild>
-        <Drawer.CloseButton />
+        <button type="button">Close</button>
       </Drawer.Close>
     </Drawer.Content>
   </Drawer.Portal>
@@ -27,11 +27,11 @@
     <button type="button">Open</button>
   </Drawer.Trigger>
   <Drawer.Portal>
-    <Drawer.Backdrop backdrop />
+    <Drawer.Backdrop />
     <Drawer.Content>
       <Drawer.Header>Title</Drawer.Header>
       <Drawer.Close asChild>
-        <Drawer.CloseButton />
+        <button type="button">Close</button>
       </Drawer.Close>
     </Drawer.Content>
   </Drawer.Portal>
@@ -46,11 +46,11 @@
     <button type="button">Open</button>
   </Drawer.Trigger>
   <Drawer.Portal>
-    <Drawer.Backdrop backdrop />
+    <Drawer.Backdrop />
     <Drawer.Content style={{ width: '60%' }}>
       <Drawer.Header>Title</Drawer.Header>
       <Drawer.Close asChild>
-        <Drawer.CloseButton />
+        <button type="button">Close</button>
       </Drawer.Close>
     </Drawer.Content>
   </Drawer.Portal>
@@ -65,11 +65,11 @@
     <button type="button">Open</button>
   </Drawer.Trigger>
   <Drawer.Portal>
-    <Drawer.Backdrop backdrop />
+    <Drawer.Backdrop />
     <Drawer.Content destroyOnClose={false}>
       <Drawer.Header>Title</Drawer.Header>
       <Drawer.Close asChild>
-        <Drawer.CloseButton />
+        <button type="button">Close</button>
       </Drawer.Close>
     </Drawer.Content>
   </Drawer.Portal>

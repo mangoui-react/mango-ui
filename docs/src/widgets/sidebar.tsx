@@ -173,6 +173,9 @@ export default function SupportSidebar() {
                       </SidebarLink>
                     </li>
                     <li className="mt-3">
+                      <SidebarLink href="/components/drawer">Drawer</SidebarLink>
+                    </li>
+                    <li className="mt-3">
                       <SidebarLink href="/components/button">Button</SidebarLink>
                     </li>
                   </ul>

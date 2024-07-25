@@ -3,7 +3,6 @@ import React from 'react';
 import {
   DrawerBackdrop as MDrawerBackdrop,
   DrawerClose as MDrawerClose,
-  DrawerCloseButton as MDrawerCloseButton,
   DrawerContent as MDrawerContent,
   DrawerPortal as MDrawerPortal,
   DrawerRoot as MDrawerRoot,
@@ -25,7 +24,7 @@ export function DrawerBackdrop({ className, ...props }: DrawerBackdropProps) {
       className={cn(
         'fixed z-[1200] opacity-100',
         'bottom-0 left-0 right-0 top-0',
-        'bg-[rgba(0, 0, 0, 0.5)]',
+        'bg-[#00000080]',
         'animate-[fadein_0.3s]',
         className,
       )}
@@ -39,7 +38,7 @@ export function DrawerContent({ className, ...props }: DrawerContentProps) {
     <MDrawerContent
       {...props}
       className={cn(
-        'fixed z-[1200] rounded-md bg-white',
+        'fixed z-[1200] rounded-md bg-slate-700',
         'mx-auto my-0',
         'bottom-auto left-auto right-auto top-auto',
         'min-h-10 w-[32.5rem] min-w-48',
@@ -60,12 +59,12 @@ export function DrawerContent({ className, ...props }: DrawerContentProps) {
   );
 }
 
-interface DrawerCloseButtonProps
-  extends React.ComponentPropsWithoutRef<typeof MDrawerCloseButton> {}
+interface DrawerCloseButtonProps extends React.ComponentPropsWithoutRef<'button'> {}
 export function DrawerCloseButton({ className, ...props }: DrawerCloseButtonProps) {
   return (
-    <MDrawerCloseButton
+    <button
       {...props}
+      type="button"
       className={cn(
         'absolute bg-transparent',
         'right-0 top-0 p-[0.875rem]',
@@ -74,7 +73,20 @@ export function DrawerCloseButton({ className, ...props }: DrawerCloseButtonProp
         'inline-flex items-center justify-center align-middle',
         className,
       )}
-    />
+    >
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
   );
 }
 

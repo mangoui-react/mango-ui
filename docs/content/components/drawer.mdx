@@ -1,0 +1,412 @@
+---
+title: Drawer
+prevTitle: 'CircularProgress'
+prevSlug: '/components/circular-progress'
+nextTitle: 'Button'
+nextSlug: '/components/button'
+---
+
+# Drawer
+
+<Description>
+  The Drawer component is a sliding panel from the screen's edge, useful for tasks or viewing
+  details without leaving the current page.
+</Description>
+
+<DemoContainer>
+  <DrawerDemo />
+  <DemoCodeBlock component="drawer" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/drawer',
+    yarn: 'yarn add @melio-ui/drawer',
+    pnpm: 'pnpm add @melio-ui/drawer',
+    bun: 'bun add @melio-ui/drawer',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  DrawerRoot,
+  DrawerTrigger,
+  DrawerPortal,
+  DrawerBackdrop,
+  DrawerContent,
+  DrawerClose,
+} from '@melio-ui/drawer';`,
+    global: `import { 
+  DrawerRoot,
+  DrawerTrigger,
+  DrawerPortal,
+  DrawerBackdrop,
+  DrawerContent,
+  DrawerClose,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **DrawerRoot**: All parts of the drawer are included.
+- **DrawerTrigger**: Used to activate or open the Drawer component.
+- **DrawerPortal**: Portal the overlay and content portion into the body.
+- **DrawerBackdrop**: A layer that covers the inactive portion of the view when a dialog box is opened.
+- **DrawerContent**: Includes the content that will be displayed in the open dialog box.
+- **DrawerClose**: The button that closes the dialog.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Drawer } from '@melio-ui/drawer';
+
+<Drawer.Root>
+  <Drawer.Trigger asChild>
+    <button type="button">Open Drawer</button>
+  </Drawer.Trigger>
+  <Drawer.Portal>
+    <Drawer.Backdrop />
+    <Drawer.Content>
+      <Drawer.Close asChild>
+        <button type="button" />
+      </Drawer.Close>
+      <div>Drawer Content</div>
+    </Drawer.Content>
+  </Drawer.Portal>
+</Drawer.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### DrawerRoot
+
+All parts of the drawer are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'open',
+      required: false,
+      type: 'boolean',
+      description: 'Sets whether the drawer is open or closed.',
+    },
+    {
+      name: 'defaultOpen',
+      required: false,
+      type: 'boolean',
+      description:
+        'When first rendered, the drawer is in an opened state. Use when there is no need to control the opened state.',
+    },
+    {
+      name: 'placement',
+      required: false,
+      default: '"right"',
+      type: '"top" | "bottom" | "right" | "left"',
+      description: 'This is the position where the drawer opens.',
+    },
+    {
+      name: 'onOpenChange',
+      required: false,
+      type: '(open: boolean) => void',
+      description:
+        'This is an event handler that is triggered when the open state of the drawer changes.',
+    },
+  ]}
+/>
+
+### DrawerTrigger
+
+Used to activate or open the Drawer component.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+  ]}
+/>
+
+### DrawerPortal
+
+Portal the overlay and content portion into the body.
+
+<PropsTable
+  data={[
+    {
+      name: 'container',
+      required: false,
+      default: 'document.body',
+      type: 'HTMLElement | (() => HTMLElement)',
+      description: 'Specifies the container element to which the content should be portaled.',
+    },
+  ]}
+/>
+
+### DrawerBackdrop
+
+A layer that covers the inactive portion of the view when a dialog box is opened.
+
+<PropsTable
+  data={[
+    {
+      name: 'preventCloseOnClick',
+      required: false,
+      type: 'boolean',
+      description: 'Prevents closing when clicking on backdrop.',
+    },
+  ]}
+/>
+
+### DrawerContent
+
+Includes the content that will be displayed in the open dialog box.
+
+<PropsTable
+  data={[
+    {
+      name: 'destroyOnClose',
+      required: false,
+      default: 'true',
+      type: 'boolean',
+      description: 'Used to ensure that the DOM is removed when closed.',
+    },
+    {
+      name: 'forceMount',
+      required: false,
+      type: 'boolean',
+      description:
+        "Used to ensure that a component is always rendered in the DOM, regardless of its visibility or whether it's conditionally displayed.",
+    },
+    {
+      name: 'closeOnEsc',
+      required: false,
+      default: 'true',
+      type: 'boolean',
+      description: 'Determines whether or not to close when the ESC key is pressed.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+    {
+      attribute: '[data-placement]',
+      values: '"top" | "bottom" | "right" | "left"',
+    },
+  ]}
+/>
+
+### DrawerClose
+
+The button that closes the dialog.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+## Examples
+
+### Placement
+
+```jsx render=true
+function DrawerPlacement() {
+  return (
+    <DrawerRoot placement="left">
+      <DrawerTrigger asChild>
+        <button
+          type="button"
+          style={{
+            border: '1px solid #2e68da',
+            padding: 5,
+            borderRadius: 5,
+            backgroundColor: '#2e539b',
+          }}
+        >
+          Left
+        </button>
+      </DrawerTrigger>
+      <DrawerPortal>
+        <DrawerBackdrop />
+        <DrawerContent>
+          <Title>Title</Title>
+          <DrawerClose asChild>
+            <CloseButton />
+          </DrawerClose>
+        </DrawerContent>
+      </DrawerPortal>
+    </DrawerRoot>
+  );
+}
+
+render(<DrawerPlacement />);
+
+function Title(props) {
+  const { children } = props;
+  return (
+    <div
+      style={{ padding: '1rem 1.5rem', borderBottom: '0.0625rem solid #cccccc', flex: '0 1 auto' }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function CloseButton(props) {
+  return (
+    <button
+      {...props}
+      style={{
+        position: 'absolute',
+        right: 0,
+        top: 0,
+        padding: '0.875rem',
+        cursor: 'pointer',
+      }}
+    >
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  );
+}
+```
+
+### Custom Size
+
+```jsx
+<DrawerRoot>
+  <DrawerTrigger asChild>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #2e68da',
+        padding: 5,
+        borderRadius: 5,
+        backgroundColor: '#2e539b',
+      }}
+    >
+      60%
+    </button>
+  </DrawerTrigger>
+  <DrawerPortal>
+    <DrawerBackdrop />
+    <DrawerContent style={{ width: '60%' }}>
+      <DrawerClose asChild>
+        <button
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: 0,
+            padding: '0.875rem',
+            cursor: 'pointer',
+          }}
+        >
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </DrawerClose>
+    </DrawerContent>
+  </DrawerPortal>
+</DrawerRoot>
+```
+
+### Prevent closing when clicking on the backdrop.
+
+```jsx
+<DrawerRoot>
+  <DrawerTrigger asChild>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #2e68da',
+        padding: 5,
+        borderRadius: 5,
+        backgroundColor: '#2e539b',
+      }}
+    >
+      preventCloseOnClick
+    </button>
+  </DrawerTrigger>
+  <DrawerPortal>
+    <DrawerBackdrop preventCloseOnClick />
+    <DrawerContent>
+      <DrawerClose asChild>
+        <button
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: 0,
+            padding: '0.875rem',
+            cursor: 'pointer',
+          }}
+        >
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </DrawerClose>
+    </DrawerContent>
+  </DrawerPortal>
+</DrawerRoot>
+```
