@@ -21,20 +21,27 @@ export function CircularProgressRoot({ className, ...props }: CircularProgressRo
 
 interface CircularProgressIndicatorProps
   extends React.ComponentPropsWithoutRef<typeof MCircularProgressIndicator> {}
-export function CircularProgressIndicator({ className, ...props }: CircularProgressIndicatorProps) {
+export function CircularProgressIndicator({
+  className,
+  barStyle,
+  ...props
+}: CircularProgressIndicatorProps) {
   return (
     <MCircularProgressIndicator
       {...props}
       className={cn(
         'block',
         'h-full w-full',
-        'data-[state=indeterminate]:animate-[indeterminate_2s_linear_infinite]',
-        '[&>circle:data-[component=bg]]:stroke-slate-500',
-        '[&>circle:data-[component=bar]]:stroke-[#208aff]',
-        '[&data-[state=complete]>circle:data-[component=bar]]:duration-700 [&data-[state=complete]>circle:data-[component=bar]]:ease-linear',
-        '[&data-[state=indeterminate]>circle:data-[component=bar]]:animate-[indeterminateBar_1.5s_linear_infinite]',
+        'data-[state=indeterminate]:animate-[indeterminate-svg_2s_linear_infinite]',
+        '[&>[data-component=bg]]:stroke-slate-500',
+        '[&>[data-component=bar]]:stroke-[#208aff]',
+        //
+        '[&[data-state=complete]>[data-component=bar]]:duration-700 [&[data-state=complete]>[data-component=bar]]:ease-linear',
+        '[&[data-state=loading]>[data-component=bar]]:duration-700 [&[data-state=loading]>[data-component=bar]]:ease-linear',
+        '[&[data-state=indeterminate]>[data-component=bar]]:animate-[indeterminate-bar_1.5s_linear_infinite]',
         className,
       )}
+      barStyle={{ ...barStyle, strokeDashoffset: 66 }}
     />
   );
 }

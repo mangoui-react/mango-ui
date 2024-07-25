@@ -40,16 +40,19 @@ const config: Config = {
         widest: '0.4em',
       },
       keyframes: {
-        indeterminate: {
+        'circle-progress': {
+          '* ': { strokeDashoffset: '66' },
+        },
+        'indeterminate-svg': {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
-        indeterminateBar: {
+        'indeterminate-bar': {
           '0%': { strokeDasharray: '1, 400', strokeDashoffset: '0' },
           '50%': { strokeDasharray: '400, 400', strokeDashoffset: '-100' },
           '100%': { strokeDasharray: '400, 400', strokeDashoffset: '-260' },
         },
-        indeterminate1: {
+        'indeterminate-progress': {
           '0%': { left: '-40%' },
           '100%': { left: '100%' },
         },

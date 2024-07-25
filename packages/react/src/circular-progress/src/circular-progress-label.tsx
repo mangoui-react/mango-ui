@@ -1,19 +1,26 @@
 import React from 'react';
 
+import { getProgressState } from '../../internal/get-progress-state';
+
 import { CircularProgressContext } from './circular-progress';
 
 export interface CircularProgressLabelProps extends React.ComponentPropsWithoutRef<'div'> {}
 
-// TODO: ${value}% 는 제거하는게 좋을 듯... 생각해 보자
 const CircularProgressLabel = React.forwardRef<HTMLDivElement, CircularProgressLabelProps>(
   (props, ref) => {
     const { children, ...rest } = props;
 
-    const { value, max } = React.useContext(CircularProgressContext);
+    const { value, max, indeterminate } = React.useContext(CircularProgressContext);
 
     return (
-      <div {...rest} data-value={value} data-max={max} ref={ref}>
-        {children ?? `${value}%`}
+      <div
+        data-state={getProgressState(value, max, indeterminate)}
+        data-value={value}
+        data-max={max}
+        {...rest}
+        ref={ref}
+      >
+        {children ?? value}
       </div>
     );
   },

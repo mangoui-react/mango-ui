@@ -168,6 +168,11 @@ export default function SupportSidebar() {
                       <SidebarLink href="/components/checkbox">Checkbox</SidebarLink>
                     </li>
                     <li className="mt-3">
+                      <SidebarLink href="/components/circular-progress">
+                        CircularProgress
+                      </SidebarLink>
+                    </li>
+                    <li className="mt-3">
                       <SidebarLink href="/components/button">Button</SidebarLink>
                     </li>
                   </ul>

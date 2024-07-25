@@ -28,7 +28,7 @@ export function ProgressIndicator({ className, ...props }: ProgressIndicatorProp
         'bg-blue-500',
         'transition-transform',
         'data-[state=indeterminate]:absolute data-[state=indeterminate]:min-w-[50%] data-[state=indeterminate]:duration-300',
-        'data-[state=indeterminate]:animate-[indeterminate1_1s_ease_infinite_normal_none_running]',
+        'data-[state=indeterminate]:animate-[indeterminate-progress_1s_ease_infinite_normal_none_running]',
         className,
       )}
     />

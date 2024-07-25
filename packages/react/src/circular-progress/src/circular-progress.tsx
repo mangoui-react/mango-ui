@@ -40,10 +40,10 @@ const CircularProgress = React.forwardRef<HTMLDivElement, CircularProgressProps>
   return (
     <CircularProgressContext.Provider value={contextValue}>
       <div
-        {...rest}
         data-state={getProgressState(value, max, indeterminate)}
         data-value={value}
         data-max={max}
+        {...rest}
         ref={ref}
       >
         {children}

@@ -20,10 +20,10 @@ const CircularProgressIndicator = React.forwardRef<SVGSVGElement, CircularProgre
 
     return (
       <svg
-        {...rest}
         data-state={getProgressState(value, max, indeterminate)}
         data-value={value}
         data-max={max}
+        {...rest}
         viewBox="0 0 100 100"
         ref={ref}
       >

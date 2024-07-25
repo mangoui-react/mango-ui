@@ -1,0 +1,209 @@
+---
+title: CircularProgress
+prevTitle: 'Checkbox'
+prevSlug: '/components/checkbox'
+nextTitle: 'Button'
+nextSlug: '/components/button'
+---
+
+# CircularProgress
+
+<Description>
+  Circular progression is used to indicate the progress of both deterministic and indeterminate
+  processes.
+</Description>
+
+<DemoContainer>
+  <CircularProgressDemo />
+  <DemoCodeBlock component="circular-progress" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/circular-progress',
+    yarn: 'yarn add @melio-ui/circular-progress',
+    pnpm: 'pnpm add @melio-ui/circular-progress',
+    bun: 'bun add @melio-ui/circular-progress',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  CircularProgressRoot,
+  CircularProgressIndicator,
+  CircularProgressLabel,
+} from '@melio-ui/circular-progress';`,
+    global: `import { 
+  CircularProgressRoot,
+  CircularProgressIndicator,
+  CircularProgressLabel,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **CircularProgressRoot**: All parts of the circular-progress are included.
+- **CircularProgressIndicator**: Render the progress indicator. You can style it yourself.
+- **CircularProgressLabel**: Displays progress as text.
+
+### Another way to import
+
+```js
+'use client';
+
+import { CircularProgress } from '@melio-ui/circular-progress';
+
+<CircularProgress.Root>
+  <CircularProgress.Indicator />
+  <CircularProgress.Label>30%</CircularProgress.Label>
+</CircularProgress.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### CircularProgressRoot
+
+All parts of the circular-progress are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'value',
+      required: false,
+      type: 'number',
+      description: 'It is the progress value.',
+    },
+    {
+      name: 'max',
+      required: false,
+      default: '100',
+      type: 'number',
+      description: 'This is the maximum progress value.',
+    },
+    {
+      name: 'indeterminate',
+      required: false,
+      type: 'boolean',
+      description: 'This means that progress is uncertain.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"complete" | "loading" | "indeterminate"',
+    },
+    {
+      attribute: '[data-value]',
+      values: 'The current value',
+    },
+    {
+      attribute: '[data-max]',
+      values: 'The max value',
+    },
+  ]}
+/>
+
+### CircularProgressIndicator
+
+Render the progress indicator. You can style it yourself.
+
+<PropsTable
+  data={[
+    {
+      name: 'strokeWidth',
+      required: false,
+      type: 'number',
+      description: 'strokeWidth property of circle element.',
+    },
+    {
+      name: 'bgStyle',
+      required: false,
+      type: 'React.CSSProperties',
+      description: 'Style of the background circle element.',
+    },
+    {
+      name: 'barStyle',
+      required: false,
+      type: 'React.CSSProperties',
+      description: 'Style of circle element to indicate progress.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"complete" | "loading" | "indeterminate"',
+    },
+    {
+      attribute: '[data-value]',
+      values: 'The current value',
+    },
+    {
+      attribute: '[data-max]',
+      values: 'The max value',
+    },
+  ]}
+/>
+
+### CircularProgressLabel
+
+Displays progress as text.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"complete" | "loading" | "indeterminate"',
+    },
+    {
+      attribute: '[data-value]',
+      values: 'The current value',
+    },
+    {
+      attribute: '[data-max]',
+      values: 'The max value',
+    },
+  ]}
+/>
+
+## Examples
+
+### Indeterminate
+
+```jsx
+<CircularProgressRoot indeterminate>
+  <CircularProgressIndicator />
+</CircularProgressRoot>
+```
+
+### Custom Indicator
+
+```jsx
+<CircularProgressRoot value={60}>
+  <CircularProgressIndicator
+    strokeWidth={15}
+    bgStyle={{ stroke: '#d9d9d9' }}
+    barStyle={{ stroke: '#ff4d4f' }}
+  />
+</CircularProgressRoot>
+```
+
+### Max
+
+```jsx
+<CircularProgressRoot value={80} max={200}>
+  <CircularProgressIndicator />
+  <CircularProgressLabel />
+</CircularProgressRoot>
+```
