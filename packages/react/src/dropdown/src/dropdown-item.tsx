@@ -22,12 +22,12 @@ const DropdownItem = React.forwardRef<HTMLDivElement, DropdownItemProps>((props,
 
   return (
     <div
+      data-disabled={disabled ? '' : undefined}
+      {...rest}
       ref={ref}
       role="menuitem"
       tabIndex={-1}
-      data-disabled={disabled ? '' : undefined}
       onClick={handleClick}
-      {...rest}
     >
       {children}
     </div>

@@ -8,7 +8,7 @@ export interface ModalPortalProps {
    * Modal 이 mount 되는 node
    * @default document.body
    */
-  container?: HTMLElement | (() => HTMLElement);
+  container?: HTMLElement | (() => HTMLElement); // TODO: ContentType 사용
 }
 
 export default function ModalPortal(props: ModalPortalProps): JSX.Element {

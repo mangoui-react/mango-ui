@@ -1,9 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-export type ContainerType = HTMLElement | (() => HTMLElement | null) | null;
+// TODO: 타입은 아래로 바꿨을때 문제 없는지 확인해 보자
+// export type ContainerType = HTMLElement | (() => HTMLElement | null) | null;
+export type ContainerType = HTMLElement | (() => HTMLElement);
+type UsePortalParams = ContainerType | null;
 
-export function usePortal(container?: ContainerType): {
+export function usePortal(container?: UsePortalParams): {
   Portal: React.FC<{ children: React.ReactNode }>;
   target: Element | HTMLElement | undefined;
 } {

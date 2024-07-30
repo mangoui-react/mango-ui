@@ -1,0 +1,351 @@
+---
+title: Dropdown
+prevTitle: 'Drawer'
+prevSlug: '/components/drawer'
+nextTitle: 'Button'
+nextSlug: '/components/button'
+---
+
+# Dropdown
+
+<Description>
+  Displays a menu to the user, offering a series of actions or functions that can be executed by
+  clicking buttons.
+</Description>
+
+<DemoContainer>
+  <DropdownDemo />
+  <DemoCodeBlock component="dropdown" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/dropdown',
+    yarn: 'yarn add @melio-ui/dropdown',
+    pnpm: 'pnpm add @melio-ui/dropdown',
+    bun: 'bun add @melio-ui/dropdown',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  DropdownRoot,
+  DropdownTrigger,
+  DropdownPortal,
+  DropdownContent,
+  DropdownItem,
+  DropdownClose,
+} from '@melio-ui/dropdown';`,
+    global: `import { 
+  DropdownRoot,
+  DropdownTrigger,
+  DropdownPortal,
+  DropdownContent,
+  DropdownItem,
+  DropdownClose,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **DropdownRoot**: All parts of the dropdown are included.
+- **DropdownTrigger**: Used to activate or open the Dropdown component.
+- **DropdownPortal**: Portal the overlay and content portion into the body.
+- **DropdownContent**: Includes the content that will be displayed in the open menu box.
+- **DropdownItem**: It represents a single item in a dropdown menu and can be customized with labels, icons, and actions.
+- **DropdownClose**: The button that closes the menu.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Dropdown } from '@melio-ui/dropdown';
+
+<Dropdown.Root>
+  <Dropdown.Trigger asChild>
+    <button type="button">Dropdown</button>
+  </Dropdown.Trigger>
+  <Dropdown.Portal>
+    <Dropdown.Content>
+      <Dropdown.Item>DropdownItem - 1</Dropdown.Item>
+      <Dropdown.Item>DropdownItem - 2</Dropdown.Item>
+      <Dropdown.Item>DropdownItem - 3</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown.Portal>
+</Dropdown.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### DropdownRoot
+
+All parts of the dropdown are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'open',
+      required: false,
+      type: 'boolean',
+      description: 'Sets whether the dropdown menu is open or closed.',
+    },
+    {
+      name: 'defaultOpen',
+      required: false,
+      type: 'boolean',
+      description:
+        'When first rendered, the dropdown menu is in an opened state. Use when there is no need to control the opened state.',
+    },
+    {
+      name: 'onOpenChange',
+      required: false,
+      type: '(open: boolean) => void',
+      description:
+        'This is an event handler that is triggered when the open state of the dropdown menu changes.',
+    },
+  ]}
+/>
+
+### DropdownTrigger
+
+Used to activate or open the Dropdown component.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+  ]}
+/>
+
+### DropdownPortal
+
+Portal the overlay and content portion into the body.
+
+<PropsTable
+  data={[
+    {
+      name: 'container',
+      required: false,
+      default: 'document.body',
+      type: 'HTMLElement | (() => HTMLElement)',
+      description: 'Specifies the container element to which the content should be portaled.',
+    },
+  ]}
+/>
+
+### DropdownContent
+
+Includes the content that will be displayed in the open menu box.
+
+<PropsTable
+  data={[
+    {
+      name: 'triggerPosition',
+      required: false,
+      default: '{ vertical: "bottom", horizontal: "left" }',
+      type: (
+        <>
+          TriggerPositionValue
+          <br />
+          <br />
+          {
+            vertical: 'top' | 'center' | 'bottom';
+            horizontal: 'left' | 'center' | 'right';
+          }
+        </>
+      ),
+      description: 'The location of the trigger where the menu will appear.',
+    },
+    {
+      name: 'contentPosition',
+      required: false,
+      type: (
+        <>
+          TriggerPositionValue
+          <br />
+          <br />
+          {
+            vertical: 'top' | 'center' | 'bottom';
+            horizontal: 'left' | 'center' | 'right';
+          }
+        </>
+      ),
+      description: 'The location of the menu content where the menu will appear.',
+    },
+    {
+      name: 'position',
+      required: false,
+      type: (
+        <>
+          PositionValue
+          <br />
+          <br />
+          {
+            left: number;
+            top: number;
+          }
+        </>
+      ),
+      description: 'Specifies the location where the menu will be displayed using coordinates.',
+    },
+    {
+      name: 'zIndex',
+      required: false,
+      type: 'number',
+      description: 'A property that controls the stacking order of elements on a web page.(CSS z-index)',
+    },
+    {
+      name: 'destroyOnClose',
+      required: false,
+      default: 'true',
+      type: 'boolean',
+      description: 'Used to ensure that the DOM is removed when closed.',
+    },
+    {
+      name: 'forceMount',
+      required: false,
+      type: 'boolean',
+      description:
+        "Used to ensure that a component is always rendered in the DOM, regardless of its visibility or whether it's conditionally displayed.",
+    },
+    {
+      name: 'closeOnEsc',
+      required: false,
+      default: 'true',
+      type: 'boolean',
+      description: 'Determines whether or not to close when the ESC key is pressed.',
+    },
+    {
+      name: 'closeOnBlur',
+      required: false,
+      default: 'true',
+      type: 'boolean',
+      description: 'Determines whether to close on blur.',
+    },
+    {
+      name: 'closeOnItemClick',
+      required: false,
+      default: 'true',
+      type: 'boolean',
+      description: 'Determines whether the menu item will close when clicked.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+  ]}
+/>
+
+### DropdownItem
+
+It represents a single item in a dropdown menu and can be customized with labels, icons, and actions.
+
+<PropsTable
+  data={[
+    {
+      name: 'disabled',
+      required: false,
+      type: 'boolean',
+      description: 'Determines whether the menu item is inactive.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+### DropdownClose
+
+The button that closes the menu.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+## Examples
+
+### Position of dropdown menu
+
+```jsx
+<Dropdown.Root>
+  <Dropdown.Trigger asChild>
+    <button type="button">Dropdown</button>
+  </Dropdown.Trigger>
+  <Dropdown.Portal>
+    <Dropdown.Content
+      triggerPosition={{ vertical: 'bottom', horizontal: 'right' }}
+      contentPosition={{ vertical: 'top', horizontal: 'left' }}
+    >
+      <Dropdown.Item>DropdownItem - 1</Dropdown.Item>
+      <Dropdown.Item>DropdownItem - 2</Dropdown.Item>
+      <Dropdown.Item>DropdownItem - 3</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown.Portal>
+</Dropdown.Root>
+```
+
+### Custom Dropdown Menu
+
+```jsx
+<Dropdown.Root>
+  <Dropdown.Trigger asChild>
+    <button type="button">Dropdown</button>
+  </Dropdown.Trigger>
+  <Dropdown.Portal>
+    <Dropdown.Content>
+      <div style={{ padding: '0.625rem 0.3125rem' }}>
+        <div style={{ paddingLeft: '0.3125rem', paddingBottom: '0.5rem' }}>제목1</div>
+        <Dropdown.Item>DropdownItem - 1</Dropdown.Item>
+        <Dropdown.Item>DropdownItem - 2</Dropdown.Item>
+        <Dropdown.Item>DropdownItem - 3</Dropdown.Item>
+      </div>
+      <div style={{ padding: '0.625rem 0.3125rem' }}>
+        <div style={{ paddingLeft: '0.3125rem', paddingBottom: '0.5rem' }}>제목2</div>
+        <Dropdown.Item>DropdownItem - 4</Dropdown.Item>
+        <Dropdown.Item>DropdownItem - 5</Dropdown.Item>
+        <Dropdown.Item>DropdownItem - 6</Dropdown.Item>
+      </div>
+    </Dropdown.Content>
+  </Dropdown.Portal>
+</Dropdown.Root>
+```

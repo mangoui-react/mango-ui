@@ -41,7 +41,6 @@ export interface PopoverContentProps extends React.ComponentPropsWithoutRef<'div
    */
   closeOnEsc?: boolean;
   closeOnBlur?: boolean;
-  onEntered?: () => void;
 }
 
 const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>((props, ref) => {
@@ -59,7 +58,6 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>((pr
     children,
     onBlur,
     onKeyDown,
-    onEntered,
     ...rest
   } = props;
   const { open, triggerRef, handleClose } = React.useContext(PopoverContext);
