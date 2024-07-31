@@ -8,7 +8,7 @@ const NumberInputButtonGroup = React.forwardRef<HTMLSpanElement, NumberInputButt
     const { children, ...rest } = props;
 
     return (
-      <span ref={ref} {...rest}>
+      <span {...rest} ref={ref}>
         {children}
       </span>
     );

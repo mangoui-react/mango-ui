@@ -1,0 +1,236 @@
+---
+title: NumberInput
+prevTitle: 'Modal'
+prevSlug: '/components/modal'
+nextTitle: 'Button'
+nextSlug: '/components/button'
+---
+
+# NumberInput
+
+<Description>
+  The NumberInput component is like the Input component but includes controls to adjust a numeric
+  value.
+</Description>
+
+<DemoContainer>
+  <NumberInputDemo />
+  <DemoCodeBlock component="number-input" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/number-input',
+    yarn: 'yarn add @melio-ui/number-input',
+    pnpm: 'pnpm add @melio-ui/number-input',
+    bun: 'bun add @melio-ui/number-input',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  NumberInputRoot,
+  NumberInputField,
+  NumberInputButtonGroup,
+  NumberInputPlus,
+  NumberInputMinus,
+} from '@melio-ui/number-input';`,
+    global: `import { 
+  NumberInputRoot,
+  NumberInputField,
+  NumberInputButtonGroup,
+  NumberInputPlus,
+  NumberInputMinus,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **NumberInputRoot**: All parts of the number input are included.
+- **NumberInputField**: The input field itself.
+- **NumberInputButtonGroup**: A wrapper for the input's increment and decrement buttons.
+- **NumberInputPlus**: This button increases the input value.
+- **NumberInputMinus**: This button decreases the input value.
+
+### Another way to import
+
+```js
+'use client';
+
+import { NumberInput } from '@melio-ui/number-input';
+
+<NumberInput.Root>
+  <NumberInput.Field />
+  <NumberInput.ButtonGroup>
+    <NumberInput.Plus />
+    <NumberInput.Minus />
+  </NumberInput.ButtonGroup>
+</NumberInput.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### NumberInputRoot
+
+All parts of the number input are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'value',
+      required: false,
+      type: (
+        <>
+          NumberInputValue
+          <br />
+          <br />
+          number | null 
+        </br>
+      ),
+      description: 'The number input value.',
+    },
+    {
+      name: 'defaultValue',
+      required: false,
+      type: (
+        <>
+          NumberInputValue
+          <br />
+          <br />
+          number | null 
+        </br>
+      ),
+      description: 'The initial value of the number input when first rendered, for use when state control isn't needed.',
+    },
+    {
+      name: 'disabled',
+      required: false,
+      type: 'boolean',
+      description: 'Determines if the input field and buttons are disabled.',
+    },
+    {
+      name: 'min',
+      required: false,
+      default: '-Infinity',
+      type: 'number',
+      description: 'Minimum value of number input.',
+    },
+    {
+      name: 'max',
+      required: false,
+      default: 'Infinity',
+      type: 'number',
+      description: 'Maximum value for numeric input.',
+    },
+    {
+      name: 'step',
+      required: false,
+      default: '1',
+      type: 'number',
+      description: 'Steps used to increase or decrease values.',
+    },
+    {
+      name: 'onValueChange',
+      required: false,
+      type: '(value: NumberInputValue) => void',
+      description: 'An event handler that is called when the value changes.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+    {
+      attribute: '[data-readonly]',
+      values: 'Visible when read-only',
+    },
+  ]}
+/>
+
+### NumberInputField
+
+The input field itself.
+
+### NumberInputButtonGroup
+
+A wrapper for the input's increment and decrement buttons.
+
+### NumberInputPlus
+
+This button increases the input value.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+### NumberInputMinus
+
+This button decreases the input value.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+## Examples
+
+### Set the minimum and maximum values
+
+```jsx
+<NumberInputRoot min={0} max={100} defaultValue={50}>
+  <NumberInputField />
+  <NumberInputButtonGroup>
+    <NumberInputPlus />
+    <NumberInputMinus />
+  </NumberInputButtonGroup>
+</NumberInputRoot>
+```
+
+### Set step size
+
+```jsx
+<NumberInputRoot step={5} min={0} max={50} defaultValue={20}>
+  <NumberInputField />
+  <NumberInputButtonGroup>
+    <NumberInputPlus />
+    <NumberInputMinus />
+  </NumberInputButtonGroup>
+</NumberInputRoot>
+```
+
+### Custom Style
+
+```jsx
+<NumberInputRoot>
+  <NumberInputField style={{ fontSize: '0.75rem', height: '1.5rem' }} />
+  <NumberInputButtonGroup style={{ height: '1.5rem' }}>
+    <NumberInputPlus style={{ fontSize: '0.75rem', height: '0.75rem' }} />
+    <NumberInputMinus style={{ fontSize: '0.75rem', height: '0.75rem' }} />
+  </NumberInputButtonGroup>
+</NumberInputRoot>
+```

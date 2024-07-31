@@ -218,10 +218,10 @@ const NumberInput = React.forwardRef<HTMLDivElement, NumberInputProps>((props, r
   return (
     <NumberInputContext.Provider value={contextValue}>
       <div
-        ref={ref}
         data-disabled={disabled ? '' : undefined}
         data-readonly={readOnly ? '' : undefined}
         {...rest}
+        ref={ref}
       >
         {children}
       </div>

@@ -43,6 +43,7 @@ const NumberInputField = React.forwardRef<HTMLInputElement, NumberInputFieldProp
 
   return (
     <input
+      {...rest}
       ref={ref}
       name={name}
       value={Number.isNaN(value) ? '' : value?.toString() ?? ''}
@@ -51,7 +52,6 @@ const NumberInputField = React.forwardRef<HTMLInputElement, NumberInputFieldProp
       onChange={handleChange}
       onBlur={handleBlur}
       onKeyDown={handleKeyDown}
-      {...rest}
     />
   );
 });

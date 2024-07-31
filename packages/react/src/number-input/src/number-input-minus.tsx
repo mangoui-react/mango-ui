@@ -28,11 +28,11 @@ const NumberInputMinus = React.forwardRef<HTMLButtonElement, NumberInputMinusPro
 
     return (
       <Component
+        {...rest}
         ref={ref}
         type="button"
         disabled={disabled ?? disabledMinusButton}
         onClick={handleClick}
-        {...rest}
       >
         {children ?? <ArrowDownIcon />}
       </Component>

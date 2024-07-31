@@ -27,11 +27,11 @@ const NumberInputPlus = React.forwardRef<HTMLButtonElement, NumberInputPlusProps
 
   return (
     <Component
+      {...rest}
       ref={ref}
       type="button"
       disabled={disabled ?? disabledPlusButton}
       onClick={handleClick}
-      {...rest}
     >
       {children ?? <ArrowUpIcon />}
     </Component>
