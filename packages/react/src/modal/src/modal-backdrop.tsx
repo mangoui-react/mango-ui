@@ -4,9 +4,9 @@ import { ModalContext } from './modal';
 
 export interface ModalBackdropProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
-   * Modal 의 background.
-   * default는 Click 시 close
-   * true 이면 Click 시 close 안 됨
+   * Prevents closing when clicking on backdrop.
+   * default is closing when clicking.
+   * if true, do not close when clicking.
    */
   preventCloseOnClick?: boolean;
 }

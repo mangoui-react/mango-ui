@@ -179,6 +179,9 @@ export default function SupportSidebar() {
                       <SidebarLink href="/components/dropdown">Dropdown</SidebarLink>
                     </li>
                     <li className="mt-3">
+                      <SidebarLink href="/components/modal">Modal</SidebarLink>
+                    </li>
+                    <li className="mt-3">
                       <SidebarLink href="/components/button">Button</SidebarLink>
                     </li>
                   </ul>

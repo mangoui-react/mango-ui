@@ -1,0 +1,396 @@
+---
+title: Modal
+prevTitle: 'Dropdown'
+prevSlug: '/components/dropdown'
+nextTitle: 'Button'
+nextSlug: '/components/button'
+---
+
+# Modal
+
+<Description>
+  A modal is a dialog box that overlays the main content to focus the user's attention.
+</Description>
+
+<DemoContainer>
+  <ModalDemo />
+  <DemoCodeBlock component="modal" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/modal',
+    yarn: 'yarn add @melio-ui/modal',
+    pnpm: 'pnpm add @melio-ui/modal',
+    bun: 'bun add @melio-ui/modal',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  ModalRoot,
+  ModalTrigger,
+  ModalPortal,
+  ModalBackdrop,
+  ModalContent,
+  ModalClose,
+} from '@melio-ui/modal';`,
+    global: `import { 
+  ModalRoot,
+  ModalTrigger,
+  ModalPortal,
+  ModalBackdrop,
+  ModalContent,
+  ModalClose,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **ModalRoot**: All parts of the modal are included.
+- **ModalTrigger**: Used to activate or open the Modal component.
+- **ModalPortal**: Portal the overlay and content portion into the body.
+- **ModalBackdrop**: A layer that covers the inactive portion of the view when a dialog box is opened.
+- **ModalContent**: Includes the content that will be displayed in the open dialog box.
+- **ModalClose**: The button that closes the dialog.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Modal } from '@melio-ui/modal';
+
+<Modal.Root>
+  <Modal.Trigger asChild>
+    <button type="button">Open Modal</button>
+  </Modal.Trigger>
+  <Modal.Portal>
+    <Modal.Backdrop />
+    <Modal.Content>
+      <Modal.Close asChild>
+        <button type="button" />
+      </Modal.Close>
+      <div>Modal Content</div>
+    </Modal.Content>
+  </Modal.Portal>
+</Modal.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### ModalRoot
+
+All parts of the modal are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'open',
+      required: false,
+      type: 'boolean',
+      description: 'Sets whether the drawer is open or closed.',
+    },
+    {
+      name: 'defaultOpen',
+      required: false,
+      type: 'boolean',
+      description:
+        'When first rendered, the drawer is in an opened state. Use when there is no need to control the opened state.',
+    },
+    {
+      name: 'onOpenChange',
+      required: false,
+      type: '(open: boolean) => void',
+      description:
+        'This is an event handler that is triggered when the open state of the drawer changes.',
+    },
+  ]}
+/>
+
+### ModalTrigger
+
+Used to activate or open the Modal component.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+  ]}
+/>
+
+### ModalPortal
+
+Portal the overlay and content portion into the body.
+
+<PropsTable
+  data={[
+    {
+      name: 'container',
+      required: false,
+      default: 'document.body',
+      type: 'HTMLElement | (() => HTMLElement)',
+      description: 'Specifies the container element to which the content should be portaled.',
+    },
+  ]}
+/>
+
+### ModalBackdrop
+
+A layer that covers the inactive portion of the view when a dialog box is opened.
+
+<PropsTable
+  data={[
+    {
+      name: 'preventCloseOnClick',
+      required: false,
+      type: 'boolean',
+      description: 'Prevents closing when clicking on backdrop.',
+    },
+  ]}
+/>
+
+### ModalContent
+
+Includes the content that will be displayed in the open dialog box.
+
+<PropsTable
+  data={[
+    {
+      name: 'destroyOnClose',
+      required: false,
+      default: 'true',
+      type: 'boolean',
+      description: 'Used to ensure that the DOM is removed when closed.',
+    },
+    {
+      name: 'forceMount',
+      required: false,
+      type: 'boolean',
+      description:
+        "Used to ensure that a component is always rendered in the DOM, regardless of its visibility or whether it's conditionally displayed.",
+    },
+    {
+      name: 'closeOnEsc',
+      required: false,
+      default: 'true',
+      type: 'boolean',
+      description: 'Determines whether or not to close when the ESC key is pressed.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+  ]}
+/>
+
+### ModalClose
+
+The button that closes the dialog.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+## Examples
+
+### Position
+
+```jsx
+<ModalRoot>
+  <ModalTrigger asChild>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #2e68da',
+        padding: 5,
+        borderRadius: 5,
+        backgroundColor: '#2e539b',
+      }}
+    >
+      Open Modal
+    </button>
+  </ModalTrigger>
+  <ModalPortal>
+    <ModalBackdrop />
+    <ModalContent style={{ top: 200 }}>
+      <ModalClose asChild>
+        <button type="button">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </ModalClose>
+      <div>Modal Content</div>
+      <div>
+        <ModalClose asChild>
+          <button
+            type="button"
+            style={{
+              color: '#208aff',
+              backgroundColor: 'transparent',
+              marginRight: 3,
+            }}
+          >
+            Close
+          </button>
+        </ModalClose>
+      </div>
+    </ModalContent>
+  </ModalPortal>
+</ModalRoot>
+```
+
+### Custom Size
+
+```jsx
+<ModalRoot>
+  <ModalTrigger asChild>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #2e68da',
+        padding: 5,
+        borderRadius: 5,
+        backgroundColor: '#2e539b',
+      }}
+    >
+      Open Modal
+    </button>
+  </ModalTrigger>
+  <ModalPortal>
+    <ModalBackdrop />
+    <ModalContent style={{ width: 500 }}>
+      <ModalClose asChild>
+        <button type="button">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </ModalClose>
+      <div>Modal Content</div>
+      <div>
+        <ModalClose asChild>
+          <button
+            type="button"
+            style={{
+              color: '#208aff',
+              backgroundColor: 'transparent',
+              marginRight: 3,
+            }}
+          >
+            Close
+          </button>
+        </ModalClose>
+      </div>
+    </ModalContent>
+  </ModalPortal>
+</ModalRoot>
+```
+
+### Prevent closing when clicking on the backdrop.
+
+```jsx
+<ModalRoot>
+  <ModalTrigger asChild>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #2e68da',
+        padding: 5,
+        borderRadius: 5,
+        backgroundColor: '#2e539b',
+      }}
+    >
+      Open Modal
+    </button>
+  </ModalTrigger>
+  <ModalPortal>
+    <ModalBackdrop preventCloseOnClick />
+    <ModalContent>
+      <ModalClose asChild>
+        <button type="button">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </ModalClose>
+      <div>Modal Content</div>
+      <div>
+        <ModalClose asChild>
+          <button
+            type="button"
+            style={{
+              color: '#208aff',
+              backgroundColor: 'transparent',
+              marginRight: 3,
+            }}
+          >
+            Close
+          </button>
+        </ModalClose>
+      </div>
+    </ModalContent>
+  </ModalPortal>
+</ModalRoot>
+```
