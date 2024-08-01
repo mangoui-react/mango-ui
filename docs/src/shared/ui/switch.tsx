@@ -72,7 +72,7 @@ export function SwitchThumb({ className, ...props }: SwitchThumbProps) {
   );
 }
 
-export const Popover = {
+export const Switch = {
   Root: SwitchRoot,
   Label: SwitchLabel,
   Track: SwitchTrack,

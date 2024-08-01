@@ -10,6 +10,12 @@
   animation: fadein 0.3s;
 }
 
+.modal-trigger {
+  border: 0.0625rem solid rgba(255, 255, 255, 0.35);
+  border-radius: 0.25rem;
+  padding: 0.3125rem;
+}
+
 .modal-content {
   position: fixed;
   top: 1.875rem;
@@ -19,7 +25,7 @@
   width: 32.5rem;
   min-width: 12.5rem;
   min-height: 2.625rem;
-  background-color: #ffffff;
+  background-color: #364664;
   z-index: 1200;
   border-radius: 0.375rem;
   animation: fadein 0.3s;
@@ -47,7 +53,7 @@
 
 .modal-header {
   padding: 1rem 1.5rem;
-  border-bottom: 0.0625rem solid #cccccc;
+  /* border-bottom: 0.0313rem solid #807e7e; */
 }
 
 .modal-body {
@@ -57,9 +63,9 @@
 }
 
 .modal-footer {
-  padding: 0.625rem 1rem;
+  padding: 1rem 1.5rem;
   text-align: right;
-  border-top: 0.0625rem solid #cccccc;
+  /* border-top: 0.0313rem solid #807e7e; */
 }
 
 @keyframes fadein {

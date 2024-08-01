@@ -23,7 +23,7 @@ export function NumberInputField({ className, ...props }: NumberInputFieldProps)
       className={cn(
         'relative inline-block h-8 w-full min-w-0',
         'border border-slate-700',
-        'box-border bg-slate-500',
+        'box-border bg-slate-600',
         'text-base text-inherit',
         'px-2 py-1 leading-none',
         'focus:border focus:border-blue-400 focus:shadow-blue-800 focus:outline-0',

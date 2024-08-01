@@ -69,7 +69,7 @@ export function TabsContent({ className, ...props }: TabsContentProps) {
   );
 }
 
-export const Popover = {
+export const Tabs = {
   Root: TabsRoot,
   List: TabsList,
   Tab: TabsTab,

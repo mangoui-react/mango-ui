@@ -8,7 +8,9 @@ export default function PopoverDemo() {
   return (
     <PopoverRoot>
       <PopoverTrigger asChild>
-        <button type="button">Open Popover</button>
+        <button type="button" className="popover-trigger">
+          Open Popover
+        </button>
       </PopoverTrigger>
       <PopoverPortal>
         <PopoverContent className="popover-content">

@@ -104,7 +104,7 @@ export function StepsSeparator({ className, ...props }: StepsSeparatorProps) {
   );
 }
 
-export const Popover = {
+export const Steps = {
   Root: StepsRoot,
   Step: StepsStep,
   Indicator: StepsIndicator,

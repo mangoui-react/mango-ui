@@ -14,14 +14,7 @@ export default function DropdownDemo() {
   return (
     <DropdownRoot>
       <DropdownTrigger asChild>
-        <button
-          type="button"
-          style={{
-            border: '1px solid #fff',
-            padding: 5,
-            borderRadius: 5,
-          }}
-        >
+        <button type="button" className="dropdown-trigger">
           Dropdown
         </button>
       </DropdownTrigger>

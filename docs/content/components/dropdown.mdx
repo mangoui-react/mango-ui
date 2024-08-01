@@ -316,7 +316,16 @@ The button that closes the menu.
 ```jsx
 <DropdownRoot>
   <DropdownTrigger asChild>
-    <button type="button">Dropdown</button>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #475569',
+        borderRadius: 5,
+        padding: 10,
+      }}
+    >
+      Dropdown
+    </button>
   </DropdownTrigger>
   <DropdownPortal>
     <DropdownContent
@@ -336,18 +345,27 @@ The button that closes the menu.
 ```jsx
 <DropdownRoot>
   <DropdownTrigger asChild>
-    <button type="button">Dropdown</button>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #475569',
+        borderRadius: 5,
+        padding: 10,
+      }}
+    >
+      Dropdown
+    </button>
   </DropdownTrigger>
   <DropdownPortal>
     <DropdownContent>
       <div style={{ padding: '0.625rem 0.3125rem' }}>
-        <div style={{ paddingLeft: '0.3125rem', paddingBottom: '0.5rem' }}>제목1</div>
+        <div style={{ paddingLeft: '0.3125rem', paddingBottom: '0.5rem' }}>Title 1</div>
         <DropdownItem>DropdownItem - 1</DropdownItem>
         <DropdownItem>DropdownItem - 2</DropdownItem>
         <DropdownItem>DropdownItem - 3</DropdownItem>
       </div>
       <div style={{ padding: '0.625rem 0.3125rem' }}>
-        <div style={{ paddingLeft: '0.3125rem', paddingBottom: '0.5rem' }}>제목2</div>
+        <div style={{ paddingLeft: '0.3125rem', paddingBottom: '0.5rem' }}>Title 2</div>
         <DropdownItem>DropdownItem - 4</DropdownItem>
         <DropdownItem>DropdownItem - 5</DropdownItem>
         <DropdownItem>DropdownItem - 6</DropdownItem>

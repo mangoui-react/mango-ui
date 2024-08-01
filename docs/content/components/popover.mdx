@@ -277,7 +277,16 @@ The button that closes the menu.
 ```jsx
 <PopoverRoot>
   <PopoverTrigger asChild>
-    <button type="button">Open Popover</button>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #475569',
+        borderRadius: 5,
+        padding: 10,
+      }}
+    >
+      Open Popover
+    </button>
   </PopoverTrigger>
   <PopoverPortal>
     <PopoverContent
@@ -292,20 +301,63 @@ The button that closes the menu.
 
 ### Click the button to close
 
-```jsx
-<PopoverRoot>
-  <PopoverTrigger asChild>
-    <button type="button">Open Popover</button>
-  </PopoverTrigger>
-  <PopoverPortal>
-    <PopoverContent closeOnBlur={false}>
-      <div style={{ padding: 10, display: 'flex', gap: 10, alignItems: 'center' }}>
-        This is a Popover Content
-        <PopoverClose asChild>
-          <button type="button">Close</button>
-        </PopoverClose>
-      </div>
-    </PopoverContent>
-  </PopoverPortal>
-</PopoverRoot>
+```jsx render=true
+function PopoverCloseButton() {
+  return (
+    <PopoverRoot>
+      <PopoverTrigger asChild>
+        <button
+          type="button"
+          style={{
+            border: '1px solid #475569',
+            borderRadius: 5,
+            padding: 10,
+          }}
+        >
+          Open Popover
+        </button>
+      </PopoverTrigger>
+      <PopoverPortal>
+        <PopoverContent closeOnBlur={false}>
+          <div style={{ padding: 10, display: 'flex', gap: 10, alignItems: 'center' }}>
+            This is a Popover Content
+            <PopoverClose asChild>
+              <CloseIconButton />
+            </PopoverClose>
+          </div>
+        </PopoverContent>
+      </PopoverPortal>
+    </PopoverRoot>
+  );
+}
+
+render(<PopoverCloseButton />);
+
+function CloseIconButton(props) {
+  return (
+    <button
+      {...props}
+      type="button"
+      style={{
+        border: '1px solid #475569',
+        borderRadius: 5,
+        padding: 5,
+        backgroundColor: '#5e6c80',
+      }}
+    >
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  );
+}
 ```

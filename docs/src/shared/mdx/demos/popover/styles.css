@@ -1,3 +1,9 @@
+.popover-trigger {
+  border: 0.0625rem solid rgba(255, 255, 255, 0.35);
+  border-radius: 0.25rem;
+  padding: 0.3125rem;
+}
+
 .popover-content {
   background-color: rgb(45, 55, 72);
   border: 0.0625rem solid rgba(255, 255, 255, 0.35);
