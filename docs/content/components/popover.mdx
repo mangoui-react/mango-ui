@@ -1,31 +1,28 @@
 ---
-title: Dropdown
-prevTitle: 'Drawer'
-prevSlug: '/components/drawer'
-nextTitle: 'Modal'
-nextSlug: '/components/modal'
+title: Popover
+prevTitle: 'NumberInput'
+prevSlug: '/components/number-input'
+nextTitle: 'Progress'
+nextSlug: '/components/progress'
 ---
 
-# Dropdown
+# Popover
 
-<Description>
-  Displays a menu to the user, offering a series of actions or functions that can be executed by
-  clicking buttons.
-</Description>
+<Description>A popover is a floating non-modal dialog box.</Description>
 
 <DemoContainer>
-  <DropdownDemo />
-  <DemoCodeBlock component="dropdown" />
+  <PopoverDemo />
+  <DemoCodeBlock component="popover" />
 </DemoContainer>
 
 ## Installation
 
 <PackageManagers
   command={{
-    npm: 'npm i @melio-ui/dropdown',
-    yarn: 'yarn add @melio-ui/dropdown',
-    pnpm: 'pnpm add @melio-ui/dropdown',
-    bun: 'bun add @melio-ui/dropdown',
+    npm: 'npm i @melio-ui/popover',
+    yarn: 'yarn add @melio-ui/popover',
+    pnpm: 'pnpm add @melio-ui/popover',
+    bun: 'bun add @melio-ui/popover',
   }}
 />
 
@@ -34,59 +31,54 @@ nextSlug: '/components/modal'
 <ImportSyntax
   command={{
     individual: `import { 
-  DropdownRoot,
-  DropdownTrigger,
-  DropdownPortal,
-  DropdownContent,
-  DropdownItem,
-  DropdownClose,
-} from '@melio-ui/dropdown';`,
+  PopoverRoot,
+  PopoverTrigger,
+  PopoverPortal,
+  PopoverContent,
+  PopoverClose,
+} from '@melio-ui/popover';`,
     global: `import { 
-  DropdownRoot,
-  DropdownTrigger,
-  DropdownPortal,
-  DropdownContent,
-  DropdownItem,
-  DropdownClose,
+  PopoverRoot,
+  PopoverTrigger,
+  PopoverPortal,
+  PopoverContent,
+  PopoverClose,
 } from '@melio-ui/react';`,
   }}
 />
 
-- **DropdownRoot**: All parts of the dropdown are included.
-- **DropdownTrigger**: Used to activate or open the Dropdown component.
-- **DropdownPortal**: Portal the overlay and content portion into the body.
-- **DropdownContent**: Includes the content that will be displayed in the open menu box.
-- **DropdownItem**: It represents a single item in a dropdown menu and can be customized with labels, icons, and actions.
-- **DropdownClose**: The button that closes the menu.
+- **PopoverRoot**: All parts of the popover are included.
+- **PopoverTrigger**: Used to activate or open the Popover component.
+- **PopoverPortal**: Portal the overlay and content portion into the body.
+- **PopoverContent**: Includes the content that will be displayed in the open menu box.
+- **PopoverClose**: The button that closes the menu.
 
 ### Another way to import
 
 ```js
 'use client';
 
-import { Dropdown } from '@melio-ui/dropdown';
+import { Popover } from '@melio-ui/popover';
 
-<Dropdown.Root>
-  <Dropdown.Trigger asChild>
-    <button type="button">Dropdown</button>
-  </Dropdown.Trigger>
-  <Dropdown.Portal>
-    <Dropdown.Content>
-      <Dropdown.Item>DropdownItem - 1</Dropdown.Item>
-      <Dropdown.Item>DropdownItem - 2</Dropdown.Item>
-      <Dropdown.Item>DropdownItem - 3</Dropdown.Item>
-    </Dropdown.Content>
-  </Dropdown.Portal>
-</Dropdown.Root>;
+<Popover.Root>
+  <Popover.Trigger asChild>
+    <button type="button">Open Popover</button>
+  </Popover.Trigger>
+  <Popover.Portal>
+    <Popover.Content>
+      <div>This is a Popover Content</div>
+    </Popover.Content>
+  </Popover.Portal>
+</Popover.Root>;
 ```
 
 > 'use client' must be used when rendering on the server side.
 
 ## API Reference
 
-### DropdownRoot
+### PopoverRoot
 
-All parts of the dropdown are included.
+All parts of the popover are included.
 
 <PropsTable
   data={[
@@ -94,28 +86,28 @@ All parts of the dropdown are included.
       name: 'open',
       required: false,
       type: 'boolean',
-      description: 'Sets whether the dropdown menu is open or closed.',
+      description: 'Sets whether the popover content is open or closed.',
     },
     {
       name: 'defaultOpen',
       required: false,
       type: 'boolean',
       description:
-        'When first rendered, the dropdown menu is in an opened state. Use when there is no need to control the opened state.',
+        'When first rendered, the popover content is in an opened state. Use when there is no need to control the opened state.',
     },
     {
       name: 'onOpenChange',
       required: false,
       type: '(open: boolean) => void',
       description:
-        'This is an event handler that is triggered when the open state of the dropdown menu changes.',
+        'This is an event handler that is triggered when the open state of the popover content changes.',
     },
   ]}
 />
 
-### DropdownTrigger
+### PopoverTrigger
 
-Used to activate or open the Dropdown component.
+Used to activate or open the Popover component.
 
 <PropsTable
   data={[
@@ -138,7 +130,7 @@ Used to activate or open the Dropdown component.
   ]}
 />
 
-### DropdownPortal
+### PopoverPortal
 
 Portal the overlay and content portion into the body.
 
@@ -154,7 +146,7 @@ Portal the overlay and content portion into the body.
   ]}
 />
 
-### DropdownContent
+### PopoverContent
 
 Includes the content that will be displayed in the open menu box.
 
@@ -250,13 +242,6 @@ Includes the content that will be displayed in the open menu box.
       type: 'boolean',
       description: 'Determines whether to close on blur.',
     },
-    {
-      name: 'closeOnItemClick',
-      required: false,
-      default: 'true',
-      type: 'boolean',
-      description: 'Determines whether the menu item will close when clicked.',
-    },
   ]}
 />
 
@@ -269,31 +254,7 @@ Includes the content that will be displayed in the open menu box.
   ]}
 />
 
-### DropdownItem
-
-It represents a single item in a dropdown menu and can be customized with labels, icons, and actions.
-
-<PropsTable
-  data={[
-    {
-      name: 'disabled',
-      required: false,
-      type: 'boolean',
-      description: 'Determines whether the menu item is inactive.',
-    },
-  ]}
-/>
-
-<DataAttributesTable
-  data={[
-    {
-      attribute: '[data-disabled]',
-      values: 'Visible when disabled',
-    },
-  ]}
-/>
-
-### DropdownClose
+### PopoverClose
 
 The button that closes the menu.
 
@@ -311,48 +272,40 @@ The button that closes the menu.
 
 ## Examples
 
-### Position of dropdown menu
+### Position of popover content
 
 ```jsx
-<DropdownRoot>
-  <DropdownTrigger asChild>
-    <button type="button">Dropdown</button>
-  </DropdownTrigger>
-  <DropdownPortal>
-    <DropdownContent
+<PopoverRoot>
+  <PopoverTrigger asChild>
+    <button type="button">Open Popover</button>
+  </PopoverTrigger>
+  <PopoverPortal>
+    <PopoverContent
       triggerPosition={{ vertical: 'bottom', horizontal: 'right' }}
       contentPosition={{ vertical: 'top', horizontal: 'left' }}
     >
-      <DropdownItem>DropdownItem - 1</DropdownItem>
-      <DropdownItem>DropdownItem - 2</DropdownItem>
-      <DropdownItem>DropdownItem - 3</DropdownItem>
-    </DropdownContent>
-  </DropdownPortal>
-</DropdownRoot>
+      <div style={{ padding: 10 }}>This is a Popover Content</div>
+    </PopoverContent>
+  </PopoverPortal>
+</PopoverRoot>
 ```
 
-### Custom Dropdown Menu
+### Click the button to close
 
 ```jsx
-<DropdownRoot>
-  <DropdownTrigger asChild>
-    <button type="button">Dropdown</button>
-  </DropdownTrigger>
-  <DropdownPortal>
-    <DropdownContent>
-      <div style={{ padding: '0.625rem 0.3125rem' }}>
-        <div style={{ paddingLeft: '0.3125rem', paddingBottom: '0.5rem' }}>제목1</div>
-        <DropdownItem>DropdownItem - 1</DropdownItem>
-        <DropdownItem>DropdownItem - 2</DropdownItem>
-        <DropdownItem>DropdownItem - 3</DropdownItem>
+<PopoverRoot>
+  <PopoverTrigger asChild>
+    <button type="button">Open Popover</button>
+  </PopoverTrigger>
+  <PopoverPortal>
+    <PopoverContent closeOnBlur={false}>
+      <div style={{ padding: 10, display: 'flex', gap: 10, alignItems: 'center' }}>
+        This is a Popover Content
+        <PopoverClose asChild>
+          <button type="button">Close</button>
+        </PopoverClose>
       </div>
-      <div style={{ padding: '0.625rem 0.3125rem' }}>
-        <div style={{ paddingLeft: '0.3125rem', paddingBottom: '0.5rem' }}>제목2</div>
-        <DropdownItem>DropdownItem - 4</DropdownItem>
-        <DropdownItem>DropdownItem - 5</DropdownItem>
-        <DropdownItem>DropdownItem - 6</DropdownItem>
-      </div>
-    </DropdownContent>
-  </DropdownPortal>
-</DropdownRoot>
+    </PopoverContent>
+  </PopoverPortal>
+</PopoverRoot>
 ```

@@ -168,10 +168,10 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>((pr
 
   return (
     <div
-      role={role}
       data-state={open ? 'open' : 'closed'}
       {...rest}
       ref={handleRef}
+      role={role}
       tabIndex={-1}
       style={{
         position: 'absolute',
