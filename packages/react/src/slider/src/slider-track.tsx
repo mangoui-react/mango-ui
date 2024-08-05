@@ -8,12 +8,17 @@ export interface SliderTrackProps extends React.ComponentPropsWithoutRef<'div'> 
 
 const SliderTrack = React.forwardRef<HTMLDivElement, SliderTrackProps>((props, ref) => {
   const { children, ...rest } = props;
-  const { railRef } = React.useContext(SliderContext);
+  const { railRef, disabled, orientation } = React.useContext(SliderContext);
 
   const handleRef = useMergedRef(ref, railRef);
 
   return (
-    <div {...rest} ref={handleRef}>
+    <div
+      data-disabled={disabled ? '' : undefined}
+      data-orientation={orientation}
+      {...rest}
+      ref={handleRef}
+    >
       {children}
     </div>
   );

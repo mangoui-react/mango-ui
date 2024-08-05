@@ -27,7 +27,7 @@ export interface SliderProps
   onValueChange?: (value: number | number[], activeIndex: number) => void;
 }
 
-export interface SliderContextValue extends Pick<SliderProps, 'orientation'> {
+export interface SliderContextValue extends Pick<SliderProps, 'orientation' | 'disabled'> {
   railRef: React.RefObject<HTMLDivElement> | null;
   value?: number | number[];
   percentValue: number | number[];
@@ -93,11 +93,12 @@ const Slider = React.forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
       value,
       percentValue,
       orientation,
+      disabled,
       isMouseDown,
       activeIndex,
       thumbMap,
     }),
-    [activeIndex, isMouseDown, orientation, percentValue, thumbMap, value],
+    [activeIndex, disabled, isMouseDown, orientation, percentValue, thumbMap, value],
   );
 
   return (

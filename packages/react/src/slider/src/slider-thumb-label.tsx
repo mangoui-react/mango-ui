@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { SliderContext } from './slider';
 import { SliderThumbContext } from './slider-thumb';
 
 export interface SliderThumbLabelProps extends React.ComponentPropsWithoutRef<'span'> {
@@ -8,6 +9,7 @@ export interface SliderThumbLabelProps extends React.ComponentPropsWithoutRef<'s
 
 const SliderThumbLabel = React.forwardRef<HTMLSpanElement, SliderThumbLabelProps>((props, ref) => {
   const { auto, children, ...rest } = props;
+  const { orientation, disabled } = React.useContext(SliderContext);
   const { thumbValue, isActiveThumb } = React.useContext(SliderThumbContext);
 
   if (auto && !isActiveThumb) {
@@ -15,7 +17,12 @@ const SliderThumbLabel = React.forwardRef<HTMLSpanElement, SliderThumbLabelProps
   }
 
   return (
-    <span {...rest} ref={ref}>
+    <span
+      data-disabled={disabled ? '' : undefined}
+      data-orientation={orientation}
+      {...rest}
+      ref={ref}
+    >
       {children ?? thumbValue}
     </span>
   );

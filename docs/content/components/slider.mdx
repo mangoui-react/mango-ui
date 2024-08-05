@@ -1,0 +1,308 @@
+---
+title: Slider
+prevTitle: 'RadioGroup'
+prevSlug: '/components/radio-group'
+nextTitle: 'Steps'
+nextSlug: '/components/steps'
+---
+
+# Slider
+
+<Description>An input that allows the user to choose a value within a specified range.</Description>
+
+<DemoContainer>
+  <SliderDemo />
+  <DemoCodeBlock component="slider" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/slider',
+    yarn: 'yarn add @melio-ui/slider',
+    pnpm: 'pnpm add @melio-ui/slider',
+    bun: 'bun add @melio-ui/slider',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  SliderRoot,
+  SliderTrack,
+  SliderRange,
+  SliderThumb,
+  SliderThumbLabel,
+} from '@melio-ui/slider';`,
+    global: `import { 
+  SliderRoot,
+  SliderTrack,
+  SliderRange,
+  SliderThumb,
+  SliderThumbLabel,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **SliderRoot**: All parts of the slider are included.
+- **SliderTrack**: The unfilled portion of the slider that displays the track.
+- **SliderRange**: The filled portion of the slider.
+- **SliderThumb**: The knob used to adjust the slider value.
+- **SliderThumbLabel**: The label displayed for slider values.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Slider } from '@melio-ui/slider';
+
+<Slider.Root defaultValue={20}>
+  <Slider.Track>
+    <Slider.Range />
+  </Slider.Track>
+  <Slider.Thumb>
+    <Slider.ThumbLabel />
+  </Slider.Thumb>
+</Slider.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### SliderRoot
+
+All parts of the slider are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'value',
+      required: false,
+      type: 'number | number[]',
+      description: 'The slider value.',
+    },
+    {
+      name: 'defaultValue',
+      required: false,
+      type: 'number | number[]',
+      description:
+        "The initial value of the slider when first rendered, for use when state control isn't needed.",
+    },
+    {
+      name: 'min',
+      required: false,
+      default: '0',
+      type: 'number',
+      description: 'Minimum value of slider.',
+    },
+    {
+      name: 'max',
+      required: false,
+      default: '100',
+      type: 'number',
+      description: 'Maximum value for slider.',
+    },
+    {
+      name: 'step',
+      required: false,
+      default: '1',
+      type: 'number',
+      description: 'Steps used to increase or decrease values.',
+    },
+    {
+      name: 'orientation',
+      required: false,
+      type: (
+        <>
+          TypeAttributes.Orientation
+          <br />
+          <br />
+          "horizontal" | "vertical"
+        </>
+      ),
+      description: 'Direction for the placement of the Slider component.',
+    },
+    {
+      name: 'disabled',
+      required: false,
+      type: 'boolean',
+      description: 'Determines whether the slider is inactive.',
+    },
+    {
+      name: 'onValueChange',
+      required: false,
+      type: '(value: number | number[], activeIndex: number) => void',
+      description: 'This is an event handler that is triggered when the state of a slider changes.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+### SliderTrack
+
+The unfilled portion of the slider that displays the track.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+### SliderRange
+
+The filled portion of the slider.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+### SliderThumb
+
+The knob used to adjust the slider value.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+### SliderThumbLabel
+
+The label displayed for slider values.
+
+<PropsTable
+  data={[
+    {
+      name: 'auto',
+      required: false,
+      type: 'boolean',
+      description: 'Display a label when hovering over the Slider Thumb.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+## Examples
+
+### Disabled
+
+```jsx
+<SliderRoot defaultValue={30} disabled>
+  <SliderTrack>
+    <SliderRange />
+  </SliderTrack>
+  <SliderThumb />
+</SliderRoot>
+```
+
+### Set the minimum and maximum values
+
+```jsx
+<SliderRoot min={10} max={120} defaultValue={30}>
+  <SliderTrack>
+    <SliderRange />
+  </SliderTrack>
+  <SliderThumb />
+</SliderRoot>
+```
+
+### Set step size
+
+```jsx
+<SliderRoot min={10} max={120} step={10} defaultValue={30}>
+  <SliderTrack>
+    <SliderRange />
+  </SliderTrack>
+  <SliderThumb />
+</SliderRoot>
+```
+
+### Display Thumb Label
+
+```jsx
+<SliderRoot defaultValue={20}>
+  <SliderTrack>
+    <SliderRange />
+  </SliderTrack>
+  <SliderThumb>
+    <Slider.ThumbLabel />
+  </SliderThumb>
+</SliderRoot>
+```
+
+### Orientation
+
+```jsx
+<SliderRoot orientation="vertical" style={{ height: 150 }}>
+  <SliderTrack>
+    <SliderRange />
+  </SliderTrack>
+  <SliderThumb>
+    <Slider.ThumbLabel />
+  </SliderThumb>
+</SliderRoot>
+```
+
+### Range
+
+```jsx
+<SliderRoot defaultValue={[20, 60]}>
+  <SliderTrack>
+    <SliderRange />
+  </SliderTrack>
+  <SliderThumb />
+  <SliderThumb />
+</SliderRoot>
+```

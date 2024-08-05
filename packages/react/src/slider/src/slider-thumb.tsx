@@ -18,7 +18,7 @@ export const SliderThumbContext = React.createContext<SliderThumbContextValue>({
 
 const SliderThumb = React.forwardRef<HTMLDivElement, SliderThumbProps>((props, ref) => {
   const { style, children, onMouseOver, onMouseOut, ...rest } = props;
-  const { orientation } = React.useContext(SliderContext);
+  const { orientation, disabled } = React.useContext(SliderContext);
 
   const thumbRef = React.useRef<HTMLDivElement>(null);
   const handleRef = useMergedRef(ref, thumbRef);
@@ -61,6 +61,8 @@ const SliderThumb = React.forwardRef<HTMLDivElement, SliderThumbProps>((props, r
   return (
     <SliderThumbContext.Provider value={contextValue}>
       <div
+        data-disabled={disabled ? '' : undefined}
+        data-orientation={orientation}
         {...rest}
         ref={handleRef}
         style={{ ...positionStyle, ...style }}

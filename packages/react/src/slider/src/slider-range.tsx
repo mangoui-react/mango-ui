@@ -6,7 +6,7 @@ export interface SliderRangeProps extends React.ComponentPropsWithoutRef<'div'> 
 
 const SliderRange = React.forwardRef<HTMLDivElement, SliderRangeProps>((props, ref) => {
   const { style, ...rest } = props;
-  const { percentValue, orientation } = React.useContext(SliderContext);
+  const { percentValue, orientation, disabled } = React.useContext(SliderContext);
 
   const trackWidthStyle = React.useMemo(() => {
     if (orientation === 'vertical') {
@@ -19,7 +19,15 @@ const SliderRange = React.forwardRef<HTMLDivElement, SliderRangeProps>((props, r
       : { width: `${percentValue}%` };
   }, [orientation, percentValue]);
 
-  return <div {...rest} ref={ref} style={{ ...trackWidthStyle, ...style }} />;
+  return (
+    <div
+      data-disabled={disabled ? '' : undefined}
+      data-orientation={orientation}
+      {...rest}
+      ref={ref}
+      style={{ ...trackWidthStyle, ...style }}
+    />
+  );
 });
 
 SliderRange.displayName = 'Slider.Range';

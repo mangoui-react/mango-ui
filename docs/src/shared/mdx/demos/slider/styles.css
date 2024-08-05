@@ -2,7 +2,7 @@
   display: inline-block;
   cursor: pointer;
   position: relative;
-  width: 100%;
+  width: 18.75rem;
   padding: 0.4375rem 0;
 }
 .slider-root[data-disabled] {

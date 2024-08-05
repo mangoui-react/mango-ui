@@ -194,6 +194,9 @@ export default function SupportSidebar() {
                       <SidebarLink href="/components/radio-group">RadioGroup</SidebarLink>
                     </li>
                     <li className="mt-3">
+                      <SidebarLink href="/components/slider">Slider</SidebarLink>
+                    </li>
+                    <li className="mt-3">
                       <SidebarLink href="/components/button">Button</SidebarLink>
                     </li>
                   </ul>
