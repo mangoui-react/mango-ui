@@ -1,0 +1,153 @@
+---
+title: Progress
+prevTitle: 'Popover'
+prevSlug: '/components/popover'
+nextTitle: 'RadioGroup'
+nextSlug: '/components/radio-group'
+---
+
+# Progress
+
+<Description>Displays a progress bar indicating task completion.</Description>
+
+<DemoContainer>
+  <ProgressDemo />
+  <DemoCodeBlock component="progress" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/progress',
+    yarn: 'yarn add @melio-ui/progress',
+    pnpm: 'pnpm add @melio-ui/progress',
+    bun: 'bun add @melio-ui/progress',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  ProgressRoot,
+  ProgressIndicator,
+} from '@melio-ui/progress';`,
+    global: `import { 
+  ProgressRoot,
+  ProgressIndicator,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **ProgressRoot**: All parts of the progress are included.
+- **ProgressIndicator**: Render the progress indicator. You can style it yourself.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Progress } from '@melio-ui/progress';
+
+<Progress.Root value={30}>
+  <Progress.Indicator />
+</Progress.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### ProgressRoot
+
+All parts of the progress are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'value',
+      required: false,
+      type: 'number',
+      description: 'It is the progress value.',
+    },
+    {
+      name: 'max',
+      required: false,
+      default: '100',
+      type: 'number',
+      description: 'This is the maximum progress value.',
+    },
+    {
+      name: 'indeterminate',
+      required: false,
+      type: 'boolean',
+      description: 'This means that progress is uncertain.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"complete" | "loading" | "indeterminate"',
+    },
+    {
+      attribute: '[data-value]',
+      values: 'The current value',
+    },
+    {
+      attribute: '[data-max]',
+      values: 'The max value',
+    },
+  ]}
+/>
+
+### ProgressIndicator
+
+Render the progress indicator. You can style it yourself.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"complete" | "loading" | "indeterminate"',
+    },
+    {
+      attribute: '[data-value]',
+      values: 'The current value',
+    },
+    {
+      attribute: '[data-max]',
+      values: 'The max value',
+    },
+  ]}
+/>
+
+## Examples
+
+### Indeterminate
+
+```jsx
+<ProgressRoot indeterminate>
+  <ProgressIndicator />
+</ProgressRoot>
+```
+
+### Custom Indicator
+
+```jsx
+<ProgressRoot value={30}>
+  <ProgressIndicator style={{ backgroundColor: '#ff4d4f' }} />
+</ProgressRoot>
+```
+
+### Max
+
+```jsx
+<ProgressRoot value={100} max={200}>
+  <ProgressIndicator />
+</ProgressRoot>
+```

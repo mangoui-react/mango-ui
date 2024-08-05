@@ -39,12 +39,12 @@ const Progress = React.forwardRef<HTMLDivElement, ProgressProps>((props, ref) =>
   return (
     <ProgressContext.Provider value={contextValue}>
       <div
-        ref={ref}
-        role="progressbar"
         data-state={getProgressState(value, max, indeterminate)}
         data-value={value}
         data-max={max}
         {...rest}
+        ref={ref}
+        role="progressbar"
       >
         {children}
       </div>

@@ -188,6 +188,9 @@ export default function SupportSidebar() {
                       <SidebarLink href="/components/popover">Popover</SidebarLink>
                     </li>
                     <li className="mt-3">
+                      <SidebarLink href="/components/progress">Progress</SidebarLink>
+                    </li>
+                    <li className="mt-3">
                       <SidebarLink href="/components/button">Button</SidebarLink>
                     </li>
                   </ul>

@@ -13,10 +13,11 @@ const ProgressIndicator = React.forwardRef<HTMLDivElement, ProgressIndicatorProp
 
   return (
     <div
-      ref={ref}
       data-state={getProgressState(value, max, indeterminate)}
       data-value={value}
       data-max={max}
+      {...rest}
+      ref={ref}
       style={{
         ...(indeterminate
           ? {
@@ -28,7 +29,6 @@ const ProgressIndicator = React.forwardRef<HTMLDivElement, ProgressIndicatorProp
             }),
         ...style,
       }}
-      {...rest}
     />
   );
 });
