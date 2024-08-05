@@ -1,0 +1,472 @@
+---
+title: RadioGroup
+prevTitle: 'Progress'
+prevSlug: '/components/progress'
+nextTitle: 'Slider'
+nextSlug: '/components/slider'
+---
+
+# RadioGroup
+
+<Description>A set of radio buttons where only one can be checked at a time.</Description>
+
+<DemoContainer>
+  <RadioGroupDemo />
+  <DemoCodeBlock component="radio-group" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/radio-group',
+    yarn: 'yarn add @melio-ui/radio-group',
+    pnpm: 'pnpm add @melio-ui/radio-group',
+    bun: 'bun add @melio-ui/radio-group',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  RadioGroupRoot,
+  RadioGroupItem,
+  RadioGroupIndicator,
+  RadioGroupIcon,
+  RadioGroupLabel,
+} from '@melio-ui/radio-group';`,
+    global: `import { 
+  RadioGroupRoot,
+  RadioGroupItem,
+  RadioGroupIndicator,
+  RadioGroupIcon,
+  RadioGroupLabel,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **RadioGroupRoot**: All parts of the radio group are included.
+- **RadioGroupItem**: A checkable group item with an input for proper event propagation in forms.
+- **RadioGroupIndicator**: Renders when the radio item is checked, allowing direct styling or use as an icon wrapper.
+- **RadioGroupIcon**: Indicates whether the status is checked or unchecked.
+- **RadioGroupLabel**: Display text.
+
+### Another way to import
+
+```js
+'use client';
+
+import { RadioGroup } from '@melio-ui/radio-group';
+
+<RadioGroup.Root>
+  <RadioGroup.Item value="1">
+    <RadioGroup.Indicator>
+      <RadioGroup.Icon />
+    </RadioGroup.Indicator>
+    <RadioGroup.Label>radio1</RadioGroup.Label>
+  </RadioGroup.Item>
+
+  <RadioGroup.Item value="2">
+    <RadioGroup.Indicator>
+      <RadioGroup.Icon />
+    </RadioGroup.Indicator>
+    <RadioGroup.Label>radio2</RadioGroup.Label>
+  </RadioGroup.Item>
+</RadioGroup.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### RadioGroupRoot
+
+All parts of the radio group are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'orientation',
+      required: false,
+      type: (
+        <>
+          TypeAttributes.Orientation
+          <br />
+          <br />
+          "horizontal" | "vertical"
+        </>
+      ),
+      description: 'Direction for the placement of the RadioGroup component.',
+    },
+    {
+      name: 'disabled',
+      required: false,
+      type: 'boolean',
+      description: 'Determines whether the radio group is inactive.',
+    },
+    {
+      name: 'onValueChange',
+      required: false,
+      type: (
+        <>
+          {`(value: RadioValue) => void`}
+          <br />
+          <br />
+          RadioValue: string | number
+        </>
+      ),
+      description:
+        'This is an event handler that is triggered when the state of a radio group changes.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+  ]}
+/>
+
+### RadioGroupItem
+
+A checkable group item with an input for proper event propagation in forms.
+
+<PropsTable
+  data={[
+    {
+      name: 'checked',
+      required: false,
+      type: 'boolean',
+      description: 'Set whether to check or not.',
+    },
+    {
+      name: 'defaultChecked',
+      required: false,
+      type: 'boolean',
+      description:
+        'The checked state of the radio item when it is first rendered. Use this when there is no need to control the checked state.',
+    },
+    {
+      name: 'disabled',
+      required: false,
+      type: 'boolean',
+      description: 'Determines whether the radio item is inactive.',
+    },
+    {
+      name: 'inputProps',
+      required: false,
+      type: (
+        <>{`React.
+      InputHTMLAttributes
+      <HTMLInputElement>`}</>
+      ),
+      description: 'Attributes assigned to the input element.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"checked" | "unchecked"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+    {
+      attribute: '[data-readonly]',
+      values: 'Visible when read-only',
+    },
+  ]}
+/>
+
+### RadioGroupIndicator
+
+Renders when the radio item is checked, allowing direct styling or use as an icon wrapper.
+
+<PropsTable
+  data={[
+    {
+      name: 'children',
+      required: true,
+      type: 'React.ReactNode | (checked: boolean) => React.ReactNode',
+      description: 'Elements rendered when a radio is checked.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"checked" | "unchecked"',
+    },
+  ]}
+/>
+
+### RadioGroupIcon
+
+Indicates whether the status is checked or unchecked.
+
+<PropsTable
+  data={[
+    {
+      name: 'checkedIcon',
+      required: false,
+      type: 'React.ReactNode',
+      description: 'Icon that indicates the checked status.',
+    },
+    {
+      name: 'uncheckedIcon',
+      required: false,
+      type: 'React.ReactNode',
+      description: 'Icon that indicates the unchecked status.',
+    },
+  ]}
+/>
+
+### RadioGroupLabel
+
+Display text.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"checked" | "unchecked"',
+    },
+  ]}
+/>
+
+## Examples
+
+### defaultChecked
+
+```jsx
+<RadioGroupRoot>
+  <RadioGroupItem value="1">
+    <RadioGroupIndicator>
+      <RadioGroupIcon />
+    </RadioGroupIndicator>
+    <RadioGroupLabel>Radio1</RadioGroupLabel>
+  </RadioGroupItem>
+
+  <RadioGroupItem value="2" defaultChecked>
+    <RadioGroupIndicator>
+      <RadioGroupIcon />
+    </RadioGroupIndicator>
+    <RadioGroupLabel>Radio2</RadioGroupLabel>
+  </RadioGroupItem>
+
+  <RadioGroupItem value="3">
+    <RadioGroupIndicator>
+      <RadioGroupIcon />
+    </RadioGroupIndicator>
+    <RadioGroupLabel>Radio3</RadioGroupLabel>
+  </RadioGroupItem>
+</RadioGroupRoot>
+```
+
+### disabled
+
+```jsx
+<RadioGroupRoot>
+  <RadioGroupItem value="1">
+    <RadioGroupIndicator>
+      <RadioGroupIcon />
+    </RadioGroupIndicator>
+    <RadioGroupLabel>Radio1</RadioGroupLabel>
+  </RadioGroupItem>
+
+  <RadioGroupItem value="2" disabled>
+    <RadioGroupIndicator>
+      <RadioGroupIcon />
+    </RadioGroupIndicator>
+    <RadioGroupLabel>Radio2</RadioGroupLabel>
+  </RadioGroupItem>
+
+  <RadioGroupItem value="3">
+    <RadioGroupIndicator>
+      <RadioGroupIcon />
+    </RadioGroupIndicator>
+    <RadioGroupLabel>Radio3</RadioGroupLabel>
+  </RadioGroupItem>
+</RadioGroupRoot>
+```
+
+### Indicator children function
+
+```jsx render=true
+function IndicatorFunc() {
+  return (
+    <RadioGroupRoot>
+      <RadioGroupItem value="1">
+        <RadioGroupIndicator>
+          {(checked: boolean) => {
+            if (checked) return <CheckedUserIcon />;
+            return <UncheckedUserIcon />;
+          }}
+        </RadioGroupIndicator>
+        <RadioGroupLabel>User1</RadioGroupLabel>
+      </RadioGroupItem>
+
+      <RadioGroupItem value="2">
+        <RadioGroupIndicator>
+          {(checked: boolean) => {
+            if (checked) return <CheckedUserIcon />;
+            return <UncheckedUserIcon />;
+          }}
+        </RadioGroupIndicator>
+        <RadioGroupLabel>User2</RadioGroupLabel>
+      </RadioGroupItem>
+
+      <RadioGroupItem value="3">
+        <RadioGroupIndicator>
+          {(checked: boolean) => {
+            if (checked) return <CheckedUserIcon />;
+            return <UncheckedUserIcon />;
+          }}
+        </RadioGroupIndicator>
+        <RadioGroupLabel>User3</RadioGroupLabel>
+      </RadioGroupItem>
+    </RadioGroupRoot>
+  );
+}
+
+render(<IndicatorFunc />);
+
+function CheckedUserIcon() {
+  return (
+    <svg
+      width="2em"
+      height="2em"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+        fill="#00A8FF"
+      />
+    </svg>
+  );
+}
+
+function UncheckedUserIcon() {
+  return (
+    <svg
+      width="2em"
+      height="2em"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+        fill="#cacdcf"
+      />
+    </svg>
+  );
+}
+```
+
+### Checked/Unchecked Icon
+
+```jsx render=true
+function CustomRadioIcon() {
+  return (
+    <RadioGroupRoot>
+      <RadioGroupItem value="1">
+        <RadioGroupIndicator>
+          <RadioGroupIcon checkedIcon={<CheckedUserIcon />} uncheckedIcon={<UncheckedUserIcon />} />
+        </RadioGroupIndicator>
+        <RadioGroupLabel>User1</RadioGroupLabel>
+      </RadioGroupItem>
+
+      <RadioGroupItem value="2">
+        <RadioGroupIndicator>
+          <RadioGroupIcon checkedIcon={<CheckedUserIcon />} uncheckedIcon={<UncheckedUserIcon />} />
+        </RadioGroupIndicator>
+        <RadioGroupLabel>User2</RadioGroupLabel>
+      </RadioGroupItem>
+
+      <RadioGroupItem value="3">
+        <RadioGroupIndicator>
+          <RadioGroupIcon checkedIcon={<CheckedUserIcon />} uncheckedIcon={<UncheckedUserIcon />} />
+        </RadioGroupIndicator>
+        <RadioGroupLabel>User3</RadioGroupLabel>
+      </RadioGroupItem>
+    </RadioGroupRoot>
+  );
+}
+
+render(<CustomRadioIcon />);
+
+function CheckedUserIcon() {
+  return (
+    <svg
+      width="2em"
+      height="2em"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+        fill="#00A8FF"
+      />
+    </svg>
+  );
+}
+
+function UncheckedUserIcon() {
+  return (
+    <svg
+      width="2em"
+      height="2em"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+        fill="#cacdcf"
+      />
+    </svg>
+  );
+}
+```
+
+### Orientation
+
+```jsx
+<RadioGroupRoot orientation="vertical">
+  <RadioGroupItem value="1">
+    <RadioGroupIndicator>
+      <RadioGroupIcon />
+    </RadioGroupIndicator>
+    <RadioGroupLabel>Radio1</RadioGroupLabel>
+  </RadioGroupItem>
+
+  <RadioGroupItem value="2">
+    <RadioGroupIndicator>
+      <RadioGroupIcon />
+    </RadioGroupIndicator>
+    <RadioGroupLabel>Radio2</RadioGroupLabel>
+  </RadioGroupItem>
+
+  <RadioGroupItem value="3">
+    <RadioGroupIndicator>
+      <RadioGroupIcon />
+    </RadioGroupIndicator>
+    <RadioGroupLabel>Radio3</RadioGroupLabel>
+  </RadioGroupItem>
+</RadioGroupRoot>
+```
