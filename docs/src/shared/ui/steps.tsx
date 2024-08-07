@@ -49,7 +49,7 @@ export function StepsIndicator({ className, ...props }: StepsIndicatorProps) {
       {...props}
       className={cn(
         'flex flex-shrink-0 items-center justify-center',
-        'mt-[0.375rem] h-[1.875rem] w-[1.875rem]',
+        'mr-[0.375rem] h-[1.875rem] w-[1.875rem]',
         'rounded-[50%] border-[0.0625rem] border-solid leading-[1.875rem]',
         // wait
         'group-data-[status=wait]/step:border-slate-400 group-data-[status=wait]/step:bg-inherit group-data-[status=wait]/step:text-slate-400',
@@ -97,7 +97,7 @@ export function StepsSeparator({ className, ...props }: StepsSeparatorProps) {
         'h-0.5 w-full bg-slate-500',
         'data-[orientation=horizontal]:ml-2',
         'data-[orientation=vertical]:absolute data-[orientation=vertical]:h-full data-[orientation=vertical]:w-0.5',
-        'data-[orientation=vertical]:left-3.5 data-[orientation=vertical]:top-[2.125rem] data-[orientation=vertical]:ml-2',
+        'data-[orientation=vertical]:left-3.5 data-[orientation=vertical]:top-[2.125rem]',
         className,
       )}
     />

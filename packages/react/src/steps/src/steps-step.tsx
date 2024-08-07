@@ -34,7 +34,7 @@ const StepsStep = React.forwardRef<HTMLDivElement, StepsStepProps>((props, ref) 
 
   return (
     <StepContext.Provider value={contextValue}>
-      <div ref={ref} data-status={status} data-orientation={orientation} {...rest}>
+      <div data-status={status} data-orientation={orientation} {...rest} ref={ref}>
         {children}
       </div>
     </StepContext.Provider>

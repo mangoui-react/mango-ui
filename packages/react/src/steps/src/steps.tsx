@@ -3,7 +3,7 @@ import React from 'react';
 import { TypeAttributes } from '../../types/common';
 
 export interface StepsProps extends React.ComponentPropsWithoutRef<'div'> {
-  // TODO: stepIndex 로 수정 생각해 보자
+  // TODO: stepIndex 로 수정 생각해 보자. 그리고 step 에 id 설정하고 id를 선택하는 방법도 추가하자.
   /** 현재 Step */
   currentStep?: number;
   /** step 방향 */
@@ -23,7 +23,7 @@ const Steps = React.forwardRef<HTMLDivElement, StepsProps>((props, ref) => {
 
   return (
     <StepsContext.Provider value={contextValue}>
-      <div ref={ref} data-orientation={orientation} {...rest}>
+      <div data-orientation={orientation} {...rest} ref={ref}>
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child as React.ReactElement, {
             index,

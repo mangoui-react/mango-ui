@@ -1,0 +1,514 @@
+---
+title: Steps
+prevTitle: 'Slider'
+prevSlug: '/components/slider'
+nextTitle: 'Switch'
+nextSlug: '/components/switch'
+---
+
+# Steps
+
+<Description>
+  Steps communicate progress through numbered steps, providing a wizard-like workflow.
+</Description>
+
+<DemoContainer>
+  <StepsDemo />
+  <DemoCodeBlock component="steps" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/steps',
+    yarn: 'yarn add @melio-ui/steps',
+    pnpm: 'pnpm add @melio-ui/steps',
+    bun: 'bun add @melio-ui/steps',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  StepsRoot,
+  StepsStep,
+  StepsIndicator,
+  StepsStatus,
+  StepsContent,
+  StepsSeparator,
+} from '@melio-ui/steps';`,
+    global: `import { 
+  StepsRoot,
+  StepsStep,
+  StepsIndicator,
+  StepsStatus,
+  StepsContent,
+  StepsSeparator,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **StepsRoot**: All parts of the steps are included.
+- **StepsStep**: A single step in the sequence.
+- **StepsIndicator**: A component displaying markers that update as the user advances through steps, clearly tracking progress.
+- **StepsStatus**: Indicates the status of the step.
+- **StepsContent**: Additional content for a step.
+- **StepsSeparator**: Divider between steps.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Steps } from '@melio-ui/steps';
+
+<Steps.Root currentStep={1}>
+  <Steps.Step>
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step01</div>
+    </Steps.Content>
+    <Steps.Separator />
+  </Steps.Step>
+
+  <Steps.Step>
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step02</div>
+      <div>This is a description</div>
+    </Steps.Content>
+    <Steps.Separator />
+  </Steps.Step>
+</Steps.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### StepsRoot
+
+All parts of the steps are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'currentStep',
+      required: false,
+      type: 'number',
+      description: 'Index of the current step.',
+    },
+    {
+      name: 'orientation',
+      required: false,
+      type: (
+        <>
+          TypeAttributes.Orientation
+          <br />
+          <br />
+          "horizontal" | "vertical"
+        </>
+      ),
+      description: 'Direction for the placement of the Steps component.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+  ]}
+/>
+
+### StepsStep
+
+A single step in the sequence.
+
+<PropsTable
+  data={[
+    {
+      name: 'status',
+      required: false,
+      type: (
+        <>
+          StepStatusValue
+          <br />
+          <br />
+          "finish" | "wait" | "process" | "error"
+        </>
+      ),
+      description: 'Sets the state of the step.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-status]',
+      values: '"finish" | "wait" | "process" | "error"',
+    },
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+  ]}
+/>
+
+### StepsIndicator
+
+A component displaying markers that update as the user advances through steps, clearly tracking progress.
+
+<PropsTable
+  data={[
+    {
+      name: 'children',
+      required: true,
+      type: 'React.ReactNode | (status: StepStatusValue) => React.ReactNode',
+      description: 'An element that renders the state of a step.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-status]',
+      values: '"finish" | "wait" | "process" | "error"',
+    },
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+  ]}
+/>
+
+### StepsStatus
+
+Indicates the status of the step.
+
+<PropsTable
+  data={[
+    {
+      name: 'finish',
+      required: false,
+      type: 'React.ReactNode',
+      description: 'Element indicating completion status.',
+    },
+    {
+      name: 'wait',
+      required: false,
+      type: 'React.ReactNode',
+      description: 'Element indicating waiting state.',
+    },
+    {
+      name: 'process',
+      required: false,
+      type: 'React.ReactNode',
+      description: 'Element that indicates the state of the process.',
+    },
+    {
+      name: 'error',
+      required: false,
+      type: 'React.ReactNode',
+      description: 'Element indicating error state.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-status]',
+      values: '"finish" | "wait" | "process" | "error"',
+    },
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+  ]}
+/>
+
+### StepsContent
+
+Additional content for a step.
+
+<PropsTable
+  data={[
+    {
+      name: 'children',
+      required: true,
+      type: 'React.ReactNode | (status: StepStatusValue) => React.ReactNode',
+      description: 'An element that renders the content of a step.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-status]',
+      values: '"finish" | "wait" | "process" | "error"',
+    },
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+  ]}
+/>
+
+### StepsSeparator
+
+Divider between steps.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+  ]}
+/>
+
+## Examples
+
+### Set status on step
+
+```jsx
+<Steps.Root currentStep={0}>
+  <Steps.Step status="error">
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step01</div>
+    </Steps.Content>
+    <Steps.Separator />
+  </Steps.Step>
+
+  <Steps.Step>
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step02</div>
+      <div>This is a description</div>
+    </Steps.Content>
+    <Steps.Separator />
+  </Steps.Step>
+
+  <Steps.Step>
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step03</div>
+    </Steps.Content>
+  </Steps.Step>
+</Steps.Root>
+```
+
+### Custom status via props.
+
+```jsx render=true
+function CustomStatusProps() {
+  return (
+    <Steps.Root currentStep={1}>
+      <Steps.Step status="error">
+        <Steps.Indicator>
+          <Steps.Status finish={<UserIcon />} error={<UserIcon color="red" />} />
+        </Steps.Indicator>
+        <Steps.Content>
+          <div>Step01</div>
+        </Steps.Content>
+        <Steps.Separator />
+      </Steps.Step>
+
+      <Steps.Step>
+        <Steps.Indicator>
+          <Steps.Status finish={<UserIcon />} error={<UserIcon color="red" />} />
+        </Steps.Indicator>
+        <Steps.Content>
+          <div>Step02</div>
+          <div>This is a description</div>
+        </Steps.Content>
+        <Steps.Separator />
+      </Steps.Step>
+
+      <Steps.Step>
+        <Steps.Indicator>
+          <Steps.Status wait={<UserIcon color="gray" />} />
+        </Steps.Indicator>
+        <Steps.Content>
+          <div>Step03</div>
+        </Steps.Content>
+      </Steps.Step>
+    </Steps.Root>
+  );
+}
+
+render(<CustomStatusProps />);
+
+function UserIcon() {
+  return (
+    <svg
+      width="2em"
+      height="2em"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+    </svg>
+  );
+}
+```
+
+### Custom status via function.
+
+```jsx render=true
+function CustomStatusFunc() {
+  return (
+    <Steps.Root currentStep={1}>
+      <Steps.Step status="wait">
+        <Steps.Indicator>
+        {(status: StepStatusValue) =>
+          status === 'wait' ? <UserIcon color="gray" /> : <UserIcon />
+        }
+        </Steps.Indicator>
+        <Steps.Content>
+          <div>Step01</div>
+        </Steps.Content>
+        <Steps.Separator />
+      </Steps.Step>
+
+      <Steps.Step>
+        <Steps.Indicator>
+          <Steps.Status />
+        </Steps.Indicator>
+        <Steps.Content>
+          <div>Step02</div>
+          <div>This is a description</div>
+        </Steps.Content>
+        <Steps.Separator />
+      </Steps.Step>
+
+      <Steps.Step>
+        <Steps.Indicator>
+          <Steps.Status />
+        </Steps.Indicator>
+        <Steps.Content>
+          <div>Step03</div>
+        </Steps.Content>
+      </Steps.Step>
+    </Steps.Root>
+  );
+}
+
+render(<CustomStatusFunc />);
+
+function UserIcon() {
+  return (
+    <svg
+      width="2em"
+      height="2em"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+    </svg>
+  );
+}
+```
+
+### Custom content via function.
+
+```jsx
+<Steps.Root currentStep={1}>
+  <Steps.Step status="finish">
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      {(status: StepStatusValue) =>
+        status === 'finish' ? (
+          <div>Step01 - {status}</div>
+        ) : (
+          <>
+            <div>Step01 - {status}</div>
+            <div>This is a description</div>
+          </>
+        )
+      }
+    </Steps.Content>
+    <Steps.Separator />
+  </Steps.Step>
+
+  <Steps.Step>
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step02</div>
+      <div>This is a description</div>
+    </Steps.Content>
+    <Steps.Separator />
+  </Steps.Step>
+
+  <Steps.Step>
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step03</div>
+    </Steps.Content>
+  </Steps.Step>
+</Steps.Root>
+```
+
+### Custom content via function.
+
+```jsx
+<Steps.Root orientation="vertical" currentStep={0}>
+  <Steps.Step>
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step01</div>
+    </Steps.Content>
+    <Steps.Separator />
+  </Steps.Step>
+
+  <Steps.Step>
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step02</div>
+      <div>This is a description</div>
+    </Steps.Content>
+    <Steps.Separator />
+  </Steps.Step>
+
+  <Steps.Step>
+    <Steps.Indicator>
+      <Steps.Status />
+    </Steps.Indicator>
+    <Steps.Content>
+      <div>Step03</div>
+    </Steps.Content>
+  </Steps.Step>
+</Steps.Root>
+```

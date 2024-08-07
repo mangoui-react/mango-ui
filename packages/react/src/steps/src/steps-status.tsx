@@ -3,6 +3,7 @@ import React from 'react';
 import { CheckIcon } from '../../internal/icons/check-icon';
 import { CloseIcon } from '../../internal/icons/close-icon';
 
+import { StepsContext } from './steps';
 import { StepContext, StepStatusValue } from './steps-step';
 
 export interface StepsStatusProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -22,6 +23,7 @@ const STEP_STATUS_ICON: StatusValueObject = {
 };
 
 const StepsStatus = React.forwardRef<HTMLDivElement, StepsStatusProps>((props, ref) => {
+  const { orientation } = React.useContext(StepsContext);
   const { index = 0, status = 'wait' } = React.useContext(StepContext);
   const { finish, wait, process, error, ...rest } = props;
 
@@ -38,7 +40,7 @@ const StepsStatus = React.forwardRef<HTMLDivElement, StepsStatusProps>((props, r
   return statusSvgEl ? (
     React.cloneElement(statusSvgEl as React.ReactElement<React.SVGProps<SVGSVGElement>>, {})
   ) : (
-    <div data-status={status} {...rest} ref={ref}>
+    <div data-status={status} data-orientation={orientation} {...rest} ref={ref}>
       {index + 1}
     </div>
   );

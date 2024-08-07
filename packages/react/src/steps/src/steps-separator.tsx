@@ -7,7 +7,7 @@ export interface StepsSeparatorProps extends React.ComponentPropsWithoutRef<'div
 const StepsSeparator = React.forwardRef<HTMLDivElement, StepsSeparatorProps>((props, ref) => {
   const { orientation } = React.useContext(StepsContext);
 
-  return <div ref={ref} data-orientation={orientation} {...props} />;
+  return <div data-orientation={orientation} {...props} ref={ref} />;
 });
 
 StepsSeparator.displayName = 'Steps.Separator';

@@ -1,3 +1,25 @@
+.steps-container {
+  width: 100%;
+  padding-left: 3.125rem;
+  padding-right: 3.125rem;
+}
+
+.steps-move {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.3125rem;
+  margin-top: 1.25rem;
+}
+.steps-move button {
+  border: 0.0313rem solid;
+  border-radius: 0.3125rem;
+  border-color: rgba(194, 215, 175, 0.464);
+  padding: 0.3125rem 0.625rem;
+}
+.steps-move button:hover {
+  background-color: rgb(104, 106, 234);
+}
+
 .stpes-root {
   display: flex;
 }
