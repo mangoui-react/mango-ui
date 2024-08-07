@@ -8,10 +8,16 @@ export interface SwitchThumbProps extends React.ComponentPropsWithoutRef<'span'>
 const SwitchThumb = React.forwardRef<HTMLSpanElement, SwitchThumbProps>((props, ref) => {
   const { children, ...rest } = props;
 
-  const { checked } = React.useContext(SwitchContext);
+  const { checked, disabled, readOnly } = React.useContext(SwitchContext);
 
   return (
-    <span ref={ref} data-state={getState(checked)} {...rest}>
+    <span
+      data-state={getState(checked)}
+      data-disabled={disabled ? '' : undefined}
+      data-readonly={readOnly ? '' : undefined}
+      {...rest}
+      ref={ref}
+    >
       {children}
     </span>
   );

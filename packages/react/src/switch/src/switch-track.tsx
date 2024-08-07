@@ -17,7 +17,14 @@ const SwitchTrack = React.forwardRef<HTMLSpanElement, SwitchTrackProps>((props, 
   };
 
   return (
-    <span ref={ref} data-state={getState(checked)} onClick={handleClick} {...rest}>
+    <span
+      data-state={getState(checked)}
+      data-disabled={disabled ? '' : undefined}
+      data-readonly={readOnly ? '' : undefined}
+      {...rest}
+      ref={ref}
+      onClick={handleClick}
+    >
       {children}
     </span>
   );

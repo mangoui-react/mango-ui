@@ -61,7 +61,7 @@ export function SwitchThumb({ className, ...props }: SwitchThumbProps) {
       className={cn(
         'absolute',
         'h-[1.375rem] w-[1.375rem] bg-white',
-        'rounded',
+        'rounded-[6.25rem]',
         'shadow-[0_2px_1px_-1px_rgb(0 0 0 / 20%), 0_1px_1px_0_rgb(0 0 0 / 14%), 0_1px_3px_0_rgb(0 0 0 / 12%)]',
         'left-1 top-1',
         'transition-all',

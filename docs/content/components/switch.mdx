@@ -1,0 +1,251 @@
+---
+title: Switch
+prevTitle: 'Steps'
+prevSlug: '/components/steps'
+nextTitle: 'Tabs'
+nextSlug: '/components/tabs'
+---
+
+# Switch
+
+<Description>A control that lets the user toggle between checked and unchecked states.</Description>
+
+<DemoContainer>
+  <SwitchDemo />
+  <DemoCodeBlock component="switch" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/switch',
+    yarn: 'yarn add @melio-ui/switch',
+    pnpm: 'pnpm add @melio-ui/switch',
+    bun: 'bun add @melio-ui/switch',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  SwitchRoot,
+  SwitchTrack,
+  SwitchThumb,
+  SwitchLabel,
+} from '@melio-ui/switch';`,
+    global: `import { 
+  SwitchRoot,
+  SwitchTrack,
+  SwitchThumb,
+  SwitchLabel,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **SwitchRoot**: All parts of the switch are included.
+- **SwitchTrack**: It represents the switch's background, indicating on and off states with different colors or styles.
+- **SwitchThumb**: It is the interactive element that toggles between on and off states.
+- **SwitchLabel**: It displays text or content next to the switch to clarify its purpose.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Switch } from '@melio-ui/switch';
+
+<Switch.Root>
+  <Switch.Track>
+    <Switch.Thumb />
+  </Switch.Track>
+  <Switch.Label>Label</Switch.Label>
+</Switch.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### SwitchRoot
+
+All parts of the switch are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'checked',
+      required: false,
+      type: 'boolean',
+      description: 'Set whether to check or not.',
+    },
+    {
+      name: 'defaultChecked',
+      required: false,
+      type: 'boolean',
+      description:
+        'The checked state of the switch when it is first rendered. Use this when there is no need to control the checked state.',
+    },
+    {
+      name: 'disabled',
+      required: false,
+      type: 'boolean',
+      description: 'Determines whether the switch is inactive.',
+    },
+    {
+      name: 'inputProps',
+      required: false,
+      type: (
+        <>{`React.
+      InputHTMLAttributes
+      <HTMLInputElement>`}</>
+      ),
+      description: 'Attributes assigned to the input element.',
+    },
+    {
+      name: 'onCheckedChange',
+      required: false,
+      type: '(checked: boolean) => void',
+      description:
+        'This is an event handler that is triggered when the state of the switch changes.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"checked" | "unchecked"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+    {
+      attribute: '[data-readonly]',
+      values: 'Visible when read-only',
+    },
+  ]}
+/>
+
+### SwitchTrack
+
+It represents the switch's background, indicating on and off states with different colors or styles.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"checked" | "unchecked"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+    {
+      attribute: '[data-readonly]',
+      values: 'Visible when read-only',
+    },
+  ]}
+/>
+
+### SwitchThumb
+
+It is the interactive element that toggles between on and off states.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"checked" | "unchecked"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+    {
+      attribute: '[data-readonly]',
+      values: 'Visible when read-only',
+    },
+  ]}
+/>
+
+### SwitchLabel
+
+It displays text or content next to the switch to clarify its purpose.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"checked" | "unchecked"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+    {
+      attribute: '[data-readonly]',
+      values: 'Visible when read-only',
+    },
+  ]}
+/>
+
+## Examples
+
+### defaultChecked
+
+```jsx
+<SwitchRoot defaultChecked>
+  <SwitchTrack>
+    <SwitchThumb />
+  </SwitchTrack>
+</SwitchRoot>
+```
+
+### disabled
+
+```jsx
+<SwitchRoot disabled>
+  <SwitchTrack>
+    <SwitchThumb />
+  </SwitchTrack>
+</SwitchRoot>
+```
+
+### Display Label
+
+```jsx
+<SwitchRoot defaultChecked>
+  <SwitchTrack>
+    <SwitchThumb />
+  </SwitchTrack>
+  <SwitchLabel>Label</SwitchLabel>
+</SwitchRoot>
+```
+
+### Display checked/unchecked status text within the SwitchTrack.
+
+```jsx render=true
+function DisplayText() {
+  const [checked, setChecked] = React.useState(false);
+
+  return (
+    <SwitchRoot checked={checked} onCheckedChange={setChecked}>
+      <SwitchTrack>
+        <SwitchThumb />
+        {checked ? (
+          <span style={{ margin: '0 28px 0 5px', color: '#fff' }}>open</span>
+        ) : (
+          <span style={{ margin: '0 5px 0 28px' }}>close</span>
+        )}
+      </SwitchTrack>
+    </SwitchRoot>
+  );
+}
+
+render(<DisplayText />);
+```

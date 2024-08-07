@@ -18,7 +18,15 @@ const SwitchLabel = React.forwardRef<HTMLLabelElement, SwitchLabelProps>((props,
   const uuid = disabled || readOnly ? undefined : uuidCtx;
 
   return (
-    <label ref={ref} htmlFor={uuid} data-state={getState(checked)} onClick={handleClick} {...rest}>
+    <label
+      data-state={getState(checked)}
+      data-disabled={disabled ? '' : undefined}
+      data-readonly={readOnly ? '' : undefined}
+      {...rest}
+      ref={ref}
+      htmlFor={uuid}
+      onClick={handleClick}
+    >
       {children}
     </label>
   );
