@@ -9,9 +9,7 @@ export default function TabsDemo() {
     <TabsRoot className="tabs-root">
       <TabsList className="tabs-list">
         <TabsTab className="tabs-tab">Tab1</TabsTab>
-        <TabsTab className="tabs-tab" disabled>
-          Tab2
-        </TabsTab>
+        <TabsTab className="tabs-tab">Tab2</TabsTab>
         <TabsTab className="tabs-tab">
           <UserIcon style={{ marginRight: 5 }} />
           Tab3

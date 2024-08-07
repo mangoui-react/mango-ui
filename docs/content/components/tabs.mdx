@@ -1,0 +1,274 @@
+---
+title: Tabs
+prevTitle: 'Switch'
+prevSlug: '/components/switch'
+nextTitle: 'Toast'
+nextSlug: '/components/toast'
+---
+
+# Tabs
+
+<Description>
+  A series of layered content sections, called tab panels, that are shown one at a time.
+</Description>
+
+<DemoContainer>
+  <TabsDemo />
+  <DemoCodeBlock component="tabs" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/tabs',
+    yarn: 'yarn add @melio-ui/tabs',
+    pnpm: 'pnpm add @melio-ui/tabs',
+    bun: 'bun add @melio-ui/tabs',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  TabsRoot,
+  TabsList,
+  TabsTab,
+  TabsContent,
+} from '@melio-ui/tabs';`,
+    global: `import { 
+  TabsRoot,
+  TabsList,
+  TabsTab,
+  TabsContent,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **TabsRoot**: All parts of the tabs are included.
+- **TabsList**: Contains the buttons or tabs aligned with the edge of the active content.
+- **TabsTab**: This button activates related content.
+- **TabsContent**: Includes content related to each tab.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Tabs } from '@melio-ui/tabs';
+
+<Tabs.Root>
+  <Tabs.List>
+    <Tabs.Tab>Tab1</Tabs.Tab>
+    <Tabs.Tab>Tab2</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Content>
+    <p>TabContent1</p>
+  </Tabs.Content>
+  <Tabs.Content>
+    <p>TabContent2</p>
+  </Tabs.Content>
+</Tabs.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### TabsRoot
+
+All parts of the tabs are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'value',
+      required: false,
+      type: 'string',
+      description: 'The value of the activated tab content.',
+    },
+    {
+      name: 'defaultValue',
+      required: false,
+      type: 'string',
+      description: 'The initial value of the activated tab content.',
+    },
+    {
+      name: 'orientation',
+      required: false,
+      type: (
+        <>
+          TypeAttributes.Orientation
+          <br />
+          <br />
+          "horizontal" | "vertical"
+        </>
+      ),
+      description: 'Direction for the placement of the Tabs component.',
+    },
+    {
+      name: 'renderMode',
+      required: false,
+      type: '"selecting" | "selected" | "force"',
+      default: '"selecting"',
+      description: (
+        <>
+          How to render tab content.
+          <br />
+          <br />
+          selecting: Rendering only the currently activated tab content.
+          <br />
+          selected: Rendering tab contents that have been activated.
+          <br />
+          force: Rendering all tab contents.
+        </>
+      ),
+    },
+    {
+      name: 'onValueChange',
+      required: false,
+      type: '(value: string) => void',
+      description: 'The callback invoked when a tab content is activated.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-orientation]',
+      values: '"horizontal" | "vertical"',
+    },
+  ]}
+/>
+
+### TabsList
+
+Contains the buttons or tabs aligned with the edge of the active content.
+
+### TabsTab
+
+This button activates related content.
+
+<PropsTable
+  data={[
+    {
+      name: 'value',
+      required: false,
+      type: 'string',
+      description: 'The value of the tab.',
+    },
+    {
+      name: 'disabled',
+      required: false,
+      type: 'boolean',
+      description: 'Determines whether the tab is inactive.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"active" | "inactive"',
+    },
+    {
+      attribute: '[data-disabled]',
+      values: 'Visible when disabled',
+    },
+  ]}
+/>
+
+### TabsContent
+
+Includes content related to each tab.
+
+<PropsTable
+  data={[
+    {
+      name: 'value',
+      required: false,
+      type: 'string',
+      description: 'The value of the tab content.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"active" | "inactive"',
+    },
+  ]}
+/>
+
+## Examples
+
+### defaultValue
+
+```jsx
+<TabsRoot defaultValue="tab2">
+  <TabsList>
+    <TabsTab value="tab1">Tab1</TabsTab>
+    <TabsTab value="tab2">Tab2</TabsTab>
+    <TabsTab value="tab3">Tab3</TabsTab>
+  </TabsList>
+  <TabsContent value="tab1">
+    <p>TabContent1</p>
+  </TabsContent>
+  <TabsContent value="tab2">
+    <p>TabContent2</p>
+  </TabsContent>
+  <TabsContent value="tab3">
+    <p>TabContent3</p>
+  </TabsContent>
+</TabsRoot>
+```
+
+### disabled tab
+
+```jsx
+<TabsRoot>
+  <TabsList>
+    <TabsTab value="tab1">Tab1</TabsTab>
+    <TabsTab value="tab2" disabled>
+      Tab2
+    </TabsTab>
+    <TabsTab value="tab3">Tab3</TabsTab>
+  </TabsList>
+  <TabsContent value="tab1">
+    <p>TabContent1</p>
+  </TabsContent>
+  <TabsContent value="tab2">
+    <p>TabContent2</p>
+  </TabsContent>
+  <TabsContent value="tab3">
+    <p>TabContent3</p>
+  </TabsContent>
+</TabsRoot>
+```
+
+### Orientation
+
+```jsx
+<TabsRoot orientation="vertical">
+  <TabsList>
+    <TabsTab value="tab1">Tab1</TabsTab>
+    <TabsTab value="tab2">Tab2</TabsTab>
+    <TabsTab value="tab3">Tab3</TabsTab>
+  </TabsList>
+  <TabsContent value="tab1">
+    <p>TabContent1</p>
+  </TabsContent>
+  <TabsContent value="tab2">
+    <p>TabContent2</p>
+  </TabsContent>
+  <TabsContent value="tab3">
+    <p>TabContent3</p>
+  </TabsContent>
+</TabsRoot>
+```
