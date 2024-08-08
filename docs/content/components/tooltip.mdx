@@ -1,0 +1,224 @@
+---
+title: Tooltip
+prevTitle: 'Toast'
+prevSlug: '/components/toast'
+---
+
+# Tooltip
+
+<Description>
+  A popup displaying information when an element receives keyboard focus or mouse hover.
+</Description>
+
+<DemoContainer>
+  <TooltipDemo />
+  <DemoCodeBlock component="tooltip" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/tooltip',
+    yarn: 'yarn add @melio-ui/tooltip',
+    pnpm: 'pnpm add @melio-ui/tooltip',
+    bun: 'bun add @melio-ui/tooltip',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  TooltipRoot,
+  TooltipTrigger,
+  TooltipPortal,
+  TooltipContent,
+  TooltipArrow,
+} from '@melio-ui/tooltip';`,
+    global: `import { 
+  TooltipRoot,
+  TooltipTrigger,
+  TooltipPortal,
+  TooltipContent,
+  TooltipArrow,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **TooltipRoot**: All parts of the tooltip are included.
+- **TooltipTrigger**: Used to activate or open the Tooltip component.
+- **TooltipPortal**: Portal the overlay and content portion into the body.
+- **TooltipContent**: Includes the content that will be displayed in the open tooltip.
+- **TooltipArrow**: An optional arrow element for the tooltip, to be rendered within TooltipContent for visual association.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Tooltip } from '@melio-ui/tooltip';
+
+<Tooltip.Root>
+  <Tooltip.Trigger asChild>
+    <button>Tooltip</button>
+  </Tooltip.Trigger>
+  <Tooltip.Portal>
+    <Tooltip.Content>
+      tooltip message
+      <Tooltip.Arrow />
+    </Tooltip.Content>
+  </Tooltip.Portal>
+</Tooltip.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### TooltipRoot
+
+All parts of the tooltip are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'open',
+      required: false,
+      type: 'boolean',
+      description: 'Sets whether the tooltip content is open or closed.',
+    },
+    {
+      name: 'defaultOpen',
+      required: false,
+      type: 'boolean',
+      description:
+        'When first rendered, the tooltip content is in an opened state. Use when there is no need to control the opened state.',
+    },
+    {
+      name: 'onOpenChange',
+      required: false,
+      type: '(open: boolean) => void',
+      description:
+        'This is an event handler that is triggered when the open state of the tooltip content changes.',
+    },
+  ]}
+/>
+
+### TooltipTrigger
+
+Used to activate or open the Tooltip component.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+  ]}
+/>
+
+### TooltipPortal
+
+Portal the overlay and content portion into the body.
+
+<PropsTable
+  data={[
+    {
+      name: 'container',
+      required: false,
+      default: 'document.body',
+      type: 'HTMLElement | (() => HTMLElement)',
+      description: 'Specifies the container element to which the content should be portaled.',
+    },
+  ]}
+/>
+
+### TooltipContent
+
+Includes the content that will be displayed in the open tooltip.
+
+<PropsTable
+  data={[
+    {
+      name: 'placement',
+      required: false,
+      default: '"top"',
+      type: (
+        <>
+          Placement
+          <br />
+          <br />
+          "auto" | "bottom-end" | "top" | "top-start" | "top-end" | "bottom" | "bottom-start" | "right"
+          | "right-start" | "right-end" | "left" | "left-start" | "left-end" | "auto-start" | "auto-end"
+        </>
+      ),
+      description: 'Specifies the location of the value.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-popper-placement]',
+      values:
+        '"auto" | "bottom-end" | "top" | "top-start" | "top-end" | "bottom" | "bottom-start" | "right" | "right-start" | "right-end" | "left" | "left-start" | "left-end" | "auto-start" | "auto-end"',
+    },
+  ]}
+/>
+
+### TooltipArrow
+
+An optional arrow element for the tooltip, to be rendered within TooltipContent for visual association.
+
+## Examples
+
+### Display arrow
+
+```jsx
+<TooltipRoot>
+  <TooltipTrigger asChild>
+    <button type="button" style={{ width: 200, border: '1px solid #5f76bb', padding: 5 }}>
+      Hover me
+    </button>
+  </TooltipTrigger>
+  <TooltipPortal>
+    <TooltipContent>
+      tooltip message
+      <TooltipArrow />
+    </TooltipContent>
+  </TooltipPortal>
+</TooltipRoot>
+```
+
+### Placement Settings
+
+```jsx
+<TooltipRoot>
+  <TooltipTrigger asChild>
+    <button type="button" style={{ width: 200, border: '1px solid #5f76bb', padding: 5 }}>
+      Hover me
+    </button>
+  </TooltipTrigger>
+  <TooltipPortal>
+    <TooltipContent placement="bottom-end">
+      tooltip message
+      <TooltipArrow />
+    </TooltipContent>
+  </TooltipPortal>
+</TooltipRoot>
+```

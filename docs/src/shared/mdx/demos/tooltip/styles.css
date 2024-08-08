@@ -1,3 +1,8 @@
+.tooltip-button {
+  border: 0.0625rem solid #5f76bb;
+  padding: 0.3125rem 0.625rem;
+}
+
 .tooltip-content {
   background-color: rgb(106, 114, 128);
   color: #ffffff;

@@ -14,7 +14,7 @@ export default function TooltipDemo() {
   return (
     <TooltipRoot>
       <TooltipTrigger asChild>
-        <div style={{ width: 120 }}>Tooltip</div>
+        <button className="tooltip-button">Hover me</button>
       </TooltipTrigger>
       <TooltipPortal>
         <TooltipContent className="tooltip-content">

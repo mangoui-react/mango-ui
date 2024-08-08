@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface TooltipArrowProps extends React.ComponentPropsWithoutRef<'div'> {}
 
-// TODO: 확인후 필요 없으면 제거
+// TODO: 확인후 필요 없으면 제거 - 필요하다고 판단됨(다시 생각 또 해보자)
 const TooltipArrow = React.forwardRef<HTMLDivElement, TooltipArrowProps>((props, ref) => {
   // const { placement } = React.useContext(TooltipContentContext);
 
