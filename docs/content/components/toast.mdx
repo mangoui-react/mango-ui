@@ -1,0 +1,288 @@
+---
+title: Toast
+prevTitle: 'Tabs'
+prevSlug: '/components/tabs'
+nextTitle: 'Tooltip'
+nextSlug: '/components/tooltip'
+---
+
+# Toast
+
+<Description>The Toast component offers feedback to the user following an action.</Description>
+
+<DemoContainer>
+  <ToastDemo />
+  <DemoCodeBlock component="toast" />
+</DemoContainer>
+
+## Installation
+
+<PackageManagers
+  command={{
+    npm: 'npm i @melio-ui/toast',
+    yarn: 'yarn add @melio-ui/toast',
+    pnpm: 'pnpm add @melio-ui/toast',
+    bun: 'bun add @melio-ui/toast',
+  }}
+/>
+
+## Import
+
+<ImportSyntax
+  command={{
+    individual: `import { 
+  ToastRoot,
+  ToastContent,
+  ToastViewport,
+  ToastClose,
+} from '@melio-ui/toast';`,
+    global: `import { 
+  ToastRoot,
+  ToastContent,
+  ToastViewport,
+  ToastClose,
+} from '@melio-ui/react';`,
+  }}
+/>
+
+- **ToastRoot**: All parts of the toast are included.
+- **ToastContent**: The toast content.
+- **ToastViewport**: This is the fixed area where the toast notification appears.
+- **ToastClose**: A button for dismissing the toast message early.
+
+### Another way to import
+
+```js
+'use client';
+
+import { Toast } from '@melio-ui/toast';
+
+<Toast.Root>
+  <Toast.Content>
+    Notification
+    <Toast.Close asChild>
+      <button type="button">Close</button>
+    </Toast.Close>
+  </Toast.Content>
+  <Toast.Viewport />
+</Toast.Root>;
+```
+
+> 'use client' must be used when rendering on the server side.
+
+## API Reference
+
+### ToastRoot
+
+All parts of the toast are included.
+
+<PropsTable
+  data={[
+    {
+      name: 'open',
+      required: false,
+      type: 'boolean',
+      description: 'Sets whether the toast content is open or closed.',
+    },
+    {
+      name: 'defaultOpen',
+      required: false,
+      type: 'boolean',
+      description:
+        'When first rendered, the toast content is in an opened state. Use when there is no need to control the opened state.',
+    },
+    {
+      name: 'duration',
+      required: false,
+      default: '5000',
+      type: 'number',
+      description:
+        "The duration in milliseconds for the toast to auto-close, which overrides the provider's setting.",
+    },
+    {
+      name: 'onOpenChange',
+      required: false,
+      type: '(open: boolean) => void',
+      description:
+        'This is an event handler that is triggered when the open state of the toast content changes.',
+    },
+  ]}
+/>
+
+### ToastContent
+
+The toast content.
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+  ]}
+/>
+
+### ToastViewport
+
+This is the fixed area where the toast notification appears.
+
+<PropsTable
+  data={[
+    {
+      name: 'placement',
+      required: false,
+      default: '"top"',
+      type: (
+        <>
+          TypeAttributes.Placement
+          <br />
+          <br />
+          "top" | "top-left" | "top-right" | "bottom" | "bottom-left" | "bottom-right"
+        </>
+      ),
+      description: 'Specifies the location of the value.',
+    },
+  ]}
+/>
+
+<DataAttributesTable
+  data={[
+    {
+      attribute: '[data-placement]',
+      values: '"top" | "top-left" | "top-right" | "bottom" | "bottom-left" | "bottom-right"',
+    },
+  ]}
+/>
+
+### ToastClose
+
+A button for dismissing the toast message early.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+  ]}
+/>
+
+## Examples
+
+### Placement Settings
+
+```jsx render=true
+function PlacementToast() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Open
+      </button>
+
+      <ToastRoot open={open} onOpenChange={setOpen}>
+        <ToastContent>
+          <div style={{ backgroundColor: '#dffadc', height: 50, padding: 15, color: 'black' }}>
+            Notification
+          </div>
+        </ToastContent>
+        <ToastViewport placement="bottom-right" />
+      </ToastRoot>
+    </>
+  );
+}
+
+render(<PlacementToast />);
+```
+
+### Duration Settings
+
+```jsx render=true
+function DurationToast() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Open
+      </button>
+
+      <ToastRoot duration={1000} open={open} onOpenChange={setOpen}>
+        <ToastContent>
+          <div style={{ backgroundColor: '#dffadc', height: 50, padding: 15, color: 'black' }}>
+            Notification
+          </div>
+        </ToastContent>
+        <ToastViewport />
+      </ToastRoot>
+    </>
+  );
+}
+
+render(<DurationToast />);
+```
+
+### Close through user action.
+
+```jsx render=true
+function CloseToast() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Open
+      </button>
+
+      <ToastRoot open={open} onOpenChange={setOpen}>
+        <ToastContent
+          style={{
+            display: 'grid',
+            gridTemplateAreas: `"title action" "description action"`,
+            gridTemplateColumns: 'auto max-content',
+            columnGap: 15,
+            alignItems: 'center',
+            backgroundColor: '#dffadc',
+            color: 'black',
+          }}
+        >
+          <div
+            style={{
+              gridArea: 'title',
+              height: 50,
+              padding: 15,
+            }}
+          >
+            Notification
+          </div>
+          <ToastClose style={{ gridArea: 'action', padding: 15 }} asChild>
+            <button type="button">Undo</button>
+          </ToastClose>
+        </ToastContent>
+        <ToastViewport />
+      </ToastRoot>
+    </>
+  );
+}
+
+render(<CloseToast />);
+```

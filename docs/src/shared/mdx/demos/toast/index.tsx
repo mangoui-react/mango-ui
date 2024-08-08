@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 import { ToastClose, ToastContent, ToastRoot, ToastViewport } from '@melio-ui/toast';
@@ -8,14 +10,15 @@ export default function ToastDemo() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div>
+    <>
       <button
         type="button"
+        className="toast-button"
         onClick={() => {
           setOpen(true);
         }}
       >
-        Open
+        Open Toast
       </button>
 
       <ToastRoot open={open} onOpenChange={setOpen}>
@@ -26,6 +29,6 @@ export default function ToastDemo() {
         </ToastContent>
         <ToastViewport className="toast-viewport" />
       </ToastRoot>
-    </div>
+    </>
   );
 }
