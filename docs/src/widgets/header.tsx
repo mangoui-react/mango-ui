@@ -17,6 +17,7 @@ export default function Header() {
           <div className="grow">
             <div className="flex items-center">
               <Logo />
+              MelioUI
               {/* <Search /> */}
             </div>
           </div>
