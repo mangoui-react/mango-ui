@@ -1,3 +1,10 @@
+.drawer-button {
+  border: 1px solid #fff;
+  padding: 0.3125rem;
+  border-radius: 0.3125rem;
+  color: #e2e8f0;
+}
+
 .drawer-backdrop {
   opacity: 1;
   position: fixed;
@@ -21,6 +28,7 @@
   animation: fadein 0.3s;
 
   background-color: rgb(45, 55, 72);
+  color: #e2e8f0;
   top: auto;
   bottom: auto;
   left: auto;

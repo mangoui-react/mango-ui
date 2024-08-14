@@ -4,16 +4,16 @@
   background-color: #000000;
   border-width: 0.0625rem;
   border-style: solid;
-  border-color: #d9d9d9;
+  border-color: #5a5757;
   border-radius: 0.125rem;
   border-bottom-width: 0;
-  color: inherit;
+  color: #e2e8f0;
   width: 300px;
 }
 
 .item {
   border-bottom-width: 0.0625rem;
-  border-bottom-color: #d9d9d9;
+  border-bottom-color: #5a5757;
 }
 
 .header {
@@ -32,7 +32,7 @@
 
 .content {
   border-top-width: 0.0625rem;
-  border-top-color: #d9d9d9;
+  border-top-color: #5a5757;
   padding: 1rem;
 }
 

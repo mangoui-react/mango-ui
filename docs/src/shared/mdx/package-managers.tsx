@@ -48,16 +48,16 @@ export function PackageManagers(props: {
 }) {
   const { command, showGlobalInstallWarning = true } = props;
   const colorVariants = {
-    npm: 'data-[state=active]:text-[#e53e3e] data-[state=active]:border-b-[#e53e3e]',
-    yarn: 'data-[state=active]:text-[#3182ce] data-[state=active]:border-b-[#3182ce]',
-    pnpm: 'data-[state=active]:text-[#dd6b20] data-[state=active]:border-b-[#dd6b20]',
-    bun: 'data-[state=active]:text-[#cdbfa7] data-[state=active]:border-b-[#cdbfa7]',
+    npm: 'data-[state=active]:text-[#e53e3e] data-[state=active]:border-b-[#e53e3e] dark:data-[state=active]:text-[#e53e3e] dark:data-[state=active]:border-b-[#e53e3e]',
+    yarn: 'data-[state=active]:text-[#3182ce] data-[state=active]:border-b-[#3182ce] dark:data-[state=active]:text-[#3182ce] dark:data-[state=active]:border-b-[#3182ce]',
+    pnpm: 'data-[state=active]:text-[#dd6b20] data-[state=active]:border-b-[#dd6b20] dark:data-[state=active]:text-[#dd6b20] dark:data-[state=active]:border-b-[#dd6b20]',
+    bun: 'data-[state=active]:text-[#cdbfa7] data-[state=active]:border-b-[#cdbfa7] dark:data-[state=active]:text-[#cdbfa7] dark:data-[state=active]:border-b-[#cdbfa7]',
   };
 
   return (
     <>
       <Tabs.Root>
-        <Tabs.List className="flex">
+        <Tabs.List className="mb-0.5 flex">
           {packageManagers.map(({ name, icon, color }) => {
             if (!command[name]) return null;
             return (
@@ -65,8 +65,8 @@ export function PackageManagers(props: {
                 key={name}
                 className={cn(
                   'flex items-center justify-center gap-1',
-                  'text-gray-400',
-                  'px-3 py-1 cursor-pointer',
+                  'text-gray-600 dark:text-gray-400',
+                  'cursor-pointer px-3 py-1',
                   // 'border border-solid border-b-0 border-slate-700',
                   'data-[state=active]:border-b-2',
                   `${colorVariants[name]}`,
@@ -82,7 +82,7 @@ export function PackageManagers(props: {
         {packageManagers.map(({ name }) => {
           if (!command[name]) return null;
           return (
-            <Tabs.Content key={name} className="p-0 hidden data-[state=active]:block">
+            <Tabs.Content key={name} className="hidden p-0 data-[state=active]:block">
               <CodeBlock live={false}>
                 <div>{command[name]}</div>
               </CodeBlock>
@@ -91,7 +91,7 @@ export function PackageManagers(props: {
         })}
       </Tabs.Root>
       {showGlobalInstallWarning && (
-        <blockquote className="py-0 px-4 border-l-4 border-slate-700 my-4">
+        <blockquote className="my-4 border-l-4 border-slate-700 px-4 py-0">
           If @melio-ui/react is already installed globally, you can skip this step.
         </blockquote>
       )}

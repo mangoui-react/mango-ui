@@ -36,7 +36,8 @@ export function CheckboxIndicator({ className, ...props }: CheckboxIndicatorProp
       className={cn(
         'relative flex cursor-pointer items-center text-[#208aff]',
         'group-data-[readonly]:cursor-default',
-        'group-data-[disabled]:pointer-events-none group-data-[disabled]:cursor-default group-data-[disabled]:text-[#d9d9d9] group-data-[disabled]:opacity-50',
+        'group-data-[disabled]:pointer-events-none group-data-[disabled]:cursor-default group-data-[disabled]:opacity-50',
+        'group-data-[disabled]:text-[#b0a9a9] dark:group-data-[disabled]:text-[#d9d9d9]',
         className,
       )}
     />
@@ -55,7 +56,8 @@ export function CheckboxLabel({ className, ...props }: CheckboxLabelProps) {
       {...props}
       className={cn(
         'cursor-pointer pl-[0.3125rem] pr-[0.3125rem]',
-        'group-data-[disabled]:pointer-events-none group-data-[disabled]:cursor-default group-data-[disabled]:text-[#d9d9d9] group-data-[disabled]:opacity-50',
+        'group-data-[disabled]:pointer-events-none group-data-[disabled]:cursor-default group-data-[disabled]:opacity-50',
+        'group-data-[disabled]:text-[#b0a9a9] dark:group-data-[disabled]:text-[#d9d9d9]',
         className,
       )}
     />

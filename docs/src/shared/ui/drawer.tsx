@@ -38,7 +38,7 @@ export function DrawerContent({ className, ...props }: DrawerContentProps) {
     <MDrawerContent
       {...props}
       className={cn(
-        'fixed z-[1200] rounded-md bg-slate-700',
+        'fixed z-[1200] rounded-md bg-slate-700 text-slate-100',
         'mx-auto my-0',
         'bottom-auto left-auto right-auto top-auto',
         'min-h-10 w-[32.5rem] min-w-48',

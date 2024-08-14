@@ -29,7 +29,7 @@ export function ImportSyntax(props: { command: Partial<Record<ImportSyntaxKey, s
   const { command } = props;
   return (
     <Tabs.Root>
-      <Tabs.List className="flex">
+      <Tabs.List className="mb-0.5 flex">
         {importSyntaxes.map(({ key, name }) => {
           if (!command[key]) return null;
           return (
@@ -38,9 +38,10 @@ export function ImportSyntax(props: { command: Partial<Record<ImportSyntaxKey, s
               className={cn(
                 'flex items-center justify-center gap-1',
                 'text-gray-400',
-                'px-3 py-1 cursor-pointer',
+                'cursor-pointer px-3 py-1',
                 // 'border border-solid border-b-0 border-slate-700',
-                'data-[state=active]:border-b-slate-200 data-[state=active]:border-b-2 data-[state=active]:text-slate-200',
+                'data-[state=active]:border-b-2 data-[state=active]:border-b-slate-800 dark:data-[state=active]:border-b-slate-200',
+                'data-[state=active]:text-slate-800 dark:data-[state=active]:text-slate-200',
               )}
             >
               {name}
@@ -51,7 +52,7 @@ export function ImportSyntax(props: { command: Partial<Record<ImportSyntaxKey, s
       {importSyntaxes.map(({ key }) => {
         if (!command[key]) return null;
         return (
-          <Tabs.Content key={key} className="p-0 hidden data-[state=active]:block">
+          <Tabs.Content key={key} className="hidden p-0 data-[state=active]:block">
             <CodeBlock live={false}>
               <div>{command[key]}</div>
             </CodeBlock>

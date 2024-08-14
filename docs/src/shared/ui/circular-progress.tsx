@@ -33,7 +33,7 @@ export function CircularProgressIndicator({
         'block',
         'h-full w-full',
         'data-[state=indeterminate]:animate-[indeterminate-svg_2s_linear_infinite]',
-        '[&>[data-component=bg]]:stroke-slate-500',
+        '[&>[data-component=bg]]:stroke-slate-300 dark:[&>[data-component=bg]]:stroke-slate-500',
         '[&>[data-component=bar]]:stroke-[#208aff]',
         //
         '[&[data-state=complete]>[data-component=bar]]:duration-700 [&[data-state=complete]>[data-component=bar]]:ease-linear',

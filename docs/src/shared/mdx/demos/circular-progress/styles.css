@@ -39,6 +39,7 @@
   text-align: center;
   transform: translate(-50%, -50%);
   font-size: 0.24em;
+  color: #e2e8f0;
 }
 
 @keyframes indeterminate {

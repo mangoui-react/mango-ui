@@ -111,10 +111,10 @@ export default function SupportSidebar() {
                     <span>Overview</span>
                   </div>
                   <ul className="mb-3 ml-4 border-l border-slate-200 pl-6 dark:border-slate-800">
-                    <li className="mt-3">
+                    <li className="mt-2">
                       <SidebarLink href="/overview/introduction">Introduction</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/overview/getting-started">Getting started</SidebarLink>
                     </li>
                   </ul>
@@ -149,69 +149,69 @@ export default function SupportSidebar() {
                     <span>Components</span>
                   </div>
                   <ul className="mb-3 ml-4 border-l border-slate-200 pl-6 dark:border-slate-800">
-                    <li className="mt-3">
+                    <li className="mt-2">
                       <SidebarLink href="/components/accordion">Accordion</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/alert">Alert</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/avatar">Avatar</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/badge">Badge</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/breadcrumb">Breadcrumb</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/checkbox">Checkbox</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/circular-progress">
                         CircularProgress
                       </SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/drawer">Drawer</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/dropdown">Dropdown</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/modal">Modal</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/number-input">NumberInput</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/popover">Popover</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/progress">Progress</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/radio-group">RadioGroup</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/slider">Slider</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/steps">Steps</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/switch">Switch</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/tabs">Tabs</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/toast">Toast</SidebarLink>
                     </li>
-                    <li className="mt-3">
+                    <li className="mt-1">
                       <SidebarLink href="/components/tooltip">Tooltip</SidebarLink>
                     </li>
-                    {/* <li className="mt-3">
+                    {/* <li className="mt-1">
                       <SidebarLink href="/components/button">Button</SidebarLink>
                     </li> */}
                   </ul>

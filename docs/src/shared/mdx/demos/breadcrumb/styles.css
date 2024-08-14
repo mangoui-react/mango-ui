@@ -9,7 +9,7 @@
 .breadcrumb-item {
   display: flex;
   align-items: center;
-  color: #208aff;
+  color: #abcbee;
 }
 
 .breadcrumb-link {
@@ -26,6 +26,7 @@
 .breadcrumb-separator {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  color: #fff;
 }
 
 .breadcrumb-collapse {

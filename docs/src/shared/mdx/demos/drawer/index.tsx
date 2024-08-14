@@ -15,14 +15,7 @@ export default function DrawerDemo() {
   return (
     <DrawerRoot>
       <DrawerTrigger asChild>
-        <button
-          type="button"
-          style={{
-            border: '1px solid #fff',
-            padding: 5,
-            borderRadius: 5,
-          }}
-        >
+        <button type="button" className="drawer-button">
           Open Drawer
         </button>
       </DrawerTrigger>

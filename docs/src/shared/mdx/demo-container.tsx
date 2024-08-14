@@ -16,7 +16,7 @@ export default function DemoContainer({ className, children, ...props }: DemoCon
   return (
     <div {...props} className={cn('relative my-4 flex flex-col', className)}>
       <Tabs.Root className={cn('relative w-full')}>
-        <Tabs.List className="flex">
+        <Tabs.List className="mb-0.5 flex">
           {titles.map((title, index) => {
             return (
               <Tabs.Tab
@@ -26,7 +26,8 @@ export default function DemoContainer({ className, children, ...props }: DemoCon
                   'text-gray-400',
                   'cursor-pointer px-3 py-1',
                   // 'border border-solid border-b-0 border-slate-700',
-                  'data-[state=active]:border-b-2 data-[state=active]:border-b-slate-200 data-[state=active]:text-slate-200',
+                  'data-[state=active]:border-b-2 data-[state=active]:border-b-slate-800 dark:data-[state=active]:border-b-slate-200',
+                  'data-[state=active]:text-slate-800 dark:data-[state=active]:text-slate-200',
                 )}
               >
                 {title}
@@ -40,7 +41,7 @@ export default function DemoContainer({ className, children, ...props }: DemoCon
           </div>
         </Tabs.Content>
         <Tabs.Content>
-          <div className="relative py-4">{contents[1]}</div>
+          <div className="relative py-2">{contents[1]}</div>
         </Tabs.Content>
       </Tabs.Root>
     </div>

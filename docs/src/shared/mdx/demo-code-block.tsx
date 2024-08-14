@@ -26,7 +26,7 @@ export default function DemoCodeBlock(props: DemoCodeBlockProps) {
 
   return (
     <Tabs.Root>
-      <Tabs.List className="flex ml-2">
+      <Tabs.List className="mb-0.5 ml-2 flex">
         {codeTabs.map((tab) => (
           <Tabs.Tab
             key={tab?.id}
@@ -38,9 +38,10 @@ export default function DemoCodeBlock(props: DemoCodeBlockProps) {
             className={cn(
               'flex items-center justify-center gap-1',
               'text-gray-400',
-              'px-3 py-1 cursor-pointer',
+              'cursor-pointer px-3 py-1',
               // 'border border-solid border-b-0 border-slate-700',
-              'data-[state=active]:border-b-slate-200 data-[state=active]:border-b-2 data-[state=active]:text-slate-200',
+              'data-[state=active]:border-b-2 data-[state=active]:border-b-slate-800 dark:data-[state=active]:border-b-slate-200',
+              'data-[state=active]:text-slate-800 dark:data-[state=active]:text-slate-200',
             )}
           >
             {tab?.title}
@@ -51,7 +52,7 @@ export default function DemoCodeBlock(props: DemoCodeBlockProps) {
         <Tabs.Content
           key={tab?.id}
           className={cn(
-            'p-0 hidden',
+            'hidden p-0',
             'data-[state=active]:block data-[state=active]:bg-slate-900',
             // 'max-h-96 overflow-y-auto',
           )}

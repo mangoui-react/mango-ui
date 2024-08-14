@@ -39,7 +39,7 @@ export function BreadcrumbLink({ className, ...props }: BreadcrumbLinkProps) {
     <MBreadcrumbLink
       {...props}
       className={cn(
-        'flex cursor-pointer items-center text-[#fff]',
+        'flex cursor-pointer items-center text-black dark:text-white',
         'no-underline hover:underline',
         className,
       )}
@@ -56,7 +56,12 @@ export function BreadcrumbSeparator({ className, ...props }: BreadcrumbSeparator
 interface BreadcrumbCollapseProps
   extends React.ComponentPropsWithoutRef<typeof MBreadcrumbCollapse> {}
 export function BreadcrumbCollapse({ className, ...props }: BreadcrumbCollapseProps) {
-  return <MBreadcrumbCollapse {...props} className={cn('cursor-pointer text-[#fff]', className)} />;
+  return (
+    <MBreadcrumbCollapse
+      {...props}
+      className={cn('cursor-pointer text-black dark:text-white', className)}
+    />
+  );
 }
 
 export const Breadcrumb = {

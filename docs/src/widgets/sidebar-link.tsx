@@ -14,8 +14,10 @@ export default function SidebarLink({ children, href }: SidebarLinkProps) {
 
   return (
     <Link
-      className={`flex items-center space-x-3 font-medium ${
-        pathname === href ? 'text-blue-600' : 'text-slate-800 dark:text-slate-200'
+      className={`flex items-center space-x-3 rounded-2xl px-4 py-2 font-medium ${
+        pathname === href
+          ? 'bg-blue-100 font-bold text-blue-600 dark:bg-opacity-10 dark:text-blue-300'
+          : 'text-slate-800 dark:text-slate-200'
       }`}
       href={href}
       onClick={() => setSidebarOpen(false)}

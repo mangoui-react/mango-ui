@@ -12,7 +12,7 @@ function Root({ className, ...props }: RootProps) {
       className={cn(
         'm-0 bg-slate-800 p-0',
         'rounded-sm border border-b-0 border-solid border-slate-500',
-        'w-72 text-inherit',
+        'w-72 text-[#e2e8f0]',
         className,
       )}
     />
