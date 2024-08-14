@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Link from 'next/link';
+
+import { ExternalLinkIcon } from '@/shared/icons/external-link-icon';
 import * as Demos from '@/shared/mdx/demos';
 
 import CodeBlock from './code-block';
@@ -68,6 +71,27 @@ export const MDXComponents = {
   },
   strong: (props: any) => <strong {...props} />,
   p: (props: any) => <p {...props} style={{ marginBottom: '1rem' }} />,
+  a: ({ href = '', children, ...props }: any) => {
+    if (href.startsWith('http')) {
+      return (
+        <a
+          {...props}
+          className="inline-flex items-center gap-1 text-[#70b8ff]"
+          href={href}
+          target="_blank"
+          rel="noopener"
+        >
+          {children}
+          <ExternalLinkIcon />
+        </a>
+      );
+    }
+    return (
+      <Link href={href} passHref legacyBehavior>
+        <a {...props}>{children}</a>
+      </Link>
+    );
+  },
   ul: (props: any) => (
     <ul style={{ listStyle: 'disc', marginTop: '0.5rem', marginLeft: '1.25rem' }} {...props} />
   ),
