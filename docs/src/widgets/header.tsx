@@ -25,16 +25,16 @@ export default function Header() {
           <nav className="flex">
             {/* Right side elements links */}
             <ul className="flex grow flex-wrap items-center justify-end">
-              <li className="ml-4">
+              {/* <li className="ml-4">
                 <a
                   className="btn-sm inline-flex items-center bg-blue-600 text-slate-100 shadow-sm hover:bg-blue-700"
                   href="#0"
                 >
                   Support
                 </a>
-              </li>
+              </li> */}
               <li>
-                <button className="ml-3 flex items-center rounded-md p-2 hover:bg-slate-600">
+                <button className="ml-3 flex items-center rounded-md p-2 hover:bg-slate-200 dark:hover:bg-slate-600">
                   <GithubIcon />
                 </button>
               </li>

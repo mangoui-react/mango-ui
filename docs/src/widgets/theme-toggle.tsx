@@ -6,7 +6,7 @@ export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="flex flex-col justify-center ml-3">
+    <div className="ml-3 flex flex-col justify-center">
       <input
         type="checkbox"
         name="light-switch"
@@ -20,7 +20,10 @@ export default function ThemeToggle() {
           return setTheme('dark');
         }}
       />
-      <label className="relative cursor-pointer p-2" htmlFor="light-switch">
+      <label
+        className="relative cursor-pointer rounded-md p-2 hover:bg-slate-200 dark:hover:bg-slate-600"
+        htmlFor="light-switch"
+      >
         <svg className="dark:hidden" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
           <path
             className="fill-blue-400"
