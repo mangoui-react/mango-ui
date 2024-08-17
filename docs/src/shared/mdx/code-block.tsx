@@ -57,12 +57,12 @@ export default function CodeBlock({
           <div data-language={language}>
             <pre className={cn('px-4 py-3', 'max-h-96 overflow-y-auto', className)} style={style}>
               {tokens.map((line, i) => (
-                <div key={i} {...getLineProps({ line, key: i })}>
+                <div key={i} {...getLineProps({ line })}>
                   {showLines && (
                     <span style={{ opacity: 0.3, marginRight: 20, fontSize: 12 }}>{i + 1}</span>
                   )}
                   {line.map((token, key) => (
-                    <span key={key} {...getTokenProps({ token, key })} />
+                    <span key={key} {...getTokenProps({ token })} />
                   ))}
                 </div>
               ))}
