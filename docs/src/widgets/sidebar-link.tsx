@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { useAppProvider } from '@/app/app-provider';
+import { useAppProvider } from '@/app/(default)/app-provider';
 
 interface SidebarLinkProps {
   children: React.ReactNode;

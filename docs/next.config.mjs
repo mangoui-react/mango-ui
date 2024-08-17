@@ -7,15 +7,15 @@ const nextConfig = {
   swcMinify: true,
   // optimizePackageImports: ["@melio-ui/react"],
   // externalDir: true,
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/overview/introduction',
-        permanent: true,
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/overview/introduction',
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
 };
 
 export default withContentlayer(nextConfig);

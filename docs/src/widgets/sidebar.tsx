@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 // import { Transition } from '@headlessui/react';
 // import Link from 'next/link';
 // import { useSelectedLayoutSegments } from 'next/navigation';
-import { useAppProvider } from '@/app/app-provider';
+// import { useAppProvider } from '@/app/(default)/app-provider';
 import { cn } from '@/shared/utils/cn';
 
 import SidebarLink from './sidebar-link';
