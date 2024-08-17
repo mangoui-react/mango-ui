@@ -21,7 +21,8 @@ export function TooltipContent({ className, ...props }: TooltipContentProps) {
       {...props}
       className={cn(
         'group',
-        'break-words bg-gray-500 text-white',
+        'break-words bg-slate-800 text-white',
+        'dark:bg-slate-300 dark:text-slate-800',
         'px-[0.625rem] py-1',
         'max-w-[18.75rem] rounded',
         className,

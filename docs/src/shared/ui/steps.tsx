@@ -94,7 +94,7 @@ export function StepsSeparator({ className, ...props }: StepsSeparatorProps) {
     <MStepsSeparator
       {...props}
       className={cn(
-        'h-0.5 w-full bg-slate-500',
+        'h-0.5 w-full bg-slate-300 dark:bg-slate-500',
         'data-[orientation=horizontal]:ml-2',
         'data-[orientation=vertical]:absolute data-[orientation=vertical]:h-full data-[orientation=vertical]:w-0.5',
         'data-[orientation=vertical]:left-3.5 data-[orientation=vertical]:top-[2.125rem]',

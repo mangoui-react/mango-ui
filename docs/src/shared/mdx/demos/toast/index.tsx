@@ -13,7 +13,7 @@ export default function ToastDemo() {
     <>
       <button
         type="button"
-        className="toast-button"
+        className="toast-trigger"
         onClick={() => {
           setOpen(true);
         }}

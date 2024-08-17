@@ -9,6 +9,7 @@
   justify-content: flex-end;
   gap: 0.3125rem;
   margin-top: 1.25rem;
+  color: #e2e8f0;
 }
 .steps-move button {
   border: 0.0313rem solid;
@@ -76,7 +77,7 @@
 .steps-step[data-status='process'] .steps-indicator {
   background: #208aff;
   border-color: #208aff;
-  color: #fff;
+  color: #e2e8f0;
 }
 .steps-step[data-status='finish'] .steps-indicator {
   background: inherit;
@@ -96,13 +97,13 @@
   color: rgba(224, 216, 216, 0.54);
 }
 .steps-step[data-status='process'] .steps-content {
-  color: inherit;
+  color: #e2e8f0;
 }
 .steps-step[data-status='finish'] .steps-content {
-  color: inherit;
+  color: #e2e8f0;
 }
 .steps-step[data-status='error'] .steps-content {
-  color: inherit;
+  color: #e23731;
 }
 
 .steps-separator {

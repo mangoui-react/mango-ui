@@ -51,6 +51,7 @@
   padding-left: 0.3125rem;
   padding-right: 0.3125rem;
   cursor: pointer;
+  color: #e2e8f0;
 }
 .radio-group-item[data-disabled] .radio-group-label {
   color: rgba(255, 255, 255, 0.2);

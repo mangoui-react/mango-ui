@@ -43,7 +43,8 @@ export function TabsTab({ className, ...props }: TabsTabProps) {
         'border-[0.0625rem] border-solid border-transparent',
         'border-b-0',
         'cursor-pointer list-none px-3 py-1.5',
-        'data-[state=active]:rounded-t-[0.3125rem] data-[state=active]:border-slate-500 data-[state=active]:bg-slate-800 data-[state=active]:text-blue-500',
+        'data-[state=active]:rounded-t-[0.3125rem] data-[state=active]:text-blue-500',
+        'data-[state=active]:border-slate-500 data-[state=active]:bg-slate-100 dark:data-[state=active]:bg-slate-800',
         'data-[disabled]:cursor-default data-[disabled]:opacity-30',
         'group-data-[orientation=vertical]:bottom-0 group-data-[orientation=vertical]:right-[-0.0625rem] group-data-[orientation=vertical]:block group-data-[orientation=vertical]:border-r-0',
         'group-data-[orientation=vertical]:data-[state=active]:border-b-[0.0625rem] group-data-[orientation=vertical]:data-[state=active]:border-b-gray-500',
@@ -61,7 +62,7 @@ export function TabsContent({ className, ...props }: TabsContentProps) {
       {...props}
       className={cn(
         'hidden p-[0.625rem]',
-        'data-[state=active]:block data-[state=active]:bg-slate-800',
+        'data-[state=active]:block data-[state=active]:bg-slate-100 dark:data-[state=active]:bg-slate-800',
         'group-data-[orientation=vertical]:w-full',
         className,
       )}

@@ -22,8 +22,8 @@ export function NumberInputField({ className, ...props }: NumberInputFieldProps)
       {...props}
       className={cn(
         'relative inline-block h-8 w-full min-w-0',
-        'border border-slate-700',
-        'box-border bg-slate-600',
+        'border border-slate-700 dark:border-slate-500',
+        'box-border dark:bg-slate-600',
         'text-base text-inherit',
         'px-2 py-1 leading-none',
         'focus:border focus:border-blue-400 focus:shadow-blue-800 focus:outline-0',
@@ -49,7 +49,7 @@ export function NumberInputMinus({ className, ...props }: NumberInputMinusProps)
         'block h-4 w-full p-0',
         'box-border cursor-pointer bg-transparent',
         'text-sm leading-none text-inherit',
-        'border border-slate-700',
+        'border border-slate-700 dark:border-slate-500',
         'align-middle',
         'disabled:cursor-not-allowed disabled:border-gray-500 disabled:bg-gray-800 disabled:text-gray-500',
         className,
@@ -67,7 +67,7 @@ export function NumberInputPlus({ className, ...props }: NumberInputPlusProps) {
         'block h-4 w-full p-0',
         'box-border cursor-pointer bg-transparent',
         'text-sm leading-none text-inherit',
-        'border border-slate-700',
+        'border border-slate-700 dark:border-slate-500',
         'align-middle',
         'disabled:cursor-not-allowed disabled:border-gray-500 disabled:bg-gray-800 disabled:text-gray-500',
         className,

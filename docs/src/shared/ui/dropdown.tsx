@@ -22,7 +22,7 @@ export function DropdownContent({ className, ...props }: DropdownContentProps) {
     <MDropdownContent
       {...props}
       className={cn(
-        'absolute bg-slate-500',
+        'absolute bg-slate-500 text-slate-100',
         'rounded border border-slate-600 shadow-sm',
         'focus:outline-0',
         className,

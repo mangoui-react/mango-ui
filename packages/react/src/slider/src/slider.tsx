@@ -43,11 +43,6 @@ export const SliderContext = React.createContext<SliderContextValue>({
   thumbMap: new Map(),
 });
 
-/**
- * 슬라이더 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
 const Slider = React.forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
   const {
     name,

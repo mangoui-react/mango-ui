@@ -12,7 +12,12 @@ export function ProgressRoot({ className, ...props }: ProgressRootProps) {
   return (
     <MProgressRoot
       {...props}
-      className={cn('relative overflow-hidden', 'bg-slate-500', 'h-2 w-full', className)}
+      className={cn(
+        'relative overflow-hidden',
+        'bg-slate-200 dark:bg-slate-500',
+        'h-2 w-full',
+        className,
+      )}
     />
   );
 }

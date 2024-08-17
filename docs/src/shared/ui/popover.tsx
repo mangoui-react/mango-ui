@@ -21,7 +21,7 @@ export function PopoverContent({ className, ...props }: PopoverContentProps) {
     <MPopoverContent
       {...props}
       className={cn(
-        'bg-slate-500',
+        'bg-slate-500 text-slate-100',
         'rounded border border-slate-600 shadow-sm',
         'focus:outline-0',
         className,

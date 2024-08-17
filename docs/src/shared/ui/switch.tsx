@@ -42,10 +42,11 @@ export function SwitchTrack({ className, ...props }: SwitchTrackProps) {
         'relative box-content inline-flex items-center align-middle',
         'h-[1.625rem] min-w-12 p-0.5',
         'rounded-[0.9375rem]',
-        'bg-slate-600',
+        'bg-slate-300 dark:bg-slate-600',
+        // 'bg-slate-600',
         'cursor-pointer',
         'transition-[background-color] duration-500 ease-in-out',
-        'data-[state=checked]:bg-blue-500',
+        'data-[state=checked]:bg-blue-500 dark:data-[state=checked]:bg-blue-500',
         'group-data-[disabled]:cursor-not-allowed',
         className,
       )}

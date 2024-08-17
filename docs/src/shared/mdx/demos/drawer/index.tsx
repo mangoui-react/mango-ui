@@ -15,7 +15,7 @@ export default function DrawerDemo() {
   return (
     <DrawerRoot>
       <DrawerTrigger asChild>
-        <button type="button" className="drawer-button">
+        <button type="button" className="drawer-trigger">
           Open Drawer
         </button>
       </DrawerTrigger>

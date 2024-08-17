@@ -35,7 +35,7 @@ export function SliderTrack({ className, ...props }: SliderTrackProps) {
       className={cn(
         'absolute h-1 w-full',
         'rounded-[0.0625rem]',
-        'bg-slate-600',
+        'bg-slate-300 dark:bg-slate-600',
         'group-data-[orientation=vertical]:h-full group-data-[orientation=vertical]:w-1',
         className,
       )}

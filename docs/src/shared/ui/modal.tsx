@@ -38,7 +38,7 @@ export function ModalContent({ className, ...props }: ModalContentProps) {
     <MModalContent
       {...props}
       className={cn(
-        'fixed z-[1200] rounded-md bg-slate-600',
+        'fixed z-[1200] rounded-md bg-slate-600 text-slate-100',
         'left-0 right-0 top-7 mx-auto my-0',
         'min-h-10 w-[32.5rem] min-w-48',
         'animate-[fadein_0.3s]',

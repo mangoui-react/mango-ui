@@ -36,11 +36,7 @@ export const ToastContext = React.createContext<ToastContextValue>({
   handleClose: () => {},
 });
 
-/**
- * 토스트 컴포넌트
- *
- * @author 안형노 <elle0510@gmail.com>
- */
+// TODO: toast 띄우는거 관리하는 것은 hook 으로 만들어서 처리해 보자.
 export default function Toast(props: ToastProps): JSX.Element {
   const { open: openProp, defaultOpen, duration = 5000, children, onOpenChange } = props;
 

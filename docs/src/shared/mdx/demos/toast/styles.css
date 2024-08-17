@@ -1,7 +1,8 @@
-.toast-button {
-  padding: 0.3125rem 0.625rem;
-  border: 0.0625rem solid #487493;
-  border-radius: 0.3125rem;
+.toast-trigger {
+  border: 0.0625rem solid rgba(255, 255, 255, 0.35);
+  border-radius: 0.25rem;
+  padding: 0.3125rem;
+  color: #e2e8f0;
 }
 
 .toast-content {

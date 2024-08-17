@@ -2,11 +2,13 @@
   border: 0.0625rem solid rgba(255, 255, 255, 0.35);
   border-radius: 0.25rem;
   padding: 0.3125rem;
+  color: #e2e8f0;
 }
 
 .dropdown-content {
   position: absolute;
   background-color: rgb(45, 55, 72);
+  color: #e2e8f0;
   border: 0.0625rem solid rgba(255, 255, 255, 0.35);
   border-radius: 0.25rem;
   box-shadow: 0 0.125rem 0.1875rem 0 rgba(0, 0, 0, 0.15);

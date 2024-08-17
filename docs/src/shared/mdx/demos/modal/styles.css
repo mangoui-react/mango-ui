@@ -1,3 +1,10 @@
+.modal-trigger {
+  border: 0.0625rem solid rgba(255, 255, 255, 0.35);
+  border-radius: 0.25rem;
+  padding: 0.3125rem;
+  color: #e2e8f0;
+}
+
 .modal-backdrop {
   opacity: 1;
   position: fixed;
@@ -10,12 +17,6 @@
   animation: fadein 0.3s;
 }
 
-.modal-trigger {
-  border: 0.0625rem solid rgba(255, 255, 255, 0.35);
-  border-radius: 0.25rem;
-  padding: 0.3125rem;
-}
-
 .modal-content {
   position: fixed;
   top: 1.875rem;
@@ -26,6 +27,7 @@
   min-width: 12.5rem;
   min-height: 2.625rem;
   background-color: #364664;
+  color: #e2e8f0;
   z-index: 1200;
   border-radius: 0.375rem;
   animation: fadein 0.3s;

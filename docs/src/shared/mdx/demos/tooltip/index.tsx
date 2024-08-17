@@ -14,7 +14,7 @@ export default function TooltipDemo() {
   return (
     <TooltipRoot>
       <TooltipTrigger asChild>
-        <button className="tooltip-button">Hover me</button>
+        <button className="tooltip-trigger">Hover me</button>
       </TooltipTrigger>
       <TooltipPortal>
         <TooltipContent className="tooltip-content">
