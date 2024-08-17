@@ -1,4 +1,4 @@
-import '../globals.scss';
+import './styles/globals.css';
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
