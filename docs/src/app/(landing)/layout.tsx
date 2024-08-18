@@ -1,11 +1,10 @@
-// import './styles/globals.css';
 import Link from 'next/link';
 
 import { GithubIcon } from '@/shared/icons/github-icon';
 import ThemeToggle from '@/widgets/theme-toggle';
 
-import '../(default)/styles/globals.css';
-import Theme from '../(default)/theme-provider';
+import '../styles/globals.css';
+import Theme from '../theme-provider';
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   return (

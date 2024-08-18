@@ -7,9 +7,9 @@ import Illustration from '@/public/images/hero-illustration.svg';
 import Header from '@/widgets/header';
 import Sidebar from '@/widgets/sidebar';
 
+import '../styles/globals.css';
+import Theme from '../theme-provider';
 import AppProvider from './app-provider';
-import './styles/globals.css';
-import Theme from './theme-provider';
 
 const nycd = Nothing_You_Could_Do({
   subsets: ['latin'],
