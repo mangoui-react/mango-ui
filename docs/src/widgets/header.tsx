@@ -1,4 +1,5 @@
-import { GithubIcon } from '../shared/icons/github-icon';
+import { GithubIcon } from '@/shared/icons/github-icon';
+
 import Logo from './logo';
 // TODO: 개발자 도구 안열리고 복사 안되는 문제 있음. 확인 필요
 // import Search from './search';
