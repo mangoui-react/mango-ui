@@ -32,14 +32,14 @@ export default function Home() {
                 >
                   <span className="relative text-base font-semibold text-white">Get started</span>
                 </Link>
-                <a
+                {/* <a
                   href="#"
                   className="before:bg-primary/10 relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max dark:before:border-gray-700 dark:before:bg-gray-800"
                 >
                   <span className="text-primary relative text-base font-semibold dark:text-white">
                     Learn more
                   </span>
-                </a>
+                </a> */}
               </div>
               {/* <div className="mt-16 hidden justify-between border-y border-gray-100 py-8 sm:flex dark:border-gray-800">
                 <div className="text-left">
