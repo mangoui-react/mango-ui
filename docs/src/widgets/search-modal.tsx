@@ -12,9 +12,9 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
     <Modal.Root open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
       <Modal.Portal>
         <Modal.Backdrop />
-        <Modal.Content className="bg-white overflow-auto max-w-2xl w-full max-h-full rounded shadow-lg dark:bg-slate-800">
+        <Modal.Content className="max-h-full w-full max-w-2xl overflow-auto rounded bg-white shadow-lg dark:bg-slate-800">
           <Modal.Close asChild>
-            <Modal.CloseButton />
+            <button type="button">Close</button>
           </Modal.Close>
           {/* Search form */}
           <form className="border-b border-slate-200 dark:border-slate-700">
@@ -22,7 +22,7 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
               <label htmlFor="search-modal">
                 <span className="sr-only">Search</span>
                 <svg
-                  className="w-4 h-4 fill-slate-500 shrink-0 ml-4 dark:fill-slate-400"
+                  className="ml-4 h-4 w-4 shrink-0 fill-slate-500 dark:fill-slate-400"
                   width="16"
                   height="16"
                   viewBox="0 0 16 16"
@@ -33,26 +33,26 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
               </label>
               <input
                 id="search-modal"
-                className="text-sm w-full bg-white border-0 focus:ring-transparent placeholder-slate-400 appearance-none py-3 pl-2 pr-4 dark:bg-slate-800 dark:placeholder:text-slate-500"
+                className="w-full appearance-none border-0 bg-white py-3 pl-2 pr-4 text-sm placeholder-slate-400 focus:ring-transparent dark:bg-slate-800 dark:placeholder:text-slate-500"
                 type="search"
                 placeholder="Search for anything…"
               />
             </div>
           </form>
-          <div className="py-4 px-2 space-y-4">
+          <div className="space-y-4 px-2 py-4">
             {/* Popular */}
             <div>
-              <div className="text-sm font-medium text-slate-500 px-2 mb-2 dark:text-slate-400">
+              <div className="mb-2 px-2 text-sm font-medium text-slate-500 dark:text-slate-400">
                 Popular
               </div>
               <ul>
                 <li>
                   <Link
-                    className="flex items-center px-2 py-1 leading-6 text-sm text-slate-800 hover:bg-slate-100 rounded dark:text-slate-200 dark:hover:bg-slate-700 focus-within:bg-slate-100 dark:focus-within:bg-slate-700 outline-none"
+                    className="flex items-center rounded px-2 py-1 text-sm leading-6 text-slate-800 outline-none focus-within:bg-slate-100 hover:bg-slate-100 dark:text-slate-200 dark:focus-within:bg-slate-700 dark:hover:bg-slate-700"
                     href="#0"
                   >
                     <svg
-                      className="w-3 h-3 fill-slate-400 shrink-0 mr-3 dark:fill-slate-500"
+                      className="mr-3 h-3 w-3 shrink-0 fill-slate-400 dark:fill-slate-500"
                       width="12"
                       height="12"
                       viewBox="0 0 12 12"
@@ -65,11 +65,11 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
                 </li>
                 <li>
                   <Link
-                    className="flex items-center px-2 py-1 leading-6 text-sm text-slate-800 hover:bg-slate-100 rounded dark:text-slate-200 dark:hover:bg-slate-700 focus-within:bg-slate-100 dark:focus-within:bg-slate-700 outline-none"
+                    className="flex items-center rounded px-2 py-1 text-sm leading-6 text-slate-800 outline-none focus-within:bg-slate-100 hover:bg-slate-100 dark:text-slate-200 dark:focus-within:bg-slate-700 dark:hover:bg-slate-700"
                     href="#0"
                   >
                     <svg
-                      className="w-3 h-3 fill-slate-400 shrink-0 mr-3 dark:fill-slate-500"
+                      className="mr-3 h-3 w-3 shrink-0 fill-slate-400 dark:fill-slate-500"
                       width="12"
                       height="12"
                       viewBox="0 0 12 12"
@@ -82,11 +82,11 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
                 </li>
                 <li>
                   <Link
-                    className="flex items-center px-2 py-1 leading-6 text-sm text-slate-800 hover:bg-slate-100 rounded dark:text-slate-200 dark:hover:bg-slate-700 focus-within:bg-slate-100 dark:focus-within:bg-slate-700 outline-none"
+                    className="flex items-center rounded px-2 py-1 text-sm leading-6 text-slate-800 outline-none focus-within:bg-slate-100 hover:bg-slate-100 dark:text-slate-200 dark:focus-within:bg-slate-700 dark:hover:bg-slate-700"
                     href="#0"
                   >
                     <svg
-                      className="w-3 h-3 fill-slate-400 shrink-0 mr-3 dark:fill-slate-500"
+                      className="mr-3 h-3 w-3 shrink-0 fill-slate-400 dark:fill-slate-500"
                       width="12"
                       height="12"
                       viewBox="0 0 12 12"
@@ -99,11 +99,11 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
                 </li>
                 <li>
                   <Link
-                    className="flex items-center px-2 py-1 leading-6 text-sm text-slate-800 hover:bg-slate-100 rounded dark:text-slate-200 dark:hover:bg-slate-700 focus-within:bg-slate-100 dark:focus-within:bg-slate-700 outline-none"
+                    className="flex items-center rounded px-2 py-1 text-sm leading-6 text-slate-800 outline-none focus-within:bg-slate-100 hover:bg-slate-100 dark:text-slate-200 dark:focus-within:bg-slate-700 dark:hover:bg-slate-700"
                     href="#0"
                   >
                     <svg
-                      className="w-3 h-3 fill-slate-400 shrink-0 mr-3 dark:fill-slate-500"
+                      className="mr-3 h-3 w-3 shrink-0 fill-slate-400 dark:fill-slate-500"
                       width="12"
                       height="12"
                       viewBox="0 0 12 12"
@@ -118,15 +118,15 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
             </div>
             {/* Actions */}
             <div>
-              <div className="text-sm font-medium text-slate-500 px-2 mb-2">Actions</div>
+              <div className="mb-2 px-2 text-sm font-medium text-slate-500">Actions</div>
               <ul>
                 <li>
                   <Link
-                    className="flex items-center px-2 py-1 leading-6 text-sm text-slate-800 hover:bg-slate-100 rounded dark:text-slate-200 dark:hover:bg-slate-700 focus-within:bg-slate-100 dark:focus-within:bg-slate-700 outline-none"
+                    className="flex items-center rounded px-2 py-1 text-sm leading-6 text-slate-800 outline-none focus-within:bg-slate-100 hover:bg-slate-100 dark:text-slate-200 dark:focus-within:bg-slate-700 dark:hover:bg-slate-700"
                     href="#0"
                   >
                     <svg
-                      className="w-3 h-3 fill-blue-600 shrink-0 mr-3"
+                      className="mr-3 h-3 w-3 shrink-0 fill-blue-600"
                       width="12"
                       height="12"
                       viewBox="0 0 12 12"
@@ -139,11 +139,11 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
                 </li>
                 <li>
                   <Link
-                    className="flex items-center px-2 py-1 leading-6 text-sm text-slate-800 hover:bg-slate-100 rounded dark:text-slate-200 dark:hover:bg-slate-700 focus-within:bg-slate-100 dark:focus-within:bg-slate-700 outline-none"
+                    className="flex items-center rounded px-2 py-1 text-sm leading-6 text-slate-800 outline-none focus-within:bg-slate-100 hover:bg-slate-100 dark:text-slate-200 dark:focus-within:bg-slate-700 dark:hover:bg-slate-700"
                     href="#0"
                   >
                     <svg
-                      className="w-3 h-3 fill-purple-500 shrink-0 mr-3"
+                      className="mr-3 h-3 w-3 shrink-0 fill-purple-500"
                       width="12"
                       height="12"
                       viewBox="0 0 12 12"
