@@ -97,9 +97,11 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                         </a>
                       </li> */}
                         <li>
-                          <button className="ml-3 flex items-center rounded-md p-2 hover:bg-slate-200 dark:hover:bg-slate-600">
-                            <GithubIcon />
-                          </button>
+                          <a href="https://github.com/melio-ui/melio-ui" target="_blank">
+                            <button className="ml-3 flex items-center rounded-md p-2 hover:bg-slate-200 dark:hover:bg-slate-600">
+                              <GithubIcon />
+                            </button>
+                          </a>
                         </li>
                         {/* Lights switch */}
                         <li>
