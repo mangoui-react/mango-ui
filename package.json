@@ -5,7 +5,7 @@
   "scripts": {
     "apps:next-test": "nx dev next-test",
     "docs": "nx dev docs",
-    "docs:build": "cd docs && pnpm i && pnpm run build",
+    "docs:build": "nx build docs",
     "build": "pnpm --filter=./packages/* build",
     "version": "changeset version",
     "release": "changeset publish",
@@ -46,6 +46,7 @@
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "glob": "^10.4.1",
+    "next": "14.2.3",
     "nx": "17.2.0",
     "nx-cloud": "latest",
     "prettier": "^3.0.2",
