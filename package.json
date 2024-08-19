@@ -5,7 +5,6 @@
   "scripts": {
     "apps:next-test": "nx dev next-test",
     "docs": "nx dev docs",
-    "docs:build": "nx build docs",
     "build": "pnpm --filter=./packages/* build",
     "version": "changeset version",
     "release": "changeset publish",
