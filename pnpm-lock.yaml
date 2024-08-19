@@ -98,6 +98,9 @@ importers:
       glob:
         specifier: ^10.4.1
         version: 10.4.1
+      next:
+        specifier: 14.2.3
+        version: 14.2.3(@babel/core@7.24.9)(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       nx:
         specifier: 17.2.0
         version: 17.2.0
@@ -13578,7 +13581,7 @@ snapshots:
       '@next/env': 14.2.3
       '@swc/helpers': 0.5.5
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001629
+      caniuse-lite: 1.0.30001642
       graceful-fs: 4.2.11
       postcss: 8.4.31
       react: 18.2.0
@@ -14007,7 +14010,7 @@ snapshots:
   postcss@8.4.31:
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       source-map-js: 1.2.0
 
   postcss@8.4.38:
