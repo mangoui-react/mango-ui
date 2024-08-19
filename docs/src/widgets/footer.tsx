@@ -53,6 +53,7 @@ export default function Footer() {
               href="https://t.me/melio_ui"
               aria-label="Telegram"
               target="_blank"
+              rel="noreferrer"
             >
               <svg
                 className="h-8 w-8 fill-current"

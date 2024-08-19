@@ -15,20 +15,22 @@ export default function Search() {
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [searchModalOpen]);
 
   return (
-    <div className="grow ml-4 md:ml-8">
+    <div className="ml-4 grow md:ml-8">
       <button
-        className="w-full sm:w-[380px] text-[15px] bg-white text-slate-400 inline-flex items-center justify-between leading-5 pl-3 pr-2 py-[7px] rounded border border-slate-200 hover:border-slate-300 shadow-sm whitespace-nowrap dark:text-slate-500 dark:bg-slate-800 dark:border-slate-700 dark:hover:border-slate-600"
+        className="inline-flex w-full items-center justify-between whitespace-nowrap rounded border border-slate-200 bg-white py-[7px] pl-3 pr-2 text-[15px] leading-5 text-slate-400 shadow-sm hover:border-slate-300 sm:w-[380px] dark:border-slate-700 dark:bg-slate-800 dark:text-slate-500 dark:hover:border-slate-600"
         onClick={() => {
           setSearchModalOpen(true);
         }}
       >
         <div className="flex items-center justify-center">
           <svg
-            className="w-4 h-4 fill-slate-500 mr-3 shrink-0 dark:fill-slate-400"
+            className="mr-3 h-4 w-4 shrink-0 fill-slate-500 dark:fill-slate-400"
             width="16"
             height="16"
             viewBox="0 0 16 16"
@@ -40,7 +42,7 @@ export default function Search() {
             Search<span className="hidden sm:inline"> for anything</span>…
           </span>
         </div>
-        <div className="flex items-center justify-center h-5 w-5 font-medium text-slate-500 rounded border border-slate-200 shadow-sm ml-3 dark:bg-slate-700 dark:text-slate-400 dark:border-slate-600">
+        <div className="ml-3 flex h-5 w-5 items-center justify-center rounded border border-slate-200 font-medium text-slate-500 shadow-sm dark:border-slate-600 dark:bg-slate-700 dark:text-slate-400">
           /
         </div>
       </button>

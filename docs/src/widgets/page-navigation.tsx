@@ -10,7 +10,7 @@ export default function PageNavigation({
   return (
     <div className="items-center justify-between space-y-6 py-8 sm:flex sm:space-x-4 sm:space-y-0">
       {/* Prev link */}
-      {prevArticle && prevArticle[1] && (
+      {prevArticle?.[1] && (
         <div className="flex-col items-start sm:flex sm:w-1/2">
           <div>
             <div className="mb-1 text-xs font-[650] uppercase text-blue-600">Prev</div>
@@ -34,7 +34,7 @@ export default function PageNavigation({
         </div>
       )}
       {/* Next link */}
-      {nextArticle && nextArticle[1] && (
+      {nextArticle?.[1] && (
         <div className="ml-auto flex-col items-end sm:flex sm:w-1/2">
           <div>
             <div className="mb-1 text-xs font-[650] uppercase text-blue-600">Next</div>

@@ -15,7 +15,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="description" content="open source React Components" />
         <title>MelioUI</title>
-
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
           rel="stylesheet"
@@ -97,7 +97,11 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                         </a>
                       </li> */}
                         <li>
-                          <a href="https://github.com/melio-ui/melio-ui" target="_blank">
+                          <a
+                            href="https://github.com/melio-ui/melio-ui"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
                             <button className="ml-3 flex items-center rounded-md p-2 hover:bg-slate-200 dark:hover:bg-slate-600">
                               <GithubIcon />
                             </button>

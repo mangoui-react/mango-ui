@@ -19,7 +19,7 @@ export interface ReactLiveBlockProps {
   scope?: Record<string, unknown>;
   // theme?: typeof themes.nightOwl;
   theme?: any;
-  transformCode?(code: string): void;
+  transformCode?: (code: string) => void;
 }
 
 const ReactLiveScope = {

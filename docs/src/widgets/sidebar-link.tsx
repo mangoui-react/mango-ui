@@ -20,7 +20,9 @@ export default function SidebarLink({ children, href }: SidebarLinkProps) {
           : 'text-slate-800 dark:text-slate-200'
       }`}
       href={href}
-      onClick={() => setSidebarOpen(false)}
+      onClick={() => {
+        setSidebarOpen(false);
+      }}
     >
       {children}
     </Link>

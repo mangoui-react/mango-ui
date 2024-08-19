@@ -15,9 +15,10 @@ export default function ThemeToggle() {
         checked={theme === 'light'}
         onChange={() => {
           if (theme === 'dark') {
-            return setTheme('light');
+            setTheme('light');
+            return;
           }
-          return setTheme('dark');
+          setTheme('dark');
         }}
       />
       <label

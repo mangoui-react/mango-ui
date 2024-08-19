@@ -46,6 +46,7 @@ export default function CodeBlock({
     // mountStylesheet,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-boolean-literal-compare
   if (isMounted && language === 'jsx' && _live === true) {
     return <ReactLiveBlock {...reactLiveBlockProps} />;
   }

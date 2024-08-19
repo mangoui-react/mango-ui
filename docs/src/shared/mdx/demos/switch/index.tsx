@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SwitchLabel, SwitchRoot, SwitchThumb, SwitchTrack } from '@melio-ui/switch';
+import { SwitchRoot, SwitchThumb, SwitchTrack } from '@melio-ui/switch';
 
 import './styles.css';
 

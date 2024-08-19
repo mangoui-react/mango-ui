@@ -34,7 +34,7 @@ export function PropsTable({ data }: PropsTableProps) {
               {required ? '*' : null}
             </Table.NameCell>
             <Table.Cell>
-              <code className="tracking-tighter text-[0.9em]">{type}</code>
+              <code className="text-[0.9em] tracking-tighter">{type}</code>
             </Table.Cell>
             <Table.Cell>{defaultValue ?? '-'}</Table.Cell>
             <Table.Cell>{description}</Table.Cell>

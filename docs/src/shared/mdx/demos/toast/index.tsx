@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { ToastClose, ToastContent, ToastRoot, ToastViewport } from '@melio-ui/toast';
+import { ToastContent, ToastRoot, ToastViewport } from '@melio-ui/toast';
 
 import './styles.css';
 

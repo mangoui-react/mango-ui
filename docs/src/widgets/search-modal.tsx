@@ -9,7 +9,12 @@ interface SearchModalProps {
 
 export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
   return (
-    <Modal.Root open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
+    <Modal.Root
+      open={isOpen}
+      onOpenChange={(open) => {
+        setIsOpen(open);
+      }}
+    >
       <Modal.Portal>
         <Modal.Backdrop />
         <Modal.Content className="max-h-full w-full max-w-2xl overflow-auto rounded bg-white shadow-lg dark:bg-slate-800">

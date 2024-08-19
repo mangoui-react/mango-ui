@@ -7,7 +7,7 @@ export default function SecondaryNav() {
   const [links, setLinks] = useState<HTMLElement[]>([]);
 
   const scrollSpy = () => {
-    const links = document.querySelectorAll('[data-scrollspy-link]') as NodeListOf<HTMLElement>;
+    const links = document.querySelectorAll('[data-scrollspy-link]');
     if (links.length < 1) return;
     const addActive = (i: number) => {
       const link = links[i] ? links[i] : links[0];
@@ -16,8 +16,11 @@ export default function SecondaryNav() {
     const removeActive = (i: number) => {
       links[i].classList.remove('scrollspy-active');
     };
-    const removeAllActive = () =>
-      [...Array(targets.length).keys()].forEach((link) => removeActive(link));
+    const removeAllActive = () => {
+      [...Array(targets.length).keys()].forEach((link) => {
+        removeActive(link);
+      });
+    };
     const targetMargin = 100;
     let currentActive = 0;
     addActive(0);
@@ -45,7 +48,7 @@ export default function SecondaryNav() {
 
   // populate the right sidebar
   useEffect(() => {
-    let linksArray: HTMLElement[] = [];
+    const linksArray: HTMLElement[] = [];
     targets.map((target) => {
       linksArray.push(target);
     });
@@ -55,6 +58,7 @@ export default function SecondaryNav() {
   // init scrollspy
   useEffect(() => {
     scrollSpy();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [links]);
 
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React from 'react';
 
 import Link from 'next/link';
@@ -79,7 +80,7 @@ export const MDXComponents = {
           className="inline-flex items-center gap-1 text-[#70b8ff]"
           href={href}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           {children}
           <ExternalLinkIcon />

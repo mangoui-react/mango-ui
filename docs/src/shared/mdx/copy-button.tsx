@@ -11,7 +11,9 @@ export function CopyButton({ className, code, onClick, ...props }: CopyButtonPro
 
   React.useEffect(() => {
     if (hasCopied) {
-      setTimeout(() => setHasCopied(false), 1500);
+      setTimeout(() => {
+        setHasCopied(false);
+      }, 1500);
     }
   }, [hasCopied]);
 
@@ -29,13 +31,15 @@ export function CopyButton({ className, code, onClick, ...props }: CopyButtonPro
     <button
       {...props}
       className={cn(
-        'absolute top-2 right-2',
-        'w-8 h-8',
+        'absolute right-2 top-2',
+        'h-8 w-8',
         'inline-flex items-center justify-center',
-        'hover:bg-slate-600 hover:rounded-md',
+        'hover:rounded-md hover:bg-slate-600',
         className,
       )}
-      onClick={() => handleCopyClipBoard(code)}
+      onClick={() => {
+        void handleCopyClipBoard(code);
+      }}
     >
       {hasCopied ? <CheckIcon /> : <CopyIcon />}
     </button>

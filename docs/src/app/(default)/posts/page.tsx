@@ -16,7 +16,7 @@ function PostCard(post: Post) {
         {post.date}
       </time>
       <div
-        className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0"
+        className="text-sm [&>*:last-child]:mb-0 [&>*]:mb-3"
         dangerouslySetInnerHTML={{ __html: post.body.html }}
       />
     </div>
