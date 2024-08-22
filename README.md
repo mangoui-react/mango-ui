@@ -10,6 +10,10 @@ As a foundational UI component library, it emphasizes accessibility, customizati
 
 Visit [https://melio-ui.netlify.app](https://melio-ui.netlify.app/overview/introduction) to view the full documentation.
 
+## Storybook
+
+Visit [https://melio-ui-storybook.netlify.app](https://melio-ui-storybook.netlify.app) to view the storybook for all components.
+
 ## Installation
 
 ### Global Install
