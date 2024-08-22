@@ -1,5 +1,13 @@
 # @melio-ui/dropdown
 
+## 0.0.3
+
+### Patch Changes
+
+- 리펙토링 작업
+- Updated dependencies
+  - @melio-ui/popover@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

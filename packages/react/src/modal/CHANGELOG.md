@@ -1,5 +1,15 @@
 # @melio-ui/modal
 
+## 0.0.3
+
+### Patch Changes
+
+- 리펙토링 작업
+- Updated dependencies
+  - @melio-ui/slot@0.0.3
+  - @melio-ui/use-controlled@0.0.3
+  - @melio-ui/use-portal@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

@@ -50,4 +50,4 @@ $ bun add @melio-ui/<package-name>
 
 ### License
 
-[MIT](LICENSE), Copyright © Ahn Co. All rights reserved.
+[MIT](LICENSE) License, Copyright © Ahn Co. All rights reserved.
