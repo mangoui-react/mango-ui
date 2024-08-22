@@ -41,5 +41,7 @@ Thumbs.db
 # publish
 build
 
+# storybook
+storybook-static
 
 .nx/cache
