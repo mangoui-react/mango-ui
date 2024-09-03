@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { preventBodyScroll } from '../../internal/remove-scroll';
+
 import { ModalContext } from './modal';
 
 export interface ModalBackdropProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -11,7 +13,6 @@ export interface ModalBackdropProps extends React.ComponentPropsWithoutRef<'div'
   preventCloseOnClick?: boolean;
 }
 
-// TODO: focus guard 만들 필요 있음 - 마우스 휠시 뒷배경 스크롤 되면 안됨(현재는 스크롤 되는 문제 있음)
 const ModalBackdrop = React.forwardRef<HTMLDivElement, ModalBackdropProps>((props, ref) => {
   const { preventCloseOnClick, onClick, ...rest } = props;
   const { open, handleClose } = React.useContext(ModalContext);
@@ -27,6 +28,16 @@ const ModalBackdrop = React.forwardRef<HTMLDivElement, ModalBackdropProps>((prop
 
     onClick?.(event);
   };
+
+  // focus guard - 마우스 휠시 뒷배경 스크롤 안되게 함.
+  const preventScroll = React.useRef<(() => void) | undefined>();
+  React.useEffect(() => {
+    if (open) {
+      preventScroll.current = preventBodyScroll();
+    } else {
+      preventScroll.current?.();
+    }
+  }, [open]);
 
   if (!open) return null;
 
