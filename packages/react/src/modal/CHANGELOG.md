@@ -1,5 +1,11 @@
 # @melio-ui/modal
 
+## 0.0.4
+
+### Patch Changes
+
+- backdrop 마우스 휠 동작 안되도록 수정
+
 ## 0.0.3
 
 ### Patch Changes
