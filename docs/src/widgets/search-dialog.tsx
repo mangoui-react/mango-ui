@@ -1,30 +1,30 @@
 import Link from 'next/link';
 
-import { Modal } from '@melio-ui/react';
+import { Dialog } from '@melio-ui/react';
 
-interface SearchModalProps {
+interface SearchDialogProps {
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
 }
 
-export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
+export default function SearchDialog({ isOpen, setIsOpen }: SearchDialogProps) {
   return (
-    <Modal.Root
+    <Dialog.Root
       open={isOpen}
       onOpenChange={(open) => {
         setIsOpen(open);
       }}
     >
-      <Modal.Portal>
-        <Modal.Backdrop />
-        <Modal.Content className="max-h-full w-full max-w-2xl overflow-auto rounded bg-white shadow-lg dark:bg-slate-800">
-          <Modal.Close asChild>
+      <Dialog.Portal>
+        <Dialog.Backdrop />
+        <Dialog.Content className="max-h-full w-full max-w-2xl overflow-auto rounded bg-white shadow-lg dark:bg-slate-800">
+          <Dialog.Close asChild>
             <button type="button">Close</button>
-          </Modal.Close>
+          </Dialog.Close>
           {/* Search form */}
           <form className="border-b border-slate-200 dark:border-slate-700">
             <div className="flex items-center">
-              <label htmlFor="search-modal">
+              <label htmlFor="search-dialog">
                 <span className="sr-only">Search</span>
                 <svg
                   className="ml-4 h-4 w-4 shrink-0 fill-slate-500 dark:fill-slate-400"
@@ -37,7 +37,7 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
                 </svg>
               </label>
               <input
-                id="search-modal"
+                id="search-dialog"
                 className="w-full appearance-none border-0 bg-white py-3 pl-2 pr-4 text-sm placeholder-slate-400 focus:ring-transparent dark:bg-slate-800 dark:placeholder:text-slate-500"
                 type="search"
                 placeholder="Search for anything…"
@@ -162,8 +162,8 @@ export default function SearchModal({ isOpen, setIsOpen }: SearchModalProps) {
               </ul>
             </div>
           </div>
-        </Modal.Content>
-      </Modal.Portal>
-    </Modal.Root>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

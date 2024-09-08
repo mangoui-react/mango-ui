@@ -1,5 +1,5 @@
 {
-  "name": "@melio-ui/modal",
+  "name": "@melio-ui/dialog",
   "version": "0.0.4",
   "license": "MIT",
   "exports": {

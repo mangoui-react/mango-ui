@@ -172,13 +172,13 @@ export default function SupportSidebar() {
                       </SidebarLink>
                     </li>
                     <li className="mt-1">
+                      <SidebarLink href="/components/dialog">Dialog</SidebarLink>
+                    </li>
+                    <li className="mt-1">
                       <SidebarLink href="/components/drawer">Drawer</SidebarLink>
                     </li>
                     <li className="mt-1">
                       <SidebarLink href="/components/dropdown">Dropdown</SidebarLink>
-                    </li>
-                    <li className="mt-1">
-                      <SidebarLink href="/components/modal">Modal</SidebarLink>
                     </li>
                     <li className="mt-1">
                       <SidebarLink href="/components/number-input">NumberInput</SidebarLink>

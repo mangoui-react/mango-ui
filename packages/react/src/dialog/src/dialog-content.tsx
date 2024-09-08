@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ModalContext } from './modal';
+import { DialogContext } from './dialog';
 
-export interface ModalContentProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface DialogContentProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
-   * Close 될 때 Modal 컴포넌트 DOM 제거
+   * Close 될 때 Dialog 컴포넌트 DOM 제거
    * forceMount=true 시 unabled 됨
    * @default true
    */
@@ -16,7 +16,7 @@ export interface ModalContentProps extends React.ComponentPropsWithoutRef<'div'>
   closeOnEsc?: boolean;
 }
 
-const ModalContent = React.forwardRef<HTMLDivElement, ModalContentProps>((props, ref) => {
+const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps>((props, ref) => {
   const {
     style,
     destroyOnClose = true,
@@ -26,7 +26,7 @@ const ModalContent = React.forwardRef<HTMLDivElement, ModalContentProps>((props,
     onKeyDown,
     ...rest
   } = props;
-  const { role, open, handleOpen, handleClose } = React.useContext(ModalContext);
+  const { role, open, handleOpen, handleClose } = React.useContext(DialogContext);
 
   const initialize = React.useRef<boolean>(true);
 
@@ -45,7 +45,7 @@ const ModalContent = React.forwardRef<HTMLDivElement, ModalContentProps>((props,
     onKeyDown?.(event);
   };
 
-  // console.log('Modal Render initialize.current', initialize.current);
+  // console.log('Dialog Render initialize.current', initialize.current);
   if (initialize.current && !open && !forceMount) {
     return null;
   }
@@ -73,6 +73,6 @@ const ModalContent = React.forwardRef<HTMLDivElement, ModalContentProps>((props,
   );
 });
 
-ModalContent.displayName = 'Modal.Content';
+DialogContent.displayName = 'Dialog.Content';
 
-export default ModalContent;
+export default DialogContent;

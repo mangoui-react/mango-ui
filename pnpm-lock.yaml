@@ -409,11 +409,36 @@ importers:
         version: 18.2.0
     publishDirectory: build
 
+  packages/react/src/dialog:
+    dependencies:
+      '@melio-ui/slot':
+        specifier: workspace:*
+        version: link:../slot/build
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@melio-ui/use-portal':
+        specifier: workspace:*
+        version: link:../use-portal/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.3.1(react@18.3.1)
+    publishDirectory: build
+
   packages/react/src/drawer:
     dependencies:
-      '@melio-ui/modal':
+      '@melio-ui/dialog':
         specifier: workspace:*
-        version: link:../modal/build
+        version: link:../dialog/build
       '@types/react':
         specifier: '*'
         version: 18.2.21
@@ -433,31 +458,6 @@ importers:
       '@melio-ui/popover':
         specifier: workspace:*
         version: link:../popover/build
-      '@types/react':
-        specifier: '*'
-        version: 18.2.21
-      '@types/react-dom':
-        specifier: '*'
-        version: 18.2.7
-      react:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
-        version: 18.2.0(react@18.2.0)
-    publishDirectory: build
-
-  packages/react/src/modal:
-    dependencies:
-      '@melio-ui/slot':
-        specifier: workspace:*
-        version: link:../slot/build
-      '@melio-ui/use-controlled':
-        specifier: workspace:*
-        version: link:../use-controlled/build
-      '@melio-ui/use-portal':
-        specifier: workspace:*
-        version: link:../use-portal/build
       '@types/react':
         specifier: '*'
         version: 18.2.21

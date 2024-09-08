@@ -17,7 +17,7 @@
     "directory": "build"
   },
   "dependencies": {
-    "@melio-ui/modal": "workspace:*"
+    "@melio-ui/dialog": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "*",

@@ -1,4 +1,4 @@
-# @melio-ui/modal
+# @melio-ui/dialog
 
 ## 0.0.4
 

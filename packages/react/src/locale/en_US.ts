@@ -28,7 +28,7 @@ export default {
     ...Calendar,
     last7Days: 'Last 7 Days',
   },
-  Modal: {
+  Dialog: {
     okText: 'OK',
     cancelText: 'Cancel',
   },

@@ -1,30 +1,30 @@
 ---
-title: Modal
-prevTitle: 'Dropdown'
-prevSlug: '/components/dropdown'
-nextTitle: 'NumberInput'
-nextSlug: '/components/number-input'
+title: Dialog
+prevTitle: 'CircularProgress'
+prevSlug: '/components/circular-progress'
+nextTitle: 'Drawer'
+nextSlug: '/components/drawer'
 ---
 
-# Modal
+# Dialog
 
 <Description>
-  A modal is a dialog box that overlays the main content to focus the user's attention.
+  A dialog is a dialog box that overlays the main content to focus the user's attention.
 </Description>
 
 <DemoContainer>
-  <ModalDemo />
-  <DemoCodeBlock component="modal" />
+  <DialogDemo />
+  <DemoCodeBlock component="dialog" />
 </DemoContainer>
 
 ## Installation
 
 <PackageManagers
   command={{
-    npm: 'npm i @melio-ui/modal',
-    yarn: 'yarn add @melio-ui/modal',
-    pnpm: 'pnpm add @melio-ui/modal',
-    bun: 'bun add @melio-ui/modal',
+    npm: 'npm i @melio-ui/dialog',
+    yarn: 'yarn add @melio-ui/dialog',
+    pnpm: 'pnpm add @melio-ui/dialog',
+    bun: 'bun add @melio-ui/dialog',
   }}
 />
 
@@ -33,61 +33,61 @@ nextSlug: '/components/number-input'
 <ImportSyntax
   command={{
     individual: `import { 
-  ModalRoot,
-  ModalTrigger,
-  ModalPortal,
-  ModalBackdrop,
-  ModalContent,
-  ModalClose,
-} from '@melio-ui/modal';`,
+  DialogRoot,
+  DialogTrigger,
+  DialogPortal,
+  DialogBackdrop,
+  DialogContent,
+  DialogClose,
+} from '@melio-ui/dialog';`,
     global: `import { 
-  ModalRoot,
-  ModalTrigger,
-  ModalPortal,
-  ModalBackdrop,
-  ModalContent,
-  ModalClose,
+  DialogRoot,
+  DialogTrigger,
+  DialogPortal,
+  DialogBackdrop,
+  DialogContent,
+  DialogClose,
 } from '@melio-ui/react';`,
   }}
 />
 
-- **ModalRoot**: All parts of the modal are included.
-- **ModalTrigger**: Used to activate or open the Modal component.
-- **ModalPortal**: Portal the overlay and content portion into the body.
-- **ModalBackdrop**: A layer that covers the inactive portion of the view when a dialog box is opened.
-- **ModalContent**: Includes the content that will be displayed in the open dialog box.
-- **ModalClose**: The button that closes the dialog.
+- **DialogRoot**: All parts of the dialog are included.
+- **DialogTrigger**: Used to activate or open the Dialog component.
+- **DialogPortal**: Portal the overlay and content portion into the body.
+- **DialogBackdrop**: A layer that covers the inactive portion of the view when a dialog box is opened.
+- **DialogContent**: Includes the content that will be displayed in the open dialog box.
+- **DialogClose**: The button that closes the dialog.
 
 ### Another way to import
 
 ```js
 'use client';
 
-import { Modal } from '@melio-ui/modal';
+import { Dialog } from '@melio-ui/dialog';
 
-<Modal.Root>
-  <Modal.Trigger asChild>
-    <button type="button">Open Modal</button>
-  </Modal.Trigger>
-  <Modal.Portal>
-    <Modal.Backdrop />
-    <Modal.Content>
-      <Modal.Close asChild>
+<Dialog.Root>
+  <Dialog.Trigger asChild>
+    <button type="button">Open Dialog</button>
+  </Dialog.Trigger>
+  <Dialog.Portal>
+    <Dialog.Backdrop />
+    <ModDialogal.Content>
+      <Dialog.Close asChild>
         <button type="button" />
-      </Modal.Close>
-      <div>Modal Content</div>
-    </Modal.Content>
-  </Modal.Portal>
-</Modal.Root>;
+      </Dialog.Close>
+      <div>Dialog Content</div>
+    </ModDialogal.Content>
+  </Dialog.Portal>
+</Dialog.Root>;
 ```
 
 > 'use client' must be used when rendering on the server side.
 
 ## API Reference
 
-### ModalRoot
+### DialogRoot
 
-All parts of the modal are included.
+All parts of the dialog are included.
 
 <PropsTable
   data={[
@@ -114,9 +114,9 @@ All parts of the modal are included.
   ]}
 />
 
-### ModalTrigger
+### DialogTrigger
 
-Used to activate or open the Modal component.
+Used to activate or open the Dialog component.
 
 <PropsTable
   data={[
@@ -139,7 +139,7 @@ Used to activate or open the Modal component.
   ]}
 />
 
-### ModalPortal
+### DialogPortal
 
 Portal the overlay and content portion into the body.
 
@@ -155,7 +155,7 @@ Portal the overlay and content portion into the body.
   ]}
 />
 
-### ModalBackdrop
+### DialogBackdrop
 
 A layer that covers the inactive portion of the view when a dialog box is opened.
 
@@ -170,7 +170,7 @@ A layer that covers the inactive portion of the view when a dialog box is opened
   ]}
 />
 
-### ModalContent
+### DialogContent
 
 Includes the content that will be displayed in the open dialog box.
 
@@ -209,7 +209,7 @@ Includes the content that will be displayed in the open dialog box.
   ]}
 />
 
-### ModalClose
+### DialogClose
 
 The button that closes the dialog.
 
@@ -230,10 +230,10 @@ The button that closes the dialog.
 ### Position
 
 ```jsx render=true
-function ModalPosition() {
+function DialogPosition() {
   return (
-    <ModalRoot>
-      <ModalTrigger asChild>
+    <DialogRoot>
+      <DialogTrigger asChild>
         <button
           type="button"
           style={{
@@ -242,24 +242,24 @@ function ModalPosition() {
             padding: 10,
           }}
         >
-          Open Modal
+          Open Dialog
         </button>
-      </ModalTrigger>
-      <ModalPortal>
-        <ModalBackdrop />
-        <ModalContent style={{ top: 200 }}>
-          <ModalClose asChild>
+      </DialogTrigger>
+      <DialogPortal>
+        <DialogBackdrop />
+        <DialogContent style={{ top: 200 }}>
+          <DialogClose asChild>
             <CloseIconButton />
-          </ModalClose>
-          <ModalBody />
-          <ModalFooter />
-        </ModalContent>
-      </ModalPortal>
-    </ModalRoot>
+          </DialogClose>
+          <DialogBody />
+          <DialogFooter />
+        </DialogContent>
+      </DialogPortal>
+    </DialogRoot>
   );
 }
 
-render(<ModalPosition />);
+render(<DialogPosition />);
 
 function CloseIconButton(props) {
   return (
@@ -302,14 +302,14 @@ function CloseIconButton(props) {
   );
 }
 
-function ModalBody() {
-  return <div style={{ padding: '2rem' }}>Modal Content</div>;
+function DialogBody() {
+  return <div style={{ padding: '2rem' }}>Dialog Content</div>;
 }
 
-function ModalFooter() {
+function DialogFooter() {
   return (
     <div style={{ padding: '1rem 1.5rem', textAlign: 'right' }}>
-      <ModalClose asChild>
+      <DialogClose asChild>
         <button
           type="button"
           style={{
@@ -319,7 +319,7 @@ function ModalFooter() {
         >
           Close
         </button>
-      </ModalClose>
+      </DialogClose>
     </div>
   );
 }
@@ -328,10 +328,10 @@ function ModalFooter() {
 ### Custom Size
 
 ```jsx render=true
-function ModalCustomSize() {
+function DialogCustomSize() {
   return (
-    <ModalRoot>
-      <ModalTrigger asChild>
+    <DialogRoot>
+      <DialogTrigger asChild>
         <button
           type="button"
           style={{
@@ -340,24 +340,24 @@ function ModalCustomSize() {
             padding: 10,
           }}
         >
-          Open Modal
+          Open Dialog
         </button>
-      </ModalTrigger>
-      <ModalPortal>
-        <ModalBackdrop />
-        <ModalContent style={{ width: 800 }}>
-          <ModalClose asChild>
+      </DialogTrigger>
+      <DialogPortal>
+        <DialogBackdrop />
+        <DialogContent style={{ width: 800 }}>
+          <DialogClose asChild>
             <CloseIconButton />
-          </ModalClose>
-          <ModalBody />
-          <ModalFooter />
-        </ModalContent>
-      </ModalPortal>
-    </ModalRoot>
+          </DialogClose>
+          <DialogBody />
+          <DialogFooter />
+        </DialogContent>
+      </DialogPortal>
+    </DialogRoot>
   );
 }
 
-render(<ModalCustomSize />);
+render(<DialogCustomSize />);
 
 function CloseIconButton(props) {
   return (
@@ -400,14 +400,14 @@ function CloseIconButton(props) {
   );
 }
 
-function ModalBody() {
-  return <div style={{ padding: '2rem' }}>Modal Content</div>;
+function DialogBody() {
+  return <div style={{ padding: '2rem' }}>Dialog Content</div>;
 }
 
-function ModalFooter() {
+function DialogFooter() {
   return (
     <div style={{ padding: '1rem 1.5rem', textAlign: 'right' }}>
-      <ModalClose asChild>
+      <DialogClose asChild>
         <button
           type="button"
           style={{
@@ -417,7 +417,7 @@ function ModalFooter() {
         >
           Close
         </button>
-      </ModalClose>
+      </DialogClose>
     </div>
   );
 }
@@ -426,10 +426,10 @@ function ModalFooter() {
 ### Prevent closing when clicking on the backdrop.
 
 ```jsx render=true
-function ModalCustomSize() {
+function DialogCustomSize() {
   return (
-    <ModalRoot>
-      <ModalTrigger asChild>
+    <DialogRoot>
+      <DialogTrigger asChild>
         <button
           type="button"
           style={{
@@ -438,24 +438,24 @@ function ModalCustomSize() {
             padding: 10,
           }}
         >
-          Open Modal
+          Open Dialog
         </button>
-      </ModalTrigger>
-      <ModalPortal>
-        <ModalBackdrop preventCloseOnClick />
-        <ModalContent>
-          <ModalClose asChild>
+      </DialogTrigger>
+      <DialogPortal>
+        <DialogBackdrop preventCloseOnClick />
+        <DialogContent>
+          <DialogClose asChild>
             <CloseIconButton />
-          </ModalClose>
-          <ModalBody />
-          <ModalFooter />
-        </ModalContent>
-      </ModalPortal>
-    </ModalRoot>
+          </DialogClose>
+          <DialogBody />
+          <DialogFooter />
+        </DialogContent>
+      </DialogPortal>
+    </DialogRoot>
   );
 }
 
-render(<ModalCustomSize />);
+render(<DialogCustomSize />);
 
 function CloseIconButton(props) {
   return (
@@ -498,14 +498,14 @@ function CloseIconButton(props) {
   );
 }
 
-function ModalBody() {
-  return <div style={{ padding: '2rem' }}>Modal Content</div>;
+function DialogBody() {
+  return <div style={{ padding: '2rem' }}>Dialog Content</div>;
 }
 
-function ModalFooter() {
+function DialogFooter() {
   return (
     <div style={{ padding: '1rem 1.5rem', textAlign: 'right' }}>
-      <ModalClose asChild>
+      <DialogClose asChild>
         <button
           type="button"
           style={{
@@ -515,7 +515,7 @@ function ModalFooter() {
         >
           Close
         </button>
-      </ModalClose>
+      </DialogClose>
     </div>
   );
 }

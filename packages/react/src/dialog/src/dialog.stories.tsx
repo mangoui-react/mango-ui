@@ -1,29 +1,29 @@
 import React from 'react';
 
-import { Modal } from '.';
-import * as styles from './modal.stories.css';
+import { Dialog } from '.';
+import * as styles from './dialog.stories.css';
 
-export default { title: 'Components/Modal' };
+export default { title: 'Components/Dialog' };
 
 export function Basic(): JSX.Element {
   return (
     <>
       <h1>기본</h1>
-      <Modal.Root>
-        <Modal.Trigger asChild>
-          <button type="button">Open Modal</button>
-        </Modal.Trigger>
-        <Modal.Portal>
-          <Modal.Backdrop className={styles.backdrop} />
-          <Modal.Content className={styles.content}>
-            <Modal.Close asChild>
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button type="button">Open Dialog</button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Backdrop className={styles.backdrop} />
+          <Dialog.Content className={styles.content}>
+            <Dialog.Close asChild>
               <button type="button" className={styles.closeButton}>
                 <CloseIcon />
               </button>
-            </Modal.Close>
-            <div className={styles.body}>Modal Content</div>
+            </Dialog.Close>
+            <div className={styles.body}>Dialog Content</div>
             <div className={styles.footer}>
-              <Modal.Close asChild>
+              <Dialog.Close asChild>
                 <button
                   type="button"
                   style={{
@@ -34,11 +34,11 @@ export function Basic(): JSX.Element {
                 >
                   닫기
                 </button>
-              </Modal.Close>
+              </Dialog.Close>
             </div>
-          </Modal.Content>
-        </Modal.Portal>
-      </Modal.Root>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 }
@@ -53,21 +53,21 @@ export function OnOpenChange(): JSX.Element {
   return (
     <>
       <h1>OnOpenChange</h1>
-      <Modal.Root open={open} onOpenChange={handleOpenChange}>
-        <Modal.Trigger asChild>
-          <button type="button">Open Modal</button>
-        </Modal.Trigger>
-        <Modal.Portal>
-          <Modal.Backdrop className={styles.backdrop} />
-          <Modal.Content className={styles.content}>
-            <Modal.Close asChild>
+      <Dialog.Root open={open} onOpenChange={handleOpenChange}>
+        <Dialog.Trigger asChild>
+          <button type="button">Open Dialog</button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Backdrop className={styles.backdrop} />
+          <Dialog.Content className={styles.content}>
+            <Dialog.Close asChild>
               <button type="button" className={styles.closeButton}>
                 <CloseIcon />
               </button>
-            </Modal.Close>
-            <div className={styles.body}>Modal Content</div>
+            </Dialog.Close>
+            <div className={styles.body}>Dialog Content</div>
             <div className={styles.footer}>
-              <Modal.Close asChild>
+              <Dialog.Close asChild>
                 <button
                   type="button"
                   style={{
@@ -78,11 +78,11 @@ export function OnOpenChange(): JSX.Element {
                 >
                   닫기
                 </button>
-              </Modal.Close>
+              </Dialog.Close>
             </div>
-          </Modal.Content>
-        </Modal.Portal>
-      </Modal.Root>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 }
@@ -102,7 +102,7 @@ export function Width(): JSX.Element {
     <>
       <h1>Width</h1>
       <div>
-        Modal width:{' '}
+        Dialog width:{' '}
         <input
           value={width.toString()}
           onChange={onWidthChange}
@@ -121,24 +121,24 @@ export function Width(): JSX.Element {
         px <input type="checkbox" onChange={handleCheckChange} />
         Full
       </div>
-      <Modal.Root>
-        <Modal.Trigger asChild>
-          <button type="button">Open Modal</button>
-        </Modal.Trigger>
-        <Modal.Portal>
-          <Modal.Backdrop className={styles.backdrop} />
-          <Modal.Content
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button type="button">Open Dialog</button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Backdrop className={styles.backdrop} />
+          <Dialog.Content
             className={styles.content}
             style={{ ...(isFull ? { width: '100%' } : { width }) }}
           >
-            <Modal.Close asChild>
+            <Dialog.Close asChild>
               <button type="button" className={styles.closeButton}>
                 <CloseIcon />
               </button>
-            </Modal.Close>
-            <div className={styles.body}>Modal Content</div>
+            </Dialog.Close>
+            <div className={styles.body}>Dialog Content</div>
             <div className={styles.footer}>
-              <Modal.Close asChild>
+              <Dialog.Close asChild>
                 <button
                   type="button"
                   style={{
@@ -149,11 +149,11 @@ export function Width(): JSX.Element {
                 >
                   닫기
                 </button>
-              </Modal.Close>
+              </Dialog.Close>
             </div>
-          </Modal.Content>
-        </Modal.Portal>
-      </Modal.Root>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 }
@@ -169,7 +169,7 @@ export function TopPosition(): JSX.Element {
     <>
       <h1>TopPosition</h1>
       <div>
-        Modal top:{' '}
+        Dialog top:{' '}
         <input
           value={top.toString()}
           onChange={onTopChange}
@@ -187,21 +187,21 @@ export function TopPosition(): JSX.Element {
         />
         px
       </div>
-      <Modal.Root>
-        <Modal.Trigger asChild>
-          <button type="button">Open Modal</button>
-        </Modal.Trigger>
-        <Modal.Portal>
-          <Modal.Backdrop className={styles.backdrop} />
-          <Modal.Content className={styles.content} style={{ top }}>
-            <Modal.Close asChild>
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button type="button">Open Dialog</button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Backdrop className={styles.backdrop} />
+          <Dialog.Content className={styles.content} style={{ top }}>
+            <Dialog.Close asChild>
               <button type="button" className={styles.closeButton}>
                 <CloseIcon />
               </button>
-            </Modal.Close>
-            <div className={styles.body}>Modal Content</div>
+            </Dialog.Close>
+            <div className={styles.body}>Dialog Content</div>
             <div className={styles.footer}>
-              <Modal.Close asChild>
+              <Dialog.Close asChild>
                 <button
                   type="button"
                   style={{
@@ -212,11 +212,11 @@ export function TopPosition(): JSX.Element {
                 >
                   닫기
                 </button>
-              </Modal.Close>
+              </Dialog.Close>
             </div>
-          </Modal.Content>
-        </Modal.Portal>
-      </Modal.Root>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 }
@@ -225,21 +225,21 @@ export function Backdrop(): JSX.Element {
   return (
     <>
       <h1>preventCloseOnClick</h1>
-      <Modal.Root>
-        <Modal.Trigger asChild>
-          <button type="button">Open Modal</button>
-        </Modal.Trigger>
-        <Modal.Portal>
-          <Modal.Backdrop className={styles.backdrop} preventCloseOnClick />
-          <Modal.Content className={styles.content}>
-            <Modal.Close asChild>
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button type="button">Open Dialog</button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Backdrop className={styles.backdrop} preventCloseOnClick />
+          <Dialog.Content className={styles.content}>
+            <Dialog.Close asChild>
               <button type="button" className={styles.closeButton}>
                 <CloseIcon />
               </button>
-            </Modal.Close>
-            <div className={styles.body}>Modal Content</div>
+            </Dialog.Close>
+            <div className={styles.body}>Dialog Content</div>
             <div className={styles.footer}>
-              <Modal.Close asChild>
+              <Dialog.Close asChild>
                 <button
                   type="button"
                   style={{
@@ -250,11 +250,11 @@ export function Backdrop(): JSX.Element {
                 >
                   닫기
                 </button>
-              </Modal.Close>
+              </Dialog.Close>
             </div>
-          </Modal.Content>
-        </Modal.Portal>
-      </Modal.Root>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 }
@@ -263,21 +263,21 @@ export function DestroyOnClose(): JSX.Element {
   return (
     <>
       <h1>destroyOnClose</h1>
-      <Modal.Root>
-        <Modal.Trigger asChild>
-          <button type="button">Open Modal</button>
-        </Modal.Trigger>
-        <Modal.Portal>
-          <Modal.Backdrop className={styles.backdrop} />
-          <Modal.Content className={styles.content} destroyOnClose={false}>
-            <Modal.Close asChild>
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button type="button">Open Dialog</button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Backdrop className={styles.backdrop} />
+          <Dialog.Content className={styles.content} destroyOnClose={false}>
+            <Dialog.Close asChild>
               <button type="button" className={styles.closeButton}>
                 <CloseIcon />
               </button>
-            </Modal.Close>
-            <div className={styles.body}>Modal Content</div>
+            </Dialog.Close>
+            <div className={styles.body}>Dialog Content</div>
             <div className={styles.footer}>
-              <Modal.Close asChild>
+              <Dialog.Close asChild>
                 <button
                   type="button"
                   style={{
@@ -288,11 +288,11 @@ export function DestroyOnClose(): JSX.Element {
                 >
                   닫기
                 </button>
-              </Modal.Close>
+              </Dialog.Close>
             </div>
-          </Modal.Content>
-        </Modal.Portal>
-      </Modal.Root>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 }
@@ -301,21 +301,21 @@ export function ForceMount(): JSX.Element {
   return (
     <>
       <h1>forceMount</h1>
-      <Modal.Root>
-        <Modal.Trigger asChild>
-          <button type="button">Open Modal</button>
-        </Modal.Trigger>
-        <Modal.Portal>
-          <Modal.Backdrop className={styles.backdrop} />
-          <Modal.Content className={styles.content} forceMount>
-            <Modal.Close asChild>
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button type="button">Open Dialog</button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Backdrop className={styles.backdrop} />
+          <Dialog.Content className={styles.content} forceMount>
+            <Dialog.Close asChild>
               <button type="button" className={styles.closeButton}>
                 <CloseIcon />
               </button>
-            </Modal.Close>
-            <div className={styles.body}>Modal Content</div>
+            </Dialog.Close>
+            <div className={styles.body}>Dialog Content</div>
             <div className={styles.footer}>
-              <Modal.Close asChild>
+              <Dialog.Close asChild>
                 <button
                   type="button"
                   style={{
@@ -326,11 +326,11 @@ export function ForceMount(): JSX.Element {
                 >
                   닫기
                 </button>
-              </Modal.Close>
+              </Dialog.Close>
             </div>
-          </Modal.Content>
-        </Modal.Portal>
-      </Modal.Root>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 }
@@ -346,21 +346,21 @@ export function Container(): JSX.Element {
     <>
       <h1>Container</h1>
       <div id="container" />
-      <Modal.Root>
-        <Modal.Trigger asChild>
-          <button type="button">Open Modal</button>
-        </Modal.Trigger>
-        <Modal.Portal container={container}>
-          <Modal.Backdrop className={styles.backdrop} />
-          <Modal.Content className={styles.content}>
-            <Modal.Close asChild>
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button type="button">Open Dialog</button>
+        </Dialog.Trigger>
+        <Dialog.Portal container={container}>
+          <Dialog.Backdrop className={styles.backdrop} />
+          <Dialog.Content className={styles.content}>
+            <Dialog.Close asChild>
               <button type="button" className={styles.closeButton}>
                 <CloseIcon />
               </button>
-            </Modal.Close>
-            <div className={styles.body}>Modal Content</div>
+            </Dialog.Close>
+            <div className={styles.body}>Dialog Content</div>
             <div className={styles.footer}>
-              <Modal.Close asChild>
+              <Dialog.Close asChild>
                 <button
                   type="button"
                   style={{
@@ -371,11 +371,11 @@ export function Container(): JSX.Element {
                 >
                   닫기
                 </button>
-              </Modal.Close>
+              </Dialog.Close>
             </div>
-          </Modal.Content>
-        </Modal.Portal>
-      </Modal.Root>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 }

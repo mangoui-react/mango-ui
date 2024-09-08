@@ -2,35 +2,35 @@ import React from 'react';
 
 import { useControlled } from '@melio-ui/use-controlled';
 
-export type ModalCloseReason = 'backdropClick' | 'escapeKeyDown' | 'closeClick';
+export type DialogCloseReason = 'backdropClick' | 'escapeKeyDown' | 'closeClick';
 
-export interface ModalProps {
+export interface DialogProps {
   role?: 'dialog' | 'presentation';
-  /** modal open */
+  /** dialog open */
   open?: boolean;
   defaultOpen?: boolean;
   children?: React.ReactNode;
   /**
-   * ModalTrigger 클릭시 open = true,
-   * ModalClose (우측상단 [X] 버튼, 취소버튼) or backdrop 클릭 or ESC 키 선택시 open = false
+   * DialogTrigger 클릭시 open = true,
+   * DialogClose (우측상단 [X] 버튼, 취소버튼) or backdrop 클릭 or ESC 키 선택시 open = false
    */
   onOpenChange?: (open: boolean) => void;
 }
 
-export interface ModalContextValue extends Pick<ModalProps, 'open'> {
+export interface DialogContextValue extends Pick<DialogProps, 'open'> {
   role: React.AriaRole; // 'dialog' | 'presentation';
   //
   handleOpen: () => void;
   handleClose: () => void;
 }
-export const ModalContext = React.createContext<ModalContextValue>({
+export const DialogContext = React.createContext<DialogContextValue>({
   role: 'dialog',
   //
   handleOpen: () => {},
   handleClose: () => {},
 });
 
-export default function Modal(props: ModalProps): JSX.Element {
+export default function Dialog(props: DialogProps): JSX.Element {
   const { role = 'dialog', open: openProp, defaultOpen, children, onOpenChange } = props;
 
   const [open, setOpen] = useControlled<boolean | undefined>(openProp, defaultOpen);
@@ -57,7 +57,7 @@ export default function Modal(props: ModalProps): JSX.Element {
     [handleClose, handleOpen, open, role],
   );
 
-  return <ModalContext.Provider value={contextValue}>{children}</ModalContext.Provider>;
+  return <DialogContext.Provider value={contextValue}>{children}</DialogContext.Provider>;
 }
 
-Modal.displayName = 'Modal';
+Dialog.displayName = 'Dialog';
