@@ -1,5 +1,11 @@
 # @melio-ui/react
 
+## 0.0.10
+
+### Patch Changes
+
+- Modal을 Dialog 으로 컴포넌트명 변경
+
 ## 0.0.9
 
 ### Patch Changes
