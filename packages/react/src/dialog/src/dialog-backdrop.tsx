@@ -2,9 +2,9 @@ import React from 'react';
 
 import { preventBodyScroll } from '../../internal/remove-scroll';
 
-import { ModalContext } from './modal';
+import { DialogContext } from './dialog';
 
-export interface ModalBackdropProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface DialogBackdropProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
    * Prevents closing when clicking on backdrop.
    * default is closing when clicking.
@@ -13,9 +13,9 @@ export interface ModalBackdropProps extends React.ComponentPropsWithoutRef<'div'
   preventCloseOnClick?: boolean;
 }
 
-const ModalBackdrop = React.forwardRef<HTMLDivElement, ModalBackdropProps>((props, ref) => {
+const DialogBackdrop = React.forwardRef<HTMLDivElement, DialogBackdropProps>((props, ref) => {
   const { preventCloseOnClick, onClick, ...rest } = props;
-  const { open, handleClose } = React.useContext(ModalContext);
+  const { open, handleClose } = React.useContext(DialogContext);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>): void => {
     if (event.target !== event.currentTarget) {
@@ -44,6 +44,6 @@ const ModalBackdrop = React.forwardRef<HTMLDivElement, ModalBackdropProps>((prop
   return <div {...rest} ref={ref} onClick={handleClick} />;
 });
 
-ModalBackdrop.displayName = 'Modal.Backdrop';
+DialogBackdrop.displayName = 'Dialog.Backdrop';
 
-export default ModalBackdrop;
+export default DialogBackdrop;

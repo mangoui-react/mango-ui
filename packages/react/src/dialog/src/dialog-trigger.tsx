@@ -2,15 +2,15 @@ import React from 'react';
 
 import { Slot } from '@melio-ui/slot';
 
-import { ModalContext } from './modal';
+import { DialogContext } from './dialog';
 
-export interface ModalTriggerProps extends React.ComponentPropsWithoutRef<'button'> {
+export interface DialogTriggerProps extends React.ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;
 }
 
-const ModalTrigger = React.forwardRef<HTMLButtonElement, ModalTriggerProps>((props, ref) => {
+const DialogTrigger = React.forwardRef<HTMLButtonElement, DialogTriggerProps>((props, ref) => {
   const { children, asChild, onClick, ...rest } = props;
-  const { open, handleOpen } = React.useContext(ModalContext);
+  const { open, handleOpen } = React.useContext(DialogContext);
   const Component = asChild ? Slot : 'button';
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -26,11 +26,11 @@ const ModalTrigger = React.forwardRef<HTMLButtonElement, ModalTriggerProps>((pro
       ref={ref}
       onClick={handleClick}
     >
-      {children ?? 'Modal'}
+      {children ?? 'Dialog'}
     </Component>
   );
 });
 
-ModalTrigger.displayName = 'Modal.Trigger';
+DialogTrigger.displayName = 'Dialog.Trigger';
 
-export default ModalTrigger;
+export default DialogTrigger;

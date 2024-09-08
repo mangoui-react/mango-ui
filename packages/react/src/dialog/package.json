@@ -1,6 +1,6 @@
 {
-  "name": "@melio-ui/modal",
-  "version": "0.0.4",
+  "name": "@melio-ui/dialog",
+  "version": "0.0.5",
   "license": "MIT",
   "exports": {
     ".": "./src"

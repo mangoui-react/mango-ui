@@ -1,6 +1,6 @@
 {
   "name": "@melio-ui/drawer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "exports": {
     ".": "./src"
@@ -17,7 +17,7 @@
     "directory": "build"
   },
   "dependencies": {
-    "@melio-ui/modal": "workspace:*"
+    "@melio-ui/dialog": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "*",

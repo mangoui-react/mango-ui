@@ -42,7 +42,7 @@ export default {
     ...Calendar,
     last7Days: '지난 7 일',
   },
-  Modal: {
+  Dialog: {
     okText: '확인',
     cancelText: '취소',
   },

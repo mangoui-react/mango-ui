@@ -2,30 +2,30 @@
 
 import { useEffect, useState } from 'react';
 
-import SearchModal from './search-modal';
+import SearchDialog from './search-dialog';
 
 export default function Search() {
-  const [searchModalOpen, setSearchModalOpen] = useState<boolean>(false);
+  const [searchDialogOpen, setSearchDialogOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      !searchModalOpen && event.preventDefault();
+      !searchDialogOpen && event.preventDefault();
       if (event.key === '/') {
-        setSearchModalOpen(true);
+        setSearchDialogOpen(true);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [searchModalOpen]);
+  }, [searchDialogOpen]);
 
   return (
     <div className="ml-4 grow md:ml-8">
       <button
         className="inline-flex w-full items-center justify-between whitespace-nowrap rounded border border-slate-200 bg-white py-[7px] pl-3 pr-2 text-[15px] leading-5 text-slate-400 shadow-sm hover:border-slate-300 sm:w-[380px] dark:border-slate-700 dark:bg-slate-800 dark:text-slate-500 dark:hover:border-slate-600"
         onClick={() => {
-          setSearchModalOpen(true);
+          setSearchDialogOpen(true);
         }}
       >
         <div className="flex items-center justify-center">
@@ -47,7 +47,7 @@ export default function Search() {
         </div>
       </button>
       <div>
-        <SearchModal isOpen={searchModalOpen} setIsOpen={setSearchModalOpen} />
+        <SearchDialog isOpen={searchDialogOpen} setIsOpen={setSearchDialogOpen} />
       </div>
     </div>
   );

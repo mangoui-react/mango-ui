@@ -2,16 +2,16 @@ import React from 'react';
 
 import { usePortal } from '@melio-ui/use-portal';
 
-export interface ModalPortalProps {
+export interface DialogPortalProps {
   children?: React.ReactNode;
   /**
-   * Modal 이 mount 되는 node
+   * Dialog 이 mount 되는 node
    * @default document.body
    */
   container?: HTMLElement | (() => HTMLElement); // TODO: ContentType 사용
 }
 
-export default function ModalPortal(props: ModalPortalProps): JSX.Element {
+export default function DialogPortal(props: DialogPortalProps): JSX.Element {
   const { container, children } = props;
 
   const { Portal } = usePortal(container);
@@ -19,4 +19,4 @@ export default function ModalPortal(props: ModalPortalProps): JSX.Element {
   return <Portal>{children}</Portal>;
 }
 
-ModalPortal.displayName = 'Modal.Portal';
+DialogPortal.displayName = 'Dialog.Portal';

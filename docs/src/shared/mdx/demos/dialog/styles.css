@@ -1,11 +1,11 @@
-.modal-trigger {
+.dialog-trigger {
   border: 0.0625rem solid rgba(255, 255, 255, 0.35);
   border-radius: 0.25rem;
   padding: 0.3125rem;
   color: #e2e8f0;
 }
 
-.modal-backdrop {
+.dialog-backdrop {
   opacity: 1;
   position: fixed;
   top: 0;
@@ -17,7 +17,7 @@
   animation: fadein 0.3s;
 }
 
-.modal-content {
+.dialog-content {
   position: fixed;
   top: 1.875rem;
   right: 0;
@@ -33,7 +33,7 @@
   animation: fadein 0.3s;
 }
 
-.modal-close-button {
+.dialog-close-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -53,18 +53,18 @@
   align-items: center;
 }
 
-.modal-header {
+.dialog-header {
   padding: 1rem 1.5rem;
   /* border-bottom: 0.0313rem solid #807e7e; */
 }
 
-.modal-body {
+.dialog-body {
   padding: 1.5rem;
   max-height: 46.3125rem;
   overflow: auto;
 }
 
-.modal-footer {
+.dialog-footer {
   padding: 1rem 1.5rem;
   text-align: right;
   /* border-top: 0.0313rem solid #807e7e; */

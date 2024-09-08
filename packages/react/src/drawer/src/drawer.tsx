@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Modal, ModalProps } from '@melio-ui/modal';
+import { Dialog, DialogProps } from '@melio-ui/dialog';
 
-export interface DrawerProps extends ModalProps {
+export interface DrawerProps extends DialogProps {
   /** drawer 열리는 위치
    * @default right
    */
@@ -24,9 +24,9 @@ export default function Drawer(props: DrawerProps): JSX.Element {
 
   return (
     <DrawerContext.Provider value={contextValue}>
-      <Modal.Root {...rest} role="presentation" open={open}>
+      <Dialog.Root {...rest} role="presentation" open={open}>
         {children}
-      </Modal.Root>
+      </Dialog.Root>
     </DrawerContext.Provider>
   );
 }

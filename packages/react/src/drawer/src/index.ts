@@ -1,16 +1,16 @@
 'use client';
 
-import { Modal } from '@melio-ui/modal';
+import { Dialog } from '@melio-ui/dialog';
 
 import Root from './drawer';
 import Content from './drawer-content';
 
 export {
-  ModalTrigger as DrawerTrigger,
-  ModalPortal as DrawerPortal,
-  ModalClose as DrawerClose,
-  ModalBackdrop as DrawerBackdrop,
-} from '@melio-ui/modal';
+  DialogTrigger as DrawerTrigger,
+  DialogPortal as DrawerPortal,
+  DialogClose as DrawerClose,
+  DialogBackdrop as DrawerBackdrop,
+} from '@melio-ui/dialog';
 
 export { default as DrawerRoot } from './drawer';
 export { default as DrawerContent } from './drawer-content';
@@ -19,17 +19,17 @@ export * from './drawer';
 export * from './drawer-content';
 
 export type {
-  ModalTriggerProps as DrawerTriggerProps,
-  ModalPortalProps as DrawerPortalProps,
-  ModalCloseProps as DrawerCloseProps,
-  ModalBackdropProps as DrawerBackdropProps,
-} from '@melio-ui/modal';
+  DialogTriggerProps as DrawerTriggerProps,
+  DialogPortalProps as DrawerPortalProps,
+  DialogCloseProps as DrawerCloseProps,
+  DialogBackdropProps as DrawerBackdropProps,
+} from '@melio-ui/dialog';
 
 export const Drawer = {
   Root,
-  Trigger: Modal.Trigger,
-  Portal: Modal.Portal,
+  Trigger: Dialog.Trigger,
+  Portal: Dialog.Portal,
   Content,
-  Close: Modal.Close,
-  Backdrop: Modal.Backdrop,
+  Close: Dialog.Close,
+  Backdrop: Dialog.Backdrop,
 };
