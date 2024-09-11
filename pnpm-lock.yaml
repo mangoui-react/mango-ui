@@ -522,6 +522,32 @@ importers:
         version: 18.2.0(react@18.2.0)
     publishDirectory: build
 
+  packages/react/src/popper:
+    dependencies:
+      '@floating-ui/react-dom':
+        specifier: ^2.1.1
+        version: 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@melio-ui/use-merged-ref':
+        specifier: workspace:*
+        version: link:../use-merged-ref/build
+      '@types/react':
+        specifier: '*'
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: '*'
+        version: 18.2.7
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@types/resize-observer-browser':
+        specifier: ^0.1.11
+        version: 0.1.11
+    publishDirectory: build
+
   packages/react/src/progress:
     dependencies:
       '@types/react':
@@ -2299,6 +2325,21 @@ packages:
   '@fal-works/esbuild-plugin-global-externals@2.1.2':
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
 
+  '@floating-ui/core@1.6.7':
+    resolution: {integrity: sha512-yDzVT/Lm101nQ5TCVeK65LtdN7Tj4Qpr9RTXJ2vPFLqtLxwOrpoxAHAJI8J3yYWUc40J0BDBheaitK5SJmno2g==}
+
+  '@floating-ui/dom@1.6.10':
+    resolution: {integrity: sha512-fskgCFv8J8OamCmyun8MfjB1Olfn+uZKjOKZ0vhYF3gRmEUXcGOjxWL8bBr7i4kIuPZ2KD2S3EUIOxnjC8kl2A==}
+
+  '@floating-ui/react-dom@2.1.1':
+    resolution: {integrity: sha512-4h84MJt3CHrtG18mGsXuLCHMrug49d7DFkU0RMIyshRveBeyV2hmV/pDaF2Uxtu8kgq5r46llp5E5FQiR0K2Yg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@floating-ui/utils@0.2.7':
+    resolution: {integrity: sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==}
+
   '@grpc/grpc-js@1.10.8':
     resolution: {integrity: sha512-vYVqYzHicDqyKB+NQhAc54I1QWCBLCrYG6unqOIcBTHx+7x8C9lcoLj3KVJXs2VB4lUbpWY+Kk9NipcbXYWmvg==}
     engines: {node: '>=12.10.0'}
@@ -3202,6 +3243,9 @@ packages:
 
   '@types/react@18.2.21':
     resolution: {integrity: sha512-neFKG/sBAwGxHgXiIxnbm3/AAVQ/cMRS93hvBpg8xYRbeQSPVABp9U2bRnPf0iI4+Ucdv3plSxKK+3CW2ENJxA==}
+
+  '@types/resize-observer-browser@0.1.11':
+    resolution: {integrity: sha512-cNw5iH8JkMkb3QkCoe7DaZiawbDQEUX8t7iuQaRTyLOyQCR2h+ibBD4GJt7p5yhUHrlOeL7ZtbxNHeipqNsBzQ==}
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
@@ -9110,6 +9154,23 @@ snapshots:
 
   '@fal-works/esbuild-plugin-global-externals@2.1.2': {}
 
+  '@floating-ui/core@1.6.7':
+    dependencies:
+      '@floating-ui/utils': 0.2.7
+
+  '@floating-ui/dom@1.6.10':
+    dependencies:
+      '@floating-ui/core': 1.6.7
+      '@floating-ui/utils': 0.2.7
+
+  '@floating-ui/react-dom@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/dom': 1.6.10
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@floating-ui/utils@0.2.7': {}
+
   '@grpc/grpc-js@1.10.8':
     dependencies:
       '@grpc/proto-loader': 0.7.13
@@ -10127,6 +10188,8 @@ snapshots:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
+
+  '@types/resize-observer-browser@0.1.11': {}
 
   '@types/resolve@1.20.6': {}
 

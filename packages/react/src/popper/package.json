@@ -1,6 +1,6 @@
 {
-  "name": "@melio-ui/slot",
-  "version": "0.0.3",
+  "name": "@melio-ui/popper",
+  "version": "0.0.1",
   "license": "MIT",
   "exports": {
     ".": "./src"
@@ -17,7 +17,11 @@
     "directory": "build"
   },
   "dependencies": {
+    "@floating-ui/react-dom": "^2.1.1",
     "@melio-ui/use-merged-ref": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/resize-observer-browser": "^0.1.11"
   },
   "peerDependencies": {
     "@types/react": "*",

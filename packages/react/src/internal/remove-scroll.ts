@@ -1,7 +1,7 @@
 // 참고: https://github.com/chakra-ui/zag/blob/main/packages/utilities/remove-scroll/src/index.ts
 import { isIos } from './platform';
 
-const LOCK_CLASSNAME = 'data-melio-scroll-lock';
+const LOCK_CLASSNAME = 'data-scroll-locked';
 
 function assignStyle(
   el: HTMLElement | null | undefined,
