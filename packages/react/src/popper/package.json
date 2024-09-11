@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@floating-ui/react-dom": "^2.1.1",
+    "@melio-ui/slot": "workspace:*",
     "@melio-ui/use-merged-ref": "workspace:*"
   },
   "devDependencies": {
