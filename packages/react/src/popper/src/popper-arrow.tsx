@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Slot } from '@melio-ui/slot';
+
 import { PopperContentContext } from './popper-content';
 import { Side } from './types';
 
@@ -10,12 +12,16 @@ const OPPOSITE_SIDE: Record<Side, Side> = {
   left: 'right',
 };
 
-export interface PopperArrowProps extends React.ComponentPropsWithoutRef<'svg'> {}
+export interface PopperArrowProps extends React.ComponentPropsWithoutRef<'svg'> {
+  asChild?: boolean;
+}
 
 const PopperArrow = React.forwardRef<SVGSVGElement, PopperArrowProps>((props, ref) => {
-  const { width = 10, height = 5, children, ...arrowProps } = props;
+  const { width = 10, height = 5, children, asChild, ...arrowProps } = props;
   const contentContext = React.useContext(PopperContentContext);
   const baseSide = OPPOSITE_SIDE[contentContext.placedSide];
+
+  const Component: any = asChild ? Slot : 'svg';
 
   return (
     // we have to use an extra wrapper because `ResizeObserver` (used by `useSize`)
@@ -42,8 +48,7 @@ const PopperArrow = React.forwardRef<SVGSVGElement, PopperArrowProps>((props, re
         visibility: contentContext.shouldHideArrow ? 'hidden' : undefined,
       }}
     >
-      {/* TODO: Slot 사용 생각해 보자 */}
-      <svg
+      <Component
         {...arrowProps}
         ref={ref}
         style={{
@@ -56,8 +61,8 @@ const PopperArrow = React.forwardRef<SVGSVGElement, PopperArrowProps>((props, re
         viewBox="0 0 30 10"
         preserveAspectRatio="none"
       >
-        <polygon points="0,0 30,0 15,10" />
-      </svg>
+        {asChild ? children : <polygon points="0,0 30,0 15,10" />}
+      </Component>
     </span>
   );
 });
