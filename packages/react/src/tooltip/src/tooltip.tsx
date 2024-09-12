@@ -20,8 +20,8 @@ export interface TooltipContextValue extends Pick<TooltipProps, 'open'> {
   isPointerInTransitRef: React.MutableRefObject<boolean>;
   onPointerInTransitChange: (inTransit: boolean) => void;
   //
-  handleOpen: () => void;
-  handleClose: () => void;
+  onOpen: () => void;
+  onClose: () => void;
 }
 export const TooltipContext = React.createContext<TooltipContextValue>({
   triggerRef: { current: null },
@@ -29,8 +29,8 @@ export const TooltipContext = React.createContext<TooltipContextValue>({
   isPointerInTransitRef: { current: false },
   onPointerInTransitChange: () => {},
   //
-  handleOpen: () => {},
-  handleClose: () => {},
+  onOpen: () => {},
+  onClose: () => {},
 });
 
 export default function Tooltip(props: TooltipProps): JSX.Element {
@@ -43,12 +43,12 @@ export default function Tooltip(props: TooltipProps): JSX.Element {
 
   const [open, setOpen] = useControlled<boolean | undefined>(openProp, defaultOpen);
 
-  const handleOpen = React.useCallback(() => {
+  const onOpen = React.useCallback(() => {
     setOpen(true);
     onOpenChange?.(true);
   }, [onOpenChange, setOpen]);
 
-  const handleClose = React.useCallback(() => {
+  const onClose = React.useCallback(() => {
     setOpen(false);
     onOpenChange?.(false);
   }, [onOpenChange, setOpen]);
@@ -65,10 +65,10 @@ export default function Tooltip(props: TooltipProps): JSX.Element {
       isPointerInTransitRef,
       onPointerInTransitChange,
       //
-      handleOpen,
-      handleClose,
+      onOpen,
+      onClose,
     }),
-    [handleClose, handleOpen, onPointerInTransitChange, open],
+    [onClose, onOpen, onPointerInTransitChange, open],
   );
 
   return (

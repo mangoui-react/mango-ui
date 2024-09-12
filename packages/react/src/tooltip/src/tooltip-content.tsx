@@ -20,7 +20,7 @@ export interface TooltipContentProps
 const TooltipContent = React.forwardRef<TooltipContentElement, TooltipContentProps>(
   (props, ref) => {
     const { side = 'top', style, children, ...rest } = props;
-    const { open, triggerRef, handleClose, onPointerInTransitChange } =
+    const { open, triggerRef, onClose, onPointerInTransitChange } =
       React.useContext(TooltipContext);
 
     const [content, setContent] = React.useState<TooltipContentElement | null>(null);
@@ -89,7 +89,7 @@ const TooltipContent = React.forwardRef<TooltipContentElement, TooltipContentPro
             handleRemoveGraceArea();
           } else if (isPointerOutsideGraceArea) {
             handleRemoveGraceArea();
-            handleClose();
+            onClose();
           }
         };
         document.addEventListener('pointermove', handleTrackPointerGrace);
@@ -97,21 +97,21 @@ const TooltipContent = React.forwardRef<TooltipContentElement, TooltipContentPro
           document.removeEventListener('pointermove', handleTrackPointerGrace);
         };
       }
-    }, [content, handleClose, handleRemoveGraceArea, pointerGraceArea, trigger]);
+    }, [content, handleRemoveGraceArea, onClose, pointerGraceArea, trigger]);
 
     // Close the tooltip if the trigger is scrolled
     React.useEffect(() => {
       if (trigger) {
         const handleScroll = (event: Event): void => {
           const target = event.target as HTMLElement;
-          if (target?.contains(trigger)) handleClose();
+          if (target?.contains(trigger)) onClose();
         };
         window.addEventListener('scroll', handleScroll, { capture: true });
         return () => {
           window.removeEventListener('scroll', handleScroll, { capture: true });
         };
       }
-    }, [handleClose, trigger]);
+    }, [onClose, trigger]);
 
     if (!open) {
       return null;

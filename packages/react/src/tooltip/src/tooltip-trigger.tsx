@@ -12,7 +12,7 @@ export interface TooltipTriggerProps extends React.ComponentPropsWithoutRef<'but
 
 const TooltipTrigger = React.forwardRef<HTMLButtonElement, TooltipTriggerProps>((props, ref) => {
   const { children, asChild, onPointerMove, onPointerLeave, ...rest } = props;
-  const { open, triggerRef, isPointerInTransitRef, handleOpen, handleClose } =
+  const { open, triggerRef, isPointerInTransitRef, onOpen, onClose } =
     React.useContext(TooltipContext);
   const handleTriggerRef = useMergedRef(triggerRef, ref);
 
@@ -22,7 +22,7 @@ const TooltipTrigger = React.forwardRef<HTMLButtonElement, TooltipTriggerProps>(
 
   const handlePointerMove = (event: React.PointerEvent<HTMLButtonElement>): void => {
     if (!hasPointerMoveOpenedRef.current && !isPointerInTransitRef.current) {
-      handleOpen();
+      onOpen();
       hasPointerMoveOpenedRef.current = true;
     }
     onPointerMove?.(event);
@@ -30,7 +30,7 @@ const TooltipTrigger = React.forwardRef<HTMLButtonElement, TooltipTriggerProps>(
 
   const handlePointerLeave = (event: React.PointerEvent<HTMLButtonElement>): void => {
     if (isPointerInTransitRef.current) {
-      handleClose();
+      onClose();
     }
 
     hasPointerMoveOpenedRef.current = false;
