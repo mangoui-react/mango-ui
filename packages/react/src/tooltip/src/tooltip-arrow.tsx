@@ -1,18 +1,12 @@
 import React from 'react';
 
-export interface TooltipArrowProps extends React.ComponentPropsWithoutRef<'div'> {}
+import { Popper } from '@melio-ui/popper';
 
-// TODO: 확인후 필요 없으면 제거 - 필요하다고 판단됨(다시 생각 또 해보자)
-const TooltipArrow = React.forwardRef<HTMLDivElement, TooltipArrowProps>((props, ref) => {
-  // const { placement } = React.useContext(TooltipContentContext);
+type TooltipArrowElement = React.ElementRef<typeof Popper.Arrow>;
+export interface TooltipArrowProps extends React.ComponentPropsWithoutRef<typeof Popper.Arrow> {}
 
-  return (
-    <div
-      {...props}
-      ref={ref}
-      // data-placement={placement}
-    />
-  );
+const TooltipArrow = React.forwardRef<TooltipArrowElement, TooltipArrowProps>((props, ref) => {
+  return <Popper.Arrow {...props} ref={ref} />;
 });
 
 TooltipArrow.displayName = 'Tooltip.Arrow';

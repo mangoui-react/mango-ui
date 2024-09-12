@@ -14,7 +14,9 @@ export function Basic(): JSX.Element {
           <div style={{ width: 120 }}>Tooltip</div>
         </Tooltip.Trigger>
         <Tooltip.Portal>
-          <Tooltip.Content className={styles.content}>tooltip message</Tooltip.Content>
+          <Tooltip.Content className={styles.content} sideOffset={5}>
+            tooltip message
+          </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>
     </>
@@ -27,7 +29,7 @@ export function Arrow(): JSX.Element {
       <h1>Arrow</h1>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <div style={{ width: 120 }}>Tooltip</div>
+          <div style={{ width: 120, border: '.0625rem solid #618761', padding: 10 }}>Tooltip</div>
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content className={styles.content}>
@@ -51,7 +53,7 @@ export function Placement(): JSX.Element {
           </button>
         </Tooltip.Trigger>
         <Tooltip.Portal>
-          <Tooltip.Content className={styles.content} placement="bottom-end">
+          <Tooltip.Content className={styles.content} side="bottom" align="end">
             tooltip message
             <Tooltip.Arrow className={styles.arrow} />
           </Tooltip.Content>

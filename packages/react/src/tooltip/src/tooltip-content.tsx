@@ -1,62 +1,145 @@
 import React from 'react';
 
-import { createPopper } from '@popperjs/core';
-
+import { Popper } from '@melio-ui/popper';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
-import setRef from '../../internal/set-ref';
-
 import { TooltipContext } from './tooltip';
-import { Placement } from './types';
+import {
+  Polygon,
+  getExitSideFromRect,
+  getHull,
+  getPaddedExitPoints,
+  getPointsFromRect,
+  isPointInPolygon,
+} from './utils';
 
-export interface TooltipContentProps extends React.ComponentPropsWithoutRef<'div'> {
-  /**
-   * Tootip 이 display되는 위치
-   * @default 'top'
-   */
-  placement?: Placement;
-}
+type TooltipContentElement = React.ElementRef<typeof Popper.Content>;
+export interface TooltipContentProps
+  extends Omit<React.ComponentPropsWithoutRef<typeof Popper.Content>, 'onPlaced'> {}
 
-const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>((props, ref) => {
-  const { placement = 'top', children, ...rest } = props;
-  const { open, triggerRef } = React.useContext(TooltipContext);
+const TooltipContent = React.forwardRef<TooltipContentElement, TooltipContentProps>(
+  (props, ref) => {
+    const { side = 'top', style, children, ...rest } = props;
+    const { open, triggerRef, handleClose, onPointerInTransitChange } =
+      React.useContext(TooltipContext);
 
-  const tooltipRef = React.useRef<HTMLDivElement>();
-  const tooltipMergedRef = useMergedRef(tooltipRef, ref);
+    const [content, setContent] = React.useState<TooltipContentElement | null>(null);
+    const composedRefs = useMergedRef(ref, (node) => {
+      setContent(node);
+    });
 
-  const handleOpen = React.useCallback(() => {
-    if (!open || !triggerRef.current || !tooltipRef.current) {
-      return;
+    const [pointerGraceArea, setPointerGraceArea] = React.useState<Polygon | null>(null);
+
+    const trigger = triggerRef.current;
+
+    const handleRemoveGraceArea = React.useCallback(() => {
+      setPointerGraceArea(null);
+      onPointerInTransitChange(false);
+    }, [onPointerInTransitChange]);
+
+    const handleCreateGraceArea = React.useCallback(
+      (event: PointerEvent, hoverTarget: HTMLElement) => {
+        const currentTarget = event.currentTarget as HTMLElement;
+        const exitPoint = { x: event.clientX, y: event.clientY };
+        const exitSide = getExitSideFromRect(exitPoint, currentTarget.getBoundingClientRect());
+        const paddedExitPoints = getPaddedExitPoints(exitPoint, exitSide);
+        const hoverTargetPoints = getPointsFromRect(hoverTarget.getBoundingClientRect());
+        const graceArea = getHull([...paddedExitPoints, ...hoverTargetPoints]);
+        setPointerGraceArea(graceArea);
+        onPointerInTransitChange(true);
+      },
+      [onPointerInTransitChange],
+    );
+
+    React.useEffect(() => {
+      return () => {
+        handleRemoveGraceArea();
+      };
+    }, [handleRemoveGraceArea]);
+
+    React.useEffect(() => {
+      if (trigger && content) {
+        const handleTriggerLeave = (event: PointerEvent): void => {
+          console.log('content ============ trigger:handleTriggerLeave');
+          handleCreateGraceArea(event, content);
+        };
+        const handleContentLeave = (event: PointerEvent): void => {
+          console.log('content ============ content:handleTriggerLeave');
+          handleCreateGraceArea(event, trigger);
+        };
+
+        trigger.addEventListener('pointerleave', handleTriggerLeave);
+        content.addEventListener('pointerleave', handleContentLeave);
+        return () => {
+          trigger.removeEventListener('pointerleave', handleTriggerLeave);
+          content.removeEventListener('pointerleave', handleContentLeave);
+        };
+      }
+    }, [trigger, content, handleCreateGraceArea, handleRemoveGraceArea]);
+
+    React.useEffect(() => {
+      if (pointerGraceArea) {
+        const handleTrackPointerGrace = (event: PointerEvent): void => {
+          const target = event.target as HTMLElement;
+          const pointerPosition = { x: event.clientX, y: event.clientY };
+          const hasEnteredTarget = trigger?.contains(target) || content?.contains(target);
+          const isPointerOutsideGraceArea = !isPointInPolygon(pointerPosition, pointerGraceArea);
+
+          if (hasEnteredTarget) {
+            handleRemoveGraceArea();
+          } else if (isPointerOutsideGraceArea) {
+            handleRemoveGraceArea();
+            handleClose();
+          }
+        };
+        document.addEventListener('pointermove', handleTrackPointerGrace);
+        return () => {
+          document.removeEventListener('pointermove', handleTrackPointerGrace);
+        };
+      }
+    }, [content, handleClose, handleRemoveGraceArea, pointerGraceArea, trigger]);
+
+    // Close the tooltip if the trigger is scrolled
+    React.useEffect(() => {
+      if (trigger) {
+        const handleScroll = (event: Event): void => {
+          const target = event.target as HTMLElement;
+          if (target?.contains(trigger)) handleClose();
+        };
+        window.addEventListener('scroll', handleScroll, { capture: true });
+        return () => {
+          window.removeEventListener('scroll', handleScroll, { capture: true });
+        };
+      }
+    }, [handleClose, trigger]);
+
+    if (!open) {
+      return null;
     }
 
-    createPopper(triggerRef.current, tooltipRef.current, {
-      placement,
-      modifiers: [{ name: 'offset', options: { offset: [0, 8] } }],
-    });
-  }, [open, placement, triggerRef]);
-
-  const handleRef = React.useCallback(
-    (node: any) => {
-      setRef(tooltipMergedRef, node);
-      handleOpen();
-    },
-    [handleOpen, tooltipMergedRef],
-  );
-
-  if (!open) {
-    return null;
-  }
-
-  return (
-    <div
-      // data-placement={placement} // @popperjs/core 에서 data-popper-placement 로 정의함
-      {...rest}
-      ref={handleRef}
-    >
-      {children}
-    </div>
-  );
-});
+    return (
+      <Popper.Content
+        data-state={open ? 'open' : 'closed'}
+        side={side}
+        {...rest}
+        ref={composedRefs}
+        style={{
+          ...style,
+          // re-namespace exposed content custom properties
+          ...{
+            '--melio-tooltip-content-transform-origin': 'var(--melio-popper-transform-origin)',
+            '--melio-tooltip-content-available-width': 'var(--melio-popper-available-width)',
+            '--melio-tooltip-content-available-height': 'var(--melio-popper-available-height)',
+            '--melio-tooltip-trigger-width': 'var(--melio-popper-anchor-width)',
+            '--melio-tooltip-trigger-height': 'var(--melio-popper-anchor-height)',
+          },
+        }}
+      >
+        {children}
+      </Popper.Content>
+    );
+  },
+);
 
 TooltipContent.displayName = 'Tooltip.Content';
 

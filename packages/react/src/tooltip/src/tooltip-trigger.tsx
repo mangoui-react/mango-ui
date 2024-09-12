@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Popper } from '@melio-ui/popper';
 import { Slot } from '@melio-ui/slot';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
@@ -10,33 +11,45 @@ export interface TooltipTriggerProps extends React.ComponentPropsWithoutRef<'but
 }
 
 const TooltipTrigger = React.forwardRef<HTMLButtonElement, TooltipTriggerProps>((props, ref) => {
-  const { children, asChild, onMouseOver, onMouseOut, ...rest } = props;
-  const { open, triggerRef, handleOpen, handleClose } = React.useContext(TooltipContext);
+  const { children, asChild, onPointerMove, onPointerLeave, ...rest } = props;
+  const { open, triggerRef, isPointerInTransitRef, handleOpen, handleClose } =
+    React.useContext(TooltipContext);
   const handleTriggerRef = useMergedRef(triggerRef, ref);
+
+  const hasPointerMoveOpenedRef = React.useRef(false);
 
   const Component = asChild ? Slot : 'button';
 
-  const handleMouseOver = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    handleOpen();
-    onMouseOver?.(event);
+  const handlePointerMove = (event: React.PointerEvent<HTMLButtonElement>): void => {
+    if (!hasPointerMoveOpenedRef.current && !isPointerInTransitRef.current) {
+      handleOpen();
+      hasPointerMoveOpenedRef.current = true;
+    }
+    onPointerMove?.(event);
   };
 
-  const handleMouseOut = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    handleClose();
-    onMouseOut?.(event);
+  const handlePointerLeave = (event: React.PointerEvent<HTMLButtonElement>): void => {
+    if (isPointerInTransitRef.current) {
+      handleClose();
+    }
+
+    hasPointerMoveOpenedRef.current = false;
+    onPointerLeave?.(event);
   };
 
   return (
-    <Component
-      type="button"
-      data-state={open ? 'open' : 'closed'}
-      {...rest}
-      ref={handleTriggerRef}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-    >
-      {children ?? 'Tooltip'}
-    </Component>
+    <Popper.Anchor asChild>
+      <Component
+        type="button"
+        data-state={open ? 'open' : 'closed'}
+        {...rest}
+        ref={handleTriggerRef}
+        onPointerMove={handlePointerMove}
+        onPointerLeave={handlePointerLeave}
+      >
+        {children ?? 'Tooltip'}
+      </Component>
+    </Popper.Anchor>
   );
 });
 
