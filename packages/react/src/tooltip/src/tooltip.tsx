@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Popper } from '@melio-ui/popper';
 import { useControlled } from '@melio-ui/use-controlled';
 
 export interface TooltipProps {
@@ -14,16 +15,22 @@ export interface TooltipProps {
 }
 
 export interface TooltipContextValue extends Pick<TooltipProps, 'open'> {
-  triggerRef: React.MutableRefObject<HTMLButtonElement | null>; // TODO: Element 타입 생각해 보기
+  triggerRef: React.MutableRefObject<HTMLButtonElement | null>;
   //
-  handleOpen: () => void;
-  handleClose: () => void;
+  isPointerInTransitRef: React.MutableRefObject<boolean>;
+  onPointerInTransitChange: (inTransit: boolean) => void;
+  //
+  onOpen: () => void;
+  onClose: () => void;
 }
 export const TooltipContext = React.createContext<TooltipContextValue>({
   triggerRef: { current: null },
   //
-  handleOpen: () => {},
-  handleClose: () => {},
+  isPointerInTransitRef: { current: false },
+  onPointerInTransitChange: () => {},
+  //
+  onOpen: () => {},
+  onClose: () => {},
 });
 
 export default function Tooltip(props: TooltipProps): JSX.Element {
@@ -32,30 +39,43 @@ export default function Tooltip(props: TooltipProps): JSX.Element {
   // Tooltip의 대상(트리거)이 되는 Node
   const triggerRef = React.useRef<HTMLButtonElement>(null);
 
+  const isPointerInTransitRef = React.useRef(false);
+
   const [open, setOpen] = useControlled<boolean | undefined>(openProp, defaultOpen);
 
-  const handleOpen = React.useCallback(() => {
+  const onOpen = React.useCallback(() => {
     setOpen(true);
     onOpenChange?.(true);
   }, [onOpenChange, setOpen]);
 
-  const handleClose = React.useCallback(() => {
+  const onClose = React.useCallback(() => {
     setOpen(false);
     onOpenChange?.(false);
   }, [onOpenChange, setOpen]);
+
+  const onPointerInTransitChange = React.useCallback((inTransit: boolean) => {
+    isPointerInTransitRef.current = inTransit;
+  }, []);
 
   const contextValue = React.useMemo(
     () => ({
       open,
       triggerRef,
       //
-      handleOpen,
-      handleClose,
+      isPointerInTransitRef,
+      onPointerInTransitChange,
+      //
+      onOpen,
+      onClose,
     }),
-    [handleClose, handleOpen, open],
+    [onClose, onOpen, onPointerInTransitChange, open],
   );
 
-  return <TooltipContext.Provider value={contextValue}>{children}</TooltipContext.Provider>;
+  return (
+    <Popper.Root>
+      <TooltipContext.Provider value={contextValue}>{children}</TooltipContext.Provider>
+    </Popper.Root>
+  );
 }
 
 Tooltip.displayName = 'Tooltip';

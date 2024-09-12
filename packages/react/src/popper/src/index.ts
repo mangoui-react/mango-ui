@@ -15,6 +15,8 @@ export * from './popper-anchor';
 export * from './popper-content';
 export * from './popper-arrow';
 
+export * from './types';
+
 export const Popper = {
   Root,
   Anchor,

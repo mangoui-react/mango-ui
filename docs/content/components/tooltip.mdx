@@ -154,19 +154,32 @@ Includes the content that will be displayed in the open tooltip.
 <PropsTable
   data={[
     {
-      name: 'placement',
+      name: 'side',
       required: false,
       default: '"top"',
-      type: (
-        <>
-          Placement
-          <br />
-          <br />
-          "auto" | "bottom-end" | "top" | "top-start" | "top-end" | "bottom" | "bottom-start" | "right"
-          | "right-start" | "right-end" | "left" | "left-start" | "left-end" | "auto-start" | "auto-end"
-        </>
-      ),
-      description: 'Specifies the location of the value.',
+      type: '"top" | "right" | "bottom" | "left"',
+      description: "The ideal side of the trigger to render on when it's open.",
+    },
+    {
+      name: 'sideOffset',
+      required: false,
+      default: '0',
+      type: 'number',
+      description: 'The pixel distance from the trigger.',
+    },
+    {
+      name: 'align',
+      required: false,
+      default: '"center"',
+      type: '"start" | "center" | "end"',
+      description: 'The desired alignment with the trigger, which may adjust if collisions happen.',
+    },
+    {
+      name: 'alignOffset',
+      required: false,
+      default: '0',
+      type: 'number',
+      description: 'A pixel offset from the "start" or "end" alignment choices.',
     },
   ]}
 />
@@ -174,9 +187,16 @@ Includes the content that will be displayed in the open tooltip.
 <DataAttributesTable
   data={[
     {
-      attribute: '[data-popper-placement]',
-      values:
-        '"auto" | "bottom-end" | "top" | "top-start" | "top-end" | "bottom" | "bottom-start" | "right" | "right-start" | "right-end" | "left" | "left-start" | "left-end" | "auto-start" | "auto-end"',
+      attribute: '[data-state]',
+      values: '"open" | "closed"',
+    },
+    {
+      attribute: '[data-side]',
+      values: '"top" | "right" | "bottom" | "left"',
+    },
+    {
+      attribute: '[data-align]',
+      values: '"start" | "center" | "end"',
     },
   ]}
 />
@@ -184,6 +204,32 @@ Includes the content that will be displayed in the open tooltip.
 ### TooltipArrow
 
 An optional arrow element for the tooltip, to be rendered within TooltipContent for visual association.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+    {
+      name: 'width',
+      required: false,
+      default: '10',
+      type: 'number',
+      description: "The arrow's width measured in pixels.",
+    },
+    {
+      name: 'height',
+      required: false,
+      default: '5',
+      type: 'number',
+      description: "The arrow's height measured in pixels.",
+    },
+  ]}
+/>
 
 ## Examples
 
@@ -205,7 +251,7 @@ An optional arrow element for the tooltip, to be rendered within TooltipContent 
 </TooltipRoot>
 ```
 
-### Placement Settings
+### Position Settings
 
 ```jsx
 <TooltipRoot>
@@ -215,7 +261,7 @@ An optional arrow element for the tooltip, to be rendered within TooltipContent 
     </button>
   </TooltipTrigger>
   <TooltipPortal>
-    <TooltipContent placement="bottom-end">
+    <TooltipContent side="bottom" align="end">
       tooltip message
       <TooltipArrow />
     </TooltipContent>

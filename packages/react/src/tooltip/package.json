@@ -17,11 +17,11 @@
     "directory": "build"
   },
   "dependencies": {
+    "@melio-ui/popper": "workspace:*",
     "@melio-ui/slot": "workspace:*",
     "@melio-ui/use-controlled": "workspace:*",
     "@melio-ui/use-merged-ref": "workspace:*",
-    "@melio-ui/use-portal": "workspace:*",
-    "@popperjs/core": "^2.11.8"
+    "@melio-ui/use-portal": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "*",
