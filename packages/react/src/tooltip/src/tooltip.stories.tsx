@@ -42,10 +42,10 @@ export function Arrow(): JSX.Element {
   );
 }
 
-export function Placement(): JSX.Element {
+export function Position(): JSX.Element {
   return (
     <>
-      <h1>Placement</h1>
+      <h1>Position</h1>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
           <button type="button" style={{ width: 200 }}>
@@ -59,6 +59,25 @@ export function Placement(): JSX.Element {
           </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>
+
+      <div style={{ width: '100%', height: 30 }} />
+      <h3>맨 우측 위치시</h3>
+      <div style={{ display: 'flex', gap: 5 }}>
+        <div style={{ width: '100%' }} />
+        <Tooltip.Root>
+          <Tooltip.Trigger asChild>
+            <button type="button" style={{ whiteSpace: 'nowrap' }}>
+              Open Popover
+            </button>
+          </Tooltip.Trigger>
+          <Tooltip.Portal>
+            <Tooltip.Content className={styles.content} side="top" align="start">
+              <div style={{ padding: 10, whiteSpace: 'nowrap' }}>This is a Tooltip Content</div>
+              <Tooltip.Arrow className={styles.arrow} />
+            </Tooltip.Content>
+          </Tooltip.Portal>
+        </Tooltip.Root>
+      </div>
     </>
   );
 }

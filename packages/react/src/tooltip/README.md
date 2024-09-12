@@ -29,7 +29,7 @@
 </Tooltip.Root>
 ```
 
-### Placement
+### Position
 
 ```javascript
 <Tooltip.Root>
@@ -37,7 +37,9 @@
     <button type="button">Tooltip</button>
   </Tooltip.Trigger>
   <Tooltip.Portal>
-    <Tooltip.Content placement="bottom-end">tooltip message</Tooltip.Content>
+    <Tooltip.Content side="bottom" align="end">
+      tooltip message
+    </Tooltip.Content>
   </Tooltip.Portal>
 </Tooltip.Root>
 ```

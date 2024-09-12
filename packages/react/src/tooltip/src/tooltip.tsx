@@ -15,7 +15,7 @@ export interface TooltipProps {
 }
 
 export interface TooltipContextValue extends Pick<TooltipProps, 'open'> {
-  triggerRef: React.MutableRefObject<HTMLButtonElement | null>; // TODO: Element 타입 생각해 보기
+  triggerRef: React.MutableRefObject<HTMLButtonElement | null>;
   //
   isPointerInTransitRef: React.MutableRefObject<boolean>;
   onPointerInTransitChange: (inTransit: boolean) => void;
