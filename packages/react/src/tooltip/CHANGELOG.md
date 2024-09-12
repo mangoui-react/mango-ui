@@ -1,5 +1,13 @@
 # @melio-ui/tooltip
 
+## 0.0.4
+
+### Patch Changes
+
+- popperjs -> floating-ui 로 변경
+- Updated dependencies
+  - @melio-ui/popper@0.0.2
+
 ## 0.0.3
 
 ### Patch Changes

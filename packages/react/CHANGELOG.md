@@ -1,5 +1,11 @@
 # @melio-ui/react
 
+## 0.0.11
+
+### Patch Changes
+
+- popperjs -> floating-ui 로 변경
+
 ## 0.0.10
 
 ### Patch Changes
