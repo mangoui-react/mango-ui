@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Popper } from '@melio-ui/popper';
 import { Slot } from '@melio-ui/slot';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
@@ -27,15 +28,17 @@ const PopoverTrigger = React.forwardRef<HTMLButtonElement, PopoverTriggerProps>(
   };
 
   return (
-    <Component
-      type="button"
-      data-state={open ? 'open' : 'closed'}
-      {...rest}
-      ref={handleTriggerRef}
-      onClick={handleClick}
-    >
-      {children ?? 'Popover'}
-    </Component>
+    <Popper.Anchor asChild>
+      <Component
+        type="button"
+        data-state={open ? 'open' : 'closed'}
+        {...rest}
+        ref={handleTriggerRef}
+        onClick={handleClick}
+      >
+        {children ?? 'Popover'}
+      </Component>
+    </Popper.Anchor>
   );
 });
 

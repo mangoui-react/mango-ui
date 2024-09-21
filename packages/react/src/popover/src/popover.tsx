@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Popper } from '@melio-ui/popper';
 import { useControlled } from '@melio-ui/use-controlled';
 
 // 지금은 필요없음 - 나중에 필요하다면 부활시키자
@@ -18,7 +19,7 @@ export interface PopoverProps {
 }
 
 export interface PopoverContextValue extends Pick<PopoverProps, 'open'> {
-  triggerRef: React.MutableRefObject<HTMLButtonElement | null>; // TODO: Element 타입 생각해 보기
+  triggerRef: React.MutableRefObject<HTMLButtonElement | null>;
   //
   handleOpen: () => void;
   handleClose: () => void;
@@ -60,7 +61,11 @@ export default function Popover(props: PopoverProps): JSX.Element {
     [handleClose, handleOpen, open],
   );
 
-  return <PopoverContext.Provider value={contextValue}>{children}</PopoverContext.Provider>;
+  return (
+    <Popper.Root>
+      <PopoverContext.Provider value={contextValue}>{children}</PopoverContext.Provider>
+    </Popper.Root>
+  );
 }
 
 Popover.displayName = 'Popover';
