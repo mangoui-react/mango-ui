@@ -12,7 +12,7 @@ export { default as DropdownContent } from './dropdown-content';
 export { default as DropdownItem } from './dropdown-item';
 export { default as DropdownPortal } from './dropdown-portal';
 export { default as DropdownTrigger } from './dropdown-trigger';
-export { default as PopoverArrow } from './dropdown-arrow';
+export { default as DropdownArrow } from './dropdown-arrow';
 
 export * from './dropdown';
 export * from './dropdown-trigger';

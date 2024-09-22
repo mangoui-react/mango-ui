@@ -38,16 +38,16 @@ nextSlug: '/components/number-input'
   DropdownTrigger,
   DropdownPortal,
   DropdownContent,
+  DropdownArrow,
   DropdownItem,
-  DropdownClose,
 } from '@melio-ui/dropdown';`,
     global: `import { 
   DropdownRoot,
   DropdownTrigger,
   DropdownPortal,
   DropdownContent,
+  DropdownArrow,
   DropdownItem,
-  DropdownClose,
 } from '@melio-ui/react';`,
   }}
 />
@@ -56,8 +56,8 @@ nextSlug: '/components/number-input'
 - **DropdownTrigger**: Used to activate or open the Dropdown component.
 - **DropdownPortal**: Portal the overlay and content portion into the body.
 - **DropdownContent**: Includes the content that will be displayed in the open menu box.
+- **DropdownArrow**: An optional arrow element for the dropdown, to be rendered within DropdownContent for visual association.
 - **DropdownItem**: It represents a single item in a dropdown menu and can be customized with labels, icons, and actions.
-- **DropdownClose**: The button that closes the menu.
 
 ### Another way to import
 
@@ -161,66 +161,32 @@ Includes the content that will be displayed in the open menu box.
 <PropsTable
   data={[
     {
-      name: 'triggerPosition',
+      name: 'side',
       required: false,
-      default: '{ vertical: "bottom", horizontal: "left" }',
-      type: (
-        <>
-          TriggerPositionValue
-          <br />
-          <br />
-          {`
-            {
-              vertical: "top" | "center" | "bottom",
-              horizontal: "left" | "center" | "right",
-            }
-          `}
-        </>
-      ),
-      description: 'The location of the trigger where the menu will appear.',
+      default: '"top"',
+      type: '"top" | "right" | "bottom" | "left"',
+      description: "The ideal side of the trigger to render on when it's open.",
     },
     {
-      name: 'contentPosition',
+      name: 'sideOffset',
       required: false,
-      type: (
-        <>
-          TriggerPositionValue
-          <br />
-          <br />
-          {`
-            {
-              vertical: "top" | "center" | "bottom",
-              horizontal: "left" | "center" | "right",
-            }
-          `}
-        </>
-      ),
-      description: 'The location of the menu content where the menu will appear.',
-    },
-    {
-      name: 'position',
-      required: false,
-      type: (
-        <>
-          PositionValue
-          <br />
-          <br />
-          {`
-            {
-              left: number,
-              top: number,
-            }
-          `}
-        </>
-      ),
-      description: 'Specifies the location where the menu will be displayed using coordinates.',
-    },
-    {
-      name: 'zIndex',
-      required: false,
+      default: '0',
       type: 'number',
-      description:
-        'A property that controls the stacking order of elements on a web page.(CSS z-index)',
+      description: 'The pixel distance from the trigger.',
+    },
+    {
+      name: 'align',
+      required: false,
+      default: '"center"',
+      type: '"start" | "center" | "end"',
+      description: 'The desired alignment with the trigger, which may adjust if collisions happen.',
+    },
+    {
+      name: 'alignOffset',
+      required: false,
+      default: '0',
+      type: 'number',
+      description: 'A pixel offset from the "start" or "end" alignment choices.',
     },
     {
       name: 'destroyOnClose',
@@ -266,6 +232,44 @@ Includes the content that will be displayed in the open menu box.
       attribute: '[data-state]',
       values: '"open" | "closed"',
     },
+    {
+      attribute: '[data-side]',
+      values: '"top" | "right" | "bottom" | "left"',
+    },
+    {
+      attribute: '[data-align]',
+      values: '"start" | "center" | "end"',
+    },
+  ]}
+/>
+
+### DropdownArrow
+
+An optional arrow element for the dropdown, to be rendered within DropdownContent for visual association.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+    {
+      name: 'width',
+      required: false,
+      default: '10',
+      type: 'number',
+      description: "The arrow's width measured in pixels.",
+    },
+    {
+      name: 'height',
+      required: false,
+      default: '5',
+      type: 'number',
+      description: "The arrow's height measured in pixels.",
+    },
   ]}
 />
 
@@ -293,22 +297,6 @@ It represents a single item in a dropdown menu and can be customized with labels
   ]}
 />
 
-### DropdownClose
-
-The button that closes the menu.
-
-<PropsTable
-  data={[
-    {
-      name: 'asChild',
-      required: false,
-      type: 'boolean',
-      description:
-        'Changes the default rendering element passed as a child, merging its props and behavior.',
-    },
-  ]}
-/>
-
 ## Examples
 
 ### Position of dropdown menu
@@ -328,13 +316,37 @@ The button that closes the menu.
     </button>
   </DropdownTrigger>
   <DropdownPortal>
-    <DropdownContent
-      triggerPosition={{ vertical: 'bottom', horizontal: 'right' }}
-      contentPosition={{ vertical: 'top', horizontal: 'left' }}
-    >
+    <DropdownContent side="right" align="start">
       <DropdownItem>DropdownItem - 1</DropdownItem>
       <DropdownItem>DropdownItem - 2</DropdownItem>
       <DropdownItem>DropdownItem - 3</DropdownItem>
+    </DropdownContent>
+  </DropdownPortal>
+</DropdownRoot>
+```
+
+### Display arrow
+
+```jsx
+<DropdownRoot>
+  <DropdownTrigger asChild>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #475569',
+        borderRadius: 5,
+        padding: 10,
+      }}
+    >
+      Dropdown
+    </button>
+  </DropdownTrigger>
+  <DropdownPortal>
+    <DropdownContent>
+      <DropdownItem>DropdownItem - 1</DropdownItem>
+      <DropdownItem>DropdownItem - 2</DropdownItem>
+      <DropdownItem>DropdownItem - 3</DropdownItem>
+      <DropdownArrow />
     </DropdownContent>
   </DropdownPortal>
 </DropdownRoot>

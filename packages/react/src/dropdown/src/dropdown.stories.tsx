@@ -25,6 +25,27 @@ export function Basic(): JSX.Element {
   );
 }
 
+export function Arrow(): JSX.Element {
+  return (
+    <>
+      <h1>Arrow</h1>
+      <Dropdown.Root>
+        <Dropdown.Trigger asChild>
+          <button type="button">Dropdown</button>
+        </Dropdown.Trigger>
+        <Dropdown.Portal>
+          <Dropdown.Content className={styles.content}>
+            <Dropdown.Item className={styles.item}>DropdownItem - 1</Dropdown.Item>
+            <Dropdown.Item className={styles.item}>DropdownItem - 2</Dropdown.Item>
+            <Dropdown.Item className={styles.item}>DropdownItem - 3</Dropdown.Item>
+            <Dropdown.Arrow style={{ fill: '#ffffff' }} />
+          </Dropdown.Content>
+        </Dropdown.Portal>
+      </Dropdown.Root>
+    </>
+  );
+}
+
 export function DestroyOnClose(): JSX.Element {
   return (
     <>
