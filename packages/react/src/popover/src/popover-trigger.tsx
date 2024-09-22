@@ -12,16 +12,16 @@ export interface PopoverTriggerProps extends React.ComponentPropsWithoutRef<'but
 
 const PopoverTrigger = React.forwardRef<HTMLButtonElement, PopoverTriggerProps>((props, ref) => {
   const { children, asChild, onClick, ...rest } = props;
-  const { open, triggerRef, handleOpen, handleClose } = React.useContext(PopoverContext);
+  const { open, triggerRef, onOpen, onClose } = React.useContext(PopoverContext);
   const handleTriggerRef = useMergedRef(triggerRef, ref);
 
   const Component = asChild ? Slot : 'button';
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     if (!open) {
-      handleOpen();
+      onOpen();
     } else {
-      handleClose();
+      onClose();
     }
 
     onClick?.(event);

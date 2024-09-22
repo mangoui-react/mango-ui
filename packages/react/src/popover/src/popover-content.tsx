@@ -36,7 +36,7 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>((pr
     onKeyDown,
     ...rest
   } = props;
-  const { open, triggerRef, handleClose } = React.useContext(PopoverContext);
+  const { open, triggerRef, onClose } = React.useContext(PopoverContext);
 
   const popoverContentRef = React.useRef<HTMLDivElement>(null);
   const popoverContentMergedRef = useMergedRef(popoverContentRef, ref);
@@ -63,7 +63,7 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>((pr
     // targetIsTarget 이 true 인 경우는 PopoverTrigger 에서 처리 - 여기서는 작동안하도록 처리
     const isValidBlur = !targetIsPopover && !targetIsTarget;
     if (open && closeOnBlur && isValidBlur) {
-      handleClose();
+      onClose();
     }
 
     onBlur?.(event);
@@ -72,7 +72,7 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>((pr
   // Esc 키 down 시 blur(blur 시 close)
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
     if (closeOnEsc && event.key === 'Escape') {
-      handleClose();
+      onClose();
     }
 
     onKeyDown?.(event);

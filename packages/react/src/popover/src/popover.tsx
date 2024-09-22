@@ -21,14 +21,14 @@ export interface PopoverProps {
 export interface PopoverContextValue extends Pick<PopoverProps, 'open'> {
   triggerRef: React.MutableRefObject<HTMLButtonElement | null>;
   //
-  handleOpen: () => void;
-  handleClose: () => void;
+  onOpen: () => void;
+  onClose: () => void;
 }
 export const PopoverContext = React.createContext<PopoverContextValue>({
   triggerRef: { current: null },
   //
-  handleOpen: () => {},
-  handleClose: () => {},
+  onOpen: () => {},
+  onClose: () => {},
 });
 
 export default function Popover(props: PopoverProps): JSX.Element {
@@ -38,14 +38,14 @@ export default function Popover(props: PopoverProps): JSX.Element {
 
   const triggerRef = React.useRef<HTMLButtonElement>(null);
 
-  const handleOpen = React.useCallback(() => {
+  const onOpen = React.useCallback(() => {
     if (!open) {
       setOpen(true);
       onOpenChange?.(true);
     }
   }, [onOpenChange, open, setOpen]);
 
-  const handleClose = React.useCallback(() => {
+  const onClose = React.useCallback(() => {
     setOpen(false);
     onOpenChange?.(false);
   }, [onOpenChange, setOpen]);
@@ -55,10 +55,10 @@ export default function Popover(props: PopoverProps): JSX.Element {
       open,
       triggerRef,
       //
-      handleOpen,
-      handleClose,
+      onOpen,
+      onClose,
     }),
-    [handleClose, handleOpen, open],
+    [onClose, onOpen, open],
   );
 
   return (

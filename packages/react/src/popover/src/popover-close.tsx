@@ -10,11 +10,11 @@ export interface PopoverCloseProps extends React.ComponentPropsWithoutRef<'butto
 
 const PopoverClose = React.forwardRef<HTMLButtonElement, PopoverCloseProps>((props, ref) => {
   const { children, asChild, onClick, ...rest } = props;
-  const { handleClose } = React.useContext(PopoverContext);
+  const { onClose } = React.useContext(PopoverContext);
   const Component = asChild ? Slot : 'button';
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    handleClose();
+    onClose();
     onClick?.(event);
   };
 
