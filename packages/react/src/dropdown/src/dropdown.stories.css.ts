@@ -1,7 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
 export const content = style({
-  position: 'absolute',
   backgroundColor: 'var(--component-bg)',
   border: '0.0625rem solid var(--border)',
   borderRadius: '0.25rem',
@@ -10,6 +9,10 @@ export const content = style({
   ':focus': {
     outline: 0,
   },
+});
+
+export const arrow = style({
+  fill: 'var(--component-bg)',
 });
 
 export const item = style({
