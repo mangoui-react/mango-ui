@@ -11,28 +11,12 @@ export interface PopoverPortalProps {
   container?: ContainerType;
 }
 
-export interface PopoverPortalContextValue {
-  containerEl?: Element | HTMLElement;
-}
-export const PopoverPortalContext = React.createContext<PopoverPortalContextValue>({});
-
 export default function PopoverPortal(props: PopoverPortalProps): JSX.Element {
   const { container, children } = props;
 
-  const { Portal, target: containerEl } = usePortal(container);
+  const { Portal } = usePortal(container);
 
-  const contextValue = React.useMemo(
-    () => ({
-      containerEl,
-    }),
-    [containerEl],
-  );
-
-  return (
-    <PopoverPortalContext.Provider value={contextValue}>
-      <Portal>{children}</Portal>
-    </PopoverPortalContext.Provider>
-  );
+  return <Portal>{children}</Portal>;
 }
 
 PopoverPortal.displayName = 'Popover.Portal';

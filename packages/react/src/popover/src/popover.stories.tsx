@@ -47,6 +47,84 @@ export function OnOpenChange(): JSX.Element {
   );
 }
 
+export function Arrow(): JSX.Element {
+  return (
+    <>
+      <h1>Arrow</h1>
+      <Popover.Root>
+        <Popover.Trigger asChild>
+          <button type="button">Open Popover</button>
+        </Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content className={styles.content}>
+            <div style={{ padding: 10 }}>This is a Popover Content</div>
+            <Popover.Arrow style={{ fill: '#ffffff' }} />
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
+    </>
+  );
+}
+
+export function Close(): JSX.Element {
+  return (
+    <>
+      <h1>Close</h1>
+      <Popover.Root>
+        <Popover.Trigger asChild>
+          <button type="button">Open Popover</button>
+        </Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content className={styles.content}>
+            <div style={{ padding: 10, paddingTop: 30 }}>This is a Popover Content</div>
+            <Popover.Close className={styles.close}>X</Popover.Close>
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
+    </>
+  );
+}
+
+export function Position(): JSX.Element {
+  return (
+    <>
+      <h1>Position</h1>
+      <h3>
+        side: right <br />
+        align: start
+      </h3>
+      <Popover.Root>
+        <Popover.Trigger asChild>
+          <button type="button">Open Popover</button>
+        </Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content className={styles.content} side="right" align="start">
+            <div style={{ padding: 10 }}>This is a Popover Content</div>
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
+
+      <div style={{ width: '100%', height: 30 }} />
+      <h3>맨 우측 위치시</h3>
+      <div style={{ display: 'flex', gap: 5 }}>
+        <div style={{ width: '100%' }} />
+        <Popover.Root>
+          <Popover.Trigger asChild>
+            <button type="button" style={{ whiteSpace: 'nowrap' }}>
+              Open Popover
+            </button>
+          </Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content className={styles.content}>
+              <div style={{ padding: 10, whiteSpace: 'nowrap' }}>This is a Popover Content</div>
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
+      </div>
+    </>
+  );
+}
+
 export function CloseOnBlur(): JSX.Element {
   return (
     <>
@@ -102,50 +180,6 @@ export function ForceMount(): JSX.Element {
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
-    </>
-  );
-}
-
-export function Position(): JSX.Element {
-  return (
-    <>
-      <h1>Position</h1>
-      <h3>
-        triggerPosition: bottom, right <br />
-        contentPosition: top, left
-      </h3>
-      <Popover.Root>
-        <Popover.Trigger asChild>
-          <button type="button">Open Popover</button>
-        </Popover.Trigger>
-        <Popover.Portal>
-          <Popover.Content
-            className={styles.content}
-            triggerPosition={{ vertical: 'bottom', horizontal: 'right' }}
-            contentPosition={{ vertical: 'top', horizontal: 'left' }}
-          >
-            <div style={{ padding: 10 }}>This is a Popover Content</div>
-          </Popover.Content>
-        </Popover.Portal>
-      </Popover.Root>
-
-      <div style={{ width: '100%', height: 30 }} />
-      <h3>맨 우측 위치시</h3>
-      <div style={{ display: 'flex', gap: 5 }}>
-        <div style={{ width: '100%' }} />
-        <Popover.Root>
-          <Popover.Trigger asChild>
-            <button type="button" style={{ whiteSpace: 'nowrap' }}>
-              Open Popover
-            </button>
-          </Popover.Trigger>
-          <Popover.Portal>
-            <Popover.Content className={styles.content}>
-              <div style={{ padding: 10, whiteSpace: 'nowrap' }}>This is a Popover Content</div>
-            </Popover.Content>
-          </Popover.Portal>
-        </Popover.Root>
-      </div>
     </>
   );
 }

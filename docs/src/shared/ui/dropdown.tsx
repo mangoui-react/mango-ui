@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  DropdownClose as MDropdownClose,
+  DropdownArrow as MDropdownArrow,
   DropdownContent as MDropdownContent,
   DropdownItem as MDropdownItem,
   DropdownPortal as MDropdownPortal,
@@ -14,7 +14,6 @@ import { cn } from '@/shared/utils/cn';
 export const DropdownRoot = MDropdownRoot;
 export const DropdownPortal = MDropdownPortal;
 export const DropdownTrigger = MDropdownTrigger;
-export const DropdownClose = MDropdownClose;
 
 interface DropdownContentProps extends React.ComponentPropsWithoutRef<typeof MDropdownContent> {}
 export function DropdownContent({ className, ...props }: DropdownContentProps) {
@@ -22,7 +21,7 @@ export function DropdownContent({ className, ...props }: DropdownContentProps) {
     <MDropdownContent
       {...props}
       className={cn(
-        'absolute bg-slate-500 text-slate-100',
+        'bg-slate-500 text-slate-100',
         'rounded border border-slate-600 shadow-sm',
         'focus:outline-0',
         className,
@@ -47,11 +46,15 @@ export function DropdownItem({ className, ...props }: DropdownItemProps) {
   );
 }
 
+interface DropdownArrowProps extends React.ComponentPropsWithoutRef<typeof MDropdownArrow> {}
+export function DropdownArrow({ className, ...props }: DropdownArrowProps) {
+  return <MDropdownArrow {...props} className={cn('fill-slate-500', className)} />;
+}
+
 export const Dropdown = {
   Root: DropdownRoot,
   Trigger: DropdownTrigger,
   Portal: DropdownPortal,
   Content: DropdownContent,
   Item: DropdownItem,
-  Close: DropdownClose,
 };

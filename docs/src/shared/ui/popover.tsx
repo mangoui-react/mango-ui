@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  PopoverArrow as MPopoverArrow,
   PopoverClose as MPopoverClose,
   PopoverContent as MPopoverContent,
   PopoverPortal as MPopoverPortal,
@@ -30,10 +31,16 @@ export function PopoverContent({ className, ...props }: PopoverContentProps) {
   );
 }
 
+interface PopoverArrowProps extends React.ComponentPropsWithoutRef<typeof MPopoverArrow> {}
+export function PopoverArrow({ className, ...props }: PopoverArrowProps) {
+  return <MPopoverArrow {...props} className={cn('fill-slate-500', className)} />;
+}
+
 export const Popover = {
   Root: PopoverRoot,
   Trigger: PopoverTrigger,
   Portal: PopoverPortal,
   Content: PopoverContent,
   Close: PopoverClose,
+  Arrow: PopoverArrow,
 };

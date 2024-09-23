@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Popper } from '@melio-ui/popper';
 import { useControlled } from '@melio-ui/use-controlled';
 
 // 지금은 필요없음 - 나중에 필요하다면 부활시키자
@@ -18,16 +19,16 @@ export interface PopoverProps {
 }
 
 export interface PopoverContextValue extends Pick<PopoverProps, 'open'> {
-  triggerRef: React.MutableRefObject<HTMLButtonElement | null>; // TODO: Element 타입 생각해 보기
+  triggerRef: React.MutableRefObject<HTMLButtonElement | null>;
   //
-  handleOpen: () => void;
-  handleClose: () => void;
+  onOpen: () => void;
+  onClose: () => void;
 }
 export const PopoverContext = React.createContext<PopoverContextValue>({
   triggerRef: { current: null },
   //
-  handleOpen: () => {},
-  handleClose: () => {},
+  onOpen: () => {},
+  onClose: () => {},
 });
 
 export default function Popover(props: PopoverProps): JSX.Element {
@@ -37,14 +38,14 @@ export default function Popover(props: PopoverProps): JSX.Element {
 
   const triggerRef = React.useRef<HTMLButtonElement>(null);
 
-  const handleOpen = React.useCallback(() => {
+  const onOpen = React.useCallback(() => {
     if (!open) {
       setOpen(true);
       onOpenChange?.(true);
     }
   }, [onOpenChange, open, setOpen]);
 
-  const handleClose = React.useCallback(() => {
+  const onClose = React.useCallback(() => {
     setOpen(false);
     onOpenChange?.(false);
   }, [onOpenChange, setOpen]);
@@ -54,13 +55,17 @@ export default function Popover(props: PopoverProps): JSX.Element {
       open,
       triggerRef,
       //
-      handleOpen,
-      handleClose,
+      onOpen,
+      onClose,
     }),
-    [handleClose, handleOpen, open],
+    [onClose, onOpen, open],
   );
 
-  return <PopoverContext.Provider value={contextValue}>{children}</PopoverContext.Provider>;
+  return (
+    <Popper.Root>
+      <PopoverContext.Provider value={contextValue}>{children}</PopoverContext.Provider>
+    </Popper.Root>
+  );
 }
 
 Popover.displayName = 'Popover';

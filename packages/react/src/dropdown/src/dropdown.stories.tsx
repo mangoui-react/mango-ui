@@ -25,6 +25,27 @@ export function Basic(): JSX.Element {
   );
 }
 
+export function Arrow(): JSX.Element {
+  return (
+    <>
+      <h1>Arrow</h1>
+      <Dropdown.Root>
+        <Dropdown.Trigger asChild>
+          <button type="button">Dropdown</button>
+        </Dropdown.Trigger>
+        <Dropdown.Portal>
+          <Dropdown.Content className={styles.content}>
+            <Dropdown.Item className={styles.item}>DropdownItem - 1</Dropdown.Item>
+            <Dropdown.Item className={styles.item}>DropdownItem - 2</Dropdown.Item>
+            <Dropdown.Item className={styles.item}>DropdownItem - 3</Dropdown.Item>
+            <Dropdown.Arrow style={{ fill: '#ffffff' }} />
+          </Dropdown.Content>
+        </Dropdown.Portal>
+      </Dropdown.Root>
+    </>
+  );
+}
+
 export function DestroyOnClose(): JSX.Element {
   return (
     <>
@@ -69,22 +90,42 @@ export function Position(): JSX.Element {
   return (
     <>
       <h1>Position</h1>
+      <h3>
+        side: right <br />
+        align: start
+      </h3>
       <Dropdown.Root>
         <Dropdown.Trigger asChild>
           <button type="button">Dropdown</button>
         </Dropdown.Trigger>
         <Dropdown.Portal>
-          <Dropdown.Content
-            className={styles.content}
-            triggerPosition={{ vertical: 'bottom', horizontal: 'right' }}
-            contentPosition={{ vertical: 'top', horizontal: 'left' }}
-          >
+          <Dropdown.Content className={styles.content} side="right" align="start">
             <Dropdown.Item className={styles.item}>DropdownItem - 1</Dropdown.Item>
             <Dropdown.Item className={styles.item}>DropdownItem - 2</Dropdown.Item>
             <Dropdown.Item className={styles.item}>DropdownItem - 3</Dropdown.Item>
           </Dropdown.Content>
         </Dropdown.Portal>
       </Dropdown.Root>
+
+      <div style={{ width: '100%', height: 30 }} />
+      <h3>맨 우측 위치시</h3>
+      <div style={{ display: 'flex', gap: 5 }}>
+        <div style={{ width: '100%' }} />
+        <Dropdown.Root>
+          <Dropdown.Trigger asChild>
+            <button type="button" style={{ whiteSpace: 'nowrap' }}>
+              Open Dropdown
+            </button>
+          </Dropdown.Trigger>
+          <Dropdown.Portal>
+            <Dropdown.Content className={styles.content}>
+              <Dropdown.Item className={styles.item}>DropdownItem - 1</Dropdown.Item>
+              <Dropdown.Item className={styles.item}>DropdownItem - 2</Dropdown.Item>
+              <Dropdown.Item className={styles.item}>DropdownItem - 3</Dropdown.Item>
+            </Dropdown.Content>
+          </Dropdown.Portal>
+        </Dropdown.Root>
+      </div>
     </>
   );
 }

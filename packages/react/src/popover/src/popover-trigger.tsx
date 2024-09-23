@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Popper } from '@melio-ui/popper';
 import { Slot } from '@melio-ui/slot';
 import { useMergedRef } from '@melio-ui/use-merged-ref';
 
@@ -11,31 +12,33 @@ export interface PopoverTriggerProps extends React.ComponentPropsWithoutRef<'but
 
 const PopoverTrigger = React.forwardRef<HTMLButtonElement, PopoverTriggerProps>((props, ref) => {
   const { children, asChild, onClick, ...rest } = props;
-  const { open, triggerRef, handleOpen, handleClose } = React.useContext(PopoverContext);
+  const { open, triggerRef, onOpen, onClose } = React.useContext(PopoverContext);
   const handleTriggerRef = useMergedRef(triggerRef, ref);
 
   const Component = asChild ? Slot : 'button';
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     if (!open) {
-      handleOpen();
+      onOpen();
     } else {
-      handleClose();
+      onClose();
     }
 
     onClick?.(event);
   };
 
   return (
-    <Component
-      type="button"
-      data-state={open ? 'open' : 'closed'}
-      {...rest}
-      ref={handleTriggerRef}
-      onClick={handleClick}
-    >
-      {children ?? 'Popover'}
-    </Component>
+    <Popper.Anchor asChild>
+      <Component
+        type="button"
+        data-state={open ? 'open' : 'closed'}
+        {...rest}
+        ref={handleTriggerRef}
+        onClick={handleClick}
+      >
+        {children ?? 'Popover'}
+      </Component>
+    </Popper.Anchor>
   );
 });
 

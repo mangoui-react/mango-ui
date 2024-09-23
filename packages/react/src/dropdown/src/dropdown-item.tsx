@@ -9,7 +9,7 @@ export interface DropdownItemProps extends React.ComponentPropsWithoutRef<'div'>
 
 const DropdownItem = React.forwardRef<HTMLDivElement, DropdownItemProps>((props, ref) => {
   const { disabled, children, onClick, ...rest } = props;
-  const { handleClose } = React.useContext(DropdownContext);
+  const { onClose } = React.useContext(DropdownContext);
   const { closeOnItemClick } = React.useContext(DropdownContentContext);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>): void => {
@@ -17,7 +17,7 @@ const DropdownItem = React.forwardRef<HTMLDivElement, DropdownItemProps>((props,
     onClick?.(event);
 
     if (!closeOnItemClick) return;
-    handleClose();
+    onClose();
   };
 
   return (

@@ -1,6 +1,6 @@
 {
   "name": "@melio-ui/popover",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "license": "MIT",
   "exports": {
     ".": "./src"
@@ -17,6 +17,7 @@
     "directory": "build"
   },
   "dependencies": {
+    "@melio-ui/popper": "workspace:*",
     "@melio-ui/slot": "workspace:*",
     "@melio-ui/use-controlled": "workspace:*",
     "@melio-ui/use-merged-ref": "workspace:*",

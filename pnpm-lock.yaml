@@ -455,9 +455,21 @@ importers:
 
   packages/react/src/dropdown:
     dependencies:
-      '@melio-ui/popover':
+      '@melio-ui/popper':
         specifier: workspace:*
-        version: link:../popover/build
+        version: link:../popper/build
+      '@melio-ui/slot':
+        specifier: workspace:*
+        version: link:../slot/build
+      '@melio-ui/use-controlled':
+        specifier: workspace:*
+        version: link:../use-controlled/build
+      '@melio-ui/use-merged-ref':
+        specifier: workspace:*
+        version: link:../use-merged-ref/build
+      '@melio-ui/use-portal':
+        specifier: workspace:*
+        version: link:../use-portal/build
       '@types/react':
         specifier: '*'
         version: 18.2.21
@@ -496,6 +508,9 @@ importers:
 
   packages/react/src/popover:
     dependencies:
+      '@melio-ui/popper':
+        specifier: workspace:*
+        version: link:../popper/build
       '@melio-ui/slot':
         specifier: workspace:*
         version: link:../slot/build

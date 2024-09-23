@@ -35,6 +35,7 @@ nextSlug: '/components/progress'
   PopoverTrigger,
   PopoverPortal,
   PopoverContent,
+  PopoverArrow,
   PopoverClose,
 } from '@melio-ui/popover';`,
     global: `import { 
@@ -42,6 +43,7 @@ nextSlug: '/components/progress'
   PopoverTrigger,
   PopoverPortal,
   PopoverContent,
+  PopoverArrow,
   PopoverClose,
 } from '@melio-ui/react';`,
   }}
@@ -51,6 +53,7 @@ nextSlug: '/components/progress'
 - **PopoverTrigger**: Used to activate or open the Popover component.
 - **PopoverPortal**: Portal the overlay and content portion into the body.
 - **PopoverContent**: Includes the content that will be displayed in the open menu box.
+- **PopoverArrow**: An optional arrow element for the popover, to be rendered within PopoverContent for visual association.
 - **PopoverClose**: The button that closes the menu.
 
 ### Another way to import
@@ -67,6 +70,7 @@ import { Popover } from '@melio-ui/popover';
   <Popover.Portal>
     <Popover.Content>
       <div>This is a Popover Content</div>
+      <Popover.Arrow />
     </Popover.Content>
   </Popover.Portal>
 </Popover.Root>;
@@ -153,66 +157,32 @@ Includes the content that will be displayed in the open menu box.
 <PropsTable
   data={[
     {
-      name: 'triggerPosition',
+      name: 'side',
       required: false,
-      default: '{ vertical: "bottom", horizontal: "left" }',
-      type: (
-        <>
-          TriggerPositionValue
-          <br />
-          <br />
-          {`
-            {
-              vertical: "top" | "center" | "bottom",
-              horizontal: "left" | "center" | "right",
-            }
-          `}
-        </>
-      ),
-      description: 'The location of the trigger where the menu will appear.',
+      default: '"top"',
+      type: '"top" | "right" | "bottom" | "left"',
+      description: "The ideal side of the trigger to render on when it's open.",
     },
     {
-      name: 'contentPosition',
+      name: 'sideOffset',
       required: false,
-      type: (
-        <>
-          TriggerPositionValue
-          <br />
-          <br />
-          {`
-            {
-              vertical: "top" | "center" | "bottom",
-              horizontal: "left" | "center" | "right",
-            }
-          `}
-        </>
-      ),
-      description: 'The location of the menu content where the menu will appear.',
-    },
-    {
-      name: 'position',
-      required: false,
-      type: (
-        <>
-          PositionValue
-          <br />
-          <br />
-          {`
-            {
-              left: number,
-              top: number,
-            }
-          `}
-        </>
-      ),
-      description: 'Specifies the location where the menu will be displayed using coordinates.',
-    },
-    {
-      name: 'zIndex',
-      required: false,
+      default: '0',
       type: 'number',
-      description:
-        'A property that controls the stacking order of elements on a web page.(CSS z-index)',
+      description: 'The pixel distance from the trigger.',
+    },
+    {
+      name: 'align',
+      required: false,
+      default: '"center"',
+      type: '"start" | "center" | "end"',
+      description: 'The desired alignment with the trigger, which may adjust if collisions happen.',
+    },
+    {
+      name: 'alignOffset',
+      required: false,
+      default: '0',
+      type: 'number',
+      description: 'A pixel offset from the "start" or "end" alignment choices.',
     },
     {
       name: 'destroyOnClose',
@@ -250,6 +220,44 @@ Includes the content that will be displayed in the open menu box.
     {
       attribute: '[data-state]',
       values: '"open" | "closed"',
+    },
+    {
+      attribute: '[data-side]',
+      values: '"top" | "right" | "bottom" | "left"',
+    },
+    {
+      attribute: '[data-align]',
+      values: '"start" | "center" | "end"',
+    },
+  ]}
+/>
+
+### PopoverArrow
+
+An optional arrow element for the popover, to be rendered within PopoverContent for visual association.
+
+<PropsTable
+  data={[
+    {
+      name: 'asChild',
+      required: false,
+      type: 'boolean',
+      description:
+        'Changes the default rendering element passed as a child, merging its props and behavior.',
+    },
+    {
+      name: 'width',
+      required: false,
+      default: '10',
+      type: 'number',
+      description: "The arrow's width measured in pixels.",
+    },
+    {
+      name: 'height',
+      required: false,
+      default: '5',
+      type: 'number',
+      description: "The arrow's height measured in pixels.",
     },
   ]}
 />
@@ -289,11 +297,33 @@ The button that closes the menu.
     </button>
   </PopoverTrigger>
   <PopoverPortal>
-    <PopoverContent
-      triggerPosition={{ vertical: 'bottom', horizontal: 'right' }}
-      contentPosition={{ vertical: 'top', horizontal: 'left' }}
+    <PopoverContent side="right" align="start">
+      <div style={{ padding: 50 }}>This is a Popover Content</div>
+    </PopoverContent>
+  </PopoverPortal>
+</PopoverRoot>
+```
+
+### Display arrow
+
+```jsx
+<PopoverRoot>
+  <PopoverTrigger asChild>
+    <button
+      type="button"
+      style={{
+        border: '1px solid #475569',
+        borderRadius: 5,
+        padding: 10,
+      }}
     >
-      <div style={{ padding: 10 }}>This is a Popover Content</div>
+      Open Popover
+    </button>
+  </PopoverTrigger>
+  <PopoverPortal>
+    <PopoverContent>
+      <div style={{ padding: 20 }}>This is a Popover Content</div>
+      <PopoverArrow />
     </PopoverContent>
   </PopoverPortal>
 </PopoverRoot>
@@ -318,13 +348,11 @@ function PopoverCloseButton() {
         </button>
       </PopoverTrigger>
       <PopoverPortal>
-        <PopoverContent closeOnBlur={false}>
-          <div style={{ padding: 10, display: 'flex', gap: 10, alignItems: 'center' }}>
-            This is a Popover Content
-            <PopoverClose asChild>
-              <CloseIconButton />
-            </PopoverClose>
-          </div>
+        <PopoverContent style={{ padding: 10, display: 'flex', gap: 10, alignItems: 'center' }}>
+          <div>This is a Popover Content</div>
+          <PopoverClose asChild>
+            <CloseIconButton />
+          </PopoverClose>
         </PopoverContent>
       </PopoverPortal>
     </PopoverRoot>
