@@ -1,5 +1,19 @@
 # @melio-ui/dropdown
 
+## 0.0.6
+
+### Patch Changes
+
+- 에러로 다시 배포
+
+## 0.0.5
+
+### Patch Changes
+
+- 에러로 인해 다시 배포
+- Updated dependencies
+  - @melio-ui/popper@0.0.4
+
 ## 0.0.4
 
 ### Patch Changes
