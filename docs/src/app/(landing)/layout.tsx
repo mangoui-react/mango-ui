@@ -20,6 +20,12 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
           href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860531631247818"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body className="bg-white dark:bg-gray-900">
         <Theme>
