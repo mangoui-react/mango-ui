@@ -53,6 +53,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9860531631247818"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+
       {/* suppressHydrationWarning: https://github.com/vercel/next.js/issues/44343 */}
       <body
         className={`${nycd.variable} ${aspekta.variable} font-aspekta bg-white font-[350] text-slate-800 antialiased dark:bg-slate-900 dark:text-slate-200`}
