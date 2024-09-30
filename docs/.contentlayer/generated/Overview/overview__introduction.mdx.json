@@ -1,0 +1,22 @@
+{
+  "title": "Introduction",
+  "scope": "usage",
+  "body": {
+    "raw": "\nA library of open-source UI components for developing high-quality, accessible React design systems and web apps.\n\nMelio UI aims to simplify development by providing unstyled, flexible design systems that enhance user experiences.\n\nAs a foundational UI component library, it emphasizes accessibility, customization, and developer experience. These components can serve as the core of your design system or be integrated gradually into your project.\n\n## Community\n\nThe community adopts Melio UI, raises issues, and provides feedback.\n\nYou're encouraged to contribute anything: feature requests, bug reports, projects that would like to highlight a feature, and more!\n\n### Telegram\n\nJoin Telegram to connect with the Melio UI community, ask questions, share tips, and engage in conversation.\n\n[Group Chats on Telegram](https://t.me/melio_ui)\n\n### Github\n\nCheck out GitHub to submit issues, request features, and contribute.\n\n[Github Repo](https://github.com/radix-ui/primitives)\n",
+    "code": "var Component=(()=>{var u=Object.create;var s=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var b=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),y=(n,e)=>{for(var i in e)s(n,i,{get:e[i],enumerable:!0})},a=(n,e,i,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of p(e))!g.call(n,o)&&o!==i&&s(n,o,{get:()=>e[o],enumerable:!(r=d(e,o))||r.enumerable});return n};var f=(n,e,i)=>(i=n!=null?u(m(n)):{},a(e||!n||!n.__esModule?s(i,\"default\",{value:n,enumerable:!0}):i,n)),x=n=>a(s({},\"__esModule\",{value:!0}),n);var h=b((C,c)=>{c.exports=_jsx_runtime});var I={};y(I,{default:()=>_,frontmatter:()=>j});var t=f(h()),j={title:\"Introduction\"};function l(n){let e=Object.assign({p:\"p\",h2:\"h2\",h3:\"h3\",a:\"a\"},n.components);return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(e.p,{children:\"A library of open-source UI components for developing high-quality, accessible React design systems and web apps.\"}),`\n`,(0,t.jsx)(e.p,{children:\"Melio UI aims to simplify development by providing unstyled, flexible design systems that enhance user experiences.\"}),`\n`,(0,t.jsx)(e.p,{children:\"As a foundational UI component library, it emphasizes accessibility, customization, and developer experience. These components can serve as the core of your design system or be integrated gradually into your project.\"}),`\n`,(0,t.jsx)(e.h2,{children:\"Community\"}),`\n`,(0,t.jsx)(e.p,{children:\"The community adopts Melio UI, raises issues, and provides feedback.\"}),`\n`,(0,t.jsx)(e.p,{children:\"You're encouraged to contribute anything: feature requests, bug reports, projects that would like to highlight a feature, and more!\"}),`\n`,(0,t.jsx)(e.h3,{children:\"Telegram\"}),`\n`,(0,t.jsx)(e.p,{children:\"Join Telegram to connect with the Melio UI community, ask questions, share tips, and engage in conversation.\"}),`\n`,(0,t.jsx)(e.p,{children:(0,t.jsx)(e.a,{href:\"https://t.me/melio_ui\",children:\"Group Chats on Telegram\"})}),`\n`,(0,t.jsx)(e.h3,{children:\"Github\"}),`\n`,(0,t.jsx)(e.p,{children:\"Check out GitHub to submit issues, request features, and contribute.\"}),`\n`,(0,t.jsx)(e.p,{children:(0,t.jsx)(e.a,{href:\"https://github.com/radix-ui/primitives\",children:\"Github Repo\"})})]})}function v(n={}){let{wrapper:e}=n.components||{};return e?(0,t.jsx)(e,Object.assign({},n,{children:(0,t.jsx)(l,n)})):l(n)}var _=v;return x(I);})();\n;return Component;"
+  },
+  "_id": "overview/introduction.mdx",
+  "_raw": {
+    "sourceFilePath": "overview/introduction.mdx",
+    "sourceFileName": "introduction.mdx",
+    "sourceFileDir": "overview",
+    "contentType": "mdx",
+    "flattenedPath": "overview/introduction"
+  },
+  "type": "Overview",
+  "slug": "/overview/introduction",
+  "frontMatter": {
+    "title": "Introduction",
+    "slug": "/overview/introduction"
+  }
+}

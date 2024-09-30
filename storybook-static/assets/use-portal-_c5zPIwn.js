@@ -1,0 +1,1 @@
+import{r as e}from"./index-eK40FDle.js";import{b as s}from"./index-fcRgSpbG.js";function c(t){const[o,u]=e.useState();return e.useEffect(()=>{const r=typeof t=="function"?t():t;u(r??document.body)},[t]),{Portal:e.useCallback(({children:r})=>o?s.createPortal(r,o):null,[o]),target:o}}export{c as u};

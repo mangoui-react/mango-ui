@@ -1,0 +1,22 @@
+{
+  "title": "Button",
+  "scope": "usage",
+  "body": {
+    "raw": "\n## Import\n\n```js\nimport { Button, ButtonGroup } from '@ui';\n```\n\n- **Button:** The button component with support for custom icons, spinners, etc.\n- **ButtonGroup:** Used to group buttons whose actions are related, with an\n  option to flush them together.\n\n## Usage\n\n```jsx live=true\n<Button>Button</Button>\n```\n",
+    "code": "var Component=(()=>{var h=Object.create;var s=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var x=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),j=(t,n)=>{for(var o in n)s(t,o,{get:n[o],enumerable:!0})},i=(t,n,o,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of m(n))!g.call(t,r)&&r!==o&&s(t,r,{get:()=>n[r],enumerable:!(c=d(n,r))||c.enumerable});return t};var f=(t,n,o)=>(o=t!=null?h(p(t)):{},i(n||!t||!t.__esModule?s(o,\"default\",{value:t,enumerable:!0}):o,t)),B=t=>i(s({},\"__esModule\",{value:!0}),t);var l=x((D,u)=>{u.exports=_jsx_runtime});var M={};j(M,{default:()=>w,frontmatter:()=>_});var e=f(l()),_={title:\"Button\"};function a(t){let n=Object.assign({h2:\"h2\",pre:\"pre\",code:\"code\",ul:\"ul\",li:\"li\",strong:\"strong\"},t.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.h2,{children:\"Import\"}),`\n`,(0,e.jsx)(n.pre,{children:(0,e.jsx)(n.code,{className:\"language-js\",children:`import { Button, ButtonGroup } from '@ui';\n`})}),`\n`,(0,e.jsxs)(n.ul,{children:[`\n`,(0,e.jsxs)(n.li,{children:[(0,e.jsx)(n.strong,{children:\"Button:\"}),\" The button component with support for custom icons, spinners, etc.\"]}),`\n`,(0,e.jsxs)(n.li,{children:[(0,e.jsx)(n.strong,{children:\"ButtonGroup:\"}),` Used to group buttons whose actions are related, with an\noption to flush them together.`]}),`\n`]}),`\n`,(0,e.jsx)(n.h2,{children:\"Usage\"}),`\n`,(0,e.jsx)(n.pre,{children:(0,e.jsx)(n.code,{className:\"language-jsx\",live:\"true\",children:`<Button>Button</Button>\n`})})]})}function b(t={}){let{wrapper:n}=t.components||{};return n?(0,e.jsx)(n,Object.assign({},t,{children:(0,e.jsx)(a,t)})):a(t)}var w=b;return B(M);})();\n;return Component;"
+  },
+  "_id": "components/button.mdx",
+  "_raw": {
+    "sourceFilePath": "components/button.mdx",
+    "sourceFileName": "button.mdx",
+    "sourceFileDir": "components",
+    "contentType": "mdx",
+    "flattenedPath": "components/button"
+  },
+  "type": "Doc",
+  "slug": "/components/button",
+  "frontMatter": {
+    "title": "Button",
+    "slug": "/components/button"
+  }
+}

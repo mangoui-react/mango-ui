@@ -1,0 +1,1 @@
+import{R as s}from"./index-eK40FDle.js";function l(t,n){const[o,a]=s.useState(n),c=t!==void 0?t:o,i=s.useCallback(e=>{if(t===void 0){const u=typeof e=="function"?e():e;a(u)}},[t]);return[c,i]}export{l as u};
