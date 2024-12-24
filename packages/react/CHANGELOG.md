@@ -1,5 +1,11 @@
 # @melio-ui/react
 
+## 0.1.1
+
+### Patch Changes
+
+- 누락된 dependencies 수정
+
 ## 0.1.0
 
 ### Minor Changes

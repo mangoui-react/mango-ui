@@ -1,6 +1,6 @@
 {
   "name": "@melio-ui/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "author": "AHN HYUNGRO <elle0510@gmail.com>",
   "description": "",
@@ -39,6 +39,6 @@
     "react-dom": "^17.0 || ^18.0 || ^19.0"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8"
+    "@floating-ui/react-dom": "^2.1.1"
   }
 }
