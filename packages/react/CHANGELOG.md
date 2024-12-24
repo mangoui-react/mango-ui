@@ -1,5 +1,11 @@
 # @melio-ui/react
 
+## 0.1.0
+
+### Minor Changes
+
+- update react19
+
 ## 0.0.13
 
 ### Patch Changes

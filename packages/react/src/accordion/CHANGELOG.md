@@ -1,5 +1,16 @@
 # @melio-ui/accordion
 
+## 0.1.0
+
+### Minor Changes
+
+- update react19
+
+### Patch Changes
+
+- Updated dependencies
+  - @melio-ui/use-controlled@0.1.0
+
 ## 0.0.3
 
 ### Patch Changes
