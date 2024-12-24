@@ -22,9 +22,7 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ['./public'],
-  docs: {
-    autodocs: 'tag',
-  },
+  docs: {},
   viteFinal: async (config) => {
     return mergeConfig(config, {
       plugins: [vanillaExtractPlugin()],
