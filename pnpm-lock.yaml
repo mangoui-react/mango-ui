@@ -207,8 +207,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       prism-react-renderer:
-        specifier: ^2.3.1
-        version: 2.3.1(react@19.0.0)
+        specifier: ^2.4.1
+        version: 2.4.1(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -258,9 +258,9 @@ importers:
 
   packages/react:
     dependencies:
-      '@popperjs/core':
-        specifier: ^2.11.8
-        version: 2.11.8
+      '@floating-ui/react-dom':
+        specifier: ^2.1.1
+        version: 2.1.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@types/react':
         specifier: ^17.0 || ^18.0 || ^19.0
         version: 18.2.21
@@ -2131,9 +2131,6 @@ packages:
   '@pkgr/utils@2.4.2':
     resolution: {integrity: sha512-POgTXhjrTfbTV63DiFXav4lBHiICLKKwDeaKn9Nphwj7WH6m0hMMCaJkMyRWjgtPFyRKRVoMXXjczsTQRDEhYw==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
-
-  '@popperjs/core@2.11.8':
-    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
   '@protobufjs/aspromise@1.1.2':
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
@@ -5168,8 +5165,8 @@ packages:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  prism-react-renderer@2.3.1:
-    resolution: {integrity: sha512-Rdf+HzBLR7KYjzpJ1rSoxT9ioO85nZngQEoFIhL07XhtJHlCU3SOz0GJ6+qvMyQe0Se+BV3qpe6Yd/NmQF5Juw==}
+  prism-react-renderer@2.4.1:
+    resolution: {integrity: sha512-ey8Ls/+Di31eqzUxC46h8MksNuGx/n0AAC8uKpwFau4RPDYLuE3EXTp8N8G2vX2N7UC/+IXeNUnlWBGGcAG+Ig==}
     peerDependencies:
       react: '>=16.0.0'
 
@@ -7099,6 +7096,12 @@ snapshots:
       '@floating-ui/core': 1.6.7
       '@floating-ui/utils': 0.2.7
 
+  '@floating-ui/react-dom@2.1.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@floating-ui/dom': 1.6.10
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+
   '@floating-ui/react-dom@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/dom': 1.6.10
@@ -7491,8 +7494,6 @@ snapshots:
       open: 9.1.0
       picocolors: 1.0.0
       tslib: 2.6.2
-
-  '@popperjs/core@2.11.8': {}
 
   '@protobufjs/aspromise@1.1.2': {}
 
@@ -9035,7 +9036,7 @@ snapshots:
       eslint: 8.48.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.0(@typescript-eslint/parser@6.4.1(eslint@8.47.0)(typescript@5.5.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.28.1)(eslint@8.48.0)
-      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.4.1(eslint@8.47.0)(typescript@5.5.3))(eslint@8.48.0)
+      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.4.1(eslint@8.47.0)(typescript@5.5.3))(eslint-import-resolver-typescript@3.6.0)(eslint@8.48.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.48.0)
       eslint-plugin-react: 7.33.2(eslint@8.48.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.48.0)
@@ -9053,7 +9054,7 @@ snapshots:
       eslint: 8.48.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.6.0(@typescript-eslint/parser@6.4.1(eslint@8.47.0)(typescript@5.5.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.28.1)(eslint@8.48.0)
-      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.4.1(eslint@8.47.0)(typescript@5.5.3))(eslint-import-resolver-typescript@3.6.0)(eslint@8.48.0)
+      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.4.1(eslint@8.47.0)(typescript@5.5.3))(eslint@8.48.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.48.0)
       eslint-plugin-react: 7.33.2(eslint@8.48.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.48.0)
@@ -11482,7 +11483,7 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 18.2.0
 
-  prism-react-renderer@2.3.1(react@19.0.0):
+  prism-react-renderer@2.4.1(react@19.0.0):
     dependencies:
       '@types/prismjs': 1.26.4
       clsx: 2.1.1
@@ -11572,7 +11573,7 @@ snapshots:
 
   react-live@4.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      prism-react-renderer: 2.3.1(react@19.0.0)
+      prism-react-renderer: 2.4.1(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       sucrase: 3.34.0

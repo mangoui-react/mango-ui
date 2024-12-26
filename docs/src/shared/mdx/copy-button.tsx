@@ -46,7 +46,7 @@ export function CopyButton({ className, code, onClick, ...props }: CopyButtonPro
   );
 }
 
-function CopyIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function CopyIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ function CopyIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   );
 }
 
-function CheckIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function CheckIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
