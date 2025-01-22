@@ -5,7 +5,7 @@ import * as styles from './slider.stories.css';
 
 export default { title: 'Components/Slider' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -19,7 +19,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function OnValueChange(): JSX.Element {
+export function OnValueChange(): React.JSX.Element {
   const [value, setValue] = React.useState(30);
 
   const onValueChange = (newValue: number | number[]): void => {
@@ -40,7 +40,7 @@ export function OnValueChange(): JSX.Element {
   );
 }
 
-export function ThumbLabel(): JSX.Element {
+export function ThumbLabel(): React.JSX.Element {
   return (
     <>
       <h1>Thumb Label</h1>
@@ -70,7 +70,7 @@ export function ThumbLabel(): JSX.Element {
   );
 }
 
-export function Disabled(): JSX.Element {
+export function Disabled(): React.JSX.Element {
   return (
     <>
       <h1>Disabled</h1>
@@ -84,7 +84,7 @@ export function Disabled(): JSX.Element {
   );
 }
 
-export function MinMax(): JSX.Element {
+export function MinMax(): React.JSX.Element {
   return (
     <>
       <h1>Min/Max</h1>
@@ -98,7 +98,7 @@ export function MinMax(): JSX.Element {
   );
 }
 
-export function Orientation(): JSX.Element {
+export function Orientation(): React.JSX.Element {
   return (
     <>
       <h1>Orientation</h1>
@@ -128,7 +128,7 @@ export function Orientation(): JSX.Element {
   );
 }
 
-export function Range(): JSX.Element {
+export function Range(): React.JSX.Element {
   return (
     <>
       <h1>Range</h1>
@@ -178,7 +178,7 @@ export function Range(): JSX.Element {
   );
 }
 
-export function RangeOrientation(): JSX.Element {
+export function RangeOrientation(): React.JSX.Element {
   return (
     <>
       <h1>Range Orientation</h1>

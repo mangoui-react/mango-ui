@@ -30,7 +30,7 @@ const DialogBackdrop = React.forwardRef<HTMLDivElement, DialogBackdropProps>((pr
   };
 
   // focus guard - 마우스 휠시 뒷배경 스크롤 안되게 함.
-  const preventScroll = React.useRef<(() => void) | undefined>();
+  const preventScroll = React.useRef<(() => void) | undefined>(undefined);
   React.useEffect(() => {
     if (open) {
       preventScroll.current = preventBodyScroll();

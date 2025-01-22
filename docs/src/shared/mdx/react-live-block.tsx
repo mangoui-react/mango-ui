@@ -35,7 +35,7 @@ export default function ReactLiveBlock({
   scope = ReactLiveScope,
   // scope,
   ...rest
-}: ReactLiveBlockProps): JSX.Element {
+}: ReactLiveBlockProps): React.JSX.Element {
   return (
     <LiveProvider code={code} scope={scope} {...rest}>
       <LivePreview className="rounded-xl border border-slate-600 p-6" />

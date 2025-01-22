@@ -5,7 +5,7 @@ import * as styles from './popover.stories.css';
 
 export default { title: 'Components/Popover' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -23,7 +23,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function OnOpenChange(): JSX.Element {
+export function OnOpenChange(): React.JSX.Element {
   const [open, setOpen] = React.useState<boolean>(false);
 
   const onOpenChange = (isOpen: boolean): void => {
@@ -47,7 +47,7 @@ export function OnOpenChange(): JSX.Element {
   );
 }
 
-export function Arrow(): JSX.Element {
+export function Arrow(): React.JSX.Element {
   return (
     <>
       <h1>Arrow</h1>
@@ -66,7 +66,7 @@ export function Arrow(): JSX.Element {
   );
 }
 
-export function Close(): JSX.Element {
+export function Close(): React.JSX.Element {
   return (
     <>
       <h1>Close</h1>
@@ -85,7 +85,7 @@ export function Close(): JSX.Element {
   );
 }
 
-export function Position(): JSX.Element {
+export function Position(): React.JSX.Element {
   return (
     <>
       <h1>Position</h1>
@@ -125,7 +125,7 @@ export function Position(): JSX.Element {
   );
 }
 
-export function CloseOnBlur(): JSX.Element {
+export function CloseOnBlur(): React.JSX.Element {
   return (
     <>
       <h1>closeOnBlur (closeOnBlur=false)</h1>
@@ -148,7 +148,7 @@ export function CloseOnBlur(): JSX.Element {
   );
 }
 
-export function DestroyOnClose(): JSX.Element {
+export function DestroyOnClose(): React.JSX.Element {
   return (
     <>
       <h1>destroyOnClose (false)</h1>
@@ -166,7 +166,7 @@ export function DestroyOnClose(): JSX.Element {
   );
 }
 
-export function ForceMount(): JSX.Element {
+export function ForceMount(): React.JSX.Element {
   return (
     <>
       <h1>forceMount</h1>
@@ -184,7 +184,7 @@ export function ForceMount(): JSX.Element {
   );
 }
 
-export function Container(): JSX.Element {
+export function Container(): React.JSX.Element {
   // const containerRef = React.useRef(null);
   const [container, setContainer] = React.useState<HTMLElement>();
 

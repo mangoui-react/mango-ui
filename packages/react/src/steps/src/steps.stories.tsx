@@ -5,7 +5,7 @@ import * as styles from './steps.stories.css';
 
 export default { title: 'Components/Steps' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -44,7 +44,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function ChildrenByFunc(): JSX.Element {
+export function ChildrenByFunc(): React.JSX.Element {
   return (
     <>
       <h1>함수사용 Children</h1>
@@ -92,7 +92,7 @@ export function ChildrenByFunc(): JSX.Element {
   );
 }
 
-export function CustomStatus(): JSX.Element {
+export function CustomStatus(): React.JSX.Element {
   return (
     <>
       <h1>Custom Status</h1>
@@ -133,7 +133,7 @@ export function CustomStatus(): JSX.Element {
   );
 }
 
-export function Orientation(): JSX.Element {
+export function Orientation(): React.JSX.Element {
   return (
     <>
       <h1>Orientation</h1>
@@ -172,7 +172,7 @@ export function Orientation(): JSX.Element {
   );
 }
 
-function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function UserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="2em"

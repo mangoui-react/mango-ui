@@ -28,7 +28,7 @@ export const DropdownContext = React.createContext<DropdownContextValue>({
   onClose: () => {},
 });
 
-export default function Dropdown(props: DropdownProps): JSX.Element {
+export default function Dropdown(props: DropdownProps): React.JSX.Element {
   const { open: openProp, defaultOpen, children, onOpenChange } = props;
 
   const [open, setOpen] = useControlled<boolean | undefined>(openProp, defaultOpen);

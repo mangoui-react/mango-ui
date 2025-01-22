@@ -5,7 +5,7 @@ import * as styles from './dropdown.stories.css';
 
 export default { title: 'Components/Dropdown' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -25,7 +25,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Arrow(): JSX.Element {
+export function Arrow(): React.JSX.Element {
   return (
     <>
       <h1>Arrow</h1>
@@ -46,7 +46,7 @@ export function Arrow(): JSX.Element {
   );
 }
 
-export function DestroyOnClose(): JSX.Element {
+export function DestroyOnClose(): React.JSX.Element {
   return (
     <>
       <h1>destroyOnClose (false)</h1>
@@ -66,7 +66,7 @@ export function DestroyOnClose(): JSX.Element {
   );
 }
 
-export function ForceMount(): JSX.Element {
+export function ForceMount(): React.JSX.Element {
   return (
     <>
       <h1>forceMount</h1>
@@ -86,7 +86,7 @@ export function ForceMount(): JSX.Element {
   );
 }
 
-export function Position(): JSX.Element {
+export function Position(): React.JSX.Element {
   return (
     <>
       <h1>Position</h1>
@@ -130,7 +130,7 @@ export function Position(): JSX.Element {
   );
 }
 
-export function Container(): JSX.Element {
+export function Container(): React.JSX.Element {
   // const containerRef = React.useRef(null);
   const [container, setContainer] = React.useState<HTMLElement>();
 
@@ -159,7 +159,7 @@ export function Container(): JSX.Element {
   );
 }
 
-export function Custom(): JSX.Element {
+export function Custom(): React.JSX.Element {
   return (
     <>
       <h1>Custom</h1>

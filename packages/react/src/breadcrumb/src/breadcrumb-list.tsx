@@ -14,6 +14,10 @@ export interface BreadcrumbListProps extends React.ComponentPropsWithoutRef<'ol'
   maxItems?: number;
 }
 
+interface CollapseProps {
+  onClick?: (event: React.MouseEvent) => void;
+}
+
 const BreadcrumbList = React.forwardRef<HTMLOListElement, BreadcrumbListProps>((props, ref) => {
   const { maxItems = 5, collapse, children, ...rest } = props;
 
@@ -40,12 +44,13 @@ const BreadcrumbList = React.forwardRef<HTMLOListElement, BreadcrumbListProps>((
 
       return [
         ...items.slice(0, 2),
-        React.cloneElement(collapse as React.ReactElement, {
+        React.cloneElement(collapse as React.ReactElement<CollapseProps>, {
           key: `collapsed-${items.length}`,
           onClick: (event: React.MouseEvent) => {
             setExpanded(true);
             if (React.isValidElement(collapse)) {
-              collapse.props.onClick?.(event);
+              // collapse.props.onClick?.(event);
+              (collapse as React.ReactElement<CollapseProps>).props.onClick?.(event);
             }
           },
         }),

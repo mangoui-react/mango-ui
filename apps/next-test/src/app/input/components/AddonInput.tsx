@@ -10,7 +10,7 @@ export interface AddonInputProps {
   rightAddon?: React.ReactNode;
 }
 
-export default function AddonInput({ leftAddon, rightAddon }: AddonInputProps): JSX.Element {
+export default function AddonInput({ leftAddon, rightAddon }: AddonInputProps): React.JSX.Element {
   const [value, setValue] = useState('');
 
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,20 +23,20 @@ export default function AddonInput({ leftAddon, rightAddon }: AddonInputProps): 
 
   return (
     <span className={cn('flex items-center')}>
-      <span className="flex items-center border border-solid border-border border-r-0 py-1 px-3">
+      <span className="border-border flex items-center border border-r-0 border-solid px-3 py-1">
         {leftAddon}
       </span>
       {/* ClearableInput 컴포넌트와 동일 */}
       <span
         className={cn(
-          'flex items-center border border-solid border-border rounded-sm bg-component-bg',
-          'focus-within:outline-0 focus-within:border-primary focus-within:border focus-within:shadow-[0_0_2px_border-primary]',
+          'border-border bg-component-bg flex items-center rounded-sm border border-solid',
+          'focus-within:border-primary focus-within:border focus-within:shadow-[0_0_2px_border-primary] focus-within:outline-0',
           'w-full',
         )}
       >
         <input
           className={cn(
-            'inline-block w-full min-w-0 relative border-0 border-solid border-border box-border bg-component-bg text-inherit py-1 px-3',
+            'border-border bg-component-bg relative box-border inline-block w-full min-w-0 border-0 border-solid px-3 py-1 text-inherit',
             'focus:outline-0',
           )}
           value={value}
@@ -44,7 +44,7 @@ export default function AddonInput({ leftAddon, rightAddon }: AddonInputProps): 
         />
         {value && (
           <span
-            className="flex items-center cursor-pointer mr-2 text-[#D9D9D9]"
+            className="mr-2 flex cursor-pointer items-center text-[#D9D9D9]"
             onClick={handleClear}
           >
             <CloseSolidIcon />
@@ -52,7 +52,7 @@ export default function AddonInput({ leftAddon, rightAddon }: AddonInputProps): 
         )}
       </span>
 
-      <span className="flex items-center border border-solid border-border border-l-0 py-1 px-3">
+      <span className="border-border flex items-center border border-l-0 border-solid px-3 py-1">
         {rightAddon}
       </span>
     </span>

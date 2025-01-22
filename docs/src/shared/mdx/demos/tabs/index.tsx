@@ -28,7 +28,7 @@ export default function TabsDemo() {
   );
 }
 
-function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function UserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1em"

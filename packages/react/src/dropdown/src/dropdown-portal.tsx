@@ -11,7 +11,7 @@ export interface DropdownPortalProps {
   container?: ContainerType;
 }
 
-export default function DropdownPortal(props: DropdownPortalProps): JSX.Element {
+export default function DropdownPortal(props: DropdownPortalProps): React.JSX.Element {
   const { container, children } = props;
 
   const { Portal } = usePortal(container);

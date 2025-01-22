@@ -5,7 +5,7 @@ import * as styles from './progress.stories.css';
 
 export default { title: 'Components/Progress' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -24,7 +24,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Indeterminate(): JSX.Element {
+export function Indeterminate(): React.JSX.Element {
   return (
     <>
       <h1>Indeterminate</h1>
@@ -35,7 +35,7 @@ export function Indeterminate(): JSX.Element {
   );
 }
 
-export function Custom(): JSX.Element {
+export function Custom(): React.JSX.Element {
   return (
     <>
       <h1>Custom</h1>
@@ -51,7 +51,7 @@ export function Custom(): JSX.Element {
   );
 }
 
-export function ValueControlled(): JSX.Element {
+export function ValueControlled(): React.JSX.Element {
   const [max] = React.useState(100);
 
   const [percent, setPercent] = React.useState<number>(0);

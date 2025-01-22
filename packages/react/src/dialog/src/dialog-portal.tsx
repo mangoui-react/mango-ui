@@ -11,7 +11,7 @@ export interface DialogPortalProps {
   container?: HTMLElement | (() => HTMLElement); // TODO: ContentType 사용
 }
 
-export default function DialogPortal(props: DialogPortalProps): JSX.Element {
+export default function DialogPortal(props: DialogPortalProps): React.JSX.Element {
   const { container, children } = props;
 
   const { Portal } = usePortal(container);

@@ -44,6 +44,10 @@ export const AccordionContext = React.createContext<AccordionContextValue>({
   setExpanded: () => {},
 });
 
+interface AccordionItemProps {
+  index?: number;
+}
+
 const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
   const {
     defaultValue: defaultValueProp,
@@ -114,14 +118,17 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>((props, ref) 
   return (
     <AccordionContext.Provider value={contextValue}>
       <div {...rest} ref={ref}>
-        {React.Children.map(children, (child) => {
+        {React.Children.map(children, async (child) => {
           if (React.isValidElement(child)) {
             itemIndex++;
-            return React.cloneElement(child as React.ReactElement, {
+            return React.cloneElement(child as React.ReactElement<AccordionItemProps>, {
               index: itemIndex,
             });
           }
-          return child;
+          return await child;
+          // return React.cloneElement(child as React.ReactElement<AccordionItemProps>, {
+          //   index,
+          // });
         })}
       </div>
     </AccordionContext.Provider>

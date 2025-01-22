@@ -1,5 +1,17 @@
 # @melio-ui/popover
 
+## 0.2.0
+
+### Minor Changes
+
+- react19 마이그레이션 - 에러 수정
+
+### Patch Changes
+
+- Updated dependencies
+  - @melio-ui/popper@0.2.0
+  - @melio-ui/slot@0.2.0
+
 ## 0.1.0
 
 ### Minor Changes

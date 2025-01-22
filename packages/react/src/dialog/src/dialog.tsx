@@ -30,7 +30,7 @@ export const DialogContext = React.createContext<DialogContextValue>({
   handleClose: () => {},
 });
 
-export default function Dialog(props: DialogProps): JSX.Element {
+export default function Dialog(props: DialogProps): React.JSX.Element {
   const { role = 'dialog', open: openProp, defaultOpen, children, onOpenChange } = props;
 
   const [open, setOpen] = useControlled<boolean | undefined>(openProp, defaultOpen);

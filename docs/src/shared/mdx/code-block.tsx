@@ -18,7 +18,7 @@ export default function CodeBlock({
   children: React.ReactElement;
   live?: boolean;
   showLines?: boolean;
-}): JSX.Element {
+}): React.JSX.Element {
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
@@ -31,7 +31,7 @@ export default function CodeBlock({
     render,
     children,
     // mountStylesheet = false,
-  } = props.children.props;
+  } = props.children.props as any;
 
   const _live = live === 'true' || live === true;
 

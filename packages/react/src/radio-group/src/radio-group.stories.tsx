@@ -5,7 +5,7 @@ import * as styles from './radio-group.stories.css';
 
 export default { title: 'Components/RadioGroup' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -135,7 +135,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function OnValueChange(): JSX.Element {
+export function OnValueChange(): React.JSX.Element {
   const [value, setValue] = React.useState('');
   const handleChange = (value: RadioValue): void => {
     setValue(value as string);
@@ -170,7 +170,7 @@ export function OnValueChange(): JSX.Element {
   );
 }
 
-export function Custom(): JSX.Element {
+export function Custom(): React.JSX.Element {
   return (
     <>
       <h1>Custom Size</h1>
@@ -294,7 +294,7 @@ export function Custom(): JSX.Element {
   );
 }
 
-export function Orientation(): JSX.Element {
+export function Orientation(): React.JSX.Element {
   return (
     <>
       <h1>orientation</h1>
@@ -324,7 +324,7 @@ export function Orientation(): JSX.Element {
   );
 }
 
-export function ButtonStyle(): JSX.Element {
+export function ButtonStyle(): React.JSX.Element {
   return (
     <>
       <h1>ButtonStyle</h1>
@@ -368,7 +368,7 @@ export function ButtonStyle(): JSX.Element {
   );
 }
 
-function CheckedUserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function CheckedUserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="2em"
@@ -386,7 +386,7 @@ function CheckedUserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   );
 }
 
-function UncheckedUserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function UncheckedUserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="2em"

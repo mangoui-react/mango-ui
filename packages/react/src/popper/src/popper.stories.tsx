@@ -5,7 +5,7 @@ import * as styles from './popper.stories.css';
 
 export default { title: 'Utilities/Popper' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -37,7 +37,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function WithCustomArrow(): JSX.Element {
+export function WithCustomArrow(): React.JSX.Element {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -71,7 +71,7 @@ export function WithCustomArrow(): JSX.Element {
   );
 }
 
-function CustomArrow(props: any): JSX.Element {
+function CustomArrow(props: any): React.JSX.Element {
   return (
     <div
       {...props}
@@ -87,7 +87,7 @@ function CustomArrow(props: any): JSX.Element {
   );
 }
 
-// export function OnOpenChange(): JSX.Element {
+// export function OnOpenChange(): React.JSX.Element {
 //   const [open, setOpen] = React.useState<boolean>(false);
 
 //   const onOpenChange = (isOpen: boolean): void => {
@@ -111,7 +111,7 @@ function CustomArrow(props: any): JSX.Element {
 //   );
 // }
 
-// export function CloseOnBlur(): JSX.Element {
+// export function CloseOnBlur(): React.JSX.Element {
 //   return (
 //     <>
 //       <h1>closeOnBlur (closeOnBlur=false)</h1>
@@ -134,7 +134,7 @@ function CustomArrow(props: any): JSX.Element {
 //   );
 // }
 
-// export function DestroyOnClose(): JSX.Element {
+// export function DestroyOnClose(): React.JSX.Element {
 //   return (
 //     <>
 //       <h1>destroyOnClose (false)</h1>
@@ -152,7 +152,7 @@ function CustomArrow(props: any): JSX.Element {
 //   );
 // }
 
-// export function ForceMount(): JSX.Element {
+// export function ForceMount(): React.JSX.Element {
 //   return (
 //     <>
 //       <h1>forceMount</h1>
@@ -170,7 +170,7 @@ function CustomArrow(props: any): JSX.Element {
 //   );
 // }
 
-// export function Position(): JSX.Element {
+// export function Position(): React.JSX.Element {
 //   return (
 //     <>
 //       <h1>Position</h1>
@@ -214,7 +214,7 @@ function CustomArrow(props: any): JSX.Element {
 //   );
 // }
 
-// export function Container(): JSX.Element {
+// export function Container(): React.JSX.Element {
 //   // const containerRef = React.useRef(null);
 //   const [container, setContainer] = React.useState<HTMLElement>();
 

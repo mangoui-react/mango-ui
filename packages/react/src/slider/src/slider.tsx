@@ -59,8 +59,8 @@ const Slider = React.forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
     ...rest
   } = props;
 
-  const sliderRef = React.useRef<HTMLDivElement>(null);
-  const railRef = React.useRef<HTMLDivElement>(null);
+  const sliderRef = React.useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>;
+  const railRef = React.useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>;
   const handleRef = useMergedRef(ref, sliderRef);
   const { current: thumbMap } = React.useRef<SliderContextValue['thumbMap']>(new Map());
 

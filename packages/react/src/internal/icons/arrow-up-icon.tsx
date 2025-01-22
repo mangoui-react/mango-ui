@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function ArrowUpIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+export function ArrowUpIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1em"

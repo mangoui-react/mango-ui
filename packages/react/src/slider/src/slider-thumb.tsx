@@ -20,7 +20,7 @@ const SliderThumb = React.forwardRef<HTMLDivElement, SliderThumbProps>((props, r
   const { style, children, onMouseOver, onMouseOut, ...rest } = props;
   const { orientation, disabled } = React.useContext(SliderContext);
 
-  const thumbRef = React.useRef<HTMLDivElement>(null);
+  const thumbRef = React.useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>;
   const handleRef = useMergedRef(ref, thumbRef);
 
   const { thumbValue, thumbPercentValue, thumbIsMouseDown, displayStyle } = useThumb({

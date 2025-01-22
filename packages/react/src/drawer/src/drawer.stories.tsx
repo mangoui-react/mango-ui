@@ -5,7 +5,7 @@ import * as styles from './drawer.stories.css';
 
 export default { title: 'Components/Drawer' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -54,7 +54,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Placement(): JSX.Element {
+export function Placement(): React.JSX.Element {
   return (
     <>
       <h1>Placement</h1>
@@ -129,7 +129,7 @@ export function Placement(): JSX.Element {
   );
 }
 
-export function Size(): JSX.Element {
+export function Size(): React.JSX.Element {
   return (
     <>
       <h1>Size</h1>
@@ -187,7 +187,7 @@ export function Size(): JSX.Element {
   );
 }
 
-export function OpenChildDrawer(): JSX.Element {
+export function OpenChildDrawer(): React.JSX.Element {
   const [openChild, setOpenChild] = React.useState(false);
 
   const onClick = (cb: React.Dispatch<React.SetStateAction<boolean>>): void => {
@@ -245,7 +245,7 @@ export function OpenChildDrawer(): JSX.Element {
   );
 }
 
-export function destroyOnClose(): JSX.Element {
+export function destroyOnClose(): React.JSX.Element {
   return (
     <>
       <h1>destroyOnClose</h1>
@@ -294,7 +294,7 @@ export function destroyOnClose(): JSX.Element {
   );
 }
 
-function CloseIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function CloseIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1em"

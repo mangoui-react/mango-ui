@@ -25,7 +25,7 @@ export interface BreadcrumbLinkProps extends React.Attributes {
 }
 
 const BreadcrumbLink = React.forwardRef<HTMLElement, BreadcrumbLinkProps>(
-  (props, ref): JSX.Element => {
+  (props, ref): React.JSX.Element => {
     const {
       href,
       // to,
