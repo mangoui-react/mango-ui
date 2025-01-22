@@ -4,17 +4,17 @@ import React from 'react';
 
 import cn from '@/utils/cn';
 
-export default function Disabled(): JSX.Element {
+export default function Disabled(): React.JSX.Element {
   return (
     <button
       className={cn(
-        'cursor-pointer text-inherit box-border',
-        'border border-solid border-border',
+        'box-border cursor-pointer text-inherit',
+        'border-border border border-solid',
         'align-middle',
-        'inline-flex flex-[0_0_auto] items-center justify-center content-center',
+        'inline-flex flex-[0_0_auto] content-center items-center justify-center',
         'active:hover:border-primary active:hover:transition-all',
-        'py-2 px-3.5 text-base',
-        'disabled:cursor-not-allowed disabled:bg-disabled-bg disabled:text-disabled-text disabled:border-disabled-border active:disabled:border-disabled-border',
+        'px-3.5 py-2 text-base',
+        'disabled:bg-disabled-bg disabled:text-disabled-text disabled:border-disabled-border active:disabled:border-disabled-border disabled:cursor-not-allowed',
       )}
       disabled
       onClick={() => {

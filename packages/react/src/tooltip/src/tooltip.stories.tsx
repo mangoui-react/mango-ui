@@ -5,7 +5,7 @@ import * as styles from './tooltip.stories.css';
 
 export default { title: 'Components/Tooltip' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -23,7 +23,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Arrow(): JSX.Element {
+export function Arrow(): React.JSX.Element {
   return (
     <>
       <h1>Arrow</h1>
@@ -42,7 +42,7 @@ export function Arrow(): JSX.Element {
   );
 }
 
-export function Position(): JSX.Element {
+export function Position(): React.JSX.Element {
   return (
     <>
       <h1>Position</h1>

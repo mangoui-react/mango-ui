@@ -5,7 +5,7 @@ import * as styles from './tabs.stories.css';
 
 export default { title: 'Components/Tabs' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -34,7 +34,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function OnValueChange(): JSX.Element {
+export function OnValueChange(): React.JSX.Element {
   const [value, setValue] = React.useState<string>('tab1');
 
   const onValueChange = (value: string): void => {
@@ -96,7 +96,7 @@ export function OnValueChange(): JSX.Element {
   );
 }
 
-export function Orientation(): JSX.Element {
+export function Orientation(): React.JSX.Element {
   return (
     <>
       <h1>Orientation</h1>
@@ -123,7 +123,7 @@ export function Orientation(): JSX.Element {
   );
 }
 
-export function RenderMode(): JSX.Element {
+export function RenderMode(): React.JSX.Element {
   return (
     <>
       <h1>renderMode: selecting (선택한 tab만 랜더링: default)</h1>
@@ -183,7 +183,7 @@ export function RenderMode(): JSX.Element {
   );
 }
 
-export function AddRemove(): JSX.Element {
+export function AddRemove(): React.JSX.Element {
   const [tabs, setTabs] = React.useState<
     Array<{ value: string; tab: string; panel: React.ReactNode }>
   >([]);
@@ -290,7 +290,7 @@ export function AddRemove(): JSX.Element {
   );
 }
 
-function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function UserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1em"
@@ -305,7 +305,7 @@ function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   );
 }
 
-function CloseIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function CloseIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1em"

@@ -5,7 +5,7 @@ import * as styles from './avatar.stories.css';
 
 export default { title: 'Components/Avatar' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -17,7 +17,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Img(): JSX.Element {
+export function Img(): React.JSX.Element {
   return (
     <>
       <h1>이미지</h1>
@@ -28,7 +28,7 @@ export function Img(): JSX.Element {
   );
 }
 
-export function Grouping(): JSX.Element {
+export function Grouping(): React.JSX.Element {
   return (
     <>
       <h1>그룹핑</h1>
@@ -69,7 +69,7 @@ export function Grouping(): JSX.Element {
   );
 }
 
-function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function UserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1em"

@@ -5,7 +5,7 @@ import * as styles from './dialog.stories.css';
 
 export default { title: 'Components/Dialog' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -43,7 +43,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function OnOpenChange(): JSX.Element {
+export function OnOpenChange(): React.JSX.Element {
   const [open, setOpen] = React.useState<boolean>(false);
 
   const handleOpenChange = (isOpen: boolean): void => {
@@ -87,7 +87,7 @@ export function OnOpenChange(): JSX.Element {
   );
 }
 
-export function Width(): JSX.Element {
+export function Width(): React.JSX.Element {
   const [width, setWidth] = React.useState<number>(800);
   const [isFull, setIsFull] = React.useState<boolean>(false);
 
@@ -158,7 +158,7 @@ export function Width(): JSX.Element {
   );
 }
 
-export function TopPosition(): JSX.Element {
+export function TopPosition(): React.JSX.Element {
   const [top, setTop] = React.useState<number>(30);
 
   const onTopChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -221,7 +221,7 @@ export function TopPosition(): JSX.Element {
   );
 }
 
-export function Backdrop(): JSX.Element {
+export function Backdrop(): React.JSX.Element {
   return (
     <>
       <h1>preventCloseOnClick</h1>
@@ -259,7 +259,7 @@ export function Backdrop(): JSX.Element {
   );
 }
 
-export function DestroyOnClose(): JSX.Element {
+export function DestroyOnClose(): React.JSX.Element {
   return (
     <>
       <h1>destroyOnClose</h1>
@@ -297,7 +297,7 @@ export function DestroyOnClose(): JSX.Element {
   );
 }
 
-export function ForceMount(): JSX.Element {
+export function ForceMount(): React.JSX.Element {
   return (
     <>
       <h1>forceMount</h1>
@@ -335,7 +335,7 @@ export function ForceMount(): JSX.Element {
   );
 }
 
-export function Container(): JSX.Element {
+export function Container(): React.JSX.Element {
   const [container, setContainer] = React.useState<HTMLElement>();
 
   React.useEffect(() => {
@@ -380,7 +380,7 @@ export function Container(): JSX.Element {
   );
 }
 
-function CloseIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function CloseIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1em"

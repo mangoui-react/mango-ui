@@ -12,7 +12,7 @@ export interface TooltipPortalProps {
   container?: ContainerType;
 }
 
-export default function TooltipPortal(props: TooltipPortalProps): JSX.Element {
+export default function TooltipPortal(props: TooltipPortalProps): React.JSX.Element {
   const { container, children } = props;
 
   const { Portal } = usePortal(container);

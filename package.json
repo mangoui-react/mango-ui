@@ -10,6 +10,7 @@
     "release": "changeset publish",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "lint": "eslint packages --ext .ts,.tsx",
+    "clean:mod": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -27,8 +28,8 @@
     "@storybook/react-vite": "^8.4.7",
     "@storybook/test": "^8.4.7",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/react": "^19.0.2",
-    "@types/react-dom": "^19.0.2",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@vanilla-extract/css": "^1.14.0",
     "@vanilla-extract/vite-plugin": "^3.9.3",
@@ -55,8 +56,8 @@
     "rimraf": "^5.0.7",
     "storybook": "^8.4.7",
     "tslib": "^2.6.2",
-    "tsup": "^8.1.0",
-    "typescript": "^5.5.3",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
     "vite": "^5.0.8"
   }
 }

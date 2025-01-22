@@ -16,10 +16,10 @@ export default function DemoCodeBlock(props: DemoCodeBlockProps) {
   const codeTabs = React.Children.toArray(children).map((pre) => {
     if (pre && typeof pre === 'object' && 'props' in pre) {
       return {
-        id: pre.props.title,
-        title: pre.props.title,
+        id: (pre.props as any).title,
+        title: (pre.props as any).title,
         // source: React.Children.only(pre.props.children).props?.source,
-        source: pre.props.source,
+        source: (pre.props as any).source,
       };
     }
   });

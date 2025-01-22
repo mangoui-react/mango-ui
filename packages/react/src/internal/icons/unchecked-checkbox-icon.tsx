@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function UncheckedCheckboxIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+export function UncheckedCheckboxIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1em"

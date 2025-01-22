@@ -12,7 +12,7 @@ export interface DrawerProps extends DialogProps {
 export interface DrawerContextValue extends Pick<DrawerProps, 'placement'> {}
 export const DrawerContext = React.createContext<DrawerContextValue>({});
 
-export default function Drawer(props: DrawerProps): JSX.Element {
+export default function Drawer(props: DrawerProps): React.JSX.Element {
   const { open, placement = 'right', children, ...rest } = props;
 
   const contextValue = React.useMemo(

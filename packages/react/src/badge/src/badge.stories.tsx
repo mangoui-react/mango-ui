@@ -5,7 +5,7 @@ import * as styles from './badge.stories.css';
 
 export default { title: 'Components/Badge' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -31,7 +31,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Max(): JSX.Element {
+export function Max(): React.JSX.Element {
   return (
     <>
       <h1>Max 값 설정</h1>
@@ -57,7 +57,7 @@ export function Max(): JSX.Element {
   );
 }
 
-export function Size(): JSX.Element {
+export function Size(): React.JSX.Element {
   return (
     <>
       <h1>Size</h1>
@@ -101,7 +101,7 @@ export function Size(): JSX.Element {
   );
 }
 
-export function Color(): JSX.Element {
+export function Color(): React.JSX.Element {
   return (
     <>
       <h1>Color</h1>
@@ -147,7 +147,7 @@ export function Color(): JSX.Element {
   );
 }
 
-export function Placement(): JSX.Element {
+export function Placement(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -186,7 +186,7 @@ export function Placement(): JSX.Element {
   );
 }
 
-export function BadgeOnly(): JSX.Element {
+export function BadgeOnly(): React.JSX.Element {
   return (
     <>
       <h1>BadgeOnly</h1>
@@ -224,7 +224,7 @@ export function BadgeOnly(): JSX.Element {
   );
 }
 
-function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function UserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="2em"

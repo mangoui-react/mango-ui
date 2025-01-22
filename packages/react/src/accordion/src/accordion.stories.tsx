@@ -7,7 +7,7 @@ export default { title: 'Components/Accordion' };
 
 // TODO: 스타일은 무엇으로 할지 생각해 보자.
 // radix 는 https://github.com/stitchesjs/stitches 으로 했음
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -40,7 +40,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function ItemByFunc(): JSX.Element {
+export function ItemByFunc(): React.JSX.Element {
   return (
     <>
       <h1>children 이 함수</h1>
@@ -85,7 +85,7 @@ export function ItemByFunc(): JSX.Element {
   );
 }
 
-function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

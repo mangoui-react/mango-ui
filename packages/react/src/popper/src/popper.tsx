@@ -13,7 +13,7 @@ export const PopperContext = React.createContext<PopperContextValue>({
   onAnchorChange: () => {},
 });
 
-export default function Popper(props: React.PropsWithChildren): JSX.Element {
+export default function Popper(props: React.PropsWithChildren): React.JSX.Element {
   const { children } = props;
   const [anchor, setAnchor] = React.useState<Measurable | null>(null);
 

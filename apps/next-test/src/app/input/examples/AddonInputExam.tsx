@@ -6,12 +6,12 @@ import SearchIcon from '@/icons/SearchIcon';
 
 import AddonInput from '../components/AddonInput';
 
-export default function AddonInputExam(): JSX.Element {
+export default function AddonInputExam(): React.JSX.Element {
   return (
     <>
       <div>Left/Right Addon</div>
       <div className="flex flex-row gap-2">
-        <div className="flex flex-col gap-2 w-full">
+        <div className="flex w-full flex-col gap-2">
           <AddonInput leftAddon="http://" rightAddon=".com" />
           <div>
             With clearable
@@ -19,7 +19,7 @@ export default function AddonInputExam(): JSX.Element {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 w-full">
+        <div className="flex w-full flex-col gap-2">
           <AddonInput
             leftAddon={
               <button style={{ border: 0, height: 25 }}>

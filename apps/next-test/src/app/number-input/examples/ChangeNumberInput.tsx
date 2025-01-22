@@ -24,7 +24,7 @@ const buttonStyle = cn(
   'w-full h-4 p-0',
 );
 
-export default function ChangeNumberInput(): JSX.Element {
+export default function ChangeNumberInput(): React.JSX.Element {
   const [value, setValue] = useState<NumberInputValue>(null);
   // const onChange = useCallback((event: React.ChangeEvent<any>, newValue: string) => {
   //   // setValue(event.target.value as string);
@@ -46,7 +46,7 @@ export default function ChangeNumberInput(): JSX.Element {
       <div>Change Event</div>
       <NumberInput.Root className="flex items-center" value={value} onValueChange={onChange}>
         <NumberInput.Field className={cn(inputStyle)} />
-        <NumberInput.ButtonGroup className="flex flex-col w-5">
+        <NumberInput.ButtonGroup className="flex w-5 flex-col">
           <NumberInput.Plus className={buttonStyle}>
             <ArrowUpIcon />
           </NumberInput.Plus>

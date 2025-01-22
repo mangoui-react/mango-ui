@@ -1,6 +1,8 @@
 'use client';
 
 // import { Box, Icon, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
+import React from 'react';
+
 import { Tabs } from '@melio-ui/react';
 
 import { BunIcon } from '@/shared/icons/bun-icon';
@@ -14,7 +16,7 @@ import CodeBlock from './code-block';
 type PackageManagerName = 'npm' | 'yarn' | 'pnpm' | 'bun';
 
 type PackageManager = {
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   color: string;
   name: PackageManagerName;
 };

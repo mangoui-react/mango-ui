@@ -5,7 +5,7 @@ import * as styles from './circular-progress.stories.css';
 
 export default { title: 'Components/CircularProgress' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -32,7 +32,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Indeterminate(): JSX.Element {
+export function Indeterminate(): React.JSX.Element {
   return (
     <>
       <h1>Indeterminate</h1>
@@ -43,7 +43,7 @@ export function Indeterminate(): JSX.Element {
   );
 }
 
-export function Size(): JSX.Element {
+export function Size(): React.JSX.Element {
   return (
     <>
       <h1>Size</h1>
@@ -96,7 +96,7 @@ export function Size(): JSX.Element {
   );
 }
 
-export function ValueControlled(): JSX.Element {
+export function ValueControlled(): React.JSX.Element {
   const [max] = React.useState(100);
 
   const [percent, setPercent] = React.useState<number>(0);

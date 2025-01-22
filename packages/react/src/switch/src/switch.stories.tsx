@@ -5,7 +5,7 @@ import * as styles from './switch.stories.css';
 
 export default { title: 'Components/Switch' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -18,7 +18,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Label(): JSX.Element {
+export function Label(): React.JSX.Element {
   return (
     <>
       <h1>Label</h1>
@@ -32,7 +32,7 @@ export function Label(): JSX.Element {
   );
 }
 
-export function OnCheckedChange(): JSX.Element {
+export function OnCheckedChange(): React.JSX.Element {
   const [checked, setChecked] = React.useState(false);
 
   return (
@@ -47,7 +47,7 @@ export function OnCheckedChange(): JSX.Element {
   );
 }
 
-export function DisabledReadOnly(): JSX.Element {
+export function DisabledReadOnly(): React.JSX.Element {
   return (
     <>
       <h1>Disabled</h1>
@@ -69,7 +69,7 @@ export function DisabledReadOnly(): JSX.Element {
   );
 }
 
-export function Custom(): JSX.Element {
+export function Custom(): React.JSX.Element {
   const [checked, setChecked] = React.useState(false);
   const [innerChecked, setInnerChecked] = React.useState(false);
 

@@ -5,7 +5,7 @@ import * as styles from './number-input.stories.css';
 
 export default { title: 'Components/NumberInput' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -37,7 +37,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function OnValueChange(): JSX.Element {
+export function OnValueChange(): React.JSX.Element {
   const [value, setValue] = React.useState<NumberInputValue>(null);
   const onValueChange = (val: NumberInputValue): void => {
     setValue(val);
@@ -63,7 +63,7 @@ export function OnValueChange(): JSX.Element {
   );
 }
 
-export function Disabled(): JSX.Element {
+export function Disabled(): React.JSX.Element {
   return (
     <>
       <h1>disabled</h1>
@@ -95,7 +95,7 @@ export function Disabled(): JSX.Element {
   );
 }
 
-export function ReadOnly(): JSX.Element {
+export function ReadOnly(): React.JSX.Element {
   return (
     <>
       <h1>readOnly</h1>
@@ -127,7 +127,7 @@ export function ReadOnly(): JSX.Element {
   );
 }
 
-export function MinMax(): JSX.Element {
+export function MinMax(): React.JSX.Element {
   return (
     <>
       <h1>Min/Max</h1>
@@ -142,7 +142,7 @@ export function MinMax(): JSX.Element {
   );
 }
 
-export function Custom(): JSX.Element {
+export function Custom(): React.JSX.Element {
   return (
     <>
       <h1>Custom</h1>

@@ -6,7 +6,7 @@ import CloseSolidIcon from '@/icons/CloseSolidIcon';
 import SearchIcon from '@/icons/SearchIcon';
 import cn from '@/utils/cn';
 
-export default function RightInsideIconInput(): JSX.Element {
+export default function RightInsideIconInput(): React.JSX.Element {
   const [value, setValue] = useState('');
 
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,13 +20,13 @@ export default function RightInsideIconInput(): JSX.Element {
   return (
     <span
       className={cn(
-        'flex items-center border border-solid border-border rounded-sm bg-component-bg',
-        'focus-within:outline-0 focus-within:border-primary focus-within:border focus-within:shadow-[0_0_2px_border-primary]',
+        'border-border bg-component-bg flex items-center rounded-sm border border-solid',
+        'focus-within:border-primary focus-within:border focus-within:shadow-[0_0_2px_border-primary] focus-within:outline-0',
       )}
     >
       <input
         className={cn(
-          'inline-block w-full min-w-0 relative border-0 border-solid border-border box-border bg-component-bg text-inherit py-1 px-3 leading-none',
+          'border-border bg-component-bg relative box-border inline-block w-full min-w-0 border-0 border-solid px-3 py-1 leading-none text-inherit',
           'focus:outline-0',
         )}
         value={value}
@@ -34,13 +34,13 @@ export default function RightInsideIconInput(): JSX.Element {
       />
       {value && (
         <span
-          className="flex items-center cursor-pointer mr-2 text-[#D9D9D9]"
+          className="mr-2 flex cursor-pointer items-center text-[#D9D9D9]"
           onClick={handleClear}
         >
           <CloseSolidIcon />
         </span>
       )}
-      <span className="flex items-center mr-2">
+      <span className="mr-2 flex items-center">
         <SearchIcon />
       </span>
     </span>

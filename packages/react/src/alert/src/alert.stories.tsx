@@ -5,7 +5,7 @@ import * as styles from './alert.stories.css';
 
 export default { title: 'Components/Alert' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -34,7 +34,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Title(): JSX.Element {
+export function Title(): React.JSX.Element {
   return (
     <>
       <h1>타이틀</h1>
@@ -75,7 +75,7 @@ export function Title(): JSX.Element {
   );
 }
 
-export function Icon(): JSX.Element {
+export function Icon(): React.JSX.Element {
   const [status, setStatus] = React.useState<AlertProps['status']>('info');
 
   return (
@@ -138,7 +138,7 @@ export function Icon(): JSX.Element {
   );
 }
 
-function CheckIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function CheckIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1em"
@@ -156,7 +156,7 @@ function CheckIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   );
 }
 
-function SuccessIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function SuccessIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1.5em"
@@ -171,7 +171,7 @@ function SuccessIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   );
 }
 
-function WarningIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function WarningIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1.5em"
@@ -186,7 +186,7 @@ function WarningIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   );
 }
 
-function ErrorIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function ErrorIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="1.5em"

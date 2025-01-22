@@ -11,14 +11,14 @@ import { Avatar } from '@melio-ui/react';
 import BellIcon from '@/icons/BellIcon';
 import UserIcon from '@/icons/UserIcon';
 
-export default function AvatarPage(): JSX.Element {
+export default function AvatarPage(): React.JSX.Element {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-start gap-1">
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -26,8 +26,8 @@ export default function AvatarPage(): JSX.Element {
         </Avatar.Root>
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -38,8 +38,8 @@ export default function AvatarPage(): JSX.Element {
       <div className="flex items-center justify-start gap-1">
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -50,8 +50,8 @@ export default function AvatarPage(): JSX.Element {
       <div className="flex items-center justify-start gap-1">
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -60,30 +60,30 @@ export default function AvatarPage(): JSX.Element {
 
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
-          <Avatar.Img className="w-full h-full text-transparent" src="/images/avatar1.jpg" />
+          <Avatar.Img className="h-full w-full text-transparent" src="/images/avatar1.jpg" />
         </Avatar.Root>
 
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
-          <Avatar.Img className="w-full h-full text-transparent" src="/images/avatar2.png" />
+          <Avatar.Img className="h-full w-full text-transparent" src="/images/avatar2.png" />
         </Avatar.Root>
       </div>
 
       <div className="flex items-center justify-start gap-1">
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -91,8 +91,8 @@ export default function AvatarPage(): JSX.Element {
         </Avatar.Root>
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -103,8 +103,8 @@ export default function AvatarPage(): JSX.Element {
       <div className="flex items-center justify-start gap-1">
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -112,8 +112,8 @@ export default function AvatarPage(): JSX.Element {
         </Avatar.Root>
         <Avatar.Root
           className={clsx(
-            'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[2px]',
           )}
         >
@@ -124,8 +124,8 @@ export default function AvatarPage(): JSX.Element {
       <div className="flex items-center justify-start gap-1">
         <Avatar.Root
           className={clsx(
-            'flex w-[30px] h-[30px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[30px] w-[30px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -133,8 +133,8 @@ export default function AvatarPage(): JSX.Element {
         </Avatar.Root>
         <Avatar.Root
           className={clsx(
-            'flex w-[50px] h-[50px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[50px] w-[50px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -143,8 +143,8 @@ export default function AvatarPage(): JSX.Element {
 
         <Avatar.Root
           className={clsx(
-            'flex w-[70px] h-[70px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[70px] w-[70px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -153,8 +153,8 @@ export default function AvatarPage(): JSX.Element {
 
         <Avatar.Root
           className={clsx(
-            'flex w-[100px] h-[100px] overflow-hidden items-center justify-center',
-            'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+            'flex h-[100px] w-[100px] items-center justify-center overflow-hidden',
+            'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
             'rounded-[50%]',
           )}
         >
@@ -164,23 +164,23 @@ export default function AvatarPage(): JSX.Element {
 
       <div>그룹</div>
       <div className="flex items-center justify-start gap-1">
-        <Avatar.Group className="flex flex-row justify-start items-center">
+        <Avatar.Group className="flex flex-row items-center justify-start">
           <Avatar.Root
             className={clsx(
-              'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-              'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+              'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+              'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
               'rounded-[50%]',
-              'border-solid border-2 border-background',
+              'border-background border-2 border-solid',
             )}
           >
             <UserIcon width="75%" height="75%" />
           </Avatar.Root>
           <Avatar.Root
             className={clsx(
-              'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-              'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+              'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+              'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
               'rounded-[50%]',
-              'border-solid border-2 border-background',
+              'border-background border-2 border-solid',
               'ml-[-10px]',
             )}
           >
@@ -188,10 +188,10 @@ export default function AvatarPage(): JSX.Element {
           </Avatar.Root>
           <Avatar.Root
             className={clsx(
-              'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-              'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+              'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+              'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
               'rounded-[50%]',
-              'border-solid border-2 border-background',
+              'border-background border-2 border-solid',
               'ml-[-10px]',
             )}
           >
@@ -202,23 +202,23 @@ export default function AvatarPage(): JSX.Element {
 
       <div className="flex items-center justify-start gap-1">
         <Avatar.Group>
-          <Avatar.GroupContent className="flex flex-row justify-start items-center">
+          <Avatar.GroupContent className="flex flex-row items-center justify-start">
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[50%]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
               )}
             >
               <BellIcon fontSize="1.5rem" />
             </Avatar.Root>
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[50%]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
                 'ml-[-15px]',
               )}
             >
@@ -226,10 +226,10 @@ export default function AvatarPage(): JSX.Element {
             </Avatar.Root>
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[50%]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
                 'ml-[-15px]',
               )}
             >
@@ -240,14 +240,14 @@ export default function AvatarPage(): JSX.Element {
       </div>
 
       <div className="flex items-center justify-start gap-1">
-        <Avatar.Group className="flex flex-row justify-start items-center" max={2}>
-          <Avatar.GroupContent className="flex flex-row justify-start items-center">
+        <Avatar.Group className="flex flex-row items-center justify-start" max={2}>
+          <Avatar.GroupContent className="flex flex-row items-center justify-start">
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[50%]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
               )}
             >
               <Avatar.Img src="/images/avatar1.jpg" />
@@ -255,10 +255,10 @@ export default function AvatarPage(): JSX.Element {
 
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[50%]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
                 'ml-[-10px]',
               )}
             >
@@ -267,10 +267,10 @@ export default function AvatarPage(): JSX.Element {
 
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[50%]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
                 'ml-[-10px]',
               )}
             >
@@ -279,10 +279,10 @@ export default function AvatarPage(): JSX.Element {
 
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[50%]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
                 'ml-[-10px]',
               )}
             >
@@ -291,10 +291,10 @@ export default function AvatarPage(): JSX.Element {
 
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[50%]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
                 'ml-[-10px]',
               )}
             >
@@ -304,10 +304,10 @@ export default function AvatarPage(): JSX.Element {
 
           <Avatar.Extra
             className={clsx(
-              'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-              'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+              'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+              'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
               'rounded-[50%]',
-              'border-solid border-2 border-background',
+              'border-background border-2 border-solid',
               'ml-[-10px]',
             )}
           />
@@ -315,14 +315,14 @@ export default function AvatarPage(): JSX.Element {
       </div>
 
       <div className="flex items-center justify-start gap-1">
-        <Avatar.Group className="flex flex-row justify-start items-center" max={2}>
-          <Avatar.GroupContent className="flex flex-row justify-start items-center">
+        <Avatar.Group className="flex flex-row items-center justify-start" max={2}>
+          <Avatar.GroupContent className="flex flex-row items-center justify-start">
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[2px]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
               )}
             >
               <Avatar.Img src="/images/avatar1.jpg" />
@@ -330,10 +330,10 @@ export default function AvatarPage(): JSX.Element {
 
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[2px]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
                 'ml-[-10px]',
               )}
             >
@@ -342,10 +342,10 @@ export default function AvatarPage(): JSX.Element {
 
             <Avatar.Root
               className={clsx(
-                'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-                'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+                'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+                'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
                 'rounded-[2px]',
-                'border-solid border-2 border-background',
+                'border-background border-2 border-solid',
                 'ml-[-10px]',
               )}
             >
@@ -355,10 +355,10 @@ export default function AvatarPage(): JSX.Element {
 
           <Avatar.Extra
             className={clsx(
-              'flex w-[40px] h-[40px] overflow-hidden items-center justify-center',
-              'bg-avatar-bg text-avatar-text text-[1.25rem] select-none',
+              'flex h-[40px] w-[40px] items-center justify-center overflow-hidden',
+              'bg-avatar-bg text-avatar-text select-none text-[1.25rem]',
               'rounded-[2px]',
-              'border-solid border-2 border-background',
+              'border-background border-2 border-solid',
               'ml-[-10px]',
             )}
           />

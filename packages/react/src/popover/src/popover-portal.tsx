@@ -11,7 +11,7 @@ export interface PopoverPortalProps {
   container?: ContainerType;
 }
 
-export default function PopoverPortal(props: PopoverPortalProps): JSX.Element {
+export default function PopoverPortal(props: PopoverPortalProps): React.JSX.Element {
   const { container, children } = props;
 
   const { Portal } = usePortal(container);

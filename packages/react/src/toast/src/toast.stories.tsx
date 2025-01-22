@@ -5,7 +5,7 @@ import * as styles from './toast.stories.css';
 
 export default { title: 'Components/Toast' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   const [open, setOpen] = React.useState(false);
 
   const onClick = (cb: React.Dispatch<React.SetStateAction<boolean>>): void => {
@@ -37,7 +37,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Placement(): JSX.Element {
+export function Placement(): React.JSX.Element {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -64,7 +64,7 @@ export function Placement(): JSX.Element {
   );
 }
 
-export function Duration(): JSX.Element {
+export function Duration(): React.JSX.Element {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -91,7 +91,7 @@ export function Duration(): JSX.Element {
   );
 }
 
-export function Close(): JSX.Element {
+export function Close(): React.JSX.Element {
   const [open, setOpen] = React.useState(false);
 
   return (

@@ -48,7 +48,7 @@ const Slot = React.forwardRef<HTMLElement, SlotProps>((props, ref) => {
 
   if (React.isValidElement(children)) {
     return React.cloneElement(children, {
-      ...mergeProps(rest, children.props),
+      ...mergeProps(rest, children.props as AnyProps),
       ref: ref ? mergedSlotRefs : (children as any).ref,
     });
   }

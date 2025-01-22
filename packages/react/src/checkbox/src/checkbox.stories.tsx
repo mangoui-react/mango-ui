@@ -5,7 +5,7 @@ import * as styles from './checkbox.stories.css';
 
 export default { title: 'Components/Checkbox' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   const [checked, setChecked] = React.useState(false);
 
   return (
@@ -65,7 +65,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function Custom(): JSX.Element {
+export function Custom(): React.JSX.Element {
   return (
     <>
       <h1>Custom Size</h1>
@@ -138,7 +138,7 @@ export function Custom(): JSX.Element {
   );
 }
 
-export function CheckboxGroup(): JSX.Element {
+export function CheckboxGroup(): React.JSX.Element {
   const [checkedValues, setCheckedValues] = React.useState<CheckboxValue[]>([0, 1]);
 
   return (
@@ -328,7 +328,7 @@ export function CheckboxGroup(): JSX.Element {
   );
 }
 
-function CheckedUserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function CheckedUserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="2em"
@@ -346,7 +346,7 @@ function CheckedUserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   );
 }
 
-function UncheckedUserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function UncheckedUserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="2em"

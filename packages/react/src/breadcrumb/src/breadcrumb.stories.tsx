@@ -5,7 +5,7 @@ import * as styles from './breadcrumb.stories.css';
 
 export default { title: 'Components/Breadcrumb' };
 
-export function Basic(): JSX.Element {
+export function Basic(): React.JSX.Element {
   return (
     <>
       <h1>기본</h1>
@@ -33,7 +33,7 @@ export function Basic(): JSX.Element {
   );
 }
 
-export function CustomSeparator(): JSX.Element {
+export function CustomSeparator(): React.JSX.Element {
   return (
     <>
       <h1>CustomSeparator</h1>
@@ -81,7 +81,7 @@ export function CustomSeparator(): JSX.Element {
   );
 }
 
-export function Icon(): JSX.Element {
+export function Icon(): React.JSX.Element {
   return (
     <>
       <h1>Icon</h1>
@@ -120,7 +120,7 @@ export function Icon(): JSX.Element {
   );
 }
 
-export function Collapsed(): JSX.Element {
+export function Collapsed(): React.JSX.Element {
   return (
     <>
       <h1>Collapsed</h1>
@@ -173,7 +173,7 @@ export function Collapsed(): JSX.Element {
   );
 }
 
-function UserIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function UserIcon(props: React.SVGProps<SVGSVGElement>): React.JSX.Element {
   return (
     <svg
       width="2em"

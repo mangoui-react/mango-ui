@@ -33,7 +33,7 @@ export const TooltipContext = React.createContext<TooltipContextValue>({
   onClose: () => {},
 });
 
-export default function Tooltip(props: TooltipProps): JSX.Element {
+export default function Tooltip(props: TooltipProps): React.JSX.Element {
   const { open: openProp, defaultOpen, children, onOpenChange } = props;
 
   // Tooltip의 대상(트리거)이 되는 Node

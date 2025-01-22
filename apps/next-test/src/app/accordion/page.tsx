@@ -11,34 +11,34 @@ import ChevronDownIcon from '@/icons/ChevronDownIcon';
 
 import PanelFunc from './example/PanelFunc';
 
-export default function AccordionPage(): JSX.Element {
+export default function AccordionPage(): React.JSX.Element {
   return (
     <div className="flex flex-col gap-2">
       <div>
-        <Accordion.Root className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
-          <Accordion.Item className="border-b border-b-border">
-            <Accordion.Header className="flex py-3 px-4 cursor-pointer">
+        <Accordion.Root className="bg-component-bg border-border m-0 rounded-sm border border-b-0 border-solid p-0 text-inherit">
+          <Accordion.Item className="border-b-border border-b">
+            <Accordion.Header className="flex cursor-pointer px-4 py-3">
               <span className="flex-1 text-left">Panel Header1</span>
               {/* <AccordionTitle className="flex-1 text-left">Panel Header1</AccordionTitle> */}
               <Accordion.ArrowIcon />
             </Accordion.Header>
-            <Accordion.Content className="border-t border-t-border p-4">Content1</Accordion.Content>
+            <Accordion.Content className="border-t-border border-t p-4">Content1</Accordion.Content>
           </Accordion.Item>
 
-          <Accordion.Item className="border-b border-b-border">
-            <Accordion.Header className="flex py-3 px-4 cursor-pointer">
+          <Accordion.Item className="border-b-border border-b">
+            <Accordion.Header className="flex cursor-pointer px-4 py-3">
               <span className="flex-1 text-left">Panel Header2</span>
               <Accordion.ArrowIcon />
             </Accordion.Header>
-            <Accordion.Content className="border-t border-t-border p-4">Content2</Accordion.Content>
+            <Accordion.Content className="border-t-border border-t p-4">Content2</Accordion.Content>
           </Accordion.Item>
 
-          <Accordion.Item className="border-b border-b-border">
-            <Accordion.Header className="flex py-3 px-4 cursor-pointer">
+          <Accordion.Item className="border-b-border border-b">
+            <Accordion.Header className="flex cursor-pointer px-4 py-3">
               <span className="flex-1 text-left">Panel Header3</span>
               <Accordion.ArrowIcon />
             </Accordion.Header>
-            <Accordion.Content className="border-t border-t-border p-4">Content3</Accordion.Content>
+            <Accordion.Content className="border-t-border border-t p-4">Content3</Accordion.Content>
           </Accordion.Item>
         </Accordion.Root>
       </div>
@@ -49,34 +49,34 @@ export default function AccordionPage(): JSX.Element {
 
       <div>
         <div>custom animation</div>
-        <Accordion.Root className="m-0 p-0 bg-component-bg border border-solid border-border text-inherit rounded-sm border-b-0">
-          <Accordion.Item className="border-b border-b-border">
-            <Accordion.Header className="flex py-3 px-4 cursor-pointer">
+        <Accordion.Root className="bg-component-bg border-border m-0 rounded-sm border border-b-0 border-solid p-0 text-inherit">
+          <Accordion.Item className="border-b-border border-b">
+            <Accordion.Header className="flex cursor-pointer px-4 py-3">
               <span className="flex-1 text-left">Panel Header1</span>
               {/* <Accordion.ArrowIcon /> */}
               <ChevronDownIcon className="h-5 w-5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </Accordion.Header>
-            <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
+            <Accordion.Content className="border-t-border data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed border-t p-4">
               Content1
             </Accordion.Content>
           </Accordion.Item>
 
-          <Accordion.Item className="border-b border-b-border">
-            <Accordion.Header className="flex py-3 px-4 cursor-pointer">
+          <Accordion.Item className="border-b-border border-b">
+            <Accordion.Header className="flex cursor-pointer px-4 py-3">
               <span className="flex-1 text-left">Panel Header2</span>
               <Accordion.ArrowIcon />
             </Accordion.Header>
-            <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
+            <Accordion.Content className="border-t-border data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed border-t p-4">
               Content2
             </Accordion.Content>
           </Accordion.Item>
 
-          <Accordion.Item className="border-b border-b-border">
-            <Accordion.Header className="flex py-3 px-4 cursor-pointer">
+          <Accordion.Item className="border-b-border border-b">
+            <Accordion.Header className="flex cursor-pointer px-4 py-3">
               <span className="flex-1 text-left">Panel Header3</span>
               <Accordion.ArrowIcon />
             </Accordion.Header>
-            <Accordion.Content className="border-t border-t-border p-4 data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed">
+            <Accordion.Content className="border-t-border data-[state=open]:animate-collapse-open data-[state=closed]:animate-collapse-closed border-t p-4">
               Content3
             </Accordion.Content>
           </Accordion.Item>
