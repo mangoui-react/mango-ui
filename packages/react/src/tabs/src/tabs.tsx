@@ -83,14 +83,15 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   return (
     <TabsContext.Provider value={contextValue}>
       <div data-orientation={orientation} {...rest} ref={ref}>
-        {React.Children.map(children, async (child, tabPanelIndex) => {
+        {/* eslint-disable-next-line @typescript-eslint/promise-function-async */}
+        {React.Children.map(children, (child, tabPanelIndex) => {
           if (React.isValidElement(child)) {
             return React.cloneElement(child as React.ReactElement<TabPanelProps>, {
               // index: child.props.index ?? tabPanelIndex - 1, // TabList 가 첫번째 자식 컴포넌트
               index: tabPanelIndex - 1, // TabList 가 첫번째 자식 컴포넌트
             });
           }
-          return await child;
+          return child;
         })}
       </div>
     </TabsContext.Provider>

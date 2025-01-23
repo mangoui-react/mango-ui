@@ -118,14 +118,15 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>((props, ref) 
   return (
     <AccordionContext.Provider value={contextValue}>
       <div {...rest} ref={ref}>
-        {React.Children.map(children, async (child) => {
+        {/* eslint-disable-next-line @typescript-eslint/promise-function-async */}
+        {React.Children.map(children, (child) => {
           if (React.isValidElement(child)) {
             itemIndex++;
             return React.cloneElement(child as React.ReactElement<AccordionItemProps>, {
               index: itemIndex,
             });
           }
-          return await child;
+          return child;
           // return React.cloneElement(child as React.ReactElement<AccordionItemProps>, {
           //   index,
           // });

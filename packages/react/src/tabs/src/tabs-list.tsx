@@ -11,13 +11,14 @@ const TabsList = React.forwardRef<HTMLUListElement, TabsListProps>((props, ref) 
 
   return (
     <ul role="tablist" {...rest} ref={ref}>
-      {React.Children.map(children, async (child, index) => {
+      {/* eslint-disable-next-line @typescript-eslint/promise-function-async */}
+      {React.Children.map(children, (child, index) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child as React.ReactElement<TabsTabProps>, {
             index,
           });
         }
-        return await child;
+        return child;
       })}
     </ul>
   );

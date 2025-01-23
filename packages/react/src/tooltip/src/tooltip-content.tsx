@@ -60,11 +60,11 @@ const TooltipContent = React.forwardRef<TooltipContentElement, TooltipContentPro
     React.useEffect(() => {
       if (trigger && content) {
         const handleTriggerLeave = (event: PointerEvent): void => {
-          console.log('content ============ trigger:handleTriggerLeave');
+          // console.log('content ============ trigger:handleTriggerLeave');
           handleCreateGraceArea(event, content);
         };
         const handleContentLeave = (event: PointerEvent): void => {
-          console.log('content ============ content:handleTriggerLeave');
+          // console.log('content ============ content:handleContentLeave');
           handleCreateGraceArea(event, trigger);
         };
 

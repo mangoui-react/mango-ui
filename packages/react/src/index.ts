@@ -7,6 +7,7 @@ export * from './badge';
 export * from './breadcrumb';
 export * from './checkbox';
 export * from './circular-progress';
+export * from './compose-refs';
 export * from './config-provider';
 export * from './dialog';
 export * from './drawer';
