@@ -1,5 +1,16 @@
 # @melio-ui/avatar
 
+## 0.3.0
+
+### Minor Changes
+
+- React19 마이그레이션 이후 에러 수정
+
+### Patch Changes
+
+- Updated dependencies
+  - @melio-ui/slot@0.3.0
+
 ## 0.2.0
 
 ### Minor Changes

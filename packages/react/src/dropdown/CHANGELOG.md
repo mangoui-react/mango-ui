@@ -1,5 +1,20 @@
 # @melio-ui/dropdown
 
+## 0.3.0
+
+### Minor Changes
+
+- React19 마이그레이션 이후 에러 수정
+
+### Patch Changes
+
+- Updated dependencies
+  - @melio-ui/popper@0.3.0
+  - @melio-ui/slot@0.3.0
+  - @melio-ui/use-controlled@0.2.0
+  - @melio-ui/use-merged-ref@0.2.0
+  - @melio-ui/use-portal@0.2.0
+
 ## 0.2.0
 
 ### Minor Changes
