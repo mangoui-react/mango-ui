@@ -1,5 +1,5 @@
 {
-  "name": "@melio-ui/slot",
+  "name": "@melio-ui/compose-refs",
   "version": "0.2.0",
   "license": "MIT",
   "exports": {
@@ -16,9 +16,6 @@
     "access": "public",
     "directory": "build"
   },
-  "dependencies": {
-    "@melio-ui/compose-refs": "workspace:*"
-  },
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-dom": "*",
@@ -33,13 +30,13 @@
       "optional": true
     }
   },
-  "homepage": "https://melio-ui.netlify.app/",
+  "homepage": "https://github.com/elle510/melio-ui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/melio-ui/melio-ui.git"
+    "url": "git+https://github.com/elle510/melio-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/melio-ui/melio-ui/issues"
+    "url": "https://github.com/elle510/melio-ui/issues"
   },
   "stableVersion": "0.0.0"
 }

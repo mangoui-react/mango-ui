@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useMergedRef } from '@melio-ui/use-merged-ref';
+import { composeRefs } from '@melio-ui/compose-refs';
 
 type AnyProps = Record<string, any>;
 
@@ -44,18 +44,44 @@ interface SlotProps extends React.HTMLAttributes<HTMLElement> {
 const Slot = React.forwardRef<HTMLElement, SlotProps>((props, ref) => {
   const { children, ...rest } = props;
 
-  const mergedSlotRefs = useMergedRef(ref, (children as any).ref);
-
   if (React.isValidElement(children)) {
+    const childrenRef = getElementRef(children);
+    const mergedSlotRefs = composeRefs(ref, childrenRef);
+    // const mergedSlotRefs = useMergedRef(ref, (children as any).ref); react19 에서 element.ref 제거로 인해
+
     return React.cloneElement(children, {
       ...mergeProps(rest, children.props as AnyProps),
-      ref: ref ? mergedSlotRefs : (children as any).ref,
+      ref: ref ? mergedSlotRefs : childrenRef, // (children as any).ref, // react19 에서 element.ref 제거로 인해
     });
   }
 
   // return React.Children.count(children) > 1 ? React.Children.only(null) : null;
   return <>{children}</>;
 });
+
+// Before React 19 accessing `element.props.ref` will throw a warning and suggest using `element.ref`
+// After React 19 accessing `element.ref` does the opposite.
+// https://github.com/facebook/react/pull/28348
+//
+// Access the ref using the method that doesn't yield a warning.
+function getElementRef(element: React.ReactElement): any {
+  // React <=18 in DEV
+  let getter = Object.getOwnPropertyDescriptor(element.props, 'ref')?.get;
+  let mayWarn = getter && 'isReactWarning' in getter && getter.isReactWarning;
+  if (mayWarn) {
+    return (element as any).ref;
+  }
+
+  // React 19 in DEV
+  getter = Object.getOwnPropertyDescriptor(element, 'ref')?.get;
+  mayWarn = getter && 'isReactWarning' in getter && getter.isReactWarning;
+  if (mayWarn) {
+    return (element.props as { ref?: React.Ref<unknown> }).ref;
+  }
+
+  // Not DEV
+  return (element.props as { ref?: React.Ref<unknown> }).ref || (element as any).ref;
+}
 
 Slot.displayName = 'Slot';
 
