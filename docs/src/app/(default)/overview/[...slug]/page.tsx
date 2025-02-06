@@ -3,7 +3,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { MDXComponents } from '@/shared/mdx/mdx-components';
 
-// next15 업데이트 시 아래 처럼 해야 하는데 next-contentlayer 이 아직 next15 지원을 안함. 
+// next15 업데이트 시 아래 처럼 해야 하는데 next-contentlayer 이 아직 next15 지원을 안함.
 // next-contentlayer2 사용이 해결인데 이건 공식은 아님.
 // export default function DocPage(props: { params: Promise<{ slug: string }> }) {
 // const params = React.use(props.params);
