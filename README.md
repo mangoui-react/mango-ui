@@ -1,4 +1,4 @@
-# MelioUi
+# MangoUi
 
 A library of open-source UI components for developing high-quality, accessible React design systems and web apps.
 
