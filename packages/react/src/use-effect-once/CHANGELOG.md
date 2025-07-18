@@ -1,4 +1,10 @@
-# @melio-ui/use-effect-once
+# @mangoui/use-effect-once
+
+## 0.2.0
+
+### Minor Changes
+
+- React19 마이그레이션 이후 에러 수정
 
 ## 0.1.0
 

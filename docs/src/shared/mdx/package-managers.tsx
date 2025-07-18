@@ -3,7 +3,7 @@
 // import { Box, Icon, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
 import React from 'react';
 
-import { Tabs } from '@melio-ui/react';
+import { Tabs } from '@mangoui/react';
 
 import { BunIcon } from '@/shared/icons/bun-icon';
 import { NpmIcon } from '@/shared/icons/npm-icon';
@@ -94,7 +94,7 @@ export function PackageManagers(props: {
       </Tabs.Root>
       {showGlobalInstallWarning && (
         <blockquote className="my-4 border-l-4 border-slate-700 px-4 py-0">
-          If @melio-ui/react is already installed globally, you can skip this step.
+          If @mangoui/react is already installed globally, you can skip this step.
         </blockquote>
       )}
     </>

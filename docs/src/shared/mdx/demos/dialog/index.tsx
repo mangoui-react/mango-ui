@@ -7,7 +7,7 @@ import {
   DialogPortal,
   DialogRoot,
   DialogTrigger,
-} from '@melio-ui/dialog';
+} from '@mangoui/dialog';
 
 import './styles.css';
 

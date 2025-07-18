@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AlertContent, AlertRoot, AlertStatusIcon } from '@melio-ui/alert';
+import { AlertContent, AlertRoot, AlertStatusIcon } from '@mangoui/alert';
 
 import { cn } from '@/shared/utils/cn';
 

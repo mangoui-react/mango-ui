@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Popper } from '@melio-ui/popper';
-import { useMergedRef } from '@melio-ui/use-merged-ref';
+import { Popper } from '@mangoui/popper';
+import { useMergedRef } from '@mangoui/use-merged-ref';
 
 import setRef from '../../internal/set-ref';
 

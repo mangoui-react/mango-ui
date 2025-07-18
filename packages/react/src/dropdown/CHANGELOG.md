@@ -1,4 +1,19 @@
-# @melio-ui/dropdown
+# @mangoui/dropdown
+
+## 0.3.0
+
+### Minor Changes
+
+- React19 마이그레이션 이후 에러 수정
+
+### Patch Changes
+
+- Updated dependencies
+  - @mangoui/popper@0.3.0
+  - @mangoui/slot@0.3.0
+  - @mangoui/use-controlled@0.2.0
+  - @mangoui/use-merged-ref@0.2.0
+  - @mangoui/use-portal@0.2.0
 
 ## 0.2.0
 
@@ -9,8 +24,8 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/popper@0.2.0
-  - @melio-ui/slot@0.2.0
+  - @mangoui/popper@0.2.0
+  - @mangoui/slot@0.2.0
 
 ## 0.1.0
 
@@ -21,11 +36,11 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/popper@0.1.0
-  - @melio-ui/slot@0.1.0
-  - @melio-ui/use-controlled@0.1.0
-  - @melio-ui/use-merged-ref@0.1.0
-  - @melio-ui/use-portal@0.1.0
+  - @mangoui/popper@0.1.0
+  - @mangoui/slot@0.1.0
+  - @mangoui/use-controlled@0.1.0
+  - @mangoui/use-merged-ref@0.1.0
+  - @mangoui/use-portal@0.1.0
 
 ## 0.0.6
 
@@ -39,7 +54,7 @@
 
 - 에러로 인해 다시 배포
 - Updated dependencies
-  - @melio-ui/popper@0.0.4
+  - @mangoui/popper@0.0.4
 
 ## 0.0.4
 
@@ -47,7 +62,7 @@
 
 - popover/dropdown popper로 개선
 - Updated dependencies
-  - @melio-ui/popper@0.0.3
+  - @mangoui/popper@0.0.3
 
 ## 0.0.3
 
@@ -55,7 +70,7 @@
 
 - 리펙토링 작업
 - Updated dependencies
-  - @melio-ui/popover@0.0.3
+  - @mangoui/popover@0.0.3
 
 ## 0.0.2
 
@@ -63,7 +78,7 @@
 
 - nextjs에서 use client 사용없이 가능하도록 export 방식 추가
 - Updated dependencies
-  - @melio-ui/popover@0.0.2
+  - @mangoui/popover@0.0.2
 
 ## 0.0.1
 
@@ -71,4 +86,4 @@
 
 - refactoring
 - Updated dependencies
-  - @melio-ui/popover@0.0.1
+  - @mangoui/popover@0.0.1

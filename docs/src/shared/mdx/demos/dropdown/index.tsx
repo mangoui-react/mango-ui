@@ -6,7 +6,7 @@ import {
   DropdownPortal,
   DropdownRoot,
   DropdownTrigger,
-} from '@melio-ui/dropdown';
+} from '@mangoui/dropdown';
 
 import './styles.css';
 

@@ -6,7 +6,7 @@ import {
   SliderThumb as MSliderThumb,
   SliderThumbLabel as MSliderThumbLabel,
   SliderTrack as MSliderTrack,
-} from '@melio-ui/slider';
+} from '@mangoui/slider';
 
 import { cn } from '@/shared/utils/cn';
 

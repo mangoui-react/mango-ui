@@ -1,7 +1,7 @@
 'use client';
 
 // import { Box, Icon, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
-import { Tabs } from '@melio-ui/react';
+import { Tabs } from '@mangoui/react';
 
 import { cn } from '@/shared/utils/cn';
 

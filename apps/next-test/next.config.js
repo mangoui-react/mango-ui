@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['@melio-ui/react'],
+  transpilePackages: ['@mangoui/react'],
   // 아래 설정은 필요할 때 하나씩 설정하자.
   // output: 'standalone',
   // experimental: {

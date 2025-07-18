@@ -6,7 +6,7 @@ import {
   TooltipPortal,
   TooltipRoot,
   TooltipTrigger,
-} from '@melio-ui/tooltip';
+} from '@mangoui/tooltip';
 
 import './styles.css';
 

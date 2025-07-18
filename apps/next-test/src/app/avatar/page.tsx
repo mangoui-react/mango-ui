@@ -1,12 +1,11 @@
 'use client';
 
-// TODO: 'use client' 이거 없애고 @melio-ui/react 에서 해결하는 방법으로 수정해야 함
+// TODO: 'use client' 이거 없애고 @mangoui/react 에서 해결하는 방법으로 수정해야 함
 // 다른 컴포넌트도(Radix, mui 등...) 'use client' 사용해야 가능(테스트 해봄 - 혹시 몰르니 또 해보자)
 import React from 'react';
 
+import { Avatar } from '@mangoui/react';
 import clsx from 'clsx';
-
-import { Avatar } from '@melio-ui/react';
 
 import BellIcon from '@/icons/BellIcon';
 import UserIcon from '@/icons/UserIcon';

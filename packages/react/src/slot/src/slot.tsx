@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { composeRefs } from '@melio-ui/compose-refs';
+import { composeRefs } from '@mangoui/compose-refs';
 
 type AnyProps = Record<string, any>;
 

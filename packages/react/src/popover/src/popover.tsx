@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Popper } from '@melio-ui/popper';
-import { useControlled } from '@melio-ui/use-controlled';
+import { Popper } from '@mangoui/popper';
+import { useControlled } from '@mangoui/use-controlled';
 
 // 지금은 필요없음 - 나중에 필요하다면 부활시키자
 // export type CloseReasonType = 'blurTrigger' | 'escapeKeyDown' | 'closeClick';

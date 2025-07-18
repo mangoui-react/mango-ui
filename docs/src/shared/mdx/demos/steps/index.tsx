@@ -9,7 +9,7 @@ import {
   StepsSeparator,
   StepsStatus,
   StepsStep,
-} from '@melio-ui/steps';
+} from '@mangoui/steps';
 
 import './styles.css';
 

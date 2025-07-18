@@ -1,6 +1,6 @@
 {
-  "name": "@melio-ui/popper",
-  "version": "0.2.0",
+  "name": "@mangoui/popper",
+  "version": "0.3.0",
   "license": "MIT",
   "exports": {
     ".": "./src"
@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@floating-ui/react-dom": "^2.1.1",
-    "@melio-ui/slot": "workspace:*",
-    "@melio-ui/use-merged-ref": "workspace:*"
+    "@mangoui/slot": "workspace:*",
+    "@mangoui/use-merged-ref": "workspace:*"
   },
   "devDependencies": {
     "@types/resize-observer-browser": "^0.1.11"
@@ -38,13 +38,13 @@
       "optional": true
     }
   },
-  "homepage": "https://melio-ui.netlify.app/",
+  "homepage": "https://mangoui.netlify.app/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/melio-ui/melio-ui.git"
+    "url": "git+https://github.com/mangoui/mangoui.git"
   },
   "bugs": {
-    "url": "https://github.com/melio-ui/melio-ui/issues"
+    "url": "https://github.com/mangoui/mangoui/issues"
   },
   "stableVersion": "0.0.0"
 }

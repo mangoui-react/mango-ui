@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Popper } from '@melio-ui/popper';
+import { Popper } from '@mangoui/popper';
 
 type DropdownArrowElement = React.ElementRef<typeof Popper.Arrow>;
 export interface DropdownArrowProps extends React.ComponentPropsWithoutRef<typeof Popper.Arrow> {}

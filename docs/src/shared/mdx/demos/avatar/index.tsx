@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AvatarRoot } from '@melio-ui/avatar';
+import { AvatarRoot } from '@mangoui/avatar';
 
 import './styles.css';
 

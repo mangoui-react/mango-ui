@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Popper } from '@melio-ui/popper';
+import { Popper } from '@mangoui/popper';
 
 type TooltipArrowElement = React.ElementRef<typeof Popper.Arrow>;
 export interface TooltipArrowProps extends React.ComponentPropsWithoutRef<typeof Popper.Arrow> {}

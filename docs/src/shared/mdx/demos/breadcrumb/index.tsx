@@ -6,7 +6,7 @@ import {
   BreadcrumbList,
   BreadcrumbRoot,
   BreadcrumbSeparator,
-} from '@melio-ui/breadcrumb';
+} from '@mangoui/breadcrumb';
 
 import './styles.css';
 

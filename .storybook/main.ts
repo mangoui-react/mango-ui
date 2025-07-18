@@ -28,7 +28,7 @@ const config: StorybookConfig = {
       resolve: {
         alias: [
           {
-            find: '@melio-ui',
+            find: '@mangoui',
             replacement: path.resolve(__dirname, '../packages/react/src'),
           },
         ],

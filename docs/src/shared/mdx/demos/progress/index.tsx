@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProgressIndicator, ProgressRoot } from '@melio-ui/progress';
+import { ProgressIndicator, ProgressRoot } from '@mangoui/progress';
 
 import './styles.css';
 

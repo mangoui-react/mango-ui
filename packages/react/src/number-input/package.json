@@ -1,6 +1,6 @@
 {
-  "name": "@melio-ui/number-input",
-  "version": "0.2.0",
+  "name": "@mangoui/number-input",
+  "version": "0.3.0",
   "license": "MIT",
   "exports": {
     ".": "./src"
@@ -17,8 +17,8 @@
     "directory": "build"
   },
   "dependencies": {
-    "@melio-ui/slot": "workspace:*",
-    "@melio-ui/use-controlled": "workspace:*"
+    "@mangoui/slot": "workspace:*",
+    "@mangoui/use-controlled": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "*",
@@ -34,13 +34,13 @@
       "optional": true
     }
   },
-  "homepage": "https://github.com/elle510/melio-ui",
+  "homepage": "https://github.com/elle510/mangoui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elle510/melio-ui.git"
+    "url": "git+https://github.com/elle510/mangoui.git"
   },
   "bugs": {
-    "url": "https://github.com/elle510/melio-ui/issues"
+    "url": "https://github.com/elle510/mangoui/issues"
   },
   "stableVersion": "0.0.0"
 }

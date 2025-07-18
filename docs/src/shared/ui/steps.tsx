@@ -7,7 +7,7 @@ import {
   StepsSeparator as MStepsSeparator,
   StepsStatus as MStepsStatus,
   StepsStep as MStepsStep,
-} from '@melio-ui/steps';
+} from '@mangoui/steps';
 
 import { cn } from '@/shared/utils/cn';
 

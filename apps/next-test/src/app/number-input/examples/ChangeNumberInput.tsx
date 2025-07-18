@@ -2,7 +2,7 @@
 
 import React, { useCallback, useState } from 'react';
 
-import { NumberInput, NumberInputValue } from '@melio-ui/react';
+import { NumberInput, NumberInputValue } from '@mangoui/react';
 
 import ArrowDownIcon from '@/icons/ArrowDownIcon';
 import ArrowUpIcon from '@/icons/ArrowUpIcon';

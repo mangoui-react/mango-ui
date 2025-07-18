@@ -1,4 +1,16 @@
-# @melio-ui/popper
+# @mangoui/popper
+
+## 0.3.0
+
+### Minor Changes
+
+- React19 마이그레이션 이후 에러 수정
+
+### Patch Changes
+
+- Updated dependencies
+  - @mangoui/slot@0.3.0
+  - @mangoui/use-merged-ref@0.2.0
 
 ## 0.2.0
 
@@ -9,7 +21,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/slot@0.2.0
+  - @mangoui/slot@0.2.0
 
 ## 0.1.0
 
@@ -20,8 +32,8 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/slot@0.1.0
-  - @melio-ui/use-merged-ref@0.1.0
+  - @mangoui/slot@0.1.0
+  - @mangoui/use-merged-ref@0.1.0
 
 ## 0.0.4
 

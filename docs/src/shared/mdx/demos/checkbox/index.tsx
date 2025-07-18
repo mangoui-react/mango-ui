@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CheckboxIcon, CheckboxIndicator, CheckboxLabel, CheckboxRoot } from '@melio-ui/checkbox';
+import { CheckboxIcon, CheckboxIndicator, CheckboxLabel, CheckboxRoot } from '@mangoui/checkbox';
 
 import './styles.css';
 

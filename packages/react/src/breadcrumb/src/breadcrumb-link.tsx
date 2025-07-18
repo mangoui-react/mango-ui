@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Slot } from '@melio-ui/slot';
+import { Slot } from '@mangoui/slot';
 
 // TODO: dependency 안하는 방법으로 찾아보자. @types/node 설치해야 함
 // import { UrlObject } from 'url';

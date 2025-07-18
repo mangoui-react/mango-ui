@@ -5,7 +5,7 @@ import {
   TabsList as MTabsList,
   TabsRoot as MTabsRoot,
   TabsTab as MTabsTab,
-} from '@melio-ui/tabs';
+} from '@mangoui/tabs';
 
 import { cn } from '@/shared/utils/cn';
 

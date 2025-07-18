@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@melio-ui/react": "workspace:*",
+    "@mangoui/react": "workspace:*",
     "@types/node": "20.5.6",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",

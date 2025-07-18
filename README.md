@@ -1,4 +1,4 @@
-# MelioUi
+# MangoUi
 
 A library of open-source UI components for developing high-quality, accessible React design systems and web apps.
 
@@ -8,11 +8,11 @@ As a foundational UI component library, it emphasizes accessibility, customizati
 
 ## Documentation
 
-Visit [https://melio-ui.netlify.app](https://melio-ui.netlify.app/overview/introduction) to view the full documentation.
+Visit [https://mangoui.netlify.app](https://mangoui.netlify.app/overview/introduction) to view the full documentation.
 
 ## Storybook
 
-Visit [https://melio-ui-storybook.netlify.app](https://melio-ui-storybook.netlify.app) to view the storybook for all components.
+Visit [https://mangoui-storybook.netlify.app](https://mangoui-storybook.netlify.app) to view the storybook for all components.
 
 ## Installation
 
@@ -20,36 +20,36 @@ Visit [https://melio-ui-storybook.netlify.app](https://melio-ui-storybook.netlif
 
 ```shell
 # with npm
-$ npm i @melio-ui/react
+$ npm i @mangoui/react
 
 # with yarn
-$ yarn add @melio-ui/react
+$ yarn add @mangoui/react
 
 # with pnpm
-$ pnpm add @melio-ui/react
+$ pnpm add @mangoui/react
 
 # with bun
-$ bun add @melio-ui/react
+$ bun add @mangoui/react
 ```
 
 ### Individual Install
 
 ```shell
 # with npm
-$ npm i @melio-ui/<package-name>
-# ex) npm i @melio-ui/accordion
+$ npm i @mangoui/<package-name>
+# ex) npm i @mangoui/accordion
 
 # with yarn
-$ yarn add @melio-ui/<package-name>
-# ex) yarn add @melio-ui/accordion
+$ yarn add @mangoui/<package-name>
+# ex) yarn add @mangoui/accordion
 
 # with pnpm
-$ pnpm add @melio-ui/<package-name>
-# ex) pnpm add @melio-ui/accordion
+$ pnpm add @mangoui/<package-name>
+# ex) pnpm add @mangoui/accordion
 
 # with bun
-$ bun add @melio-ui/<package-name>
-# ex) bun add @melio-ui/accordion
+$ bun add @mangoui/<package-name>
+# ex) bun add @mangoui/accordion
 ```
 
 ### License

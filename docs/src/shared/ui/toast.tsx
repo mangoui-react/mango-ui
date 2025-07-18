@@ -5,7 +5,7 @@ import {
   ToastContent as MToastContent,
   ToastRoot as MToastRoot,
   ToastViewport as MToastViewport,
-} from '@melio-ui/toast';
+} from '@mangoui/toast';
 
 import { cn } from '@/shared/utils/cn';
 

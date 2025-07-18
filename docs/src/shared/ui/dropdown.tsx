@@ -7,7 +7,7 @@ import {
   DropdownPortal as MDropdownPortal,
   DropdownRoot as MDropdownRoot,
   DropdownTrigger as MDropdownTrigger,
-} from '@melio-ui/dropdown';
+} from '@mangoui/dropdown';
 
 import { cn } from '@/shared/utils/cn';
 

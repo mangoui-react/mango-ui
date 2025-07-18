@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Dialog, DialogProps } from '@melio-ui/dialog';
+import { Dialog, DialogProps } from '@mangoui/dialog';
 
 export interface DrawerProps extends DialogProps {
   /** drawer 열리는 위치

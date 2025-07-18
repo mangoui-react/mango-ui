@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TabsContent, TabsList, TabsRoot, TabsTab } from '@melio-ui/tabs';
+import { TabsContent, TabsList, TabsRoot, TabsTab } from '@mangoui/tabs';
 
 import './styles.css';
 

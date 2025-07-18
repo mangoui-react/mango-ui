@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { usePortal } from '@melio-ui/use-portal';
+import { usePortal } from '@mangoui/use-portal';
 
 export interface DialogPortalProps {
   children?: React.ReactNode;

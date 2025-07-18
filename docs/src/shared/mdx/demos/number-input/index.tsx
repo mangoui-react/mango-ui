@@ -6,7 +6,7 @@ import {
   NumberInputMinus,
   NumberInputPlus,
   NumberInputRoot,
-} from '@melio-ui/number-input';
+} from '@mangoui/number-input';
 
 import './styles.css';
 

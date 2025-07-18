@@ -14,7 +14,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="description" content="open source React Components" />
-        <title>MelioUI</title>
+        <title>MangoUI</title>
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
@@ -47,7 +47,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                         <div className="bg-primary h-6 w-2"></div>
                       </div>
                       <span className="text-2xl font-bold text-gray-900 dark:text-white">
-                        MelioUI
+                        MangoUI
                       </span>
                     </a>
 
@@ -104,7 +104,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                       </li> */}
                         <li>
                           <a
-                            href="https://github.com/melio-ui/melio-ui"
+                            href="https://github.com/mangoui/mangoui"
                             target="_blank"
                             rel="noreferrer"
                           >

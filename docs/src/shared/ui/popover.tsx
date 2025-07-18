@@ -7,7 +7,7 @@ import {
   PopoverPortal as MPopoverPortal,
   PopoverRoot as MPopoverRoot,
   PopoverTrigger as MPopoverTrigger,
-} from '@melio-ui/popover';
+} from '@mangoui/popover';
 
 import { cn } from '@/shared/utils/cn';
 

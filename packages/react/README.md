@@ -1,4 +1,4 @@
-# @melio-ui/react
+# @mangoui/react
 
 ## 배포(루트에서 작업)
 

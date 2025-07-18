@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Tabs } from '@melio-ui/tabs';
+import { Tabs } from '@mangoui/tabs';
 
 import { cn } from '@/shared/utils/cn';
 

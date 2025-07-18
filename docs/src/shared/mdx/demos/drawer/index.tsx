@@ -7,7 +7,7 @@ import {
   DrawerPortal,
   DrawerRoot,
   DrawerTrigger,
-} from '@melio-ui/drawer';
+} from '@mangoui/drawer';
 
 import './styles.css';
 

@@ -4,7 +4,7 @@ import {
   CircularProgressIndicator,
   CircularProgressLabel,
   CircularProgressRoot,
-} from '@melio-ui/circular-progress';
+} from '@mangoui/circular-progress';
 
 import './styles.css';
 
