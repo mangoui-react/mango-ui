@@ -1,6 +1,6 @@
 {
   "name": "@mangoui/progress",
-  "version": "0.3.0",
+  "version": "0.0.1",
   "license": "MIT",
   "exports": {
     ".": "./src"
