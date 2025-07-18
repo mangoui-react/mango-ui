@@ -4,8 +4,9 @@
 // 다른 컴포넌트도(Radix, mui 등...) 'use client' 사용해야 가능(테스트 해봄 - 혹시 몰르니 또 해보자)
 import React from 'react';
 
-import { Avatar } from '@mangoui/react';
 import clsx from 'clsx';
+
+import { Avatar } from '@mangoui/react';
 
 import BellIcon from '@/icons/BellIcon';
 import UserIcon from '@/icons/UserIcon';
