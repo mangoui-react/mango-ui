@@ -1,5 +1,6 @@
-import { Dialog } from '@mangoui/react';
 import Link from 'next/link';
+
+import { Dialog } from '@mangoui/react';
 
 interface SearchDialogProps {
   isOpen: boolean;

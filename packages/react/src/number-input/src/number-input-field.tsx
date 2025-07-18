@@ -46,7 +46,7 @@ const NumberInputField = React.forwardRef<HTMLInputElement, NumberInputFieldProp
       {...rest}
       ref={ref}
       name={name}
-      value={Number.isNaN(value) ? '' : value?.toString() ?? ''}
+      value={Number.isNaN(value) ? '' : (value?.toString() ?? '')}
       disabled={disabled}
       readOnly={readOnly}
       onChange={handleChange}
