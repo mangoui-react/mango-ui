@@ -1,4 +1,4 @@
-# @melio-ui/drawer
+# @mangoui/drawer
 
 ## 0.3.0
 
@@ -9,7 +9,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/dialog@0.3.0
+  - @mangoui/dialog@0.3.0
 
 ## 0.2.0
 
@@ -20,7 +20,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/dialog@0.2.0
+  - @mangoui/dialog@0.2.0
 
 ## 0.1.0
 
@@ -31,7 +31,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/dialog@0.1.0
+  - @mangoui/dialog@0.1.0
 
 ## 0.0.5
 
@@ -39,7 +39,7 @@
 
 - Modal을 Dialog 으로 컴포넌트명 변경
 - Updated dependencies
-  - @melio-ui/dialog@0.0.5
+  - @mangoui/dialog@0.0.5
 
 ## 0.0.4
 
@@ -47,7 +47,7 @@
 
 - backdrop 마우스 휠 동작 안되도록 수정
 - Updated dependencies
-  - @melio-ui/modal@0.0.4
+  - @mangoui/modal@0.0.4
 
 ## 0.0.3
 
@@ -55,7 +55,7 @@
 
 - 리펙토링 작업
 - Updated dependencies
-  - @melio-ui/modal@0.0.3
+  - @mangoui/modal@0.0.3
 
 ## 0.0.2
 
@@ -63,7 +63,7 @@
 
 - nextjs에서 use client 사용없이 가능하도록 export 방식 추가
 - Updated dependencies
-  - @melio-ui/modal@0.0.2
+  - @mangoui/modal@0.0.2
 
 ## 0.0.1
 
@@ -71,4 +71,4 @@
 
 - refactoring
 - Updated dependencies
-  - @melio-ui/modal@0.0.1
+  - @mangoui/modal@0.0.1

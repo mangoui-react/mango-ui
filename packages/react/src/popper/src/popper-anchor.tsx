@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Slot } from '@melio-ui/slot';
-import { useMergedRef } from '@melio-ui/use-merged-ref';
+import { Slot } from '@mangoui/slot';
+import { useMergedRef } from '@mangoui/use-merged-ref';
 
 import { PopperContext } from './popper';
 import { Measurable } from './types';

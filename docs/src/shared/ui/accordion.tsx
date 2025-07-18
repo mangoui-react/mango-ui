@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Accordion as MelioAccordion } from '@melio-ui/accordion';
+import { Accordion as MelioAccordion } from '@mangoui/accordion';
 
 import { cn } from '@/shared/utils/cn';
 

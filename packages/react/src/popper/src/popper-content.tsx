@@ -12,8 +12,7 @@ import {
   useFloating,
 } from '@floating-ui/react-dom';
 import type { Placement } from '@floating-ui/react-dom';
-
-import { useMergedRef } from '@melio-ui/use-merged-ref';
+import { useMergedRef } from '@mangoui/use-merged-ref';
 
 import { getSideAndAlignFromPlacement, transformOrigin } from './helpers';
 import { useCallbackRef } from './hooks/use-callback-ref';

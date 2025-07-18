@@ -1,4 +1,4 @@
-# @melio-ui/use-effect-once
+# @mangoui/use-effect-once
 
 ## 0.2.0
 

@@ -35,7 +35,7 @@ export default function Header() {
                 </a>
               </li> */}
               <li>
-                <a href="https://github.com/melio-ui/melio-ui" target="_blank" rel="noreferrer">
+                <a href="https://github.com/mangoui/mangoui" target="_blank" rel="noreferrer">
                   <button className="ml-3 flex items-center rounded-md p-2 hover:bg-slate-200 dark:hover:bg-slate-600">
                     <GithubIcon />
                   </button>

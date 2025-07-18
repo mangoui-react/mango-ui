@@ -1,4 +1,4 @@
-# @melio-ui/use-merged-ref
+# @mangoui/use-merged-ref
 
 ## 0.2.0
 

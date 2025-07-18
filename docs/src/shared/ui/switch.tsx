@@ -5,7 +5,7 @@ import {
   SwitchRoot as MSwitchRoot,
   SwitchThumb as MSwitchThumb,
   SwitchTrack as MSwitchTrack,
-} from '@melio-ui/switch';
+} from '@mangoui/switch';
 
 import { cn } from '@/shared/utils/cn';
 

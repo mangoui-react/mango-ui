@@ -1,5 +1,5 @@
 {
-  "name": "@melio-ui/react",
+  "name": "@mangoui/react",
   "version": "0.3.0",
   "private": false,
   "author": "AHN HYUNGRO <elle0510@gmail.com>",
@@ -20,7 +20,7 @@
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/elle510/melio-ui.git",
+    "url": "https://github.com/elle510/mangoui.git",
     "directory": "packages/react"
   },
   "license": "MIT",

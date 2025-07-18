@@ -104,7 +104,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                       </li> */}
                         <li>
                           <a
-                            href="https://github.com/melio-ui/melio-ui"
+                            href="https://github.com/mangoui/mangoui"
                             target="_blank"
                             rel="noreferrer"
                           >

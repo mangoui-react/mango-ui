@@ -7,7 +7,7 @@ import {
   DrawerPortal as MDrawerPortal,
   DrawerRoot as MDrawerRoot,
   DrawerTrigger as MDrawerTrigger,
-} from '@melio-ui/drawer';
+} from '@mangoui/drawer';
 
 import { cn } from '@/shared/utils/cn';
 

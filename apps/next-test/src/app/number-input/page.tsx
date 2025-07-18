@@ -3,7 +3,7 @@
 // TODO: NumberInput.Group 이런 방식이 서버사이드에서는 에러나는거 같음, 방법 찾아야 함.
 import React from 'react';
 
-import { NumberInput } from '@melio-ui/react';
+import { NumberInput } from '@mangoui/react';
 
 import ArrowDownIcon from '@/icons/ArrowDownIcon';
 import ArrowUpIcon from '@/icons/ArrowUpIcon';

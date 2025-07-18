@@ -12,7 +12,7 @@ import {
 import path from 'path';
 import * as tsup from 'tsup';
 
-// @melio-ui/* build function
+// @mangoui/* build function
 async function build(packagePath) {
   const indexFile = `${packagePath}/src/index.ts`;
   if (!existsSync(indexFile)) return;
@@ -30,7 +30,7 @@ async function build(packagePath) {
     sourcemap: true,
     outDir: distPath,
     silent: true,
-    external: [/@melio-ui\/.+/],
+    external: [/@mangoui\/.+/],
   });
   // console.log(`Built ${distPath}`);
 
@@ -88,17 +88,17 @@ async function createPackageFile(packagePath, addDependencies) {
   return newPackageData.name;
 }
 
-// @melio-ui/react build function
+// @mangoui/react build function
 async function buildReact(packagePath) {
   const buildPath = `${packagePath}/build`;
   const distPath = `${buildPath}/dist`;
 
   const indexContents = readFileSync(path.resolve(`${packagePath}/src`, './index.ts'), 'utf8');
-  const newIndexContents = indexContents.replace(/.\//gi, '@melio-ui/');
+  const newIndexContents = indexContents.replace(/.\//gi, '@mangoui/');
 
   const indexFile = path.resolve(`${packagePath}/src`, './index.ts');
 
-  // index 파일 쓰기 - @melio-ui
+  // index 파일 쓰기 - @mangoui
   writeFileSync(indexFile, newIndexContents, 'utf8');
 
   await tsup.build({
@@ -109,7 +109,7 @@ async function buildReact(packagePath) {
     sourcemap: true,
     outDir: distPath,
     silent: true,
-    external: [/@melio-ui\/.+/],
+    external: [/@mangoui\/.+/],
   });
   // console.log(`Built ${distPath}`);
 
@@ -124,7 +124,7 @@ async function buildReact(packagePath) {
 
     const packageData = readFileSync(packageFile, 'utf8');
     const { version } = JSON.parse(packageData);
-    dependencies[`@melio-ui/${path.basename(dirPath)}`] = `^${version}`;
+    dependencies[`@mangoui/${path.basename(dirPath)}`] = `^${version}`;
   });
   const packageName = await createPackageFile(packagePath, dependencies);
 
@@ -140,10 +140,10 @@ async function buildReact(packagePath) {
 
 const packagePath = process.cwd();
 
-// @melio-ui/* build
+// @mangoui/* build
 globSync(`${packagePath}/src/*`).forEach(build);
 
-// @melio-ui/react build
+// @mangoui/react build
 void buildReact(packagePath);
 
 // globSync(`${packagePath}/src/tooltip`).forEach(build);

@@ -7,7 +7,7 @@ import {
   BreadcrumbList as MBreadcrumbList,
   BreadcrumbRoot as MBreadcrumbRoot,
   BreadcrumbSeparator as MBreadcrumbSeparator,
-} from '@melio-ui/breadcrumb';
+} from '@mangoui/breadcrumb';
 
 import { cn } from '@/shared/utils/cn';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BadgeContent as MBadgeContent, BadgeRoot as MBadgeRoot } from '@melio-ui/badge';
+import { BadgeContent as MBadgeContent, BadgeRoot as MBadgeRoot } from '@mangoui/badge';
 
 import { cn } from '@/shared/utils/cn';
 

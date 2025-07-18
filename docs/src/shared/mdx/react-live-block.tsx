@@ -5,7 +5,7 @@ import React from 'react';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 
 import { UserIcon } from '@/shared/icons/user-icon';
-// import * as Melio from '@melio-ui/react';
+// import * as Melio from '@mangoui/react';
 import * as SharedUi from '@/shared/ui';
 
 import { CopyButton } from './copy-button';

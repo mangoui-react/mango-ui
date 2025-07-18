@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PopoverContent, PopoverPortal, PopoverRoot, PopoverTrigger } from '@melio-ui/popover';
+import { PopoverContent, PopoverPortal, PopoverRoot, PopoverTrigger } from '@mangoui/popover';
 
 import './styles.css';
 

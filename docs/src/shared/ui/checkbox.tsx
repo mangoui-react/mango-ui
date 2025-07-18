@@ -6,7 +6,7 @@ import {
   CheckboxIndicator as MCheckboxIndicator,
   CheckboxLabel as MCheckboxLabel,
   CheckboxRoot as MCheckboxRoot,
-} from '@melio-ui/checkbox';
+} from '@mangoui/checkbox';
 
 import { cn } from '@/shared/utils/cn';
 

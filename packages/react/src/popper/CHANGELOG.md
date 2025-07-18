@@ -1,4 +1,4 @@
-# @melio-ui/popper
+# @mangoui/popper
 
 ## 0.3.0
 
@@ -9,8 +9,8 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/slot@0.3.0
-  - @melio-ui/use-merged-ref@0.2.0
+  - @mangoui/slot@0.3.0
+  - @mangoui/use-merged-ref@0.2.0
 
 ## 0.2.0
 
@@ -21,7 +21,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/slot@0.2.0
+  - @mangoui/slot@0.2.0
 
 ## 0.1.0
 
@@ -32,8 +32,8 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/slot@0.1.0
-  - @melio-ui/use-merged-ref@0.1.0
+  - @mangoui/slot@0.1.0
+  - @mangoui/use-merged-ref@0.1.0
 
 ## 0.0.4
 

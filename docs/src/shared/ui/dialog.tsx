@@ -7,7 +7,7 @@ import {
   DialogPortal as MDialogPortal,
   DialogRoot as MDialogRoot,
   DialogTrigger as MDialogTrigger,
-} from '@melio-ui/dialog';
+} from '@mangoui/dialog';
 
 import { cn } from '@/shared/utils/cn';
 

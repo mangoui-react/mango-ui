@@ -1,6 +1,6 @@
 'use client';
 
-import { Dialog } from '@melio-ui/dialog';
+import { Dialog } from '@mangoui/dialog';
 
 import Root from './drawer';
 import Content from './drawer-content';
@@ -10,7 +10,7 @@ export {
   DialogPortal as DrawerPortal,
   DialogClose as DrawerClose,
   DialogBackdrop as DrawerBackdrop,
-} from '@melio-ui/dialog';
+} from '@mangoui/dialog';
 
 export { default as DrawerRoot } from './drawer';
 export { default as DrawerContent } from './drawer-content';
@@ -23,7 +23,7 @@ export type {
   DialogPortalProps as DrawerPortalProps,
   DialogCloseProps as DrawerCloseProps,
   DialogBackdropProps as DrawerBackdropProps,
-} from '@melio-ui/dialog';
+} from '@mangoui/dialog';
 
 export const Drawer = {
   Root,

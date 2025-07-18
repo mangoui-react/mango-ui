@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { ToastContent, ToastRoot, ToastViewport } from '@melio-ui/toast';
+import { ToastContent, ToastRoot, ToastViewport } from '@mangoui/toast';
 
 import './styles.css';
 

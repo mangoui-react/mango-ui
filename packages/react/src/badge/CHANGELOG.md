@@ -1,4 +1,4 @@
-# @melio-ui/badge
+# @mangoui/badge
 
 ## 0.3.0
 

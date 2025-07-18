@@ -12,7 +12,7 @@
   "importOrder": [
     "^react$|^react-dom",
     "<THIRD_PARTY_MODULES>",
-    "^@melio-ui/(.*)$",
+    "^@mangoui/(.*)$",
     "^@/(.*)$",
     "^../(types|utils|hooks|internal)/(.*)$|^../(utils|hooks|ConfigProvider)",
     "^../../(types|utils|hooks|internal)/(.*)$|^../../(utils|hooks|ConfigProvider)",

@@ -1,4 +1,4 @@
-import { Side } from '@melio-ui/popper';
+import { Side } from '@mangoui/popper';
 
 interface Point {
   x: number;

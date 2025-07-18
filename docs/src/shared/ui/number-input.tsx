@@ -6,7 +6,7 @@ import {
   NumberInputMinus as MNumberInputMinus,
   NumberInputPlus as MNumberInputPlus,
   NumberInputRoot as MNumberInputRoot,
-} from '@melio-ui/number-input';
+} from '@mangoui/number-input';
 
 import { cn } from '@/shared/utils/cn';
 

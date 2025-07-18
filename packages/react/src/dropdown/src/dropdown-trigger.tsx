@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Popper } from '@melio-ui/popper';
-import { Slot } from '@melio-ui/slot';
-import { useMergedRef } from '@melio-ui/use-merged-ref';
+import { Popper } from '@mangoui/popper';
+import { Slot } from '@mangoui/slot';
+import { useMergedRef } from '@mangoui/use-merged-ref';
 
 import { DropdownContext } from './dropdown';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Dialog, DialogContentProps } from '@melio-ui/dialog';
+import { Dialog, DialogContentProps } from '@mangoui/dialog';
 
 import { DrawerContext } from './drawer';
 

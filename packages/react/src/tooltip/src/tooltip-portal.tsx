@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContainerType, usePortal } from '@melio-ui/use-portal';
+import { ContainerType, usePortal } from '@mangoui/use-portal';
 
 export interface TooltipPortalProps {
   children?: React.ReactNode;

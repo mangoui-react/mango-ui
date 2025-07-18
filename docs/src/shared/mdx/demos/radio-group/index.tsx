@@ -6,7 +6,7 @@ import {
   RadioGroupItem,
   RadioGroupLabel,
   RadioGroupRoot,
-} from '@melio-ui/radio-group';
+} from '@mangoui/radio-group';
 
 import './styles.css';
 

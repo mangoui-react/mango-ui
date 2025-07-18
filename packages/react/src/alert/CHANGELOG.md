@@ -1,4 +1,4 @@
-# @melio-ui/alert
+# @mangoui/alert
 
 ## 0.3.0
 

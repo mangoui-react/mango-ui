@@ -1,4 +1,4 @@
-# @melio-ui/compose-refs
+# @mangoui/compose-refs
 
 ## 0.3.0
 

@@ -1,4 +1,4 @@
-# @melio-ui/steps
+# @mangoui/steps
 
 ## 0.3.0
 

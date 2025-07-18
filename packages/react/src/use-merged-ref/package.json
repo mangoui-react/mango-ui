@@ -1,5 +1,5 @@
 {
-  "name": "@melio-ui/use-merged-ref",
+  "name": "@mangoui/use-merged-ref",
   "version": "0.2.0",
   "license": "MIT",
   "exports": {
@@ -25,13 +25,13 @@
       "optional": true
     }
   },
-  "homepage": "https://github.com/elle510/melio-ui",
+  "homepage": "https://github.com/elle510/mangoui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elle510/melio-ui.git"
+    "url": "git+https://github.com/elle510/mangoui.git"
   },
   "bugs": {
-    "url": "https://github.com/elle510/melio-ui/issues"
+    "url": "https://github.com/elle510/mangoui/issues"
   },
   "stableVersion": "0.0.0"
 }

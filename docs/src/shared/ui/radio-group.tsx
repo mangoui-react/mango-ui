@@ -6,7 +6,7 @@ import {
   RadioGroupItem as MRadioGroupItem,
   RadioGroupLabel as MRadioGroupLabel,
   RadioGroupRoot as MRadioGroupRoot,
-} from '@melio-ui/radio-group';
+} from '@mangoui/radio-group';
 
 import { cn } from '@/shared/utils/cn';
 

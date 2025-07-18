@@ -1,4 +1,4 @@
-# @melio-ui/use-controlled
+# @mangoui/use-controlled
 
 ## 0.2.0
 

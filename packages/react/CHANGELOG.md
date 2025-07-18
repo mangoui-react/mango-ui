@@ -1,4 +1,4 @@
-# @melio-ui/react
+# @mangoui/react
 
 ## 0.3.0
 

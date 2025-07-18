@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Slot } from '@melio-ui/slot';
+import { Slot } from '@mangoui/slot';
 
 import Avatar from './avatar';
 import { AvatarGroupContext } from './avatar-group';

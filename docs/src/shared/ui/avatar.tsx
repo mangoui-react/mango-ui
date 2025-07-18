@@ -6,7 +6,7 @@ import {
   AvatarGroupContent as MAvatarGroupContent,
   AvatarImg as MAvatarImg,
   AvatarRoot as MAvatarRoot,
-} from '@melio-ui/avatar';
+} from '@mangoui/avatar';
 
 import { cn } from '@/shared/utils/cn';
 

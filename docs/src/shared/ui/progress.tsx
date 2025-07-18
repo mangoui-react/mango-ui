@@ -3,7 +3,7 @@ import React from 'react';
 import {
   ProgressIndicator as MProgressIndicator,
   ProgressRoot as MProgressRoot,
-} from '@melio-ui/progress';
+} from '@mangoui/progress';
 
 import { cn } from '@/shared/utils/cn';
 

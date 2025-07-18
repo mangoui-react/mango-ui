@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from '@melio-ui/slider';
+import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from '@mangoui/slider';
 
 import './styles.css';
 

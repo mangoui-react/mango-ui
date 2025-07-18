@@ -1,4 +1,4 @@
-# @melio-ui/config-provider
+# @mangoui/config-provider
 
 ## 0.2.0
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Popper } from '@melio-ui/popper';
+import { Popper } from '@mangoui/popper';
 
 type PopoverArrowElement = React.ElementRef<typeof Popper.Arrow>;
 export interface PopoverArrowProps extends React.ComponentPropsWithoutRef<typeof Popper.Arrow> {}

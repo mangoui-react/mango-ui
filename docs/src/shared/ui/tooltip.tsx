@@ -6,7 +6,7 @@ import {
   TooltipPortal as MTooltipPortal,
   TooltipRoot as MTooltipRoot,
   TooltipTrigger as MTooltipTrigger,
-} from '@melio-ui/tooltip';
+} from '@mangoui/tooltip';
 
 import { cn } from '@/shared/utils/cn';
 

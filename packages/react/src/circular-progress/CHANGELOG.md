@@ -1,4 +1,4 @@
-# @melio-ui/circular-progress
+# @mangoui/circular-progress
 
 ## 0.3.0
 

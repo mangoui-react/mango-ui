@@ -1,4 +1,4 @@
-# @melio-ui/breadcrumb
+# @mangoui/breadcrumb
 
 ## 0.3.0
 
@@ -9,7 +9,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/slot@0.3.0
+  - @mangoui/slot@0.3.0
 
 ## 0.2.0
 
@@ -20,7 +20,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/slot@0.2.0
+  - @mangoui/slot@0.2.0
 
 ## 0.1.0
 
@@ -31,7 +31,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @melio-ui/slot@0.1.0
+  - @mangoui/slot@0.1.0
 
 ## 0.0.3
 
@@ -39,7 +39,7 @@
 
 - 리펙토링 작업
 - Updated dependencies
-  - @melio-ui/slot@0.0.3
+  - @mangoui/slot@0.0.3
 
 ## 0.0.2
 

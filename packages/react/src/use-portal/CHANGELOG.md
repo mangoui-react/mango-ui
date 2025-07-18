@@ -1,4 +1,4 @@
-# @melio-ui/use-portal
+# @mangoui/use-portal
 
 ## 0.2.0
 

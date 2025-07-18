@@ -4,9 +4,9 @@ import { withContentlayer } from 'next-contentlayer';
 const nextConfig = {
   // output: 'standalone',
   reactStrictMode: true,
-  transpilePackages: ['@melio-ui/react'],
+  transpilePackages: ['@mangoui/react'],
   swcMinify: true,
-  // optimizePackageImports: ["@melio-ui/react"],
+  // optimizePackageImports: ["@mangoui/react"],
   // externalDir: true,
   // async redirects() {
   //   return [

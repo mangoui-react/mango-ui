@@ -6,7 +6,7 @@ import {
   AccordionHeader,
   AccordionItem,
   AccordionRoot,
-} from '@melio-ui/accordion';
+} from '@mangoui/accordion';
 
 import './styles.css';
 
