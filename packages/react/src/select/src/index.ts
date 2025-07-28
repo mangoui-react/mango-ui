@@ -1,48 +1,48 @@
 'use client';
 
-import Root from './select';
 // import Arrow from './select-arrow';
-import Content from './select-content';
-// import Group from './select-group';
-import Icon from './select-icon';
-import Item from './select-item';
-import ItemIndicator from './select-item-indicator';
-import ItemText from './select-item-text';
-// import Label from './select-label';
-import Portal from './select-portal';
-import Separator from './select-separator';
-import Trigger from './select-trigger';
-import Value from './select-value';
-import Viewport from './select-viewport';
+import Content from './content/select-content';
+import Group from './group/select-group';
+import Icon from './icon/select-icon';
+import ItemIndicator from './item-indicator/select-item-indicator';
+import ItemText from './item-text/select-item-text';
+import Item from './item/select-item';
+import Label from './label/select-label';
+import Portal from './portal/select-portal';
+import Root from './root/select-root';
+import Separator from './separator/select-separator';
+import Trigger from './trigger/select-trigger';
+import Value from './value/select-value';
+import Viewport from './viewport/select-viewport';
 
-export { default as SelectRoot } from './select';
-export { default as SelectTrigger } from './select-trigger';
-export { default as SelectContent } from './select-content';
-export { default as SelectItem } from './select-item';
-export { default as SelectItemText } from './select-item-text';
-export { default as SelectItemIndicator } from './select-item-indicator';
-// export { default as SelectLabel } from './select-label';
-// export { default as SelectGroup } from './select-group';
-export { default as SelectViewport } from './select-viewport';
-export { default as SelectSeparator } from './select-separator';
-export { default as SelectPortal } from './select-portal';
-export { default as SelectValue } from './select-value';
-export { default as SelectIcon } from './select-icon';
+export { default as SelectRoot } from './root/select-root';
+export { default as SelectTrigger } from './trigger/select-trigger';
+export { default as SelectContent } from './content/select-content';
+export { default as SelectItem } from './item/select-item';
+export { default as SelectItemText } from './item-text/select-item-text';
+export { default as SelectItemIndicator } from './item-indicator/select-item-indicator';
+export { default as SelectLabel } from './label/select-label';
+export { default as SelectGroup } from './group/select-group';
+export { default as SelectViewport } from './viewport/select-viewport';
+export { default as SelectSeparator } from './separator/select-separator';
+export { default as SelectPortal } from './portal/select-portal';
+export { default as SelectValue } from './value/select-value';
+export { default as SelectIcon } from './icon/select-icon';
 // export { default as SelectArrow } from './select-arrow';
 
-export * from './select';
-export * from './select-trigger';
-export * from './select-content';
-export * from './select-item';
-export * from './select-item-text';
-export * from './select-item-indicator';
-// export * from './select-label';
-// export * from './select-group';
-export * from './select-viewport';
-export * from './select-separator';
-export * from './select-portal';
-export * from './select-value';
-export * from './select-icon';
+export * from './root/select-root';
+export * from './trigger/select-trigger';
+export * from './content/select-content';
+export * from './item/select-item';
+export * from './item-text/select-item-text';
+export * from './item-indicator/select-item-indicator';
+export * from './label/select-label';
+export * from './group/select-group';
+export * from './viewport/select-viewport';
+export * from './separator/select-separator';
+export * from './portal/select-portal';
+export * from './value/select-value';
+export * from './icon/select-icon';
 // export * from './select-arrow';
 
 export const Select = {
@@ -52,8 +52,8 @@ export const Select = {
   Item,
   ItemText,
   ItemIndicator,
-  // Label,
-  // Group,
+  Label,
+  Group,
   Viewport,
   Separator,
   Portal,

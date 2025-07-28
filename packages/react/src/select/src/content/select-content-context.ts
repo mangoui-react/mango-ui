@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { SelectViewportElement } from '../viewport/select-viewport';
 import { SelectContentElement } from './select-content';
-import { SelectViewportElement } from './select-viewport';
 
 export interface SelectContentContextValue {
   closeOnItemClick?: boolean;

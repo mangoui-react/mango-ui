@@ -3,12 +3,13 @@ import React, { ReactNode } from 'react';
 import { Popper } from '@mangoui/popper';
 import { useControlled } from '@mangoui/use-controlled/src';
 
-import { SelectContext } from './select-context';
-import { SelectTriggerElement } from './select-trigger';
+import { SelectTriggerElement } from '../trigger/select-trigger';
+import { SelectContext } from './select-root-context';
 
 export type SelectValue = string | number | undefined; // unknown;
+// export type SelectValue = string | string[];
 
-export interface SelectProps {
+export interface SelectRootProps {
   value?: SelectValue;
   defaultValue?: SelectValue;
   onValueChange?: (value: SelectValue) => void;
@@ -23,7 +24,7 @@ export interface SelectProps {
   dir?: 'ltr' | 'rtl';
 }
 
-export default function Select(props: SelectProps): React.JSX.Element {
+export default function SelectRoot(props: SelectRootProps): React.JSX.Element {
   const {
     children,
     value,
@@ -104,4 +105,4 @@ export default function Select(props: SelectProps): React.JSX.Element {
   );
 }
 
-Select.displayName = 'Select';
+SelectRoot.displayName = 'Select.Root';

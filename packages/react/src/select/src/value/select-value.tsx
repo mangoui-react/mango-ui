@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Slot } from '@mangoui/slot';
 
-import { useSelectContext } from './select-context';
+import { useSelectContext } from '../root/select-root-context';
 
 export interface SelectValueProps extends React.ComponentPropsWithoutRef<'span'> {
   placeholder?: React.ReactNode;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { SelectValue } from './select';
-import { SelectTriggerElement } from './select-trigger';
+import { SelectTriggerElement } from '../trigger/select-trigger';
+import { SelectValue } from './select-root';
 
 type Direction = 'ltr' | 'rtl';
 

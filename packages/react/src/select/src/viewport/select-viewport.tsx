@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useComposedRefs } from '@mangoui/compose-refs';
 
-import { useSelectContentContext } from './select-content-context';
+import { useSelectContentContext } from '../content/select-content-context';
 import { useSelectViewportContext } from './select-viewport-context';
 
 const CONTENT_MARGIN = 10;

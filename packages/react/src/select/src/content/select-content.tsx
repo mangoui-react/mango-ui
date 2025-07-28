@@ -3,10 +3,11 @@ import React from 'react';
 import { useComposedRefs } from '@mangoui/compose-refs';
 import { Popper } from '@mangoui/popper';
 
+import { getTargetEl } from '../utils/get-target-el';
+
+import { useSelectContext } from '../root/select-root-context';
+import { SelectViewportElement } from '../viewport/select-viewport';
 import { SelectContentContext } from './select-content-context';
-import { useSelectContext } from './select-context';
-import { SelectViewportElement } from './select-viewport';
-import { getTargetEl } from './utils/get-target-el';
 
 export interface SelectContentProps
   extends Omit<React.ComponentPropsWithoutRef<typeof Popper.Content>, 'onPlaced'> {

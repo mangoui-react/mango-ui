@@ -4,7 +4,7 @@ import { useComposedRefs } from '@mangoui/compose-refs/src/composeRefs';
 import { Popper } from '@mangoui/popper';
 import { Slot } from '@mangoui/slot';
 
-import { useSelectContext } from './select-context';
+import { useSelectContext } from '../root/select-root-context';
 
 export type SelectTriggerElement = HTMLDivElement;
 
