@@ -42,3 +42,36 @@ export const content = style({
     outline: 0,
   },
 });
+
+export const item = style({
+  display: 'flex',
+  cursor: 'default',
+  padding: '8px 16px',
+  borderBottom: 'none',
+  lineHeight: '1.063rem', // rem(17px); 빌드시 에러남 (원래 안났는데 그냥 갑자기 남)
+
+  fontSize: '13px',
+  color: 'var(--violet-11)',
+  borderRadius: '3px',
+  alignItems: 'center',
+  height: '25px',
+  position: 'relative',
+  userSelect: 'none',
+
+  ':hover': {
+    background: 'var(--selected-hover)',
+  },
+
+  selectors: {
+    '&[data-disabled]': {
+      // cursor: 'default',
+      opacity: 0.45,
+      pointerEvents: 'none',
+    },
+    '&[data-highlighted]': {
+      outline: 0,
+      backgroundColor: 'var(--selected-hover)',
+      color: 'var(--color-white)',
+    },
+  },
+});

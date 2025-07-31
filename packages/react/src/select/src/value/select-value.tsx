@@ -1,24 +1,34 @@
 import React from 'react';
 
+import { useComposedRefs } from '@mangoui/compose-refs';
 import { Slot } from '@mangoui/slot';
 
-import { useSelectContext } from '../root/select-root-context';
+import { useSelectRootContext } from '../root/select-root-context';
 
 export interface SelectValueProps extends React.ComponentPropsWithoutRef<'span'> {
   placeholder?: React.ReactNode;
   asChild?: boolean;
 }
 
-const SelectValue = React.forwardRef<HTMLSpanElement, SelectValueProps>((props, ref) => {
-  const { value } = useSelectContext();
+export type SelectValueElement = HTMLSpanElement;
 
-  const { placeholder = '', children, asChild = false, ...valueProps } = props;
+const SelectValue = React.forwardRef<SelectValueElement, SelectValueProps>((props, ref) => {
+  const context = useSelectRootContext();
+
+  const {
+    placeholder = '',
+    children = context.selectedItemText,
+    asChild = false,
+    ...valueProps
+  } = props;
+
+  const composedRefs = useComposedRefs(ref, context.onValueNodeChange);
 
   const Component = asChild ? Slot : 'span';
 
   return (
-    <Component {...valueProps} ref={ref} style={{ pointerEvents: 'none' }}>
-      {value === '' || value === undefined ? <>{placeholder}</> : children}
+    <Component {...valueProps} ref={composedRefs} style={{ pointerEvents: 'none' }}>
+      {context.value === '' || context.value === undefined ? <>{placeholder}</> : children}
     </Component>
   );
 });

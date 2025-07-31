@@ -10,7 +10,7 @@ export interface SelectContentContextValue {
   onViewportChange?: (node: SelectViewportElement | null) => void;
   // itemRefCallback?: (node: SelectItemElement | null, value: string, disabled: boolean) => void;
   // selectedItem?: SelectItemElement | null;
-  // onItemLeave?: () => void;
+  onItemLeave?: () => void;
   // itemTextRefCallback?: (
   //   node: SelectItemTextElement | null,
   //   value: string,

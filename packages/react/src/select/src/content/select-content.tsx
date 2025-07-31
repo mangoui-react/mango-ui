@@ -5,7 +5,7 @@ import { Popper } from '@mangoui/popper';
 
 import { getTargetEl } from '../utils/get-target-el';
 
-import { useSelectContext } from '../root/select-root-context';
+import { useSelectRootContext } from '../root/select-root-context';
 import { SelectViewportElement } from '../viewport/select-viewport';
 import { SelectContentContext } from './select-content-context';
 
@@ -46,7 +46,8 @@ const SelectContent = React.forwardRef<SelectContentElement, SelectContentProps>
     ...contentProps
   } = props;
 
-  const { open, triggerPointerDownPosRef, contentId, onClose, dir, trigger } = useSelectContext();
+  const { open, triggerPointerDownPosRef, contentId, onOpenChange, dir, trigger } =
+    useSelectRootContext();
 
   const [content, setContent] = React.useState<HTMLDivElement | null>(null);
   const [viewport, setViewport] = React.useState<SelectViewportElement | null>(null);
@@ -77,7 +78,7 @@ const SelectContent = React.forwardRef<SelectContentElement, SelectContentProps>
     // targetIsTarget 이 true 인 경우는 DropdownTrigger 에서 처리 - 여기서는 작동안하도록 처리
     const isValidBlur = !targetIsContent && !targetIsTarget;
     if (open && closeOnBlur && isValidBlur) {
-      onClose();
+      onOpenChange(false);
     }
 
     onBlur?.(event);
@@ -86,12 +87,13 @@ const SelectContent = React.forwardRef<SelectContentElement, SelectContentProps>
   // Esc 키 down 시 blur(blur 시 close)
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
     if (closeOnEsc && event.key === 'Escape') {
-      onClose();
+      onOpenChange(false);
     }
 
     onKeyDown?.(event);
   };
 
+  const handleItemLeave = React.useCallback(() => content?.focus(), [content]);
   // const handleRef = React.useCallback(
   //   (node: any) => {
   //     setRef(composedRefs, node);
@@ -123,7 +125,7 @@ const SelectContent = React.forwardRef<SelectContentElement, SelectContentProps>
         } else {
           // otherwise, if the event was outside the content, close.
           if (!content?.contains(event.target as HTMLElement)) {
-            onClose();
+            onOpenChange(false);
           }
         }
         document.removeEventListener('pointermove', handlePointerMove);
@@ -140,7 +142,7 @@ const SelectContent = React.forwardRef<SelectContentElement, SelectContentProps>
         document.removeEventListener('pointerup', handlePointerUp, { capture: true });
       };
     }
-  }, [content, onClose, triggerPointerDownPosRef]);
+  }, [content, onOpenChange, triggerPointerDownPosRef]);
 
   // React.useEffect(() => {
   //   const close = (): void => {
@@ -160,8 +162,9 @@ const SelectContent = React.forwardRef<SelectContentElement, SelectContentProps>
       viewport,
       closeOnItemClick,
       onViewportChange: setViewport,
+      onItemLeave: handleItemLeave,
     }),
-    [closeOnItemClick, content, viewport],
+    [closeOnItemClick, content, handleItemLeave, viewport],
   );
 
   if (initialize.current && !open && !forceMount) {
@@ -183,8 +186,7 @@ const SelectContent = React.forwardRef<SelectContentElement, SelectContentProps>
         ref={composedRefs}
         tabIndex={-1}
         style={{
-          // display: open ? undefined : 'none',
-          // boxSizing: 'border-box',
+          display: open ? undefined : 'none',
           ...style,
           ...{
             '--melio-popover-content-transform-origin': 'var(--melio-popper-transform-origin)',

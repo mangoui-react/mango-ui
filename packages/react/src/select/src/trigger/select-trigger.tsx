@@ -4,7 +4,7 @@ import { useComposedRefs } from '@mangoui/compose-refs/src/composeRefs';
 import { Popper } from '@mangoui/popper';
 import { Slot } from '@mangoui/slot';
 
-import { useSelectContext } from '../root/select-root-context';
+import { useSelectRootContext } from '../root/select-root-context';
 
 export type SelectTriggerElement = HTMLDivElement;
 
@@ -23,9 +23,9 @@ const SelectTrigger = React.forwardRef<SelectTriggerElement, SelectTriggerProps>
     contentId,
     dir,
     value,
-    onOpen,
+    onOpenChange,
     onTriggerChange,
-  } = useSelectContext();
+  } = useSelectRootContext();
 
   const {
     disabled = disabledCtx,
@@ -43,7 +43,7 @@ const SelectTrigger = React.forwardRef<SelectTriggerElement, SelectTriggerProps>
 
   const handleOpen = (pointerEvent?: React.MouseEvent | React.PointerEvent): void => {
     if (!disabled) {
-      onOpen();
+      onOpenChange(true);
     }
 
     if (pointerEvent) {

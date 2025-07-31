@@ -19,9 +19,13 @@ export function Basic(): React.JSX.Element {
           <Select.Content className={styles.content}>
             {/* <Select.ScrollUpButton /> */}
             <Select.Viewport>
-              <Select.Item value="1">
+              <Select.Item value="1" className={styles.item}>
                 <Select.ItemIndicator />
-                <Select.ItemText>1</Select.ItemText>
+                <Select.ItemText>Option 1</Select.ItemText>
+              </Select.Item>
+              <Select.Item value="2" className={styles.item}>
+                <Select.ItemIndicator />
+                <Select.ItemText>Option 2</Select.ItemText>
               </Select.Item>
 
               {/* <Select.Group>
