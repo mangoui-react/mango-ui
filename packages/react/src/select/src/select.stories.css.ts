@@ -75,3 +75,16 @@ export const item = style({
     },
   },
 });
+
+export const separator = style({
+  height: '0.0625rem',
+  backgroundColor: 'var(--border)',
+  margin: '0.3125rem',
+});
+
+export const label = style({
+  padding: '0 0.5625rem',
+  fontSize: '0.75rem',
+  lineHeight: '1.5625rem',
+  color: 'var(--soft-text)',
+});

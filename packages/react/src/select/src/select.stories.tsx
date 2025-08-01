@@ -28,15 +28,19 @@ export function Basic(): React.JSX.Element {
                 <Select.ItemText>Option 2</Select.ItemText>
               </Select.Item>
 
-              {/* <Select.Group>
-                <Select.Label />
-                <Select.Item>
-                  <Select.ItemText />
-                  <Select.ItemIndicator />
-                </Select.Item>
-              </Select.Group> */}
+              <Select.Separator className={styles.separator} />
 
-              <Select.Separator />
+              <Select.Group>
+                <Select.Label className={styles.label}>Title</Select.Label>
+                <Select.Item value="3" className={styles.item}>
+                  <Select.ItemIndicator />
+                  <Select.ItemText>Option 3</Select.ItemText>
+                </Select.Item>
+                <Select.Item value="4" className={styles.item}>
+                  <Select.ItemIndicator />
+                  <Select.ItemText>Option 4</Select.ItemText>
+                </Select.Item>
+              </Select.Group>
             </Select.Viewport>
             {/* <Select.ScrollDownButton />
             <Select.Arrow /> */}
