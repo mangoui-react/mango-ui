@@ -13,22 +13,22 @@ export interface SelectValueProps extends React.ComponentPropsWithoutRef<'span'>
 export type SelectValueElement = HTMLSpanElement;
 
 const SelectValue = React.forwardRef<SelectValueElement, SelectValueProps>((props, ref) => {
-  const context = useSelectRootContext();
+  const rootContext = useSelectRootContext();
 
   const {
     placeholder = '',
-    children = context.selectedItemText,
+    children = rootContext.selectedItemText,
     asChild = false,
     ...valueProps
   } = props;
 
-  const composedRefs = useComposedRefs(ref, context.onValueNodeChange);
+  const composedRefs = useComposedRefs(ref, rootContext.onValueNodeChange);
 
   const Component = asChild ? Slot : 'span';
 
   return (
     <Component {...valueProps} ref={composedRefs} style={{ pointerEvents: 'none' }}>
-      {context.value === '' || context.value === undefined ? <>{placeholder}</> : children}
+      {rootContext.value === '' || rootContext.value === undefined ? <>{placeholder}</> : children}
     </Component>
   );
 });

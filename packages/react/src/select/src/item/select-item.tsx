@@ -33,7 +33,7 @@ const SelectItem = React.forwardRef<SelectItemElement, SelectItemProps>((props, 
     ...itemProps
   } = props;
 
-  const context = useSelectRootContext();
+  const rootContext = useSelectRootContext();
   const contentContext = useSelectContentContext();
 
   const [isFocused, setIsFocused] = React.useState(false);
@@ -41,20 +41,20 @@ const SelectItem = React.forwardRef<SelectItemElement, SelectItemProps>((props, 
 
   const Component = asChild ? Slot : 'div';
 
-  const isSelected = context.value === value;
+  const isSelected = rootContext.value === value;
 
   const textId = React.useId();
   const pointerTypeRef = React.useRef<React.PointerEvent['pointerType']>('touch');
 
   const handleSelect = (): void => {
     if (!disabled) {
-      context.onValueChange(value);
+      rootContext.onValueChange(value);
 
       // multiple 모드 추가 개발시 여기사 isSelected true 면 추가 false 면 제거 구현
       // context.onSelectedItemText((prevItemText) => [...prevItemText, children])
-      context.onSelectedItemText(textValue);
+      rootContext.onSelectedItemText(textValue);
 
-      context.onOpenChange(false);
+      rootContext.onOpenChange(false);
     }
   };
 

@@ -14,21 +14,10 @@ export interface SelectTriggerProps extends React.ComponentPropsWithoutRef<'div'
 }
 
 const SelectTrigger = React.forwardRef<SelectTriggerElement, SelectTriggerProps>((props, ref) => {
-  const {
-    open,
-    readOnly,
-    disabled: disabledCtx,
-    required,
-    triggerPointerDownPosRef,
-    contentId,
-    dir,
-    value,
-    onOpenChange,
-    onTriggerChange,
-  } = useSelectRootContext();
+  const rootContext = useSelectRootContext();
 
   const {
-    disabled = disabledCtx,
+    disabled = rootContext.disabled,
     children,
     asChild = false,
     onClick,
@@ -38,16 +27,16 @@ const SelectTrigger = React.forwardRef<SelectTriggerElement, SelectTriggerProps>
 
   const Component = asChild ? Slot : 'div';
 
-  const composedRefs = useComposedRefs(ref, onTriggerChange);
+  const composedRefs = useComposedRefs(ref, rootContext.onTriggerChange);
   const pointerTypeRef = React.useRef<React.PointerEvent['pointerType']>('touch');
 
   const handleOpen = (pointerEvent?: React.MouseEvent | React.PointerEvent): void => {
     if (!disabled) {
-      onOpenChange(true);
+      rootContext.onOpenChange(true);
     }
 
     if (pointerEvent) {
-      triggerPointerDownPosRef.current = {
+      rootContext.triggerPointerDownPosRef.current = {
         x: Math.round(pointerEvent.pageX),
         y: Math.round(pointerEvent.pageY),
       };
@@ -59,15 +48,17 @@ const SelectTrigger = React.forwardRef<SelectTriggerElement, SelectTriggerProps>
       <Component
         ref={composedRefs}
         role="combobox"
-        aria-controls={contentId}
-        aria-expanded={open}
-        aria-required={required}
+        aria-controls={rootContext.contentId}
+        aria-expanded={rootContext.open}
+        aria-required={rootContext.required}
         aria-autocomplete="none"
-        aria-readonly={readOnly || undefined}
-        dir={dir}
-        data-state={open ? 'open' : 'closed'}
+        aria-readonly={rootContext.readOnly || undefined}
+        dir={rootContext.dir}
+        data-state={rootContext.open ? 'open' : 'closed'}
         data-disabled={disabled ? '' : undefined}
-        data-placeholder={value === '' || value === undefined ? '' : undefined}
+        data-placeholder={
+          rootContext.value === '' || rootContext.value === undefined ? '' : undefined
+        }
         {...triggerProps}
         tabIndex={disabled ? -1 : 0}
         onClick={(event) => {
