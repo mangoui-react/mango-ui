@@ -3,6 +3,8 @@ import React, { ReactNode } from 'react';
 import { Popper } from '@mangoui/popper';
 import { useControlled } from '@mangoui/use-controlled/src';
 
+import { SelectItemTextProps } from '../item-text/select-item-text';
+import { SelectItemProps } from '../item/select-item';
 import { SelectTriggerElement } from '../trigger/select-trigger';
 import { SelectValueElement } from '../value/select-value';
 import { SelectRootContext } from './select-root-context';
@@ -45,7 +47,43 @@ export default function SelectRoot(props: SelectRootProps): React.JSX.Element {
   const [valueNode, setValueNode] = React.useState<SelectValueElement | null>(null);
   const [valueNodeHasChildren, setValueNodeHasChildren] = React.useState(false);
 
-  const [selectedItemText, setSelectedItemText] = React.useState<React.ReactNode>(null);
+  const [selectedItemText, setSelectedItemText] = React.useState<React.ReactNode>(
+    (): React.ReactNode => {
+      const itemMap = new Map<SelectValue, React.ReactNode>();
+
+      const traverse = (node: React.ReactNode): void => {
+        React.Children.forEach(node, (child) => {
+          if (!React.isValidElement(child)) {
+            return;
+          }
+
+          if ((child.type as any).displayName === 'Select.Item') {
+            const { value, children: itemChildren } = child.props as SelectItemProps;
+
+            let textContent: React.ReactNode = null;
+            React.Children.forEach(itemChildren, (itemChild) => {
+              if (
+                React.isValidElement(itemChild) &&
+                (itemChild.type as any).displayName === 'Select.Text'
+              ) {
+                textContent = (itemChild.props as SelectItemTextProps).children;
+              }
+            });
+
+            if (value) {
+              itemMap.set(value, textContent);
+            }
+          } else if ((child.props as any).children) {
+            traverse((child.props as any).children);
+          }
+        });
+      };
+
+      traverse(children);
+      return itemMap.get(valueProp || defaultValue);
+    },
+  );
+  console.log('selectedItemText', selectedItemText);
 
   const [open, setOpen] = useControlled<boolean | undefined>(openProp, defaultOpen);
   const [value, setValue] = useControlled<SelectValue>(valueProp, defaultValue);
