@@ -23,6 +23,7 @@ export const trigger = style({
   cursor: 'default',
   userSelect: 'none',
   minWidth: '9rem',
+  width: '12.5rem',
 
   selectors: {
     '&:hover': { backgroundColor: 'var(--selected-hover)' },

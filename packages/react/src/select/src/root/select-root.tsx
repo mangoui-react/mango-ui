@@ -9,7 +9,7 @@ import { SelectTriggerElement } from '../trigger/select-trigger';
 import { SelectValueElement } from '../value/select-value';
 import { SelectRootContext } from './select-root-context';
 
-export type SelectValue = string | number | undefined; // unknown;
+export type SelectValue = string | number | null; // unknown;
 // export type SelectValue = string | string[];
 
 export interface SelectRootProps {
@@ -47,6 +47,9 @@ export default function SelectRoot(props: SelectRootProps): React.JSX.Element {
   const [valueNode, setValueNode] = React.useState<SelectValueElement | null>(null);
   const [valueNodeHasChildren, setValueNodeHasChildren] = React.useState(false);
 
+  const [open, setOpen] = useControlled<boolean | undefined>(openProp, defaultOpen);
+  const [value, setValue] = useControlled<SelectValue | undefined>(valueProp, defaultValue);
+
   const [selectedItemText, setSelectedItemText] = React.useState<React.ReactNode>(
     (): React.ReactNode => {
       const itemMap = new Map<SelectValue, React.ReactNode>();
@@ -58,7 +61,7 @@ export default function SelectRoot(props: SelectRootProps): React.JSX.Element {
           }
 
           if ((child.type as any).displayName === 'Select.Item') {
-            const { value, children: itemChildren } = child.props as SelectItemProps;
+            const { value: itemValue, children: itemChildren } = child.props as SelectItemProps;
 
             let textContent: React.ReactNode = null;
             React.Children.forEach(itemChildren, (itemChild) => {
@@ -70,8 +73,8 @@ export default function SelectRoot(props: SelectRootProps): React.JSX.Element {
               }
             });
 
-            if (value) {
-              itemMap.set(value, textContent);
+            if (itemValue !== undefined) {
+              itemMap.set(itemValue, textContent);
             }
           } else if ((child.props as any).children) {
             traverse((child.props as any).children);
@@ -80,13 +83,10 @@ export default function SelectRoot(props: SelectRootProps): React.JSX.Element {
       };
 
       traverse(children);
-      return itemMap.get(valueProp || defaultValue);
+      return itemMap.get(value !== undefined ? value : null);
     },
   );
-  console.log('selectedItemText', selectedItemText);
-
-  const [open, setOpen] = useControlled<boolean | undefined>(openProp, defaultOpen);
-  const [value, setValue] = useControlled<SelectValue>(valueProp, defaultValue);
+  // console.log('selectedItemText', selectedItemText);
 
   // contentId 설정
   const contentId = React.useId();

@@ -4,13 +4,14 @@ import { Slot } from '@mangoui/slot/src';
 
 import { useSelectContentContext } from '../content/select-content-context';
 import { SelectItemTextElement } from '../item-text/select-item-text';
+import { SelectValue } from '../root/select-root';
 import { useSelectRootContext } from '../root/select-root-context';
 import { SelectItemContext } from './select-item-context';
 
 export type SelectItemElement = HTMLDivElement;
 
 export interface SelectItemProps extends React.ComponentPropsWithoutRef<'div'> {
-  value: string;
+  value: SelectValue;
   disabled?: boolean;
   textValue?: string;
   asChild?: boolean;
@@ -73,7 +74,7 @@ const SelectItem = React.forwardRef<SelectItemElement, SelectItemProps>((props, 
     [value, disabled, textId, isSelected, onItemTextChange],
   );
 
-  if (value === '') {
+  if (value === '' || value === undefined) {
     throw new Error(
       'A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.',
     );

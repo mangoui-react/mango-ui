@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { SelectItemTextElement } from '../item-text/select-item-text';
+import { SelectValue } from '../root/select-root';
 
 export interface SelectItemContextValue {
-  value: string;
+  value: SelectValue;
   disabled: boolean;
   textId: string;
   isSelected: boolean;

@@ -16,8 +16,8 @@ export interface SelectRootContextValue {
   disabled?: boolean;
   readOnly?: boolean;
   required?: boolean;
-  value: SelectValue;
-  defaultValue: SelectValue;
+  value?: SelectValue;
+  defaultValue?: SelectValue;
   onValueChange: (value: SelectValue) => void;
   selectedItemText: React.ReactNode | null; // string 타입으로 변경할지 좀 더 생각해 보자
   onSelectedItemText: (itemText: React.ReactNode) => void;
