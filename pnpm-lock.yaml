@@ -614,6 +614,34 @@ importers:
         version: 19.0.0(react@19.0.0)
     publishDirectory: build
 
+  packages/react/src/select:
+    dependencies:
+      '@mangoui/compose-refs':
+        specifier: workspace:*
+        version: link:../compose-refs/build
+      '@mangoui/popper':
+        specifier: workspace:*
+        version: link:../popper/build
+      '@mangoui/slot':
+        specifier: workspace:*
+        version: link:../slot/build
+      '@mangoui/use-portal':
+        specifier: workspace:*
+        version: link:../use-portal/build
+      '@types/react':
+        specifier: '*'
+        version: 19.0.7
+      '@types/react-dom':
+        specifier: '*'
+        version: 19.0.3(@types/react@19.0.7)
+      react:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 19.0.0
+      react-dom:
+        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0
+        version: 19.0.0(react@19.0.0)
+    publishDirectory: build
+
   packages/react/src/slider:
     dependencies:
       '@mangoui/use-controlled':
