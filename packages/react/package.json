@@ -20,7 +20,7 @@
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/elle510/mangoui.git",
+    "url": "https://github.com/mangoui-react/mango-ui.git",
     "directory": "packages/react"
   },
   "license": "MIT",

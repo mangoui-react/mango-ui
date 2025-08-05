@@ -42,7 +42,7 @@ const aspekta = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Melio UI',
+  title: 'Mango UI',
   description: 'A library of open-source UI components for React.',
 };
 

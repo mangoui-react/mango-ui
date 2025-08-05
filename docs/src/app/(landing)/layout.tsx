@@ -104,7 +104,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                       </li> */}
                         <li>
                           <a
-                            href="https://github.com/mangoui/mangoui"
+                            href="https://github.com/mangoui-react/mango-ui"
                             target="_blank"
                             rel="noreferrer"
                           >
