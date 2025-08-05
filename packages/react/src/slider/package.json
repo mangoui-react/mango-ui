@@ -34,13 +34,13 @@
       "optional": true
     }
   },
-  "homepage": "https://github.com/elle510/mangoui",
+  "homepage": "https://github.com/mangoui-react/mango-ui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elle510/mangoui.git"
+    "url": "git+https://github.com/mangoui-react/mango-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/elle510/mangoui/issues"
+    "url": "https://github.com/mangoui-react/mango-ui/issues"
   },
   "stableVersion": "0.0.0"
 }
