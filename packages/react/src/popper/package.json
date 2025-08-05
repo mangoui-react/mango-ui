@@ -41,10 +41,10 @@
   "homepage": "https://mangoui.netlify.app/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mangoui/mangoui.git"
+    "url": "git+https://github.com/mangoui-react/mango-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/mangoui/mangoui/issues"
+    "url": "https://github.com/mangoui-react/mango-ui/issues"
   },
   "stableVersion": "0.0.0"
 }

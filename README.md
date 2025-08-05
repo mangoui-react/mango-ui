@@ -2,7 +2,7 @@
 
 A library of open-source UI components for developing high-quality, accessible React design systems and web apps.
 
-Melio UI aims to simplify development by providing unstyled, flexible design systems that enhance user experiences.
+Mango UI aims to simplify development by providing unstyled, flexible design systems that enhance user experiences.
 
 As a foundational UI component library, it emphasizes accessibility, customization, and developer experience. These components can serve as the core of your design system or be integrated gradually into your project.
 
@@ -51,6 +51,10 @@ $ pnpm add @mangoui/<package-name>
 $ bun add @mangoui/<package-name>
 # ex) bun add @mangoui/accordion
 ```
+
+### Community
+
+- Email - elle0510@gmail.com
 
 ### License
 
